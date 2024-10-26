@@ -1,18 +1,30 @@
-# Compiled object files
-*.o
-*.obj
+# Build directory
+build/
 
-# Build directories
-/build/
-*/out/
-
-# Temporary files
-*.log
-*.tmp
+# IDE specific files
+.vscode/
+.idea/
 *.swp
+*.swo
 
-# macOS system files
-.DS_Store
+# Compiled Object files
+*.o
 
-# Windows system files
-Thumbs.db
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile

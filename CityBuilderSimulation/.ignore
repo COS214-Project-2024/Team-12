@@ -1,0 +1,18 @@
+# Compiled object files
+*.o
+*.obj
+
+# Build directories
+/build/
+*/out/
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db

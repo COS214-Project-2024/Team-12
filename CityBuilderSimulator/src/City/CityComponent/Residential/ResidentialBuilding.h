@@ -2,8 +2,9 @@
 #define RESIDENTIALBUILDING_H
 
 #include <iostream>
+#include "../CityComponent.h"
 
-class ResidentialBuilding {
+class ResidentialBuilding : public CityComponent {
 protected:
     int populationCapacity;
     double comfortLevel;
@@ -23,6 +24,7 @@ public:
     virtual void displayStatus() const ;
 
     virtual ~ResidentialBuilding() {}
+    
 };
 
 #endif

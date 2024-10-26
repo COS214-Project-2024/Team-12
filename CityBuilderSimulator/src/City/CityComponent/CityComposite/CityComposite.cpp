@@ -1,5 +1,6 @@
 #include "CityComposite.h"
 #include "../CityComponent.h"
+#include "../../NPCs/UselessNPC/NPCObserver.h"
 
 #include <iostream>
 #include <vector>
@@ -9,6 +10,10 @@ CityComposite::CityComposite(const std::string& name) : cityName(name), budget(0
 
 void CityComposite::add(CityComponent* zone){
 	zones.push_back(zone);
+
+    //the plan get npcManager to change the happiness level after we a change the call notify after some time to simulate new of that
+    //change travelling the city
+    //notify();
 }
 
 void CityComposite::remove(CityComponent* zone){

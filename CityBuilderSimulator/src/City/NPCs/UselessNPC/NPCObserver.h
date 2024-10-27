@@ -6,8 +6,7 @@
 
 class NPCObserver{
 	public:
-	NPCObserver();
-	~NPCObserver();
+	virtual void update() = 0;
 };
 
 #endif

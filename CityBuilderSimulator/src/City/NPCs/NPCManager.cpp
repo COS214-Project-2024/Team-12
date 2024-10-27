@@ -39,3 +39,25 @@ int NPCManager::getPopulation() const{
 void NPCManager::updatePopulation(){
 	population += populationGrowth - mortalityRate * population;
 }
+
+void NPCManager::adjustStateCounts(int happyChange, int neutralChange, int revoltChange){
+	happyCount += happyChange;
+    neutralCount += neutralChange;
+    revoltCount += revoltChange;
+}
+
+int NPCManager::getHappyCount() const{
+	return happyCount;
+}
+
+int NPCManager::getNeutralCount() const{
+	return neutralCount;
+}
+
+int NPCManager::getRevoltCount() const{
+	return revoltCount;
+}
+
+void NPCManager::increasePopulation(int num){
+	population += num;
+}

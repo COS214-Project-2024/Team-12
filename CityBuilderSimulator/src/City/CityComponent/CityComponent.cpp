@@ -1,7 +1,9 @@
 #include "../NPCs/UselessNPC/NPCObserver.h"
 #include "CityComponent.h"
+#include "../NPCs/NPCManager.h"
 
 void CityComponent::addNpc(NPCObserver* npcs){
+	NPCManager::getInstance().setPopulationGrowth(1);
 	observers.push_back(npcs);
 }
 

@@ -21,6 +21,13 @@ public:
     void displayStatus() override;
 
     double getTaxRevenue() override;
+
+    double getBudget() const;
+
+    bool deductBudget(double amount);
+
+    // Add to the initial city budget
+    void addBudget(double amount);
 };
 
 #endif

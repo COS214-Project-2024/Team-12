@@ -29,3 +29,26 @@ double CityComposite::getTaxRevenue(){
         }
         return totalTax;
 }
+
+double CityComposite::getBudget() const{
+    return budget;
+}
+
+// Deduct budget for buying, upgrading and repairing
+bool CityComposite::deductBudget(double amount) {
+    if (budget >= amount) {
+        budget -= amount;
+        return true;
+    } else {
+        std::cout << "Insufficient budget.\n";
+        return false;
+    }
+}
+void CityComposite::addBudget(double amount) {
+    if(amount > 0) {
+        budget += amount;
+        std::cout << "Added " << amount << " to the city budget. New budget: " << budget << "\n";
+    } else {
+        std::cout << "Invalid amount. Budget not updated.\n";
+    }
+}

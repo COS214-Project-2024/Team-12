@@ -3,7 +3,7 @@
 #include "../NPCs/NPCManager.h"
 
 void CityComponent::addNpc(NPCObserver* npcs){
-	NPCManager::getInstance().setPopulationGrowth(1);
+	NPCManager::getInstance().setPopulationGrowth(1);//Increases population
 	observers.push_back(npcs);
 }
 

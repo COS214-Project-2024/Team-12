@@ -9,8 +9,11 @@
 
 #include <string>
 #include <random>
+#include <iostream>
 
-ReactingNPCS::ReactingNPCS() : state(new NeutralState()) {}
+ReactingNPCS::ReactingNPCS() : state(new NeutralState()) {
+    NPCManager::getInstance().incrementCount("NeutralState");
+}
 
 ReactingNPCS::~ReactingNPCS() { delete state; }
 

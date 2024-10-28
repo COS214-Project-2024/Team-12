@@ -6,6 +6,7 @@
 class NPCState{
 	public:
 	void virtual handle() = 0;
+	virtual std::string getStateName() = 0;
 };
 
 #endif

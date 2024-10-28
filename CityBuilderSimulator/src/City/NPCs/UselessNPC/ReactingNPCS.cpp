@@ -4,6 +4,8 @@
 #include "NeutralState.h"
 #include "DonationState.h"
 #include "RevoltState.h"
+#include "ProductiveState.h"
+#include "CrimeState.h"
 
 #include <string>
 #include <random>
@@ -31,12 +33,17 @@ void ReactingNPCS::update() {
     // Update state based on consensus and current happiness level
     if (followsConsensus) {
         // 80% of NPCs follow the general consensus based on happiness level
-        if (happinessLevel > 70 && dynamic_cast<DonationState*>(state) == nullptr) {
+        if (followsConsensus) {
+        if (happinessLevel > 85 && dynamic_cast<DonationState*>(state) == nullptr) {
             changeState(new DonationState());
-        } else if (happinessLevel < 30 && dynamic_cast<RevoltState*>(state) == nullptr) {
-            changeState(new RevoltState());
+        } else if (happinessLevel > 70 && dynamic_cast<ProductiveState*>(state) == nullptr) {
+            changeState(new ProductiveState());
         } else if (happinessLevel >= 30 && happinessLevel <= 70 && dynamic_cast<NeutralState*>(state) == nullptr) {
             changeState(new NeutralState());
+        } else if (happinessLevel < 30 && happinessLevel >= 15 && dynamic_cast<CrimeState*>(state) == nullptr) {
+            changeState(new CrimeState());
+        } else if (happinessLevel < 15 && dynamic_cast<RevoltState*>(state) == nullptr) {
+            changeState(new RevoltState());
         }
     } else {
         // 20% retain their current state or randomly select an alternate state
@@ -50,4 +57,5 @@ void ReactingNPCS::update() {
 
     // Call the current state's reaction
     state->handle();
+}
 }

@@ -1,6 +1,7 @@
 #include "NPCManager.h"
 
 #include <utility>
+#include <string>
 
 
 int NPCManager::getHappinessLevel() const{
@@ -16,37 +17,31 @@ void NPCManager::setHappinessLevel(int level){
 	}
 }
 
-double NPCManager::getMortalityRate() const{
-	return mortalityRate;
+void NPCManager::adjustStateCounts(int happyChange, int neutralChange, int revoltChange, int productiveChange, int crimeChange){
+	this->happyCount += happyChange;
+    this->neutralCount += neutralChange;
+    this->revoltCount += revoltChange;
+	this->productiveCount += productiveChange;
+	this->crimeCount += crimeChange;
 }
 
-void NPCManager::setMortalityRate(double rate){
-	mortalityRate = std::max(0.0, rate);
+void NPCManager::incrementCount(const std::string& stateName){
+	    if (stateName == "Donation") happyCount++;
+        else if (stateName == "Productive") productiveCount++;
+        else if (stateName == "Crime") crimeCount++;
+        else if (stateName == "Revolt") revoltCount++;
+        else if (stateName == "Neutral") neutralCount++;
 }
 
-int NPCManager::getPopulationGrowth() const{
-	return populationGrowth;
+void NPCManager::decrementCount(const std::string& stateName){
+	if (stateName == "Donation") happyCount--;
+    else if (stateName == "Productive") productiveCount--;
+    else if (stateName == "Crime") crimeCount--;
+    else if (stateName == "Revolt") revoltCount--;
+    else if (stateName == "Neutral") neutralCount--;
 }
 
-void NPCManager::setPopulationGrowth(int growth){
-	populationGrowth = growth;
-}
-
-int NPCManager::getPopulation() const{
-	return population;
-}
-
-void NPCManager::updatePopulation(){
-	population += populationGrowth - mortalityRate * population;
-}
-
-void NPCManager::adjustStateCounts(int happyChange, int neutralChange, int revoltChange){
-	happyCount += happyChange;
-    neutralCount += neutralChange;
-    revoltCount += revoltChange;
-}
-
-int NPCManager::getHappyCount() const{
+int NPCManager::getDonationCount() const{
 	return happyCount;
 }
 
@@ -58,6 +53,10 @@ int NPCManager::getRevoltCount() const{
 	return revoltCount;
 }
 
-void NPCManager::increasePopulation(int num){
-	population += num;
+int NPCManager::getProductiveCount() const{
+	return productiveCount;
+}
+
+int NPCManager::getCrimeCount() const{
+	return crimeCount;
 }

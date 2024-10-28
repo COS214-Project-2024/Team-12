@@ -4,9 +4,12 @@
 #include "NPCManager.h"
 #include "NPCState.h"
 
+#include <string>
+
 class NeutralState : public NPCState{
 	public:
 	void handle() override;
+	std::string getStateName() override;
 };
 
 #endif

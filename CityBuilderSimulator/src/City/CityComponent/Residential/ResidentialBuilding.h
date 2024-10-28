@@ -7,6 +7,7 @@
 #include <string>
 #include <memory>
 
+
 class ResidentialBuilding : public CityComponent {
 protected:
     int bedrooms;
@@ -18,6 +19,7 @@ protected:
     std::shared_ptr<UtilityFlyweight> powerSupply;
     std::shared_ptr<UtilityFlyweight> wasteManagement;
     std::shared_ptr<UtilityFlyweight> sewageManagement;
+
 
 public:
     ResidentialBuilding(int bedrooms, double price,std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,

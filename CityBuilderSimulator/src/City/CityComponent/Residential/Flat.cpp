@@ -2,7 +2,7 @@
 
 Flat::Flat(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
-        : ResidentialBuilding("Worn Out", 2, 10000.00, 150.00, water, power, waste, sewage) {}
+        : ResidentialBuilding(2, 10000.00, water, power, waste, sewage) {}
 
 void Flat::displayStatus(){
     std::cout << "Flat Status:\n";

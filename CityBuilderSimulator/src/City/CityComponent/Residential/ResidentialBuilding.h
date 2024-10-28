@@ -10,9 +10,7 @@
 class ResidentialBuilding : public CityComponent {
 protected:
     int bedrooms;
-    std::string condition;      // Describes building condition, e.g., "Worn Out" or "Good"
     double price;
-    double maintenanceCost;
     bool taxPaid;
 
     // Utility connections
@@ -22,8 +20,7 @@ protected:
     std::shared_ptr<UtilityFlyweight> sewageManagement;
 
 public:
-    ResidentialBuilding(const std::string& condition, int bedrooms, double price, double maintenanceCost,
-                        std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
+    ResidentialBuilding(int bedrooms, double price,std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
                         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     virtual ~ResidentialBuilding() = default;
 	void displayStatus();
@@ -33,7 +30,6 @@ public:
     void connectWasteManagement(std::shared_ptr<UtilityFlyweight> waste);
     void connectSewage(std::shared_ptr<UtilityFlyweight> sewage);
     void applyUtilityConsumption();
-    void repairBuilding();
     virtual std::unique_ptr<ResidentialBuilding> clone() const = 0;
 };
 

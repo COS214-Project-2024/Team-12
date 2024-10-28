@@ -41,6 +41,15 @@ protected:
     int level;                                  // Utility's level; - can be upgraded with Decorator
     int resourceConsumption;                    // Resources to keep the utility operating
     std::map<std::string, int> resourceNeeds;   // Resources required for construction
+
+    // Resources to add :
+    /*
+        - Wood
+        - Ore
+        - Oil
+    
+    
+    */
 };
 
 #endif

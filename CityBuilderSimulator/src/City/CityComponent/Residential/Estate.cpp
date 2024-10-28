@@ -2,7 +2,7 @@
 
 Estate::Estate(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
            std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
-        : ResidentialBuilding("Good", 6, 50000.00, 800.00, water, power, waste, sewage) {}
+        : ResidentialBuilding(6, 50000.00, water, power, waste, sewage) {}
 
 void Estate::displayStatus(){
     std::cout << "Estate Status:\n";

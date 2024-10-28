@@ -1,17 +1,15 @@
 #include "ResidentialBuilding.h"
 
-ResidentialBuilding::ResidentialBuilding(const std::string& condition, int bedrooms, double price, double maintenanceCost,
-                        std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power, 
+ResidentialBuilding::ResidentialBuilding(int bedrooms, double price,
+                        std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
                         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
-        : condition(condition), bedrooms(bedrooms), price(price), maintenanceCost(maintenanceCost), taxPaid(false),
+        : bedrooms(bedrooms), price(price), taxPaid(false),
         waterSupply(std::move(water)), powerSupply(std::move(power)), wasteManagement(std::move(waste)), sewageManagement(std::move(sewage)) {}
 
 void ResidentialBuilding::displayStatus() {
         std::cout << "Residential Building Status:\n"
-                << "Condition: " << condition << "\n"
                 << "Bedrooms: " << bedrooms << "\n"
                 << "Price: $" << price << "\n"
-                << "Maintenance Cost: $" << maintenanceCost << "\n"
                 << "Tax Paid: " << (taxPaid ? "Yes" : "No") << "\n";
 
         // Display status of each connected utility
@@ -34,7 +32,7 @@ void ResidentialBuilding::displayStatus() {
 }
 
 double ResidentialBuilding::getTaxRevenue() {
-        double conditionMultiplier = (condition == "Good") ? 1.5 : 1.0;
+        double conditionMultiplier = 1.5;
         double baseRevenue = price * 0.02; // 2% of price as base tax revenue
         return baseRevenue * conditionMultiplier;
 }
@@ -56,14 +54,5 @@ void ResidentialBuilding::applyUtilityConsumption() {
         }
         if (sewageManagement && sewageManagement->getOperationalStatus()) {
                 std::cout << "Sewage management resources consumed: " << sewageManagement->getResourceConsumption() << "\n";
-        }
-}
-
-void ResidentialBuilding::repairBuilding() {
-        if (condition == "Worn Out") {
-                condition = "Good";
-                std::cout << "Building repaired to 'Good' condition at cost of R" << maintenanceCost << "\n";
-        } else {
-                std::cout << "Building is already in 'Good' condition. No repairs needed.\n";
         }
 }

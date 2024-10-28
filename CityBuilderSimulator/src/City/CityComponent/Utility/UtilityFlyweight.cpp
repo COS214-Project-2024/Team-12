@@ -42,7 +42,5 @@ void UtilityFlyweight::displayStatus() {
 }
 
 double UtilityFlyweight::getTaxRevenue() {
-    // A basic revenue calculation based on the utility’s level and capacity
-    double baseRevenue = 100.0; // Example base revenue value per level
-    return baseRevenue * level * 0.1 * capacity;
+    return 0.0; // We don't collect tax from utilities
 }

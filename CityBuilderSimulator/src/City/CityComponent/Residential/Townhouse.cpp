@@ -2,7 +2,7 @@
 
 Townhouse::Townhouse(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
             std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
-        : ResidentialBuilding("Good", 4, 30000.00, 400.00, water, power, waste, sewage) {}
+        : ResidentialBuilding(4, 30000.00, water, power, waste, sewage) {}
 
 void Townhouse::displayStatus(){
     std::cout << "Townhouse Status:\n";

@@ -17,13 +17,13 @@ public:
 
     // Government functionality
     void addMoney(double amount);
-    void reduceProduction(double factor) { productionRate *= (1 - factor); }
-    void increaseProduction(double factor) { productionRate *= (1 + factor); }
-    void increaseCrimeRate(double factor) { mortalityRate *= (1 + factor); }
+    void reduceProduction(double factor);
+    void increaseProduction(double factor);
+    void increaseCrimeRate(double factor);
 
-    double getMoney() const { return money; }
-    double getProductionRate() const { return productionRate; }
-    double getMortalityRate() const { return mortalityRate; }
+    double getMoney() const;
+    double getProductionRate() const;
+    double getMortalityRate() const;
 	double getCrimeRate() const;
 	int getPopulationGrowth() const;
 	void setPopulationGrowth(int growth);

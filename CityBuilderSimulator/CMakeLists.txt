@@ -24,6 +24,7 @@ add_executable(MyTests
     src/City/NPCs/UselessNPC/ProductiveState.cpp
     src/City/NPCs/UselessNPC/CrimeState.cpp
     src/City/NPCs/UselessNPC/NeutralState.cpp
+	src/City/Government.cpp 
 )
 
 # Link Google Test to the test executable

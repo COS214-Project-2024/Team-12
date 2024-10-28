@@ -1,19 +1,30 @@
 cmake_minimum_required(VERSION 3.10)
-project(MyProject)
+project(CityBuilderSimulator)
 
-# Include directories
-include_directories(src)       # Add src for main application code
-include_directories(tests)     # Add tests for unit tests
+# Add include directories
+include_directories(src/City)
+include_directories(tests)
 
-# Add Google Test as a subdirectory with the new folder name 'gtests'
+# Google Test as a subdirectory
 add_subdirectory(gtests)
 include_directories(gtests/googletest/include)
 
-# Main application executable
-add_executable(MyProject src/main.cpp)   # Add main application files
+# Define main application executable
+add_executable(MyProject src/main.cpp)
 
-# Test executable
-add_executable(MyTests tests/NPCManagerTests.cpp tests/ReactingNPCTests.cpp tests/NPCStatesTests.cpp)  # Add all test files
+# Define test executable
+add_executable(MyTests
+    tests/NPCManagerTests.cpp
+    tests/ReactingNPCTests.cpp
+    tests/NPCStatesTests.cpp
+    src/City/NPCs/UselessNPC/ReactingNPCS.cpp
+	src/City/NPCs/NPCManager.cpp
+    src/City/NPCs/UselessNPC/DonationState.cpp
+    src/City/NPCs/UselessNPC/RevoltState.cpp
+    src/City/NPCs/UselessNPC/ProductiveState.cpp
+    src/City/NPCs/UselessNPC/CrimeState.cpp
+    src/City/NPCs/UselessNPC/NeutralState.cpp
+)
 
 # Link Google Test to the test executable
 target_link_libraries(MyTests gtest gtest_main)

@@ -1,5 +1,5 @@
 #include "ReactingNPCS.h"
-#include "NPCManager.h"
+#include "../NPCManager.h"
 #include "NPCState.h"
 #include "NeutralState.h"
 #include "DonationState.h"

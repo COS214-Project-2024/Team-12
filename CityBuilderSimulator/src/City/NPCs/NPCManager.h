@@ -3,6 +3,7 @@
 #define NPC_MANAGER_H
 
 #include <utility>
+#include <string>
 class NPCManager {
 public:
     static NPCManager& getInstance() {
@@ -18,7 +19,7 @@ public:
     int getHappinessLevel() const;
     void setHappinessLevel(int level);
 
-    void adjustStateCounts(int happyChange, int neutralChange, int revoltChange, int productiveState, int crimeState);
+    //void adjustStateCounts(int happyChange, int neutralChange, int revoltChange, int productiveState, int crimeState);
 
     // we also need getters for the terminal
     int getDonationCount() const;
@@ -31,12 +32,13 @@ public:
     void incrementCount(const std::string& stateName);
     void decrementCount(const std::string& stateName);
 
+    void resetCounts();
 
-private:
     NPCManager() : happinessLevel(50), happyCount(0), neutralCount(0), revoltCount(0), productiveCount(0), crimeCount(0) {}
 
+private:
+
     int happinessLevel;
-    
     int happyCount;
     int neutralCount;
     int revoltCount;

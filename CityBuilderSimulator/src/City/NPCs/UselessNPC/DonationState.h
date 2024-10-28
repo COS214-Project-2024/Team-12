@@ -1,7 +1,7 @@
 #ifndef DONATION_STATE_H
 #define DONATION_STATE_H
 
-#include "NPCManager.h"
+#include "../NPCManager.h"
 #include "NPCState.h"
 
 #include <string>

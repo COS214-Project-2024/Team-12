@@ -1,7 +1,7 @@
 #ifndef CRIME_STATE_H
 #define CRIME_STATE_H
 
-#include "NPCManager.h"
+#include "../NPCManager.h"
 #include "NPCState.h"
 
 #include <string>

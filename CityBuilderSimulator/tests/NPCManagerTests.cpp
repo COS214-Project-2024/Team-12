@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "NPCManager.h"
+#include "../src/City/NPCs/NPCManager.h"
 
 TEST(NPCManagerTest, SingletonInstance) {
     NPCManager& instance1 = NPCManager::getInstance();

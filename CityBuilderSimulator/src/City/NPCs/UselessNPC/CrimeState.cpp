@@ -1,5 +1,5 @@
 #include "Government.h"
-#include "NPCManager.h"
+#include "../NPCManager.h"
 #include "CrimeState.h"
 
 #include <random>

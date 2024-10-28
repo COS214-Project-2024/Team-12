@@ -1,5 +1,5 @@
-#include "Government.h"
-#include "NPCManager.h"
+#include "../City/Government.h"
+#include "../NPCManager.h"
 #include "ProductiveState.h"
 
 #include <iostream>

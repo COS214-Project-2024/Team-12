@@ -1,5 +1,5 @@
 #include "NeutralState.h"
-#include "NPCManager.h"
+#include "../NPCManager.h"
 
 #include <iostream>
 #include <string>

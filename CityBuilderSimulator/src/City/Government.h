@@ -29,9 +29,9 @@ public:
 	void setPopulationGrowth(int growth);
 	int getPopulation() const;
     void updatePopulation();
+    Government() : money(10000), productionRate(1.0), mortalityRate(0.01), crimeRate(0.00), population(0), populationGrowth(0) {}  // Private constructor
 
 private:
-    Government() : money(10000), productionRate(1.0), mortalityRate(0.01), crimeRate(0.00), population(0), populationGrowth(0) {}  // Private constructor
 
     double money;
     double productionRate;

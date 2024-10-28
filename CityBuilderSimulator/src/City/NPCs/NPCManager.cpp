@@ -17,13 +17,13 @@ void NPCManager::setHappinessLevel(int level){
 	}
 }
 
-void NPCManager::adjustStateCounts(int happyChange, int neutralChange, int revoltChange, int productiveChange, int crimeChange){
+/* void NPCManager::adjustStateCounts(int happyChange, int neutralChange, int revoltChange, int productiveChange, int crimeChange){
 	this->happyCount += happyChange;
     this->neutralCount += neutralChange;
     this->revoltCount += revoltChange;
 	this->productiveCount += productiveChange;
 	this->crimeCount += crimeChange;
-}
+} */
 
 void NPCManager::incrementCount(const std::string& stateName){
 	    if (stateName == "Donation") happyCount++;
@@ -59,4 +59,12 @@ int NPCManager::getProductiveCount() const{
 
 int NPCManager::getCrimeCount() const{
 	return crimeCount;
+}
+
+void NPCManager::resetCounts(){
+	happyCount = 0;
+	neutralCount = 0;
+	revoltCount = 0;
+	productiveCount = 0;
+	crimeCount = 0;
 }

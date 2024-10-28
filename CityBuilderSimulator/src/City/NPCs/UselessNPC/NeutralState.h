@@ -1,7 +1,7 @@
 #ifndef NEUTRAL_STATE_H
 #define NEUTRAL_STATE_H
 
-#include "NPCManager.h"
+#include "../NPCManager.h"
 #include "NPCState.h"
 
 #include <string>

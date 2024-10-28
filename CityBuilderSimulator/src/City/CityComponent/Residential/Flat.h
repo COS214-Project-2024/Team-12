@@ -2,6 +2,7 @@
 #define FLAT_H
 
 #include "ResidentialBuilding.h"
+#include "taxCollector.h"
 
 class Flat : public ResidentialBuilding {
 public:
@@ -10,6 +11,8 @@ public:
     void displayStatus();
     double getTaxRevenue();
     std::unique_ptr<ResidentialBuilding> clone() const;
+    void accept(taxCollector* TC);
+    void payTax();
 };
 
 #endif

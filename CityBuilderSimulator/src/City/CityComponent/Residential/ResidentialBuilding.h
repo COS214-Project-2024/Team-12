@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#include "WaterSupply.h"
 
 
 class ResidentialBuilding : public CityComponent {
@@ -13,6 +14,7 @@ protected:
     int bedrooms;
     double price;
     bool taxPaid;
+
 
     // Utility connections
     std::shared_ptr<UtilityFlyweight> waterSupply;

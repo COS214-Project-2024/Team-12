@@ -22,6 +22,7 @@ protected:
 
 
 public:
+    ResidentialBuilding();
     ResidentialBuilding(int bedrooms, double price,std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
                         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     virtual ~ResidentialBuilding() = default;

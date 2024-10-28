@@ -3,6 +3,7 @@
 
 #include "../CityComponent.h"
 #include <vector>
+#include <algorithm>
 
 
 class ResidentialZoneComposite : public CityComponent {

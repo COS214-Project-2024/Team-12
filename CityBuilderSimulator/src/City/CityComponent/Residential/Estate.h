@@ -5,6 +5,7 @@
 
 class Estate : public ResidentialBuilding {
 public:
+    Estate();
     Estate(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     void displayStatus();

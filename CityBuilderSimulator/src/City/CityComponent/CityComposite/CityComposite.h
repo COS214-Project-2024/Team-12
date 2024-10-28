@@ -4,6 +4,7 @@
 #include "../CityComponent.h"
 #include <string>
 #include <vector>
+#include <algorithm>
 
 class CityComposite : public CityComponent {
 private:

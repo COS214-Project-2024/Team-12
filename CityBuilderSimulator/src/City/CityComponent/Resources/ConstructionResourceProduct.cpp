@@ -44,3 +44,9 @@ void ConstructionResourceProduct::replenish(int amount) {
     quantity += amount;
     std::cout << "Replenished " << amount << " units of " << name << ". Total: " << quantity << std::endl;
 }
+
+
+double ConstructionResourceProduct::getTaxRevenue()
+{
+     return quantity * 0.2;
+}

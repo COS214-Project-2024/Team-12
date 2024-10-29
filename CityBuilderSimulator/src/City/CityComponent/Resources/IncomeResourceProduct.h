@@ -25,6 +25,8 @@ public:
 
 	void displayStatus() const;
 	 int getQuantity() const;
+
+	double getTaxRevenue() override;
 };
 
 #endif

@@ -41,3 +41,8 @@ int IncomeResourceProduct::getQuantity() const
 {
       return quantity; 
 }
+
+double IncomeResourceProduct::getTaxRevenue()
+{
+      return quantity * marketValue * 0.1;
+}

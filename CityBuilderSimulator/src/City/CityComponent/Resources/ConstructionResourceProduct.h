@@ -31,6 +31,7 @@ public:
 	void replenish(int amount);
 
 	int getUnitCost() const;
+	double getTaxRevenue() override;
 };
 
 #endif

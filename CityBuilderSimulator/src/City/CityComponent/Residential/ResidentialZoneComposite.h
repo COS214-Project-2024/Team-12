@@ -10,6 +10,8 @@ class ResidentialZoneComposite : public CityComponent {
 private:
     std::vector<CityComponent*> buildings;
     double residentialTaxRate;
+    taxCollector* sars;
+    bool taxPayed;
 
 public:
     ResidentialZoneComposite(double taxRate);

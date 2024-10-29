@@ -1,8 +1,8 @@
 #ifndef CONCRETETAXCOLLECTOR_H
 #define CONCRETETAXCOLLECTOR_H
 
-#include "taxCollector.h"
-#include "Government.h"
+#include "../src/City/taxCollector.h"
+#include "../src/City/Government.h"
 
 
 class ConcreteTaxCollector: public taxCollector{

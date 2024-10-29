@@ -2,7 +2,7 @@
 #define COMMERCIALBUILDING_H
 
 #include <string>
-#include "../src/City/taxCollector.h"
+#include "../../../City/taxCollector.h"
 #include "../CityComponent.h"
 using namespace std;
 

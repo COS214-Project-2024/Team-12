@@ -5,10 +5,10 @@
 #include <memory>
 #include <algorithm>
 #include <string>
-#include "../src/City/CityComponent/CityComponent.h"
-#include "../src/City/CityComponent/Resources/IncomeResourceProduct.h"
-#include "../src/City/CityComponent/Resources/ConstructionResourceProduct.h"
-#include "../src/City/NPCs/WorkerNPC/NPCContext.h"
+#include "../CityComponent.h"
+#include "../Resources/IncomeResourceProduct.h"
+#include "../Resources/ConstructionResourceProduct.h"
+#include "../NPCs/WorkerNPC/NPCContext.h"
 
 // Enum to handle resource prioritization
 enum class ResourcePriority { Income, Construction };

@@ -2,7 +2,7 @@
 #define MALLS_H
 
 #include <string>
-#include "../src/City/taxCollector.h"
+#include "../../taxCollector.h"
 using namespace std;
 
 class Malls: public CommercialBuilding{

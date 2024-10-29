@@ -2,10 +2,10 @@
 #define TAXCOLLECTOR_H
 
 
-#include "../src/City/CityComponent/Residential/ResidentialBuilding.h"
-#include "../src/City/CityComponent/Residential/ResidentialZoneComposite.h"
-#include "../src/City/CityComponent/Commercial/CommercialBuilding.h"
-#include "../src/City/Government.h"
+#include "CityComponent/Residential/ResidentialBuilding.h"
+#include "CityComponent/Residential/ResidentialZoneComposite.h"
+#include "CityComponent/Commercial/CommercialBuilding.h"
+#include "Government.h"
 
 
 class taxCollector{

@@ -18,8 +18,8 @@ TEST(NPCManagerTest, InitialCountsAreZero) {
 
 TEST(NPCManagerTest, IncrementAndDecrementCounts) {
     NPCManager& manager = NPCManager::getInstance();
-    manager.incrementCount("Donation");
+    manager.incrementCount("DonationState");
     EXPECT_EQ(manager.getDonationCount(), 1);
-    manager.decrementCount("Donation");
+    manager.decrementCount("DonationState");
     EXPECT_EQ(manager.getDonationCount(), 0);
 }

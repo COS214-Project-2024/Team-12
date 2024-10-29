@@ -41,5 +41,5 @@ void CrimeState::handle() {
 }
 
 std::string CrimeState::getStateName(){
-	return "Crime";
+	return "CrimeState";
 }

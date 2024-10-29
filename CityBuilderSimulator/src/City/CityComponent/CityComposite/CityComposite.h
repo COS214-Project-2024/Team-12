@@ -20,8 +20,7 @@ public:
 
     void displayStatus() override;
 
-    double getTaxRevenue() override;
-
+   
     double getBudget() const;
 
     bool deductBudget(double amount);

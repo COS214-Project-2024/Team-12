@@ -13,6 +13,7 @@ class Malls: public CommercialBuilding{
     int Capacity;
     double size;
     bool taxPayed;
+   
 
     public:
     void accept(taxCollector& TC);

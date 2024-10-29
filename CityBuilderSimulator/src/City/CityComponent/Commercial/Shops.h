@@ -5,6 +5,8 @@
 #include "taxCollector.h"
 using namespace std;
 
+
+
 class Shops:public CommercialBuilding{
     private:
     string state;
@@ -13,6 +15,7 @@ class Shops:public CommercialBuilding{
     int Capacity;
     double size;
     bool taxPayed;
+    
 
     public:
     void accept(taxCollector& TC);

@@ -7,13 +7,16 @@
 #include <string>
 #include <memory>
 #include "WaterSupply.h"
+#include "CityComposite.h"
+#include "taxCollector.h"
 
 
 class ResidentialBuilding : public CityComponent {
 protected:
     int bedrooms;
     double price;
-    bool taxPaid;
+    bool taxPayed;
+    CityComposite* city;
 
 
     // Utility connections
@@ -28,13 +31,14 @@ public:
                         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     virtual ~ResidentialBuilding() = default;
 	void displayStatus();
-	double getTaxRevenue();
     void connectWater(std::shared_ptr<UtilityFlyweight> water);
     void connectPower(std::shared_ptr<UtilityFlyweight> power);
     void connectWasteManagement(std::shared_ptr<UtilityFlyweight> waste);
     void connectSewage(std::shared_ptr<UtilityFlyweight> sewage);
     void applyUtilityConsumption();
     virtual std::unique_ptr<ResidentialBuilding> clone() const = 0;
+    virtual void accept(taxCollector* TC)=0;
+    virtual void payTax()=0;
 };
 
 #endif

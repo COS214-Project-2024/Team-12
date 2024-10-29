@@ -2,9 +2,9 @@
 
 
 void ConcreteTaxCollector::visit(ResidentialBuilding* RB) {
-    // Implementation for ResidentialBuilding tax collection
+   RB->payTax();
 }
 
 void ConcreteTaxCollector::visit(CommercialBuilding* CB) {
-    // Implementation for CommercialBuilding tax collection
+    CB->payTax();
 }

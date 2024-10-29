@@ -9,10 +9,19 @@ void House::displayStatus() {
     ResidentialBuilding::displayStatus();
 }
 
-double House::getTaxRevenue() {
-     return ResidentialBuilding::getTaxRevenue() * 1.1;  // Houses generate 10% more revenue
-}
+
 
 std::unique_ptr<ResidentialBuilding> House::clone() const{
     return std::make_unique<House>(*this);
+}
+
+ void House::accept(taxCollector* TC){
+    TC->visit(this);
+
+}
+
+
+void House::payTax(){
+   
+
 }

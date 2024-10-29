@@ -43,3 +43,7 @@ void CrimeState::handle() {
 std::string CrimeState::getStateName(){
 	return "CrimeState";
 }
+
+NPCState* CrimeState::clone() const{
+    return new CrimeState(*this);
+}

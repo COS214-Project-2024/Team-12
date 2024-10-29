@@ -7,6 +7,7 @@ class NPCState{
 	public:
 	void virtual handle() = 0;
 	virtual std::string getStateName() = 0;
+	virtual NPCState* clone() const = 0;
 };
 
 #endif

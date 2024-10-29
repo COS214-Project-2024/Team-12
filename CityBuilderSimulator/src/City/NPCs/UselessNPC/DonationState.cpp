@@ -40,3 +40,7 @@ void DonationState::handle() {
 std::string DonationState::getStateName(){
 	return "DonationState";
 }
+
+NPCState* DonationState::clone() const{
+    return new DonationState(*this);
+}

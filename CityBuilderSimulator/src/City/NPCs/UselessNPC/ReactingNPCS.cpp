@@ -17,6 +17,15 @@ ReactingNPCS::ReactingNPCS() : state(new NeutralState()) {
 
 ReactingNPCS::~ReactingNPCS() { delete state; }
 
+// Copy constructor for deep copying
+ReactingNPCS::ReactingNPCS(const ReactingNPCS& other) {
+    if (other.state) {
+        state = other.state->clone();  // Deep copy of the state
+    } else {
+        state = nullptr;
+    }
+}
+
 // Hopefully this works
 void ReactingNPCS::update() {
     // Get the latest happiness level from NPCManager
@@ -78,4 +87,9 @@ void ReactingNPCS::changeState(NPCState *newState)
 
     // Increment the count of the new state
     NPCManager::getInstance().incrementCount(state->getStateName());
+}
+
+// Clone method to create a deep copy
+NPCObserver* ReactingNPCS::clone() {
+    return new ReactingNPCS(*this);  // Use the copy constructor for deep copy
 }

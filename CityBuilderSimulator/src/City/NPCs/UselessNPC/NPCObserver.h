@@ -7,6 +7,7 @@
 class NPCObserver{
 	public:
 	virtual void update() = 0;
+	virtual NPCObserver* clone() = 0;
 };
 
 #endif

@@ -10,10 +10,7 @@ class RevoltState : public NPCState{
 	public:
 	void handle() override;
 	std::string getStateName() override;
-	RevoltState(bool testMode = false) : testMode(testMode) {} //add temporarily for testing
-
-	private:
-	bool testMode; //add temporarily
+	NPCState* clone() const override;
 };
 
 #endif

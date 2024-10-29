@@ -17,9 +17,13 @@ public:
 
     ~ReactingNPCS();
 
+     ReactingNPCS(const ReactingNPCS& other);  // Copy constructor for deep copy
+
     void update() override;
 
     void changeState(NPCState *newState);
+
+    NPCObserver* clone() override;
 private:
     NPCState *state;
 };

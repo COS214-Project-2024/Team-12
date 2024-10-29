@@ -8,3 +8,7 @@ void ConcreteTaxCollector::visit(ResidentialBuilding* RB) {
 void ConcreteTaxCollector::visit(CommercialBuilding* CB) {
     CB->payTax();
 }
+
+void ConcreteTaxCollector::visit(ResidentialZoneComposite* Rzone){
+    Rzone->payTax();
+}

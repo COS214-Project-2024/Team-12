@@ -17,6 +17,8 @@ public:
 	void removeNpc();
 	void notify();
 	virtual std::string getBuildingType() = 0;
+	virtual void accept(taxCollector* TC)=0;
+
 
 private:
     std::vector<NPCObserver*> observers;  // List of observers (e.g., NPCObserver)

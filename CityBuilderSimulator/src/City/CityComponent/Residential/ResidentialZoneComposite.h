@@ -25,6 +25,9 @@ public:
     std::string getBuildingType() override{
         return "Residential type";
     }
+
+    void accept(taxCollector* TC);
+    void payTax();
     
 };
 

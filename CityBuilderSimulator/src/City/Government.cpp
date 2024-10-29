@@ -1,5 +1,7 @@
 #include "Government.h"
 
+#include <string>
+
 void Government::addMoney(double amount){
 	money += amount;
 }
@@ -65,4 +67,24 @@ void Government::increaseEmploymentRate(double rate){
 
 void Government::setProductionRate(double rate){
 	productionRate = rate;
+}
+
+void Government::setBuildingAmount(std::string type, int amount){
+	if(type == "Residential"){
+		residentialAmount += amount;
+	}else if(type == "Utility"){
+		utilityAmount += amount;
+	}else if(type == "Public Service"){
+		publicServiceAmount += amount;
+	}
+}
+
+int Government::getBuildingAmount(std::string type){
+	if(type == "Residential"){
+		return residentialAmount;
+	}else if("Utility"){
+		return utilityAmount;
+	}else if("Public Service"){
+		return publicServiceAmount;
+	}
 }

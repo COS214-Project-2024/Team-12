@@ -3,15 +3,16 @@
 #include "../NPCs/NPCManager.h"
 #include "../Government.h"
 
-void CityComponent::addNpc(NPCObserver *npcs)
+void CityComponent::addNpc()
 {
 	//	Government::getInstance().;//Increases population
-	observers.push_back(npcs);
+	//observers.push_back(npcs);
+	
 }
 
-void CityComponent::removeNpc(NPCObserver *npcs)
+void CityComponent::removeNpc()
 {
-	observers.erase(std::remove(observers.begin(), observers.end(), npcs), observers.end());
+	//observers.erase(std::remove(observers.begin(), observers.end(), npcs), observers.end());
 }
 
 void CityComponent::notify()

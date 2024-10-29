@@ -1,6 +1,7 @@
 #include "CityComposite.h"
 #include "../CityComponent.h"
 #include "../../NPCs/UselessNPC/NPCObserver.h"
+#include "../../Government.h"
 
 #include <iostream>
 #include <vector>
@@ -11,9 +12,16 @@ CityComposite::CityComposite(const std::string& name) : cityName(name), budget(0
 void CityComposite::add(CityComponent* zone){
 	zones.push_back(zone);
 
+    /* 
+     */
+
     //the plan get npcManager to change the happiness level after we a change the call notify after some time to simulate new of that
     //change travelling the city
-    //notify();
+
+    //check if there is enough 
+    checkCityConditions();
+
+    notify();
 }
 
 void CityComposite::remove(CityComponent* zone){
@@ -56,4 +64,18 @@ void CityComposite::addBudget(double amount) {
     } else {
         std::cout << "Invalid amount. Budget not updated.\n";
     }
+}
+
+bool CityComposite::checkCityConditions(){
+    int publicServiceBuildings = Government::getInstance().getBuildingAmount("Public Service");
+    int residentialBuildings = Government::getInstance().getBuildingAmount("Residential") ;
+    int utilityBuildings = Government::getInstance().getBuildingAmount("Utility");
+
+    if((publicServiceBuildings > 5 && publicServiceBuildings < 7) && (residentialBuildings > 3 && residentialBuildings < 10) && (utilityBuildings > 2 && utilityBuildings <5)){
+        Government::getInstance().setPopulationGrowth(5);
+        return true;
+    }
+
+
+
 }

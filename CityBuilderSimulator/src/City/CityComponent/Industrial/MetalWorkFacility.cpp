@@ -1,8 +1,8 @@
-#include "MetalWorks.h"
+#include "MetalWorkFacility.h"
 
-MetalFactory::MetalFactory() : Industry() {}
+MetalWorkFacility::MetalWorkFacility() : Industry() {}
     
-MetalFactory::MetalFactory(std::shared_ptr<IncomeResourceProduct> gold, 
+MetalWorkFacility::MetalWorkFacility(std::shared_ptr<IncomeResourceProduct> gold, 
                 std::shared_ptr<ConstructionResourceProduct> steel)
         : Industry("Metal Factory", std::move(gold), std::move(steel)) {}
 

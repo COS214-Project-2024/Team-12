@@ -11,9 +11,7 @@ void Estate::displayStatus(){
     ResidentialBuilding::displayStatus();
 }
 
-double Estate::getTaxRevenue(){
-    return ResidentialBuilding::getTaxRevenue() * 1.5;  // Estates generate 50% more revenue
-}
+
 
 std::unique_ptr<ResidentialBuilding> Estate::clone() const {
     return std::make_unique<Estate>(*this);

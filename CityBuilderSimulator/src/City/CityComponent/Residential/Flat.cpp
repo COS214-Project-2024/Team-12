@@ -11,9 +11,7 @@ void Flat::displayStatus(){
     ResidentialBuilding::displayStatus();
 }
 
-double Flat::getTaxRevenue(){
-    return ResidentialBuilding::getTaxRevenue() * 0.9;  // Flats generate slightly less revenue
-}
+
 
 std::unique_ptr<ResidentialBuilding> Flat::clone() const {
         return std::make_unique<Flat>(*this);

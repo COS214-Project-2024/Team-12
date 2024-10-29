@@ -35,13 +35,6 @@ void CityComposite::displayStatus(){
         }
 }
 
-double CityComposite::getTaxRevenue(){
-	double totalTax = 0;
-        for (auto& zone : zones) {
-            totalTax += zone->getTaxRevenue();
-        }
-        return totalTax;
-}
 
 double CityComposite::getBudget() const{
     return budget;

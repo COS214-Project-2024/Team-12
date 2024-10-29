@@ -1,4 +1,4 @@
-#include "../CityComponent.h"
+
 #include "ResidentialZoneComposite.h"
 
 #include <vector>
@@ -21,10 +21,10 @@ void ResidentialZoneComposite::displayStatus(){
         }
 }
 
-double ResidentialZoneComposite::getTaxRevenue(){
-	double totalTax = 0;
-    for (auto& building : buildings) {
-        totalTax += residentialTaxRate; // Simplified; this could depend on building specifics
-    }
-    return totalTax;
-}
+// double ResidentialZoneComposite::getTaxRevenue(){
+// 	double totalTax = 0;
+//     for (auto& building : buildings) {
+//         totalTax += residentialTaxRate; // Simplified; this could depend on building specifics
+//     }
+//     return totalTax;
+// }

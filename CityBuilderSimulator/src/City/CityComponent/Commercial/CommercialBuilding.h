@@ -17,8 +17,8 @@ class CommercialBuilding{
 
 
     public:
-    void accept(taxCollector& TC);
-    void payTax();
+    // void accept(taxCollector& TC);
+    // void payTax();
 };
 
 

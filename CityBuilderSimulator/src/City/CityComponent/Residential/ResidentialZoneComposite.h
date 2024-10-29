@@ -1,7 +1,7 @@
 #ifndef RESIDENTIAL_ZONE_COMPOSITE_H
 #define RESIDENTIAL_ZONE_COMPOSITE_H
 
-#include "../CityComponent.h"
+#include "../src/City/CityComponent/CityComponent.h"
 #include <vector>
 #include <algorithm>
 
@@ -19,8 +19,6 @@ public:
     void remove(CityComponent* building) override;
 
     void displayStatus() override;
-
-    double getTaxRevenue() override;
     
 };
 

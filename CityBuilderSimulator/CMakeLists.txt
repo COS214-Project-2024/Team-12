@@ -21,6 +21,7 @@ add_executable(MyTests
     tests/UtilityFlyweightTests.cpp
     tests/UtilityDecoratorTests.cpp
     tests/GreenTechnologyDecoratorTests.cpp
+    tests/IncomeResourceProductTest.cpp
     src/City/NPCs/UselessNPC/ReactingNPCS.cpp
 	src/City/NPCs/NPCManager.cpp
     src/City/NPCs/UselessNPC/DonationState.cpp
@@ -47,6 +48,22 @@ add_executable(MyTests
     src/City/CityComponent/Residential/ResidentialZoneComposite.cpp
     src/City/CityComponent/Residential/Townhouse.cpp
     src/City/CityComponent/CityComposite/CityComposite.cpp
+    
+    src/City/CityComponent/Resources/ConstructionResourceProduct.cpp
+    src/City/CityComponent/Resources/IncomeResourceProduct.cpp 
+    src/City/CityComponent/Resources/ChemicalFactory.cpp
+    src/City/CityComponent/Resources/MetalFactory.cpp
+    src/City/CityComponent/Resources/PlantFactory.cpp
+    src/City/CityComponent/Resources/StoneFactory.cpp
+    src/City/CityComponent/Resources/Gold.cpp
+    src/City/CityComponent/Resources/Diamonds.cpp
+    src/City/CityComponent/Resources/Oil.cpp
+    src/City/CityComponent/Resources/Coal.cpp
+    src/City/CityComponent/Resources/Wood.cpp
+    src/City/CityComponent/Resources/Stone.cpp
+    src/City/CityComponent/Resources/Steel.cpp
+    src/City/CityComponent/Resources/Concrete.cpp
+    src/City/CityComponent/CityComponent.cpp
 )
 
 # Link Google Test to the test executable

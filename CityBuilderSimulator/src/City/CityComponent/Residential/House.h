@@ -1,9 +1,9 @@
 #ifndef HOUSE_H
 #define HOUSE_H
 
-#include "ResidentialBuilding.h"
-#include "taxCollector.h"
-#include "CityComposite.h"
+#include "../src/City/CityComponent/Residential/ResidentialBuilding.h"
+#include "../src/City/taxCollector.h"
+#include "../City/CityComponent/CityComposite/CityComposite.h"
 
 
 class House : public ResidentialBuilding {
@@ -17,8 +17,8 @@ public:
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     void displayStatus();
     std::unique_ptr<ResidentialBuilding> clone() const;
-    void accept(taxCollector* TC);
-    void payTax();
+    // void accept(taxCollector* TC);
+    // void payTax();
      
 };
 

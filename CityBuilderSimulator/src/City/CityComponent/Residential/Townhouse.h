@@ -1,9 +1,9 @@
 #ifndef TOWNHOUSE_H
 #define TOWNHOUSE_H
 
-#include "ResidentialBuilding.h"
-#include "CityComposite.h"
-#include "taxCollector.h"
+#include "../src/City/CityComponent/Residential/ResidentialBuilding.h"
+#include "../src/City/taxCollector.h"
+#include "../City/CityComponent/CityComposite/CityComposite.h"
 
 class Townhouse : public ResidentialBuilding {
 private:
@@ -17,8 +17,8 @@ public:
    
     std::unique_ptr<ResidentialBuilding> clone() const;
      
-     void accept(taxCollector* TC);
-    void payTax();
+    //  void accept(taxCollector* TC);
+    // void payTax();
 };
 
 #endif

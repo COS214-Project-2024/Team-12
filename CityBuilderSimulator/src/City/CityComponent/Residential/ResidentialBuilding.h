@@ -2,13 +2,13 @@
 #define RESIDENTIALBUILDING_H
 
 #include "../CityComponent.h"
-#include "../Utility/UtilityFlyweight.h"
+#include "../src/City/CityComponent/Residential/ResidentialBuilding.h"
 #include <iostream>
 #include <string>
 #include <memory>
-#include "WaterSupply.h"
-#include "CityComposite.h"
-#include "taxCollector.h"
+#include "../src/City/CityComponent/Utility/WaterSupply.h"
+#include "../src/City/CityComponent/CityComposite/CityComposite.h"
+#include "../src/City/taxCollector.h"
 
 
 class ResidentialBuilding : public CityComponent {
@@ -38,8 +38,8 @@ public:
     void connectSewage(std::shared_ptr<UtilityFlyweight> sewage);
     void applyUtilityConsumption();
     virtual std::unique_ptr<ResidentialBuilding> clone() const = 0;
-    virtual void accept(taxCollector* TC)=0;
-    virtual void payTax()=0;
+    // virtual void accept(taxCollector* TC)=0;
+    // virtual void payTax()=0;
 };
 
 #endif

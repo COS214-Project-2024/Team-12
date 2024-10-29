@@ -3,9 +3,10 @@
 
 #include <string>
 #include "taxCollector.h"
+#include "../CityComponent.h"
 using namespace std;
 
-class CommercialBuilding{
+class CommercialBuilding : public CityComponent{
     private:
     string state;
     double price;
@@ -19,6 +20,9 @@ class CommercialBuilding{
     public:
     void accept(taxCollector& TC);
     void payTax();
+    std::string getBuildingType() override{
+        return "Commercial Building";
+    }
 };
 
 

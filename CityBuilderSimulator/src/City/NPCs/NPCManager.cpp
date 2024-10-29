@@ -2,6 +2,8 @@
 
 #include <utility>
 #include <string>
+#include <algorithm>
+#include <iostream>
 
 
 int NPCManager::getHappinessLevel() const{
@@ -69,4 +71,24 @@ void NPCManager::resetCounts(){
 	revoltCount = 0;
 	productiveCount = 0;
 	crimeCount = 0;
+}
+
+std::string NPCManager::getHighestState() const{
+	// Create pairs of state names and their corresponding counts
+        std::pair<std::string, int> states[] = {
+            {"Happy", happyCount},
+            {"Neutral", neutralCount},
+            {"Revolt", revoltCount},
+            {"Productive", productiveCount},
+            {"Crime", crimeCount}
+        };
+
+        // Use a lambda function to find the state with the maximum count
+        auto maxState = std::max_element(std::begin(states), std::end(states),
+                                         [](const auto& lhs, const auto& rhs) {
+                                             return lhs.second < rhs.second;
+                                         });
+
+        std::cout << "State with the highest count is: " << maxState->first << " with count: " << maxState->second << std::endl;
+        return maxState->first;
 }

@@ -35,6 +35,10 @@ public:
     void displayStatus();
 	double getTaxRevenue();
 
+    std::string getBuildingType() override{
+        return "Utility";
+    }
+
 protected:
     std::string name;
     double cost = 0.0;                               // Monetary cost to build or upgrade

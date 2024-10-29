@@ -16,6 +16,7 @@ public:
 	void addNpc();
 	void removeNpc();
 	void notify();
+	virtual std::string getBuildingType() = 0;
 
 private:
     std::vector<NPCObserver*> observers;  // List of observers (e.g., NPCObserver)

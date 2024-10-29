@@ -19,7 +19,11 @@ public:
 
     void displayStatus() override;
 
-    double getTaxRevenue() override;
+    //double getTaxRevenue() override;
+
+    std::string getBuildingType() override{
+        return "Industrial zone";
+    }
     
 };
 

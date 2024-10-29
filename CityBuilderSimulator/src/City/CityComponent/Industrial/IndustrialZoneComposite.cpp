@@ -21,10 +21,10 @@ void IndustrialZoneComposite::displayStatus(){
         }
 }
 
-double IndustrialZoneComposite::getTaxRevenue(){
+/* double IndustrialZoneComposite::getTaxRevenue(){
 	double totalTax = 0;
     for (auto& building : industrialbuildings) {
         totalTax += industrialTaxRate; // Simplified; this could depend on building specifics
     }
     return totalTax;
-}
+} */

@@ -20,5 +20,9 @@ public:
 
     virtual ~Transport() = default;
 
+    std::string getBuildingType() override{
+        return "Transport";
+    }
+
 };
 #endif

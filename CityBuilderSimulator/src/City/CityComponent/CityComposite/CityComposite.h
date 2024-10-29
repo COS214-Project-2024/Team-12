@@ -2,6 +2,8 @@
 #define CITY_COMPOSITE_H
 
 #include "../CityComponent.h"
+#include "../../Government.h"
+
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -30,6 +32,10 @@ public:
     void addBudget(double amount);
 
     bool checkCityConditions();
+
+    std::string getBuildingType() override{
+        return "City";
+    }
 };
 
 #endif

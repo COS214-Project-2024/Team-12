@@ -65,6 +65,10 @@ public:
 
     // Environmental Impact Management - To trigger NPC reaction
     void increasePollution(int amount);
+
+    std::string getBuildingType() override{
+        return "Industry";
+    }
 };
 
 

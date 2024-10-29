@@ -75,11 +75,11 @@ void Industry::displayResourcesStatus() const {
     std::cout << "Pollution Level: " << pollutionLevel << "\n" << std::endl;
 }
 
-double Industry::calculateTaxRevenue() const {
+/* double Industry::calculateTaxRevenue() const {
     double incomeTax = incomeResource->getTaxRevenue();
     double constructionTax = constructionResource->getTaxRevenue();
     return incomeTax + constructionTax;
-}
+} */
 
 void Industry::setPriorityResource(ResourcePriority priority) {
         priorityResource = priority;

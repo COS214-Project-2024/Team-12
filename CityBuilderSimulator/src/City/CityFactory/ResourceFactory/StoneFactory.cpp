@@ -1,8 +1,6 @@
 #include "StoneFactory.h"
-#include "IncomeResourceProduct.h"
-#include "ConstructionResourceProduct.h"
-#include "Diamonds.h"   
-#include "Stone.h"     
+#include "../../CityComponent/Resources/Diamonds.h"   
+#include "../../CityComponent/Resources/Stone.h"     
 
 // Constructor
 StoneFactory::StoneFactory() {

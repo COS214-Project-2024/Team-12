@@ -1,8 +1,6 @@
 #include "MetalFactory.h"
-#include "IncomeResourceProduct.h"
-#include "ConstructionResourceProduct.h"
-#include "Gold.h" // Assuming Gold is a derived class of IncomeResourceProduct
-#include "Steel.h" // Assuming Steel is a derived class of ConstructionResourceProduct
+#include "../../CityComponent/Resources/Gold.h" // Assuming Gold is a derived class of IncomeResourceProduct
+#include "../../CityComponent/Resources/Steel.h" // Assuming Steel is a derived class of ConstructionResourceProduct
 
 // Constructor
 MetalFactory::MetalFactory() {

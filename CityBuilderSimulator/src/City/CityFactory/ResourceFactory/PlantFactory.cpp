@@ -1,8 +1,6 @@
 #include "PlantFactory.h"
-#include "IncomeResourceProduct.h"
-#include "ConstructionResourceProduct.h"
-#include "Wood.h"
-#include "Coal.h"
+#include "../../CityComponent/Resources/Wood.h"
+#include "../../CityComponent/Resources/Coal.h"
 
 // Constructor
 PlantFactory::PlantFactory() {

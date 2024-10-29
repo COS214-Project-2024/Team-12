@@ -2,8 +2,8 @@
 #define CHEMICALFACTORY_H
 
 #include "ResourceFactory.h"        
-#include "IncomeResourceProduct.h"    
-#include "ConstructionResourceProduct.h" 
+#include "../../CityComponent/Resources/IncomeResourceProduct.h"    
+#include "../../CityComponent/Resources/ConstructionResourceProduct.h" 
 #include <iostream>
 #include <memory>
 

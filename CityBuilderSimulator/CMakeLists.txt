@@ -51,10 +51,10 @@ add_executable(MyTests
     
     src/City/CityComponent/Resources/ConstructionResourceProduct.cpp
     src/City/CityComponent/Resources/IncomeResourceProduct.cpp 
-    src/City/CityComponent/Resources/ChemicalFactory.cpp
-    src/City/CityComponent/Resources/MetalFactory.cpp
-    src/City/CityComponent/Resources/PlantFactory.cpp
-    src/City/CityComponent/Resources/StoneFactory.cpp
+    src/City/CityFactory/ResourceFactory/ChemicalFactory.cpp
+    src/City/CityFactory/ResourceFactory/MetalFactory.cpp
+    src/City/CityFactory/ResourceFactory/PlantFactory.cpp
+    src/City/CityFactory/ResourceFactory/StoneFactory.cpp
     src/City/CityComponent/Resources/Gold.cpp
     src/City/CityComponent/Resources/Diamonds.cpp
     src/City/CityComponent/Resources/Oil.cpp

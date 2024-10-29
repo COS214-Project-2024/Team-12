@@ -1,6 +1,6 @@
 #include "ChemicalFactory.h"
-#include "Oil.h"      
-#include "Concrete.h" 
+#include "../../CityComponent/Resources/Oil.h"      
+#include "../../CityComponent/Resources/Concrete.h" 
 
 
 // Constructor

@@ -1,8 +1,8 @@
 #ifndef RESOURCEFACTORY_H
 #define RESOURCEFACTORY_H
 
-#include "IncomeResourceProduct.h"     
-#include "ConstructionResourceProduct.h"
+#include "../../CityComponent/Resources/IncomeResourceProduct.h"     
+#include "../../CityComponent/Resources/ConstructionResourceProduct.h"
 #include <memory>
 
 class ResourceFactory {

@@ -1,10 +1,13 @@
 #include <gtest/gtest.h>
 #include "../src/City/CityComponent/Resources/IncomeResourceProduct.h" 
 #include "../src/City/CityComponent/Resources/ConstructionResourceProduct.h" 
-#include "../src/City/CityComponent/Resources/ChemicalFactory.h"
-#include "../src/City/CityComponent/Resources/MetalFactory.h"
-#include "../src/City/CityComponent/Resources/PlantFactory.h"
-#include "../src/City/CityComponent/Resources/StoneFactory.h"
+
+#include "../src/City/CityFactory/ResourceFactory/ResourceFactory.h"
+#include "../src/City/CityFactory/ResourceFactory/ChemicalFactory.h"
+#include "../src/City/CityFactory/ResourceFactory/MetalFactory.h"
+#include "../src/City/CityFactory/ResourceFactory/PlantFactory.h"
+#include "../src/City/CityFactory/ResourceFactory/StoneFactory.h"
+
 #include "../src/City/CityComponent/Resources/Gold.h"
 #include "../src/City/CityComponent/Resources/Diamonds.h"
 #include "../src/City/CityComponent/Resources/Oil.h"

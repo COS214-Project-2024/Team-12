@@ -9,11 +9,13 @@ int NPCManager::getHappinessLevel() const{
 }
 
 void NPCManager::setHappinessLevel(int level){
-	if(happinessLevel == 100 || happinessLevel == 0){
-		//do nothing as we do not want to increase it so far it becomes difficult to lower it
+	happinessLevel += level;
+
+	if(happinessLevel > 100){
+		happinessLevel = 100;
 	}
-	else{
-		happinessLevel += level;
+	else if(happinessLevel < 0){
+		happinessLevel = 0;
 	}
 }
 
@@ -26,19 +28,19 @@ void NPCManager::setHappinessLevel(int level){
 } */
 
 void NPCManager::incrementCount(const std::string& stateName){
-	    if (stateName == "Donation") happyCount++;
-        else if (stateName == "Productive") productiveCount++;
-        else if (stateName == "Crime") crimeCount++;
-        else if (stateName == "Revolt") revoltCount++;
-        else if (stateName == "Neutral") neutralCount++;
+	    if (stateName == "DonationState") happyCount++;
+        else if (stateName == "ProductiveState") productiveCount++;
+        else if (stateName == "CrimeState") crimeCount++;
+        else if (stateName == "RevoltState") revoltCount++;
+        else if (stateName == "NeutralState") neutralCount++;
 }
 
 void NPCManager::decrementCount(const std::string& stateName){
-	if (stateName == "Donation") happyCount--;
-    else if (stateName == "Productive") productiveCount--;
-    else if (stateName == "Crime") crimeCount--;
-    else if (stateName == "Revolt") revoltCount--;
-    else if (stateName == "Neutral") neutralCount--;
+	if (stateName == "DonationState") happyCount--;
+    else if (stateName == "ProductiveState") productiveCount--;
+    else if (stateName == "CrimeState") crimeCount--;
+    else if (stateName == "RevoltState") revoltCount--;
+    else if (stateName == "NeutralState") neutralCount--;
 }
 
 int NPCManager::getDonationCount() const{

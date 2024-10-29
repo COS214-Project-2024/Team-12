@@ -9,12 +9,15 @@
 
 class UtilityFlyweight : public CityComponent {
 public:
+    UtilityFlyweight() = default;
     UtilityFlyweight(const std::string& n, double c, int cap, double radius, bool operational, int l, int consumption, const std::map<std::string, int>& resources);
     virtual void connect(double distance) = 0;
     virtual ~UtilityFlyweight() = default;
 
     // Prototype pattern: clone method for creating copies
     virtual std::unique_ptr<UtilityFlyweight> clone() const = 0;
+
+    std::string getName() const;// Getter for name
     
     // Accessor methods
     bool getOperationalStatus() const;
@@ -34,22 +37,13 @@ public:
 
 protected:
     std::string name;
-    double cost;                                // Monetary cost to build or upgrade
-    int capacity;                               // Max buildings it can support
-    double effectRadius;                        // Area of effect
-    bool isOperational;                         // Track if the utility is working
-    int level;                                  // Utility's level; - can be upgraded with Decorator
-    int resourceConsumption;                    // Resources to keep the utility operating
+    double cost = 0.0;                               // Monetary cost to build or upgrade
+    int capacity = 0;                               // Max buildings it can support
+    double effectRadius = 0.0;                        // Area of effect
+    bool isOperational = false;                         // Track if the utility is working
+    int level = 0;                                  // Utility's level; - can be upgraded with Decorator
+    int resourceConsumption = 0;                    // Resources to keep the utility operating
     std::map<std::string, int> resourceNeeds;   // Resources required for construction
-
-    // Resources to add :
-    /*
-        - Wood
-        - Ore
-        - Oil
-    
-    
-    */
 };
 
 #endif

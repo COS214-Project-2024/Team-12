@@ -14,3 +14,7 @@ void NeutralState::handle(){
 std::string NeutralState::getStateName(){
 	return "NeutralState";
 }
+
+NPCState* NeutralState::clone() const{
+	return new NeutralState(*this);
+}

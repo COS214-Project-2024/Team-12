@@ -72,11 +72,14 @@
         "unordered_set": "cpp",
         "variant": "cpp",
         "condition_variable": "cpp",
+
+        "csignal": "cpp",
+
         "mutex": "cpp",
         "random": "cpp",
         "span": "cpp",
         "stop_token": "cpp",
-        "thread": "cpp",
-        "xstddef": "cpp"
+
+        "thread": "cpp"
     }
 }

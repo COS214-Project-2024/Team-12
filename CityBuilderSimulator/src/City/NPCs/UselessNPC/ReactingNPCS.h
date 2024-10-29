@@ -17,20 +17,13 @@ public:
 
     ~ReactingNPCS();
 
+     ReactingNPCS(const ReactingNPCS& other);  // Copy constructor for deep copy
+
     void update() override;
 
-    void changeState(NPCState *newState)
-    {
-        // Decrement the count for the current (old) state
-        NPCManager::getInstance().decrementCount(state->getStateName());
+    void changeState(NPCState *newState);
 
-        // Delete the old state and set the new state
-        delete state;
-        state = newState;
-
-        // Increment the count for the new state
-        NPCManager::getInstance().incrementCount(state->getStateName());
-    }
+    NPCObserver* clone() override;
 private:
     NPCState *state;
 };

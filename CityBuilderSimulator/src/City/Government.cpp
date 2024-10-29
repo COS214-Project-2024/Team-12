@@ -1,5 +1,7 @@
 #include "Government.h"
 
+#include <string>
+
 void Government::addMoney(double amount){
 	money += amount;
 }
@@ -14,7 +16,7 @@ void Government::increaseProduction(double factor){
 
 void Government::increaseCrimeRate(double factor){
 	crimeRate *= (1 + factor);
-	mortalityRate = crimeRate;//change it a bot so that the mortality rate is always a bit lower than the crime rate
+	mortalityRate = crimeRate * 0.9;//change it a bot so that the mortality rate is always a bit lower than the crime rate
 }
 
 double Government::getMoney() const{
@@ -47,4 +49,42 @@ int Government::getPopulation() const{
 
 void Government::updatePopulation(){
 	population += populationGrowth - mortalityRate * population;
+}
+
+void Government::calculateTax(){
+	int employedPopulation = static_cast<int>(population * EMPLOYMENT_RATE);
+	incomeTax = employedPopulation * incomeTaxRate;
+	money += incomeTax;  // Add collected tax to government money
+}
+
+void Government::setTax(double rate){
+	incomeTaxRate = rate;
+}
+
+void Government::increaseEmploymentRate(double rate){
+	EMPLOYMENT_RATE = rate/100;
+}
+
+void Government::setProductionRate(double rate){
+	productionRate = rate;
+}
+
+void Government::setBuildingAmount(std::string type, int amount){
+	if(type == "Residential"){
+		residentialAmount += amount;
+	}else if(type == "Utility"){
+		utilityAmount += amount;
+	}else if(type == "Public Service"){
+		publicServiceAmount += amount;
+	}
+}
+
+int Government::getBuildingAmount(std::string type){
+	if(type == "Residential"){
+		return residentialAmount;
+	}else if("Utility"){
+		return utilityAmount;
+	}else if("Public Service"){
+		return publicServiceAmount;
+	}
 }

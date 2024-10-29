@@ -4,6 +4,7 @@
 #include "../CityComponent.h"
 #include <string>
 #include <vector>
+#include <algorithm>
 
 class CityComposite : public CityComponent {
 private:
@@ -20,14 +21,15 @@ public:
 
     void displayStatus() override;
 
-    double getTaxRevenue() override;
-
+   
     double getBudget() const;
 
     bool deductBudget(double amount);
 
     // Add to the initial city budget
     void addBudget(double amount);
+
+    bool checkCityConditions();
 };
 
 #endif

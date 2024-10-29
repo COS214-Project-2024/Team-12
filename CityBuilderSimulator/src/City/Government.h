@@ -23,13 +23,22 @@ public:
 
     double getMoney() const;
     double getProductionRate() const;
+	void setProductionRate(double rate);
     double getMortalityRate() const;
 	double getCrimeRate() const;
 	int getPopulationGrowth() const;
 	void setPopulationGrowth(int growth);
 	int getPopulation() const;
     void updatePopulation();
-    Government() : money(10000), productionRate(1.0), mortalityRate(0.01), crimeRate(0.00), population(0), populationGrowth(0) {}  // Private constructor
+
+	void setTax(double rate);
+	void increaseEmploymentRate(double rate);
+    
+    //getters and setters for the different building types
+    void setBuildingAmount(std::string type, int amount);
+    int getBuildingAmount(std::string);
+
+    Government() : money(10000), productionRate(1.0), mortalityRate(0.01), crimeRate(0.00), population(0), populationGrowth(0), EMPLOYMENT_RATE(0) {}  // Private constructor
 
 private:
 
@@ -39,6 +48,20 @@ private:
 	double crimeRate;
 	int population;
 	int populationGrowth;
+
+    //Income tax stuff
+	double incomeTax;
+	double incomeTaxRate;
+
+    //Employment rate
+	double EMPLOYMENT_RATE;
+
+    //Counts of building types
+    int publicServiceAmount;
+    int utilityAmount;
+    int residentialAmount;
+
+	void calculateTax();
 };
 
 

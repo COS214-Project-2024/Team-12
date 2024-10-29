@@ -17,6 +17,7 @@ public:
     std::unique_ptr<UtilityFlyweight> clone() const;
     void upgrade();
     void repair();
+    double getUpgradeCost() const;
 };
 
 #endif

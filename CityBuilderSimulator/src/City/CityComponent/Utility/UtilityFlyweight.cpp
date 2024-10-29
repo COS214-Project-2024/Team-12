@@ -10,6 +10,7 @@ double UtilityFlyweight::getEffectRadius() const { return effectRadius; }
 int UtilityFlyweight::getLevel() const { return level; }
 int UtilityFlyweight::getResourceConsumption() const { return resourceConsumption; }
 std::map<std::string, int> UtilityFlyweight:: getResourceNeeds() const { return resourceNeeds;}
+std::string UtilityFlyweight::getName() const { return name; } // Getter for name
 
 void UtilityFlyweight::activate() {
     if(!isOperational) {

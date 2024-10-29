@@ -13,7 +13,7 @@ void RevoltState::handle() {
     const double MAX_REDUCTION_FACTOR = 0.5;
 
     int revoltNPCCount = NPCManager::getInstance().getRevoltCount();
-    float revoltChance = testMode ? 1.0f : std::min(BASE_REVOLT_CHANCE + (revoltNPCCount * 0.02f), 1.0f);
+    float revoltChance = std::min(BASE_REVOLT_CHANCE + (revoltNPCCount * 0.02f), 1.0f);
     double reductionFactor = std::min(BASE_REDUCTION_FACTOR * revoltNPCCount, MAX_REDUCTION_FACTOR);
 
     // Random number generator for production reduction determination
@@ -21,7 +21,7 @@ void RevoltState::handle() {
     static std::mt19937 gen(rd());
     std::uniform_real_distribution<> dis(0.0, 1.0);
 
-    if (testMode || dis(gen) < revoltChance) {
+    if (dis(gen) < revoltChance) {
         Government::getInstance().reduceProduction(reductionFactor);
         std::cout << "Production reduced by " << (reductionFactor * 100) << "% due to revolt.\n";
         std::cout << "New production rate: " << Government::getInstance().getProductionRate() << "\n";
@@ -30,7 +30,10 @@ void RevoltState::handle() {
     }
 }
 
-
 std::string RevoltState::getStateName() {
     return "RevoltState";
+}
+
+NPCState* RevoltState::clone() const{
+    return new RevoltState(*this);
 }

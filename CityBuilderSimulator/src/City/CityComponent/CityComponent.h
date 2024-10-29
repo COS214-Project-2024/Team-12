@@ -12,10 +12,9 @@ public:
 	virtual void add(CityComponent *component) {}
 	virtual void remove(CityComponent *component) {}
 	virtual void displayStatus() = 0;
-	virtual double getTaxRevenue() = 0;
 	virtual ~CityComponent() {}
-	void addNpc(NPCObserver* npcs);
-	void removeNpc(NPCObserver* npcs);
+	void addNpc();
+	void removeNpc();
 	void notify();
 
 private:

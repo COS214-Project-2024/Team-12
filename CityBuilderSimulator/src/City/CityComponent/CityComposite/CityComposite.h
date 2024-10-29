@@ -29,6 +29,8 @@ public:
 
     // Add to the initial city budget
     void addBudget(double amount);
+
+    bool checkCityConditions();
 };
 
 #endif

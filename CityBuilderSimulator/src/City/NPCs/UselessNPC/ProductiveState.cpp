@@ -43,3 +43,7 @@ void ProductiveState::handle() {
 std::string ProductiveState::getStateName(){
 	return "ProductiveState";
 }
+
+NPCState* ProductiveState::clone() const{
+    return new ProductiveState(*this);
+}

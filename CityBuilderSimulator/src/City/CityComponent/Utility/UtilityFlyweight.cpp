@@ -41,7 +41,3 @@ void UtilityFlyweight::displayStatus() {
     }
     std::cout << "\n";
 }
-
-double UtilityFlyweight::getTaxRevenue() {
-    return 0.0; // We don't collect tax from utilities
-}

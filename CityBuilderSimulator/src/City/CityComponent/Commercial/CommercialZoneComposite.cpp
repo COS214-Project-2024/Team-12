@@ -20,11 +20,3 @@ void CommercialZoneComposite::displayStatus(){
             building->displayStatus();
         }
 }
-
-/* double CommercialZoneComposite::getTaxRevenue(){
-	double totalTax = 0;
-    for (auto& building : commercialbuildings) {
-        totalTax += commercialTaxRate; // Simplified; this could depend on building specifics
-    }
-    return totalTax;
-} */

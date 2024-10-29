@@ -1,7 +1,7 @@
 #ifndef WATERSUPPLY_H
 #define WATERSUPPLY_H
 
-#include "UtilityFlyweight.h"
+#include "../src/City/CityComponent/Utility/UtilityFlyweight.h"
 
 class WaterSupply : public UtilityFlyweight {
 public:

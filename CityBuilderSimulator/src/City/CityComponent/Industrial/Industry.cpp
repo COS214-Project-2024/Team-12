@@ -24,6 +24,15 @@ bool Industry::gatherResourceManually(int amount, ResourcePriority resourceType)
     }
 }
 
+void Industry::hireWorkerNPC(const std::string& npcType) {
+    workerNPC = NPCContext::hireNPC(npcType);
+    if(workerNPC) {
+        std::cout << workerNPC->getName() << " hired for $" << workerNPC->getCost() << "\n"; 
+    } else {
+        std::cout << "Invalid NPC type selected.\n";
+    }
+}
+
 // Process Income Resource Independently
 void Industry::processIncomeResource(int amount) {
     if (currentStorage == 0) {  // Check if storage is empty first
@@ -90,18 +99,25 @@ void Industry::processPrioritizedResource(int amount) {
 // Delegate to workerNPC
 void Industry::startAutoGathering() {
     autoGatheringActive = true;
-    std::cout << industryName << " has started automatic resource gathering." << std::endl;
 }
 
 void Industry::stopAutoGathering() {
     autoGatheringActive = false;
-    std::cout << industryName << " has stopped automatic resource gathering." << std::endl;
 }
 
-void Industry::autoGatherResource(int incomeAmount, int constructionAmount) {
-    if (autoGatheringActive) {
-        gatherResourceManually(incomeAmount, ResourcePriority::Income);
-        gatherResourceManually(constructionAmount, ResourcePriority::Construction);
+void Industry::autoGatherResource(int baseIncomeAmount, int baseConstructionAmount) {
+    if (autoGatheringActive && workerNPC) {
+        int incomeAmount = workerNPC->collect(baseIncomeAmount);
+        int constructionAmount = workerNPC->collect(baseConstructionAmount);
+
+        if (checkStorage(incomeAmount) && checkStorage(constructionAmount)) {
+            processIncomeResource(incomeAmount);
+            processConstructionResource(constructionAmount);
+        } else {
+            std::cout << "Not enough storage to gather resources.\n";
+        }
+    } else if (!workerNPC) {
+        std::cout << "No Worker NPC assigned for auto-gathering.\n";
     }
 }
 

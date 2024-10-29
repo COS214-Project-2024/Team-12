@@ -32,9 +32,7 @@ void LandMark::displayStatus() {
         }
 }
 
-double LandMark::getTaxRevenue() {
-        return 0.0;
-}
+
 
 void LandMark::connectWater(std::shared_ptr<UtilityFlyweight> water) { waterSupply = std::move(water); }
 void LandMark::connectPower(std::shared_ptr<UtilityFlyweight> power) { powerSupply = std::move(power); }

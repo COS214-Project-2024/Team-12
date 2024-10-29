@@ -26,7 +26,6 @@ public:
             std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     virtual ~LandMark() = default;
 	virtual void displayStatus();
-    double LandMark::getTaxRevenue();
     void connectWater(std::shared_ptr<UtilityFlyweight> water);
     void connectPower(std::shared_ptr<UtilityFlyweight> power);
     void connectWasteManagement(std::shared_ptr<UtilityFlyweight> waste);

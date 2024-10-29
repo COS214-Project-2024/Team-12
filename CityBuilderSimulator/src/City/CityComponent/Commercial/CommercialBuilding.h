@@ -17,8 +17,8 @@ class CommercialBuilding{
 
 
     public:
-    void accept(taxCollector& TC);
-    void payTax();
+   virtual void accept(taxCollector& TC)=0;
+    virtual void payTax()=0;
 };
 
 

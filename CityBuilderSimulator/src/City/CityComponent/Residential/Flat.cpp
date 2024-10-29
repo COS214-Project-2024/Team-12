@@ -23,6 +23,11 @@ void Flat::accept(taxCollector* TC){
 
 
 void Flat::payTax(){
-        
+        bank->addMoney(price*rate);
+    taxPayed=true;
 
+}
+
+void Flat::setFlatRate(double taxRate){
+        rate= taxRate;
 }

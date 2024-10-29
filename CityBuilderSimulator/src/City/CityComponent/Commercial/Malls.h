@@ -3,6 +3,7 @@
 
 #include <string>
 #include "taxCollector.h"
+#include "Government.h"
 using namespace std;
 
 class Malls: public CommercialBuilding{
@@ -13,9 +14,12 @@ class Malls: public CommercialBuilding{
     int Capacity;
     double size;
     bool taxPayed;
+    double MallsRate;
+    Government* bank;
    
 
     public:
+    void setMallRate(double rate);
     void accept(taxCollector& TC);
     void payTax();
 };

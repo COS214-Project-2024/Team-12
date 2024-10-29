@@ -19,7 +19,6 @@ public:
 
     void displayStatus() override;
 
-    double getTaxRevenue() override;
     
 };
 

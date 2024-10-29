@@ -16,3 +16,21 @@ void Townhouse::displayStatus(){
 std::unique_ptr<ResidentialBuilding> Townhouse::clone() const {
     return std::make_unique<Townhouse>(*this);
 }
+
+void Townhouse::setTownhouseRate(double taxRate){
+     rate= taxRate;
+
+ }
+
+ void Townhouse::accept(taxCollector* TC){
+    TC->visit(this);
+
+}
+
+
+
+void Townhouse::payTax(){
+    bank->addMoney(price*rate);
+    taxPayed=true;
+    
+}

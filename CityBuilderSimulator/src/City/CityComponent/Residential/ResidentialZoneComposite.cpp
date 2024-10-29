@@ -26,7 +26,7 @@ void ResidentialZoneComposite::payTax(){
     std::vector<CityComponent*>::iterator it;
     for (it = buildings.begin(); it != buildings.end(); ++it) {
         CityComponent* component = *it;
-        component->
+        component->accept(sars);
     }
 
 }

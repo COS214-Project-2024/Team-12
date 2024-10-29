@@ -10,6 +10,7 @@ class Flat : public ResidentialBuilding {
 private:
 CityComposite* city;
 bool taxPayed;
+double rate;
 Government* bank;
 
 public:
@@ -18,6 +19,7 @@ public:
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     void displayStatus();
     std::unique_ptr<ResidentialBuilding> clone() const;
+    void setFlatRate(double rate);
     void accept(taxCollector* TC);
     void payTax();
      

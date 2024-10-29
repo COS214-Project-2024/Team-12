@@ -3,14 +3,14 @@
 ResidentialBuilding::ResidentialBuilding(int bedrooms, double price,
                         std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
                         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
-        : bedrooms(bedrooms), price(price), taxPaid(false),
+        : bedrooms(bedrooms), price(price), taxPayed(false),
         waterSupply(std::move(water)), powerSupply(std::move(power)), wasteManagement(std::move(waste)), sewageManagement(std::move(sewage)) {}
 
 void ResidentialBuilding::displayStatus() {
         std::cout << "Residential Building Status:\n"
                 << "Bedrooms: " << bedrooms << "\n"
                 << "Price: $" << price << "\n"
-                << "Tax Paid: " << (taxPaid ? "Yes" : "No") << "\n";
+                << "Tax Paid: " << (taxPayed ? "Yes" : "No") << "\n";
 
         // Display status of each connected utility
         if (waterSupply) {
@@ -31,11 +31,7 @@ void ResidentialBuilding::displayStatus() {
         }
 }
 
-double ResidentialBuilding::getTaxRevenue() {
-        double conditionMultiplier = 1.5;
-        double baseRevenue = price * 0.02; // 2% of price as base tax revenue
-        return baseRevenue * conditionMultiplier;
-}
+
 
 void ResidentialBuilding::connectWater(std::shared_ptr<UtilityFlyweight> water) { waterSupply = std::move(water); }
 void ResidentialBuilding::connectPower(std::shared_ptr<UtilityFlyweight> power) { powerSupply = std::move(power); }
@@ -56,3 +52,4 @@ void ResidentialBuilding::applyUtilityConsumption() {
                 std::cout << "Sewage management resources consumed: " << sewageManagement->getResourceConsumption() << "\n";
         }
 }
+

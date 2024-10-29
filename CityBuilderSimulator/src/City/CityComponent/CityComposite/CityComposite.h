@@ -30,6 +30,7 @@ public:
     void addBudget(double amount);
 
     bool checkCityConditions();
+    
 };
 
 #endif

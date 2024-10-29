@@ -4,11 +4,14 @@
 #include "ResidentialBuilding.h"
 #include "taxCollector.h"
 #include "CityComposite.h"
+#include "Government.h"
 
 class Flat : public ResidentialBuilding {
 private:
 CityComposite* city;
 bool taxPayed;
+Government* bank;
+
 public:
     Flat();
     Flat(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,

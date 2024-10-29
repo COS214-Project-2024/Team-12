@@ -21,10 +21,17 @@ void ResidentialZoneComposite::displayStatus(){
         }
 }
 
-double ResidentialZoneComposite::getTaxRevenue(){
-	double totalTax = 0;
-    for (auto& building : buildings) {
-        totalTax += residentialTaxRate; // Simplified; this could depend on building specifics
+
+void ResidentialZoneComposite::payTax(){
+    std::vector<CityComponent*>::iterator it;
+    for (it = buildings.begin(); it != buildings.end(); ++it) {
+        CityComponent* component = *it;
+        component->
     }
-    return totalTax;
+
 }
+
+void ResidentialZoneComposite::accept(taxCollector* TC){
+    TC->visit(this);
+}
+  

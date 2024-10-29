@@ -4,13 +4,15 @@
 #include "ResidentialBuilding.h"
 #include "taxCollector.h"
 #include "CityComposite.h"
+#include "Government.h"
 
 
 class House : public ResidentialBuilding {
 private:
-CityComposite* city;
-
+double rate;
 bool taxPayed;
+Government* bank;
+//double price;
 public:
     House();
     House(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,

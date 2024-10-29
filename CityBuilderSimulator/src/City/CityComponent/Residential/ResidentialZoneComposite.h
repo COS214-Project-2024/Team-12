@@ -4,12 +4,16 @@
 #include "../CityComponent.h"
 #include <vector>
 #include <algorithm>
+#include "CityComposite.h"
+#include "taxCollector.h"
 
 
 class ResidentialZoneComposite : public CityComponent {
 private:
     std::vector<CityComponent*> buildings;
     double residentialTaxRate;
+   
+bool taxPayed;
 
 public:
     ResidentialZoneComposite(double taxRate);
@@ -19,8 +23,10 @@ public:
     void remove(CityComponent* building) override;
 
     void displayStatus() override;
+    void accept(taxCollector* TC);
+   void payTax();
 
-    double getTaxRevenue() override;
+    
     
 };
 

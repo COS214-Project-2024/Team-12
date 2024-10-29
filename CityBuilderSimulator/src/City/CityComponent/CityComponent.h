@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "taxCollector.h"
 
 class CityComponent{
 public:
@@ -16,6 +17,8 @@ public:
 	void addNpc();
 	void removeNpc();
 	void notify();
+	virtual void accept(taxCollector* TC)=0;
+
 
 private:
     std::vector<NPCObserver*> observers;  // List of observers (e.g., NPCObserver)

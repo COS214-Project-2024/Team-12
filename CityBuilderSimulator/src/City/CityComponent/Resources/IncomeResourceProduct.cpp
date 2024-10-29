@@ -46,3 +46,22 @@ double IncomeResourceProduct::getTaxRevenue()
 {
       return quantity * marketValue * 0.1;
 }
+
+
+bool IncomeResourceProduct::isReadyForCollection() 
+{
+    if(quantity >= 150)
+    {
+         readyForCollection = true;
+    }
+    else{
+        readyForCollection = false;
+    }
+    return readyForCollection;
+}
+
+// Method to add a specified quantity to the resource
+void IncomeResourceProduct::replenish(int amount) {
+    quantity += amount;
+    std::cout << "Replenished " << amount << " units of " << name << ". Total: " << quantity << std::endl;
+}

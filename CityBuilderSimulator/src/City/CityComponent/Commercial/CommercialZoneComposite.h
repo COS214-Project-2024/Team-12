@@ -18,6 +18,13 @@ public:
     void remove(CityComponent* building) override;
 
     void displayStatus() override;
+
+    std::string getBuildingType() override{
+        return "Commercialzone";
+    }
+
+    
+    
 };
 
 #endif

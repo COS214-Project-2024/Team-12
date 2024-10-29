@@ -46,10 +46,10 @@ void ConstructionResourceProduct::replenish(int amount) {
 }
 
 
-double ConstructionResourceProduct::getTaxRevenue()
+/* double ConstructionResourceProduct::getTaxRevenue()
 {
      return quantity * 0.2;
-}
+} */
 
 
 bool ConstructionResourceProduct::isReadyForCollection() 

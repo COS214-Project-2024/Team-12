@@ -1,18 +1,17 @@
-#ifndef RESIDENTIAL_ZONE_COMPOSITE_H
-#define RESIDENTIAL_ZONE_COMPOSITE_H
+#ifndef INSUSTRIAL_ZONE_COMPOSITE_H
+#define INSUSTRIAL_ZONE_COMPOSITE_H
 
 #include "../CityComponent.h"
 #include <vector>
-#include <algorithm>
 
 
-class ResidentialZoneComposite : public CityComponent {
+class IndustrialZoneComposite : public CityComponent {
 private:
-    std::vector<CityComponent*> buildings;
-    double residentialTaxRate;
+    std::vector<CityComponent*> industrialbuildings;
+    double industrialTaxRate;
 
 public:
-    ResidentialZoneComposite(double taxRate);
+    IndustrialZoneComposite(double taxRate);
 
     void add(CityComponent* building) override;
 
@@ -23,7 +22,7 @@ public:
     //double getTaxRevenue() override;
 
     std::string getBuildingType() override{
-        return "Residential type";
+        return "Industrial zone";
     }
     
 };

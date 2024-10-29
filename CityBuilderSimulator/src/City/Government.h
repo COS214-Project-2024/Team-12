@@ -16,8 +16,12 @@ public:
     Government(const Government&) = delete;
     Government& operator=(const Government&) = delete;
 
+    //Display government states
+    void displayGovernmentStats();
+
     // Government functionality
     void addMoney(double amount);
+    void reduceMoney(double amount);
     void reduceProduction(double factor);
     void increaseProduction(double factor);
     void increaseCrimeRate(double factor);
@@ -38,6 +42,8 @@ public:
     //getters and setters for the different building types
     void setBuildingAmount(std::string type, int amount);
     int getBuildingAmount(std::string);
+
+    void decreasePopulation(int amount);
 
     Government() : money(10000), productionRate(1.0), mortalityRate(0.01), crimeRate(0.00), population(0), populationGrowth(0), EMPLOYMENT_RATE(0) {}  // Private constructor
 

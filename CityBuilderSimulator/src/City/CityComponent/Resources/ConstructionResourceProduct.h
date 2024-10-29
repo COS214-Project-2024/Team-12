@@ -14,6 +14,7 @@ private:
 	int quantity;
 	int unitCost;
 	string name;
+	bool readyForCollection;
 	
 
 public:
@@ -32,6 +33,7 @@ public:
 
 	int getUnitCost() const;
 	double getTaxRevenue() override;
+	bool isReadyForCollection(); 
 };
 
 #endif

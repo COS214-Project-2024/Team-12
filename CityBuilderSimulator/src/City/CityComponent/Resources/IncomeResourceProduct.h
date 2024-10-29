@@ -11,6 +11,7 @@ private:
 	string name;
 	int quantity;
 	double marketValue;
+	bool readyForCollection;//Boolean variable to noify that resources are ready to be collected for proccessing
 
 public:
    IncomeResourceProduct(string name, int quantity, double marketValue);
@@ -27,6 +28,11 @@ public:
 	 int getQuantity() const;
 
 	double getTaxRevenue() override;
+
+	bool isReadyForCollection();  
+
+	void replenish(int amount);
+
 };
 
 #endif

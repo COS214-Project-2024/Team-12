@@ -50,3 +50,16 @@ double ConstructionResourceProduct::getTaxRevenue()
 {
      return quantity * 0.2;
 }
+
+
+bool ConstructionResourceProduct::isReadyForCollection() 
+{
+    if(quantity >= 150)
+    {
+         readyForCollection = true;
+    }
+    else{
+        readyForCollection = false;
+    }
+    return readyForCollection;
+}

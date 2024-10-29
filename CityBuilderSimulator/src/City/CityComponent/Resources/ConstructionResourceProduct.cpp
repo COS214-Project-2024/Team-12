@@ -5,11 +5,11 @@ ConstructionResourceProduct::ConstructionResourceProduct(std::string name, int q
     : name(name), quantity(quantity), unitCost(unitCost) {}
 
 // Default constructor
-~ConstructionResourceProduct::ConstructionResourceProduct()
+ConstructionResourceProduct::~ConstructionResourceProduct()
 {}
 
 // Method to consume a specified amount of the resource
-void ConstructionResourceProduct::consumeResource(int amount) {
+void ConstructionResourceProduct::ConsumeResource(int amount) {
     if (amount <= quantity) {
         quantity -= amount;
         std::cout << "Consumed " << amount << " units of " << name << ". Remaining: " << quantity << std::endl;
@@ -19,7 +19,7 @@ void ConstructionResourceProduct::consumeResource(int amount) {
 }
 
 // Method to display the current status of the resource
-void ConstructionResourceProduct::displayStatus() const {
+void ConstructionResourceProduct::displayStatus() {
     std::cout << "Resource: " << name << "\nQuantity: " << quantity 
               << "\nUnit Cost: $" << unitCost 
               << "\nTotal Value: $" << getTotalCost() << "\n" << std::endl;
@@ -27,6 +27,10 @@ void ConstructionResourceProduct::displayStatus() const {
 
 // Method to calculate and return the total cost of the available resource
 int ConstructionResourceProduct::getTotalCost() const {
+    return quantity * unitCost;
+}
+
+int ConstructionResourceProduct::getUnitCost() const {
     return quantity * unitCost;
 }
 

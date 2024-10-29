@@ -1,16 +1,18 @@
 #ifndef COAL_H
 #define COAL_H
 
-class Coal : IncomeResourceProduct1 {
+#include <iostream>
+#include "IncomeResourceProduct.h"
+
+class Coal : public IncomeResourceProduct {
 
 
-private:
-	Coal(int quantity, int marketValue);
+public:
+	Coal(int quantity, double marketValue);
 
 	~Coal();
 
-public:
-	void displayStatus();
+	void displayStatus() override;
 };
 
 #endif

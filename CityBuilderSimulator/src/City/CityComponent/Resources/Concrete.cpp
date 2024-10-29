@@ -3,7 +3,7 @@
 // Constructor
 Concrete::Concrete(int quantity, int unitCost)
     : ConstructionResourceProduct("Concrete", quantity, unitCost) {
-    // Additional initialization can go here if needed
+ 
 }
 
 // Destructor

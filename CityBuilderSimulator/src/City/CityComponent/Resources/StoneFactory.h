@@ -5,14 +5,16 @@
 #include "IncomeResourceProduct.h"
 #include "ConstructionResourceProduct.h"
 #include <iostream>
+#include <memory>
 
 class StoneFactory : public ResourceFactory {
 public:
     StoneFactory();
     ~StoneFactory();
 
-    IncomeResourceProduct* createIncomeR(int quantity) override;
-  ConstructionResourceProduct* createConstructionR(int quantity) override;
+
+    std::unique_ptr<IncomeResourceProduct> createIncomeR(int quantity) override;
+    std::unique_ptr<ConstructionResourceProduct> createConstructionR(int quantity) override;
 };
 
 #endif

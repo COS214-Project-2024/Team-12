@@ -3,7 +3,7 @@
 // Constructor
 Coal::Coal(int quantity, double marketValue)
     : IncomeResourceProduct("Coal", quantity, marketValue) {
-    // You can add additional initialization here if needed
+   
 }
 
 // Destructor

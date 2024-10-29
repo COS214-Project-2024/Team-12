@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iostream>
-#include "CityComponent.h"
+#include "../CityComponent.h"
 
 using namespace std;
 
@@ -17,18 +17,20 @@ private:
 	
 
 public:
-void IncomeResourceProduct(string name, int quantity, int unitCost);
+     ConstructionResourceProduct(string name, int quantity, int unitCost);
 
-	 ~IncomeResourceProduct();
-	void ConsumeResource();
+	 ~ConstructionResourceProduct();
+	void ConsumeResource(int amount);
 
-	int displayStatus();
+	void displayStatus() ;
 
-	int getTotalCost();
+	int getTotalCost() const;
 
-	int getQuantity();
+	int getQuantity() const;
 
-	void replenish();
+	void replenish(int amount);
+
+	int getUnitCost() const;
 };
 
 #endif

@@ -7,13 +7,11 @@
 
 class Oil : public IncomeResourceProduct {  // Public inheritance
 public:
-    // Constructor
+
     Oil(int quantity, double marketValue);
 
-    // Destructor
-    ~Oil();
 
-    // Method to display the status of the resource
+    ~Oil();
     void displayStatus() override;
 };
 

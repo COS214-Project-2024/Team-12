@@ -1,7 +1,7 @@
 #include "Steel.h"
 
 // Constructor
-Steel::Steel(int quantity, int unitCost, double tensileStrength)
+Steel::Steel(int quantity, int unitCost)
     : ConstructionResourceProduct("Steel", quantity, unitCost){
     // Additional initialization can go here if needed
 }
@@ -16,6 +16,5 @@ void Steel::displayStatus() {
     std::cout << "Resource: Steel\n"
               << "Quantity: " << getQuantity() << "\n"
               << "Unit Cost: $" << getUnitCost() << "\n"
-              << "Tensile Strength: " << tensileStrength << " MPa\n"
               << "Total Cost: $" << getTotalCost() << "\n" << std::endl;
 }

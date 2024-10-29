@@ -3,7 +3,7 @@
 // Constructor
 Stone::Stone(int quantity, int unitCost)
     : ConstructionResourceProduct("Stone", quantity, unitCost) {
-    // Additional initialization can go here if needed
+ 
 }
 
 // Destructor

@@ -3,7 +3,7 @@
 // Constructor
 Wood::Wood(int quantity, int unitCost)
     : ConstructionResourceProduct("Wood", quantity, unitCost) {
-    // Additional initialization can go here if needed
+
 }
 
 // Destructor

@@ -1,29 +1,26 @@
 #include "PlantFactory.h"
-
-#include <iostream>
+#include "IncomeResourceProduct.h"
+#include "ConstructionResourceProduct.h"
+#include "Wood.h"
+#include "Coal.h"
 
 // Constructor
 PlantFactory::PlantFactory() {
     std::cout << "Plant Factory created." << std::endl;
 }
 
-// Destructor
 PlantFactory::~PlantFactory() {
-    std::cout << "Plant Factory destroyed." << std::endl;
+    std::cout << "Plant Factory deleted." << std::endl;
 }
 
-// Method to create an income-generating resource (e.g., Timber)
-IncomeResourceProduct* PlantFactory::createIncomeR(int quantity) {
-    std::cout << "Creating income-generating resource (Timber) with quantity: " << quantity << std::endl;
-	ConstructionResourceProduct* inc = Coal(quantity);
-	return inc;
-   // return new IncomeResourceProduct("Timber", quantity, 20);  // Example unit cost for Timber
+// Method to create an income-generating resource
+std::unique_ptr<IncomeResourceProduct> PlantFactory::createIncomeR(int quantity) {
+    std::cout << "Creating income-generating resource with quantity: " << quantity << std::endl;
+    return std::make_unique<Coal>(quantity, 12); 
 }
 
-// Method to create a construction resource (e.g., Wood)
-ConstructionResourceProduct* PlantFactory::createConstructionR(int quantity) {
-    std::cout << "Creating construction resource (Wood) with quantity: " << quantity << std::endl;
-	ConstructionResourceProduct* inc = Wood(quantity);
-	return inc;
-   // return new ConstructionResourceProduct("Wood", quantity, 5);  // Example unit cost for Wood
+// Method to create a construction resource
+std::unique_ptr<ConstructionResourceProduct> PlantFactory::createConstructionR(int quantity) {
+    std::cout << "Creating construction resource with quantity: " << quantity << std::endl;
+    return std::make_unique<Wood>(quantity, 8); 
 }

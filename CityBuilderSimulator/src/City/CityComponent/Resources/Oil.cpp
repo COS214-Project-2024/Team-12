@@ -3,7 +3,7 @@
 // Constructor
 Oil::Oil(int quantity, double marketValue)
     : IncomeResourceProduct("Oil", quantity, marketValue) {
-    // Additional initialization can go here if needed
+ 
 }
 
 // Destructor

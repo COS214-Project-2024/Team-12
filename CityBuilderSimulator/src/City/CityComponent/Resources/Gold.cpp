@@ -3,7 +3,7 @@
 // Constructor
 Gold::Gold(int quantity, double marketValue)
     : IncomeResourceProduct("Gold", quantity, marketValue) {
-    // Additional initialization can go here if needed
+   
 }
 
 // Destructor

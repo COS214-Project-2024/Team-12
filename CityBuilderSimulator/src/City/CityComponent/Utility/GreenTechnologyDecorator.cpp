@@ -4,10 +4,15 @@ GreenTechnologyDecorator::GreenTechnologyDecorator(std::unique_ptr<UtilityFlywei
     : UtilityDecorator(std::move(utility), player) {}
 
 void GreenTechnologyDecorator::upgrade() {
+    if (player->getBudget() < upgradeCost) {
+        std::cout << "Insufficient funds for upgrade.\n";
+        return;
+    }
+
     UtilityDecorator::upgrade();
-    if (level >= 4) {
+    if (getLevel() >= 4) {
         resourceConsumption -= 5;
-        std::cout << name << " now uses green technology! Reduced resource consumption: "
+        std::cout << getName() << " now uses green technology! Reduced resource consumption: "
         << resourceConsumption << "\n";
     }
 }

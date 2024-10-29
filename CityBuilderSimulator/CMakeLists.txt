@@ -20,6 +20,7 @@ add_executable(MyTests
     tests/UtilityFactoryTests.cpp
     tests/UtilityFlyweightTests.cpp
     tests/UtilityDecoratorTests.cpp
+    tests/GreenTechnologyDecoratorTests.cpp
     src/City/NPCs/UselessNPC/ReactingNPCS.cpp
 	src/City/NPCs/NPCManager.cpp
     src/City/NPCs/UselessNPC/DonationState.cpp

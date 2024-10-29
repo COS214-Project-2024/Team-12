@@ -33,7 +33,6 @@ public:
     void deactivate(); // If NPCs did not pay taxes ;)
 
     void displayStatus();
-	double getTaxRevenue();
 
 protected:
     std::string name;

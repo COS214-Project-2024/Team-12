@@ -2,6 +2,7 @@
 #define GOVERNMENT_H
 
 #include <vector>
+#include <string>
 
 
 class Government {

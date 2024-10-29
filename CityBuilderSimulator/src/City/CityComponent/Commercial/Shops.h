@@ -2,7 +2,7 @@
 #define SHOPs_H
 
 #include <string>
-#include "taxCollector.h"
+#include "../src/City/taxCollector.h"
 using namespace std;
 
 

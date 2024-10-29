@@ -27,8 +27,6 @@ public:
 	void displayStatus() const;
 	 int getQuantity() const;
 
-	double getTaxRevenue() override;
-
 	bool isReadyForCollection();  
 
 	void replenish(int amount);

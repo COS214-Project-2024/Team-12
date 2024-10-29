@@ -2,9 +2,9 @@
 #define TAXCOLLECTOR_H
 
 
-#include "ResidentialBuilding.h"
-#include "CommercialBuilding.h"
-#include "Government.h"
+#include "../src/City/CityComponent/Residential/ResidentialBuilding.h"
+#include "../src/City/CityComponent/Commercial/CommercialBuilding.h"
+#include "../src/City/Government.h"
 
 
 class taxCollector{

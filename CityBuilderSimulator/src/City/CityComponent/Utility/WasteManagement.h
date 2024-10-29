@@ -1,7 +1,7 @@
 #ifndef WASTEMANAGEMENT_H
 #define WASTEMANAGEMENT_H
 
-#include "UtilityFlyweight.h"
+#include "../src/City/CityComponent/Utility/UtilityFlyweight.h"
 
 class WasteManagement : public UtilityFlyweight {
 public:

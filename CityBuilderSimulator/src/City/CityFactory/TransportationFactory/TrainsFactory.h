@@ -1,8 +1,8 @@
 #ifndef TRAINSFACTORY_H
 #define TRAINSFACTORY_H
 
-#include "TransportationFactory.h"
-#include "CityComponent/Transport/Transport.h"
+#include "../City/CityFactory/TransportationFactory/TransportationFactory.h"
+#include "../CityComponent/Transport/Transport.h"
 
 class TrainsFactory : public TransportationFactory {
 public:

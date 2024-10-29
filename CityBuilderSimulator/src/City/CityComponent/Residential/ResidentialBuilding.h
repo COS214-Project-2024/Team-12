@@ -1,14 +1,14 @@
 #ifndef RESIDENTIALBUILDING_H
 #define RESIDENTIALBUILDING_H
 
-#include "../CityComponent.h"
-#include "../Utility/UtilityFlyweight.h"
+#include "../src/City/CityComponent/CityComponent.h"
+#include "../src/City/CityComponent/Utility/UtilityFlyweight.h"
 #include <iostream>
 #include <string>
 #include <memory>
-#include "WaterSupply.h"
-#include "CityComposite.h"
-#include "taxCollector.h"
+#include "../src/City/CityComponent/Utility/WaterSupply.h"
+#include "../src/City/CityComponent/CityComposite/CityComposite.h"
+#include "../src/City/taxCollector.h"
 
 
 class ResidentialBuilding : public CityComponent {

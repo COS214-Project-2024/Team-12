@@ -19,7 +19,6 @@ public:
     std::unique_ptr<ResidentialBuilding> clone() const;
     void accept(taxCollector* TC);
     void payTax();
-     
 };
 
 #endif

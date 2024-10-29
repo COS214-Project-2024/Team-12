@@ -19,9 +19,6 @@ public:
     void remove(CityComponent* building) override;
 
     void displayStatus() override;
-
-    double getTaxRevenue() override;
-    
 };
 
 #endif

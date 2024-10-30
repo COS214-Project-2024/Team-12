@@ -1,0 +1,1 @@
+#include "CollectionStrategy.h"

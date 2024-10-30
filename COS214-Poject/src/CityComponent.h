@@ -4,13 +4,15 @@
 class NPCObserver;
 class taxCollector;
 
+#include "Location.h"
+
 #include <iostream>
 #include <vector>
 #include <string>
 
 class CityComponent{
 public:
-	virtual void add(CityComponent *component) {}
+	virtual void add(CityComponent *component, int x, int y) {}
 	virtual void remove(CityComponent *component) {}
 	virtual void displayStatus() = 0;
 	virtual ~CityComponent();
@@ -21,7 +23,12 @@ public:
 	virtual std::string getBuildingType() = 0;
 	virtual void accept(taxCollector* TC)=0;
 
+	//setting the location
+	void setLocation(int x, int y);
+	Location getLocation() const;
+
 private:
     std::vector<NPCObserver*> observers;  // List of observers (e.g., NPCObserver)
+	Location location;
 };
 #endif

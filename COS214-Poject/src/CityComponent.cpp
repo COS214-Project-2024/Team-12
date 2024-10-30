@@ -61,3 +61,11 @@ CityComponent::~CityComponent()
         delete observer;
     }
 }
+
+void CityComponent::setLocation(int x,int y){
+	location = Location(x, y);
+}
+
+Location CityComponent::getLocation() const{
+	return location;
+}

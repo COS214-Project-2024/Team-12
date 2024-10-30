@@ -82,3 +82,4 @@ bool CityComposite::checkCityConditions(){
         return true;
     }
 }
+

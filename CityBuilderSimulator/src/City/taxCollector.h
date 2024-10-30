@@ -2,9 +2,11 @@
 #define TAXCOLLECTOR_H
 
 
+
 #include "CityComponent/Residential/ResidentialBuilding.h"
 #include "CityComponent/Residential/ResidentialZoneComposite.h"
 #include "CityComponent/Commercial/CommercialBuilding.h"
+
 #include "Government.h"
 
 

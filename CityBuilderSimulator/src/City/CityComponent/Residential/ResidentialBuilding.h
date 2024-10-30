@@ -6,9 +6,11 @@
 #include <iostream>
 #include <string>
 #include <memory>
+
 #include "../Utility/WaterSupply.h"
 #include "../CityComposite/CityComposite.h"
 #include "../../taxCollector.h"
+
 
 
 class ResidentialBuilding : public CityComponent {
@@ -16,8 +18,9 @@ protected:
     int bedrooms;
     double price;
     bool taxPayed;
-    CityComposite* city;
-
+    Government* bank;
+    double ResidentialTaxRate;
+    
 
     // Utility connections
     std::shared_ptr<UtilityFlyweight> waterSupply;

@@ -34,6 +34,7 @@ public:
 
     bool checkCityConditions();
 
+
     std::string getBuildingType() override{
         return "City";
     }
@@ -41,6 +42,7 @@ public:
     void accept(taxCollector* tax) override{
         //can't collect tax from the city
     }
+
 };
 
 #endif

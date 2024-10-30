@@ -16,3 +16,22 @@ void Estate::displayStatus(){
 std::unique_ptr<ResidentialBuilding> Estate::clone() const {
     return std::make_unique<Estate>(*this);
 }
+
+
+void Estate::setEstateRate(double taxRate){
+     rate= taxRate;
+
+ }
+
+ void Estate::accept(taxCollector* TC){
+    TC->visit(this);
+
+}
+
+
+
+void Estate::payTax(){
+    bank->addMoney(price*rate);
+    taxPayed=true;
+    
+}

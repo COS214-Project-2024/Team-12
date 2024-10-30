@@ -17,13 +17,20 @@ std::unique_ptr<ResidentialBuilding> House::clone() const{
     return std::make_unique<House>(*this);
 }
 
+ void House::setHouseTax(double taxRate){
+     rate= taxRate;
+
+ }
+
  void House::accept(taxCollector* TC){
     TC->visit(this);
 
 }
 
 
-void House::payTax(){
-   
 
+void House::payTax(){
+    bank->addMoney(price*rate);
+    taxPayed=true;
+    
 }

@@ -18,11 +18,15 @@ class CommercialBuilding : public CityComponent{
 
 
     public:
-    void accept(taxCollector& TC);
-    void payTax();
+
+   virtual void accept(taxCollector& TC)=0;
+    virtual void payTax()=0;
+
+   
     std::string getBuildingType() override{
         return "Commercial Building";
     }
+
 };
 
 

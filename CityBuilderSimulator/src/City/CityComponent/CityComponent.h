@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "taxCollector.h"
 
 class CityComponent{
 public:
@@ -17,6 +18,7 @@ public:
 	void addNpc();
 	void removeNpc();
 	void notify();
+
 	virtual std::string getBuildingType() = 0;
 	virtual void accept(taxCollector* TC)=0;
 

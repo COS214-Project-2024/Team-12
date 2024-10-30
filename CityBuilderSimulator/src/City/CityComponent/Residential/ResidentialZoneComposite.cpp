@@ -34,3 +34,4 @@ void ResidentialZoneComposite::payTax(){
 void ResidentialZoneComposite::accept(taxCollector* TC){
     TC->visit(this);
 }
+

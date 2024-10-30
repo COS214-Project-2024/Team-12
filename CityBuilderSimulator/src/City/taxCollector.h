@@ -7,6 +7,7 @@
 #include "CityComponent/Commercial/CommercialBuilding.h"
 #include "Government.h"
 
+class CommercialBuilding;
 
 class taxCollector{
     public:

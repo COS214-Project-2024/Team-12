@@ -3,7 +3,7 @@
 
 #include "ResidentialBuilding.h"
 #include "../../taxCollector.h"
-#include "../CityComposite/CityComposite.h""
+#include "../CityComposite/CityComposite.h"
 
 
 class House : public ResidentialBuilding {

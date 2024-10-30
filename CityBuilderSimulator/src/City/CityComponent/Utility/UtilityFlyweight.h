@@ -2,6 +2,7 @@
 #define UTILITY_FLYWEIGHT_H
 
 #include "../CityComponent.h"
+#include "../../taxCollector.h"
 #include <iostream>
 #include <string>
 #include <map>
@@ -36,6 +37,10 @@ public:
 
     std::string getBuildingType() override{
         return "Utility";
+    }
+
+    void accept(taxCollector* tax) override{
+        //return nothing
     }
 
 protected:

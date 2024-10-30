@@ -8,7 +8,7 @@
 #include "../CityComponent.h"
 #include "../Resources/IncomeResourceProduct.h"
 #include "../Resources/ConstructionResourceProduct.h"
-#include "../NPCs/WorkerNPC/NPCContext.h"
+#include "../../NPCs/WorkerNPC/NPCContext.h"
 
 // Enum to handle resource prioritization
 enum class ResourcePriority { Income, Construction };

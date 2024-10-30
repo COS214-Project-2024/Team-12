@@ -2,8 +2,8 @@
 #define FLAT_H
 
 #include "ResidentialBuilding.h"
-#include "taxCollector.h"
-#include "CityComposite.h"
+#include "../../taxCollector.h"
+#include "../CityComposite/CityComposite.h"
 
 class Flat : public ResidentialBuilding {
 private:

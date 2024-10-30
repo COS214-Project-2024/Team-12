@@ -2,6 +2,7 @@
 #define CITY_COMPONENT_H
 
 #include "../NPCs/UselessNPC/NPCObserver.h"
+#include "../taxCollector.h"
 
 #include <iostream>
 #include <vector>

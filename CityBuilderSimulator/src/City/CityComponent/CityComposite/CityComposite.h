@@ -3,6 +3,7 @@
 
 #include "../CityComponent.h"
 #include "../../Government.h"
+#include "../../taxCollector.h"
 
 #include <string>
 #include <vector>

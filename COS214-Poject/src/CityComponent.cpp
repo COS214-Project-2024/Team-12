@@ -6,49 +6,45 @@
 
 void CityComponent::addNpc()
 {
-	//	Government::getInstance().;//Increases population
-	// observers.push_back(npcs);
-	int populationGrowth = Government::getInstance().getPopulationGrowth();
-	for (int i = 0; i < populationGrowth; i++)
-	{
-		ReactingNPCS *npcPrototype = new ReactingNPCS(); // Create a prototype NPC
-		NPCObserver *newNPC = npcPrototype->clone();	 // Clone the prototype
-		observers.push_back(newNPC);					 // Add to NPC collection
-		delete npcPrototype;							 // Clean up the prototype after cloning
-	}
+    int populationGrowth = Government::getInstance().getPopulationGrowth();
+    ReactingNPCS prototypeNPC;  // Create a single prototype NPC
+    for (int i = 0; i < populationGrowth; i++)
+    {
+        NPCObserver *newNPC = prototypeNPC.clone();  // Clone the prototype
+        observers.push_back(newNPC);                 // Add to NPC collection
+    }
 }
 
 void CityComponent::removeNpc()
 {
-	// observers.erase(std::remove(observers.begin(), observers.end(), npcs), observers.end());
-	int population = Government::getInstance().getPopulation();
-	int decrease = 0;
-	double deathPercentage = 0;
-	if (NPCManager::getInstance().getHighestState() == "Crime")
-	{
-		deathPercentage = 0.01;
-		decrease = population * deathPercentage;
-	}
-	else if (NPCManager::getInstance().getHighestState() == "Revolt")
-	{
-		deathPercentage = 0.25;
-		decrease = population * deathPercentage;
-	}
+    int population = Government::getInstance().getPopulation();
+    int decrease = 0;
+    double deathPercentage = 0;
 
-	while (decrease)
-	{
-		if (!observers.empty())
-		{
-			delete observers.front();
-			observers.erase(observers.begin());
-			Government::getInstance().decreasePopulation(decrease);
-		}
-		else
-		{
-			std::cout << "No citizens to remove\n";
-		}
-	}
+    if (NPCManager::getInstance().getHighestState() == "Crime")
+    {
+        deathPercentage = 0.01;
+    }
+    else if (NPCManager::getInstance().getHighestState() == "Revolt")
+    {
+        deathPercentage = 0.25;
+    }
+    decrease = static_cast<int>(population * deathPercentage);
+
+    while (decrease && !observers.empty())
+    {
+        delete observers.front();
+        observers.erase(observers.begin());
+        Government::getInstance().decreasePopulation(1);  // Decrease by one per removal
+        --decrease;
+    }
+    
+    if (observers.empty() && decrease > 0)
+    {
+        std::cout << "No citizens to remove\n";
+    }
 }
+
 
 void CityComponent::notify()
 {
@@ -56,4 +52,12 @@ void CityComponent::notify()
 	{
 		observer->update();
 	}
+}
+
+CityComponent::~CityComponent()
+{
+    for (auto observer : observers)
+    {
+        delete observer;
+    }
 }

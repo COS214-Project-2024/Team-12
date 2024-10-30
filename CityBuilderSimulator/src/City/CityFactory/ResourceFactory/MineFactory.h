@@ -2,7 +2,7 @@
 #define MINEFACTORY_H
 
 #include "ResourceCreator.h"
-#include "CityComponent/Resources/Resource.h"
+#include "../CityComponent/Resources/Resource.h"
 
 class MineFactory : public ResourceCreator {
 public:

@@ -2,9 +2,11 @@
 #define TAXCOLLECTOR_H
 
 
-#include "ResidentialBuilding.h"
-#include "CommercialBuilding.h"
-#include "ResidentialZoneComposite.h"
+
+#include "CityComponent/Residential/ResidentialBuilding.h"
+#include "CityComponent/Residential/ResidentialZoneComposite.h"
+#include "CityComponent/Commercial/CommercialBuilding.h"
+
 #include "Government.h"
 
 
@@ -15,11 +17,6 @@ class taxCollector{
     virtual void visit(ResidentialZoneComposite* Rzone)=0;
     virtual ~taxCollector();
     Government* bank;
-   
-
-
-
-
 };
 
 

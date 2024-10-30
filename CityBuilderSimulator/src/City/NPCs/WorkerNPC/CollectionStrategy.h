@@ -1,8 +1,8 @@
 #ifndef COLLECTIONSTRATEGY_H
 #define COLLECTIONSTRATEGY_H
 
-#include "../City/CityComponent/Resources/IncomeResourceProduct.h"
-#include "../City/CityComponent/Resources/ConstructionResourceProduct.h"
+#include "../../CityComponent/Resources/IncomeResourceProduct.h"
+#include "../../CityComponent/Resources/ConstructionResourceProduct.h"
 #include <memory>
 
 class CollectionStrategy {

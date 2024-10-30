@@ -2,7 +2,7 @@
 #define UTILITY_DECORATOR_H
 
 #include "UtilityFlyweight.h"
-#include "CityComponent/CityComposite/CityComposite.h"
+#include "../CityComposite/CityComposite.h"
 #include <memory>
 
 class UtilityDecorator : public UtilityFlyweight {

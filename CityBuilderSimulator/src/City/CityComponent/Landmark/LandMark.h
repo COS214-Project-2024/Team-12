@@ -32,6 +32,9 @@ public:
     void connectSewage(std::shared_ptr<UtilityFlyweight> sewage);
     void applyUtilityConsumption();
     virtual std::unique_ptr<LandMark> clone() const = 0;
+    std::string getBuildingType() override{
+        return "LandMark";
+    }
 };
 
 #endif

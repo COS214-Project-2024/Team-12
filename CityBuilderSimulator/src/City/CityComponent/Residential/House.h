@@ -2,9 +2,10 @@
 #define HOUSE_H
 
 #include "ResidentialBuilding.h"
-#include "taxCollector.h"
-#include "CityComposite.h"
-#include "Government.h"
+
+#include "../../taxCollector.h"
+#include "../CityComposite/CityComposite.h"
+
 
 
 class House : public ResidentialBuilding {
@@ -22,7 +23,6 @@ public:
     void setHouseTax(double rate);
     void accept(taxCollector* TC);
     void payTax();
-     
 };
 
 #endif

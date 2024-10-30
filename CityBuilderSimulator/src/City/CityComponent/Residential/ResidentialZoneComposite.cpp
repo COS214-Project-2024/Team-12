@@ -1,5 +1,6 @@
 #include "../CityComponent.h"
 #include "ResidentialZoneComposite.h"
+#include "../src/City/taxCollector.h"
 
 #include <vector>
 #include <iostream>
@@ -21,7 +22,6 @@ void ResidentialZoneComposite::displayStatus(){
         }
 }
 
-
 void ResidentialZoneComposite::payTax(){
     std::vector<CityComponent*>::iterator it;
     for (it = buildings.begin(); it != buildings.end(); ++it) {
@@ -34,4 +34,4 @@ void ResidentialZoneComposite::payTax(){
 void ResidentialZoneComposite::accept(taxCollector* TC){
     TC->visit(this);
 }
-  
+

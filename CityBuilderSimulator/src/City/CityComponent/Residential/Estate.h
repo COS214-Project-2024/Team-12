@@ -2,9 +2,10 @@
 #define ESTATE_H
 
 #include "ResidentialBuilding.h"
-#include "taxCollector.h"
-#include "CityComposite.h"
-#include "Government.h"
+
+#include "../../taxCollector.h"
+#include "../CityComposite/CityComposite.h"
+
 
 class Estate : public ResidentialBuilding {
     private:

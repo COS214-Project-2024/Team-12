@@ -2,6 +2,7 @@
 #define CITY_COMPONENT_H
 
 #include "../NPCs/UselessNPC/NPCObserver.h"
+#include "../taxCollector.h"
 
 #include <iostream>
 #include <vector>
@@ -17,6 +18,8 @@ public:
 	void addNpc();
 	void removeNpc();
 	void notify();
+
+	virtual std::string getBuildingType() = 0;
 	virtual void accept(taxCollector* TC)=0;
 
 

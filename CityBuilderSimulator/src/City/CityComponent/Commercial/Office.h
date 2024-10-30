@@ -2,8 +2,9 @@
 #define OFFICE_H
 
 #include <string>
-#include "taxCollector.h"
+
 #include "Government.h"
+#include "../../taxCollector.h"
 using namespace std;
 
 

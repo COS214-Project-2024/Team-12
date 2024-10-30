@@ -1,7 +1,7 @@
 #ifndef INCOMERESOURCEPRODUCT_H
 #define INCOMERESOURCEPRODUCT_H
 
-#include "CityComponent.h"
+#include "../CityComponent.h"
 #include <iostream>
 using namespace std;
 
@@ -26,8 +26,6 @@ public:
 
 	void displayStatus() const;
 	 int getQuantity() const;
-
-	double getTaxRevenue() override;
 
 	bool isReadyForCollection();  
 

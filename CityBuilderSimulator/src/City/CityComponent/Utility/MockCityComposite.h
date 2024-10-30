@@ -1,7 +1,7 @@
 #ifndef MOCKCITYCOMPOSITE_H
 #define MOCKCITYCOMPOSITE_H
 
-#include "CityComponent/CityComposite/CityComposite.h"
+#include "../CityComposite/CityComposite.h"
 
 class MockCityComposite : public CityComposite {
 private:

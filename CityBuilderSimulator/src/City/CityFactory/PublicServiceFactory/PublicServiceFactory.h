@@ -2,7 +2,7 @@
 #define PUBLICSERVICEFACTORY_H
 
 #include <memory>
-#include "CityComponent/PublicService/PublicService.h"
+#include "../PublicService/PublicService.h"
 
 class PublicServiceFactory {
 public:

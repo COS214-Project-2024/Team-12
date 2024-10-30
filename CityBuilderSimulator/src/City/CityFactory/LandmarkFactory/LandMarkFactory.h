@@ -2,7 +2,7 @@
 #define LANDMARKFACTORY_H
 
 #include <memory>
-#include "CityComponent/LandMark/LandMark.h"
+#include "../LandMark/LandMark.h"
 
 class LandMarkFactory {
 public:

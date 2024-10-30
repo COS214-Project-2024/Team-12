@@ -1,9 +1,14 @@
 #include "Government.h"
 
 #include <string>
+#include <iostream>
 
 void Government::addMoney(double amount){
 	money += amount;
+}
+
+void Government::reduceMoney(double amount){
+	money -= amount;
 }
 
 void Government::reduceProduction(double factor){
@@ -87,4 +92,20 @@ int Government::getBuildingAmount(std::string type){
 	}else if("Public Service"){
 		return publicServiceAmount;
 	}
+}
+
+void Government::displayGovernmentStats(){
+	std::cout << "Government Stats:" << std::endl;
+	std::cout << "Population: " << population << std::endl;
+	std::cout << "Money: " << money << std::endl;
+	std::cout << "Income Tax rate: " << incomeTaxRate << std::endl;
+	std::cout << "Employment Rate: " << EMPLOYMENT_RATE*100 << "%\n";
+	std::cout << "Production Rate: " << productionRate << std::endl;
+	std::cout << "Crime Rate: " << crimeRate <<std::endl;
+	std::cout << "Mortality Rate: " << mortalityRate <<std::endl;
+	std::cout << "Population growth: " << mortalityRate <<std::endl;
+}
+
+void Government::decreasePopulation(int amount){
+	population -= amount;
 }

@@ -2,7 +2,7 @@
 #define POLICESTATIONFACTORY_H
 
 #include "PublicServiceFactory.h"
-#include "CityComponent/PublicService/PublicService.h"
+#include "../PublicService/PublicService.h"
 
 class PoliceStationFactory : public PublicServiceFactory {
 public:

@@ -2,11 +2,11 @@
 #define INDUSTRIALFACTORY_H
 
 #include <memory>
-#include "CityComponent/Industrial/Industrial.h"
+#include "../Industrial/Industry.h"
 
 class IndustrialFactory {
 public:
-    virtual std::unique_ptr<Industrial> createIndustry() = 0;
+    //virtual std::unique_ptr<Industrial> createIndustry() = 0;
     virtual ~IndustrialFactory() {};
 };
 

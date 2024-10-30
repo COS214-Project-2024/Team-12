@@ -2,8 +2,10 @@
 #define TOWNHOUSE_H
 
 #include "ResidentialBuilding.h"
-#include "taxCollector.h"
-#include "Government.h"
+
+#include "../../taxCollector.h"
+#include "../CityComposite/CityComposite.h"
+
 
 class Townhouse : public ResidentialBuilding {
 private:

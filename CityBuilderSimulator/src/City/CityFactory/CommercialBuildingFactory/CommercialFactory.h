@@ -2,7 +2,7 @@
 #define COMMERCIALFACTORY_H
 
 #include <memory>
-#include "CityComponent/Commercial/CommercialBuilding.h"
+#include "../Commercial/CommercialBuilding.h"
 
 class CommercialFactory {
 public:

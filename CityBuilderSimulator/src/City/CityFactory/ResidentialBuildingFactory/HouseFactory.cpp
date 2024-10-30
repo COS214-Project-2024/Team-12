@@ -1,5 +1,5 @@
 #include "HouseFactory.h"
-#include "CityComponent/Residential/House.h"
+#include "../Residential/House.h"
 
 class HouseFactory : public ResidentialBuildingFactory {
 public:

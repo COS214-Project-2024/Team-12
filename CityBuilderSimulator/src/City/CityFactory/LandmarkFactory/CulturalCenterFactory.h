@@ -2,7 +2,7 @@
 #define CULTURALCENTERFACTORY_H
 
 #include "LandMarkFactory.h"
-#include "CityComponent/LandMark/LandMark.h"
+#include "../LandMark/LandMark.h"
 
 class CulturalCenterFactory : public LandMark {
 public:

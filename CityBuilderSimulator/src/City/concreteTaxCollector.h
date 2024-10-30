@@ -1,9 +1,10 @@
 #ifndef CONCRETETAXCOLLECTOR_H
 #define CONCRETETAXCOLLECTOR_H
 
-#include "taxCollector.h"
-#include "Government.h"
-#include "ResidentialZoneComposite.h"
+
+#include "../src/City/taxCollector.h"
+#include "../src/City/Government.h"
+
 
 
 class ConcreteTaxCollector: public taxCollector{
@@ -12,8 +13,6 @@ class ConcreteTaxCollector: public taxCollector{
      void visit(CommercialBuilding* CB);
      void visit(ResidentialZoneComposite* Rzone);
      Government* bank;
-    
-
 };
 
 

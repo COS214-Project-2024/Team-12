@@ -2,6 +2,7 @@
 #define UTILITY_FLYWEIGHT_H
 
 #include "../CityComponent.h"
+#include "../../taxCollector.h"
 #include <iostream>
 #include <string>
 #include <map>
@@ -33,7 +34,14 @@ public:
     void deactivate(); // If NPCs did not pay taxes ;)
 
     void displayStatus();
-	double getTaxRevenue();
+
+    std::string getBuildingType() override{
+        return "Utility";
+    }
+
+    void accept(taxCollector* tax) override{
+        //return nothing
+    }
 
 protected:
     std::string name;

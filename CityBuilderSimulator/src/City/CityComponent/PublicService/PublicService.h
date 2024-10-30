@@ -20,6 +20,9 @@ public:
     virtual void provideService() = 0;
     virtual void checkUtilityStatus();
     virtual std::unique_ptr<PublicService> clone() const = 0; // Pure virtual function for polymorphism
+    std::string getBuildingType() override{
+      return "Public Service";
+    }
 
 
 };

@@ -13,8 +13,9 @@ private:
     std::vector<CityComponent*> buildings;
     double residentialTaxRate;
     taxCollector* sars;
-   
-bool taxPayed;
+
+    bool taxPayed;
+
 
 public:
     ResidentialZoneComposite(double taxRate);
@@ -27,7 +28,16 @@ public:
     void accept(taxCollector* TC);
    void payTax();
 
-    
+
+    //double getTaxRevenue() override;
+
+    std::string getBuildingType() override{
+        return "Residential type";
+    }
+
+    void accept(taxCollector* TC);
+    void payTax();
+
     
 };
 

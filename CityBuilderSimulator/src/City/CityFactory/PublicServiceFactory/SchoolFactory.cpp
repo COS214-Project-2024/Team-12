@@ -1,5 +1,5 @@
 #include "SchoolFactory.h"
-#include "CityComponent/PublicService/School.h"
+#include "../PublicService/School.h"
 
 
 std::unique_ptr<PublicService> SchoolFactory::createPublicService() {

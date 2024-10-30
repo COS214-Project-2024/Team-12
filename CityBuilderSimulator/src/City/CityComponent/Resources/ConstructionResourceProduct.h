@@ -32,7 +32,7 @@ public:
 	void replenish(int amount);
 
 	int getUnitCost() const;
-	double getTaxRevenue() override;
+	//double getTaxRevenue() override;
 	bool isReadyForCollection(); 
 };
 

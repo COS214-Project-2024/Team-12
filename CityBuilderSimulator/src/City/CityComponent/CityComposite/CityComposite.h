@@ -2,6 +2,9 @@
 #define CITY_COMPOSITE_H
 
 #include "../CityComponent.h"
+#include "../../Government.h"
+#include "../../taxCollector.h"
+
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -30,7 +33,16 @@ public:
     void addBudget(double amount);
 
     bool checkCityConditions();
-    
+
+
+    std::string getBuildingType() override{
+        return "City";
+    }
+
+    void accept(taxCollector* tax) override{
+        //can't collect tax from the city
+    }
+
 };
 
 #endif

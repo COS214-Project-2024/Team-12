@@ -19,6 +19,12 @@ public:
 
     void displayStatus() override;
 
+
+    std::string getBuildingType() override{
+        return "Commercialzone";
+    }
+
+    
     
 };
 

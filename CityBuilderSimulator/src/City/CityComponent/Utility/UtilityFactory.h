@@ -1,11 +1,11 @@
 #ifndef UTILITYFACTORY_H
 #define UTILITYFACTORY_H
 
-#include "../src/City/CityComponent/Utility/UtilityFlyweight.h"
-#include "../src/City/CityComponent/Utility/PowerPlant.h"
-#include "../src/City/CityComponent/Utility/SewageSystem.h"
-#include "../src/City/CityComponent/Utility/WasteManagement.h"
-#include "../src/City/CityComponent/Utility/WaterSupply.h"
+#include "UtilityFlyweight.h"
+#include "PowerPlant.h"
+#include "SewageSystem.h"
+#include "WasteManagement.h"
+#include "WaterSupply.h"
 
 #include <unordered_map>
 #include <string>

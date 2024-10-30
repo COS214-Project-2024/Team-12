@@ -2,7 +2,7 @@
 #define SHOPSFACTORY_H
 
 #include "CommercialFactory.h"
-#include "CityComponent/Commercial/CommercialBuilding.h"
+#include "../Commercial/CommercialBuilding.h"
 
 class ShopsFactory : public CommercialFactory {
 public:

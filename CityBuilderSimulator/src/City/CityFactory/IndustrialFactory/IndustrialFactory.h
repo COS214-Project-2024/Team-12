@@ -2,7 +2,7 @@
 #define INDUSTRIALFACTORY_H
 
 #include <memory>
-#include "../CityComponent/Industrial/Industry.h"
+#include "../Industrial/Industry.h"
 
 class IndustrialFactory {
 public:

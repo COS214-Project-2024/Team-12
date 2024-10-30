@@ -2,7 +2,7 @@
 #define TOWNHOUSEFACTORY_H
 
 #include "ResidentialBuildingFactory.h"
-#include "CityComponent/Residential/ResidentialBuilding.h"
+#include "../Residential/ResidentialBuilding.h"
 
 class TownhouseFactory : public ResidentialBuildingFactory {
 public:

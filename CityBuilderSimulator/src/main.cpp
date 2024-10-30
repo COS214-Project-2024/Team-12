@@ -1,6 +1,7 @@
 #include "City/CityComponent/CityComponent.h"
 #include "City/NPCs/NPCManager.h"
 #include "City/Government.h"
+#include "City/CityComponent/CityComposite/CityComposite.h"
 
 #include "City/CityComponent/Commercial/CommercialZoneComposite.h"
 #include "City/CityComponent/Industrial/IndustrialZoneComposite.h"

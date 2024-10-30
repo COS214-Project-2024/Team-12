@@ -2,7 +2,7 @@
 #define ESTATEFACTORY_H
 
 #include "ResidentialBuildingFactory.h"
-#include "CityComponent/Residential/ResidentialBuilding.h"
+#include "../Residential/ResidentialBuilding.h"
 
 class EstateFactory : public ResidentialBuildingFactory {
 public:

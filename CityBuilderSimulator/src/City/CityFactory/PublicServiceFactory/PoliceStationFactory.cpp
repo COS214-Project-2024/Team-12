@@ -1,5 +1,5 @@
 #include "PoliceStationFactory.h"
-#include "CityComponent/PublicService/PoliceStation.h"
+#include "../PublicService/PoliceStation.h"
 
 
 std::unique_ptr<PublicService> PoliceStationFactory::createPublicService() {

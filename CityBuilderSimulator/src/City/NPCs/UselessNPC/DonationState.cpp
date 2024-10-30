@@ -1,6 +1,6 @@
 #include "DonationState.h"
 #include "../NPCManager.h"
-#include "../City/Government.h"
+#include "../../Government.h"
 
 #include <iostream>
 #include <random>

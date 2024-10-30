@@ -1,8 +1,8 @@
 #ifndef UTILITY_DECORATOR_H
 #define UTILITY_DECORATOR_H
 
-#include "../src/City/CityComponent/Utility/UtilityFlyweight.h"
-#include "../src/City/CityComponent/CityComposite/CityComposite.h"
+#include "UtilityFlyweight.h"
+#include "../CityComposite/CityComposite.h"
 #include <memory>
 
 class UtilityDecorator : public UtilityFlyweight {

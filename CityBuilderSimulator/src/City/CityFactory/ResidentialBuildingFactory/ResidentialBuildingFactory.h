@@ -2,7 +2,7 @@
 #define RESIDENTIALFACTORY_H
 
 #include <memory>
-#include "CityComponent/Residential/ResidentialBuilding.h"
+#include "../Residential/ResidentialBuilding.h"
 
 class ResidentialBuildingFactory {
 public:

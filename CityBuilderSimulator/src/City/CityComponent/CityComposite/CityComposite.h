@@ -36,6 +36,10 @@ public:
     std::string getBuildingType() override{
         return "City";
     }
+
+    void accept(taxCollector* tax) override{
+        //can't collect tax from the city
+    }
 };
 
 #endif

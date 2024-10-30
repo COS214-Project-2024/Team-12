@@ -7,22 +7,22 @@
 
 #include "CityComponent.h"
 
-class Transport : public CityComponent {
+class Transport {
 private:
-    int capacity;
+    /* int capacity;
     double cost;
     double maintainanceCost;
     std::string name;
+    double speed; */
 
 public:
-    Transport(int cap, double cost, double maintenanceC, std::string name);
-    virtual std::unique_ptr<Transport> clone() const = 0; // Pure virtual function for polymorphism
+    virtual double getCost() const = 0;
+    virtual double getMaintainanceCost() const = 0;
+    virtual double getSpeed() const = 0;
+    virtual double getCapacity() const = 0;
+    virtual std::string getType() const = 0;
 
     virtual ~Transport() = default;
-
-    std::string getBuildingType() override{
-        return "Transport";
-    }
 
 };
 #endif

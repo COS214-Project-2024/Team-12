@@ -9,6 +9,14 @@
 
 CityComposite::CityComposite(const std::string& name) : cityName(name), budget(0) {}
 
+CityComposite::~CityComposite(){
+    for(auto zone : zones) {
+        delete zone;
+    }
+    zones.clear();
+}
+
+
 void CityComposite::add(CityComponent* zone){
 	zones.push_back(zone);
 
@@ -70,16 +78,22 @@ void CityComposite::addBudget(double amount) {
 
 bool CityComposite::checkCityConditions(){
     int publicServiceBuildings = Government::getInstance().getBuildingAmount("Public Service");
-    int residentialBuildings = Government::getInstance().getBuildingAmount("Residential") ;
+    int residentialBuildings = Government::getInstance().getBuildingAmount("Residential");
     int utilityBuildings = Government::getInstance().getBuildingAmount("Utility");
 
-    if((publicServiceBuildings >= 5 && publicServiceBuildings <= 7) && (residentialBuildings >= 3 && residentialBuildings <= 10) && (utilityBuildings >= 2 && utilityBuildings <= 5)){
+    if((publicServiceBuildings >= 5 && publicServiceBuildings <= 7) &&
+       (residentialBuildings >= 3 && residentialBuildings <= 10) &&
+       (utilityBuildings >= 2 && utilityBuildings <= 5)){
         Government::getInstance().setPopulationGrowth(5);
         return true;
     }
-    else if((publicServiceBuildings >= 8 && publicServiceBuildings <= 12) && (residentialBuildings >= 6 && residentialBuildings <= 15) && (utilityBuildings >= 8 && utilityBuildings <= 12)){
+    else if((publicServiceBuildings >= 8 && publicServiceBuildings <= 12) &&
+            (residentialBuildings >= 6 && residentialBuildings <= 15) &&
+            (utilityBuildings >= 8 && utilityBuildings <= 12)){
         Government::getInstance().setPopulationGrowth(10);
         return true;
     }
+    return false;
 }
+
 

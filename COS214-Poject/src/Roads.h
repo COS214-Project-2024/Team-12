@@ -27,5 +27,11 @@ public:
     Roads(int cap, double cost, double maintenanceC, std::string name, int trafficC, roadType road);
     std::unique_ptr<Transport> clone() const;
 
+    double getSpeed() const override;
+    double getCost() const override;
+    double getMaintainanceCost() const override;
+    double getCapacity() const override;
+    std::string getType() const override;
+
 };
 #endif

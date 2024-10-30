@@ -16,6 +16,7 @@ private:
 
 public:
     CityComposite(const std::string& name);
+    ~CityComposite();
 
     void add(CityComponent* zone) override;
 

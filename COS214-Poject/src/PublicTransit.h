@@ -1,4 +1,4 @@
-//CONCRETE PRODUCT/PROTOTYPE
+/* //CONCRETE PRODUCT/PROTOTYPE
 #ifndef PUBLICTRANSIT_H
 #define PUBLICTRANSIT_H
 
@@ -7,6 +7,8 @@
 #include <string>
 
 #include "Transport.h"
+
+//this should be different since it does not transport resources
 
 class PublicTransit : public Transport{
 
@@ -18,4 +20,4 @@ public:
     std::unique_ptr<Transport> clone() const;
 
 };
-#endif
+#endif */

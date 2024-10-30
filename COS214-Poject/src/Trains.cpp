@@ -2,13 +2,22 @@
 #include <string>
 #include "Trains.h"
 
-Trains::Trains(int cap, double cost, double maintenanceC, std::string name, int cargoC, double railwayL, int numOfStations): Transport(120, 5000000.00, 50000.00, "Train") {
-        this->cargoCapacity = cargoC;
-        this->railwayLength = railwayL;
-        this->numberOfStations = numOfStations;
+double Trains::getCapacity() const{
+    return 500;
 }
 
-std::unique_ptr<Transport> Trains::clone() const {
-    return std::make_unique<Trains>(*this);
+double Trains::getCost()const{
+    return 1000;
+}
 
+double Trains::getMaintainanceCost() const{
+    return 50;
+}
+
+double Trains::getSpeed() const{
+    return 100;
+}
+
+std::string Trains::getType() const{
+    return "Train";
 }

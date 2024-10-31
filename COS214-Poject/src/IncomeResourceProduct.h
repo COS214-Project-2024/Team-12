@@ -2,6 +2,7 @@
 #define INCOMERESOURCEPRODUCT_H
 
 #include "CityComponent.h"
+#include "taxCollector.h"
 #include <iostream>
 using namespace std;
 
@@ -32,6 +33,7 @@ public:
 	void replenish(int amount);
 
 	std::string getBuildingType() override;
+
 
 };
 

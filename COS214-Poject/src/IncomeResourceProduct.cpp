@@ -71,3 +71,4 @@ std::string IncomeResourceProduct::getBuildingType()
 {
     return "Income resources";
 }
+

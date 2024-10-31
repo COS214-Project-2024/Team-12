@@ -10,6 +10,7 @@ public:
 
     Gold(int quantity, double marketValue);
     ~Gold();
+    
     void displayStatus() override;
 };
 

@@ -69,6 +69,6 @@ void IncomeResourceProduct::replenish(int amount) {
 
 std::string IncomeResourceProduct::getBuildingType()
 {
-    return "Income resources";
+    return "IncomeResourceProduct";
 }
 

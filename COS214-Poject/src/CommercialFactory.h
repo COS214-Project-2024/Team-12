@@ -7,6 +7,7 @@
 class CommercialFactory {
 public:
     virtual std::unique_ptr<CommercialBuilding> createBuilding() = 0;
+    CommercialFactory();
     virtual ~CommercialFactory() {}
 };
 

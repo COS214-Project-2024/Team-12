@@ -22,7 +22,25 @@
 
 class IncomeResourceProductTest : public ::testing::Test {
 protected:
-    Gold product{100, 50.0};  // Replace with a specific derived class
+    Gold product{100, 50.0}; 
+ 
+    std::string name = "Gold";
+    int initialQuantity = 100;
+    double initialMarketValue = 50.0;
+    IncomeResourceProduct *incomeResource;
+
+    void SetUp() override {
+        // Initialize with initial values
+        incomeResource = new Coal(initialQuantity, initialMarketValue);
+    }
+
+    void TearDown() override {
+        // Clean up memory
+        delete incomeResource;
+    }
+    
+     // Replace with a specific derived class
+     // Replace with a specific derived class
 };
 
 
@@ -113,13 +131,91 @@ TEST_F(IncomeResourceProductTest, ReplenishWithLargeAmount) {
 }
 
 
+// Test the constructor and getters
+TEST_F(IncomeResourceProductTest, ConstructorAndGetters) {
+    EXPECT_EQ(incomeResource->getBuildingType(), "IncomeResourceProduct"); // Assuming a fixed return type
+    EXPECT_EQ(incomeResource->getQuantity(), initialQuantity);
+    EXPECT_EQ(incomeResource->getMarketValue(), initialMarketValue);
+    EXPECT_EQ(incomeResource->isReadyForCollection(), false); // Assuming initial state is false
+}
 
 
 
+// Test consumeResources
+TEST_F(IncomeResourceProductTest, ConsumeResources) {
+    incomeResource->consumeResources(20);
+    EXPECT_EQ(incomeResource->getQuantity(), initialQuantity - 20);
 
-// int main(int argc, char **argv) {
-//     ::testing::InitGoogleTest(&argc, argv);
-//     return RUN_ALL_TESTS();  // Runs all tests and returns the result
-// }
+    // Test consuming more than available quantity (should handle gracefully)
+    incomeResource->consumeResources(initialQuantity); // All should be consumed
+    EXPECT_EQ(incomeResource->getQuantity(), 0);
+
+    // Test consuming zero and negative amounts
+    incomeResource->consumeResources(0);
+    EXPECT_EQ(incomeResource->getQuantity(), 0);
+    incomeResource->consumeResources(-10); // Ideally should not change quantity
+    EXPECT_EQ(incomeResource->getQuantity(), 0);
+}
+
+// Test calculateIncome
+TEST_F(IncomeResourceProductTest, CalculateIncome) {
+    double expectedIncome = initialQuantity * initialMarketValue;
+    EXPECT_DOUBLE_EQ(incomeResource->calculateIncome(), expectedIncome);
+
+    // After consuming some resources
+    incomeResource->consumeResources(20);
+    expectedIncome = incomeResource->getQuantity() * initialMarketValue;
+    EXPECT_DOUBLE_EQ(incomeResource->calculateIncome(), expectedIncome);
+}
+
+// Test replenish
+TEST_F(IncomeResourceProductTest, Replenish) {
+    incomeResource->replenish(50);
+    EXPECT_EQ(incomeResource->getQuantity(), initialQuantity + 50);
+
+    // Test replenishing by a negative amount (should not change quantity)
+    incomeResource->replenish(-20);
+    EXPECT_EQ(incomeResource->getQuantity(), initialQuantity + 50);
+
+    // Test replenishing zero (should not change quantity)
+    incomeResource->replenish(0);
+    EXPECT_EQ(incomeResource->getQuantity(), initialQuantity + 50);
+}
+
+// Test displayStatus (expecting a specific output format)
+// Test displayStatus (expecting a specific output format)
+TEST_F(IncomeResourceProductTest, DisplayStatus) {
+    // Redirect output to a string stream
+    std::stringstream buffer;
+    std::streambuf *old = std::cout.rdbuf(buffer.rdbuf());
+    
+    product.displayStatus();
+    
+    // Restore original buffer
+    std::cout.rdbuf(old);
+    
+    // Expected output based on the new format
+    std::string expectedOutput = 
+        "Resource: Coal\n"
+        "Quantity: 100\n"
+        "Market Value per Unit: $50.0\n"
+        "Total Value: $5000.0\n\n";
+
+    EXPECT_EQ(buffer.str(), expectedOutput);
+}
+
+// Test isReadyForCollection
+TEST_F(IncomeResourceProductTest, IsReadyForCollection) {
+    // Initially not ready for collection
+    EXPECT_FALSE(incomeResource->isReadyForCollection());
+    
+    // Set as ready for collection (manipulating private attribute if accessible or add setter in class if required)
+    // Expect true as output after modification
+}
+
+// Test getBuildingType
+TEST_F(IncomeResourceProductTest, GetBuildingType) {
+    EXPECT_EQ(incomeResource->getBuildingType(), "IncomeResourceProduct");
+}
 
 

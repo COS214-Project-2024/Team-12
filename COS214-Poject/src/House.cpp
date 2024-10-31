@@ -13,8 +13,8 @@ void House::displayStatus() {
 
 
 
-std::unique_ptr<ResidentialBuilding> House::clone() const{
-    return std::make_unique<House>(*this);
+std::shared_ptr<ResidentialBuilding> House::clone() const{
+    return std::make_shared<House>(*this);
 }
 
  void House::setHouseTax(double taxRate){

@@ -1,11 +1,29 @@
 #include "MapGrid.h"
 #include "Node.h"
 #include "Transport.h"
+#include "iostream"
 
 #include <memory>
 #include <vector>
 
-MapGrid::MapGrid(int width, int height) : width(width), height(height) {}
+MapGrid::MapGrid(int width, int height) : width(width), height(height) {
+    // Initialize the grid vector with empty rows
+    grid.reserve(height);
+    // Fill each row with columns
+    // for (int i = 0; i < height; i++) {
+    //     std::vector<std::unique_ptr<Node>> row;
+    //     row.reserve(width);
+    //     grid.push_back(std::move(row));
+    // }
+    // initializeGrid();
+
+    for (auto& row : grid) {
+        row.reserve(width); // Reserve space for each row
+        for (int x = 0; x < width; ++x) {
+            row.push_back(std::make_unique<Node>(x, row.size())); // Create nodes directly
+        }
+    }
+}
 
 void MapGrid::initializeGrid()
 {
@@ -13,7 +31,7 @@ void MapGrid::initializeGrid()
 	{
 		for (int x = 0; x < width; ++x)
 		{
-			grid[y][x] = std::make_unique<Node>(x, y);
+			grid[y].push_back(std::make_unique<Node>(x, y));
 		}
 	}
 }
@@ -27,17 +45,16 @@ Node *MapGrid::getNode(int x, int y)
 	return nullptr;
 }
 
-void MapGrid::connectNodes(const Location &start, const Location &end, std::unique_ptr<Transport> transport)
-{
-	Node *startNode = getNode(start.x, start.y);
-	Node *endNode = getNode(end.x, end.y);
-	if (startNode && endNode)
-	{
-		startNode->addConnection(endNode, std::move(transport));
-		endNode->addConnection(startNode, std::make_unique<Transport>(*transport)); // Bi-directional
-	}
+void MapGrid::connectNodes(const Location& start, const Location& end, std::unique_ptr<Transport> transport) {
+    Node* startNode = getNode(start.x, start.y);
+    Node* endNode = getNode(end.x, end.y);
+    if (startNode && endNode && transport) {
+        // Create a clone of the transport for the bi-directional connection
+        auto transportClone = transport->clone();
+        startNode->addConnection(endNode, std::move(transport));
+        endNode->addConnection(startNode, std::move(transportClone));
+    }
 }
-
 bool MapGrid::isAdjacent(const Location& loc1, const Location& loc2){
 
 	int dx = std::abs(loc1.x - loc2.x);

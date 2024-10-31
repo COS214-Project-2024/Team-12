@@ -22,6 +22,8 @@ public:
     virtual double getCapacity() const = 0;
     virtual std::string getType() const = 0;
 
+    virtual std::unique_ptr<Transport> clone() const = 0;
+
     virtual ~Transport() = default;
 
 };

@@ -17,11 +17,18 @@ class Node{
 
 	Node(int x, int y);
 
+	Node(Node&&) = default;
+    Node& operator=(Node&&) = default;
+    Node(const Node&) = delete;
+    Node& operator=(const Node&) = delete;
+
 	void addConnection(Node* node, std::unique_ptr<Transport> transport);
 
 	CityComponent* getComponent() const;
 
 	void setComponent(CityComponent* comp);
+
+	const Location& getLocation() const;
 };
 
 #endif

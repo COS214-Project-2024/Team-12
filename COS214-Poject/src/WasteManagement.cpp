@@ -11,6 +11,6 @@ void WasteManagement::connect(double distance){
     }
 }
 
-std::unique_ptr<UtilityFlyweight> WasteManagement::clone() const  {
-    return std::make_unique<WasteManagement>(*this);
+std::shared_ptr<UtilityFlyweight> WasteManagement::clone() const  {
+    return std::make_shared<WasteManagement>(*this);
 }

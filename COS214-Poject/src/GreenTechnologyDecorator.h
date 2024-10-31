@@ -5,8 +5,10 @@
 
 class GreenTechnologyDecorator : public UtilityDecorator {
 public:
-    GreenTechnologyDecorator(std::unique_ptr<UtilityFlyweight> utility, CityComposite* player);
+    GreenTechnologyDecorator(std::shared_ptr<UtilityFlyweight> utility, CityComposite* player);
     void upgrade();
+    int getResourceConsumption() const ;
+    double getUpgradeCost() const;
 };
 
 #endif

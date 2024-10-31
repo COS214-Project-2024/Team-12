@@ -11,6 +11,6 @@ void SewageSystem::connect(double distance) {
     }
 }
 
-std::unique_ptr<UtilityFlyweight> SewageSystem::clone() const {
-    return std::make_unique<SewageSystem>(*this);
+std::shared_ptr<UtilityFlyweight> SewageSystem::clone() const {
+    return std::make_shared<SewageSystem>(*this);
 }

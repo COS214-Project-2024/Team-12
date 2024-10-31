@@ -13,8 +13,8 @@ void Flat::displayStatus(){
 
 
 
-std::unique_ptr<ResidentialBuilding> Flat::clone() const {
-        return std::make_unique<Flat>(*this);
+std::shared_ptr<ResidentialBuilding> Flat::clone() const {
+        return std::make_shared<Flat>(*this);
 }
 
 void Flat::accept(taxCollector* TC){

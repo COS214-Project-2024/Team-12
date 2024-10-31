@@ -65,3 +65,9 @@ void IncomeResourceProduct::replenish(int amount) {
     quantity += amount;
     std::cout << "Replenished " << amount << " units of " << name << ". Total: " << quantity << std::endl;
 }
+
+
+std::string IncomeResourceProduct::getBuildingType()
+{
+    return "Income resources";
+}

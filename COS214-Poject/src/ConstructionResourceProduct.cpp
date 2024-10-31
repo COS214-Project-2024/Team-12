@@ -63,3 +63,9 @@ bool ConstructionResourceProduct::isReadyForCollection()
     }
     return readyForCollection;
 }
+
+
+std::string ConstructionResourceProduct::getBuildingType()
+{
+    return "Construction resources";
+}

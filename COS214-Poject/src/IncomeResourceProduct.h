@@ -31,6 +31,8 @@ public:
 
 	void replenish(int amount);
 
+	std::string getBuildingType() override;
+
 };
 
 #endif

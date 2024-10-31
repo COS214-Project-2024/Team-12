@@ -4,6 +4,8 @@
 #include "UtilityFlyweight.h"
 #include <map>
 
+class UtilityFlyweight;
+
 class WaterSupply : public UtilityFlyweight {
 public:
     WaterSupply() = default;

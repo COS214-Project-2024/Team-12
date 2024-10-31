@@ -7,11 +7,11 @@ SOURCES := $(wildcard *.cpp)
 OBJECTS := $(SOURCES:.cpp=.o)
 
 # Output executable
-TARGET := bin/your_program
+TARGET := ../bin/your_program  # Adjust path to place executable outside src folder
 
-# Ensure the bin directory exists
+# Ensure the bin directory exists and link object files
 $(TARGET): $(OBJECTS)
-	mkdir -p bin
+	mkdir -p ../bin  # Ensure bin directory exists outside src folder
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS)
 
 # Compile each .cpp file to .o file

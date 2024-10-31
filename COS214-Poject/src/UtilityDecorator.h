@@ -7,17 +7,19 @@
 
 class UtilityDecorator : public UtilityFlyweight {
 protected:
-    std::unique_ptr<UtilityFlyweight> wrappedUtility;
+    std::shared_ptr<UtilityFlyweight> wrappedUtility;
     double upgradeCost;     // Cost to upgrade
     double repairCost;      // Cost to repair
     CityComposite* player;  // to access budget in city composite
 public:
-    UtilityDecorator(std::unique_ptr<UtilityFlyweight> utility, CityComposite* player);
+    UtilityDecorator(std::shared_ptr<UtilityFlyweight> utility, CityComposite* player);
     void connect(double distance);
-    std::unique_ptr<UtilityFlyweight> clone() const;
+    std::shared_ptr<UtilityFlyweight> clone() const;
     void upgrade();
-    void repair();
-    double getUpgradeCost() const;
+    virtual void repair();
+    virtual double getUpgradeCost() const;
+    virtual int getResourceConsumption() const;
+    int getLevel() const;
 };
 
 #endif

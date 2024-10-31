@@ -1,6 +1,6 @@
 #include "AdvancedTechnologyDecorator.h"
 
-AdvancedTechnologyDecorator::AdvancedTechnologyDecorator(std::unique_ptr<UtilityFlyweight> utility, CityComposite* player)
+AdvancedTechnologyDecorator::AdvancedTechnologyDecorator(std::shared_ptr<UtilityFlyweight> utility, CityComposite* player)
     : UtilityDecorator(std::move(utility), player) {}
 
 void AdvancedTechnologyDecorator::upgrade(){

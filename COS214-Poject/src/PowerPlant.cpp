@@ -11,6 +11,6 @@ void PowerPlant::connect(double distance) {
     }
 }
 
-std::unique_ptr<UtilityFlyweight> PowerPlant::clone() const{
-    return std::make_unique<PowerPlant>(*this);
+std::shared_ptr<UtilityFlyweight> PowerPlant::clone() const{
+    return std::make_shared<PowerPlant>(*this);
 }

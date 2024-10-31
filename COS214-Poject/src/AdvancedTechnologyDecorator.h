@@ -5,8 +5,8 @@
 
 class AdvancedTechnologyDecorator : public UtilityDecorator {
 public:
-    AdvancedTechnologyDecorator(std::unique_ptr<UtilityFlyweight> utility, CityComposite* player);
-    void upgrade();
+    AdvancedTechnologyDecorator(std::shared_ptr<UtilityFlyweight> utility, CityComposite* player);
+    void upgrade(); 
 };
 
 #endif

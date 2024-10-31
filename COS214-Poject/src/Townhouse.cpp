@@ -13,8 +13,8 @@ void Townhouse::displayStatus(){
 
 
 
-std::unique_ptr<ResidentialBuilding> Townhouse::clone() const {
-    return std::make_unique<Townhouse>(*this);
+std::shared_ptr<ResidentialBuilding> Townhouse::clone() const {
+    return std::make_shared<Townhouse>(*this);
 }
 
 void Townhouse::setTownhouseRate(double taxRate){

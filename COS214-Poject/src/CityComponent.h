@@ -16,8 +16,8 @@ public:
 	virtual void remove(CityComponent *) {}
 	virtual void displayStatus() = 0;
 	virtual ~CityComponent();
-	void addNpc();
-	void removeNpc();
+	//void addNpc();
+	//void removeNpc();
 	void notify();
 
 	virtual std::string getBuildingType() = 0;
@@ -31,4 +31,5 @@ private:
     std::vector<NPCObserver*> observers;  // List of observers (e.g., NPCObserver)
 	Location location;
 };
+
 #endif

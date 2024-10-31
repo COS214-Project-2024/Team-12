@@ -13,8 +13,8 @@ void Estate::displayStatus(){
 
 
 
-std::unique_ptr<ResidentialBuilding> Estate::clone() const {
-    return std::make_unique<Estate>(*this);
+std::shared_ptr<ResidentialBuilding> Estate::clone() const {
+    return std::make_shared<Estate>(*this);
 }
 
 

@@ -1,4 +1,6 @@
 #include "ResidentialBuilding.h"
+#include "UtilityFlyweight.h"
+#include <iostream>
 
 ResidentialBuilding::ResidentialBuilding(int bedrooms, double price,
                         std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
@@ -52,4 +54,3 @@ void ResidentialBuilding::applyUtilityConsumption() {
                 std::cout << "Sewage management resources consumed: " << sewageManagement->getResourceConsumption() << "\n";
         }
 }
-

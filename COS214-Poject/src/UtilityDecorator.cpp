@@ -1,6 +1,6 @@
 #include "UtilityDecorator.h"
 
-UtilityDecorator::UtilityDecorator(std::unique_ptr<UtilityFlyweight> utility, CityComposite* player)
+UtilityDecorator::UtilityDecorator(std::shared_ptr<UtilityFlyweight> utility, CityComposite* player)
     : UtilityFlyweight(*utility), wrappedUtility(std::move(utility)), player(player) {
     // Initialize costs
     upgradeCost = cost * 0.2;
@@ -12,8 +12,8 @@ void UtilityDecorator::connect(double distance) {
     isOperational = (distance <= effectRadius);
 }
 
-std::unique_ptr<UtilityFlyweight> UtilityDecorator::clone() const {
-    return std::make_unique<UtilityDecorator>(wrappedUtility->clone(), player);
+std::shared_ptr<UtilityFlyweight> UtilityDecorator::clone() const {
+    return std::make_shared<UtilityDecorator>(wrappedUtility->clone(), player);
 }
 
 void UtilityDecorator::upgrade() {
@@ -71,4 +71,12 @@ void UtilityDecorator::repair() {
 
 double UtilityDecorator::getUpgradeCost() const {
     return upgradeCost;
+}
+
+int UtilityDecorator::getResourceConsumption() const {
+    return wrappedUtility->getResourceConsumption();
+}
+
+int UtilityDecorator::getLevel() const {
+    return wrappedUtility->getLevel();
 }

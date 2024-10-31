@@ -2,15 +2,19 @@
 #define RESIDENTIALBUILDING_H
 
 #include "CityComponent.h"
-#include "UtilityFlyweight.h"
 #include <iostream>
 #include <string>
 #include <memory>
 
-#include "WaterSupply.h"
-#include "CityComposite.h"
-#include "taxCollector.h"
+// #include "UtilityFlyweight.h"
+// #include "WaterSupply.h"
+// #include "CityComposite.h"
+// #include "taxCollector.h"
 
+class UtilityFlyweight;
+class Government;
+class taxCollector;
+class CityComposite;
 
 
 class ResidentialBuilding : public CityComponent {
@@ -30,7 +34,7 @@ protected:
 
 
 public:
-    ResidentialBuilding();
+    ResidentialBuilding() = default;
     ResidentialBuilding(int bedrooms, double price,std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
                         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     virtual ~ResidentialBuilding() = default;
@@ -40,11 +44,12 @@ public:
     void connectWasteManagement(std::shared_ptr<UtilityFlyweight> waste);
     void connectSewage(std::shared_ptr<UtilityFlyweight> sewage);
     void applyUtilityConsumption();
-    virtual std::unique_ptr<ResidentialBuilding> clone() const = 0;
+    virtual std::shared_ptr<ResidentialBuilding> clone() const = 0;
+
 
     void accept(taxCollector* TC) override;
     
-    void payTax();
+    virtual void payTax() = 0;
     std::string getBuildingType() override{
         return "Residential Building";
     }

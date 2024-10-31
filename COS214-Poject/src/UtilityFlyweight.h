@@ -2,11 +2,12 @@
 #define UTILITY_FLYWEIGHT_H
 
 #include "CityComponent.h"
-#include "taxCollector.h"
 #include <iostream>
 #include <string>
 #include <map>
 #include <memory>
+
+class taxCollector;
 
 class UtilityFlyweight : public CityComponent {
 public:
@@ -16,7 +17,7 @@ public:
     virtual ~UtilityFlyweight() = default;
 
     // Prototype pattern: clone method for creating copies
-    virtual std::unique_ptr<UtilityFlyweight> clone() const = 0;
+    virtual std::shared_ptr<UtilityFlyweight> clone() const = 0;
 
     std::string getName() const;// Getter for name
     
@@ -26,7 +27,7 @@ public:
     double getEffectRadius() const;
     int getCapacity() const;
     int getLevel() const;
-    int getResourceConsumption() const;
+    virtual int getResourceConsumption() const;
     std::map<std::string, int> getResourceNeeds() const;
 
     // Game logic methods

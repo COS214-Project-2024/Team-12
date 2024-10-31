@@ -14,7 +14,7 @@ Steel::~Steel() {
 // Override displayStatus to provide specific information for Steel
 void Steel::displayStatus() {
     std::cout << "Resource: Steel\n"
-              << "Quantity: " << getQuantity() << "\n"
-              << "Unit Cost: $" << getUnitCost() << "\n"
-              << "Total Cost: $" << getTotalCost() << "\n" << std::endl;
+            << "Quantity: " << getQuantity() << "\n"
+            << "Unit Cost: $" << getUnitCost() << "\n"
+            << "Total Cost: $" << getTotalCost() << "\n" << std::endl;
 }

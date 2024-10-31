@@ -40,7 +40,7 @@ public:
         return "Utility";
     }
 
-    void accept(taxCollector* tax) override{
+    void accept(taxCollector*) override{
         //return nothing
     }
 

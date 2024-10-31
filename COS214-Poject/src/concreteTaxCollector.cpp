@@ -1,4 +1,5 @@
 #include "concreteTaxCollector.h"
+#include "ZoneComposite.h"
 
 
 void ConcreteTaxCollector::visit(ResidentialBuilding* RB) {
@@ -9,7 +10,7 @@ void ConcreteTaxCollector::visit(CommercialBuilding* CB) {
     CB->payTax();
 }
 
-void ConcreteTaxCollector::visit(ResidentialZoneComposite* Rzone){
+void ConcreteTaxCollector::visit(ZoneComposite* Rzone){
     Rzone->payTax();
 
 }

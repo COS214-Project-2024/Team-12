@@ -64,4 +64,23 @@ bool IncomeResourceProduct::isReadyForCollection()
 void IncomeResourceProduct::replenish(int amount) {
     quantity += amount;
     std::cout << "Replenished " << amount << " units of " << name << ". Total: " << quantity << std::endl;
+    notify();
+}
+
+void IncomeResourceProduct::notify() {
+     if (isReadyForCollection()) { // Check if resources are ready for collection
+        for (const auto& truck : observerList) {
+            truck->update();
+        }
+    }
+}
+
+void IncomeResourceProduct::attach(std::unique_ptr<IncomeTruck> truck) {
+    observerList.push_back(std::move(truck));
+}
+
+void IncomeResourceProduct::detach(IncomeTruck* truck) {
+    auto it = std::remove_if(observerList.begin(), observerList.end(),
+                             [truck](const std::unique_ptr<IncomeTruck>& ptr) { return ptr.get() == truck; });
+    observerList.erase(it, observerList.end());
 }

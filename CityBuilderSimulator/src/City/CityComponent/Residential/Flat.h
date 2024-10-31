@@ -20,7 +20,7 @@ public:
     void displayStatus();
     std::unique_ptr<ResidentialBuilding> clone() const;
     void setFlatRate(double rate);
-    void accept(taxCollector* TC);
+    void accept(taxCollector& TC);
     void payTax();
      
 };

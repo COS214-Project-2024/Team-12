@@ -4,6 +4,7 @@
 #include "taxCollector.h"
 #include "Government.h"
 #include "ResidentialZoneComposite.h"
+#include "CommercialZoneComposite.h"
 
 
 class ConcreteTaxCollector: public taxCollector{
@@ -11,6 +12,8 @@ class ConcreteTaxCollector: public taxCollector{
      void visit(ResidentialBuilding* RB);
      void visit(CommercialBuilding* CB);
      void visit(ResidentialZoneComposite* Rzone);
+     void visit(CommercialZoneComposite* Czone);
+     ConcreteTaxCollector();
      Government* bank;
     
 

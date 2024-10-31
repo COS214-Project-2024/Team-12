@@ -6,6 +6,7 @@
 #include "CommercialBuilding.h"
 #include "ResidentialZoneComposite.h"
 #include "Government.h"
+#include "CommercialZoneComposite.h"
 
 
 class taxCollector{
@@ -13,6 +14,7 @@ class taxCollector{
     virtual void visit(ResidentialBuilding* RB)=0;
     virtual void visit(CommercialBuilding* CB)=0;
     virtual void visit(ResidentialZoneComposite* Rzone)=0;
+    virtual void visit(CommercialZoneComposite* Czone)=0;
     virtual ~taxCollector();
     Government* bank;
    

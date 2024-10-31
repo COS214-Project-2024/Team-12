@@ -23,8 +23,8 @@ void Estate::setEstateRate(double taxRate){
 
  }
 
- void Estate::accept(taxCollector* TC){
-    TC->visit(this);
+ void Estate::accept(taxCollector& TC){
+    TC.visit(this);
 
 }
 

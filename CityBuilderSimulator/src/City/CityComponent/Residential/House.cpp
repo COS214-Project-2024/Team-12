@@ -22,8 +22,8 @@ std::unique_ptr<ResidentialBuilding> House::clone() const{
 
  }
 
- void House::accept(taxCollector* TC){
-    TC->visit(this);
+ void House::accept(taxCollector& TC){
+    TC.visit(this);
 
 }
 

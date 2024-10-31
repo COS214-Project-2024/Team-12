@@ -1,10 +1,12 @@
 #include "../CityComponent.h"
 #include "ResidentialZoneComposite.h"
+#include "concreteTaxCollector.h"
 
 #include <vector>
 #include <iostream>
 
-ResidentialZoneComposite::ResidentialZoneComposite(double taxRate) : residentialTaxRate(taxRate) {}
+ResidentialZoneComposite::ResidentialZoneComposite(double taxRate, taxCollector& sarsR) : residentialTaxRate(taxRate),sars(sarsR) {}
+    
 
 void ResidentialZoneComposite::add(CityComponent* building){
 	 buildings.push_back(building);
@@ -31,7 +33,7 @@ void ResidentialZoneComposite::payTax(){
 
 }
 
-void ResidentialZoneComposite::accept(taxCollector* TC){
-    TC->visit(this);
+void ResidentialZoneComposite::accept(taxCollector& TC){
+    TC.visit(this);
 }
   

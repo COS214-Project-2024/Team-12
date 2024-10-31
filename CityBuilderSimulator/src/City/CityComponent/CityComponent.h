@@ -17,7 +17,7 @@ public:
 	void addNpc();
 	void removeNpc();
 	void notify();
-	virtual void accept(taxCollector* TC)=0;
+	virtual void accept(taxCollector& TC)=0;
 
 
 private:

@@ -12,19 +12,19 @@ class ResidentialZoneComposite : public CityComponent {
 private:
     std::vector<CityComponent*> buildings;
     double residentialTaxRate;
-    taxCollector* sars;
+    taxCollector& sars;
    
 bool taxPayed;
 
 public:
-    ResidentialZoneComposite(double taxRate);
+    ResidentialZoneComposite(double taxRate, taxCollector& sarsR);
 
     void add(CityComponent* building) override;
 
     void remove(CityComponent* building) override;
 
     void displayStatus() override;
-    void accept(taxCollector* TC);
+    void accept(taxCollector& TC);
    void payTax();
 
     

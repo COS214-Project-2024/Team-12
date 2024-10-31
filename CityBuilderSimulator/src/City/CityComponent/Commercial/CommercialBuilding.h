@@ -14,6 +14,7 @@ class CommercialBuilding{
     double size;
     bool taxPayed;
     
+    
 
 
     public:

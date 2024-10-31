@@ -40,7 +40,7 @@ public:
     void connectSewage(std::shared_ptr<UtilityFlyweight> sewage);
     void applyUtilityConsumption();
     virtual std::unique_ptr<ResidentialBuilding> clone() const = 0;
-    virtual void accept(taxCollector* TC)=0;
+    virtual void accept(taxCollector& TC)=0;
     virtual void payTax()=0;
 };
 

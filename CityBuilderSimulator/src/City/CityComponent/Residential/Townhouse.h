@@ -19,7 +19,7 @@ public:
    
     std::unique_ptr<ResidentialBuilding> clone() const;
      void setTownhouseRate(double rate);
-     void accept(taxCollector* TC);
+     void accept(taxCollector& TC);
     void payTax();
 };
 

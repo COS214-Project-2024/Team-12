@@ -17,8 +17,8 @@ std::unique_ptr<ResidentialBuilding> Flat::clone() const {
         return std::make_unique<Flat>(*this);
 }
 
-void Flat::accept(taxCollector* TC){
-        TC->visit(this);
+void Flat::accept(taxCollector& TC){
+        TC.visit(this);
 }
 
 

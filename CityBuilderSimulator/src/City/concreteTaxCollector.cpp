@@ -13,3 +13,12 @@ void ConcreteTaxCollector::visit(ResidentialZoneComposite* Rzone){
     Rzone->payTax();
 
 }
+
+void ConcreteTaxCollector::visit(CommercialZoneComposite* Czone){
+    Czone->payTax();
+
+}
+
+ ConcreteTaxCollector::ConcreteTaxCollector(){
+
+}

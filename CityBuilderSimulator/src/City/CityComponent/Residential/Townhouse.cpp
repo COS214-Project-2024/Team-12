@@ -22,8 +22,8 @@ void Townhouse::setTownhouseRate(double taxRate){
 
  }
 
- void Townhouse::accept(taxCollector* TC){
-    TC->visit(this);
+ void Townhouse::accept(taxCollector& TC){
+    TC.visit(this);
 
 }
 

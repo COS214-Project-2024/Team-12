@@ -2,11 +2,13 @@
 #define WATERSUPPLY_H
 
 #include "UtilityFlyweight.h"
+
 #include <memory>
 #include <map>
 #include <string>
 
 class CityComponent;
+
 
 class WaterSupply : public UtilityFlyweight {
 public:

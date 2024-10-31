@@ -38,7 +38,7 @@ public:
     ResidentialBuilding(int bedrooms, double price,std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
                         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     virtual ~ResidentialBuilding() = default;
-	void displayStatus();
+	void displayStatus() override;
     void connectWater(std::shared_ptr<UtilityFlyweight> water);
     void connectPower(std::shared_ptr<UtilityFlyweight> power);
     void connectWasteManagement(std::shared_ptr<UtilityFlyweight> waste);
@@ -46,7 +46,8 @@ public:
     void applyUtilityConsumption();
     virtual std::shared_ptr<ResidentialBuilding> clone() const = 0;
 
-    virtual void accept(taxCollector* TC) = 0;
+
+    void accept(taxCollector* TC) override;
     
     virtual void payTax() = 0;
     std::string getBuildingType() override{

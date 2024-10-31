@@ -24,7 +24,7 @@ private:
     int trafficCapacity;
     roadType road;
 public:
-    Roads(int cap, double cost, double maintenanceC, std::string name, int trafficC, roadType road);
+    //Roads(int cap, double cost, double maintenanceC, std::string name, int trafficC, roadType road);
     std::unique_ptr<Transport> clone() const;
 
     double getSpeed() const override;

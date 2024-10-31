@@ -17,10 +17,9 @@ std::shared_ptr<ResidentialBuilding> Flat::clone() const {
         return std::make_shared<Flat>(*this);
 }
 
-void Flat::accept(taxCollector* TC){
-        TC->visit(this);
+void Flat::accept(taxCollector* TC) {
+    TC->visit(static_cast<ResidentialBuilding*>(this));  // Cast this to ResidentialBuilding*
 }
-
 
 void Flat::payTax(){
         bank->addMoney(price*rate);

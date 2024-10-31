@@ -12,8 +12,8 @@ class taxCollector;
 
 class CityComponent{
 public:
-	virtual void add(CityComponent *component, int x, int y) {}
-	virtual void remove(CityComponent *component) {}
+	virtual void add(CityComponent *, int , int) {}
+	virtual void remove(CityComponent *) {}
 	virtual void displayStatus() = 0;
 	virtual ~CityComponent();
 	//void addNpc();
@@ -21,7 +21,7 @@ public:
 	void notify();
 
 	virtual std::string getBuildingType() = 0;
-	virtual void accept(taxCollector* TC)=0;
+	virtual void accept(taxCollector*)=0;
 
 	//setting the location
 	void setLocation(int x, int y);

@@ -9,6 +9,7 @@ class ZoneComposite : public CityComponent{
 	private:
 	std::vector<CityComponent*> buildings;
 	std::string zoneType;
+	taxCollector* sars;
 
 	int minX, maxX, minY, maxY;  // Zone boundaries
 
@@ -24,6 +25,8 @@ class ZoneComposite : public CityComponent{
 	std::string getBuildingType() override;
 
 	void accept(taxCollector* TC) override;
+
+	void payTax();
 };
 
 #endif

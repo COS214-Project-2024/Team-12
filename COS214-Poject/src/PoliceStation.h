@@ -11,10 +11,13 @@ private:
     bool wasteManagement;
     std::string status;
 public:
+    PoliceStation();  // Default constructor
     PoliceStation(bool waterStatus, bool electricityStatus, bool wasteManagementStatus, bool sewageStatus, std::string buildingStatus);
     ~PoliceStation();
     void provideService();
     std::unique_ptr<PublicService> clone() const;
+    void displayStatus() override;
+    void accept(taxCollector* TC) override;
 
 };
 

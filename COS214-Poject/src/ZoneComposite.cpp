@@ -45,3 +45,11 @@ void ZoneComposite::accept(taxCollector* TC){
         building->accept(TC);  // Collect taxes from each building
     }
 }
+
+void ZoneComposite::payTax(){
+	std::vector<CityComponent*>::iterator it;
+    for (it = buildings.begin(); it != buildings.end(); ++it) {
+        CityComponent* component = *it;
+        component->accept(sars);
+    }
+}

@@ -1,6 +1,6 @@
 #include "CityComponent.h"
 #include "CommercialZoneComposite.h"
-
+#include "algorithm"
 #include <vector>
 #include <iostream>
 

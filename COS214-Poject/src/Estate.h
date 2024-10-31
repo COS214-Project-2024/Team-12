@@ -4,7 +4,7 @@
 #include "ResidentialBuilding.h"
 
 #include "taxCollector.h"
-#include "CityComposite/CityComposite.h"
+#include "CityComposite.h"
 
 
 class Estate : public ResidentialBuilding {

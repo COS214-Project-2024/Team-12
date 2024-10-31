@@ -22,7 +22,7 @@ class Shops:public CommercialBuilding{
 
     public:
     void setShopsRate(double rate);
-    void accept(taxCollector& TC);
+    void accept(taxCollector& TC) override;
     void payTax();
 };
 

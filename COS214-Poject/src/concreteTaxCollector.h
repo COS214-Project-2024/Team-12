@@ -10,7 +10,11 @@ class ConcreteTaxCollector: public taxCollector{
      void visit(ResidentialBuilding* RB);
      void visit(CommercialBuilding* CB);
      void visit(ResidentialZoneComposite* Rzone);
-     Government* bank;
+
+    // Government* bank;
+    //bank is not needed but can be accessed via
+    //Government::getInstance()->someGovernmentMethod(); when needed
+
 };
 
 

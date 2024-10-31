@@ -19,6 +19,9 @@ public:
 
     void displayStatus() override;
 
+    //cant implement Composite
+    //void accept(taxCollector* TC)override{} ;
+
 
     std::string getBuildingType() override{
         return "Commercialzone";

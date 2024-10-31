@@ -16,7 +16,9 @@ class taxCollector{
     virtual void visit(CommercialBuilding* CB)=0;
     virtual void visit(ResidentialZoneComposite* Rzone)=0;
     virtual ~taxCollector();
-    Government* bank;
+  //  Government* bank;
+    //bank can be accessed via when needed Government::getInstance()->someGovernmentMethod();
+
 };
 
 

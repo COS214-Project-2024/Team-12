@@ -38,9 +38,9 @@ public:
         return "City";
     }
 
-    void accept(taxCollector* tax) override{
-        //can't collect tax from the city
-    }
+    // void accept(taxCollector* tax) override{
+    //     //can't collect tax from the city
+    // }
 
 };
 

@@ -23,7 +23,7 @@ public:
 	 ~ConstructionResourceProduct();
 	void ConsumeResource(int amount);
 
-	void displayStatus() ;
+	void displayStatus() override;
 
 	int getTotalCost() const;
 

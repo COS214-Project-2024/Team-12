@@ -20,6 +20,8 @@ public:
 
     virtual ~Transport() = default;
 
+    void accept(taxCollector* TC) override;
+
     std::string getBuildingType() override{
         return "Transport";
     }

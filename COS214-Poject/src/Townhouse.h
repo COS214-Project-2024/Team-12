@@ -4,7 +4,7 @@
 #include "ResidentialBuilding.h"
 
 #include "taxCollector.h"
-#include "CityComposite/CityComposite.h"
+#include "CityComposite.h"
 
 
 class Townhouse : public ResidentialBuilding {
@@ -21,7 +21,7 @@ public:
    
     std::unique_ptr<ResidentialBuilding> clone() const;
      void setTownhouseRate(double rate);
-     void accept(taxCollector* TC);
+     void accept(taxCollector* TC) override;
     void payTax();
 };
 

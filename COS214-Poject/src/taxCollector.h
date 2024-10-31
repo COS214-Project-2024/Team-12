@@ -4,17 +4,21 @@
 
 
 #include "ResidentialBuilding.h"
-#include "ResidentialZoneComposite.h"
+#include "ZoneComposite.h"
 #include "CommercialBuilding.h"
 
 #include "Government.h"
+
+class ResidentialBuilding;
+class CommercialBuilding;
+class ZoneComposite;
 
 
 class taxCollector{
     public:
     virtual void visit(ResidentialBuilding* RB)=0;
     virtual void visit(CommercialBuilding* CB)=0;
-    virtual void visit(ResidentialZoneComposite* Rzone)=0;
+    virtual void visit(ZoneComposite* Rzone)=0;
     virtual ~taxCollector();
     Government* bank;
 };

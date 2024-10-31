@@ -1,82 +1,65 @@
+// MapGrid.cpp
 #include "MapGrid.h"
 #include "Node.h"
-#include "Transport.h"
-#include "iostream"
-
-#include <memory>
-#include <vector>
+#include <iostream>
 
 MapGrid::MapGrid(int width, int height) : width(width), height(height) {
-    // Initialize the grid vector with empty rows
-    grid.reserve(height);
-    // Fill each row with columns
-    // for (int i = 0; i < height; i++) {
-    //     std::vector<std::unique_ptr<Node>> row;
-    //     row.reserve(width);
-    //     grid.push_back(std::move(row));
-    // }
-    // initializeGrid();
-
-    for (auto& row : grid) {
-        row.reserve(width); // Reserve space for each row
-        for (int x = 0; x < width; ++x) {
-            row.push_back(std::make_unique<Node>(x, row.size())); // Create nodes directly
+    std::cout << "Starting grid initialization..." << std::endl;
+    
+    // First, reserve space for the rows
+    grid.resize(height);
+    
+    // Then initialize each row and its nodes
+    for (int y = 0; y < height; y++) {
+        // Create a new vector for this row with 'width' columns
+        std::vector<std::unique_ptr<Node>> row;
+        row.reserve(width);
+        
+        // Fill the row with nodes
+        for (int x = 0; x < width; x++) {
+            row.push_back(std::make_unique<Node>(x, y));
         }
+        
+        // Move the row into place
+        grid[y] = std::move(row);
     }
+    
+    std::cout << "Grid initialization complete: " << width << "x" << height << std::endl;
 }
 
-void MapGrid::initializeGrid()
-{
-	for (int y = 0; y < height; ++y)
-	{
-		for (int x = 0; x < width; ++x)
-		{
-			grid[y].push_back(std::make_unique<Node>(x, y));
-		}
-	}
-}
-
-Node *MapGrid::getNode(int x, int y)
-{
-	if (x >= 0 && x < width && y >= 0 && y < height)
-	{
-		return grid[y][x].get();
-	}
-	return nullptr;
-}
-
-void MapGrid::connectNodes(const Location& start, const Location& end, std::unique_ptr<Transport> transport) {
-    Node* startNode = getNode(start.x, start.y);
-    Node* endNode = getNode(end.x, end.y);
-    if (startNode && endNode && transport) {
-        // Create a clone of the transport for the bi-directional connection
-        auto transportClone = transport->clone();
-        startNode->addConnection(endNode, std::move(transport));
-        endNode->addConnection(startNode, std::move(transportClone));
+Node* MapGrid::getNode(int x, int y) const {
+    if (x >= 0 && x < width && y >= 0 && y < height && grid[y][x]) {
+        return grid[y][x].get();
     }
-}
-bool MapGrid::isAdjacent(const Location& loc1, const Location& loc2){
-
-	int dx = std::abs(loc1.x - loc2.x);
-	int dy = std::abs(loc1.y - loc2.y);
-	return (dx <= 1 && dy <= 1) && !(dx == 0 && dy == 0);
+    std::cout << "Warning: Attempted to access invalid node at (" << x << "," << y << ")" << std::endl;
+    return nullptr;
 }
 
 void MapGrid::placeComponent(CityComponent* component, int x, int y) {
-    if (x < 0 || x >= width || y < 0 || y >= height) {
-        std::cout << "Error: Coordinates (" << x << ", " << y << ") are out of bounds.\n";
+    std::cout << "Attempting to place component at (" << x << "," << y << ")" << std::endl;
+    
+    if (!component) {
+        std::cout << "Error: Null component" << std::endl;
         return;
     }
 
-    Node* node = grid[y][x].get();
+    if (x < 0 || x >= width || y < 0 || y >= height) {
+        std::cout << "Error: Out of bounds coordinates (" << x << "," << y << ")" << std::endl;
+        return;
+    }
 
-    if (node->getComponent() != nullptr) {
-        std::cout << "Error: Location (" << x << ", " << y << ") is already occupied.\n";
+    Node* node = getNode(x, y);
+    if (!node) {
+        std::cout << "Error: Could not access node at (" << x << "," << y << ")" << std::endl;
+        return;
+    }
+
+    if (node->getComponent()) {
+        std::cout << "Error: Location already occupied at (" << x << "," << y << ")" << std::endl;
         return;
     }
 
     node->setComponent(component);
-    component->setLocation(x, y);  // Update the component’s location
-    std::cout << "Component placed at (" << x << ", " << y << ")\n";
+    component->setLocation(x, y);
+    std::cout << "Successfully placed component at (" << x << "," << y << ")" << std::endl;
 }
-

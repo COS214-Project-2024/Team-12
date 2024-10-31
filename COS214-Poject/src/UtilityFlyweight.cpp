@@ -41,3 +41,7 @@ void UtilityFlyweight::displayStatus() {
     }
     std::cout << "\n";
 }
+
+void UtilityFlyweight::setResourceConsumption(int consumption) {
+    resourceConsumption = consumption;
+}

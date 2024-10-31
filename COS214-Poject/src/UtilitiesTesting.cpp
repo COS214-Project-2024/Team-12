@@ -62,41 +62,48 @@ void testUtilityConnection() {
 }
 
 void testGreenTechnologyDecorator() {
-    MapGrid cityMap(10, 10);
-    UtilityFactory factory;
-    CityComposite city("TestCity", &cityMap);
-    
-    // Get base utilities
-    auto baseWaterSupply1 = factory.getUtility("WaterSupply");
-    auto baseWaterSupply2 = factory.getUtility("WaterSupply");
-    
-    std::cout << "Initial base consumption: " << baseWaterSupply1->getResourceConsumption() << std::endl;
-    
-    // Create decorators
-    auto regularDecorator = std::make_unique<UtilityDecorator>(std::move(baseWaterSupply1), &city);
-    auto greenWaterSupply = std::make_unique<GreenTechnologyDecorator>(std::move(baseWaterSupply2), &city);
-
-    city.addBudget(50000);
-
-    std::cout << "\nUpgrading utilities..." << std::endl;
-    for (int i = 0; i < 4; i++) {
-        std::cout << "\nLevel " << (i+1) << " upgrades:" << std::endl;
+    try {
+        MapGrid cityMap(10, 10);
+        UtilityFactory factory;
+        CityComposite city("TestCity", &cityMap);
         
-        regularDecorator->upgrade();
-        greenWaterSupply->upgrade();
+        auto baseWaterSupply1 = factory.getUtility("WaterSupply");
+        auto baseWaterSupply2 = factory.getUtility("WaterSupply");
         
-        std::cout << "Regular consumption: " << regularDecorator->getResourceConsumption() << std::endl;
-        std::cout << "Green consumption: " << greenWaterSupply->getResourceConsumption() << std::endl;
+        std::cout << "Initial consumption: " << baseWaterSupply1->getResourceConsumption() << std::endl;
+        
+        auto regularDecorator = std::make_unique<UtilityDecorator>(std::move(baseWaterSupply1), &city);
+        auto greenWaterSupply = std::make_unique<GreenTechnologyDecorator>(std::move(baseWaterSupply2), &city);
+
+        city.addBudget(50000);
+
+        std::cout << "\nUpgrading utilities..." << std::endl;
+        for (int i = 0; i < 4; i++) {
+            std::cout << "\nLevel " << (i+1) << " upgrades:" << std::endl;
+            
+            std::cout << "Regular before upgrade: " << regularDecorator->getResourceConsumption() << std::endl;
+            regularDecorator->upgrade();
+            std::cout << "Regular after upgrade: " << regularDecorator->getResourceConsumption() << std::endl;
+            
+            std::cout << "Green before upgrade: " << greenWaterSupply->getResourceConsumption() << std::endl;
+            greenWaterSupply->upgrade();
+            std::cout << "Green after upgrade: " << greenWaterSupply->getResourceConsumption() << std::endl;
+        }
+
+        int regularConsumption = regularDecorator->getResourceConsumption();
+        int greenConsumption = greenWaterSupply->getResourceConsumption();
+        
+        std::cout << "\nFinal Comparison:" << std::endl;
+        std::cout << "Regular consumption: " << regularConsumption << std::endl;
+        std::cout << "Green consumption: " << greenConsumption << std::endl;
+        
+        assert(greenConsumption < regularConsumption && 
+               "Green technology should reduce resource consumption compared to regular utility at the same level");
+    } catch (const std::exception& e) {
+        std::cerr << "Test failed with exception: " << e.what() << std::endl;
+        throw;
     }
-    
-    std::cout << "\nFinal Comparison:" << std::endl;
-    std::cout << "Regular utility consumption: " << regularDecorator->getResourceConsumption() << std::endl;
-    std::cout << "Green utility consumption: " << greenWaterSupply->getResourceConsumption() << std::endl;
-    
-    assert(greenWaterSupply->getResourceConsumption() < regularDecorator->getResourceConsumption() && 
-           "Green technology should reduce resource consumption compared to regular utility at the same level");
 }
-
 void testUtilityRepair() {
     MapGrid cityMap(10, 10);  // Define cityMap locally here
     UtilityFactory factory;

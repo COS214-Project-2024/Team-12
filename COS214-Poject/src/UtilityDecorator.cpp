@@ -17,25 +17,15 @@ std::shared_ptr<UtilityFlyweight> UtilityDecorator::clone() const {
 }
 
 void UtilityDecorator::upgrade() {
-    // Calculate upgrade cost first
-    double currentUpgradeCost = upgradeCost;
-
-    // Check if player has enough budget and attempt to deduct
-    if (player->getBudget() >= currentUpgradeCost && player->deductBudget(currentUpgradeCost)) {
-        // Increment level
-        level++;
-        
-        // Update capacity
+    if (player->getBudget() >= upgradeCost && player->deductBudget(upgradeCost)) {
+        // Increment member variables
+        level++;  // Local level
         capacity += 10;
-        
-        // Update effect radius
         effectRadius += 3.0;
+        resourceConsumption += 5;  // Increment consumption
         
-        // Update resource consumption
-        resourceConsumption += 5;
-        
-        // Update cost and calculate new upgrade cost
-        cost += currentUpgradeCost;
+        // Update costs
+        cost += upgradeCost;
         upgradeCost = cost * 0.2;
 
         std::cout << name << " upgraded to level " << level
@@ -43,9 +33,6 @@ void UtilityDecorator::upgrade() {
                 << ", effect radius: " << effectRadius
                 << ", resource consumption: " << resourceConsumption
                 << ", next upgrade cost: " << upgradeCost << "\n";
-    } else {
-        std::cout << "Insufficient budget.\n";
-        std::cout << "Insufficient funds for upgrade.\n";
     }
 }
 
@@ -74,7 +61,7 @@ double UtilityDecorator::getUpgradeCost() const {
 }
 
 int UtilityDecorator::getResourceConsumption() const {
-    return wrappedUtility->getResourceConsumption();
+    return resourceConsumption;
 }
 
 int UtilityDecorator::getLevel() const {

@@ -43,8 +43,10 @@ public:
     void accept(taxCollector* tax) override{
         //return nothing
     }
+    void incrementLevel() { level++; }
 
 protected:
+    void setResourceConsumption(int consumption);
     std::string name;
     double cost = 0.0;                               // Monetary cost to build or upgrade
     int capacity = 0;                               // Max buildings it can support

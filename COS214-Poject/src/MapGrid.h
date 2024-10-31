@@ -3,7 +3,6 @@
 
 #include "Node.h"
 #include "Transport.h"
-
 #include <memory>
 #include <vector>
 
@@ -18,7 +17,7 @@ class MapGrid{
 
 	void initializeGrid();
 
-	Node* getNode(int x, int y);
+	Node* getNode(int x, int y) const;
 
 	void connectNodes(const Location& start, const Location& end, std::unique_ptr<Transport> transport);
 

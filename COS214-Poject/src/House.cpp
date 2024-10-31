@@ -30,7 +30,7 @@ std::shared_ptr<ResidentialBuilding> House::clone() const{
 
 
 void House::payTax(){
-    bank->addMoney(price*rate);
+    //bank->addMoney(price*rate);
     taxPayed=true;
     
 }

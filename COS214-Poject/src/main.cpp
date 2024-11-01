@@ -215,7 +215,7 @@ public:
 
 int main() {
     try {
-        CityGame game(10, 10);
+        CityGame game(100, 100);
         game.run();
     } catch (const std::exception& e) {
         std::cerr << "\033[1;31mError: " << e.what() << "\033[0m\n";

@@ -1,4 +1,7 @@
 #include "ConstructionResourceProduct.h"
+#include <vector>
+#include <algorithm>
+#include <memory>
 
 // Constructor with parameters
 ConstructionResourceProduct::ConstructionResourceProduct(std::string name, int quantity, int unitCost)
@@ -46,10 +49,10 @@ void ConstructionResourceProduct::replenish(int amount) {
 }
 
 
-double ConstructionResourceProduct::getTaxRevenue()
-{
-     return quantity * 0.2;
-}
+// double ConstructionResourceProduct::getTaxRevenue()
+// {
+//      return quantity * 0.2;
+// }
 
 
 bool ConstructionResourceProduct::isReadyForCollection() 
@@ -62,4 +65,24 @@ bool ConstructionResourceProduct::isReadyForCollection()
         readyForCollection = false;
     }
     return readyForCollection;
+}
+
+void ConstructionResourceProduct::notify(){
+    if(this->isReadyForCollection()) {
+        for(auto* observer : observerList){
+            observer->update();
+        }
+    }
+}
+
+void ConstructionResourceProduct::attach(ConstructionTruck* observer) {
+    this->observerList.push_back(observer);
+
+}
+
+void ConstructionResourceProduct::detach(ConstructionTruck* observer) {
+        observerList.erase(
+            std::remove(observerList.begin(), observerList.end(), observer), 
+            observerList.end()
+        );
 }

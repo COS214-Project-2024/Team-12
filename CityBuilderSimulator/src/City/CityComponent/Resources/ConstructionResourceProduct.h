@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include "../CityComponent.h"
+#include "ConstructionTruck.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ private:
 	int unitCost;
 	string name;
 	bool readyForCollection;
+	std::vector<ConstructionTruck*> observerList;
 	
 
 public:
@@ -32,8 +34,12 @@ public:
 	void replenish(int amount);
 
 	int getUnitCost() const;
-	double getTaxRevenue() override;
-	bool isReadyForCollection(); 
+	bool isReadyForCollection();
+	void notify();
+	void attach(ConstructionTruck* observer);
+	void detach(ConstructionTruck* observer);
+
+
 };
 
 #endif

@@ -45,3 +45,7 @@ void UtilityFlyweight::displayStatus() {
 void UtilityFlyweight::setResourceConsumption(int consumption) {
     resourceConsumption = consumption;
 }
+
+double UtilityFlyweight::getRadius() const{
+    return effectRadius;
+}

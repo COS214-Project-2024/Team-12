@@ -1,6 +1,15 @@
 #include "WaterSupply.h"
 
-//WaterSupply::WaterSupply():UtilityFlyweight("WaterSupply", 800, 60, 12.0, true, 1, 10, {{"Steel", 40}, {"Plastic", 20}}) {}
+WaterSupply::    WaterSupply() : UtilityFlyweight(
+    "Water Supply",    // name
+    150.0,            // cost - moderate cost
+    60,               // capacity - can serve many buildings
+    3.0,              // radius - moderate coverage
+    true,             // operational
+    1,                // level
+    10,               // consumption - moderate resource usage
+    {{"Steel", 40}, {"Plastic", 20}}  // basic resources needed
+) {}
 
 WaterSupply::WaterSupply(const std::string& n, double c, int cap, double radius, bool operational, int l, int consumption, const std::map<std::string, int>& resources)
         : UtilityFlyweight(n, c, cap, radius, operational, l, consumption, resources) {}

@@ -36,6 +36,8 @@ public:
 
     void displayStatus();
 
+    double getRadius() const;
+
     std::string getBuildingType() override{
         return "Utility";
     }

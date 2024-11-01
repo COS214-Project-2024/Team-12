@@ -7,6 +7,10 @@
 #include "Industry.h"
 #include "House.h"
 #include "UtilityFlyweight.h"
+#include "WaterSupply.h"
+#include "PowerPlant.h"
+#include "SewageSystem.h"
+#include "WasteManagement.h"
 #include <iostream>
 #include <memory>
 #include <vector>
@@ -34,7 +38,16 @@ private:
                   << "\nChoice: ";
     }
 
-    // Updated handleBuildStructure with better error handling and feedback
+    void showStatistics() {
+        std::cout << "\n=== City Statistics ===\n"
+                << "Money: $" << state.getMoney() << "\n"
+                << "Happiness: " << state.getHappiness() << "%\n"
+                  // Add more statistics here
+                << "\nPress Enter to continue...";
+        std::cin.get();
+    }
+
+
     void handleBuildStructure() {
         std::cout << "\nSelect building type:\n"
                   << "1. House ($100)\n"
@@ -47,6 +60,22 @@ private:
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "\033[1;31mInvalid input!\033[0m\n";
+            return;
+        }
+
+        // Check money before asking for location
+        int cost = 0;
+        switch (choice) {
+            case 1: cost = 100; break;
+            case 2: cost = 200; break;
+            case 3: cost = 300; break;
+            default: 
+                std::cout << "\033[1;31mInvalid choice!\033[0m\n";
+                return;
+        }
+
+        if (state.getMoney() < cost) {
+            std::cout << "\033[1;31mNot enough money! Need $" << cost << "\033[0m\n";
             return;
         }
         
@@ -64,48 +93,107 @@ private:
             return;
         }
 
-        // Check if location is already occupied
         if (grid.getComponent(loc)) {
             std::cout << "\033[1;31mLocation already occupied!\033[0m\n";
             return;
         }
 
         std::shared_ptr<CityComponent> building;
-        int cost = 0;
-
         switch (choice) {
-            case 1: 
-                cost = 100;
-                building = std::make_shared<House>();
-                break;
-            case 2: 
-                cost = 200;
-                building = std::make_shared<CommercialBuilding>();
-                break;
-            case 3: 
-                cost = 300;
-                building = std::make_shared<Industry>();
-                break;
-            default: 
-                std::cout << "\033[1;31mInvalid choice!\033[0m\n";
-                return;
+            case 1: building = std::make_shared<House>(); break;
+            case 2: building = std::make_shared<CommercialBuilding>(); break;
+            case 3: building = std::make_shared<Industry>(); break;
         }
 
         if (!state.spendMoney(cost)) {
-            std::cout << "\033[1;31mNot enough money!\033[0m\n";
+            std::cout << "\033[1;31mTransaction failed!\033[0m\n";
             return;
         }
 
         auto command = std::make_unique<PlaceComponentCommand>(grid, loc, building);
         state.executeCommand(std::move(command));
+        std::cout << "\033[1;32mBuilding placed successfully!\033[0m\n";
+    }
 
-        // Verify placement was successful
-        if (grid.getComponent(loc)) {
-            std::cout << "\033[1;32mBuilding placed successfully!\033[0m\n";
-        } else {
-            state.addMoney(cost);  // Refund if placement failed
-            std::cout << "\033[1;31mFailed to place building!\033[0m\n";
+    void handlePlaceUtility() {
+        std::cout << "\nSelect utility type:\n"
+                  << "1. Water Supply ($150)\n"
+                  << "2. Power Plant ($200)\n"
+                  << "3. Sewage System ($175)\n"
+                  << "4. Waste Management ($125)\n"
+                  << "Choice: ";
+
+        int choice;
+        if (!(std::cin >> choice)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\033[1;31mInvalid input!\033[0m\n";
+            return;
         }
+
+        int cost = 0;
+        std::shared_ptr<UtilityFlyweight> utility;
+        switch (choice) {
+            case 1: 
+                cost = 150;
+                utility = std::make_shared<WaterSupply>();
+                break;
+            case 2: 
+                cost = 200;
+                utility = std::make_shared<PowerPlant>();
+                break;
+            case 3: 
+                cost = 175;
+                utility = std::make_shared<SewageSystem>();
+                break;
+            case 4: 
+                cost = 125;
+                utility = std::make_shared<WasteManagement>();
+                break;
+            default:
+                std::cout << "\033[1;31mInvalid choice!\033[0m\n";
+                return;
+        }
+
+        if (state.getMoney() < cost) {
+            std::cout << "\033[1;31mNot enough money! Need $" << cost << "\033[0m\n";
+            return;
+        }
+
+        Location loc;
+        std::cout << "Enter location (x y): ";
+        if (!(std::cin >> loc.x >> loc.y)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\033[1;31mInvalid coordinates!\033[0m\n";
+            return;
+        }
+
+        if (!grid.isValidLocation(loc)) {
+            std::cout << "\033[1;31mInvalid location!\033[0m\n";
+            return;
+        }
+
+        if (!state.spendMoney(cost)) {
+            std::cout << "\033[1;31mTransaction failed!\033[0m\n";
+            return;
+        }
+
+        auto command = std::make_unique<PlaceComponentCommand>(grid, loc, utility);
+        state.executeCommand(std::move(command));
+        
+        // Add utility effect to surrounding cells
+        int radius = utility->getRadius();
+        for (int y = loc.y - radius; y <= loc.y + radius; y++) {
+            for (int x = loc.x - radius; x <= loc.x + radius; x++) {
+                Location affectedLoc{x, y};
+                if (grid.isValidLocation(affectedLoc)) {
+                    grid.addUtilityEffect(affectedLoc, utility);
+                }
+            }
+        }
+
+        std::cout << "\033[1;32mUtility placed successfully!\033[0m\n";
     }
 
 public:
@@ -121,12 +209,18 @@ public:
             std::cin >> choice;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-            switch (choice) {
-                case 1: handleBuildStructure(); break;
-                case 4: state.undo(); break;
-                case 5: state.redo(); break;
-                case 0: running = false; break;
-                default: std::cout << "\033[1;31mInvalid choice!\033[0m\n";
+            try {
+                switch (choice) {
+                    case 1: handleBuildStructure(); break;
+                    case 2: handlePlaceUtility(); break;
+                    case 3: showStatistics(); break;
+                    case 4: state.undo(); break;
+                    case 5: state.redo(); break;
+                    case 0: running = false; break;
+                    default: std::cout << "\033[1;31mInvalid choice!\033[0m\n";
+                }
+            } catch (const std::exception& e) {
+                std::cout << "\033[1;31mError: " << e.what() << "\033[0m\n";
             }
         }
     }

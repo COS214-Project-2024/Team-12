@@ -7,6 +7,7 @@
 #include "Industry.h"
 #include "House.h"
 #include "UtilityFlyweight.h"
+#include "UtilityFactory.h"
 #include "WaterSupply.h"
 #include "PowerPlant.h"
 #include "SewageSystem.h"
@@ -115,48 +116,29 @@ private:
         std::cout << "\033[1;32mBuilding placed successfully!\033[0m\n";
     }
 
-    void handlePlaceUtility() {
-        std::cout << "\nSelect utility type:\n"
-                  << "1. Water Supply ($150)\n"
-                  << "2. Power Plant ($200)\n"
-                  << "3. Sewage System ($175)\n"
-                  << "4. Waste Management ($125)\n"
-                  << "Choice: ";
+void handlePlaceUtility() {
+    UtilityFactory factory;
 
-        int choice;
-        if (!(std::cin >> choice)) {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "\033[1;31mInvalid input!\033[0m\n";
-            return;
-        }
+    std::cout << "\nSelect utility type:\n";
+    for(int i = 1; i <= 4; i++) {
+        std::cout << i << ". " << UtilityFactory::getUtilityName(i) 
+                  << " ($" << UtilityFactory::getUtilityCost(i) << ")\n";
+    }
+    std::cout << "Choice: ";
 
-        int cost = 0;
-        std::shared_ptr<UtilityFlyweight> utility;
-        switch (choice) {
-            case 1: 
-                cost = 150;
-                utility = std::make_shared<WaterSupply>();
-                break;
-            case 2: 
-                cost = 200;
-                utility = std::make_shared<PowerPlant>();
-                break;
-            case 3: 
-                cost = 175;
-                utility = std::make_shared<SewageSystem>();
-                break;
-            case 4: 
-                cost = 125;
-                utility = std::make_shared<WasteManagement>();
-                break;
-            default:
-                std::cout << "\033[1;31mInvalid choice!\033[0m\n";
-                return;
-        }
+    int choice;
+    if (!(std::cin >> choice)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "\033[1;31mInvalid input!\033[0m\n";
+        return;
+    }
 
-        if (state.getMoney() < cost) {
-            std::cout << "\033[1;31mNot enough money! Need $" << cost << "\033[0m\n";
+    try {
+        auto utility = factory.getUtilityByType(choice);
+        if (state.getMoney() < utility->getCost()) {
+            std::cout << "\033[1;31mNot enough money! Need $" 
+                      << utility->getCost() << "\033[0m\n";
             return;
         }
 
@@ -174,7 +156,7 @@ private:
             return;
         }
 
-        if (!state.spendMoney(cost)) {
+        if (!state.spendMoney(utility->getCost())) {
             std::cout << "\033[1;31mTransaction failed!\033[0m\n";
             return;
         }
@@ -193,8 +175,13 @@ private:
             }
         }
 
-        std::cout << "\033[1;32mUtility placed successfully!\033[0m\n";
+        std::cout << "\033[1;32m" << utility->getName() 
+                  << " placed successfully!\033[0m\n";
     }
+    catch (const std::out_of_range& e) {
+        std::cout << "\033[1;31mInvalid choice!\033[0m\n";
+    }
+}
 
 public:
     CityGame(int width, int height) : grid(width, height) {}

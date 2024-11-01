@@ -66,6 +66,12 @@ void CityComponent::setLocation(int x,int y){
 	location = Location(x, y);
 }
 
+void CityComponent::setLocation(const Location &loc){
+	location = loc;
+}
+
+
 Location CityComponent::getLocation() const{
 	return location;
 }
+

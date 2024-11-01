@@ -20,8 +20,18 @@ CityComposite::~CityComposite()
 
 void CityComposite::add(CityComponent *zone, int x, int y)
 {
-    zones.push_back(zone);
-    map->placeComponent(zone, x, y);
+    Location loc(x, y);
+
+    // Convert raw pointer to shared_ptr if needed
+    auto zonePtr = std::shared_ptr<CityComponent>(zone);
+
+    if(map->placeComponent(loc, zonePtr)) {
+        zones.push_back(zone);
+        zone->setLocation(loc);
+    }
+
+    // zones.push_back(zone);
+    // map->placeComponent(zone, x, y);
 
     // Remeber to change for citizens
     /* checkCityConditions();
@@ -99,18 +109,30 @@ bool CityComposite::checkCityConditions()
     return false;
 }
 
-void CityComposite::connectZones(CityComponent *zoneA, CityComponent *zoneB, std::unique_ptr<Transport> transport)
-{
-    // Find map locations of zones and connect them
-    Node *startNode = map->getNode(zoneA->getLocation().x, zoneA->getLocation().y);
-    Node *endNode = map->getNode(zoneB->getLocation().x, zoneB->getLocation().y);
+// void CityComposite::connectZones(CityComponent *zoneA, CityComponent *zoneB, std::unique_ptr<Transport> transport)
+// {
+//     // Find map locations of zones and connect them
+//     Node *startNode = map->getNode(zoneA->getLocation().x, zoneA->getLocation().y);
+//     Node *endNode = map->getNode(zoneB->getLocation().x, zoneB->getLocation().y);
 
-    if (startNode && endNode)
-    {
-        map->connectNodes(startNode->location, endNode->location, std::move(transport));
-    }
-    else
-    {
+//     if (startNode && endNode)
+//     {
+//         map->connectNodes(startNode->location, endNode->location, std::move(transport));
+//     }
+//     else
+//     {
+//         std::cout << "Failed to connect zones.\n";
+//     }
+// }
+
+void CityComposite::connectZones(CityComponent* zoneA, CityComponent* zoneB, 
+                                std::unique_ptr<Transport> transport) {
+    Location startLoc = zoneA->getLocation();
+    Location endLoc = zoneB->getLocation();
+
+    if (map->connectLocations(startLoc, endLoc, std::move(transport))) {
+        std::cout << "Zones connected successfully!\n";
+    } else {
         std::cout << "Failed to connect zones.\n";
     }
 }

@@ -26,15 +26,17 @@ private:
     GameState state;
     bool running = true;
 
-    void displayMenu() {
+   void displayMenu() {
         std::cout << "\n\033[1;36m=== City Builder ===\033[0m\n"
                   << "Money: $" << state.getMoney() 
                   << " | Happiness: " << state.getHappiness() << "%\n\n"
                   << "1. Build Structure\n"
                   << "2. Place Utility\n"
                   << "3. Show Statistics\n"
-                  << "4. Undo\n"
-                  << "5. Redo\n"
+                  << "4. Create Zone\n"
+                  << "5. Show Zone Info\n"
+                  << "6. Undo\n"
+                  << "7. Redo\n"
                   << "0. Exit\n"
                   << "\nChoice: ";
     }
@@ -45,6 +47,82 @@ private:
                 << "Happiness: " << state.getHappiness() << "%\n"
                   // Add more statistics here
                 << "\nPress Enter to continue...";
+        std::cin.get();
+    }
+
+void handleCreateZone() {
+    std::cout << "\nSelect zone type:\n"
+              << "1. Residential Zone\n"
+              << "2. Commercial Zone\n"
+              << "3. Industrial Zone\n"
+              << "Choice: ";
+
+    int choice;
+    std::string zoneType;
+    if (!(std::cin >> choice)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "\033[1;31mInvalid input!\033[0m\n";
+        return;
+    }
+
+    switch(choice) {
+        case 1: zoneType = "Residential"; break;  // Match the zone type strings in MapGrid
+        case 2: zoneType = "Commercial"; break;
+        case 3: zoneType = "Industrial0"; break;
+        default:
+            std::cout << "\033[1;31mInvalid zone type!\033[0m\n";
+            return;
+    }
+
+    Location topLeft, bottomRight;
+    std::cout << "Enter top-left corner coordinates (x y): ";
+    if (!(std::cin >> topLeft.x >> topLeft.y)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "\033[1;31mInvalid coordinates!\033[0m\n";
+        return;
+    }
+
+    std::cout << "Enter bottom-right corner coordinates (x y): ";
+    if (!(std::cin >> bottomRight.x >> bottomRight.y)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "\033[1;31mInvalid coordinates!\033[0m\n";
+        return;
+    }
+
+    // Use grid's createZone method instead of direct manipulation
+    if (grid.createZone(topLeft, bottomRight, zoneType)) {
+        std::cout << "\033[1;32mZone created successfully!\033[0m\n";
+    }
+}
+
+    void showZoneInfo() {
+        Location loc;
+        std::cout << "Enter coordinates to check zone (x y): ";
+        if (!(std::cin >> loc.x >> loc.y)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\033[1;31mInvalid coordinates!\033[0m\n";
+            return;
+        }
+
+        if (!grid.isValidLocation(loc)) {
+            std::cout << "\033[1;31mInvalid location!\033[0m\n";
+            return;
+        }
+
+        auto zone = grid.getZone(loc);
+        if (zone) {
+            std::cout << "\nZone Information:\n"
+                    << "Type: " << zone->getBuildingType() << "\n";
+            zone->displayStatus();
+        } else {
+            std::cout << "\033[1;33mNo zone at this location.\033[0m\n";
+        }
+        
+        std::cout << "\nPress Enter to continue...";
         std::cin.get();
     }
 
@@ -79,6 +157,8 @@ private:
             std::cout << "\033[1;31mNot enough money! Need $" << cost << "\033[0m\n";
             return;
         }
+
+        
         
         Location loc;
         std::cout << "Enter location (x y): ";
@@ -87,6 +167,30 @@ private:
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "\033[1;31mInvalid coordinates!\033[0m\n";
             return;
+        }
+
+        auto zone = grid.getZone(loc);
+        if (zone) {
+            std::string zoneType = zone->getBuildingType();
+            bool compatible = false;
+            
+            // Check if building type matches zone type
+            switch(choice) {
+                case 1: // House
+                    compatible = (zoneType == "Residential");
+                    break;
+                case 2: // Commercial
+                    compatible = (zoneType == "Commercial");
+                    break;
+                case 3: // Industrial
+                    compatible = (zoneType == "Industrial");
+                    break;
+            }
+
+            if (!compatible) {
+                std::cout << "\033[1;31mBuilding type not allowed in this zone!\033[0m\n";
+                return;
+            }
         }
 
         if (!grid.isValidLocation(loc)) {
@@ -104,6 +208,16 @@ private:
             case 1: building = std::make_shared<House>(); break;
             case 2: building = std::make_shared<CommercialBuilding>(); break;
             case 3: building = std::make_shared<Industry>(); break;
+            default: 
+                std::cout << "\033[1;31mInvalid choice!\033[0m\n";
+                return;
+        }
+
+        // Use MapGrid's validation
+        auto result = grid.canPlaceBuilding(loc, building);
+        if (!result.success) {
+            std::cout << "\033[1;31m" << result.message << "\033[0m\n";
+            return;
         }
 
         if (!state.spendMoney(cost)) {
@@ -111,6 +225,7 @@ private:
             return;
         }
 
+        // Use PlaceComponent which now includes validation
         auto command = std::make_unique<PlaceComponentCommand>(grid, loc, building);
         state.executeCommand(std::move(command));
         std::cout << "\033[1;32mBuilding placed successfully!\033[0m\n";
@@ -151,8 +266,10 @@ void handlePlaceUtility() {
             return;
         }
 
-        if (!grid.isValidLocation(loc)) {
-            std::cout << "\033[1;31mInvalid location!\033[0m\n";
+        // Check if placement is valid
+        auto result = grid.canPlaceBuilding(loc, utility);
+        if (!result.success) {
+            std::cout << "\033[1;31m" << result.message << "\033[0m\n";
             return;
         }
 
@@ -183,6 +300,21 @@ void handlePlaceUtility() {
     }
 }
 
+    void showTooltip(const Location& loc) {
+        auto zone = grid.getZone(loc);
+        if (zone) {
+            std::cout << "\nZone Type: " << zone->getBuildingType() 
+                      << "\nAllowed Buildings: ";
+            if (zone->getBuildingType() == "Residential")
+                std::cout << "Houses, Apartments";
+            else if (zone->getBuildingType() == "Commercial")
+                std::cout << "Shops, Offices";
+            else if (zone->getBuildingType() == "Industrial")
+                std::cout << "Factories, Warehouses";
+            std::cout << "\n";
+        }
+    }
+
 public:
     CityGame(int width, int height) : grid(width, height) {}
 
@@ -201,8 +333,10 @@ public:
                     case 1: handleBuildStructure(); break;
                     case 2: handlePlaceUtility(); break;
                     case 3: showStatistics(); break;
-                    case 4: state.undo(); break;
-                    case 5: state.redo(); break;
+                    case 4: handleCreateZone(); break;
+                    case 5: showZoneInfo(); break;
+                    case 6: state.undo(); break;
+                    case 7: state.redo(); break;
                     case 0: running = false; break;
                     default: std::cout << "\033[1;31mInvalid choice!\033[0m\n";
                 }
@@ -215,7 +349,7 @@ public:
 
 int main() {
     try {
-        CityGame game(100, 100);
+        CityGame game(10, 10);
         game.run();
     } catch (const std::exception& e) {
         std::cerr << "\033[1;31mError: " << e.what() << "\033[0m\n";

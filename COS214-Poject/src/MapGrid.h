@@ -5,37 +5,202 @@
 #include "UtilityFlyweight.h"
 #include "ResidentialBuilding.h"
 #include "CommercialBuilding.h"
+#include "ZoneComposite.h"
 #include "Industry.h"
+#include "Transport.h"
 #include <memory>
 #include <vector>
 #include <sstream>
 #include <iomanip>
 #include <algorithm>
+#include <map>
+#include <array>
 
 class MapGrid {
 private:
+	// Add zone validation methods
+	bool isOverlappingZone(const Location& topLeft, const Location& bottomRight) const {
+        for (int y = topLeft.y; y <= bottomRight.y; y++) {
+            for (int x = topLeft.x; x <= bottomRight.x; x++) {
+                if (grid[y][x].zone) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+	bool isCompatibleBuilding(const std::shared_ptr<CityComponent>& building,
+	const std::shared_ptr<ZoneComposite>& zone) const {
+		if(!building || !zone) return false;
+        std::string buildingType = building->getBuildingType();
+        std::string zoneType = zone->getBuildingType();
+        
+        if (zoneType == "Residential") 
+            return dynamic_cast<ResidentialBuilding*>(building.get()) != nullptr;
+        else if (zoneType == "Commercial")
+            return dynamic_cast<CommercialBuilding*>(building.get()) != nullptr;
+        else if (zoneType == "Industrial")
+            return dynamic_cast<Industry*>(building.get()) != nullptr;
+            
+        return false;
+	
+	}
+
+    struct ZoneStyle {
+        std::array<std::string, 9> borderChars; // Changed to std::string
+        std::string backgroundColor;
+
+        ZoneStyle(const std::array<std::string, 9>& borders, const std::string& bgColor)
+            : borderChars(borders), backgroundColor(bgColor) {}
+    };
+
+    // Cell structure with zone support
     struct Cell {
         std::shared_ptr<CityComponent> component;
         std::vector<std::shared_ptr<UtilityFlyweight>> affectingUtilities;
+        std::shared_ptr<ZoneComposite> zone;  // Added zone support
     };
 
     std::vector<std::vector<Cell>> grid;
     int width, height;
+    
+    // Initialize zone styles
+    std::map<std::string, ZoneStyle> zoneStyles;
 
-public:
-    MapGrid(int w, int h) : width(w), height(h) {
-        grid.resize(height, std::vector<Cell>(width));
+    void initializeZoneStyles() {
+        // Changed char arrays to std::string arrays
+        const std::array<std::string, 9> residentialBorders = {"╔", "╗", "╚", "╝", "║", "═", "╠", "╣", "╬"};
+        const std::array<std::string, 9> commercialBorders = {"┌", "┐", "└", "┘", "│", "─", "├", "┤", "┼"};
+        const std::array<std::string, 9> industrialBorders = {"╭", "╮", "╰", "╯", "│", "─", "├", "┤", "┼"};
+
+        zoneStyles.insert({"Residential", ZoneStyle(residentialBorders, "\033[48;5;17m")});
+        zoneStyles.insert({"Commercial", ZoneStyle(commercialBorders, "\033[48;5;52m")});
+        zoneStyles.insert({"Industrial", ZoneStyle(industrialBorders, "\033[48;5;58m")});
     }
 
+    bool isZoneBoundary(int x, int y) const {
+        if (!isValidLocation({x, y}) || !grid[y][x].zone) {
+            return false;
+        }
+        
+        // Check if any adjacent cell is outside the zone
+        for (int dx = -1; dx <= 1; dx++) {
+            for (int dy = -1; dy <= 1; dy++) {
+                if (dx == 0 && dy == 0) continue;
+                
+                int newX = x + dx;
+                int newY = y + dy;
+                
+                if (!isValidLocation({newX, newY}) || 
+                    !grid[newY][newX].zone || 
+                    grid[newY][newX].zone != grid[y][x].zone) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+public:
+	// Enhanced placement checks
+	struct PlacementResult {
+		bool success;
+		std::string message;
+	};
+
+    PlacementResult canPlaceZone(const Location& topLeft, const Location& bottomRight) const {
+        // Check boundaries
+        if (!isValidLocation(topLeft) || !isValidLocation(bottomRight)) {
+            return {false, "Zone boundaries are outside the map!"};
+        }
+
+        // Check for overlapping zones
+        if (isOverlappingZone(topLeft, bottomRight)) {
+            return {false, "Cannot create overlapping zones!"};
+        }
+
+        return {true, "Zone placement is valid."};
+    }
+
+    PlacementResult canPlaceBuilding(const Location& loc, 
+                                    const std::shared_ptr<CityComponent>& building) const {
+        if (!isValidLocation(loc)) {
+            return {false, "Invalid location!"};
+        }
+
+        if (grid[loc.y][loc.x].component) {
+            return {false, "Location already occupied!"};
+        }
+
+        // Check zone compatibility
+        if (auto zone = grid[loc.y][loc.x].zone) {
+            if (!isCompatibleBuilding(building, zone)) {
+                return {false, "Building type not allowed in this zone!"};
+            }
+        }
+
+        return {true, "Building placement is valid."};
+    }
+
+    MapGrid(int w, int h) : width(w), height(h) {
+        grid.resize(height, std::vector<Cell>(width));
+		initializeZoneStyles(); // Initialize styles in constructor
+    }
+
+	bool createZone(const Location& topLeft, const Location& bottomRight, const std::string& zoneType) {
+        auto result = canPlaceZone(topLeft, bottomRight);
+        if (!result.success) {
+            std::cout << "\033[1;31m" << result.message << "\033[0m\n";
+            return false;
+        }
+
+        auto zone = std::make_shared<ZoneComposite>(zoneType, topLeft, bottomRight);
+        
+        // Set zone for all cells in the rectangle
+        for (int y = topLeft.y; y <= bottomRight.y; y++) {
+            for (int x = topLeft.x; x <= bottomRight.x; x++) {
+                setZone({x, y}, zone);
+            }
+        }
+
+        std::cout << "\033[1;32mZone created successfully!\033[0m\n";
+        return true;
+    }
+
+	void setZone(const Location& loc, std::shared_ptr<ZoneComposite> newZone) {
+        if (isValidLocation(loc)) {
+            grid[loc.y][loc.x].zone = newZone;
+        }
+    }
+
+    std::shared_ptr<ZoneComposite> getZone(const Location& loc) const {
+        return isValidLocation(loc) ? grid[loc.y][loc.x].zone : nullptr;
+    }
+
+    // Existing methods remain the same
     bool isValidLocation(const Location& loc) const {
         return loc.x >= 0 && loc.x < width && loc.y >= 0 && loc.y < height;
     }
 
     bool placeComponent(const Location& loc, std::shared_ptr<CityComponent> component) {
-        if (!isValidLocation(loc) || grid[loc.y][loc.x].component) {
+        // Use the validation methods before placement
+        auto result = canPlaceBuilding(loc, component);
+        if (!result.success) {
+            std::cout << "\033[1;31m" << result.message << "\033[0m\n";
             return false;
         }
+
         grid[loc.y][loc.x].component = component;
+        if (component) {
+            component->setLocation(loc);
+        }
+        return true;
+    }
+
+	bool connectLocations(const Location& start, const Location& end, 
+                        std::shared_ptr<Transport> transport) {
+        // Implementation of connection logic
         return true;
     }
 
@@ -56,16 +221,6 @@ public:
         }
     }
 
-    // void removeUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
-    //     if (isValidLocation(loc)) {
-    //         auto& utilities = grid[loc.y][loc.x].affectingUtilities;
-    //         utilities.erase(
-    //             std::remove(utilities.begin(), utilities.end(), utility),
-    //             utilities.end()
-    //         );
-    //     }
-    // }
-
 	void removeUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
     if (isValidLocation(loc)) {
         auto& utilities = grid[loc.y][loc.x].affectingUtilities;
@@ -77,93 +232,116 @@ public:
     }
 	}
 
+	    // Add a method to check if a location is in a valid zone for a building type
+    bool isValidZoneForBuilding(const Location& loc, const std::shared_ptr<CityComponent>& building) const {
+        auto zone = getZone(loc);
+        if (!zone) return true;  // If no zone, any building is allowed
+        return isCompatibleBuilding(building, zone);
+    }
+
 std::string getDisplayString() const {
     std::stringstream ss;
     
-    // Header with city statistics
+    // Header
     ss << "\033[1;36m=== City Map ===\033[0m\n\n";
     
-    // Column numbers with better formatting
+    // Column numbers
     ss << "   ";
     for (int x = 0; x < width; x++) {
         ss << std::setw(3) << x;
     }
     ss << "\n";
     
-    // Grid content with enhanced visuals
+    // Grid content with zones
     for (int y = 0; y < height; y++) {
         ss << std::setw(2) << y << " ";
         for (int x = 0; x < width; x++) {
             const auto& cell = grid[y][x];
+            
+            // Start zone styling if cell is in a zone
+            if (cell.zone) {
+                std::string zoneType = cell.zone->getBuildingType();
+                // Add different background colors for different zone types
+                if (zoneType == "Residential")
+                    ss << "\033[48;5;17m"; // Dark blue background
+                else if (zoneType == "Commercial")
+                    ss << "\033[48;5;52m"; // Dark red background
+                else if (zoneType == "Industrial")
+                    ss << "\033[48;5;58m"; // Dark yellow background
+            }
+
+            // Display cell content
             if (cell.component) {
                 // Building Types
                 if (dynamic_cast<ResidentialBuilding*>(cell.component.get())) {
-                    ss << "\033[1;32m[H]\033[0m"; // House in bright green
+                    ss << "\033[1;32m[H]\033[0m"; 
                 } else if (dynamic_cast<CommercialBuilding*>(cell.component.get())) {
-                    ss << "\033[1;33m[C]\033[0m"; // Commercial in bright yellow
+                    ss << "\033[1;33m[C]\033[0m"; 
                 } else if (dynamic_cast<Industry*>(cell.component.get())) {
-                    ss << "\033[1;31m[I]\033[0m"; // Industry in bright red
-                } 
-                // Utility Types with distinct colors
-                else if (auto utility = dynamic_cast<UtilityFlyweight*>(cell.component.get())) {
+                    ss << "\033[1;31m[I]\033[0m"; 
+                } else if (auto utility = dynamic_cast<UtilityFlyweight*>(cell.component.get())) {
                     std::string type = utility->getName();
                     if (type == "Water Supply") {
-                        ss << "\033[1;34m[W]\033[0m"; // Water in blue
+                        ss << "\033[1;34m[W]\033[0m";
                     } else if (type == "Power Plant") {
-                        ss << "\033[1;35m[P]\033[0m"; // Power in magenta
+                        ss << "\033[1;35m[P]\033[0m";
                     } else if (type == "Sewage System") {
-                        ss << "\033[1;33m[S]\033[0m"; // Sewage in yellow
+                        ss << "\033[1;36m[S]\033[0m";
                     } else if (type == "Waste Management") {
-                        ss << "\033[1;32m[M]\033[0m"; // Waste in green
+                        ss << "\033[1;32m[M]\033[0m";
                     }
                 }
             } else {
-                // Enhanced coverage indicators
+                // Coverage display with color gradient
                 if (!cell.affectingUtilities.empty()) {
-                    // Count different types of coverage
-                    bool hasWater = false, hasPower = false, 
-                         hasSewage = false, hasWaste = false;
-                    
-                    for (const auto& util : cell.affectingUtilities) {
-                        std::string type = util->getName();
-                        if (type == "Water Supply") hasWater = true;
-                        else if (type == "Power Plant") hasPower = true;
-                        else if (type == "Sewage System") hasSewage = true;
-                        else if (type == "Waste Management") hasWaste = true;
-                    }
-
-                    // Show multiple coverage with different indicators
-                    int coverageCount = hasWater + hasPower + hasSewage + hasWaste;
-                    if (coverageCount > 1) {
-                        // Multiple coverage types
-                        ss << "\033[1;37m[" << coverageCount << "]\033[0m"; // White number showing coverage count
-                    } else {
-                        // Single coverage type
-                        if (hasWater) ss << "\033[1;34m[~]\033[0m";      // Water coverage with wave symbol
-                        else if (hasPower) ss << "\033[1;35m[⚡]\033[0m"; // Power coverage with lightning
-                        else if (hasSewage) ss << "\033[1;33m[≈]\033[0m"; // Sewage with double wave
-                        else if (hasWaste) ss << "\033[1;32m[♲]\033[0m";  // Waste with recycle symbol
+                    int coverageCount = cell.affectingUtilities.size();
+                    switch(coverageCount) {
+                        case 1: 
+                            ss << "\033[1;34m[1]\033[0m";
+                            break;
+                        case 2:
+                            ss << "\033[1;36m[2]\033[0m";
+                            break;
+                        case 3:
+                            ss << "\033[1;35m[3]\033[0m";
+                            break;
+                        case 4:
+                            ss << "\033[1;37m[4]\033[0m";
+                            break;
                     }
                 } else {
-                    ss << "\033[1;30m[ ]\033[0m"; // Empty cell in dark gray
+                    ss << "\033[1;30m[ ]\033[0m";
                 }
+            }
+
+            // Reset background color if we're in a zone
+            if (cell.zone) {
+                ss << "\033[0m";
             }
         }
         ss << "\n";
     }
     
-    // Enhanced legend with color coding and symbols
+    // Enhanced legend with zones
     ss << "\nLegend:\n"
-       << "=== Buildings ===\n"
+       << "=== Zones ===\n"
+       << "\033[48;5;17m   \033[0m - Residential Zone\n"
+       << "\033[48;5;52m   \033[0m - Commercial Zone\n"
+       << "\033[48;5;58m   \033[0m - Industrial Zone\n"
+       << "\n=== Buildings ===\n"
        << "\033[1;32m[H]\033[0m - House\n"
        << "\033[1;33m[C]\033[0m - Commercial\n"
        << "\033[1;31m[I]\033[0m - Industry\n"
        << "\n=== Utilities ===\n"
-       << "\033[1;34m[W]\033[0m - Water Supply    \033[1;34m[~]\033[0m - Water Coverage\n"
-       << "\033[1;35m[P]\033[0m - Power Plant     \033[1;35m[⚡]\033[0m - Power Coverage\n"
-       << "\033[1;33m[S]\033[0m - Sewage System   \033[1;33m[≈]\033[0m - Sewage Coverage\n"
-       << "\033[1;32m[M]\033[0m - Waste Management\033[1;32m[♲]\033[0m - Waste Coverage\n"
-       << "\033[1;37m[2]\033[0m-\033[1;37m[4]\033[0m - Multiple Coverage Types\n"
+       << "\033[1;34m[W]\033[0m - Water Supply\n"
+       << "\033[1;35m[P]\033[0m - Power Plant\n"
+       << "\033[1;36m[S]\033[0m - Sewage System\n"
+       << "\033[1;32m[M]\033[0m - Waste Management\n"
+       << "\n=== Coverage ===\n"
+       << "\033[1;34m[1]\033[0m - Single Utility\n"
+       << "\033[1;36m[2]\033[0m - Double Coverage\n"
+       << "\033[1;35m[3]\033[0m - Triple Coverage\n"
+       << "\033[1;37m[4]\033[0m - Full Coverage\n"
        << "\033[1;30m[ ]\033[0m - Empty\n";
 
     return ss.str();

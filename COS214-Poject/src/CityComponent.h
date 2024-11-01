@@ -25,6 +25,7 @@ public:
 
 	//setting the location
 	void setLocation(int x, int y);
+	void setLocation(const Location&);
 	Location getLocation() const;
 
 private:

@@ -47,7 +47,7 @@ public:
     virtual std::shared_ptr<ResidentialBuilding> clone() const = 0;
 
 
-    void accept(taxCollector* TC) override;
+    // void accept(taxCollector* TC) override;
     
     virtual void payTax() = 0;
     std::string getBuildingType() override{

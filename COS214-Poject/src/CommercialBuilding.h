@@ -4,32 +4,26 @@
 #include <string>
 #include "taxCollector.h"
 #include "CityComponent.h"
-using namespace std;
 
-class CommercialBuilding : public CityComponent{
-    private:
-    string state;
+class CommercialBuilding : public CityComponent {
+private:
     double price;
-    int numberOfEmployees;
-    int Capacity;
-    double size;
     bool taxPayed;
-    
+    int capacity;
 
+public:
+    // Default arguments only in header
+    CommercialBuilding(double initialPrice = 200000, int initialCapacity = 50);
 
-    public:
-
-   void accept(taxCollector* TC) override;
-   void payTax();
-
-   
-    std::string getBuildingType() override{
-        return "Commercial Building";
-    }
-
+    //void accept(taxCollector* TC) override;
+    //void payTax();
+    std::string getBuildingType() override;
     void displayStatus() override;
 
+    // Getters
+    double getPrice() const { return price; }
+    int getCapacity() const { return capacity; }
+    bool isTaxPayed() const { return taxPayed; }
 };
-
 
 #endif

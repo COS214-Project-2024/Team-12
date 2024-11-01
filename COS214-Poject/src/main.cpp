@@ -1,270 +1,144 @@
-
-// GridMapTest.cpp
+// main.cpp
+#include "GameState.h"  // Add this first to resolve incomplete type error
+#include "MapGrid.h"
 #include "CityComponent.h"
-#include "CityComposite.h"
 #include "ResidentialBuilding.h"
 #include "CommercialBuilding.h"
 #include "Industry.h"
 #include "House.h"
-#include "Flat.h"
-#include "Townhouse.h"
-#include "Estate.h"
 #include "UtilityFlyweight.h"
-#include "UtilityFactory.h"
-#include "WaterSupply.h"
-#include "PowerPlant.h"
-#include "SewageSystem.h"
-#include "WasteManagement.h"
-#include "UtilityDecorator.h"
-#include "AdvancedTechnologyDecorator.h"
-#include "GreenTechnologyDecorator.h"
-#include "MapGrid.h"
 #include <iostream>
 #include <memory>
-#include <cmath>
-#include <cassert>
+#include <vector>
+#include <string>
+#include <algorithm>
 #include <iomanip>
 #include <limits>
-#include <cmath>
 
-void displayGrid(const MapGrid& grid, int width, int height) {
-    std::cout << "\nCity Grid Layout:\n";
-    
-    // Print top border of grid
-    std::cout << "   ";  // Space for row numbers
-    for(int x = 0; x < width; x++) {
-        std::cout << std::setw(2) << x << " ";
-    }
-    std::cout << "\n";
-
-    // Print each row
-    for(int y = 0; y < height; y++) {
-        // Print row number
-        std::cout << std::setw(2) << y << " ";
-        
-        // Print top line of cells in this row
-        for(int x = 0; x < width; x++) {
-            std::cout << "+---";
-        }
-        std::cout << "+\n";
-
-        // Print row number again
-        std::cout << "   ";
-        
-        // Print cell contents
-        for(int x = 0; x < width; x++) {
-            std::cout << "|";
-            Node* node = grid.getNode(x, y);
-            if(node && node->getComponent()) {
-                if(dynamic_cast<UtilityFlyweight*>(node->getComponent())) {
-                    std::cout << " U ";
-                } else if(dynamic_cast<House*>(node->getComponent())) {
-                    std::cout << " H ";
-                } else {
-                    std::cout << " ? ";
-                }
-            } else {
-                std::cout << "   ";
-            }
-        }
-        std::cout << "|\n";
-    }
-
-    // Print bottom border of last row
-    std::cout << "   ";
-    for(int x = 0; x < width; x++) {
-        std::cout << "+---";
-    }
-    std::cout << "+\n";
-
-    // Print legend
-    std::cout << "\nLegend:\n"
-              << "U = Utility\n"
-              << "H = House\n"
-              << "  = Empty\n";
-}
-
-void clearScreen() {
-    #ifdef _WIN32
-        system("cls");
-    #else
-        system("clear");
-    #endif
-}
-
-void displayMenu() {
-    std::cout << "\n=== City Building Menu ===\n"
-              << "1. Place House\n"
-              << "2. Place Utility\n"
-              << "3. Show Utility Coverage\n"
-              << "4. Display Grid\n"
-              << "5. Show Statistics\n"
-              << "0. Exit\n"
-              << "Enter choice: ";
-}
-
-void displayUtilityCoverage(const MapGrid& grid, int width, int height, const std::vector<std::shared_ptr<UtilityFlyweight>>& utilities) {
-    std::cout << "\nUtility Coverage Map:\n";
-    std::cout << "Legend: . = Empty, U = Utility, H = House\n";
-    std::cout << "       * = In range of utility, # = Multiple utility coverage\n\n";
-
-    for(int y = 0; y < height; y++) {
-        for(int x = 0; x < width; x++) {
-            int coverage = 0;
-            Node* node = grid.getNode(x, y);
-            
-            // Check if this location is within range of any utility
-            for(const auto& utility : utilities) {
-                Location utilityLoc = utility->getLocation();
-                double distance = std::sqrt(
-                    std::pow(x - utilityLoc.x, 2) + 
-                    std::pow(y - utilityLoc.y, 2)
-                );
-                if(distance <= utility->getEffectRadius()) {
-                    coverage++;
-                }
-            }
-
-            if(node && node->getComponent()) {
-                if(dynamic_cast<UtilityFlyweight*>(node->getComponent())) {
-                    std::cout << "U";
-                } else if(dynamic_cast<House*>(node->getComponent())) {
-                    std::cout << "H";
-                }
-            } else if(coverage > 1) {
-                std::cout << "#";
-            } else if(coverage == 1) {
-                std::cout << "*";
-            } else {
-                std::cout << ".";
-            }
-            std::cout << " ";
-        }
-        std::cout << "\n";
-    }
-}
-
-void showStatistics(const MapGrid& grid, int width, int height, 
-                   const std::vector<std::shared_ptr<UtilityFlyweight>>& utilities) {
-    int houseCount = 0;
-    int utilityCount = utilities.size();
-    int coveredHouses = 0;
-
-    for(int y = 0; y < height; y++) {
-        for(int x = 0; x < width; x++) {
-            Node* node = grid.getNode(x, y);
-            if(node && node->getComponent()) {
-                if(auto house = dynamic_cast<House*>(node->getComponent())) {
-                    houseCount++;
-                    // Check if house is covered by any utility
-                    bool isCovered = false;
-                    for(const auto& utility : utilities) {
-                        Location utilityLoc = utility->getLocation();
-                        double distance = std::sqrt(
-                            std::pow(x - utilityLoc.x, 2) + 
-                            std::pow(y - utilityLoc.y, 2)
-                        );
-                        if(distance <= utility->getEffectRadius()) {
-                            isCovered = true;
-                            break;
-                        }
-                    }
-                    if(isCovered) coveredHouses++;
-                }
-            }
-        }
-    }
-
-    std::cout << "\n=== City Statistics ===\n"
-              << "Houses built: " << houseCount << "\n"
-              << "Utilities placed: " << utilityCount << "\n"
-              << "Houses with utility coverage: " << coveredHouses << "\n"
-              << "Houses without coverage: " << (houseCount - coveredHouses) << "\n"
-              << "Coverage ratio: " << (houseCount > 0 ? (coveredHouses * 100.0 / houseCount) : 0)
-              << "%\n";
-}
-
-void cityBuildingGame() {
-    const int WIDTH = 10;
-    const int HEIGHT = 10;
-    MapGrid cityMap(WIDTH, HEIGHT);
-    UtilityFactory factory;
-    std::vector<std::shared_ptr<UtilityFlyweight>> utilities;
-    
+class CityGame {
+private:
+    MapGrid grid;
+    GameState state;
     bool running = true;
-    while(running) {
-        clearScreen();
-        displayGrid(cityMap, WIDTH, HEIGHT);
-        displayMenu();
+
+    void displayMenu() {
+        std::cout << "\n\033[1;36m=== City Builder ===\033[0m\n"
+                  << "Money: $" << state.getMoney() 
+                  << " | Happiness: " << state.getHappiness() << "%\n\n"
+                  << "1. Build Structure\n"
+                  << "2. Place Utility\n"
+                  << "3. Show Statistics\n"
+                  << "4. Undo\n"
+                  << "5. Redo\n"
+                  << "0. Exit\n"
+                  << "\nChoice: ";
+    }
+
+    // Updated handleBuildStructure with better error handling and feedback
+    void handleBuildStructure() {
+        std::cout << "\nSelect building type:\n"
+                  << "1. House ($100)\n"
+                  << "2. Commercial ($200)\n"
+                  << "3. Industrial ($300)\n"
+                  << "Choice: ";
         
         int choice;
-        std::cin >> choice;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        if (!(std::cin >> choice)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\033[1;31mInvalid input!\033[0m\n";
+            return;
+        }
+        
+        Location loc;
+        std::cout << "Enter location (x y): ";
+        if (!(std::cin >> loc.x >> loc.y)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\033[1;31mInvalid coordinates!\033[0m\n";
+            return;
+        }
 
-        switch(choice) {
-            case 1: { // Place House
-                int x, y;
-                std::cout << "Enter coordinates (x y): ";
-                std::cin >> x >> y;
-                
-                if(x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT) {
-                    auto house = new House();
-                    cityMap.placeComponent(house, x, y);
-                } else {
-                    std::cout << "Invalid coordinates!\n";
-                }
+        if (!grid.isValidLocation(loc)) {
+            std::cout << "\033[1;31mInvalid location!\033[0m\n";
+            return;
+        }
+
+        // Check if location is already occupied
+        if (grid.getComponent(loc)) {
+            std::cout << "\033[1;31mLocation already occupied!\033[0m\n";
+            return;
+        }
+
+        std::shared_ptr<CityComponent> building;
+        int cost = 0;
+
+        switch (choice) {
+            case 1: 
+                cost = 100;
+                building = std::make_shared<House>();
                 break;
-            }
-            
-            case 2: { // Place Utility
-                int x, y;
-                std::cout << "Enter coordinates (x y): ";
-                std::cin >> x >> y;
-                
-                if(x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT) {
-                    auto utility = factory.getUtility("WaterSupply");
-                    cityMap.placeComponent(utility.get(), x, y);
-                    utilities.push_back(utility);
-                } else {
-                    std::cout << "Invalid coordinates!\n";
-                }
+            case 2: 
+                cost = 200;
+                building = std::make_shared<CommercialBuilding>();
                 break;
-            }
-            
-            case 3: // Show Coverage
-                displayUtilityCoverage(cityMap, WIDTH, HEIGHT, utilities);
-                std::cout << "\nPress Enter to continue...";
-                std::cin.get();
+            case 3: 
+                cost = 300;
+                building = std::make_shared<Industry>();
                 break;
-                
-            case 4: // Display Grid
-                displayGrid(cityMap, WIDTH, HEIGHT);
-                std::cout << "\nPress Enter to continue...";
-                std::cin.get();
-                break;
-                
-            case 5: // Show Statistics
-                showStatistics(cityMap, WIDTH, HEIGHT, utilities);
-                std::cout << "\nPress Enter to continue...";
-                std::cin.get();
-                break;
-                
-            case 0: // Exit
-                running = false;
-                break;
-                
-            default:
-                std::cout << "Invalid choice!\n";
-                break;
+            default: 
+                std::cout << "\033[1;31mInvalid choice!\033[0m\n";
+                return;
+        }
+
+        if (!state.spendMoney(cost)) {
+            std::cout << "\033[1;31mNot enough money!\033[0m\n";
+            return;
+        }
+
+        auto command = std::make_unique<PlaceComponentCommand>(grid, loc, building);
+        state.executeCommand(std::move(command));
+
+        // Verify placement was successful
+        if (grid.getComponent(loc)) {
+            std::cout << "\033[1;32mBuilding placed successfully!\033[0m\n";
+        } else {
+            state.addMoney(cost);  // Refund if placement failed
+            std::cout << "\033[1;31mFailed to place building!\033[0m\n";
         }
     }
-}
+
+public:
+    CityGame(int width, int height) : grid(width, height) {}
+
+    void run() {
+        while (running) {
+            system("clear");  // or "cls" on Windows
+            std::cout << grid.getDisplayString();
+            displayMenu();
+
+            int choice;
+            std::cin >> choice;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+            switch (choice) {
+                case 1: handleBuildStructure(); break;
+                case 4: state.undo(); break;
+                case 5: state.redo(); break;
+                case 0: running = false; break;
+                default: std::cout << "\033[1;31mInvalid choice!\033[0m\n";
+            }
+        }
+    }
+};
 
 int main() {
     try {
-        cityBuildingGame();
+        CityGame game(10, 10);
+        game.run();
     } catch (const std::exception& e) {
-        std::cout << "Game crashed: " << e.what() << std::endl;
+        std::cerr << "\033[1;31mError: " << e.what() << "\033[0m\n";
+        return 1;
     }
     return 0;
 }

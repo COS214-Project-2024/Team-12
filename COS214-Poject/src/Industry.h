@@ -8,7 +8,7 @@
 #include "CityComponent.h"
 #include "IncomeResourceProduct.h"
 #include "ConstructionResourceProduct.h"
-#include "NPCContext.h"
+#include "NPCSystem.h"
 
 // Enum to handle resource prioritization
 enum class ResourcePriority { Income, Construction };
@@ -44,10 +44,10 @@ public:
     void processConstructionResource(int amount);
 
     // Display resource statuses
-    void displayResourcesStatus() const;
+    void displayStatus() ;
 
     // Calculate total tax revenue
-    double calculateTaxRevenue() const;
+    // double calculateTaxRevenue() const;
 
 
     // Production Prioritization - just a fancy way of showing which resource we are processing

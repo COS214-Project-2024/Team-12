@@ -2,6 +2,7 @@
 #define CITY_COMPOSITE_H
 
 #include "CityComponent.h"
+#include "Transport.h"
 #include "Government.h"
 #include "taxCollector.h"
 #include "MapGrid.h"
@@ -41,12 +42,12 @@ public:
         return "City";
     }
 
-    void accept(taxCollector* tax) override{
-        //can't collect tax from the city
-        for(auto& zone : zones){
-            zone->accept(tax);
-        }
-    }
+    // void accept(taxCollector* tax) override{
+    //     //can't collect tax from the city
+    //     for(auto& zone : zones){
+    //         zone->accept(tax);
+    //     }
+    // }
 
     void connectZones(CityComponent* zoneA, CityComponent* zoneB, std::unique_ptr<Transport> transport);
 

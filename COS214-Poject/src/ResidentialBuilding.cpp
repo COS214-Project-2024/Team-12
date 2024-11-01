@@ -54,3 +54,9 @@ void ResidentialBuilding::applyUtilityConsumption() {
                 std::cout << "Sewage management resources consumed: " << sewageManagement->getResourceConsumption() << "\n";
         }
 }
+
+// void ResidentialBuilding::accept(taxCollector* TC) {
+//     if (TC) {
+//         TC->visit(this);
+//     }
+// }

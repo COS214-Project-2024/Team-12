@@ -35,21 +35,21 @@ void Industry::hireWorkerNPC(const std::string& npcType) {
 
 // Process Income Resource Independently
 void Industry::processIncomeResource(int amount) {
-    if (currentStorage == 0) {  // Check if storage is empty first
+    if (currentStorage == 0) {
         std::cout << "No resources in storage. Gather resources before processing income resource.\n";
         return;
     }
-    if (currentStorage >= amount) {  // Ensure enough resources in storage
-        std::cout << industryName << " processing income resource: " 
-                  << incomeResource->getQuantity() << " units of " 
+    if (currentStorage >= amount && incomeResource) {
+        std::cout << industryName << " processing income resource: "
+                  << incomeResource->getQuantity() << " units at $"
                   << incomeResource->getMarketValue() << " per unit." << std::endl;
+        
         incomeResource->consumeResources(amount);
-        currentStorage -= amount;  // Decrease storage after processing
+        currentStorage -= amount;
     } else {
-        std::cout << "Insufficient stored resources to process income resource.\n";
+        std::cout << "Insufficient stored resources or no income resource initialized.\n";
     }
 }
-
 // Process Construction Resource Independently
 void Industry::processConstructionResource(int amount) {
     if (currentStorage == 0) {  // Check if storage is empty first
@@ -67,19 +67,13 @@ void Industry::processConstructionResource(int amount) {
     }
 }
 
-void Industry::displayResourcesStatus() const {
+void Industry::displayStatus() {
     std::cout << "Industry: " << industryName << std::endl;
     incomeResource->displayStatus();
     constructionResource->displayStatus();
     std::cout << "Current Storage: " << currentStorage << "/" << maxStorage << std::endl;
     std::cout << "Pollution Level: " << pollutionLevel << "\n" << std::endl;
 }
-
-/* double Industry::calculateTaxRevenue() const {
-    double incomeTax = incomeResource->getTaxRevenue();
-    double constructionTax = constructionResource->getTaxRevenue();
-    return incomeTax + constructionTax;
-} */
 
 void Industry::setPriorityResource(ResourcePriority priority) {
         priorityResource = priority;
@@ -135,10 +129,3 @@ void Industry::increasePollution(int amount) {
     }
 }
 
-void Industry::displayResourcesStatus() const {
-    std::cout << "Industry: " << industryName << std::endl;
-    incomeResource->displayStatus();
-    constructionResource->displayStatus();
-    std::cout << "Current Storage: " << currentStorage << "/" << maxStorage << std::endl;
-    std::cout << "Pollution Level: " << pollutionLevel << "\n" << std::endl;
-}

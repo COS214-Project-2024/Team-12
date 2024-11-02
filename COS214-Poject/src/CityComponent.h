@@ -21,7 +21,7 @@ public:
 	void notify();
 
 	virtual std::string getBuildingType() = 0;
-	// virtual void accept(taxCollector*) {};
+	virtual void accept(taxCollector*) = 0;
 
 	//setting the location
 	void setLocation(int x, int y);

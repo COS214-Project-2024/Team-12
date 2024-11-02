@@ -31,6 +31,8 @@ public:
 
 	void replenish(int amount);
 
+	void accept(taxCollector* TC) {}
+
 };
 
 #endif

@@ -15,6 +15,8 @@
 #include <algorithm>
 #include <map>
 #include <array>
+#include <set>
+#include <unordered_set>
 
 class MapGrid {
 private:
@@ -103,6 +105,47 @@ private:
     }
 
 public:
+	int getHeight() const {
+		return height;
+	}
+
+	int getWidth() const {
+		return width;
+	}
+	    std::vector<std::shared_ptr<ZoneComposite>> getAllZones() const {
+        	std::set<std::shared_ptr<ZoneComposite>> uniqueZones;
+        
+        	// Collect all unique zones
+        	for (int y = 0; y < height; y++) {
+            	for (int x = 0; x < width; x++) {
+                	if (grid[y][x].zone) {
+                    	uniqueZones.insert(grid[y][x].zone);
+                	}
+            	}
+        	}
+        
+        	return std::vector<std::shared_ptr<ZoneComposite>>(uniqueZones.begin(), uniqueZones.end());
+    	}
+
+    // Method to get all buildings in a specific zone
+    std::vector<std::shared_ptr<CityComponent>> getBuildingsInZone(const std::shared_ptr<ZoneComposite>& zone) const {
+        std::vector<std::shared_ptr<CityComponent>> buildings;
+        
+        // Get zone boundaries
+        Location topLeft = zone->getTopLeft();
+        Location bottomRight = zone->getBottomRight();
+        
+        // Collect all buildings within zone boundaries
+        for (int y = topLeft.y; y <= bottomRight.y; y++) {
+            for (int x = topLeft.x; x <= bottomRight.x; x++) {
+                if (grid[y][x].component) {
+                    buildings.push_back(grid[y][x].component);
+                }
+            }
+        }
+        
+        return buildings;
+    }
 	// Enhanced placement checks
 	struct PlacementResult {
 		bool success;
@@ -273,8 +316,23 @@ std::string getDisplayString() const {
             // Display cell content
             if (cell.component) {
                 // Building Types
-                if (dynamic_cast<ResidentialBuilding*>(cell.component.get())) {
-                    ss << "\033[1;32m[H]\033[0m"; 
+				// In MapGrid's getDisplayString(), modify how residential buildings are displayed:
+				if (auto residential = dynamic_cast<ResidentialBuilding*>(cell.component.get())) {
+					// Get utility coverage
+					int coverage = residential->getUtilityCoverage();
+					char symbol = residential->getDisplaySymbol();
+					
+					// Color code both building and coverage level
+					std::string color;
+					if (coverage == 4) {
+						color = "\033[1;32m"; // Green for full coverage
+					} else if (coverage >= 2) {
+						color = "\033[1;33m"; // Yellow for partial
+					} else {
+						color = "\033[1;31m"; // Red for insufficient
+					}
+					
+					ss << color << "[" << symbol << coverage << "]\033[0m";
                 } else if (dynamic_cast<CommercialBuilding*>(cell.component.get())) {
                     ss << "\033[1;33m[C]\033[0m"; 
                 } else if (dynamic_cast<Industry*>(cell.component.get())) {
@@ -342,7 +400,13 @@ std::string getDisplayString() const {
        << "\033[1;36m[2]\033[0m - Double Coverage\n"
        << "\033[1;35m[3]\033[0m - Triple Coverage\n"
        << "\033[1;37m[4]\033[0m - Full Coverage\n"
-       << "\033[1;30m[ ]\033[0m - Empty\n";
+       << "\033[1;30m[ ]\033[0m - Empty\n"
+<< "\n=== Buildings ===\n"
+<< "\033[1;32m[H]\033[0m - House\n"
+<< "\033[1;32m[F]\033[0m - Flat\n"
+<< "\033[1;32m[T]\033[0m - Townhouse\n"
+<< "\033[1;32m[E]\033[0m - Estate\n";
+	   
 
     return ss.str();
 }

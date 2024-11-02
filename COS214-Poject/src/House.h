@@ -9,20 +9,15 @@
 
 
 class House : public ResidentialBuilding {
-private:
-double rate;
-bool taxPayed;
-Government* bank;
-//double price;
 public:
+    static constexpr int BASE_COST = 100;
+    
     House();
     House(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
-    void displayStatus();
-    std::shared_ptr<ResidentialBuilding> clone() const;
-    void setHouseTax(double rate);
-    void accept(taxCollector* TC);
-    void payTax();
+    
+    char getDisplaySymbol() const override { return 'H'; }
+    std::string getBuildingType() override { return "House"; }
 };
 
 #endif

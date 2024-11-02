@@ -42,9 +42,9 @@ public:
         return "Utility";
     }
 
-    // void accept(taxCollector*) override{
-    //     //return nothing
-    // }
+    void accept(taxCollector*) override{
+        //return nothing
+    }
     void incrementLevel() { level++; }
 
 protected:

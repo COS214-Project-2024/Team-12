@@ -3,6 +3,7 @@
 
 #include "CityComponent.h"
 #include "Location.h"
+#include "taxCollector.h"
 #include <vector>
 #include <memory>
 #include <string>
@@ -33,9 +34,19 @@ class ZoneComposite : public CityComponent{
 
 	std::string getBuildingType();
 
-	//void accept(taxCollector* TC) override;
+	void accept(taxCollector* TC) override;
 
-	//void payTax();
+	const std::vector<std::shared_ptr<CityComponent>>& getBuildings() const {
+        return buildings;
+    }
+
+	const Location& getTopLeft() const {
+		return bounds[0];
+	}
+
+	const Location& getBottomRight() const {
+		return bounds[1];
+	}
 };
 
 #endif

@@ -31,25 +31,3 @@ void LandMark::displayStatus() {
                 sewageManagement->displayStatus();
         }
 }
-
-
-
-void LandMark::connectWater(std::shared_ptr<UtilityFlyweight> water) { waterSupply = std::move(water); }
-void LandMark::connectPower(std::shared_ptr<UtilityFlyweight> power) { powerSupply = std::move(power); }
-void LandMark::connectWasteManagement(std::shared_ptr<UtilityFlyweight> waste) { wasteManagement = std::move(waste); }
-void LandMark::connectSewage(std::shared_ptr<UtilityFlyweight> sewage) { sewageManagement = std::move(sewage); }
-
-void LandMark::applyUtilityConsumption() {
-        if (waterSupply && waterSupply->getOperationalStatus()) {
-                std::cout << "Consuming water resources: " << waterSupply->getResourceConsumption() << "\n";
-        }
-        if (powerSupply && powerSupply->getOperationalStatus()) {
-                std::cout << "Consuming power resources: " << powerSupply->getResourceConsumption() << "\n";
-        }
-        if (wasteManagement && wasteManagement->getOperationalStatus()) {
-                std::cout << "Waste management resources consumed: " << wasteManagement->getResourceConsumption() << "\n";
-        }
-        if (sewageManagement && sewageManagement->getOperationalStatus()) {
-                std::cout << "Sewage management resources consumed: " << sewageManagement->getResourceConsumption() << "\n";
-        }
-}

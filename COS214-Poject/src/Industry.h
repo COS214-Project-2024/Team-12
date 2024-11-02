@@ -46,9 +46,6 @@ public:
     // Display resource statuses
     void displayStatus() ;
 
-    // Calculate total tax revenue
-    // double calculateTaxRevenue() const;
-
 
     // Production Prioritization - just a fancy way of showing which resource we are processing
     void setPriorityResource(ResourcePriority priority);
@@ -69,6 +66,8 @@ public:
     std::string getBuildingType() override{
         return "Industry";
     }
+
+    virtual void accept(taxCollector* TC) {}
 };
 
 

@@ -10,11 +10,10 @@ class GameState {
 private:
     std::vector<std::unique_ptr<Command>> commandHistory;
     size_t currentCommandIndex = 0;
-    int money = 1000;
-    int happiness = 100;
 
 public:
     void executeCommand(std::unique_ptr<Command> command) {
+        // Clear redo history when new command is executed
         while (commandHistory.size() > currentCommandIndex) {
             commandHistory.pop_back();
         }
@@ -36,21 +35,6 @@ public:
             commandHistory[currentCommandIndex]->execute();
             currentCommandIndex++;
         }
-    }
-
-    bool spendMoney(int amount) {
-        if (money >= amount) {
-            money -= amount;
-            return true;
-        }
-        return false;
-    }
-
-    void addMoney(int amount) { money += amount; }
-    int getMoney() const { return money; }
-    int getHappiness() const { return happiness; }
-    void updateHappiness(int delta) { 
-        happiness = std::clamp(happiness + delta, 0, 100);
     }
 };
 

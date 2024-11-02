@@ -6,27 +6,18 @@
 #include <string>
 #include <memory>
 
-// #include "UtilityFlyweight.h"
-// #include "WaterSupply.h"
-// #include "CityComposite.h"
-// #include "taxCollector.h"
-
 class UtilityFlyweight;
 class Government;
 class taxCollector;
 class CityComposite;
 
-
 class ResidentialBuilding : public CityComponent {
 protected:
     int bedrooms;
     double price;
-    bool taxPayed;
-    Government* bank;
-    double ResidentialTaxRate;
+    bool taxPaid;
     
-
-    // Utility connections
+    // Utility connections for area-of-effect functionality
     std::shared_ptr<UtilityFlyweight> waterSupply;
     std::shared_ptr<UtilityFlyweight> powerSupply;
     std::shared_ptr<UtilityFlyweight> wasteManagement;
@@ -34,24 +25,34 @@ protected:
 
 
 public:
-    ResidentialBuilding() = default;
-    ResidentialBuilding(int bedrooms, double price,std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
+    ResidentialBuilding(int bedrooms, double cost,std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
                         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
-    virtual ~ResidentialBuilding() = default;
-	void displayStatus() override;
-    void connectWater(std::shared_ptr<UtilityFlyweight> water);
-    void connectPower(std::shared_ptr<UtilityFlyweight> power);
-    void connectWasteManagement(std::shared_ptr<UtilityFlyweight> waste);
-    void connectSewage(std::shared_ptr<UtilityFlyweight> sewage);
-    void applyUtilityConsumption();
-    virtual std::shared_ptr<ResidentialBuilding> clone() const = 0;
-
-
-    // void accept(taxCollector* TC) override;
     
-    virtual void payTax() = 0;
+    // Tax related methods
+    void setTaxPaid(bool paid);
+    bool isTaxPaid() const;
+    void accept(taxCollector* TC) override;
+    double getPrice() const {return price;}
+    
+    // Display methods
+    void displayStatus() override;
     std::string getBuildingType() override{
         return "Residential Building";
+    }
+    virtual char getDisplaySymbol() const = 0; // For map display
+
+    // Utility-related methods - For NPC Mananger Singleton
+    int getUtilityCoverage() const {
+        int coverage = 0;
+        if (waterSupply) coverage++;
+        if (powerSupply) coverage++;
+        if (wasteManagement) coverage++;
+        if (sewageManagement) coverage++;
+        return coverage;
+    }
+    bool hasUtilities() const {
+        return waterSupply && powerSupply && 
+            wasteManagement && sewageManagement;
     }
 };
 

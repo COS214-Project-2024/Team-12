@@ -8,22 +8,15 @@
 
 
 class Flat : public ResidentialBuilding {
-private:
-CityComposite* city;
-bool taxPayed;
-double rate;
-Government* bank;
-
 public:
+    static constexpr int BASE_COST = 150;
+    
     Flat();
     Flat(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
-    void displayStatus();
-    std::shared_ptr<ResidentialBuilding> clone() const;
-    void setFlatRate(double rate);
-    void accept(taxCollector* TC);
-    void payTax();
-     
+    
+    char getDisplaySymbol() const override { return 'F'; }
+    std::string getBuildingType() override { return "Flat"; }
 };
 
 #endif

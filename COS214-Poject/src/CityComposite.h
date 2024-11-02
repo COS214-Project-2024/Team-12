@@ -42,12 +42,12 @@ public:
         return "City";
     }
 
-    // void accept(taxCollector* tax) override{
-    //     //can't collect tax from the city
-    //     for(auto& zone : zones){
-    //         zone->accept(tax);
-    //     }
-    // }
+    void accept(taxCollector* tax) override{
+        // //can't collect tax from the city
+        // for(auto& zone : zones){
+        //     zone->accept(tax);
+        // }
+    }
 
     void connectZones(CityComponent* zoneA, CityComponent* zoneB, std::unique_ptr<Transport> transport);
 

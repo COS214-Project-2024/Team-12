@@ -34,6 +34,8 @@ public:
 	int getUnitCost() const;
 	//double getTaxRevenue() override;
 	bool isReadyForCollection(); 
+
+	virtual void accept(taxCollector* TC) {}
 };
 
 #endif

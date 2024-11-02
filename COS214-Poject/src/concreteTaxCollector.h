@@ -1,23 +1,21 @@
-// #ifndef CONCRETETAXCOLLECTOR_H
-// #define CONCRETETAXCOLLECTOR_H
+#ifndef CONCRETETAXCOLLECTOR_H
+#define CONCRETETAXCOLLECTOR_H
 
 
-// #include "taxCollector.h"
-// #include "Government.h"
-// #include "ZoneComposite.h"
+#include "taxCollector.h"
+#include "Government.h"
+#include "ZoneComposite.h"
+#include "ResidentialBuilding.h"
+#include "CommercialBuilding.h"
 
 
-// class ConcreteTaxCollector : public taxCollector {
-// public:
-//     void visit(ResidentialBuilding* RB);
+class ConcreteTaxCollector : public taxCollector {
+public:
+    void visit(ResidentialBuilding* RB);
 
-//     void visit(CommercialBuilding* CB);
-//     void visit(ZoneComposite* Rzone);
-// private:
-//     double calculateResidentialTax(ResidentialBuilding* RB);
-
-//     double calculateCommercialTax(CommercialBuilding* CB);
-// };
+    void visit(CommercialBuilding* CB);
+    void visit(ZoneComposite* Rzone);
+};
 
 
-// #endif
+#endif

@@ -8,21 +8,15 @@
 
 
 class Townhouse : public ResidentialBuilding {
-private:
-Government* bank;
-double price;
-bool taxPayed;
-double rate;
 public:
+    static constexpr int BASE_COST = 200;
+    
     Townhouse();
     Townhouse(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
-            std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
-    void displayStatus();
-   
-    std::shared_ptr<ResidentialBuilding> clone() const;
-     void setTownhouseRate(double rate);
-     void accept(taxCollector* TC);
-    void payTax();
+              std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
+    
+    char getDisplaySymbol() const override { return 'T'; }
+    std::string getBuildingType() override { return "Townhouse"; }
 };
 
 #endif

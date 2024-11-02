@@ -60,16 +60,8 @@ std::string ZoneComposite::getBuildingType(){
 	return zoneType;
 }
 
-// void ZoneComposite::accept(taxCollector* TC){
-// 	for (auto& building : buildings) {
-//         building->accept(TC);  // Collect taxes from each building
-//     }
-// }
-
-// void ZoneComposite::payTax(){
-// 	std::vector<CityComponent*>::iterator it;
-//     for (it = buildings.begin(); it != buildings.end(); ++it) {
-//         CityComponent* component = *it;
-//         component->accept(sars);
-//     }
-// }
+void ZoneComposite::accept(taxCollector* TC){
+    if (TC) {
+        TC->visit(this);  // Let the visitor handle the iteration
+    }
+}

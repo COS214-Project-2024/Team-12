@@ -1,30 +1,44 @@
 #ifndef COMMERCIALBUILDING_H
 #define COMMERCIALBUILDING_H
 
-#include <string>
-#include "taxCollector.h"
 #include "CityComponent.h"
-#include "Government.h"
+#include <memory>
+#include <string>
 
+class UtilityFlyweight;
+class Government;
+class taxCollector;
 class CommercialBuilding : public CityComponent {
-private:
+protected:
     double price;
     bool taxPaid;
-    int capacity;
+
+    // Utility connections
+    std::shared_ptr<UtilityFlyweight> waterSupply;
+    std::shared_ptr<UtilityFlyweight> powerSupply;
+    std::shared_ptr<UtilityFlyweight> wasteManagement;
+    std::shared_ptr<UtilityFlyweight> sewageManagement;
 
 public:
-    // Default arguments only in header
-    CommercialBuilding(double initialPrice = 200000, int initialCapacity = 50);
+    CommercialBuilding(double cost,
+                    std::shared_ptr<UtilityFlyweight> water,
+                    std::shared_ptr<UtilityFlyweight> power,
+                    std::shared_ptr<UtilityFlyweight> waste,
+                    std::shared_ptr<UtilityFlyweight> sewage);
 
+    // Tax related methods
     void accept(taxCollector* TC) override;
+    void setTaxPaid(bool paid);
+    double getPrice() const { return price; }
+    bool isTaxPaid() const { return taxPaid; }
+
+    // Display methods
     std::string getBuildingType() override;
     void displayStatus() override;
-    void setTaxPaid(bool paid);
+    virtual char getDisplaySymobl() const = 0;
 
-    // Getters
-    double getPrice() const { return price; }
-    int getCapacity() const { return capacity; }
-    bool isTaxPaid() const { return taxPaid; }
+    // Utility coverage
+    int getUtilityCoverage() const;
 };
 
 #endif

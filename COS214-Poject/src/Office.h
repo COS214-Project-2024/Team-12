@@ -3,27 +3,19 @@
 
 #include <string>
 
-#include "Government.h"
-#include "taxCollector.h"
+#include "CommercialBuilding.h"
 using namespace std;
 
 
 class Office: public CommercialBuilding{
-    private:
-    string state;
-    double price;
-    int numberOfEmployees;
-    int Capacity;
-    double size;
-    bool taxPayed;
-    double officeRate;
-    Government* bank;
-  
-
-    public:
-    void setOfficeRate(double rate);
-    void accept(taxCollector& TC);
-    void payTax();
+    Office();
+    Office(std::shared_ptr<UtilityFlyweight> water,
+          std::shared_ptr<UtilityFlyweight> power,
+          std::shared_ptr<UtilityFlyweight> waste,
+          std::shared_ptr<UtilityFlyweight> sewage);
+    
+    char getDisplaySymbol() const  { return 'O'; }
+    std::string getBuildingType() override { return "Office"; }
 };
 
 

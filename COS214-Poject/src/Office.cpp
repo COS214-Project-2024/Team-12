@@ -1,16 +1,10 @@
 #include "Office.h"
 
-void Office::setOfficeRate(double rate){
-    officeRate =rate;
-}
+Office::Office() 
+    : CommercialBuilding(800.0, nullptr, nullptr, nullptr, nullptr) {}
 
-
-void Office::accept(taxCollector& TC){
-    TC.visit(this);
-}
-
-
-void Office::payTax(){
-    bank->addMoney(price*officeRate);
-    taxPayed=true;
-}
+Office::Office(std::shared_ptr<UtilityFlyweight> water,
+             std::shared_ptr<UtilityFlyweight> power,
+             std::shared_ptr<UtilityFlyweight> waste,
+             std::shared_ptr<UtilityFlyweight> sewage)
+    : CommercialBuilding(800.0, water, power, waste, sewage) {}

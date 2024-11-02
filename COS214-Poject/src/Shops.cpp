@@ -1,19 +1,12 @@
 #include "Shops.h"
 
 
-void Shops::setShopsRate(double rate){
-    shopsRate =rate;
-}
+Shops::Shops() 
+    : CommercialBuilding(400.0, nullptr, nullptr, nullptr, nullptr) {}
 
-
-void Shops::accept(taxCollector& TC){
-    TC.visit(this);
-}
-
-
-void Shops::payTax(){
-    bank->addMoney(price*shopsRate);
-    taxPayed=true;
-}
-
+Shops::Shops(std::shared_ptr<UtilityFlyweight> water,
+             std::shared_ptr<UtilityFlyweight> power,
+             std::shared_ptr<UtilityFlyweight> waste,
+             std::shared_ptr<UtilityFlyweight> sewage)
+    : CommercialBuilding(400.0, water, power, waste, sewage) {}
 

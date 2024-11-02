@@ -3,16 +3,16 @@
 
 #include "../CityComponent.h"
 #include <vector>
-#include "taxCollector.h"
+#include "CollectTaxCommercial.h"
 
 
 class CommercialZoneComposite : public CityComponent {
 private:
     std::vector<CityComponent*> commercialbuildings;
     double commercialTaxRate;
-    taxCollector& sars;
+    CollectTaxCommercial& sars;
 public:
-    CommercialZoneComposite(double taxRate, taxCollector& sarsR);
+    CommercialZoneComposite(double taxRate, CollectTaxCommercial& sarsR);
 
     void add(CityComponent* building) override;
 
@@ -20,8 +20,8 @@ public:
 
     void displayStatus() override;
 
-     virtual void accept(taxCollector& TC)=0;
-    virtual void payTax()=0;
+    
+    virtual void payTax();
 
     
 };

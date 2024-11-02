@@ -8,7 +8,7 @@
 #include <memory>
 #include "WaterSupply.h"
 #include "CityComposite.h"
-#include "taxCollector.h"
+#include "CollectTaxResidential.h"
 #include "Government.h"
 
 
@@ -17,7 +17,6 @@ protected:
     int bedrooms;
     double price;
     bool taxPayed;
-    Government* bank;
     double ResidentialTaxRate;
     
 
@@ -40,7 +39,7 @@ public:
     void connectSewage(std::shared_ptr<UtilityFlyweight> sewage);
     void applyUtilityConsumption();
     virtual std::unique_ptr<ResidentialBuilding> clone() const = 0;
-    virtual void accept(taxCollector& TC)=0;
+    virtual void accept(CollectTaxResidential& TC)=0;
     virtual void payTax()=0;
 };
 

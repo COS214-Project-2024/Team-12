@@ -6,12 +6,16 @@ void Malls::setMallRate(double rate){
 }
 
 
-void Malls::accept(taxCollector& TC){
+void Malls::accept(CollectTaxCommercial& TC){
     TC.visit(this);
 }
 
 
 void Malls::payTax(){
-    bank->addMoney(price*MallsRate);
+    Government::getInstance().addMoney(price*MallsRate);
     taxPayed=true;
+}
+
+Malls::Malls(){
+    
 }

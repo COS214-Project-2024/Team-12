@@ -1,10 +1,14 @@
 #include "Townhouse.h"
 
-Townhouse::Townhouse() : ResidentialBuilding(4, 30000.00, nullptr, nullptr, nullptr, nullptr) {}
+Townhouse::Townhouse() : ResidentialBuilding(4, 30000.00, nullptr, nullptr, nullptr, nullptr) {
+    
+}
 
 Townhouse::Townhouse(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
             std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
-        : ResidentialBuilding(4, 30000.00, water, power, waste, sewage) {}
+        : ResidentialBuilding(4, 30000.00, water, power, waste, sewage) {
+            
+        }
 
 void Townhouse::displayStatus(){
     std::cout << "Townhouse Status:\n";
@@ -22,7 +26,7 @@ void Townhouse::setTownhouseRate(double taxRate){
 
  }
 
- void Townhouse::accept(taxCollector& TC){
+ void Townhouse::accept(CollectTaxResidential& TC){
     TC.visit(this);
 
 }
@@ -30,7 +34,7 @@ void Townhouse::setTownhouseRate(double taxRate){
 
 
 void Townhouse::payTax(){
-    bank->addMoney(price*rate);
+    Government::getInstance().addMoney(price*rate);
     taxPayed=true;
     
 }

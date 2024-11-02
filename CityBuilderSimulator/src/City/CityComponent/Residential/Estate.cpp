@@ -1,10 +1,14 @@
 #include "Estate.h"
 
-Estate::Estate() : ResidentialBuilding(6, 50000.00, nullptr, nullptr, nullptr, nullptr) {}
+Estate::Estate() : ResidentialBuilding(6, 50000.00, nullptr, nullptr, nullptr, nullptr) {
+    
+}
 
 Estate::Estate(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
-        : ResidentialBuilding(6, 50000.00, water, power, waste, sewage) {}
+        : ResidentialBuilding(6, 50000.00, water, power, waste, sewage) {
+            
+        }
 
 void Estate::displayStatus(){
     std::cout << "Estate Status:\n";
@@ -23,7 +27,7 @@ void Estate::setEstateRate(double taxRate){
 
  }
 
- void Estate::accept(taxCollector& TC){
+ void Estate::accept(CollectTaxResidential& TC){
     TC.visit(this);
 
 }
@@ -31,7 +35,7 @@ void Estate::setEstateRate(double taxRate){
 
 
 void Estate::payTax(){
-    bank->addMoney(price*rate);
+    Government::getInstance().addMoney(price*rate);
     taxPayed=true;
     
 }

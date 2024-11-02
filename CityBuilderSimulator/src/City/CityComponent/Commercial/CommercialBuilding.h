@@ -2,7 +2,7 @@
 #define COMMERCIALBUILDING_H
 
 #include <string>
-#include "taxCollector.h"
+#include "CollectTaxCommercial.h"
 using namespace std;
 
 class CommercialBuilding{
@@ -18,7 +18,7 @@ class CommercialBuilding{
 
 
     public:
-   virtual void accept(taxCollector& TC)=0;
+   virtual void accept(CollectTaxCommercial& TC)=0;
     virtual void payTax()=0;
 };
 

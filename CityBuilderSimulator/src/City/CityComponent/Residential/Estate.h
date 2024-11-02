@@ -2,7 +2,7 @@
 #define ESTATE_H
 
 #include "ResidentialBuilding.h"
-#include "taxCollector.h"
+#include "CollectTaxResidential.h"
 #include "CityComposite.h"
 #include "Government.h"
 
@@ -12,7 +12,7 @@ class Estate : public ResidentialBuilding {
     bool taxPayed;
     double price;
     double rate;
-    Government* bank;
+   
 public:
     Estate();
     Estate(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
@@ -20,7 +20,7 @@ public:
     void displayStatus();
     std::unique_ptr<ResidentialBuilding> clone() const;
     void setEstateRate(double rate);
-    void accept(taxCollector& TC);
+    void accept(CollectTaxResidential& TC);
     void payTax();
 };
 

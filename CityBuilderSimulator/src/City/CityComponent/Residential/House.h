@@ -2,7 +2,7 @@
 #define HOUSE_H
 
 #include "ResidentialBuilding.h"
-#include "taxCollector.h"
+#include "CollectTaxResidential.h"
 #include "CityComposite.h"
 #include "Government.h"
 
@@ -11,7 +11,8 @@ class House : public ResidentialBuilding {
 private:
 double rate;
 bool taxPayed;
-Government* bank;
+
+
 //double price;
 public:
     House();
@@ -20,7 +21,7 @@ public:
     void displayStatus();
     std::unique_ptr<ResidentialBuilding> clone() const;
     void setHouseTax(double rate);
-    void accept(taxCollector& TC);
+    void accept(CollectTaxResidential& TC);
     void payTax();
      
 };

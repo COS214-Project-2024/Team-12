@@ -2,8 +2,9 @@
 #define OFFICE_H
 
 #include <string>
-#include "taxCollector.h"
+#include "CollectTaxCommercial.h"
 #include "Government.h"
+#include "CommercialBuilding.h"
 using namespace std;
 
 
@@ -16,13 +17,14 @@ class Office: public CommercialBuilding{
     double size;
     bool taxPayed;
     double officeRate;
-    Government* bank;
+    
   
 
     public:
     void setOfficeRate(double rate);
-    void accept(taxCollector& TC);
+    void accept(CollectTaxCommercial& TC);
     void payTax();
+    Office();
 };
 
 

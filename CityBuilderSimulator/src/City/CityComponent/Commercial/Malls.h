@@ -2,8 +2,9 @@
 #define MALLS_H
 
 #include <string>
-#include "taxCollector.h"
+#include "CollectTaxCommercial.h"
 #include "Government.h"
+#include "CommercialBuilding.h"
 using namespace std;
 
 class Malls: public CommercialBuilding{
@@ -15,13 +16,14 @@ class Malls: public CommercialBuilding{
     double size;
     bool taxPayed;
     double MallsRate;
-    Government* bank;
+    
    
 
     public:
     void setMallRate(double rate);
-    void accept(taxCollector& TC);
+    void accept(CollectTaxCommercial& TC);
     void payTax();
+    Malls();
 };
 
 

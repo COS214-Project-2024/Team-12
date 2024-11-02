@@ -2,7 +2,7 @@
 #define SHOPs_H
 
 #include <string>
-#include "taxCollector.h"
+#include "CollectTaxCommercial.h"
 #include "Government.h"
 using namespace std;
 
@@ -17,12 +17,13 @@ class Shops:public CommercialBuilding{
     double size;
     bool taxPayed;
     double shopsRate;
-    Government* bank;
+    
     
 
     public:
+    Shops();
     void setShopsRate(double rate);
-    void accept(taxCollector& TC);
+    void accept(CollectTaxCommercial& TC);
     void payTax();
 };
 

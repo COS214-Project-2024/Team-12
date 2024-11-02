@@ -2,7 +2,7 @@
 #define FLAT_H
 
 #include "ResidentialBuilding.h"
-#include "taxCollector.h"
+#include "CollectTaxResidential.h"
 #include "CityComposite.h"
 #include "Government.h"
 
@@ -11,7 +11,7 @@ private:
 CityComposite* city;
 bool taxPayed;
 double rate;
-Government* bank;
+
 
 public:
     Flat();
@@ -20,7 +20,7 @@ public:
     void displayStatus();
     std::unique_ptr<ResidentialBuilding> clone() const;
     void setFlatRate(double rate);
-    void accept(taxCollector& TC);
+    void accept(CollectTaxResidential& TC);
     void payTax();
      
 };

@@ -2,12 +2,11 @@
 #define TOWNHOUSE_H
 
 #include "ResidentialBuilding.h"
-#include "taxCollector.h"
+#include "CollectTaxResidential.h"
 #include "Government.h"
 
 class Townhouse : public ResidentialBuilding {
 private:
-Government* bank;
 double price;
 bool taxPayed;
 double rate;
@@ -19,7 +18,7 @@ public:
    
     std::unique_ptr<ResidentialBuilding> clone() const;
      void setTownhouseRate(double rate);
-     void accept(taxCollector& TC);
+     void accept(CollectTaxResidential& TC);
     void payTax();
 };
 

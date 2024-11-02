@@ -6,14 +6,16 @@ void Shops::setShopsRate(double rate){
 }
 
 
-void Shops::accept(taxCollector& TC){
+void Shops::accept(CollectTaxCommercial& TC){
     TC.visit(this);
 }
 
 
 void Shops::payTax(){
-    bank->addMoney(price*shopsRate);
+    Government::getInstance().addMoney(price*shopsRate);
     taxPayed=true;
 }
 
-
+Shops::Shops(){
+    
+}

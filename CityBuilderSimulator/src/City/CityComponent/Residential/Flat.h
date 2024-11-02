@@ -1,0 +1,23 @@
+#ifndef FLAT_H
+#define FLAT_H
+
+#include "../src/City/CityComponent/Residential/ResidentialBuilding.h"
+#include "../src/City/taxCollector.h"
+#include "../City/CityComponent/CityComposite/CityComposite.h"
+
+class Flat : public ResidentialBuilding {
+private:
+CityComposite* city;
+bool taxPayed;
+public:
+    Flat();
+    Flat(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
+        std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
+    void displayStatus();
+    std::unique_ptr<ResidentialBuilding> clone() const;
+    // void accept(taxCollector* TC);
+    // void payTax();
+     
+};
+
+#endif

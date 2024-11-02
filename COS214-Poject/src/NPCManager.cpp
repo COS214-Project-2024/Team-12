@@ -92,3 +92,7 @@ std::string NPCManager::getHighestState() const{
         std::cout << "State with the highest count is: " << maxState->first << " with count: " << maxState->second << std::endl;
         return maxState->first;
 }
+
+int NPCManager::getTotalNPCs() const{
+    return happyCount + neutralCount + revoltCount + productiveCount + crimeCount;
+}

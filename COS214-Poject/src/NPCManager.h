@@ -36,6 +36,8 @@ public:
 
     std::string getHighestState() const;
 
+    int getTotalNPCs() const;
+
     NPCManager() : happinessLevel(50), happyCount(0), neutralCount(0), revoltCount(0), productiveCount(0), crimeCount(0) {}
 
 private:

@@ -15,8 +15,7 @@ void ResidentialBuilding::displayStatus() {
                 << "Bedrooms: " << bedrooms << "\n"
                 << "Price: $" << price << "\n"
                 << "Tax Status: " << (taxPaid ? "Paid" : "Unpaid") << "\n"
-                << "Utilities Connected: " << (hasRequiredUtilities() ? "Yes" : "No") << "\n"
-                << getUtilityStatus() << "\n";
+                << "Utilities Connected: " << (hasUtilities() ? "Yes" : "No") << "\n";
 }
 
 bool ResidentialBuilding::isTaxPaid() const {
@@ -31,7 +30,8 @@ void ResidentialBuilding::accept(taxCollector* TC) {
 
 void ResidentialBuilding::setTaxPaid(bool paid) {
         taxPaid = paid;
-        if(paid) {
+        // Only affect happiness if there are NPCs
+        if(paid && NPCManager::getInstance().getTotalNPCs()) {
                 NPCManager::getInstance().setHappinessLevel(-2);
         }
 }

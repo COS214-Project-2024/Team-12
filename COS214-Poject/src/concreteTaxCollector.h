@@ -7,6 +7,7 @@
 #include "ZoneComposite.h"
 #include "ResidentialBuilding.h"
 #include "CommercialBuilding.h"
+#include "NPCManager.h"
 
 
 class ConcreteTaxCollector : public taxCollector {

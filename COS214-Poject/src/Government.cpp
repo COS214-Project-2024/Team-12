@@ -109,3 +109,11 @@ void Government::displayGovernmentStats(){
 void Government::decreasePopulation(int amount){
 	population -= amount;
 }
+
+void Government::increasePopulation(int amount){
+	if(amount > 0){
+		population += amount;
+		return;
+	}
+	population += populationGrowth;
+}

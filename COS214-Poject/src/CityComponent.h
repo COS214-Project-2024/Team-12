@@ -9,15 +9,16 @@ class taxCollector;
 #include <iostream>
 #include <vector>
 #include <string>
+#include <memory>
 
 class CityComponent{
 public:
-	virtual void add(CityComponent *, int , int) {}
-	virtual void remove(CityComponent *) {}
+	virtual void add(std::shared_ptr<CityComponent>) {}
+	virtual void remove(std::shared_ptr<CityComponent>) {}
 	virtual void displayStatus() = 0;
 	virtual ~CityComponent();
-	//void addNpc();
-	//void removeNpc();
+	void addNpc();
+	void removeNpc();
 	void notify();
 
 	virtual std::string getBuildingType() = 0;

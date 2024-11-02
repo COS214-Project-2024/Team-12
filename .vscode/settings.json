@@ -79,5 +79,6 @@
 		"xtr1common": "cpp",
 		"xtree": "cpp",
 		"xutility": "cpp"
-	}
+	},
+	"cmake.sourceDirectory": "C:/Users/sibus/OneDrive/Documents/GitHub/Team-12/CityBuilderSimulator/gtests"
 }

@@ -2,6 +2,7 @@
 #include "GameState.h"  // Add this first to resolve incomplete type error
 #include "MapGrid.h"
 #include "CityComponent.h"
+#include "CityComposite.h"
 #include "ResidentialBuilding.h"
 #include "CommercialBuilding.h"
 #include "Industry.h"
@@ -25,6 +26,7 @@ private:
     MapGrid grid;
     GameState state;
     bool running = true;
+    std::shared_ptr<CityComponent> city = std::make_shared<CityComposite>("Adventure City");
 
     void displayMenu() {
         std::cout << "\n\033[1;36m=== City Builder ===\033[0m\n"
@@ -113,6 +115,10 @@ private:
 
         auto command = std::make_unique<PlaceComponentCommand>(grid, loc, building);
         state.executeCommand(std::move(command));
+
+        //adding a building to the composite
+        city->add(building);
+
         std::cout << "\033[1;32mBuilding placed successfully!\033[0m\n";
     }
 

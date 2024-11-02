@@ -5,6 +5,10 @@
 #include <algorithm>
 #include <iostream>
 
+NPCManager& NPCManager::getInstance() {
+    static NPCManager instance;
+    return instance;
+}
 
 int NPCManager::getHappinessLevel() const{
 	return happinessLevel;

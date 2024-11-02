@@ -7,7 +7,7 @@
 
 class ZoneComposite : public CityComponent{
 	private:
-	std::vector<CityComponent*> buildings;
+	std::vector<std::shared_ptr<CityComponent>> buildings;
 	std::string zoneType;
 	taxCollector* sars;
 
@@ -16,15 +16,15 @@ class ZoneComposite : public CityComponent{
 	public:
 	ZoneComposite(const std::string& type, int minX, int maxX, int minY, int maxY);
 
-	void add(CityComponent* component, int x, int y) override;
+	void add(std::shared_ptr<CityComponent> component) override;
 
-	void remove(CityComponent* component) override;
+	void remove(std::shared_ptr<CityComponent> component) override;
 
 	void displayStatus() override;
 
 	std::string getBuildingType() override;
 
-	void accept(taxCollector* TC) override;
+	//void accept(taxCollector* TC) override;
 
 	void payTax();
 };

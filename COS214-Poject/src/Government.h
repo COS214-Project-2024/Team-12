@@ -45,6 +45,8 @@ public:
 
     void decreasePopulation(int amount);
 
+    void increasePopulation(int amount);
+
     Government() : money(10000), productionRate(1.0), mortalityRate(0.01), crimeRate(0.00), population(0), populationGrowth(0), EMPLOYMENT_RATE(0) {}  // Private constructor
 
 private:

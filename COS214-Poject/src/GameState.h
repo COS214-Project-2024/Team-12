@@ -5,13 +5,15 @@
 #include <memory>
 #include <algorithm>
 #include "Command.h"
+#include "Government.h"
+#include "NPCManager.h"
 
 class GameState {
 private:
     std::vector<std::unique_ptr<Command>> commandHistory;
     size_t currentCommandIndex = 0;
-    int money = 1000;
-    int happiness = 100;
+    //int money = 1000;
+    //int happiness = 100;
 
 public:
     void executeCommand(std::unique_ptr<Command> command) {
@@ -39,19 +41,25 @@ public:
     }
 
     bool spendMoney(int amount) {
-        if (money >= amount) {
-            money -= amount;
+        if (Government::getInstance().getMoney() >= amount) {
+            //money -= amount;
+            Government::getInstance().reduceMoney(amount);
             return true;
         }
         return false;
     }
 
-    void addMoney(int amount) { money += amount; }
-    int getMoney() const { return money; }
-    int getHappiness() const { return happiness; }
-    void updateHappiness(int delta) { 
-        happiness = std::clamp(happiness + delta, 0, 100);
+    void addMoney(int amount) {
+        //money += amount; 
+        Government::getInstance().addMoney(amount);
     }
+    int getMoney() const { return Government::getInstance().getMoney(); }
+    int getHappiness() const { return NPCManager::getInstance().getHappinessLevel(); }
+    void updateHappiness(int delta) { 
+        //happiness = std::clamp(happiness + delta, 0, 100);
+        NPCManager::getInstance().setHappinessLevel(delta);
+    }
+    
 };
 
 #endif

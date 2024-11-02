@@ -2,36 +2,42 @@
 #include "CityComponent.h"
 #include "NPCObserver.h"
 #include "Government.h"
+#include "NPCManager.h"
 
 #include <iostream>
 #include <vector>
 #include <string>
 
-CityComposite::CityComposite(const std::string &name, MapGrid *cityMap) : cityName(name), budget(0), map(cityMap) {}
+CityComposite::CityComposite(const std::string &name) : cityName(name) {}
 
 CityComposite::~CityComposite()
 {
     for (auto zone : zones)
     {
-        delete zone;
+        //delete zone;
     }
     zones.clear();
 }
 
-void CityComposite::add(CityComponent *zone, int x, int y)
+void CityComposite::add(std::shared_ptr<CityComponent> component)
 {
-    zones.push_back(zone);
-    map->placeComponent(zone, x, y);
+    zones.push_back(component);
 
-    // Remeber to change for citizens
-    /* checkCityConditions();
+    if(Government::getInstance().getPopulation() != 0){
+        /* if(component->getBuildingType() == "Resdiential")
+        {
+            NPCManager::getInstance().setHappinessLevel(2);
+            Government::getInstance().reduceMoney(500);
+        } */
+    }
+    
 
-    notify(); */
+    notify(); 
 }
 
-void CityComposite::remove(CityComponent *zone)
+void CityComposite::remove(std::shared_ptr<CityComponent> component)
 {
-    zones.erase(std::remove(zones.begin(), zones.end(), zone), zones.end());
+    zones.erase(std::remove(zones.begin(), zones.end(), component), zones.end());
 }
 
 void CityComposite::displayStatus()
@@ -45,13 +51,13 @@ void CityComposite::displayStatus()
     Government::getInstance().displayGovernmentStats();
 }
 
-double CityComposite::getBudget() const
+/* double CityComposite::getBudget() const
 {
     return Government::getInstance().getMoney();
-}
+} */
 
 // Deduct budget for buying, upgrading and repairing
-bool CityComposite::deductBudget(double amount)
+/* bool CityComposite::deductBudget(double amount)
 {
     if (Government::getInstance().getMoney() >= amount)
     {
@@ -63,8 +69,8 @@ bool CityComposite::deductBudget(double amount)
         std::cout << "Insufficient budget.\n";
         return false;
     }
-}
-void CityComposite::addBudget(double amount)
+} */
+/* void CityComposite::addBudget(double amount)
 {
     if (amount > 0)
     {
@@ -74,7 +80,7 @@ void CityComposite::addBudget(double amount)
     {
         std::cout << "Invalid amount. Budget not updated.\n";
     }
-}
+} */
 
 bool CityComposite::checkCityConditions()
 {
@@ -99,7 +105,7 @@ bool CityComposite::checkCityConditions()
     return false;
 }
 
-void CityComposite::connectZones(CityComponent *zoneA, CityComponent *zoneB, std::unique_ptr<Transport> transport)
+/* void CityComposite::connectZones(CityComponent *zoneA, CityComponent *zoneB, std::unique_ptr<Transport> transport)
 {
     // Find map locations of zones and connect them
     Node *startNode = map->getNode(zoneA->getLocation().x, zoneA->getLocation().y);
@@ -113,4 +119,4 @@ void CityComposite::connectZones(CityComponent *zoneA, CityComponent *zoneB, std
     {
         std::cout << "Failed to connect zones.\n";
     }
-}
+} */

@@ -6,10 +6,7 @@
 #include <string>
 class NPCManager {
 public:
-    static NPCManager& getInstance() {
-        static NPCManager instance;  // Guaranteed to be destroyed, instantiated on first use
-        return instance;
-    }
+    static NPCManager& getInstance();
 
     // Delete copy constructor and assignment operator for singleton
     NPCManager(NPCManager const&) = delete;

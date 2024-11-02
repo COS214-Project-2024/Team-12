@@ -9,31 +9,32 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <memory>
 
 class CityComposite : public CityComponent {
 private:
-    std::vector<CityComponent*> zones; // Collection of zones
+    std::vector<std::shared_ptr<CityComponent>> zones; // Collection of zones
     std::string cityName;
     MapGrid* map;
-    double budget;
+    //double budget;
 
 public:
-    CityComposite(const std::string& name, MapGrid* cityMap);
+    CityComposite(const std::string& name);
     ~CityComposite();
 
-    void add(CityComponent* zone, int x, int y) override;
+    void add(std::shared_ptr<CityComponent> component) override;
 
-    void remove(CityComponent* zone) override;
+    void remove(std::shared_ptr<CityComponent> component) override;
 
     void displayStatus() override;
 
    
-    double getBudget() const;
+    //double getBudget() const; we do not need this
 
-    bool deductBudget(double amount);
+    //bool deductBudget(double amount); we do not need this
 
     // Add to the initial city budget
-    void addBudget(double amount);
+    //void addBudget(double amount); we do not need this
 
     bool checkCityConditions();
 

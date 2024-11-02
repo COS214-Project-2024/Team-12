@@ -6,10 +6,10 @@
 #include "Flat.h"
 #include "Townhouse.h"
 #include "Estate.h"
-// #include "CommercialBuilding.h"
-// #include "Shops.h"
-// #include "Office.h"
-// #include "Malls.h"
+#include "CommercialBuilding.h"
+#include "Shops.h"
+#include "Office.h"
+#include "Malls.h"
 // #include "MetalWorkFacility.h"
 // #include "PetroChemicalFacility.h"
 // #include "CrystalCraftIndustry.h"
@@ -158,7 +158,7 @@ void handleCreateZone() {
     void handleBuildStructure() {
     std::cout << "\nSelect building category:\n"
               << "1. Residential Buildings\n"
-            //   << "2. Commercial Buildings\n"
+              << "2. Commercial Buildings\n"
             //   << "3. Industrial Buildings\n"
             //   << "4. Landmarks\n"
               << "Choice: ";
@@ -197,25 +197,24 @@ void handleCreateZone() {
                     return;
             }
             break;
-        /*
         case 2: // Commercial
             std::cout << "\nSelect Commercial building type:\n"
-                      << "1. Shop ($150)\n"
-                      << "2. Office ($200)\n"
-                      << "3. Mall ($400)\n"
+                      << "1. Shop ($200)\n"
+                      << "2. Mall ($400)\n"
+                      << "3. Office ($600)\n"
                       << "Choice: ";
             int comChoice;
             std::cin >> comChoice;
             switch(comChoice) {
-                case 1: building = std::make_shared<Shops>(); cost = 150; buildingType = "Shop"; break;
-                case 2: building = std::make_shared<Office>(); cost = 200; buildingType = "Office"; break;
-                case 3: building = std::make_shared<Malls>(); cost = 400; buildingType = "Mall"; break;
+                case 1: building = std::make_shared<Shops>(); cost = 200; buildingType = "Shop"; break;
+                case 2: building = std::make_shared<Malls>(); cost = 400; buildingType = "Mall"; break;
+                case 3: building = std::make_shared<Office>(); cost = 600; buildingType = "Office"; break;
                 default:
                     std::cout << "\033[1;31mInvalid commercial building type!\033[0m\n";
                     return;
             }
             break;
-
+        /*
         case 3: // Industrial
             std::cout << "\nSelect Industrial building type:\n"
                       << "1. Metal Work Facility ($300)\n"
@@ -404,7 +403,7 @@ void handlePlaceUtility() {
             std::cout << "\nZone Type: " << zone->getBuildingType() 
                       << "\nAllowed Buildings: ";
             if (zone->getBuildingType() == "Residential")
-                std::cout << "Houses, Apartments";
+                std::cout << "Houses, Flats";
             else if (zone->getBuildingType() == "Commercial")
                 std::cout << "Shops, Offices";
             else if (zone->getBuildingType() == "Industrial")

@@ -258,11 +258,35 @@ public:
     }
 
     // Additional utility-specific methods
-    void addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
-        if (isValidLocation(loc)) {
-            grid[loc.y][loc.x].affectingUtilities.push_back(utility);
-        }
-    }
+    // void addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
+    //     if (isValidLocation(loc)) {
+    //         grid[loc.y][loc.x].affectingUtilities.push_back(utility);
+    //     }
+    // }
+
+		void addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
+			if (isValidLocation(loc)) {
+				grid[loc.y][loc.x].affectingUtilities.push_back(utility);
+				
+				// If there's a building in this cell, connect it to the utility
+				if (auto building = grid[loc.y][loc.x].component) {
+					if (auto residential = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
+						// Connect utility to residential building using setters
+						if (utility->getName() == "Water Supply") residential->setWaterSupply(utility);
+						else if (utility->getName() == "Power Plant") residential->setPowerSupply(utility);
+						else if (utility->getName() == "Waste Management") residential->setWasteManagement(utility);
+						else if (utility->getName() == "Sewage System") residential->setSewageManagement(utility);
+					}
+					else if (auto commercial = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
+						// Connect utility to commercial building using setters
+						if (utility->getName() == "Water Supply") commercial->setWaterSupply(utility);
+						else if (utility->getName() == "Power Plant") commercial->setPowerSupply(utility);
+						else if (utility->getName() == "Waste Management") commercial->setWasteManagement(utility);
+						else if (utility->getName() == "Sewage System") commercial->setSewageManagement(utility);
+					}
+				}
+			}
+		}
 
 	void removeUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
     if (isValidLocation(loc)) {
@@ -316,26 +340,32 @@ std::string getDisplayString() const {
             // Display cell content
             if (cell.component) {
                 // Building Types
-				// In MapGrid's getDisplayString(), modify how residential buildings are displayed:
+				// In MapGrid's getDisplayString()
 				if (auto residential = dynamic_cast<ResidentialBuilding*>(cell.component.get())) {
-					// Get utility coverage
-					int coverage = residential->getUtilityCoverage();
 					char symbol = residential->getDisplaySymbol();
-					
-					// Color code both building and coverage level
-					std::string color;
+					int coverage = residential->getUtilityCoverage();
+					std::cout << "Residential coverage: " << coverage << std::endl;  // Debug output
 					if (coverage == 4) {
-						color = "\033[1;32m"; // Green for full coverage
+						ss << "\033[1;32m[" << symbol << "]\033[0m";  // Green
 					} else if (coverage >= 2) {
-						color = "\033[1;33m"; // Yellow for partial
+						ss << "\033[1;33m[" << symbol << "]\033[0m";  // Yellow
 					} else {
-						color = "\033[1;31m"; // Red for insufficient
+						ss << "\033[1;31m[" << symbol << "]\033[0m";  // Red
 					}
-					
-					ss << color << "[" << symbol << coverage << "]\033[0m";
-                } else if (dynamic_cast<CommercialBuilding*>(cell.component.get())) {
-                    ss << "\033[1;33m[C]\033[0m"; 
-                } else if (dynamic_cast<Industry*>(cell.component.get())) {
+				} 
+				else if (auto commercial = dynamic_cast<CommercialBuilding*>(cell.component.get())) {
+					char symbol = commercial->getDisplaySymbol();
+					int coverage = commercial->getUtilityCoverage();
+					std::cout << "Commercial coverage: " << coverage << std::endl;  // Debug output
+					if (coverage == 4) {
+						ss << "\033[1;36m[" << symbol << "]\033[0m";  // Cyan
+					} else if (coverage >= 2) {
+						ss << "\033[1;37m[" << symbol << "]\033[0m";  // White
+					} else {
+						ss << "\033[1;31m[" << symbol << "]\033[0m";  // Red
+					}
+				}
+				else if (dynamic_cast<Industry*>(cell.component.get())) {
                     ss << "\033[1;31m[I]\033[0m"; 
                 } else if (auto utility = dynamic_cast<UtilityFlyweight*>(cell.component.get())) {
                     std::string type = utility->getName();
@@ -380,32 +410,32 @@ std::string getDisplayString() const {
         ss << "\n";
     }
     
-    // Enhanced legend with zones
-    ss << "\nLegend:\n"
-       << "=== Zones ===\n"
-       << "\033[48;5;17m   \033[0m - Residential Zone\n"
-       << "\033[48;5;52m   \033[0m - Commercial Zone\n"
-       << "\033[48;5;58m   \033[0m - Industrial Zone\n"
-       << "\n=== Buildings ===\n"
-       << "\033[1;32m[H]\033[0m - House\n"
-       << "\033[1;33m[C]\033[0m - Commercial\n"
-       << "\033[1;31m[I]\033[0m - Industry\n"
-       << "\n=== Utilities ===\n"
-       << "\033[1;34m[W]\033[0m - Water Supply\n"
-       << "\033[1;35m[P]\033[0m - Power Plant\n"
-       << "\033[1;36m[S]\033[0m - Sewage System\n"
-       << "\033[1;32m[M]\033[0m - Waste Management\n"
-       << "\n=== Coverage ===\n"
-       << "\033[1;34m[1]\033[0m - Single Utility\n"
-       << "\033[1;36m[2]\033[0m - Double Coverage\n"
-       << "\033[1;35m[3]\033[0m - Triple Coverage\n"
-       << "\033[1;37m[4]\033[0m - Full Coverage\n"
-       << "\033[1;30m[ ]\033[0m - Empty\n"
-<< "\n=== Buildings ===\n"
-<< "\033[1;32m[H]\033[0m - House\n"
-<< "\033[1;32m[F]\033[0m - Flat\n"
-<< "\033[1;32m[T]\033[0m - Townhouse\n"
-<< "\033[1;32m[E]\033[0m - Estate\n";
+	ss << "\nLegend:\n"
+	<< "=== Zones ===\n"
+	<< "\033[48;5;17m   \033[0m - Residential Zone\n"
+	<< "\033[48;5;52m   \033[0m - Commercial Zone\n"
+	<< "\033[48;5;58m   \033[0m - Industrial Zone\n"
+	<< "\n=== Buildings ===\n"
+	<< "Residential:\n"
+	<< "\033[1;32m[H]\033[0m - House\n"
+	<< "\033[1;32m[F]\033[0m - Flat\n"
+	<< "\033[1;32m[T]\033[0m - Townhouse\n"
+	<< "\033[1;32m[E]\033[0m - Estate\n"
+	<< "\nCommercial:\n"
+	<< "\033[1;33m[S]\033[0m - Shop\n"
+	<< "\033[1;33m[O]\033[0m - Office\n"
+	<< "\033[1;33m[M]\033[0m - Mall\n"
+	<< "\n=== Utilities ===\n"
+	<< "\033[1;34m[W]\033[0m - Water Supply\n"
+	<< "\033[1;35m[P]\033[0m - Power Plant\n"
+	<< "\033[1;36m[S]\033[0m - Sewage System\n"
+	<< "\033[1;32m[M]\033[0m - Waste Management\n"
+	<< "\n=== Coverage ===\n"
+	<< "\033[1;34m[1]\033[0m - Single Utility\n"
+	<< "\033[1;36m[2]\033[0m - Double Coverage\n"
+	<< "\033[1;35m[3]\033[0m - Triple Coverage\n"
+	<< "\033[1;37m[4]\033[0m - Full Coverage\n"
+	<< "\033[1;30m[ ]\033[0m - Empty\n";
 	   
 
     return ss.str();

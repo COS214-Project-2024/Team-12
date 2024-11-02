@@ -8,6 +8,7 @@ using namespace std;
 
 
 class Office: public CommercialBuilding{
+public:
     Office();
     Office(std::shared_ptr<UtilityFlyweight> water,
           std::shared_ptr<UtilityFlyweight> power,

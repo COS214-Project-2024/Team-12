@@ -54,6 +54,11 @@ public:
         return waterSupply && powerSupply && 
             wasteManagement && sewageManagement;
     }
+    
+    void setWaterSupply(std::shared_ptr<UtilityFlyweight> utility) { waterSupply = utility; }
+    void setPowerSupply(std::shared_ptr<UtilityFlyweight> utility) { powerSupply = utility; }
+    void setWasteManagement(std::shared_ptr<UtilityFlyweight> utility) { wasteManagement = utility; }
+    void setSewageManagement(std::shared_ptr<UtilityFlyweight> utility) { sewageManagement = utility; }
 };
 
 #endif

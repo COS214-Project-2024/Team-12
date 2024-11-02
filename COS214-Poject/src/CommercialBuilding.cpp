@@ -20,10 +20,6 @@ void CommercialBuilding::displayStatus() {
               << "Utilities Connected: " << getUtilityCoverage() << "/4\n";
 }
 
-bool CommercialBuilding::isTaxPaid() const {
-    return taxPaid;
-}
-
 void CommercialBuilding::accept(taxCollector* TC) {
     if (TC) TC->visit(this);
 }

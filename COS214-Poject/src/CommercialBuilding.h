@@ -35,10 +35,15 @@ public:
     // Display methods
     std::string getBuildingType() override;
     void displayStatus() override;
-    virtual char getDisplaySymobl() const = 0;
+    virtual char getDisplaySymbol() const = 0;
 
     // Utility coverage
     int getUtilityCoverage() const;
+
+    void setWaterSupply(std::shared_ptr<UtilityFlyweight> utility) { waterSupply = utility; }
+    void setPowerSupply(std::shared_ptr<UtilityFlyweight> utility) { powerSupply = utility; }
+    void setWasteManagement(std::shared_ptr<UtilityFlyweight> utility) { wasteManagement = utility; }
+    void setSewageManagement(std::shared_ptr<UtilityFlyweight> utility) { sewageManagement = utility; }
 };
 
 #endif

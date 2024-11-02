@@ -47,6 +47,9 @@ private:
     Government& government = Government::getInstance();
     NPCManager& npcManager = NPCManager::getInstance();
 
+    //the city
+    std::shared_ptr<CityComponent> city = std::make_shared<CityComposite>("Adventure City");
+
     void displayMenu() {
         std::cout << "\n\033[1;36m=== City Builder ===\033[0m\n"
                 << "Money: $" << government.getMoney() 
@@ -67,6 +70,8 @@ private:
 
     void showStatistics() {
         std::cout << "\n=== City Statistics ===\n";
+        NPCManager::getInstance().EmployeedNpcs();
+        NPCManager::getInstance().getCrimeRate();
         government.displayGovernmentStats();
         std::cout << "\nNPC States:\n"
                 << "Happy Citizens: " << npcManager.getDonationCount() << "\n"
@@ -172,6 +177,8 @@ void handleCreateZone() {
     }
 
     // Initialize variables for building selection
+    //std::shared_ptr<CityComponent> something = std::make_shared<>();
+
     std::shared_ptr<CityComponent> building;
     int cost = 0;
     std::string buildingType;
@@ -314,6 +321,7 @@ void handleCreateZone() {
 
     // Process payment and place building
     government.reduceMoney(cost);
+    //Government::getInstance().reduceMoney(cost);
 
     switch(categoryChoice) {
         case 1: government.setBuildingAmount("Residential", 1); break;
@@ -324,7 +332,10 @@ void handleCreateZone() {
 
     auto command = std::make_unique<PlaceComponentCommand>(grid, loc, building);
     state.executeCommand(std::move(command));
+    city->add(building);
     std::cout << "\033[1;32m" << buildingType << " placed successfully!\033[0m\n";
+
+    city->addNpc();
 }
 
 void handlePlaceUtility() {
@@ -376,6 +387,7 @@ void handlePlaceUtility() {
         government.setBuildingAmount("Utility", 1);
 
         auto command = std::make_unique<PlaceComponentCommand>(grid, loc, utility);
+        city->add(utility);
         state.executeCommand(std::move(command));
         
         // Add utility effect to surrounding cells
@@ -391,6 +403,7 @@ void handlePlaceUtility() {
 
         std::cout << "\033[1;32m" << utility->getName() 
                   << " placed successfully!\033[0m\n";
+                  city->addNpc();
     }
     catch (const std::out_of_range& e) {
         std::cout << "\033[1;31mInvalid choice!\033[0m\n";
@@ -413,26 +426,59 @@ void handlePlaceUtility() {
     }
 
     void collectTaxes() {
-        auto& government = Government::getInstance();
-        ConcreteTaxCollector collector;
-    
-        // First collect taxes from all buildings on the grid, zoned or not
-        for (int y = 0; y < grid.getHeight(); y++) {
-            for (int x = 0; x < grid.getWidth(); x++) {
-                if (auto building = grid.getComponent({x, y})) {
-                    if (auto residential = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
-                        collector.visit(residential.get());
-                    }
-                    else if (auto commercial = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
-                        collector.visit(commercial.get());
-                    }
+    auto& government = Government::getInstance();
+    ConcreteTaxCollector collector;
+
+    // Prompt the user to set or adjust the income tax rate
+    if (government.getIncomeTaxRate() == 0) {
+        std::cout << "Income tax rate is not set. Please set an income tax rate (0-100%): ";
+        double rate;
+        std::cin >> rate;
+        if (rate >= 0 && rate <= 100) {
+            government.setTax(rate / 100); // Store as a decimal (e.g., 20% becomes 0.2)
+            std::cout << "\033[1;32mIncome tax rate set to " << rate << "%.\033[0m\n";
+        } else {
+            std::cout << "\033[1;31mInvalid rate! Income tax rate not changed.\033[0m\n";
+        }
+    } else {
+        std::cout << "Current income tax rate is " << government.getIncomeTaxRate() * 100 << "%.\n"
+                  << "Would you like to change it? (y/n): ";
+        char choice;
+        std::cin >> choice;
+        if (choice == 'y' || choice == 'Y') {
+            std::cout << "Enter new income tax rate (0-100%): ";
+            double rate;
+            std::cin >> rate;
+            if (rate >= 0 && rate <= 100) {
+                government.setTax(rate / 100);
+                std::cout << "\033[1;32mIncome tax rate updated to " << rate << "%.\033[0m\n";
+            } else {
+                std::cout << "\033[1;31mInvalid rate! Income tax rate not changed.\033[0m\n";
+            }
+        }
+    }
+
+    // First collect taxes from all buildings on the grid, zoned or not
+    for (int y = 0; y < grid.getHeight(); y++) {
+        for (int x = 0; x < grid.getWidth(); x++) {
+            if (auto building = grid.getComponent({x, y})) {
+                if (auto residential = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
+                    collector.visit(residential.get());
+                }
+                else if (auto commercial = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
+                    collector.visit(commercial.get());
                 }
             }
         }
-
-        std::cout << "\033[1;32mTaxes collected successfully!\033[0m\n";
-        std::cout << "Government funds: $" << government.getMoney() << "\n";
     }
+
+    // Add income tax from citizens
+    government.calculateTax();
+
+    std::cout << "\033[1;32mTaxes collected successfully!\033[0m\n";
+    std::cout << "Government funds: $" << government.getMoney() << "\n";
+}
+
 
 public:
     CityGame(int width, int height) : grid(width, height) {}

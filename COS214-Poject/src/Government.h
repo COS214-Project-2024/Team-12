@@ -31,6 +31,7 @@ public:
 	void setProductionRate(double rate);
     double getMortalityRate() const;
 	double getCrimeRate() const;
+    void setCrimeRate(int); 
 	int getPopulationGrowth() const;
 	void setPopulationGrowth(int growth);
 	int getPopulation() const;
@@ -44,6 +45,17 @@ public:
     int getBuildingAmount(std::string);
 
     void decreasePopulation(int amount);
+    void increasePopulation(int amount);
+
+    void incrementPollutionLevel(int);
+    void decrementPollutionLevel(int);
+    int getPollutionLevel();
+
+    void calculateTax();
+
+    double getIncomeTaxRate();
+
+
 
     Government() : money(10000), productionRate(1.0), mortalityRate(0.01), crimeRate(0.00), population(0), populationGrowth(0), EMPLOYMENT_RATE(0) {}  // Private constructor
 
@@ -68,7 +80,9 @@ private:
     int utilityAmount;
     int residentialAmount;
 
-	void calculateTax();
+    //polution stuff
+    int pollutionLevel;
+
 };
 
 

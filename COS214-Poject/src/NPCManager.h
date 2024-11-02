@@ -38,7 +38,11 @@ public:
 
     int getTotalNPCs() const;
 
-    NPCManager() : happinessLevel(50), happyCount(0), neutralCount(0), revoltCount(0), productiveCount(0), crimeCount(0) {}
+    void EmployeedNpcs();
+
+    void getCrimeRate();
+
+    NPCManager() : happinessLevel(0), happyCount(0), neutralCount(0), revoltCount(0), productiveCount(0), crimeCount(0), employedNpcs(0) {}
 
 private:
 
@@ -48,6 +52,10 @@ private:
     int revoltCount;
     int productiveCount;
     int crimeCount;
+
+    //Employment
+    int employedNpcs;
+    int unemployedNpcs;
 };
 
 #endif // NPC_MANAGER_H

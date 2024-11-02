@@ -9,31 +9,30 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <memory>
 
 class CityComposite : public CityComponent {
 private:
-    std::vector<CityComponent*> zones; // Collection of zones
+    std::vector<std::shared_ptr<CityComponent>> zones; // Collection of zones
     std::string cityName;
-    MapGrid* map;
-    double budget;
 
 public:
-    CityComposite(const std::string& name, MapGrid* cityMap);
+    CityComposite(const std::string& name);
     ~CityComposite();
 
-    void add(CityComponent* zone, int x, int y) override;
+    void add(std::shared_ptr<CityComponent> component) override;
 
-    void remove(CityComponent* zone) override;
+    void remove(std::shared_ptr<CityComponent> component) override;
 
     void displayStatus() override;
 
    
-    double getBudget() const;
+    /* double getBudget() const;
 
     bool deductBudget(double amount);
 
     // Add to the initial city budget
-    void addBudget(double amount);
+    void addBudget(double amount); */
 
     bool checkCityConditions();
 
@@ -50,6 +49,10 @@ public:
     }
 
     void connectZones(CityComponent* zoneA, CityComponent* zoneB, std::unique_ptr<Transport> transport);
+
+    void updateHappinessForNewComponent(const std::shared_ptr<CityComponent>& component);
+
+    void adjustHappinessBasedOnTaxRate();
 
 };
 

@@ -38,12 +38,12 @@ public:
     bool checkCityConditions();
 
 
-    std::string getBuildingType() override{
+    std::string getBuildingType() const override{
         return "City";
     }
 
     void accept(taxCollector* tax) override{
-        // //can't collect tax from the city
+        // can't collect tax from the city
         // for(auto& zone : zones){
         //     zone->accept(tax);
         // }

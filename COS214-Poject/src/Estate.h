@@ -16,7 +16,7 @@ public:
            std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     
     char getDisplaySymbol() const override { return 'E'; }
-    std::string getBuildingType() override { return "Estate"; }
+    std::string getBuildingType() const override { return "Estate"; }
 };
 
 #endif

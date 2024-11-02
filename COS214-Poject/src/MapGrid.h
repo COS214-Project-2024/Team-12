@@ -226,20 +226,35 @@ public:
         return loc.x >= 0 && loc.x < width && loc.y >= 0 && loc.y < height;
     }
 
-    bool placeComponent(const Location& loc, std::shared_ptr<CityComponent> component) {
-        // Use the validation methods before placement
-        auto result = canPlaceBuilding(loc, component);
-        if (!result.success) {
-            std::cout << "\033[1;31m" << result.message << "\033[0m\n";
-            return false;
-        }
+	bool placeComponent(const Location& loc, std::shared_ptr<CityComponent> component) {
+		auto result = canPlaceBuilding(loc, component);
+		if (!result.success) {
+			std::cout << "\033[1;31m" << result.message << "\033[0m\n";
+			return false;
+		}
 
-        grid[loc.y][loc.x].component = component;
-        if (component) {
-            component->setLocation(loc);
-        }
-        return true;
-    }
+		grid[loc.y][loc.x].component = component;
+		component->setLocation(loc);
+
+		// Check for existing utilities in this cell and connect them to the new building
+		if (auto building = std::dynamic_pointer_cast<ResidentialBuilding>(component)) {
+			for (const auto& utility : grid[loc.y][loc.x].affectingUtilities) {
+				if (utility->getName() == "Water Supply") building->setWaterSupply(utility);
+				else if (utility->getName() == "Power Plant") building->setPowerSupply(utility);
+				else if (utility->getName() == "Waste Management") building->setWasteManagement(utility);
+				else if (utility->getName() == "Sewage System") building->setSewageManagement(utility);
+			}
+		} else if (auto building = std::dynamic_pointer_cast<CommercialBuilding>(component)) {
+			for (const auto& utility : grid[loc.y][loc.x].affectingUtilities) {
+				if (utility->getName() == "Water Supply") building->setWaterSupply(utility);
+				else if (utility->getName() == "Power Plant") building->setPowerSupply(utility);
+				else if (utility->getName() == "Waste Management") building->setWasteManagement(utility);
+				else if (utility->getName() == "Sewage System") building->setSewageManagement(utility);
+			}
+		}
+
+		return true;
+	}
 
 	bool connectLocations(const Location& start, const Location& end, 
                         std::shared_ptr<Transport> transport) {
@@ -264,29 +279,63 @@ public:
     //     }
     // }
 
-		void addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
-			if (isValidLocation(loc)) {
-				grid[loc.y][loc.x].affectingUtilities.push_back(utility);
-				
-				// If there's a building in this cell, connect it to the utility
-				if (auto building = grid[loc.y][loc.x].component) {
-					if (auto residential = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
-						// Connect utility to residential building using setters
-						if (utility->getName() == "Water Supply") residential->setWaterSupply(utility);
-						else if (utility->getName() == "Power Plant") residential->setPowerSupply(utility);
-						else if (utility->getName() == "Waste Management") residential->setWasteManagement(utility);
-						else if (utility->getName() == "Sewage System") residential->setSewageManagement(utility);
-					}
-					else if (auto commercial = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
-						// Connect utility to commercial building using setters
-						if (utility->getName() == "Water Supply") commercial->setWaterSupply(utility);
-						else if (utility->getName() == "Power Plant") commercial->setPowerSupply(utility);
-						else if (utility->getName() == "Waste Management") commercial->setWasteManagement(utility);
-						else if (utility->getName() == "Sewage System") commercial->setSewageManagement(utility);
-					}
-				}
-			}
-		}
+void addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
+    if (!isValidLocation(loc)) return;
+    
+    std::cout << "\nAdding utility " << utility->getName() 
+              << " at (" << loc.x << "," << loc.y << ")" << std::endl;
+    
+    grid[loc.y][loc.x].affectingUtilities.push_back(utility);
+    
+    if (auto building = grid[loc.y][loc.x].component) {
+        std::cout << "Found building at location" << std::endl;
+        
+        if (auto residential = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
+            std::cout << "It's a residential building" << std::endl;
+            if (utility->getName() == "Water Supply") {
+                residential->setWaterSupply(utility);
+                std::cout << "Connected water supply" << std::endl;
+            }
+            else if (utility->getName() == "Power Plant") {
+                residential->setPowerSupply(utility);
+                std::cout << "Connected power supply" << std::endl;
+            }
+            else if (utility->getName() == "Waste Management") {
+                residential->setWasteManagement(utility);
+                std::cout << "Connected waste management" << std::endl;
+            }
+            else if (utility->getName() == "Sewage System") {
+                residential->setSewageManagement(utility);
+                std::cout << "Connected sewage system" << std::endl;
+            }
+            
+            std::cout << "After connection, utility coverage: " 
+                      << residential->getUtilityCoverage() << std::endl;
+        }
+        else if (auto commercial = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
+            std::cout << "It's a commercial building" << std::endl;
+            if (utility->getName() == "Water Supply") {
+                commercial->setWaterSupply(utility);
+                std::cout << "Connected water supply" << std::endl;
+            }
+            else if (utility->getName() == "Power Plant") {
+                commercial->setPowerSupply(utility);
+                std::cout << "Connected power supply" << std::endl;
+            }
+            else if (utility->getName() == "Waste Management") {
+                commercial->setWasteManagement(utility);
+                std::cout << "Connected waste management" << std::endl;
+            }
+            else if (utility->getName() == "Sewage System") {
+                commercial->setSewageManagement(utility);
+                std::cout << "Connected sewage system" << std::endl;
+            }
+            
+            std::cout << "After connection, utility coverage: " 
+                      << commercial->getUtilityCoverage() << std::endl;
+        }
+    }
+}
 
 	void removeUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
     if (isValidLocation(loc)) {
@@ -337,70 +386,60 @@ std::string getDisplayString() const {
                     ss << "\033[48;5;58m"; // Dark yellow background
             }
 
-            // Display cell content
-            if (cell.component) {
-                // Building Types
-				// In MapGrid's getDisplayString()
-				if (auto residential = dynamic_cast<ResidentialBuilding*>(cell.component.get())) {
-					char symbol = residential->getDisplaySymbol();
-					int coverage = residential->getUtilityCoverage();
-					std::cout << "Residential coverage: " << coverage << std::endl;  // Debug output
-					if (coverage == 4) {
-						ss << "\033[1;32m[" << symbol << "]\033[0m";  // Green
-					} else if (coverage >= 2) {
-						ss << "\033[1;33m[" << symbol << "]\033[0m";  // Yellow
-					} else {
-						ss << "\033[1;31m[" << symbol << "]\033[0m";  // Red
+			// Display cell content
+			if (cell.component) {
+				if (auto building = std::dynamic_pointer_cast<CityComponent>(cell.component)) {
+					std::string color;
+					char symbol	;
+
+					if (auto res = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
+						color = res->getDisplayColor();
+						symbol = res->getDisplaySymbol();
+						ss << color << "[" << symbol << "]\033[0m";
+					} 
+					else if (auto com = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
+						color = com->getDisplayColor();
+						symbol = com->getDisplaySymbol();
+						ss << color << "[" << symbol << "]\033[0m";
 					}
-				} 
-				else if (auto commercial = dynamic_cast<CommercialBuilding*>(cell.component.get())) {
-					char symbol = commercial->getDisplaySymbol();
-					int coverage = commercial->getUtilityCoverage();
-					std::cout << "Commercial coverage: " << coverage << std::endl;  // Debug output
-					if (coverage == 4) {
-						ss << "\033[1;36m[" << symbol << "]\033[0m";  // Cyan
-					} else if (coverage >= 2) {
-						ss << "\033[1;37m[" << symbol << "]\033[0m";  // White
-					} else {
-						ss << "\033[1;31m[" << symbol << "]\033[0m";  // Red
+					else if (auto industry = std::dynamic_pointer_cast<Industry>(building)) {
+						ss << "\033[1;31m[I]\033[0m";
+					}
+					else if (auto utility = std::dynamic_pointer_cast<UtilityFlyweight>(building)) {
+						std::string type = utility->getName();
+						if (type == "Water Supply") {
+							ss << "\033[1;34m[W]\033[0m";
+						} else if (type == "Power Plant") {
+							ss << "\033[1;35m[P]\033[0m";
+						} else if (type == "Sewage System") {
+							ss << "\033[1;36m[S]\033[0m";
+						} else if (type == "Waste Management") {
+							ss << "\033[1;32m[M]\033[0m";
+						}
 					}
 				}
-				else if (dynamic_cast<Industry*>(cell.component.get())) {
-                    ss << "\033[1;31m[I]\033[0m"; 
-                } else if (auto utility = dynamic_cast<UtilityFlyweight*>(cell.component.get())) {
-                    std::string type = utility->getName();
-                    if (type == "Water Supply") {
-                        ss << "\033[1;34m[W]\033[0m";
-                    } else if (type == "Power Plant") {
-                        ss << "\033[1;35m[P]\033[0m";
-                    } else if (type == "Sewage System") {
-                        ss << "\033[1;36m[S]\033[0m";
-                    } else if (type == "Waste Management") {
-                        ss << "\033[1;32m[M]\033[0m";
-                    }
-                }
-            } else {
-                // Coverage display with color gradient
-                if (!cell.affectingUtilities.empty()) {
-                    int coverageCount = cell.affectingUtilities.size();
-                    switch(coverageCount) {
-                        case 1: 
-                            ss << "\033[1;34m[1]\033[0m";
-                            break;
-                        case 2:
-                            ss << "\033[1;36m[2]\033[0m";
-                            break;
-                        case 3:
-                            ss << "\033[1;35m[3]\033[0m";
-                            break;
-                        case 4:
-                            ss << "\033[1;37m[4]\033[0m";
-                            break;
-                    }
-                } else {
-                    ss << "\033[1;30m[ ]\033[0m";
-                }
-            }
+			} else {
+				// Empty cell - show utility coverage if any
+				if (!cell.affectingUtilities.empty()) {
+					int coverageCount = cell.affectingUtilities.size();
+					switch(coverageCount) {
+						case 1: 
+							ss << "\033[1;34m[1]\033[0m";
+							break;
+						case 2:
+							ss << "\033[1;36m[2]\033[0m";
+							break;
+						case 3:
+							ss << "\033[1;35m[3]\033[0m";
+							break;
+						case 4:
+							ss << "\033[1;37m[4]\033[0m";
+							break;
+					}
+				} else {
+					ss << "\033[1;30m[ ]\033[0m";
+				}
+			}
 
             // Reset background color if we're in a zone
             if (cell.zone) {

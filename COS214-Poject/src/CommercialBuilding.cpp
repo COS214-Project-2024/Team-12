@@ -32,7 +32,7 @@ void CommercialBuilding::setTaxPaid(bool paid) {
     }
 }
 
-std::string CommercialBuilding::getBuildingType() {
+std::string CommercialBuilding::getBuildingType() const {
     return "Commercial Building";
 }
 

@@ -49,20 +49,21 @@ add_executable(city_simulator
     COS214-Poject/src/concreteTaxCollector.cpp
 )
 
-# Create the main executable
-# add_executable(city_simulator ${SOURCES})
-
-# Add Google Test
-add_subdirectory(gtests)
-include_directories(gtests/googletest/include)
+# Add Google Test using FetchContent
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/refs/heads/main.zip
+)
+FetchContent_MakeAvailable(googletest)
 
 # Add the test executable with necessary source files
 add_executable(runTests
     tests/NPCManagerTests.cpp
     tests/NPCStatesTests.cpp
     tests/ReactingNPCTests.cpp
-      # Link the same sources as city_simulator
 
+    # Include any additional source files for testing
     COS214-Poject/src/Government.cpp
     COS214-Poject/src/NPCManager.cpp
     COS214-Poject/src/ReactingNPCS.cpp
@@ -73,7 +74,7 @@ add_executable(runTests
     COS214-Poject/src/RevoltState.cpp
 )
 
-# Link gtest libraries and Threads to the test executable
+# Link Google Test and Threads to the test executable
 target_link_libraries(runTests gtest gtest_main ${CMAKE_THREAD_LIBS_INIT})
 
 # Enable testing

@@ -3,10 +3,10 @@ name: C++ CI
 on:
   push:
     branches:
-      - developer 3.0  # Only runs when code is pushed to the developer branch
+      - developer-3.0  # Only runs when code is pushed to the developer branch
   pull_request:
     branches:
-      - developer 3.0  # Only runs for pull requests targeting the developer branch
+      - developer-3.0  # Only runs for pull requests targeting the developer branch
 
 jobs:
   build:

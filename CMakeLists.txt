@@ -40,7 +40,7 @@ add_executable(city_simulator
     COS214-Poject/src/ProductiveState.cpp
     COS214-Poject/src/RevoltState.cpp
     COS214-Poject/src/Flat.cpp
-    COS214-Poject/src/TownHouse.cpp
+    COS214-Poject/src/Townhouse.cpp
     COS214-Poject/src/ZoneComposite.cpp
     COS214-Poject/src/Estate.cpp
     COS214-Poject/src/Shops.cpp

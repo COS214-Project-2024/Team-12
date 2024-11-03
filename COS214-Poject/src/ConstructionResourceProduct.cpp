@@ -14,7 +14,7 @@ void ConstructionResourceProduct::ConsumeResource(int amount) {
         quantity -= amount;
         std::cout << "Consumed " << amount << " units of " << name << ". Remaining: " << quantity << std::endl;
     } else {
-        std::cout << "Not enough " << name << " available to consume." << std::endl;
+        std::cout << "Not enough " << name << " available to consume. Available: " << quantity << std::endl;
     }
 }
 

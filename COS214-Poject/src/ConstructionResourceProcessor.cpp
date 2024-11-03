@@ -5,16 +5,20 @@ ConstructionResourceProcessor::ConstructionResourceProcessor(std::shared_ptr<Con
 
 void ConstructionResourceProcessor::process(int amount) {
     if (currentStorage >= amount && resource) {
-        resource->ConsumeResource(amount);
         currentStorage -= amount;
-        
+
         Government::getInstance().addProcessedResource(
             resource->getName(), 
             amount,
             resource->getUnitCost()
         );
+
+        std::cout << "Processed " << amount << " units of " << resource->getName() << ".\n";
+    } else {
+        std::cout << "Not enough resources in storage to process.\n";
     }
 }
+
 
 void ConstructionResourceProcessor::store(int amount){
     if (currentStorage + amount <= maxStorage) {

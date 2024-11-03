@@ -11,6 +11,7 @@ public:
     virtual ~Command() = default;
     virtual void execute() = 0;
     virtual void undo() = 0;
+    virtual std::unique_ptr<Command> clone() const = 0; 
 };
 
 class PlaceComponentCommand : public Command {
@@ -31,6 +32,12 @@ public:
 
     void undo() override {
         grid.placeComponent(location, previousComponent);
+    }
+
+    std::unique_ptr<Command> clone() const override {
+        auto cmd = std::make_unique<PlaceComponentCommand>(grid, location, component);
+        cmd->previousComponent = previousComponent;
+        return cmd;
     }
 };
 

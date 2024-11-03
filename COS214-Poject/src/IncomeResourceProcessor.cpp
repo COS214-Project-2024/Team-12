@@ -5,26 +5,28 @@ IncomeResourceProcessor::IncomeResourceProcessor(std::shared_ptr<IncomeResourceP
 
 void IncomeResourceProcessor::process(int amount) {
     if (currentStorage >= amount && resource) {
-        resource->consumeResources(amount);
         currentStorage -= amount;
-        
         double value = amount * resource->getMarketValue();
-        // Store both amount and value
+
         Government::getInstance().addProcessedResource(
             resource->getName(),
             amount, 
             resource->getMarketValue()
         );
         Government::getInstance().addMoney(value);
+
+        std::cout << "Processed " << amount << " units of " << resource->getName() << ". Earned $" << value << ".\n";
+    } else {
+        std::cout << "Not enough resources in storage to process.\n";
     }
 }
 
 void IncomeResourceProcessor::store(int amount) {
     if (currentStorage + amount <= maxStorage) {
         currentStorage += amount;
-        std::cout << "Stored " << amount << " units of income resource.\n";
+        std::cout << "Stored " << amount << " units of " << resource->getName() << ". Current Storage: " << currentStorage << "/" << maxStorage << std::endl;
     } else {
-        std::cout << "Storage capacity exceeded!\n";
+        std::cout << "Storage capacity exceeded! Current Storage: " << currentStorage << "/" << maxStorage << std::endl;
     }
 }
 

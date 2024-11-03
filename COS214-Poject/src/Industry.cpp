@@ -1,4 +1,8 @@
 #include "Industry.h"
+#include "MapGrid.h"
+#include "ResourceProcessor.h"
+#include "IncomeResourceProduct.h"
+#include "ConstructionResourceProduct.h"
 
 // Industry::Industry() : industryName(""), incomeResource(nullptr), constructionResource(nullptr) {}
 

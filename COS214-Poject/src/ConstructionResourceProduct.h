@@ -15,6 +15,7 @@ private:
 	int unitCost;
 	string name;
 	bool readyForCollection;
+	Location location;
 	
 
 public:
@@ -40,6 +41,9 @@ public:
 	std::string getName() const {
 		return name;
 	}
+
+    void setLocation(const Location& loc) { location = loc; }
+    Location getLocation() const { return location; }
 };
 
 #endif

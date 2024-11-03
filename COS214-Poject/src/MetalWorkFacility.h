@@ -2,28 +2,21 @@
 #define METALWORKFACILITY_H
 
 #include "Industry.h"
-#include "IncomeResourceProcessor.h"
-#include "ConstructionResourceProcessor.h"
+
+
+class IncomeResourceProduct;
+class ConstructionResourceProduct;
+class MapGrid;
 
 // Concrete Industry: Metal Factory
 class MetalWorkFacility : public Industry {
 public:
+    static const int METAL_WORK_RANGE = 5;
+
     MetalWorkFacility(std::shared_ptr<IncomeResourceProduct> gold,
-                    std::shared_ptr<ConstructionResourceProduct> steel)
-        : Industry("Metal Work Facility",
-                std::make_shared<IncomeResourceProcessor>(gold, 200),
-                std::make_shared<ConstructionResourceProcessor>(steel, 200)) {}
-
-    // Specialized processing for metal work
-    void processGold(int amount) {
-        std::cout << "Processing gold in Metal Work facility...\n";
-        processResources(amount, true);
-    }
-
-    void processSteel(int amount) {
-        std::cout << "Processing steel in Metal Work facility...\n";
-        processResources(amount, false);
-    }
+                    std::shared_ptr<ConstructionResourceProduct> steel, MapGrid* grid,  std::map<std::string, int>& collectedResources);
+    void processGold(int amount);
+    void processSteel(int amount);
 };
 
 #endif

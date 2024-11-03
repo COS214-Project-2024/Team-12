@@ -10,6 +10,10 @@
 #include "CityComposite.h"
 #include "CollectTaxResidential.h"
 #include "Government.h"
+#include "GreenTechnologyDecorator.h"
+#include <future>
+#include <chrono>
+#include <atomic>
 
 
 class ResidentialBuilding : public CityComponent {
@@ -17,6 +21,8 @@ protected:
     int bedrooms;
     double price;
     bool taxPayed;
+    std::atomic<bool> taxPayed;
+    std::future<void> resetTax;
     double ResidentialTaxRate;
     
 
@@ -38,6 +44,7 @@ public:
     void connectWasteManagement(std::shared_ptr<UtilityFlyweight> waste);
     void connectSewage(std::shared_ptr<UtilityFlyweight> sewage);
     void applyUtilityConsumption();
+    bool hasGreenTechnology() const;
     virtual std::unique_ptr<ResidentialBuilding> clone() const = 0;
     virtual void accept(CollectTaxResidential& TC)=0;
     virtual void payTax()=0;

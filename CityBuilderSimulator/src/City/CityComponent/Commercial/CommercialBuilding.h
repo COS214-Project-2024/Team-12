@@ -4,15 +4,20 @@
 #include <string>
 #include "CollectTaxCommercial.h"
 using namespace std;
+#include <future>
+#include <chrono>
+#include <atomic>
+#include <iostream>
 
 class CommercialBuilding{
-    private:
+    protected:
     string state;
     double price;
     int numberOfEmployees;
     int Capacity;
     double size;
-    bool taxPayed;
+   std::atomic<bool> taxPayed{false};
+    std::future<void> resetTax;
     
     
 

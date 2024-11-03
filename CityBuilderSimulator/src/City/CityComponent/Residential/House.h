@@ -20,7 +20,7 @@ public:
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     void displayStatus();
     std::unique_ptr<ResidentialBuilding> clone() const;
-    void setHouseTax(double rate);
+    void setHouseTaxRate(double rate);
     void accept(CollectTaxResidential& TC);
     void payTax();
      

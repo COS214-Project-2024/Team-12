@@ -1,5 +1,6 @@
 #include "Flat.h"
 
+
 Flat::Flat():ResidentialBuilding(2, 10000.00, nullptr, nullptr, nullptr, nullptr) {
         
 }
@@ -27,8 +28,19 @@ void Flat::accept(CollectTaxResidential& TC){
 
 
 void Flat::payTax(){
-        Government::getInstance().addMoney(price*rate);
+        if(hasGreenTechnology()){
+        rate -= 0.3;
+    }
+    
+    Government::getInstance().addMoney(price*rate);
     taxPayed=true;
+
+        //reset tax to false
+        resetTax = std::async(std::launch::async, [this]() {
+            std::this_thread::sleep_for(std::chrono::seconds(30));
+            taxPayed = false;
+            std::cout << "Tax status reset to false after 30 seconds.\n";
+        });
 
 }
 

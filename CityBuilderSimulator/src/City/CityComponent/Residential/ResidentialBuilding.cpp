@@ -53,3 +53,10 @@ void ResidentialBuilding::applyUtilityConsumption() {
         }
 }
 
+bool ResidentialBuilding::hasGreenTechnology() const {
+    // Check each utility for GreenTechnologyDecorator presence
+    return (dynamic_cast<GreenTechnologyDecorator*>(waterSupply.get()) != nullptr ||
+            dynamic_cast<GreenTechnologyDecorator*>(powerSupply.get()) != nullptr ||
+            dynamic_cast<GreenTechnologyDecorator*>(wasteManagement.get()) != nullptr ||
+            dynamic_cast<GreenTechnologyDecorator*>(sewageManagement.get()) != nullptr);
+}

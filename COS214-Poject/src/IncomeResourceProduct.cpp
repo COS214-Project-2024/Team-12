@@ -6,7 +6,7 @@ IncomeResourceProduct::IncomeResourceProduct(string name, int quantity, double m
 
 // Destructor
 IncomeResourceProduct::~IncomeResourceProduct() {
-    cout << "IncomeResourceProduct (" << name << ") destroyed." << endl;
+    //cout << "IncomeResourceProduct (" << name << ") destroyed." << endl;
 }
 
 // Method to consume a specified amount of the resource

@@ -13,6 +13,10 @@ public:
 
     ~Oil();
     void displayStatus() override;
+
+    std::string getBuildingType() const {
+		return "Oil";
+	}
 };
 
 #endif

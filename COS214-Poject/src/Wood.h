@@ -11,6 +11,9 @@ public:
     Wood(int quantity, int unitCost);
     ~Wood();
     void displayStatus() override;
+    std::string getBuildingType() const {
+		return "Wood";
+	}
 };
 
 #endif

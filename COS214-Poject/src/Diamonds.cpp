@@ -8,7 +8,7 @@ Diamonds::Diamonds(int quantity, double marketValue)
 
 // Destructor
 Diamonds::~Diamonds() {
-    std::cout << "Diamonds resource destroyed." << std::endl;
+   // std::cout << "Diamonds resource destroyed." << std::endl;
 }
 
 // Override displayStatus to provide specific information for Diamonds

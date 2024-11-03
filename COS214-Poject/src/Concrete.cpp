@@ -8,7 +8,7 @@ Concrete::Concrete(int quantity, int unitCost)
 
 // Destructor
 Concrete::~Concrete() {
-    std::cout << "Concrete resource destroyed." << std::endl;
+    //std::cout << "Concrete resource destroyed." << std::endl;
 }
 
 // Override displayStatus to provide specific information for Concrete

@@ -8,6 +8,14 @@
 #include "ZoneComposite.h"
 #include "Industry.h"
 #include "Transport.h"
+#include "Gold.h"
+#include "Diamonds.h"
+#include "Coal.h"
+#include "Oil.h"
+#include "Stone.h"
+#include "Wood.h"
+#include "Steel.h"
+#include "Concrete.h"
 #include <memory>
 #include <vector>
 #include <sstream>
@@ -17,9 +25,19 @@
 #include <array>
 #include <set>
 #include <unordered_set>
+#include <random>
 
 class MapGrid {
 private:
+    // In MapGrid.h
+    struct ResourceSpot {
+        std::shared_ptr<CityComponent> resource;
+        bool discovered;  // Whether the resource has been discovered
+    };
+
+    // Add method to find random empty position
+
+
 	// Add zone validation methods
 	bool isOverlappingZone(const Location& topLeft, const Location& bottomRight) const {
         for (int y = topLeft.y; y <= bottomRight.y; y++) {
@@ -105,6 +123,21 @@ private:
     }
 
 public:
+    Location getRandomEmptyLocation() const {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> disX(0, width - 1);
+        std::uniform_int_distribution<> disY(0, height - 1);
+        
+        Location loc;
+        do {
+            loc.x = disX(gen);
+            loc.y = disY(gen);
+        } while (!isValidLocation(loc) || grid[loc.y][loc.x].component != nullptr);
+        
+        return loc;
+    }
+
 	int getHeight() const {
 		return height;
 	}
@@ -281,61 +314,71 @@ public:
 
 void addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
     if (!isValidLocation(loc)) return;
-    
-    std::cout << "\nAdding utility " << utility->getName() 
-              << " at (" << loc.x << "," << loc.y << ")" << std::endl;
-    
+
+    // Header for utility updates
+    std::cout << "\n\033[1;34m=== Utility Update ===\033[0m\n";
+
+    // Notification about the utility being added
+    std::cout << "\033[1;36m[INFO]\033[0m Adding utility \033[1;33m" << utility->getName() 
+              << "\033[0m at location (" << loc.x << "," << loc.y << ")\n";
+
     grid[loc.y][loc.x].affectingUtilities.push_back(utility);
     
     if (auto building = grid[loc.y][loc.x].component) {
-        std::cout << "Found building at location" << std::endl;
+        std::cout << "\033[1;36m[UPDATE]\033[0m Found building at location. Analyzing connections...\n";
         
         if (auto residential = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
-            std::cout << "It's a residential building" << std::endl;
+            std::cout << "\033[1;32m[CONNECT]\033[0m Connecting " << utility->getName() 
+                      << " to Residential Building.\n";
             if (utility->getName() == "Water Supply") {
                 residential->setWaterSupply(utility);
-                std::cout << "Connected water supply" << std::endl;
+                std::cout << "\033[1;36m[STATUS]\033[0m Water supply connected successfully.\n";
             }
             else if (utility->getName() == "Power Plant") {
                 residential->setPowerSupply(utility);
-                std::cout << "Connected power supply" << std::endl;
+                std::cout << "\033[1;36m[STATUS]\033[0m Power supply connected successfully.\n";
             }
             else if (utility->getName() == "Waste Management") {
                 residential->setWasteManagement(utility);
-                std::cout << "Connected waste management" << std::endl;
+                std::cout << "\033[1;36m[STATUS]\033[0m Waste management connected successfully.\n";
             }
             else if (utility->getName() == "Sewage System") {
                 residential->setSewageManagement(utility);
-                std::cout << "Connected sewage system" << std::endl;
+                std::cout << "\033[1;36m[STATUS]\033[0m Sewage system connected successfully.\n";
             }
             
-            std::cout << "After connection, utility coverage: " 
-                      << residential->getUtilityCoverage() << std::endl;
+            std::cout << "\033[1;36m[INFO]\033[0m Current utility coverage level: " 
+                      << residential->getUtilityCoverage() << "\n";
         }
         else if (auto commercial = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
-            std::cout << "It's a commercial building" << std::endl;
+            std::cout << "\033[1;32m[CONNECT]\033[0m Connecting " << utility->getName() 
+                      << " to Commercial Building.\n";
             if (utility->getName() == "Water Supply") {
                 commercial->setWaterSupply(utility);
-                std::cout << "Connected water supply" << std::endl;
+                std::cout << "\033[1;36m[STATUS]\033[0m Water supply connected successfully.\n";
             }
             else if (utility->getName() == "Power Plant") {
                 commercial->setPowerSupply(utility);
-                std::cout << "Connected power supply" << std::endl;
+                std::cout << "\033[1;36m[STATUS]\033[0m Power supply connected successfully.\n";
             }
             else if (utility->getName() == "Waste Management") {
                 commercial->setWasteManagement(utility);
-                std::cout << "Connected waste management" << std::endl;
+                std::cout << "\033[1;36m[STATUS]\033[0m Waste management connected successfully.\n";
             }
             else if (utility->getName() == "Sewage System") {
                 commercial->setSewageManagement(utility);
-                std::cout << "Connected sewage system" << std::endl;
+                std::cout << "\033[1;36m[STATUS]\033[0m Sewage system connected successfully.\n";
             }
             
-            std::cout << "After connection, utility coverage: " 
-                      << commercial->getUtilityCoverage() << std::endl;
+            std::cout << "\033[1;36m[INFO]\033[0m Current utility coverage level: " 
+                      << commercial->getUtilityCoverage() << "\n";
         }
     }
+
+    // Divider to separate this update from the next
+    std::cout << "\033[1;34m========================\033[0m\n";
 }
+
 
 	void removeUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
     if (isValidLocation(loc)) {
@@ -416,7 +459,23 @@ std::string getDisplayString() const {
 						} else if (type == "Waste Management") {
 							ss << "\033[1;32m[M]\033[0m";
 						}
-					}
+					}// In MapGrid::getDisplayString(), add to the display section:
+                    else if (auto incomeResource = std::dynamic_pointer_cast<IncomeResourceProduct>(cell.component)) {
+                        if (dynamic_cast<Gold*>(incomeResource.get())) 
+                            ss << "\033[1;33m[⚜]\033[0m";  // Gold symbol (fleur-de-lis)
+                        else if (dynamic_cast<Diamonds*>(incomeResource.get())) 
+                            ss << "\033[1;36m[♦]\033[0m";  // Diamond symbol
+                        else if (dynamic_cast<Coal*>(incomeResource.get())) 
+                            ss << "\033[1;30m[◆]\033[0m";  // Coal symbol (black diamond)
+                        else if (dynamic_cast<Oil*>(incomeResource.get())) 
+                            ss << "\033[1;32m[●]\033[0m";  // Oil symbol (black circle)
+                    }
+                    else if (auto constructionResource = std::dynamic_pointer_cast<ConstructionResourceProduct>(cell.component)) {
+                        if (dynamic_cast<Stone*>(constructionResource.get())) 
+                            ss << "\033[1;37m[◈]\033[0m";  // Stone symbol
+                        else if (dynamic_cast<Wood*>(constructionResource.get())) 
+                            ss << "\033[1;33m[⚏]\033[0m";  // Wood symbol
+                    }
 				}
 			} else {
 				// Empty cell - show utility coverage if any
@@ -436,7 +495,7 @@ std::string getDisplayString() const {
 							ss << "\033[1;37m[4]\033[0m";
 							break;
 					}
-				} else {
+				} else  {
 					ss << "\033[1;30m[ ]\033[0m";
 				}
 			}
@@ -474,8 +533,14 @@ std::string getDisplayString() const {
 	<< "\033[1;36m[2]\033[0m - Double Coverage\n"
 	<< "\033[1;35m[3]\033[0m - Triple Coverage\n"
 	<< "\033[1;37m[4]\033[0m - Full Coverage\n"
-	<< "\033[1;30m[ ]\033[0m - Empty\n";
-	   
+	<< "\033[1;30m[ ]\033[0m - Empty\n"
+    << "\n=== Resources ===\n"
+    << "\033[1;33m[⚜]\033[0m - Gold\n"
+    << "\033[1;36m[♦]\033[0m - Diamond\n"
+    << "\033[1;30m[◆]\033[0m - Coal\n"
+    << "\033[1;32m[●]\033[0m - Oil\n"
+    << "\033[1;37m[◈]\033[0m - Stone\n"
+    << "\033[1;33m[⚏]\033[0m - Wood\n";
 
     return ss.str();
 }

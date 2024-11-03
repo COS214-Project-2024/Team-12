@@ -11,6 +11,10 @@ public:
   
     ~Concrete();
     void displayStatus() override;
+
+    std::string getBuildingType() const {
+		return "Concrete";
+	}
 };
 
 #endif

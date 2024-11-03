@@ -10,6 +10,16 @@
 #include "Shops.h"
 #include "Office.h"
 #include "Malls.h"
+#include "Gold.h"
+#include "Diamonds.h"
+#include "Coal.h"
+#include "Oil.h"
+#include "Stone.h"
+#include "Wood.h"
+#include "Steel.h"
+#include "Concrete.h"
+#include "IncomeResourceProduct.h"
+#include "ConstructionResourceProduct.h"
 // #include "MetalWorkFacility.h"
 // #include "PetroChemicalFacility.h"
 // #include "CrystalCraftIndustry.h"
@@ -39,6 +49,23 @@
 
 class CityGame {
 private:
+    std::vector<std::shared_ptr<IncomeResourceProduct>> incomeResources;
+    std::vector<std::shared_ptr<ConstructionResourceProduct>> constructionResources;
+
+    void initializeResources() {
+        // Income Resources
+        incomeResources.push_back(std::make_shared<Gold>(100, 50.0));    // Initial 100 units, $50 per unit
+        incomeResources.push_back(std::make_shared<Diamonds>(50, 100.0)); // Initial 50 units, $100 per unit
+        incomeResources.push_back(std::make_shared<Coal>(200, 10.0));    // Initial 200 units, $10 per unit
+        incomeResources.push_back(std::make_shared<Oil>(150, 30.0));     // Initial 150 units, $30 per unit
+
+        // Construction Resources
+        constructionResources.push_back(std::make_shared<Stone>(300, 5)); // Initial 300 units, $5 per unit
+        constructionResources.push_back(std::make_shared<Wood>(400, 3));  // Initial 400 units, $3 per unit
+        constructionResources.push_back(std::make_shared<Concrete>(400, 3));
+        constructionResources.push_back(std::make_shared<Steel>(400, 3));
+    }
+
     MapGrid grid;
     GameState state;    // Now only handles command history
     bool running = true;
@@ -61,6 +88,9 @@ private:
                 << "6. Undo\n"
                 << "7. Redo\n"
                 << "8. Collect Taxes\n"
+                << "9. Show Resources\n"
+                << "10. Collect Resources\n"
+                << "11. Trade Resources\n"
                 << "0. Exit\n"
                 << "\nChoice: ";
     }
@@ -78,6 +108,40 @@ private:
                 << "\nPress Enter to continue...";
         std::cin.get();
     }
+
+void spawnResources() {
+    // Spawn Income Resources
+    spawnIncomeResource<Gold>(3, 100, 50.0);      // Spawn 3 gold deposits
+    spawnIncomeResource<Diamonds>(2, 50, 100.0);   // Spawn 2 diamond deposits
+    spawnIncomeResource<Coal>(4, 200, 10.0);      // Spawn 4 coal deposits
+    spawnIncomeResource<Oil>(3, 150, 30.0);       // Spawn 3 oil deposits
+    
+    // Spawn Construction Resources
+    spawnConstructionResource<Stone>(5, 300, 5);   // Spawn 5 stone deposits
+    spawnConstructionResource<Wood>(5, 400, 3);    // Spawn 5 wood deposits
+}
+
+template<typename T>
+void spawnIncomeResource(int count, int quantity, double marketValue) {
+    for(int i = 0; i < count; i++) {
+        Location loc = grid.getRandomEmptyLocation();
+        auto resource = std::make_shared<T>(quantity, marketValue);
+        grid.placeComponent(loc, resource);
+        incomeResources.push_back(std::dynamic_pointer_cast<IncomeResourceProduct>(resource));
+        std::cout << "Spawned " << typeid(T).name() << " at (" << loc.x << "," << loc.y << ")\n";
+    }
+}
+
+template<typename T>
+void spawnConstructionResource(int count, int quantity, int unitCost) {
+    for(int i = 0; i < count; i++) {
+        Location loc = grid.getRandomEmptyLocation();
+        auto resource = std::make_shared<T>(quantity, unitCost);
+        grid.placeComponent(loc, resource);
+        constructionResources.push_back(std::dynamic_pointer_cast<ConstructionResourceProduct>(resource));
+        std::cout << "Spawned " << typeid(T).name() << " at (" << loc.x << "," << loc.y << ")\n";
+    }
+}
 
 void handleCreateZone() {
     std::cout << "\nSelect zone type:\n"
@@ -434,8 +498,23 @@ void handlePlaceUtility() {
         std::cout << "Government funds: $" << government.getMoney() << "\n";
     }
 
+    void showResources() {
+        std::cout << "\n=== Income Resources ===\n";
+        for(const auto& resource : incomeResources) {
+            resource->displayStatus();
+        }
+        
+        std::cout << "\n=== Construction Resources ===\n";
+        for(const auto& resource : constructionResources) {
+            resource->displayStatus();
+        }
+    }
+
 public:
-    CityGame(int width, int height) : grid(width, height) {}
+    CityGame(int width, int height) : grid(width, height) {
+        initializeResources();
+        spawnResources();
+    }
 
     void run() {
         while (running) {
@@ -457,6 +536,7 @@ public:
                     case 6: state.undo(); break;
                     case 7: state.redo(); break;
                     case 8: collectTaxes(); break;
+                    case 9: showResources(); break;
                     case 0: running = false; break;
                     default: std::cout << "\033[1;31mInvalid choice!\033[0m\n";
                 }
@@ -469,7 +549,7 @@ public:
 
 int main() {
     try {
-        CityGame game(10, 10);
+        CityGame game(25, 25);
         game.run();
     } catch (const std::exception& e) {
         std::cerr << "\033[1;31mError: " << e.what() << "\033[0m\n";

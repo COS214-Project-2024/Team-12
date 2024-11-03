@@ -4,7 +4,7 @@ Monument::Monument(const std::string& type, int  capacity, double price, std::sh
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
         : LandMark(type,capacity,price, water, power, waste, sewage) {}
 
-Monument::Monument(): LandMark("Monument", 70 ,35000.00,nullptr, nullptr,nullptr,nullptr){}
+Monument::~Monument(){}
 
 void Monument::displayStatus(){
     std::cout << "Monument Status:\n";

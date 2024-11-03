@@ -13,7 +13,9 @@ struct Location {
     bool operator==(const Location& other) const {
         return x == other.x && y == other.y;
     }
-    
+     bool operator!=(const Location& other) const {
+        return !(*this == other);
+    }
     double distanceTo(const Location& other) const {
         return std::sqrt(std::pow(x - other.x, 2) + std::pow(y - other.y, 2));
     }

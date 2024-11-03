@@ -14,10 +14,10 @@
 // #include "PetroChemicalFacility.h"
 // #include "CrystalCraftIndustry.h"
 // #include "WoodAndCoalPlant.h"
-// #include "LandMark.h"
-// #include "Park.h"
-// #include "Monument.h"
-// #include "CulturalCenter.h"
+ #include "LandMark.h"
+ #include "Park.h"
+ #include "Monument.h"
+ #include "CulturalCenter.h"
 #include "Industry.h"
 #include "House.h"
 #include "UtilityFlyweight.h"
@@ -37,6 +37,12 @@
 #include <iomanip>
 #include <limits>
 
+
+#include "Roads.h"
+#include "RoadsFactory.h"
+#include "Trains.h"
+#include "TrainsFactory.h"
+
 class CityGame {
 private:
     MapGrid grid;
@@ -47,23 +53,119 @@ private:
     Government& government = Government::getInstance();
     NPCManager& npcManager = NPCManager::getInstance();
 
-    void displayMenu() {
-        std::cout << "\n\033[1;36m=== City Builder ===\033[0m\n"
-                << "Money: $" << government.getMoney() 
-                << " | Happiness: " << npcManager.getHappinessLevel() << "%\n"
-                << "Population: " << government.getPopulation() 
-                << " | Crime Rate: " << government.getCrimeRate() * 100 << "%\n\n"
-                << "1. Build Structure\n"
-                << "2. Place Utility\n"
-                << "3. Show Statistics\n"
-                << "4. Create Zone\n"
-                << "5. Show Zone Info\n"
-                << "6. Undo\n"
-                << "7. Redo\n"
-                << "8. Collect Taxes\n"
-                << "0. Exit\n"
-                << "\nChoice: ";
+void displayMenu() {
+    std::cout << "\n\033[1;36m=== City Builder ===\033[0m\n"
+              << "Money: $" << government.getMoney() 
+              << " | Happiness: " << npcManager.getHappinessLevel() << "%\n"
+              << "Population: " << government.getPopulation() 
+              << " | Crime Rate: " << government.getCrimeRate() * 100 << "%\n\n"
+              << "1. Build Structure\n"
+              << "2. Place Utility\n"
+              << "3. Show Statistics\n"
+              << "4. Create Zone\n"
+              << "5. Show Zone Info\n"
+              << "6. Undo\n"
+              << "7. Redo\n"
+              << "8. Collect Taxes\n"
+              << "9. Place Transport Link\n"  // New option for transport
+              << "0. Exit\n"
+              << "\nChoice: ";
+}
+
+
+
+
+void handlePlaceTransport() {
+    int x1, y1, x2, y2;
+    char transportType;
+    int roadCost = 65;
+    int trainCost = 85;
+    int linkCost = 0;
+
+    std::cout << "\nEnter start coordinates (x1 y1): ";
+    if (!(std::cin >> x1 >> y1)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "\033[1;31mInvalid coordinates!\033[0m\n";
+        return;
     }
+
+    std::cout << "Enter end coordinates (x2 y2): ";
+    if (!(std::cin >> x2 >> y2)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "\033[1;31mInvalid coordinates!\033[0m\n";
+        return;
+    }
+
+    std::cout << "Enter transport type (R for Road, T for Train): ";
+    std::cin >> transportType;
+
+    // Determine cost per link based on transport type
+    if (transportType == 'R') {
+        linkCost = roadCost;
+    } else if (transportType == 'T') {
+        linkCost = trainCost;
+    } else {
+        std::cout << "\033[1;31mInvalid transport type!\033[0m\n";
+        return;
+    }
+
+    // Check if there's enough money to place start and end points
+    if (government.getMoney() < 2 * linkCost) {
+        std::cout << "\033[1;31mNot enough money to place transport endpoints!\033[0m\n";
+        return;
+    }
+
+    // Deduct money for start and end points
+    government.reduceMoney(linkCost);
+    grid.setTransportEndpoint({x1, y1}, transportType);
+    government.reduceMoney(linkCost);
+    grid.setTransportEndpoint({x2, y2}, transportType);
+
+    // Determine path direction and fill with symbols, deducting money for each link
+    if (x1 == x2) { // Vertical path
+        for (int y = std::min(y1, y2) + 1; y < std::max(y1, y2); ++y) {
+            if (government.getMoney() < linkCost) {
+                std::cout << "\033[1;31mNot enough money to complete transport link!\033[0m\n";
+                return;
+            }
+            government.reduceMoney(linkCost);
+            grid.setTransportPath({x1, y}, '|');
+        }
+    } else if (y1 == y2) { // Horizontal path
+        for (int x = std::min(x1, x2) + 1; x < std::max(x1, x2); ++x) {
+            if (government.getMoney() < linkCost) {
+                std::cout << "\033[1;31mNot enough money to complete transport link!\033[0m\n";
+                return;
+            }
+            government.reduceMoney(linkCost);
+            grid.setTransportPath({x, y1}, '-');
+        }
+    } else { // Diagonal or other complex path
+        int dx = (x2 > x1) ? 1 : -1;
+        int dy = (y2 > y1) ? 1 : -1;
+        int x = x1 + dx, y = y1 + dy;
+        while (x != x2 && y != y2) {
+            if (government.getMoney() < linkCost) {
+                std::cout << "\033[1;31mNot enough money to complete transport link!\033[0m\n";
+                return;
+            }
+            government.reduceMoney(linkCost);
+            grid.setTransportPath({x, y}, '+');
+            x += dx;
+            y += dy;
+        }
+    }
+
+    std::cout << "\033[1;32mTransport link created successfully!\033[0m\n";
+}
+
+
+
+
+
+
 
     void showStatistics() {
         std::cout << "\n=== City Statistics ===\n";
@@ -155,12 +257,12 @@ void handleCreateZone() {
         std::cin.get();
     }
 
-    void handleBuildStructure() {
+   void handleBuildStructure() {
     std::cout << "\nSelect building category:\n"
               << "1. Residential Buildings\n"
               << "2. Commercial Buildings\n"
-            //   << "3. Industrial Buildings\n"
-            //   << "4. Landmarks\n"
+              << "3. Public Services\n"
+               << "4. Landmarks\n"
               << "Choice: ";
     
     int categoryChoice;
@@ -197,6 +299,7 @@ void handleCreateZone() {
                     return;
             }
             break;
+
         case 2: // Commercial
             std::cout << "\nSelect Commercial building type:\n"
                       << "1. Shop ($200)\n"
@@ -214,50 +317,65 @@ void handleCreateZone() {
                     return;
             }
             break;
-        /*
-        case 3: // Industrial
-            std::cout << "\nSelect Industrial building type:\n"
-                      << "1. Metal Work Facility ($300)\n"
-                      << "2. Petrochemical Factory ($400)\n"
-                      << "3. Crystal Craft Industry ($350)\n"
-                      << "4. Wood and Coal Plant ($300)\n" 
+
+        case 3: // Public Services
+            std::cout << "\nSelect Public Service type:\n"
+                      << "1. Fire Station ($500)\n"
+                      << "2. Hospital ($700)\n"
+                      << "3. Police Station ($600)\n"
                       << "Choice: ";
-            int indChoice;
-            std::cin >> indChoice;
-            switch(indChoice) {
-                case 1: building = std::make_shared<MetalWorkFacility>(); cost = 300; buildingType = "MetalWork"; break;
-                case 2: building = std::make_shared<PetrochemicalFacility>(); cost = 400; buildingType = "PetroChemical"; break;
-                case 3: building = std::make_shared<CrystalCraftIndustry>(); cost = 350; buildingType = "CrystalCraft"; break;
-                case 4: building = std::make_shared<WoodAndCoalPlant>(); cost = 300; buildingType = "WoodAndCoal"; break;
+            int pubServChoice;
+            std::cin >> pubServChoice;
+            switch(pubServChoice) {
+                case 1: building = std::make_shared<FireStation>(nullptr, nullptr, nullptr, nullptr, "Operational"); cost = 500; buildingType = "Fire Station"; break;
+                case 2: building = std::make_shared<Hospital>(nullptr, nullptr, nullptr, nullptr, "Operational"); cost = 700; buildingType = "Hospital"; break;
+                case 3: building = std::make_shared<PoliceStation>(nullptr, nullptr, nullptr, nullptr, "Operational"); cost = 600; buildingType = "Police Station"; break;
                 default:
-                    std::cout << "\033[1;31mInvalid industrial building type!\033[0m\n";
+                    std::cout << "\033[1;31mInvalid public service type!\033[0m\n";
                     return;
             }
             break;
-
-        case 4: // Landmarks
+         case 4: { // Landmarks
             std::cout << "\nSelect Landmark type:\n"
-                      << "1. Park ($200)\n"
-                      << "2. Monument ($300)\n"
-                      << "3. Cultural Center ($400)\n"
+                      << "1. Monument ($500)\n"
+                      << "2. Cultural Center ($700)\n"
+                      << "3. Park ($300)\n"
                       << "Choice: ";
             int landChoice;
             std::cin >> landChoice;
+
             switch(landChoice) {
-                case 1: building = std::make_shared<Park>(); cost = 200; buildingType = "Park"; break;
-                case 2: building = std::make_shared<Monument>(); cost = 300; buildingType = "Monument"; break;
-                case 3: building = std::make_shared<CulturalCenter>(); cost = 400; buildingType = "CulturalCenter"; break;
+                case 1:
+                    building = std::make_shared<Monument>("Monument", 100, 500,
+                        nullptr, nullptr, 
+                        nullptr, nullptr);
+                    cost = 500; buildingType = "Monument";
+                    break;
+                case 2:
+                    building = std::make_shared<CulturalCenter>("Cultural Center", 200, 700,
+                        nullptr, nullptr, 
+                        nullptr, nullptr);
+                    cost = 700; buildingType = "Cultural Center";
+                    break;
+                case 3:
+                    building = std::make_shared<Park>("Park", 150, 300,
+                        nullptr, nullptr, 
+                        nullptr, nullptr);
+                    cost = 300; buildingType = "Park";
+                    break;
                 default:
                     std::cout << "\033[1;31mInvalid landmark type!\033[0m\n";
                     return;
             }
             break;
-        */
+        }
+        
+
         default:
             std::cout << "\033[1;31mInvalid building category!\033[0m\n";
             return;
     }
-    // auto& government = Government::getInstance();
+
     // Check money
     if (government.getMoney() < cost) {
         std::cout << "\033[1;31mNot enough money! Need $" << cost << "\033[0m\n";
@@ -283,9 +401,8 @@ void handleCreateZone() {
         switch(categoryChoice) {
             case 1: compatible = (zoneType == "Residential"); break;
             case 2: compatible = (zoneType == "Commercial"); break;
-            case 3: compatible = (zoneType == "Industrial"); break;
+            case 3: compatible = true; break; // Public Services can be placed anywhere
             case 4: compatible = true; // Landmarks can be placed anywhere
-                break;
         }
 
         if (!compatible) {
@@ -318,14 +435,15 @@ void handleCreateZone() {
     switch(categoryChoice) {
         case 1: government.setBuildingAmount("Residential", 1); break;
         case 2: government.setBuildingAmount("Commercial", 1); break;
-        case 3: government.setBuildingAmount("Industrial", 1); break;
-        // Landmarks might not need counting
+        case 3: government.setBuildingAmount("PublicService", 1); break;
+        case 4: government.setBuildingAmount("Landmark", 1); break;
     }
 
     auto command = std::make_unique<PlaceComponentCommand>(grid, loc, building);
     state.executeCommand(std::move(command));
     std::cout << "\033[1;32m" << buildingType << " placed successfully!\033[0m\n";
 }
+
 
 void handlePlaceUtility() {
     UtilityFactory factory;
@@ -437,34 +555,36 @@ void handlePlaceUtility() {
 public:
     CityGame(int width, int height) : grid(width, height) {}
 
-    void run() {
-        while (running) {
-            system("clear");  // or "cls" on Windows
-            std::cout << grid.getDisplayString();
-            displayMenu();
+ void run() {
+    while (running) {
+        system("clear");  // or "cls" on Windows
+        std::cout << grid.getDisplayString();
+        displayMenu();
 
-            int choice;
-            std::cin >> choice;
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        int choice;
+        std::cin >> choice;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-            try {
-                switch (choice) {
-                    case 1: handleBuildStructure(); break;
-                    case 2: handlePlaceUtility(); break;
-                    case 3: showStatistics(); break;
-                    case 4: handleCreateZone(); break;
-                    case 5: showZoneInfo(); break;
-                    case 6: state.undo(); break;
-                    case 7: state.redo(); break;
-                    case 8: collectTaxes(); break;
-                    case 0: running = false; break;
-                    default: std::cout << "\033[1;31mInvalid choice!\033[0m\n";
-                }
-            } catch (const std::exception& e) {
-                std::cout << "\033[1;31mError: " << e.what() << "\033[0m\n";
+        try {
+            switch (choice) {
+                case 1: handleBuildStructure(); break;
+                case 2: handlePlaceUtility(); break;
+                case 3: showStatistics(); break;
+                case 4: handleCreateZone(); break;
+                case 5: showZoneInfo(); break;
+                case 6: state.undo(); break;
+                case 7: state.redo(); break;
+                case 8: collectTaxes(); break;
+                case 9: handlePlaceTransport(); break;  // New case for transport
+                case 0: running = false; break;
+                default: std::cout << "\033[1;31mInvalid choice!\033[0m\n";
             }
+        } catch (const std::exception& e) {
+            std::cout << "\033[1;31mError: " << e.what() << "\033[0m\n";
         }
     }
+}
+
 };
 
 int main() {

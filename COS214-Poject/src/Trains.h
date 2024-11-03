@@ -21,5 +21,8 @@ public:
     double getMaintainanceCost() const override;
     double getCapacity() const override;
     std::string getType() const override;
+
+    Trains(){}
+    ~Trains(){}
 };
 #endif

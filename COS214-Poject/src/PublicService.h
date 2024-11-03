@@ -12,7 +12,7 @@ class Government;
 class taxCollector;
 class CityComposite;
 class PublicService : public CityComponent{
-private:
+protected:
   std::shared_ptr<UtilityFlyweight> waterSupply;
   std::shared_ptr<UtilityFlyweight> powerSupply;
   std::shared_ptr<UtilityFlyweight> wasteManagement;
@@ -21,9 +21,9 @@ public:
     PublicService(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
                         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     virtual void provideService() = 0;
-    
+   virtual ~PublicService() = default;
       // Display methods
-    void displayStatus() override;
+    virtual void displayStatus() = 0;
     std::string getBuildingType() override{
       return "Public Service";
     }

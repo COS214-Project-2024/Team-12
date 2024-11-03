@@ -33,5 +33,13 @@ public:
     double getCapacity() const override;
     std::string getType() const override;
 
+    Roads() {
+    // Constructor body (can be empty)
+}
+
+~Roads() {
+    // Destructor body (can be empty)
+}
+
 };
 #endif

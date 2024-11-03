@@ -12,13 +12,17 @@ private:
     bool wasteManagement;
     std::string status;
 public:
-    Hospital(bool waterStatus, bool electricityStatus, bool wasteManagementStatus, bool sewageStatus, std::string buildingStatus);
-    Hospital();
-    ~Hospital(){};
-    void provideService();
+ Hospital(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> electricity,
+             std::shared_ptr<UtilityFlyweight> wasteManagement, std::shared_ptr<UtilityFlyweight> sewage,
+             std::string buildingStatus);
+    ~Hospital() = default;
+    void provideService() override{
+    std::cout << "Hospital is providing medical services.\n";
+}
     std::unique_ptr<PublicService> clone() const;
     void displayStatus() override;
-    void accept(taxCollector*) override;
+    char getDisplaySymbol() const override;
+
 
 };
 

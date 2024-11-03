@@ -15,7 +15,7 @@ public:
     Estate(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
            std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     
-    char getDisplaySymbol() const override { return 'E'; }
+    std::string getDisplaySymbol() const override { return "E"; }
     std::string getBuildingType() override { return "Estate"; }
 };
 

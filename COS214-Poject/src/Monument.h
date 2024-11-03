@@ -7,7 +7,7 @@ class Monument : public LandMark {
 public:
     Monument(const std::string& type, int  capacity, double price, std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
-    Monument();
+    ~Monument();
     void displayStatus();
     std::unique_ptr<LandMark> clone() const;
 };

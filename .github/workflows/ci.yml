@@ -3,10 +3,10 @@ name: C++ CI
 on:
   push:
     branches:
-      - developer-3.0  # Only runs when code is pushed to the developer branch
+      - developer-3.0  # Runs when code is pushed to the developer branch
   pull_request:
     branches:
-      - developer-3.0  # Only runs for pull requests targeting the developer branch
+      - developer-3.0  # Runs for pull requests targeting the developer branch
 
 jobs:
   build:
@@ -16,19 +16,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 #fetchall history from your branches
+          fetch-depth: 0  # Fetch all history to allow for full git context
 
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y build-essential cmake g++
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake g++
 
       - name: Build project
-        run: |
-          mkdir build           # Create the build directory
-          cd build              # Navigate into build directory
-          cmake ..              # Configure the project with CMake
-          make                  # Build the project
-          
+        run: cmake -S . -B build && cmake --build build
+
       - name: Run tests
-        run: |
-          cd build              # Ensure we are in the build directory
-          ./runTests            # Execute the runTests binary
+        working-directory: build
+        run: ctest --verbose

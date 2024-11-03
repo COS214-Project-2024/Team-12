@@ -6,6 +6,8 @@
 #include <random>
 #include <string>
 
+RevoltState::~RevoltState() = default;
+
 void RevoltState::handle() {
     // Base values for revolt impact
     const float BASE_REVOLT_CHANCE = 0.1f;

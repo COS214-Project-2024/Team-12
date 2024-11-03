@@ -6,10 +6,7 @@
 #include <string>
 class NPCManager {
 public:
-    static NPCManager& getInstance() {
-        static NPCManager instance;  // Guaranteed to be destroyed, instantiated on first use
-        return instance;
-    }
+    static NPCManager& getInstance();
 
     // Delete copy constructor and assignment operator for singleton
     NPCManager(NPCManager const&) = delete;
@@ -42,7 +39,7 @@ public:
 
     void getCrimeRate();
 
-    NPCManager() : happinessLevel(0), happyCount(0), neutralCount(0), revoltCount(0), productiveCount(0), crimeCount(0), employedNpcs(0) {}
+    NPCManager();
 
 private:
 

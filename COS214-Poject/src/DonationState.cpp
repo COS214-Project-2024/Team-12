@@ -6,6 +6,8 @@
 #include <random>
 #include <string>
 
+DonationState::~DonationState() = default;
+
 void DonationState::handle() {
     // Base probability of getting an investment
     const float baseInvestmentChance = 0.05f;  // 5% base chance

@@ -11,6 +11,7 @@ class RevoltState : public NPCState{
 	void handle() override;
 	std::string getStateName() override;
 	NPCState* clone() const override;
+	~RevoltState() override;
 };
 
 #endif

@@ -5,7 +5,13 @@
 #include <string>
 #include <algorithm>
 #include <iostream>
+ 
+NPCManager& NPCManager::getInstance(){
+    static NPCManager instance;  // Guaranteed to be destroyed, instantiated on first use
+        return instance;
+}
 
+NPCManager::NPCManager()  : happinessLevel(0), happyCount(0), neutralCount(0), revoltCount(0), productiveCount(0), crimeCount(0), employedNpcs(0) {}
 
 int NPCManager::getHappinessLevel() const{
 	return happinessLevel;

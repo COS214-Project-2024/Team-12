@@ -1,0 +1,76 @@
+Start testing: Nov 03 18:36 SAST
+----------------------------------------------------------
+1/1 Testing: runTests
+1/1 Test: runTests
+Command: "/mnt/c/Users/sibus/OneDrive/Documents/GitHub/Team-12/build/runTests"
+Directory: /mnt/c/Users/sibus/OneDrive/Documents/GitHub/Team-12/build
+"runTests" start time: Nov 03 18:36 SAST
+Output:
+----------------------------------------------------------
+Running main() from /mnt/c/Users/sibus/OneDrive/Documents/GitHub/Team-12/gtests/googletest/src/gtest_main.cc
+[==========] Running 10 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 3 tests from NPCManagerTest
+[ RUN      ] NPCManagerTest.SingletonInstance
+[       OK ] NPCManagerTest.SingletonInstance (0 ms)
+[ RUN      ] NPCManagerTest.InitialCountsAreZero
+[       OK ] NPCManagerTest.InitialCountsAreZero (0 ms)
+[ RUN      ] NPCManagerTest.IncrementAndDecrementCounts
+[       OK ] NPCManagerTest.IncrementAndDecrementCounts (0 ms)
+[----------] 3 tests from NPCManagerTest (0 ms total)
+
+[----------] 1 test from DonationStateTest
+[ RUN      ] DonationStateTest.IncreasesCityMoney
+No investment this time.
+[       OK ] DonationStateTest.IncreasesCityMoney (1 ms)
+[----------] 1 test from DonationStateTest (1 ms total)
+
+[----------] 6 tests from ReactingNPCTest
+[ RUN      ] ReactingNPCTest.InitialStateIsNeutral
+[Init] NPC created in NeutralState.
+[       OK ] ReactingNPCTest.InitialStateIsNeutral (0 ms)
+[ RUN      ] ReactingNPCTest.TransitionNeutralToDonation
+[Init] NPC created in NeutralState.
+[ChangeState] NPC leaving NeutralState
+[ChangeState] NPC entered DonationState
+[       OK ] ReactingNPCTest.TransitionNeutralToDonation (0 ms)
+[ RUN      ] ReactingNPCTest.TransitionDonationToRevolt
+[Init] NPC created in NeutralState.
+[ChangeState] NPC leaving NeutralState
+[ChangeState] NPC entered DonationState
+[ChangeState] NPC leaving DonationState
+[ChangeState] NPC entered RevoltState
+[       OK ] ReactingNPCTest.TransitionDonationToRevolt (0 ms)
+[ RUN      ] ReactingNPCTest.TransitionNeutralToProductive
+[Init] NPC created in NeutralState.
+[ChangeState] NPC leaving NeutralState
+[ChangeState] NPC entered ProductiveState
+[       OK ] ReactingNPCTest.TransitionNeutralToProductive (0 ms)
+[ RUN      ] ReactingNPCTest.TransitionProductiveToCrime
+[Init] NPC created in NeutralState.
+[ChangeState] NPC leaving NeutralState
+[ChangeState] NPC entered ProductiveState
+[ChangeState] NPC leaving ProductiveState
+[ChangeState] NPC entered CrimeState
+[       OK ] ReactingNPCTest.TransitionProductiveToCrime (0 ms)
+[ RUN      ] ReactingNPCTest.TransitionAnyToNeutral
+[Init] NPC created in NeutralState.
+[ChangeState] NPC leaving NeutralState
+[ChangeState] NPC entered DonationState
+[ChangeState] NPC leaving DonationState
+[ChangeState] NPC entered NeutralState
+[       OK ] ReactingNPCTest.TransitionAnyToNeutral (0 ms)
+[----------] 6 tests from ReactingNPCTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 3 test suites ran. (1 ms total)
+[  PASSED  ] 10 tests.
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"runTests" end time: Nov 03 18:36 SAST
+"runTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 03 18:36 SAST

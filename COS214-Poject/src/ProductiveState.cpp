@@ -6,6 +6,8 @@
 #include <random>
 #include <string>
 
+ProductiveState::~ProductiveState() = default;
+
 void ProductiveState::handle() {
     // Base chance for a productivity boost
     const float baseProductiveChance = 0.15f;  // 15% base chance for productivity boost

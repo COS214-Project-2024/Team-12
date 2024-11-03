@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+NeutralState::~NeutralState() = default;
+
 void NeutralState::handle(){
 	// do nothing
 	std::cout<<"We are in the neutral state I guess we do nothing in here\n";

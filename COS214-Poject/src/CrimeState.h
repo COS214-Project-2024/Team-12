@@ -11,6 +11,7 @@ class CrimeState : public NPCState{
 	void handle() override;
 	std::string getStateName() override;
 	NPCState* clone() const override;
+	~CrimeState() override = default;
 };
 
 #endif

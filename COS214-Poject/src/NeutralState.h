@@ -11,6 +11,7 @@ class NeutralState : public NPCState{
 	void handle() override;
 	std::string getStateName() override;
 	NPCState* clone() const override;
+	~NeutralState() override;
 };
 
 #endif

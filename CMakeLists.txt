@@ -51,6 +51,7 @@ add_executable(city_simulator
 
 # Create the main executable
 # add_executable(city_simulator ${SOURCES})
+# some change to test the ci/cd
 
 # Add Google Test
 add_subdirectory(gtests)

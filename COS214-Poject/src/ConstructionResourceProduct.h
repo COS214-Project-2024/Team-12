@@ -36,6 +36,10 @@ public:
 	bool isReadyForCollection(); 
 
 	virtual void accept(taxCollector* TC) {}
+
+	std::string getName() const {
+		return name;
+	}
 };
 
 #endif

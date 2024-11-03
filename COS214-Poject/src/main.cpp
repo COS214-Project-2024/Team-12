@@ -20,15 +20,18 @@
 #include "Concrete.h"
 #include "IncomeResourceProduct.h"
 #include "ConstructionResourceProduct.h"
-// #include "MetalWorkFacility.h"
-// #include "PetroChemicalFacility.h"
-// #include "CrystalCraftIndustry.h"
-// #include "WoodAndCoalPlant.h"
+#include "Industry.h"
+#include "MetalWorkFacility.h"
+#include "PetroChemicalFacility.h"
+#include "CrystalCraftIndustry.h"
+#include "WoodAndCoalPlant.h"
+#include "IncomeResourceProcessor.h"
+#include "ResourceProcessor.h"
+#include "ConstructionResourceProcessor.h"
 // #include "LandMark.h"
 // #include "Park.h"
 // #include "Monument.h"
 // #include "CulturalCenter.h"
-#include "Industry.h"
 #include "House.h"
 #include "UtilityFlyweight.h"
 #include "UtilityFactory.h"
@@ -88,9 +91,7 @@ private:
                 << "6. Undo\n"
                 << "7. Redo\n"
                 << "8. Collect Taxes\n"
-                << "9. Show Resources\n"
-                << "10. Collect Resources\n"
-                << "11. Trade Resources\n"
+                << "9. Process Resources\n"
                 << "0. Exit\n"
                 << "\nChoice: ";
     }
@@ -119,6 +120,9 @@ void spawnResources() {
     // Spawn Construction Resources
     spawnConstructionResource<Stone>(5, 300, 5);   // Spawn 5 stone deposits
     spawnConstructionResource<Wood>(5, 400, 3);    // Spawn 5 wood deposits
+    spawnConstructionResource<Concrete>(5, 300, 5);
+    spawnConstructionResource<Steel>(5, 400, 3);
+
 }
 
 template<typename T>
@@ -162,7 +166,7 @@ void handleCreateZone() {
     switch(choice) {
         case 1: zoneType = "Residential"; break;  // Match the zone type strings in MapGrid
         case 2: zoneType = "Commercial"; break;
-        case 3: zoneType = "Industrial0"; break;
+        case 3: zoneType = "Industrial"; break;
         default:
             std::cout << "\033[1;31mInvalid zone type!\033[0m\n";
             return;
@@ -223,7 +227,7 @@ void handleCreateZone() {
     std::cout << "\nSelect building category:\n"
               << "1. Residential Buildings\n"
               << "2. Commercial Buildings\n"
-            //   << "3. Industrial Buildings\n"
+              << "3. Industrial Buildings\n"
             //   << "4. Landmarks\n"
               << "Choice: ";
     
@@ -278,7 +282,7 @@ void handleCreateZone() {
                     return;
             }
             break;
-        /*
+        
         case 3: // Industrial
             std::cout << "\nSelect Industrial building type:\n"
                       << "1. Metal Work Facility ($300)\n"
@@ -289,16 +293,44 @@ void handleCreateZone() {
             int indChoice;
             std::cin >> indChoice;
             switch(indChoice) {
-                case 1: building = std::make_shared<MetalWorkFacility>(); cost = 300; buildingType = "MetalWork"; break;
-                case 2: building = std::make_shared<PetrochemicalFacility>(); cost = 400; buildingType = "PetroChemical"; break;
-                case 3: building = std::make_shared<CrystalCraftIndustry>(); cost = 350; buildingType = "CrystalCraft"; break;
-                case 4: building = std::make_shared<WoodAndCoalPlant>(); cost = 300; buildingType = "WoodAndCoal"; break;
-                default:
-                    std::cout << "\033[1;31mInvalid industrial building type!\033[0m\n";
-                    return;
+                        case 1: {
+                            auto gold = std::make_shared<Gold>(100, 50.0);
+                            auto steel = std::make_shared<Steel>(300, 5);
+                            building = std::make_shared<MetalWorkFacility>(gold, steel);
+                            cost = 300;
+                            buildingType = "MetalWork";
+                            break;
+                        }
+                        case 2: {
+                            auto oil = std::make_shared<Oil>(100, 50.0);
+                            auto concrete = std::make_shared<Concrete>(100, 50.0);
+                            building = std::make_shared<PetrochemicalFacility>(oil, concrete);
+                            cost = 400; 
+                            buildingType = "PetroChemical";
+                            break;
+                        }
+                        case 3: {
+                            auto diamond = std::make_shared<Diamonds>(100, 50.0);
+                            auto stone = std::make_shared<Stone>(300, 5);
+                            building = std::make_shared<CrystalCraftIndustry>(diamond, stone);
+                            cost = 350;
+                            buildingType = "CrystalCraft";
+                            break;
+                        }
+                        case 4: {
+                            auto coal = std::make_shared<Coal>(100, 50.0);
+                            auto wood = std::make_shared<Wood>(300, 5);
+                            building = std::make_shared<WoodAndCoalPlant>(coal, wood);
+                            cost = 300;
+                            buildingType = "WoodAndCoal";
+                            break;
+                        }
+                        default:
+                            std::cout << "\033[1;31mInvalid industrial building type!\033[0m\n";
+                            return;
             }
             break;
-
+        /*
         case 4: // Landmarks
             std::cout << "\nSelect Landmark type:\n"
                       << "1. Park ($200)\n"
@@ -510,6 +542,116 @@ void handlePlaceUtility() {
         }
     }
 
+void handleProcessResources() {
+    std::cout << "\nResource Processing Menu:\n"
+              << "1. Select Industry\n"
+              << "2. View Processing Status\n"
+              << "0. Back\n"
+              << "Choice: ";
+    
+    int choice;
+    if (!(std::cin >> choice)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "\033[1;31mInvalid input!\033[0m\n";
+        return;
+    }
+
+    switch(choice) {
+        case 1: {
+            // Show available industries on the map
+            std::vector<std::pair<Location, std::shared_ptr<Industry>>> industries;
+            
+            // Find all industries on the map
+            for (int y = 0; y < grid.getHeight(); y++) {
+                for (int x = 0; x < grid.getWidth(); x++) {
+                    Location loc{x, y};
+                    if (auto component = grid.getComponent(loc)) {
+                        if (auto industry = std::dynamic_pointer_cast<Industry>(component)) {
+                            industries.push_back({loc, industry});
+                        }
+                    }
+                }
+            }
+
+            if (industries.empty()) {
+                std::cout << "\033[1;31mNo industries found! Build some industries first.\033[0m\n";
+                return;
+            }
+
+            // Display available industries
+            std::cout << "\nAvailable Industries:\n";
+            for (size_t i = 0; i < industries.size(); i++) {
+                std::cout << i + 1 << ". " << industries[i].second->getBuildingType() 
+                         << " at (" << industries[i].first.x << "," 
+                         << industries[i].first.y << ")\n";
+            }
+
+            // Select industry
+            std::cout << "Select industry (1-" << industries.size() << "): ";
+            int industryChoice;
+            std::cin >> industryChoice;
+            
+            if (industryChoice < 1 || industryChoice > static_cast<int>(industries.size())) {
+                std::cout << "\033[1;31mInvalid industry selection!\033[0m\n";
+                return;
+            }
+
+            auto selectedIndustry = industries[industryChoice - 1].second;
+
+            // Process resources menu
+            std::cout << "\nProcessing Options:\n"
+                      << "1. Process Income Resource\n"
+                      << "2. Process Construction Resource\n"
+                      << "Choice: ";
+            
+            int processChoice;
+            std::cin >> processChoice;
+
+            std::cout << "Enter amount to process: ";
+            int amount;
+            std::cin >> amount;
+
+            switch(processChoice) {
+                case 1:
+                    selectedIndustry->processResources(amount, true);  // Process primary (income)
+                    break;
+                case 2:
+                    selectedIndustry->processResources(amount, false); // Process secondary (construction)
+                    break;
+                default:
+                    std::cout << "\033[1;31mInvalid processing choice!\033[0m\n";
+                    return;
+            }
+            break;
+        }
+        case 2: {
+            // View processing status of all industries
+            bool found = false;
+            for (int y = 0; y < grid.getHeight(); y++) {
+                for (int x = 0; x < grid.getWidth(); x++) {
+                    if (auto component = grid.getComponent({x, y})) {
+                        if (auto industry = std::dynamic_pointer_cast<Industry>(component)) {
+                            found = true;
+                            std::cout << "\nIndustry at (" << x << "," << y << "):\n";
+                            industry->displayStatus();
+                        }
+                    }
+                }
+            }
+            if (!found) {
+                std::cout << "\033[1;31mNo industries found on the map!\033[0m\n";
+            }
+            break;
+        }
+        case 0:
+            return;
+        default:
+            std::cout << "\033[1;31mInvalid choice!\033[0m\n";
+            break;
+    }
+}
+
 public:
     CityGame(int width, int height) : grid(width, height) {
         initializeResources();
@@ -536,7 +678,7 @@ public:
                     case 6: state.undo(); break;
                     case 7: state.redo(); break;
                     case 8: collectTaxes(); break;
-                    case 9: showResources(); break;
+                    case 9: handleProcessResources(); break;
                     case 0: running = false; break;
                     default: std::cout << "\033[1;31mInvalid choice!\033[0m\n";
                 }

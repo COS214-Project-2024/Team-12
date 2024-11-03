@@ -475,6 +475,10 @@ std::string getDisplayString() const {
                             ss << "\033[1;37m[◈]\033[0m";  // Stone symbol
                         else if (dynamic_cast<Wood*>(constructionResource.get())) 
                             ss << "\033[1;33m[⚏]\033[0m";  // Wood symbol
+                        else if (dynamic_cast<Concrete*>(constructionResource.get())) 
+                            ss << "\033[1;37m[⬢]\033[0m";  // Concrete symbol (hexagon)
+                        else if (dynamic_cast<Steel*>(constructionResource.get())) 
+                            ss << "\033[1;36m[⬡]\033[0m";  // Steel symbol (hollow hexagon)
                     }
 				}
 			} else {
@@ -540,7 +544,9 @@ std::string getDisplayString() const {
     << "\033[1;30m[◆]\033[0m - Coal\n"
     << "\033[1;32m[●]\033[0m - Oil\n"
     << "\033[1;37m[◈]\033[0m - Stone\n"
-    << "\033[1;33m[⚏]\033[0m - Wood\n";
+    << "\033[1;33m[⚏]\033[0m - Wood\n"
+    << "\033[1;37m[⬢]\033[0m - Concrete\n"
+    << "\033[1;36m[⬡]\033[0m - Steel\n";
 
     return ss.str();
 }

@@ -26,7 +26,7 @@
 #include "PowerPlant.h"
 #include "SewageSystem.h"
 #include "WasteManagement.h"
-#include "ConcreteTaxCollector.h"
+#include "concreteTaxCollector.h"
 #include "taxCollector.h"
 #include "NPCManager.h"
 #include <iostream>

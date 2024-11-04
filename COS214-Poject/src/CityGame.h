@@ -16,7 +16,7 @@
 #include "Malls.h"
 #include "Industry.h"
 #include "MetalWorkFacility.h"
-#include "PetrochemicalFacility.h"
+#include "PetroChemicalFacility.h"
 #include "CrystalCraftIndustry.h"
 #include "WoodAndCoalPlant.h"
 #include "LandMark.h"

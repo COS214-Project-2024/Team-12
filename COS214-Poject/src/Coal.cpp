@@ -1,17 +1,37 @@
+/**
+ * @file Coal.cpp
+ * @brief Implementation of the Coal class, representing a coal resource in the game.
+ */
+
 #include "Coal.h"
 
-// Constructor
+/**
+ * @brief Constructs a Coal object with a specified quantity and market value.
+ * 
+ * Initializes the coal resource with a name, quantity, and market value.
+ * 
+ * @param quantity The initial quantity of coal.
+ * @param marketValue The market value per unit of coal.
+ */
 Coal::Coal(int quantity, double marketValue)
     : IncomeResourceProduct("Coal", quantity, marketValue) {
-   
 }
 
-// Destructor
+/**
+ * @brief Destructor for the Coal class.
+ * 
+ * Cleans up resources for the coal object if needed.
+ */
 Coal::~Coal() {
-   // std::cout << "Coal resource destroyed." << std::endl;
+    // std::cout << "Coal resource destroyed." << std::endl;
 }
 
-// Override displayStatus to provide specific information for Coal
+/**
+ * @brief Displays the current status of the coal resource.
+ * 
+ * Outputs details specific to coal, including quantity, market value per unit, 
+ * and total calculated value.
+ */
 void Coal::displayStatus() {
     std::cout << "Resource: Coal\n"
               << "Quantity: " << getQuantity() << "\n"

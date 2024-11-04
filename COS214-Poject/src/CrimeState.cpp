@@ -1,3 +1,8 @@
+/**
+ * @file CrimeState.cpp
+ * @brief Implementation of the CrimeState class, representing the behavior of NPCs in a crime state.
+ */
+
 #include "Government.h"
 #include "NPCManager.h"
 #include "CrimeState.h"
@@ -6,33 +11,36 @@
 #include <iostream>
 #include <string>
 
+/**
+ * @brief Handles the effects of the CrimeState on the city's mortality rate.
+ * 
+ * Calculates the likelihood and impact of crime affecting the mortality rate based on the number of NPCs
+ * in the crime state. If a randomly generated value falls within the calculated chance, the mortality rate
+ * is increased by a factor proportional to the crime NPC count.
+ */
 void CrimeState::handle() {
-    // Base chance for crime impact
-    const float baseCrimeChance = 0.2f;  // 20% base chance for crime effect
-    const double crimeImpactFactor = 0.005;  // 0.5% increase in mortality per criminal NPC
+    const float baseCrimeChance = 0.2f;         /**< Base probability of crime impact. */
+    const double crimeImpactFactor = 0.005;     /**< Mortality rate increase factor per crime NPC. */
 
-    // Get the number of NPCs in CrimeState
+    // Get the count of NPCs in CrimeState
     int crimeNPCCount = NPCManager::getInstance().getCrimeCount();
 
-    // Calculate the chance of crime effect based on crime NPCs
+    // Calculate adjusted crime chance
     float crimeChance = baseCrimeChance + (crimeNPCCount * 0.02f);
-
-    // Cap the maximum chance at 100%
     if (crimeChance > 1.0f) {
         crimeChance = 1.0f;
     }
 
-    // Calculate the total impact on mortality rate based on crime NPCs
+    // Calculate total impact on mortality rate
     double impactFactor = crimeImpactFactor * crimeNPCCount;
 
-    // Random number generator for determining if crime impact occurs
+    // Random number generator for crime impact
     static std::random_device rd;
     static std::mt19937 gen(rd());
     std::uniform_real_distribution<> dis(0.0, 1.0);
 
-    // Check if crime impact should apply
+    // Determine if crime impact occurs
     if (dis(gen) < crimeChance) {
-        // Apply increase in mortality rate due to crime in Government
         Government::getInstance().increaseCrimeRate(impactFactor);
         std::cout << "Mortality rate increased by " << (impactFactor * 100) << "% due to crime.\n";
     } else {
@@ -40,10 +48,20 @@ void CrimeState::handle() {
     }
 }
 
-std::string CrimeState::getStateName(){
-	return "CrimeState";
+/**
+ * @brief Retrieves the name of the current state.
+ * 
+ * @return The name of this state, "CrimeState".
+ */
+std::string CrimeState::getStateName() {
+    return "CrimeState";
 }
 
-NPCState* CrimeState::clone() const{
+/**
+ * @brief Creates a copy of the current CrimeState instance.
+ * 
+ * @return A pointer to a new CrimeState object, cloned from this instance.
+ */
+NPCState* CrimeState::clone() const {
     return new CrimeState(*this);
 }

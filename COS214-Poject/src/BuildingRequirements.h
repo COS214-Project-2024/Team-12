@@ -5,17 +5,38 @@
 #include <string>
 #include <iostream>
 
+/**
+ * @struct ResourceRequirement
+ * @brief Defines the resource requirements for constructing a building.
+ * 
+ * This struct holds the amount of each resource (wood, stone, steel, concrete) 
+ * needed to construct a specific type of building.
+ */
 struct ResourceRequirement {
-    int wood;
-    int stone;
-    int steel;
-    int concrete;
+    int wood;     /**< Amount of wood required */
+    int stone;    /**< Amount of stone required */
+    int steel;    /**< Amount of steel required */
+    int concrete; /**< Amount of concrete required */
 
+    /**
+     * @brief Constructor to initialize resource requirements.
+     * 
+     * @param w Amount of wood required (default: 0).
+     * @param st Amount of stone required (default: 0).
+     * @param se Amount of steel required (default: 0).
+     * @param c Amount of concrete required (default: 0).
+     */
     ResourceRequirement(int w = 0, int st = 0, int se = 0, int c = 0)
         : wood(w), stone(st), steel(se), concrete(c) {}
 };
 
-// Initialize the map with proper resource requirements
+/**
+ * @var buildingResourceRequirements
+ * @brief A map that associates building types with their respective resource requirements.
+ * 
+ * This map contains entries for various types of buildings (residential, commercial, and industrial)
+ * and their corresponding resource requirements for construction.
+ */
 const std::map<std::string, ResourceRequirement> buildingResourceRequirements {
     // Residential Buildings
     {"House", ResourceRequirement(10, 5, 0, 0)},
@@ -35,7 +56,14 @@ const std::map<std::string, ResourceRequirement> buildingResourceRequirements {
     {"WoodAndCoal", ResourceRequirement(40, 30, 25, 20)}
 };
 
-// Add helper functions for resource management
+/**
+ * @brief Initializes the collected resources map with zero values.
+ * 
+ * This function populates the given map with resource types as keys 
+ * and initializes their values to zero.
+ * 
+ * @param collectedResources A map to hold the quantities of collected resources.
+ */
 inline void initializeCollectedResources(std::map<std::string, int>& collectedResources) {
     collectedResources["Wood"] = 0;
     collectedResources["Stone"] = 0;
@@ -43,6 +71,17 @@ inline void initializeCollectedResources(std::map<std::string, int>& collectedRe
     collectedResources["Concrete"] = 0;
 }
 
+/**
+ * @brief Checks if the collected resources meet the requirements for a specified building.
+ * 
+ * This function compares collected resource quantities against the requirements for a given building type.
+ * Optionally, it displays information about the requirements and current resource levels.
+ * 
+ * @param buildingType The type of building to check resources for.
+ * @param collectedResources A map containing the currently collected resource quantities.
+ * @param displayInfo Flag to control the display of requirement information (default: true).
+ * @return true if resources meet or exceed the requirements; false otherwise.
+ */
 inline bool checkResourceRequirements(const std::string& buildingType, 
                                     const std::map<std::string, int>& collectedResources,
                                     bool displayInfo = true) {

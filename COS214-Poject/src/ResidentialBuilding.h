@@ -33,7 +33,7 @@ public:
     bool isTaxPaid() const;
     void accept(taxCollector* TC) override;
     double getPrice() const {return price;}
-    
+
     // Display methods
     void displayStatus() override;
     std::string getBuildingType() const override{

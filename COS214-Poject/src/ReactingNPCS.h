@@ -22,6 +22,10 @@ public:
     void update() override;
 
     void changeState(NPCState *newState);
+    NPCState* getState()
+    {
+        return state;
+    }
 
     NPCObserver* clone() override;
 private:

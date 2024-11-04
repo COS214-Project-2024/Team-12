@@ -8,6 +8,13 @@
 
 ProductiveState::~ProductiveState() = default;
 
+/**
+ * @brief Handles the logic for the productive state of NPCs.
+ * 
+ * This method calculates the chance of a productivity boost based on the number
+ * of NPCs in the productive state. If the productivity boost occurs, it increases
+ * the production rate in the Government class.
+ */
 void ProductiveState::handle() {
     // Base chance for a productivity boost
     const float baseProductiveChance = 0.15f;  // 15% base chance for productivity boost
@@ -42,10 +49,22 @@ void ProductiveState::handle() {
     }
 }
 
+/**
+ * @brief Retrieves the name of the state.
+ * 
+ * @return A string representing the name of the state.
+ */
 std::string ProductiveState::getStateName(){
-	return "ProductiveState";
+    return "ProductiveState";
 }
 
+/**
+ * @brief Clones the current ProductiveState instance.
+ * 
+ * This method creates a new instance of ProductiveState that is a copy of the current instance.
+ * 
+ * @return A pointer to the newly created ProductiveState instance.
+ */
 NPCState* ProductiveState::clone() const{
     return new ProductiveState(*this);
 }

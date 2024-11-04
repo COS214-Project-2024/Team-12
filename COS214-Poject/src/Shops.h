@@ -1,5 +1,5 @@
 #ifndef SHOPS_H
-#define SHOPs_H
+#define SHOPS_H
 
 #include <string>
 

@@ -30,6 +30,10 @@ public:
 	int getQuantity() const;
 
 	void replenish(int amount);
+	std::string getBuildingType()
+	{
+		return "ConstructionResourceProduct";
+	}
 
 	int getUnitCost() const;
 	//double getTaxRevenue() override;

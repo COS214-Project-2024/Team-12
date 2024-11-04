@@ -12,6 +12,7 @@ public:
 
     ~Stone();
     void displayStatus() override;
+    
 };
 
 #endif

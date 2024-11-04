@@ -13,5 +13,10 @@ void Park::displayStatus(){
 
 
 std::unique_ptr<LandMark> Park::clone() const {
-    return std::make_unique<Park>(*this);
+    std::unique_ptr<Park> park = std::make_unique<Park>(
+    landMarkType, visitorCapacity, price, waterSupply, powerSupply, wasteManagement, sewageManagement
+);
+
+    return park;
+
 }

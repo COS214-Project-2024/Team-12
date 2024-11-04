@@ -13,5 +13,10 @@ void CulturalCenter::displayStatus(){
 
 
 std::unique_ptr<LandMark> CulturalCenter::clone() const {
-    return std::make_unique<CulturalCenter>(*this);
+    std::unique_ptr<CulturalCenter> culturalCenter = std::make_unique<CulturalCenter>(
+    landMarkType, visitorCapacity, price, waterSupply, powerSupply, wasteManagement, sewageManagement
+);
+
+    return culturalCenter;
+
 }

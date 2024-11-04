@@ -11,6 +11,7 @@ public:
     Wood(int quantity, int unitCost);
     ~Wood();
     void displayStatus() override;
+    
 };
 
 #endif

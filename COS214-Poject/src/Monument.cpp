@@ -13,5 +13,10 @@ void Monument::displayStatus(){
 
 
 std::unique_ptr<LandMark> Monument::clone() const {
-    return std::make_unique<Monument>(*this);
+    std::unique_ptr<Monument> monument = std::make_unique<Monument>(
+    landMarkType, visitorCapacity, price, waterSupply, powerSupply, wasteManagement, sewageManagement
+);
+
+    return monument;
+
 }

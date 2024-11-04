@@ -8,6 +8,11 @@
 #include "../COS214-Poject/src/WaterSupply.h"
 #include "../COS214-Poject/src/WasteManagement.h"
 #include "../COS214-Poject/src/SewageSystem.h"
+#include "../COS214-Poject/src/House.h"
+#include "../COS214-Poject/src/Malls.h"
+#include "../COS214-Poject/src/Flat.h"
+#include "../COS214-Poject/src/Shops.h"
+
 
 // Test Tax Calculation for Residential and Commercial Buildings using ConcreteTaxCollector
 TEST(TaxCalculationTest, ApplyConcreteTaxCollector) {
@@ -17,9 +22,9 @@ TEST(TaxCalculationTest, ApplyConcreteTaxCollector) {
     
     // Step 2: Create buildings with prices
     std::shared_ptr<ResidentialBuilding> residentialBuilding = 
-        std::make_shared<ResidentialBuilding>(3, 200000, nullptr, nullptr, nullptr, nullptr); // 3 bedrooms, $200,000
+        std::make_shared<House>( nullptr, nullptr, nullptr, nullptr); // 3 bedrooms, $200,000
     std::shared_ptr<CommercialBuilding> commercialBuilding = 
-        std::make_shared<CommercialBuilding>(500000, nullptr, nullptr, nullptr, nullptr); // $500,000
+        std::make_shared<Malls>(nullptr, nullptr, nullptr, nullptr); // $500,000
 
     // Step 3: Create ConcreteTaxCollector
     ConcreteTaxCollector taxCollector;
@@ -54,8 +59,8 @@ TEST(TaxCalculationTest, ApplyConcreteTaxCollectorWithUtilities) {
     auto sewageSystem = std::make_shared<SewageSystem>();
 
     // Step 3: Create buildings and assign utilities
-    auto residentialBuilding = std::make_shared<ResidentialBuilding>(3, 200000, waterSupply, powerPlant, nullptr, sewageSystem);
-    auto commercialBuilding = std::make_shared<CommercialBuilding>(500000, waterSupply, powerPlant, wasteManagement, sewageSystem);
+    auto residentialBuilding = std::make_shared<Flat>( waterSupply, powerPlant, nullptr, sewageSystem);
+    auto commercialBuilding = std::make_shared<Shops>( waterSupply, powerPlant, wasteManagement, sewageSystem);
 
     // Step 4: Apply ConcreteTaxCollector to buildings
     ConcreteTaxCollector taxCollector;
@@ -82,7 +87,4 @@ TEST(TaxCalculationTest, ApplyConcreteTaxCollectorWithUtilities) {
     EXPECT_TRUE(commercialBuilding->isTaxPaid());
 }
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
+

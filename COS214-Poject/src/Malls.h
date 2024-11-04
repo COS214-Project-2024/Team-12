@@ -38,7 +38,7 @@ public:
      * 
      * @return The character 'M' representing the Mall on a map.
      */
-    char getDisplaySymbol() const override { return 'M'; }
+    char getDisplaySymbol() const { return 'M'; }
 
     /**
      * @brief Retrieves the building type of the Mall.

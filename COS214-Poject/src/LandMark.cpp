@@ -1,28 +1,30 @@
 #include "LandMark.h"
 
 /**
- * @brief Constructs a LandMark with specified type, capacity, price, and utilities.
+ * @brief Constructs a LandMark with specified parameters.
  * 
- * @param type The type of the landmark (e.g., historical, recreational)
- * @param capacity Maximum visitor capacity of the landmark
- * @param price Cost or entry price for the landmark
- * @param water Shared pointer to the water supply utility
- * @param power Shared pointer to the power supply utility
- * @param waste Shared pointer to the waste management utility
- * @param sewage Shared pointer to the sewage management utility
+ * @param type The type of the landmark.
+ * @param capacity The visitor capacity of the landmark.
+ * @param price The price associated with the landmark.
+ * @param water A shared pointer to the water utility.
+ * @param power A shared pointer to the power utility.
+ * @param waste A shared pointer to the waste management utility.
+ * @param sewage A shared pointer to the sewage management utility.
  */
 LandMark::LandMark(const std::string& type, int capacity, double price,
-                   std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
-                   std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
-        : landMarkType(type), visitorCapacity(capacity), price(price),
-          waterSupply(std::move(water)), powerSupply(std::move(power)), 
-          wasteManagement(std::move(waste)), sewageManagement(std::move(sewage)) {}
+                   std::shared_ptr<UtilityFlyweight> water, 
+                   std::shared_ptr<UtilityFlyweight> power,
+                   std::shared_ptr<UtilityFlyweight> waste, 
+                   std::shared_ptr<UtilityFlyweight> sewage)
+    : landMarkType(type), visitorCapacity(capacity), price(price),
+      waterSupply(std::move(water)), powerSupply(std::move(power)), 
+      wasteManagement(std::move(waste)), sewageManagement(std::move(sewage)) {}
 
 /**
- * @brief Displays the status of the landmark, including type, capacity, price, and utility statuses.
+ * @brief Displays the status of the landmark.
  * 
- * This function outputs the current status of the landmark, showing its type, visitor capacity, and price.
- * It also displays the status of each connected utility (water, power, waste management, and sewage).
+ * This method provides details about the landmark, including its type,
+ * visitor capacity, price, and the status of each connected utility.
  */
 void LandMark::displayStatus() {
     std::cout << "LandMark Status:\n"

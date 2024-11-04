@@ -1,3 +1,8 @@
+/**
+ * @file House.h
+ * @brief Header file for the House class, representing a residential building.
+ */
+
 #ifndef HOUSE_H
 #define HOUSE_H
 
@@ -7,54 +12,48 @@
 
 /**
  * @class House
- * @brief Represents a house in the city simulation, a type of ResidentialBuilding.
- *
- * The House class is a specific type of ResidentialBuilding, with a unique display symbol
- * and a static base cost. It connects to various utility flyweights, such as water, power,
- * waste, and sewage, which enhance functionality in the simulation.
+ * @brief Represents a house, which is a type of residential building.
+ * 
+ * This class inherits from the ResidentialBuilding class and adds specific
+ * properties and methods related to a house.
  */
 class House : public ResidentialBuilding {
 public:
-    /** 
-     * @brief The base cost to construct a House.
-     * 
-     * A constant integer value representing the default cost required to build a house.
-     */
-    static constexpr int BASE_COST = 100;
+    static constexpr int BASE_COST = 100; ///< Base cost of the house
 
     /**
-     * @brief Default constructor for a House object.
-     *
-     * Initializes a House without connecting to any specific utilities.
+     * @brief Default constructor for the House class.
+     * 
+     * Initializes a house with default values for its utilities.
      */
     House();
 
     /**
-     * @brief Constructs a House with specified utility connections.
+     * @brief Parameterized constructor for the House class.
      * 
      * @param water A shared pointer to the water utility.
      * @param power A shared pointer to the power utility.
      * @param waste A shared pointer to the waste utility.
      * @param sewage A shared pointer to the sewage utility.
-     *
-     * Initializes the house with connections to the given utility flyweights.
      */
-    House(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
-          std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
+    House(std::shared_ptr<UtilityFlyweight> water, 
+          std::shared_ptr<UtilityFlyweight> power,
+          std::shared_ptr<UtilityFlyweight> waste, 
+          std::shared_ptr<UtilityFlyweight> sewage);
 
     /**
-     * @brief Returns the display symbol for the House.
+     * @brief Gets the display symbol for the house.
      * 
-     * @return char A character representing the House in the city map ('H').
+     * @return A character representing the house (H).
      */
-    char getDisplaySymbol() const override;
+    char getDisplaySymbol() const override { return 'H'; }
 
     /**
-     * @brief Returns the type of building.
+     * @brief Gets the building type of the house.
      * 
-     * @return std::string The string "House" representing the building type.
+     * @return A string representing the type of building.
      */
-    std::string getBuildingType() const override;
+    std::string getBuildingType() const override { return "House"; }
 };
 
 #endif

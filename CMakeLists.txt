@@ -40,8 +40,9 @@ else()
     FetchContent_MakeAvailable(googletest)
 endif()
 
-# Add the test executable with necessary test source files
-add_executable(runTests ${TEST_SOURCES})
+# Add the test executable with both source and test files
+# Including main source files in tests to prevent undefined references
+add_executable(runTests ${SOURCES} ${TEST_SOURCES})
 
 # Link Google Test and Threads to the test executable
 target_link_libraries(runTests gtest gtest_main ${CMAKE_THREAD_LIBS_INIT})

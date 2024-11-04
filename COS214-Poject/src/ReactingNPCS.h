@@ -47,6 +47,10 @@ public:
      * @param newState Pointer to the new NPCState to transition into.
      */
     void changeState(NPCState *newState);
+    NPCState* getState()
+    {
+        return state;
+    }
 
     /**
      * @brief Clones the NPC, creating a copy with the same state.

@@ -62,6 +62,7 @@ public:
      */
     void accept(taxCollector* TC) override;
 
+
     /**
      * @brief Gets the price of the building.
      * @return The price of the building.
@@ -71,6 +72,11 @@ public:
     /**
      * @brief Displays the status of the residential building.
      */
+
+
+
+    // Display methods
+
     void displayStatus() override;
 
     /**

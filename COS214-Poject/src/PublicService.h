@@ -18,6 +18,7 @@ protected:
   std::shared_ptr<UtilityFlyweight> wasteManagement;
   std::shared_ptr<UtilityFlyweight> sewageManagement;
 public:
+    PublicService() = default;
     PublicService(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
                         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     virtual void provideService() = 0;

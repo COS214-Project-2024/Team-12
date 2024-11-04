@@ -7,6 +7,7 @@ class PoliceStation : public PublicService  {
 private:
     std::string status;
 public:
+    PoliceStation() = default;
      PoliceStation(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> electricity,
                   std::shared_ptr<UtilityFlyweight> wasteManagement, std::shared_ptr<UtilityFlyweight> sewage,
                   std::string buildingStatus);

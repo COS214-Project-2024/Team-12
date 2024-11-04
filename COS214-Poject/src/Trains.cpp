@@ -26,3 +26,4 @@ double Trains::getSpeed() const{
 std::string Trains::getType() const{
     return "Train";
 }
+

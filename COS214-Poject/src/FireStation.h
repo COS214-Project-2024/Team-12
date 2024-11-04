@@ -7,6 +7,7 @@ class FireStation : public PublicService  {
 private:
     std::string status;
 public:
+   FireStation() = default;
    FireStation(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> electricity,
                 std::shared_ptr<UtilityFlyweight> wasteManagement, std::shared_ptr<UtilityFlyweight> sewage, 
                 std::string buildingStatus);

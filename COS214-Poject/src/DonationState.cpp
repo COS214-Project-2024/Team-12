@@ -6,8 +6,23 @@
 #include <random>
 #include <string>
 
+/**
+ * @brief Destructor for the DonationState class.
+ * 
+ * This destructor cleans up any resources associated with the DonationState.
+ */
 DonationState::~DonationState() = default;
 
+/**
+ * @brief Handles the logic for NPCs in the donation state.
+ * 
+ * This method calculates whether a donation occurs based on the number of
+ * NPCs in the donation state and updates the city's funds accordingly.
+ * 
+ * The chance of receiving an investment increases with the number of NPCs
+ * in the DonationState. If an investment occurs, the specified amount is added
+ * to the city's funds.
+ */
 void DonationState::handle() {
     // Base probability of getting an investment
     const float baseInvestmentChance = 0.05f;  // 5% base chance
@@ -39,10 +54,20 @@ void DonationState::handle() {
     }
 }
 
-std::string DonationState::getStateName(){
-	return "DonationState";
+/**
+ * @brief Gets the name of the current state.
+ * 
+ * @return A string representing the name of the donation state.
+ */
+std::string DonationState::getStateName() {
+    return "DonationState";
 }
 
-NPCState* DonationState::clone() const{
+/**
+ * @brief Clones the current DonationState instance.
+ * 
+ * @return A pointer to a new DonationState instance that is a copy of this state.
+ */
+NPCState* DonationState::clone() const {
     return new DonationState(*this);
 }

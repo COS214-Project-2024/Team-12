@@ -1,5 +1,5 @@
 // PetrochemicalFacility.cpp
-#include "PetrochemicalFacility.h"
+#include "PetroChemicalFacility.h"
 
 PetrochemicalFacility::PetrochemicalFacility(
     std::shared_ptr<IncomeResourceProduct> oil,

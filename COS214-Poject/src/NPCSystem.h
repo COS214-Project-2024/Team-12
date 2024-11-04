@@ -4,83 +4,122 @@
 #include <string>
 #include <memory>
 
-// Base strategy class
+/**
+ * @brief Base class for collection strategies in the NPC system.
+ * 
+ * Provides an interface for defining different collection efficiency levels
+ * for Worker NPCs.
+ */
 class CollectionStrategy {
 public:
     virtual ~CollectionStrategy() = default;
+
+    /**
+     * @brief Pure virtual function to determine collection efficiency.
+     * 
+     * @param amount The base amount to be collected.
+     * @return int The adjusted amount based on the strategy's efficiency.
+     */
     virtual int collect(int amount) const = 0;
 };
 
-// Concrete strategies
+/**
+ * @brief Collection strategy for slow collection rate.
+ * 
+ * Implements a 50% collection efficiency.
+ */
 class SlowCollectionStrategy : public CollectionStrategy {
 public:
     int collect(int amount) const override { 
-        return amount / 2;  // 50% efficiency
+        return amount / 2;  ///< Returns half of the input amount.
     }
 };
 
+/**
+ * @brief Collection strategy for moderate collection rate.
+ * 
+ * Implements a 100% collection efficiency.
+ */
 class ModerateCollectionStrategy : public CollectionStrategy {
 public:
     int collect(int amount) const override { 
-        return amount;      // 100% efficiency
+        return amount; ///< Returns the input amount unchanged.
     }
 };
 
+/**
+ * @brief Collection strategy for fast collection rate.
+ * 
+ * Implements a 200% collection efficiency.
+ */
 class FastCollectionStrategy : public CollectionStrategy {
 public:
     int collect(int amount) const override { 
-        return amount * 2;  // 200% efficiency
+        return amount * 2; ///< Returns double the input amount.
     }
 };
 
-// Worker NPC class
+/**
+ * @brief Represents a Worker NPC that collects resources.
+ * 
+ * Uses a collection strategy to determine the NPC's collection efficiency.
+ */
 class WorkerNPC {
 private:
-    std::string name;
-    double cost;
-    std::unique_ptr<CollectionStrategy> strategy;
+    std::string name; ///< Name of the Worker NPC.
+    double cost;      ///< Cost of hiring the Worker NPC.
+    std::unique_ptr<CollectionStrategy> strategy; ///< Strategy for resource collection.
 
 public:
+    /**
+     * @brief Constructs a Worker NPC with a specific name, cost, and collection strategy.
+     * 
+     * @param workerName The name of the Worker NPC.
+     * @param workerCost The cost associated with the Worker NPC.
+     * @param collectionStrategy The strategy for resource collection.
+     */
     WorkerNPC(const std::string& workerName, double workerCost, 
-              std::unique_ptr<CollectionStrategy> collectionStrategy)
-        : name(workerName), cost(workerCost), strategy(std::move(collectionStrategy)) {}
+              std::unique_ptr<CollectionStrategy> collectionStrategy);
 
-    std::string getName() const { return name; }
-    double getCost() const { return cost; }
-    
-    int collect(int amount) const {
-        if (strategy) {
-            return strategy->collect(amount);
-        }
-        return 0;
-    }
+    /**
+     * @brief Gets the name of the Worker NPC.
+     * 
+     * @return std::string The NPC's name.
+     */
+    std::string getName() const;
+
+    /**
+     * @brief Gets the cost of the Worker NPC.
+     * 
+     * @return double The hiring cost of the Worker NPC.
+     */
+    double getCost() const;
+
+    /**
+     * @brief Collects resources based on the collection strategy.
+     * 
+     * @param amount The base amount to be collected.
+     * @return int The amount collected after applying the collection strategy.
+     */
+    int collect(int amount) const;
 };
 
-// NPC Factory class
+/**
+ * @brief Factory class to hire Worker NPCs with specific collection strategies.
+ * 
+ * Creates different types of Worker NPCs based on the specified type.
+ */
 class NPCContext {
 public:
-    static std::unique_ptr<WorkerNPC> hireNPC(const std::string& npcType) {
-        if (npcType == "Slow") {
-            return std::make_unique<WorkerNPC>(
-                "Slow Worker", 
-                50.0, 
-                std::make_unique<SlowCollectionStrategy>()
-            );
-        } else if (npcType == "Moderate") {
-            return std::make_unique<WorkerNPC>(
-                "Moderate Worker", 
-                100.0, 
-                std::make_unique<ModerateCollectionStrategy>()
-            );
-        } else if (npcType == "Fast") {
-            return std::make_unique<WorkerNPC>(
-                "Fast Worker", 
-                200.0, 
-                std::make_unique<FastCollectionStrategy>()
-            );
-        }
-        return nullptr;
-    }
+    /**
+     * @brief Hires a Worker NPC of a specified type.
+     * 
+     * The type determines the collection strategy and cost of the NPC.
+     * 
+     * @param npcType The type of NPC to hire ("Slow", "Moderate", "Fast").
+     * @return std::unique_ptr<WorkerNPC> A unique pointer to the hired Worker NPC.
+     */
+    static std::unique_ptr<WorkerNPC> hireNPC(const std::string& npcType);
 };
 
-#endif
+#endif // NPC_SYSTEM_H

@@ -4,44 +4,33 @@
 #include <vector>
 #include <string>
 
-//ZoneComposite::ZoneComposite(const std::string& type, int minX, int maxX, int minY, int maxY) : zoneType(type), minX(minX), maxX(maxX), minY(minY), maxY(maxY) {}
-
-// void ZoneComposite::add(CityComponent* building, int x, int y) {
-//     // Check that the building type matches the zone type
-//     if (building->getBuildingType() != zoneType) {
-//         std::cout << "Error: Only " << zoneType << " buildings allowed in this zone.\n";
-//         return;
-//     }
-
-//     // Check if coordinates are within zone boundaries
-//     if (x < minX || x > maxX || y < minY || y > maxY) {
-//         std::cout << "Error: Coordinates (" << x << ", " << y << ") are outside the zone boundaries.\n";
-//         return;
-//     }
-
-//     // Set building location and add to zone
-//     building->setLocation(x, y);
-//     buildings.push_back(building);
-//     std::cout << zoneType << " building placed at (" << x << ", " << y << ") within zone.\n";
-// }
-
-// void ZoneComposite::remove(CityComponent* component){
-// 	buildings.erase(std::remove(buildings.begin(), buildings.end(), component), buildings.end());
-// }
-
+/**
+ * @brief Constructs a ZoneComposite object with specified type and boundary coordinates.
+ * @param type The type of zone (e.g., Residential, Commercial).
+ * @param topLeft The top-left boundary of the zone.
+ * @param bottomRight The bottom-right boundary of the zone.
+ */
 ZoneComposite::ZoneComposite(const std::string& type, const Location& topLeft, const Location& bottomRight)
     : zoneType(type) {
     bounds[0] = topLeft;
     bounds[1] = bottomRight;
     std::cout << "Created zone of type: " << type << " from (" 
-            << topLeft.x << "," << topLeft.y << ") to ("
-            << bottomRight.x << "," << bottomRight.y << ")\n";
+              << topLeft.x << "," << topLeft.y << ") to ("
+              << bottomRight.x << "," << bottomRight.y << ")\n";
 }
 
+/**
+ * @brief Adds a building component to the zone.
+ * @param component Shared pointer to the building component to add.
+ */
 void ZoneComposite::add(std::shared_ptr<CityComponent> component) {
     buildings.push_back(component);
 }
 
+/**
+ * @brief Removes a building component from the zone.
+ * @param component Shared pointer to the building component to remove.
+ */
 void ZoneComposite::remove(std::shared_ptr<CityComponent> component) {
     auto it = std::find(buildings.begin(), buildings.end(), component);
     if (it != buildings.end()) {
@@ -49,18 +38,29 @@ void ZoneComposite::remove(std::shared_ptr<CityComponent> component) {
     }
 }
 
-void ZoneComposite::displayStatus(){
-	std::cout << zoneType << " Zone:\n";
+/**
+ * @brief Displays the status of all buildings within the zone.
+ */
+void ZoneComposite::displayStatus() {
+    std::cout << zoneType << " Zone:\n";
     for (auto& building : buildings) {
         building->displayStatus();
     }
 }
 
-std::string ZoneComposite::getBuildingType() const{
-	return zoneType;
+/**
+ * @brief Returns the building type for the zone.
+ * @return The type of building as a string.
+ */
+std::string ZoneComposite::getBuildingType() const {
+    return zoneType;
 }
 
-void ZoneComposite::accept(taxCollector* TC){
+/**
+ * @brief Accepts a taxCollector visitor to apply tax operations within the zone.
+ * @param TC Pointer to a taxCollector object.
+ */
+void ZoneComposite::accept(taxCollector* TC) {
     if (TC) {
         TC->visit(this);  // Let the visitor handle the iteration
     }

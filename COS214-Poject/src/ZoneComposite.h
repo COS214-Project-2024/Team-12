@@ -9,42 +9,80 @@
 #include <string>
 #include <algorithm>
 
-class ZoneComposite : public CityComponent{
-	private:
-	//std::vector<CityComponent*> buildings;
-	std::vector<std::shared_ptr<CityComponent>> buildings;
-	std::string zoneType;
-	Location bounds[2];		//  bounds[0] = top-left, bounds[1] = bottom-right
-	//taxCollector* sars;
+/**
+ * @class ZoneComposite
+ * @brief A composite class representing a zone in the city, containing multiple buildings and managing their operations.
+ */
+class ZoneComposite : public CityComponent {
+private:
+    /// Vector storing shared pointers to buildings in the zone.
+    std::vector<std::shared_ptr<CityComponent>> buildings;
 
-	//int minX, maxX, minY, maxY;  // Zone boundaries
+    /// Type of zone (e.g., Residential, Commercial, Industrial).
+    std::string zoneType;
 
-	public:
-//	ZoneComposite(const std::string& type, int minX, int maxX, int minY, int maxY);
+    /// Boundaries of the zone: bounds[0] = top-left, bounds[1] = bottom-right.
+    Location bounds[2];
 
-	ZoneComposite(const std::string& type, const Location& topLeft, const Location& bottomRight);
+public:
+    /**
+     * @brief Constructs a ZoneComposite with a specified type and boundary locations.
+     * @param type The type of the zone (e.g., Residential, Commercial).
+     * @param topLeft The top-left boundary of the zone.
+     * @param bottomRight The bottom-right boundary of the zone.
+     */
+    ZoneComposite(const std::string& type, const Location& topLeft, const Location& bottomRight);
 
-//	void add(CityComponent* component, int x, int y) override;
+    /**
+     * @brief Adds a building component to the zone.
+     * @param component Shared pointer to the building component to add.
+     */
+    void add(std::shared_ptr<CityComponent> component);
 
-	void add(std::shared_ptr<CityComponent> component);
+    /**
+     * @brief Removes a building component from the zone.
+     * @param component Shared pointer to the building component to remove.
+     */
+    void remove(std::shared_ptr<CityComponent> component);
 
-	void remove(std::shared_ptr<CityComponent> component);
+    /**
+     * @brief Displays the status of all buildings within the zone.
+     */
+    void displayStatus();
 
-	void displayStatus();
+    /**
+     * @brief Returns the building type for the zone.
+     * @return The type of building as a string.
+     */
+    std::string getBuildingType() const;
 
-	std::string getBuildingType() const;
+    /**
+     * @brief Accepts a taxCollector visitor to apply tax operations within the zone.
+     * @param TC Pointer to a taxCollector object.
+     */
+    void accept(taxCollector* TC) override;
 
-	void accept(taxCollector* TC) override;
-
-	const std::vector<std::shared_ptr<CityComponent>>& getBuildings() const {
+    /**
+     * @brief Retrieves all buildings in the zone.
+     * @return A constant reference to the vector of buildings.
+     */
+    const std::vector<std::shared_ptr<CityComponent>>& getBuildings() const {
         return buildings;
     }
 
-	const Location& getTopLeft() const {
+    /**
+     * @brief Gets the top-left boundary location of the zone.
+     * @return A constant reference to the top-left Location.
+     */
+    const Location& getTopLeft() const {
 		return bounds[0];
 	}
 
-	const Location& getBottomRight() const {
+    /**
+     * @brief Gets the bottom-right boundary location of the zone.
+     * @return A constant reference to the bottom-right Location.
+     */
+    const Location& getBottomRight() const {
 		return bounds[1];
 	}
 };

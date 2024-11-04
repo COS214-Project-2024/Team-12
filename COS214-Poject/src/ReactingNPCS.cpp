@@ -12,17 +12,26 @@
 #include <random>
 #include <iostream>
 
+/**
+ * @brief Constructs a ReactingNPCS object in the NeutralState and increments the NPCManager count.
+ */
 ReactingNPCS::ReactingNPCS() : state(new NeutralState()) {
     NPCManager::getInstance().incrementCount("NeutralState");
     std::cout << "[Init] NPC created in NeutralState.\n"; // Debug log
 }
 
+/**
+ * @brief Destructor for ReactingNPCS, ensuring the NPCManager count is decremented for the current state.
+ */
 ReactingNPCS::~ReactingNPCS() { 
     NPCManager::getInstance().decrementCount(state->getStateName()); // Ensure decrement
     delete state; 
 }
 
-// Copy constructor for deep copying
+/**
+ * @brief Copy constructor to create a deep copy of the ReactingNPCS object.
+ * @param other The ReactingNPCS object to copy.
+ */
 ReactingNPCS::ReactingNPCS(const ReactingNPCS& other) {
     if (other.state) {
         state = other.state->clone();  // Deep copy of the state
@@ -33,6 +42,9 @@ ReactingNPCS::ReactingNPCS(const ReactingNPCS& other) {
     }
 }
 
+/**
+ * @brief Updates the NPC's state based on the current happiness and pollution levels, with a chance of following consensus.
+ */
 void ReactingNPCS::update() {
     int happinessLevel = NPCManager::getInstance().getHappinessLevel();
     int pollutionLevel = Government::getInstance().getPollutionLevel();
@@ -50,7 +62,7 @@ void ReactingNPCS::update() {
     }
 
     if (followsConsensus) {
-        if (happinessLevel > 85 && dynamic_cast<DonationState*>(state) == nullptr) {
+        if (happinessLevel > 75 && dynamic_cast<DonationState*>(state) == nullptr) {
             changeState(new DonationState());
         }
         else if (happinessLevel > 70 && dynamic_cast<ProductiveState*>(state) == nullptr) {
@@ -78,6 +90,10 @@ void ReactingNPCS::update() {
     state->handle();
 }
 
+/**
+ * @brief Changes the state of the NPC, managing NPCManager counts for each state.
+ * @param newState The new state for the NPC.
+ */
 void ReactingNPCS::changeState(NPCState* newState) {
     // Decrement the count of the old state
     std::string oldStateName = state->getStateName();
@@ -94,7 +110,10 @@ void ReactingNPCS::changeState(NPCState* newState) {
     std::cout << "[ChangeState] NPC entered " << newStateName << "\n"; // Debug log
 }
 
-// Clone method to create a deep copy
+/**
+ * @brief Clones the NPC by creating a deep copy using the copy constructor.
+ * @return A pointer to the cloned NPCObserver object.
+ */
 NPCObserver* ReactingNPCS::clone() {
     return new ReactingNPCS(*this);  // Use the copy constructor for deep copy
 }

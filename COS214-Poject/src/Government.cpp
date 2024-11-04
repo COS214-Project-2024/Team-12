@@ -200,16 +200,21 @@ int Government::getBuildingAmount(std::string type) {
 /**
  * @brief Displays the current statistics of the government.
  */
-void Government::displayGovernmentStats() {
-    std::cout << "Government Stats:" << std::endl;
-    std::cout << "Population: " << population << std::endl;
-    std::cout << "Money: " << money << std::endl;
-    std::cout << "Income Tax rate: " << incomeTaxRate << std::endl;
-    std::cout << "Employment Rate: " << EMPLOYMENT_RATE << "%\n";
-    std::cout << "Production Rate: " << productionRate << std::endl;
-    std::cout << "Crime Rate: " << crimeRate << std::endl;
-    std::cout << "Mortality Rate: " << mortalityRate << std::endl;
-    std::cout << "Population growth: " << populationGrowth << std::endl; // Fixed the message
+
+
+void Government::displayGovernmentStats(){
+	std::cout << "Government Stats:" << std::endl;
+	std::cout << "Population: " << population << std::endl;
+	std::cout << "Money: " << money << std::endl;
+	std::cout << "Income Tax rate: " << incomeTaxRate << std::endl;
+	std::cout << "Employment Rate: " << EMPLOYMENT_RATE << "%\n";
+	std::cout << "Production Rate: " << productionRate << std::endl;
+	//std::cout << "Crime Rate: " << crimeRate <<std::endl;
+	std::cout << "Mortality Rate: " << mortalityRate <<std::endl;
+	std::cout << "Population growth: " << mortalityRate <<std::endl;
+
+
+
 
     // Display Resource Information
     std::cout << "\n=== Resource Treasury ===" << std::endl;

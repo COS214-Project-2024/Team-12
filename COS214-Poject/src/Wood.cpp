@@ -1,17 +1,21 @@
 #include "Wood.h"
 
-// Constructor
+/// @brief Constructs a Wood object with specified quantity and unit cost.
+/// @param quantity The quantity of wood.
+/// @param unitCost The unit cost of the wood.
 Wood::Wood(int quantity, int unitCost)
     : ConstructionResourceProduct("Wood", quantity, unitCost) {
-
 }
 
-// Destructor
+/// @brief Destructor for Wood.
 Wood::~Wood() {
-    //std::cout << "Wood resource destroyed." << std::endl;
+    // Uncomment if destruction message is needed:
+    // std::cout << "Wood resource destroyed." << std::endl;
 }
 
-// Override displayStatus to provide specific information for Wood
+/// @brief Displays the current status of the wood resource.
+/// 
+/// Provides specific information for wood, including quantity, unit cost, and total cost.
 void Wood::displayStatus() {
     std::cout << "Resource: Wood\n"
               << "Quantity: " << getQuantity() << "\n"

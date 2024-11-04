@@ -8,7 +8,7 @@ Stone::Stone(int quantity, int unitCost)
 
 // Destructor
 Stone::~Stone() {
-    std::cout << "Stone resource destroyed." << std::endl;
+    //std::cout << "Stone resource destroyed." << std::endl;
 }
 
 // Override displayStatus to provide specific information for Stone

@@ -36,7 +36,7 @@ public:
     
     // Display methods
     void displayStatus() override;
-    std::string getBuildingType() override{
+    std::string getBuildingType() const override{
         return "Residential Building";
     }
     virtual std::string getDisplaySymbol() const = 0; // For map display
@@ -59,6 +59,18 @@ public:
     void setPowerSupply(std::shared_ptr<UtilityFlyweight> utility) { powerSupply = utility; }
     void setWasteManagement(std::shared_ptr<UtilityFlyweight> utility) { wasteManagement = utility; }
     void setSewageManagement(std::shared_ptr<UtilityFlyweight> utility) { sewageManagement = utility; }
+
+    virtual std::string getDisplayColor() const {
+        int coverage = getUtilityCoverage();
+        std::cout << "Residential coverage: " << coverage << " for " << getBuildingType() << std::endl;
+        if (coverage == 4) {
+            return "\033[1;32m"; // Green for full
+        } else if (coverage >= 2) {
+            return "\033[1;33m"; // Yellow for partial
+        } else {
+            return "\033[1;31m"; // Red for insufficient
+        }
+    }
 };
 
 #endif

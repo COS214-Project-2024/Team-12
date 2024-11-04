@@ -38,7 +38,7 @@ public:
 
     double getRadius() const;
 
-    std::string getBuildingType() override{
+    std::string getBuildingType() const override{
         return "Utility";
     }
 

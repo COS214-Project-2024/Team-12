@@ -16,8 +16,9 @@ public:
     House(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     
-    std::string getDisplaySymbol() const override { return "⌂"; }
-    std::string getBuildingType() override { return "House"; }
+
+    char getDisplaySymbol() const override { return 'H'; }
+    std::string getBuildingType() const override { return "House"; }
 };
 
 #endif

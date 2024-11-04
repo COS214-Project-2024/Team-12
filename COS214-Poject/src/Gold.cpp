@@ -8,7 +8,7 @@ Gold::Gold(int quantity, double marketValue)
 
 // Destructor
 Gold::~Gold() {
-    std::cout << "Gold resource destroyed." << std::endl;
+    //std::cout << "Gold resource destroyed." << std::endl;
 }
 
 // Override displayStatus to provide specific information for Gold

@@ -8,7 +8,7 @@ Wood::Wood(int quantity, int unitCost)
 
 // Destructor
 Wood::~Wood() {
-    std::cout << "Wood resource destroyed." << std::endl;
+    //std::cout << "Wood resource destroyed." << std::endl;
 }
 
 // Override displayStatus to provide specific information for Wood

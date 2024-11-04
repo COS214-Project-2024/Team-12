@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <map>
 
 
 class Government {
@@ -45,6 +46,10 @@ public:
 
     void decreasePopulation(int amount);
 
+    //Resource Tracking
+    void addProcessedResource(const std::string& resourceName, int amount, double value);
+
+
     Government() : money(10000), productionRate(1.0), mortalityRate(0.01), crimeRate(0.00), population(0), populationGrowth(0), EMPLOYMENT_RATE(0) {}  // Private constructor
 
 private:
@@ -67,6 +72,9 @@ private:
     int publicServiceAmount;
     int utilityAmount;
     int residentialAmount;
+
+    std::map<std::string, int> processedResources;  // Store processed resources
+    std::map<std::string, double> resourceValues;   // Store resource market values
 
 	void calculateTax();
 };

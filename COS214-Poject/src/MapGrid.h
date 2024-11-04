@@ -1,6 +1,7 @@
 #ifndef MAPGRID_H
 #define MAPGRID_H
 
+
 #include "CityComponent.h"
 #include "UtilityFlyweight.h"
 #include "ResidentialBuilding.h"
@@ -16,19 +17,42 @@
 #include "Monument.h"
 #include "Park.h"
 #include "CulturalCenter.h"
+
 #include <memory>
 #include <vector>
-#include <sstream>
-#include <iomanip>
+#include <string>
+#include <random>
+#include <set>
 #include <algorithm>
 #include <map>
 #include <array>
-#include <set>
-#include <unordered_set>
+#include <sstream>
+
+#include "ForwardDeclarations.h"
+#include "Location.h"
+#include "CityComponent.h"
+#include "ZoneComposite.h"
+#include "UtilityFlyweight.h"
+
+
+
 
 
 class MapGrid {
 private:
+
+    std::map<Location, std::shared_ptr<CityComponent>> gridMap;
+    std::map<Location, std::shared_ptr<IncomeResourceProduct>> incomeResourceMap;
+    std::map<Location, std::shared_ptr<ConstructionResourceProduct>> constructionResourceMap;
+
+    // In MapGrid.h
+    struct ResourceSpot {
+        std::shared_ptr<CityComponent> resource;
+        bool discovered;  // Whether the resource has been discovered
+    };
+
+    // Add method to find random empty position
+
 
 	// Add zone validation methods
 	bool isOverlappingZone(const Location& topLeft, const Location& bottomRight) const {
@@ -43,6 +67,7 @@ private:
     }
 
 	bool isCompatibleBuilding(const std::shared_ptr<CityComponent>& building,
+
 	const std::shared_ptr<ZoneComposite>& zone) const {
 		if(!building || !zone) return false;
         std::string buildingType = building->getBuildingType();
@@ -60,6 +85,7 @@ private:
         return false;
 	
 	}
+
 
     struct ZoneStyle {
         std::array<std::string, 9> borderChars; // Changed to std::string
@@ -139,6 +165,21 @@ private:
     }
 
 public:
+    Location getRandomEmptyLocation() const {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> disX(0, width - 1);
+        std::uniform_int_distribution<> disY(0, height - 1);
+        
+        Location loc;
+        do {
+            loc.x = disX(gen);
+            loc.y = disY(gen);
+        } while (!isValidLocation(loc) || grid[loc.y][loc.x].component != nullptr);
+        
+        return loc;
+    }
+
 	int getHeight() const {
 		return height;
 	}
@@ -164,24 +205,7 @@ public:
 
 
     // Method to get all buildings in a specific zone
-    std::vector<std::shared_ptr<CityComponent>> getBuildingsInZone(const std::shared_ptr<ZoneComposite>& zone) const {
-        std::vector<std::shared_ptr<CityComponent>> buildings;
-        
-        // Get zone boundaries
-        Location topLeft = zone->getTopLeft();
-        Location bottomRight = zone->getBottomRight();
-        
-        // Collect all buildings within zone boundaries
-        for (int y = topLeft.y; y <= bottomRight.y; y++) {
-            for (int x = topLeft.x; x <= bottomRight.x; x++) {
-                if (grid[y][x].component) {
-                    buildings.push_back(grid[y][x].component);
-                }
-            }
-        }
-        
-        return buildings;
-    }
+    std::vector<std::shared_ptr<CityComponent>> getBuildingsInZone(const std::shared_ptr<ZoneComposite>& zone) const;
 	// Enhanced placement checks
 	struct PlacementResult {
 		bool success;
@@ -262,20 +286,7 @@ public:
         return loc.x >= 0 && loc.x < width && loc.y >= 0 && loc.y < height;
     }
 
-    bool placeComponent(const Location& loc, std::shared_ptr<CityComponent> component) {
-        // Use the validation methods before placement
-        auto result = canPlaceBuilding(loc, component);
-        if (!result.success) {
-            std::cout << "\033[1;31m" << result.message << "\033[0m\n";
-            return false;
-        }
-
-        grid[loc.y][loc.x].component = component;
-        if (component) {
-            component->setLocation(loc);
-        }
-        return true;
-    }
+	bool placeComponent(const Location& loc, std::shared_ptr<CityComponent> component) ;
 
 	bool connectLocations(const Location& start, const Location& end, 
                         std::shared_ptr<Transport> transport) {
@@ -288,6 +299,7 @@ public:
             setCellSymbol(x, start.y, '-');
         }
     }
+
 
     // Set the endpoints
     setCellSymbol(start.x, start.y, (transport->getType() == "Road") ? 'R' : 'T');
@@ -320,6 +332,13 @@ public:
         }
     }
 
+    // void removeComponent(const Location& loc) {
+    //     if (isValidLocation(loc)) {
+    //         grid[loc.y][loc.x].component.reset();
+    //     }
+    // }
+
+
     std::shared_ptr<CityComponent> getComponent(const Location& loc) const {
         return isValidLocation(loc) ? grid[loc.y][loc.x].component : nullptr;
     }
@@ -331,29 +350,11 @@ public:
     //     }
     // }
 
-		void addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
-			if (isValidLocation(loc)) {
-				grid[loc.y][loc.x].affectingUtilities.push_back(utility);
-				
-				// If there's a building in this cell, connect it to the utility
-				if (auto building = grid[loc.y][loc.x].component) {
-					if (auto residential = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
-						// Connect utility to residential building using setters
-						if (utility->getName() == "Water Supply") residential->setWaterSupply(utility);
-						else if (utility->getName() == "Power Plant") residential->setPowerSupply(utility);
-						else if (utility->getName() == "Waste Management") residential->setWasteManagement(utility);
-						else if (utility->getName() == "Sewage System") residential->setSewageManagement(utility);
-					}
-					else if (auto commercial = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
-						// Connect utility to commercial building using setters
-						if (utility->getName() == "Water Supply") commercial->setWaterSupply(utility);
-						else if (utility->getName() == "Power Plant") commercial->setPowerSupply(utility);
-						else if (utility->getName() == "Waste Management") commercial->setWasteManagement(utility);
-						else if (utility->getName() == "Sewage System") commercial->setSewageManagement(utility);
-					}
-				}
-			}
-		}
+void addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility);
+
+// In MapGrid.h
+void displayCollectionRange(const Location& industryLoc);
+
 
 	void removeUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
     if (isValidLocation(loc)) {
@@ -372,6 +373,7 @@ public:
         if (!zone) return true;  // If no zone, any building is allowed
         return isCompatibleBuilding(building, zone);
     }
+
 
 std::string getDisplayString() const {
     std::stringstream ss;
@@ -566,6 +568,14 @@ if (cell.symbol == 'R') {
 
     return ss.str();
 }
+
+    void removeComponent(const Location& loc);
+
+    // Methods to remove resources from resource maps
+    void removeIncomeResource(const Location& loc);
+    void removeConstructionResource(const Location& loc);
+
+
 };
 
 #endif

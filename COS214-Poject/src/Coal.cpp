@@ -8,7 +8,7 @@ Coal::Coal(int quantity, double marketValue)
 
 // Destructor
 Coal::~Coal() {
-    std::cout << "Coal resource destroyed." << std::endl;
+   // std::cout << "Coal resource destroyed." << std::endl;
 }
 
 // Override displayStatus to provide specific information for Coal

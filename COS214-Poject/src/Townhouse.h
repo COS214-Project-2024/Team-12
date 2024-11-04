@@ -15,8 +15,9 @@ public:
     Townhouse(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
               std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     
-    std::string getDisplaySymbol() const override { return "T"; }
-    std::string getBuildingType() override { return "Townhouse"; }
+    char getDisplaySymbol() const override { return 'T'; }
+    std::string getBuildingType() const override { return "Townhouse"; }
+
 };
 
 #endif

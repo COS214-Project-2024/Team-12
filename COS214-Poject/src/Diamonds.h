@@ -11,6 +11,9 @@ public:
     Diamonds(int quantity, double marketValue);
     ~Diamonds();
     void displayStatus() override;
+    std::string getBuildingType() const {
+		return "Diamond";
+	}
 };
 
 #endif

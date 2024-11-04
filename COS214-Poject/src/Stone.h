@@ -12,7 +12,10 @@ public:
 
     ~Stone();
     void displayStatus() override;
-    
+
+    std::string getBuildingType() const {
+		return "Stone";
+	}
 };
 
 #endif

@@ -1,3 +1,4 @@
+
 // main.cpp
 #include "GameState.h"  // Add this first to resolve incomplete type error
 #include "MapGrid.h"
@@ -587,9 +588,11 @@ public:
 
 };
 
+
+
 int main() {
     try {
-        CityGame game(10, 10);
+        CityGame game(25, 25);
         game.run();
     } catch (const std::exception& e) {
         std::cerr << "\033[1;31mError: " << e.what() << "\033[0m\n";

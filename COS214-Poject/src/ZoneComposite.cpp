@@ -56,7 +56,7 @@ void ZoneComposite::displayStatus(){
     }
 }
 
-std::string ZoneComposite::getBuildingType(){
+std::string ZoneComposite::getBuildingType() const{
 	return zoneType;
 }
 

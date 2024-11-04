@@ -8,7 +8,7 @@ Steel::Steel(int quantity, int unitCost)
 
 // Destructor
 Steel::~Steel() {
-    std::cout << "Steel resource destroyed." << std::endl;
+    //std::cout << "Steel resource destroyed." << std::endl;
 }
 
 // Override displayStatus to provide specific information for Steel

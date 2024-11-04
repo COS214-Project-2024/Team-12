@@ -14,9 +14,10 @@ public:
     Flat();
     Flat(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
-    
-    std::string getDisplaySymbol() const override { return "F"; }
-    std::string getBuildingType() override { return "Flat"; }
+
+    char getDisplaySymbol() const override { return 'F'; }
+    std::string getBuildingType() const override { return "Flat"; }
+
 };
 
 #endif

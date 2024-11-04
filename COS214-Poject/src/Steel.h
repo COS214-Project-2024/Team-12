@@ -13,6 +13,9 @@ public:
 
     ~Steel();
     void displayStatus() override;
+    std::string getBuildingType() const {
+		return "Steel";
+	}
 };
 
 #endif

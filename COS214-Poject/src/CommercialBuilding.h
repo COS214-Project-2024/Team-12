@@ -33,7 +33,7 @@ public:
     bool isTaxPaid() const { return taxPaid; }
 
     // Display methods
-    std::string getBuildingType() override;
+    std::string getBuildingType() const override;
     void displayStatus() override;
     virtual char getDisplaySymbol() const = 0;
 
@@ -44,6 +44,18 @@ public:
     void setPowerSupply(std::shared_ptr<UtilityFlyweight> utility) { powerSupply = utility; }
     void setWasteManagement(std::shared_ptr<UtilityFlyweight> utility) { wasteManagement = utility; }
     void setSewageManagement(std::shared_ptr<UtilityFlyweight> utility) { sewageManagement = utility; }
+
+    virtual std::string getDisplayColor() const {
+        int coverage = getUtilityCoverage();
+        std::cout << "Commercial coverage: " << coverage << " for " << getBuildingType() << std::endl;
+        if (coverage == 4) {
+            return "\033[1;33m"; // Yellow for full
+        } else if (coverage >= 2) {
+            return "\033[1;37m"; // White for partial
+        } else {
+            return "\033[1;31m"; // Red for insufficient
+        }
+    }
 };
 
 #endif

@@ -8,7 +8,7 @@ Oil::Oil(int quantity, double marketValue)
 
 // Destructor
 Oil::~Oil() {
-    std::cout << "Oil resource destroyed." << std::endl;
+   // std::cout << "Oil resource destroyed." << std::endl;
 }
 
 // Override displayStatus to provide specific information for Oil

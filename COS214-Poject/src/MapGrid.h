@@ -13,7 +13,7 @@
 #include "FireStation.h"
 #include "PublicService.h"
 #include "PoliceStation.h"
-#include "Landmark.h"
+#include "LandMark.h"
 #include "Monument.h"
 #include "Park.h"
 #include "CulturalCenter.h"

@@ -90,7 +90,7 @@ private:
 
     //polution stuff
     int pollutionLevel;
-    void calculateTax();
+
 };
 
 

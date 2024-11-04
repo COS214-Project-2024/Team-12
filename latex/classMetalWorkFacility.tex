@@ -1,0 +1,158 @@
+\hypertarget{classMetalWorkFacility}{}\doxysection{Metal\+Work\+Facility Class Reference}
+\label{classMetalWorkFacility}\index{MetalWorkFacility@{MetalWorkFacility}}
+
+
+A concrete implementation of an \mbox{\hyperlink{classIndustry}{Industry}} for processing metal resources.  
+
+
+
+
+{\ttfamily \#include $<$Metal\+Work\+Facility.\+h$>$}
+
+
+
+Inheritance diagram for Metal\+Work\+Facility\+:
+% FIG 0
+
+
+Collaboration diagram for Metal\+Work\+Facility\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMetalWorkFacility_ad5caa4ac4719eeeca3c9ecf4e8000e78}{Metal\+Work\+Facility}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ gold, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ steel, \mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$\mbox{\hyperlink{classIndustry_a2fad7ff5b5ae98ded81dba7a60c95720}{grid}}, std\+::map$<$ std\+::string, int $>$ \&\mbox{\hyperlink{classIndustry_a451c5556304acbbdbd5fad53987cdfd8}{collected\+Resources}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classMetalWorkFacility}{Metal\+Work\+Facility}} for processing gold and steel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMetalWorkFacility_a9f506921a29f4fe41ec91b071175b2fd}{process\+Gold}} (int amount)
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of gold. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMetalWorkFacility_aa724f47f3e8a634e902577dbc73068fa}{process\+Steel}} (int amount)
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of steel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classMetalWorkFacility_a2de5976525c0361a9d50761d4fd66c52}{METAL\+\_\+\+WORK\+\_\+\+RANGE}} = 5
+\begin{DoxyCompactList}\small\item\em The range within which the \mbox{\hyperlink{classMetalWorkFacility}{Metal\+Work\+Facility}} can collect resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of an \mbox{\hyperlink{classIndustry}{Industry}} for processing metal resources. 
+
+The \mbox{\hyperlink{classMetalWorkFacility}{Metal\+Work\+Facility}} class handles the processing of income-\/generating and construction resources, specifically gold and steel. It maintains a collection range within which it can collect resources. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMetalWorkFacility_ad5caa4ac4719eeeca3c9ecf4e8000e78}\label{classMetalWorkFacility_ad5caa4ac4719eeeca3c9ecf4e8000e78}} 
+\index{MetalWorkFacility@{MetalWorkFacility}!MetalWorkFacility@{MetalWorkFacility}}
+\index{MetalWorkFacility@{MetalWorkFacility}!MetalWorkFacility@{MetalWorkFacility}}
+\doxysubsubsection{\texorpdfstring{MetalWorkFacility()}{MetalWorkFacility()}}
+{\footnotesize\ttfamily Metal\+Work\+Facility\+::\+Metal\+Work\+Facility (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$}]{gold,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$}]{steel,  }\item[{\mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$}]{grid,  }\item[{std\+::map$<$ std\+::string, int $>$ \&}]{collected\+Resources }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classMetalWorkFacility}{Metal\+Work\+Facility}} for processing gold and steel. 
+
+Constructs a \mbox{\hyperlink{classMetalWorkFacility}{Metal\+Work\+Facility}} with specific resources and a processing range.
+
+Initializes the facility to process income-\/generating gold resources and construction steel resources. It links to the map grid and a resource collection tracker.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gold} & A shared pointer to the income resource (gold) for processing. \\
+\hline
+{\em steel} & A shared pointer to the construction resource (steel) for processing. \\
+\hline
+{\em grid} & A pointer to the map grid where the facility is located. \\
+\hline
+{\em collected\+Resources} & A reference to a map tracking collected resource quantities.\\
+\hline
+\end{DoxyParams}
+Initializes the \mbox{\hyperlink{classMetalWorkFacility}{Metal\+Work\+Facility}} as an {\ttfamily \mbox{\hyperlink{classIndustry}{Industry}}} specializing in processing gold for income and steel for construction. Connects it to the {\ttfamily \mbox{\hyperlink{classMapGrid}{Map\+Grid}}} and tracks collected resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gold} & A shared pointer to the income-\/generating {\ttfamily \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}} (\mbox{\hyperlink{classGold}{Gold}}). \\
+\hline
+{\em steel} & A shared pointer to the construction {\ttfamily \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}} (\mbox{\hyperlink{classSteel}{Steel}}). \\
+\hline
+{\em grid} & Pointer to the {\ttfamily \mbox{\hyperlink{classMapGrid}{Map\+Grid}}} where the facility is located. \\
+\hline
+{\em collected\+Resources} & Reference to a map of collected resources for tracking processed items. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMetalWorkFacility_a9f506921a29f4fe41ec91b071175b2fd}\label{classMetalWorkFacility_a9f506921a29f4fe41ec91b071175b2fd}} 
+\index{MetalWorkFacility@{MetalWorkFacility}!processGold@{processGold}}
+\index{processGold@{processGold}!MetalWorkFacility@{MetalWorkFacility}}
+\doxysubsubsection{\texorpdfstring{processGold()}{processGold()}}
+{\footnotesize\ttfamily void Metal\+Work\+Facility\+::process\+Gold (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Processes a specified amount of gold. 
+
+Processes a specified amount of gold in the facility.
+
+Decreases the stored quantity of gold by the specified amount and adds the processed amount to collected resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of gold to process.\\
+\hline
+\end{DoxyParams}
+Initiates processing for a specified quantity of gold, reducing storage in the {\ttfamily \mbox{\hyperlink{classIncomeResourceProcessor}{Income\+Resource\+Processor}}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The quantity of gold to process. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classMetalWorkFacility_aa724f47f3e8a634e902577dbc73068fa}\label{classMetalWorkFacility_aa724f47f3e8a634e902577dbc73068fa}} 
+\index{MetalWorkFacility@{MetalWorkFacility}!processSteel@{processSteel}}
+\index{processSteel@{processSteel}!MetalWorkFacility@{MetalWorkFacility}}
+\doxysubsubsection{\texorpdfstring{processSteel()}{processSteel()}}
+{\footnotesize\ttfamily void Metal\+Work\+Facility\+::process\+Steel (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Processes a specified amount of steel. 
+
+Processes a specified amount of steel in the facility.
+
+Decreases the stored quantity of steel by the specified amount and adds the processed amount to collected resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of steel to process.\\
+\hline
+\end{DoxyParams}
+Initiates processing for a specified quantity of steel, reducing storage in the {\ttfamily \mbox{\hyperlink{classConstructionResourceProcessor}{Construction\+Resource\+Processor}}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The quantity of steel to process. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMetalWorkFacility_a2de5976525c0361a9d50761d4fd66c52}\label{classMetalWorkFacility_a2de5976525c0361a9d50761d4fd66c52}} 
+\index{MetalWorkFacility@{MetalWorkFacility}!METAL\_WORK\_RANGE@{METAL\_WORK\_RANGE}}
+\index{METAL\_WORK\_RANGE@{METAL\_WORK\_RANGE}!MetalWorkFacility@{MetalWorkFacility}}
+\doxysubsubsection{\texorpdfstring{METAL\_WORK\_RANGE}{METAL\_WORK\_RANGE}}
+{\footnotesize\ttfamily const int Metal\+Work\+Facility\+::\+METAL\+\_\+\+WORK\+\_\+\+RANGE = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The range within which the \mbox{\hyperlink{classMetalWorkFacility}{Metal\+Work\+Facility}} can collect resources. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{MetalWorkFacility_8h}{Metal\+Work\+Facility.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{MetalWorkFacility_8cpp}{Metal\+Work\+Facility.\+cpp}}\end{DoxyCompactItemize}

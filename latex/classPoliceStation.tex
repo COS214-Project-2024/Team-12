@@ -1,0 +1,177 @@
+\hypertarget{classPoliceStation}{}\doxysection{Police\+Station Class Reference}
+\label{classPoliceStation}\index{PoliceStation@{PoliceStation}}
+
+
+Represents a police station public service in the city.  
+
+
+
+
+{\ttfamily \#include $<$Police\+Station.\+h$>$}
+
+
+
+Inheritance diagram for Police\+Station\+:
+% FIG 0
+
+
+Collaboration diagram for Police\+Station\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPoliceStation_ab832ae28125befc54b62cb67ae429ab5}{Police\+Station}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classPoliceStation}{Police\+Station}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoliceStation_aceb6b83391bc764e99c61e0728b3f6c6}{Police\+Station}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ electricity, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classPublicService_a90e8197e95215be863ae3e60fff874c7}{waste\+Management}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage, std\+::string building\+Status)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPoliceStation}{Police\+Station}} with specified utilities and status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoliceStation_ae1a5a88b36a798b485a5c6ae581e5291}{$\sim$\+Police\+Station}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for \mbox{\hyperlink{classPoliceStation}{Police\+Station}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPoliceStation_a1ba78f8f96a22441758288756a926592}{provide\+Service}} () override
+\begin{DoxyCompactList}\small\item\em Provides police services to ensure public safety. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ \mbox{\hyperlink{classPoliceStation_a18352768f1eae3105608821935a66769}{clone}} () const
+\begin{DoxyCompactList}\small\item\em Creates a clone of the \mbox{\hyperlink{classPoliceStation}{Police\+Station}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPoliceStation_adfc6792da46e488d77c7ef15debba72b}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the current status of the Police Station. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classPoliceStation_a7b6a731f22baf21b525cf425799da7ce}{get\+Display\+Symbol}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the display symbol for the Police Station. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classPoliceStation_a56992d26cc157fd2c1c5688b515f7e43}{status}}
+\begin{DoxyCompactList}\small\item\em The operational status of the police station. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a police station public service in the city. 
+
+Represents a police station, which is a public service in the city.
+
+The \mbox{\hyperlink{classPoliceStation}{Police\+Station}} class inherits from the \mbox{\hyperlink{classPublicService}{Public\+Service}} class and includes utilities required for its operation, along with its status.
+
+The \mbox{\hyperlink{classPoliceStation}{Police\+Station}} class inherits from the \mbox{\hyperlink{classPublicService}{Public\+Service}} class and provides methods to manage its utilities and display its status. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPoliceStation_ab832ae28125befc54b62cb67ae429ab5}\label{classPoliceStation_ab832ae28125befc54b62cb67ae429ab5}} 
+\index{PoliceStation@{PoliceStation}!PoliceStation@{PoliceStation}}
+\index{PoliceStation@{PoliceStation}!PoliceStation@{PoliceStation}}
+\doxysubsubsection{\texorpdfstring{PoliceStation()}{PoliceStation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Police\+Station\+::\+Police\+Station (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classPoliceStation}{Police\+Station}}. 
+
+\mbox{\Hypertarget{classPoliceStation_aceb6b83391bc764e99c61e0728b3f6c6}\label{classPoliceStation_aceb6b83391bc764e99c61e0728b3f6c6}} 
+\index{PoliceStation@{PoliceStation}!PoliceStation@{PoliceStation}}
+\index{PoliceStation@{PoliceStation}!PoliceStation@{PoliceStation}}
+\doxysubsubsection{\texorpdfstring{PoliceStation()}{PoliceStation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Police\+Station\+::\+Police\+Station (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{electricity,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste\+Management,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage,  }\item[{std\+::string}]{building\+Status }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classPoliceStation}{Police\+Station}} with specified utilities and status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Shared pointer to the water utility. \\
+\hline
+{\em electricity} & Shared pointer to the electricity utility. \\
+\hline
+{\em waste\+Management} & Shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & Shared pointer to the sewage utility. \\
+\hline
+{\em building\+Status} & The operational status of the police station. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPoliceStation_ae1a5a88b36a798b485a5c6ae581e5291}\label{classPoliceStation_ae1a5a88b36a798b485a5c6ae581e5291}} 
+\index{PoliceStation@{PoliceStation}!````~PoliceStation@{$\sim$PoliceStation}}
+\index{````~PoliceStation@{$\sim$PoliceStation}!PoliceStation@{PoliceStation}}
+\doxysubsubsection{\texorpdfstring{$\sim$PoliceStation()}{~PoliceStation()}}
+{\footnotesize\ttfamily Police\+Station\+::$\sim$\+Police\+Station (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor for \mbox{\hyperlink{classPoliceStation}{Police\+Station}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPoliceStation_a18352768f1eae3105608821935a66769}\label{classPoliceStation_a18352768f1eae3105608821935a66769}} 
+\index{PoliceStation@{PoliceStation}!clone@{clone}}
+\index{clone@{clone}!PoliceStation@{PoliceStation}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ Police\+Station\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Creates a clone of the \mbox{\hyperlink{classPoliceStation}{Police\+Station}} object. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to the cloned \mbox{\hyperlink{classPoliceStation}{Police\+Station}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPoliceStation_adfc6792da46e488d77c7ef15debba72b}\label{classPoliceStation_adfc6792da46e488d77c7ef15debba72b}} 
+\index{PoliceStation@{PoliceStation}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!PoliceStation@{PoliceStation}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Police\+Station\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the current status of the Police Station. 
+
+This includes the connection status of water, electricity, waste management, sewage, and the overall operational status of the police station. 
+
+Implements \mbox{\hyperlink{classPublicService_ad14d878606280cf2c180c5c84a241a35}{Public\+Service}}.
+
+\mbox{\Hypertarget{classPoliceStation_a7b6a731f22baf21b525cf425799da7ce}\label{classPoliceStation_a7b6a731f22baf21b525cf425799da7ce}} 
+\index{PoliceStation@{PoliceStation}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!PoliceStation@{PoliceStation}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char Police\+Station\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the display symbol for the Police Station. 
+
+\begin{DoxyReturn}{Returns}
+The character symbol representing the Police Station (\textquotesingle{}P\textquotesingle{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPublicService_a2341fa64a393890c3e563832f8007109}{Public\+Service}}.
+
+\mbox{\Hypertarget{classPoliceStation_a1ba78f8f96a22441758288756a926592}\label{classPoliceStation_a1ba78f8f96a22441758288756a926592}} 
+\index{PoliceStation@{PoliceStation}!provideService@{provideService}}
+\index{provideService@{provideService}!PoliceStation@{PoliceStation}}
+\doxysubsubsection{\texorpdfstring{provideService()}{provideService()}}
+{\footnotesize\ttfamily void Police\+Station\+::provide\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides police services to ensure public safety. 
+
+
+
+Implements \mbox{\hyperlink{classPublicService_a6598b39358e9b4ad849671b526f37e32}{Public\+Service}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPoliceStation_a56992d26cc157fd2c1c5688b515f7e43}\label{classPoliceStation_a56992d26cc157fd2c1c5688b515f7e43}} 
+\index{PoliceStation@{PoliceStation}!status@{status}}
+\index{status@{status}!PoliceStation@{PoliceStation}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily std\+::string Police\+Station\+::status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The operational status of the police station. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PoliceStation_8h}{Police\+Station.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PoliceStation_8cpp}{Police\+Station.\+cpp}}\end{DoxyCompactItemize}

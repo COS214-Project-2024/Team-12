@@ -1,0 +1,115 @@
+\hypertarget{classDonationState}{}\doxysection{Donation\+State Class Reference}
+\label{classDonationState}\index{DonationState@{DonationState}}
+
+
+Represents the state where NPCs are in a donation mood.  
+
+
+
+
+{\ttfamily \#include $<$Donation\+State.\+h$>$}
+
+
+
+Inheritance diagram for Donation\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Donation\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDonationState_a8d29aec9e7bc25867be29f4e205a38cd}{handle}} () override
+\begin{DoxyCompactList}\small\item\em Handles the donation logic for NPCs in this state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDonationState_ae98246e9b01c5602bc98e2ab8e1bafe7}{get\+State\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Gets the name of the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ \mbox{\hyperlink{classDonationState_a581766b6524845b6159c439568757f92}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clones the current \mbox{\hyperlink{classDonationState}{Donation\+State}} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDonationState_a6e1bfce9fdc57d22ea9c6e2c83e432aa}{$\sim$\+Donation\+State}} () override
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classDonationState}{Donation\+State}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the state where NPCs are in a donation mood. 
+
+This class handles the logic for NPCs when they are willing to donate, affecting the city\textquotesingle{}s economy and happiness levels. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDonationState_a6e1bfce9fdc57d22ea9c6e2c83e432aa}\label{classDonationState_a6e1bfce9fdc57d22ea9c6e2c83e432aa}} 
+\index{DonationState@{DonationState}!````~DonationState@{$\sim$DonationState}}
+\index{````~DonationState@{$\sim$DonationState}!DonationState@{DonationState}}
+\doxysubsubsection{\texorpdfstring{$\sim$DonationState()}{~DonationState()}}
+{\footnotesize\ttfamily Donation\+State\+::$\sim$\+Donation\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classDonationState}{Donation\+State}} class. 
+
+Cleans up any resources associated with the \mbox{\hyperlink{classDonationState}{Donation\+State}}.
+
+This destructor cleans up any resources associated with the \mbox{\hyperlink{classDonationState}{Donation\+State}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDonationState_a581766b6524845b6159c439568757f92}\label{classDonationState_a581766b6524845b6159c439568757f92}} 
+\index{DonationState@{DonationState}!clone@{clone}}
+\index{clone@{clone}!DonationState@{DonationState}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ Donation\+State\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clones the current \mbox{\hyperlink{classDonationState}{Donation\+State}} instance. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to a new \mbox{\hyperlink{classDonationState}{Donation\+State}} instance that is a copy of this state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCState_a2a50964882d982c937f166ec31882c5a}{NPCState}}.
+
+\mbox{\Hypertarget{classDonationState_ae98246e9b01c5602bc98e2ab8e1bafe7}\label{classDonationState_ae98246e9b01c5602bc98e2ab8e1bafe7}} 
+\index{DonationState@{DonationState}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!DonationState@{DonationState}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily std\+::string Donation\+State\+::get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the current state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the donation state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCState_afc1b8c7e3747024d0bbb3ded0a4a7d56}{NPCState}}.
+
+\mbox{\Hypertarget{classDonationState_a8d29aec9e7bc25867be29f4e205a38cd}\label{classDonationState_a8d29aec9e7bc25867be29f4e205a38cd}} 
+\index{DonationState@{DonationState}!handle@{handle}}
+\index{handle@{handle}!DonationState@{DonationState}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Donation\+State\+::handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles the donation logic for NPCs in this state. 
+
+Handles the logic for NPCs in the donation state.
+
+This method is called to process the actions related to NPC donations, including any impacts on the game state or economy.
+
+This method calculates whether a donation occurs based on the number of NPCs in the donation state and updates the city\textquotesingle{}s funds accordingly.
+
+The chance of receiving an investment increases with the number of NPCs in the \mbox{\hyperlink{classDonationState}{Donation\+State}}. If an investment occurs, the specified amount is added to the city\textquotesingle{}s funds. 
+
+Implements \mbox{\hyperlink{classNPCState_ae26888ff3d2981261c9f3e937600c762}{NPCState}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{DonationState_8h}{Donation\+State.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{DonationState_8cpp}{Donation\+State.\+cpp}}\end{DoxyCompactItemize}

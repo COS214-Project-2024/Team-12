@@ -1,0 +1,410 @@
+\hypertarget{classCityGame}{}\doxysection{City\+Game Class Reference}
+\label{classCityGame}\index{CityGame@{CityGame}}
+
+
+{\ttfamily \#include $<$City\+Game.\+h$>$}
+
+
+
+Collaboration diagram for City\+Game\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCityGame_a094595f0fd5649f72071c8ff2278a032}{City\+Game}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classCityGame_ad26bc885078e071e3ad2b40787fcca18}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCityGame_a447257454d42498fa6414f663dd362ee}{initialize\+Resources}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_a28eda6c2828d30badbe5b6c7336f3dd8}{initialize\+Resource\+System}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_af7000f22e65262120bcfe970979a19bb}{spawn\+Resources}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classCityGame_a15cdbeda46ca45114a518077ae85f207}{spawn\+Income\+Resource}} (int count, int quantity, double market\+Value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classCityGame_aaec8cad6c61ec2ee45205b6f9dc6b9e8}{spawn\+Construction\+Resource}} (int count, int quantity, int unit\+Cost)
+\item 
+void \mbox{\hyperlink{classCityGame_a2a952bf02a70fa83a8a5a4beae9c825e}{display\+Menu}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_aaee4d6f62d60e6c34113f8ad46fd7f4e}{display\+Collected\+Resources}} () const
+\item 
+void \mbox{\hyperlink{classCityGame_a3b78d32844a4db23a82b07d9f63d98a6}{handle\+Save\+Game}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_aaa907d85379e71a9bf7a3d573f2d15da}{handle\+Load\+Game}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_a01a7b85fe89c57b12bfdb291c348f638}{handle\+Place\+Transport}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_a20ee6b8bf1a6f54c45cb73de906a8282}{handle\+Create\+Zone}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_ad755c82acf274907e597a339a8d7f860}{show\+Zone\+Info}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_adef5c49d44b7b5faf191ec7c7684148d}{handle\+Build\+Structure}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_ab3ae97e4d2c87052b1a0635d5a2bcb77}{handle\+Place\+Utility}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_ab286962cca4449729475a62431fa3bc6}{collect\+Taxes}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_a80179f957a5ae53c132901b08ac34fa5}{show\+Statistics}} ()
+\item 
+void \mbox{\hyperlink{classCityGame_addcb4e07c76c1f163be52021d4029c3b}{handle\+Process\+Resources}} ()
+\item 
+bool \mbox{\hyperlink{classCityGame_a8c1ac079824bf1cd9f7f82357d3c8384}{is\+Resource\+In\+Range}} (const \mbox{\hyperlink{structLocation}{Location}} \&industry\+Loc, const \mbox{\hyperlink{structLocation}{Location}} \&resource\+Loc, int collection\+Range) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::pair$<$ std\+::shared\+\_\+ptr$<$ T $>$, \mbox{\hyperlink{structLocation}{Location}} $>$ \mbox{\hyperlink{classCityGame_a17891fd8ce7f1f7e442ebb7e59f1ec2d}{find\+Closest\+Resource}} (const \mbox{\hyperlink{structLocation}{Location}} \&industry\+Loc)
+\item 
+void \mbox{\hyperlink{classCityGame_a89b46a8beeb45b9b4e07c03896a1b0f9}{add\+Collected\+Resource}} (const std\+::string \&resource\+Name, int amount)
+\item 
+bool \mbox{\hyperlink{classCityGame_a9f181c1d58a087535143ca99306916c4}{has\+Required\+Resources}} (const std\+::string \&building\+Type)
+\item 
+void \mbox{\hyperlink{classCityGame_abd072b5eec775c71177e098b93283075}{consume\+Resources}} (const std\+::string \&building\+Type)
+\item 
+void \mbox{\hyperlink{classCityGame_a0aae6b7ab46912ca89e0e2c01b16c525}{display\+Resource\+Requirements}} (const std\+::string \&building\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMapGrid}{Map\+Grid}} \mbox{\hyperlink{classCityGame_a7e9bbbc27665fa430790f6f422a22c09}{grid}}
+\item 
+\mbox{\hyperlink{classGameState}{Game\+State}} \mbox{\hyperlink{classCityGame_a0ed7ef6e95b609f3d378b68a5bde4b0d}{state}}
+\item 
+bool \mbox{\hyperlink{classCityGame_a4c17c9ebfd6c18b24821041ac7949df6}{running}} = true
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \mbox{\hyperlink{classCityGame_a9f94a72aa7e99ac8a2b5fc9cc98fc9db}{city}} = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classCityComposite}{City\+Composite}}$>$(\char`\"{}Adventure City\char`\"{})
+\item 
+std\+::map$<$ \mbox{\hyperlink{structLocation}{Location}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ $>$ \mbox{\hyperlink{classCityGame_ae6b7910ba0b94bd8fd3a629cac2bbd33}{income\+Resource\+Map}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{structLocation}{Location}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ $>$ \mbox{\hyperlink{classCityGame_ac579ec3bdb70115f9e81f4899728b2be}{construction\+Resource\+Map}}
+\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classCityGame_a37801077d9b4a2060d357b6ecdbc1883}{collected\+Resources}}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ $>$ \mbox{\hyperlink{classCityGame_aa102d8f13427850a6f566d08c71faa22}{income\+Resources}}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ $>$ \mbox{\hyperlink{classCityGame_a1e31e6a3e21c8974ca08889c917cd73c}{construction\+Resources}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}} $>$ $>$ \mbox{\hyperlink{classCityGame_a46eec0ab23a3f749d4721021adc01c47}{saved\+States}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classCityGame_a89eebb36273596268473299ac7a28b5d}{current\+Save\+Index}} = 0
+\item 
+\mbox{\hyperlink{classGovernment}{Government}} \& \mbox{\hyperlink{classCityGame_a8612a6eabbb19445d934329c85c6c0fc}{government}} = \mbox{\hyperlink{classGovernment_a18e3da6a1d6cae38f6eea1d50fe77288}{Government\+::get\+Instance}}()
+\item 
+\mbox{\hyperlink{classNPCManager}{NPCManager}} \& \mbox{\hyperlink{classCityGame_adf065d4e325113c13320c5e26054bf70}{npc\+Manager}} = \mbox{\hyperlink{classNPCManager_a29c578e3b969f7438d6025dd3fc21c50}{NPCManager\+::get\+Instance}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCityGame_a094595f0fd5649f72071c8ff2278a032}\label{classCityGame_a094595f0fd5649f72071c8ff2278a032}} 
+\index{CityGame@{CityGame}!CityGame@{CityGame}}
+\index{CityGame@{CityGame}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{CityGame()}{CityGame()}}
+{\footnotesize\ttfamily City\+Game\+::\+City\+Game (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCityGame_a89b46a8beeb45b9b4e07c03896a1b0f9}\label{classCityGame_a89b46a8beeb45b9b4e07c03896a1b0f9}} 
+\index{CityGame@{CityGame}!addCollectedResource@{addCollectedResource}}
+\index{addCollectedResource@{addCollectedResource}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{addCollectedResource()}{addCollectedResource()}}
+{\footnotesize\ttfamily void City\+Game\+::add\+Collected\+Resource (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{resource\+Name,  }\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_ab286962cca4449729475a62431fa3bc6}\label{classCityGame_ab286962cca4449729475a62431fa3bc6}} 
+\index{CityGame@{CityGame}!collectTaxes@{collectTaxes}}
+\index{collectTaxes@{collectTaxes}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{collectTaxes()}{collectTaxes()}}
+{\footnotesize\ttfamily void City\+Game\+::collect\+Taxes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classCityGame_abd072b5eec775c71177e098b93283075}\label{classCityGame_abd072b5eec775c71177e098b93283075}} 
+\index{CityGame@{CityGame}!consumeResources@{consumeResources}}
+\index{consumeResources@{consumeResources}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{consumeResources()}{consumeResources()}}
+{\footnotesize\ttfamily void City\+Game\+::consume\+Resources (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{building\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classCityGame_aaee4d6f62d60e6c34113f8ad46fd7f4e}\label{classCityGame_aaee4d6f62d60e6c34113f8ad46fd7f4e}} 
+\index{CityGame@{CityGame}!displayCollectedResources@{displayCollectedResources}}
+\index{displayCollectedResources@{displayCollectedResources}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{displayCollectedResources()}{displayCollectedResources()}}
+{\footnotesize\ttfamily void City\+Game\+::display\+Collected\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classCityGame_a2a952bf02a70fa83a8a5a4beae9c825e}\label{classCityGame_a2a952bf02a70fa83a8a5a4beae9c825e}} 
+\index{CityGame@{CityGame}!displayMenu@{displayMenu}}
+\index{displayMenu@{displayMenu}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{displayMenu()}{displayMenu()}}
+{\footnotesize\ttfamily void City\+Game\+::display\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classCityGame_a0aae6b7ab46912ca89e0e2c01b16c525}\label{classCityGame_a0aae6b7ab46912ca89e0e2c01b16c525}} 
+\index{CityGame@{CityGame}!displayResourceRequirements@{displayResourceRequirements}}
+\index{displayResourceRequirements@{displayResourceRequirements}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{displayResourceRequirements()}{displayResourceRequirements()}}
+{\footnotesize\ttfamily void City\+Game\+::display\+Resource\+Requirements (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{building\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_a17891fd8ce7f1f7e442ebb7e59f1ec2d}\label{classCityGame_a17891fd8ce7f1f7e442ebb7e59f1ec2d}} 
+\index{CityGame@{CityGame}!findClosestResource@{findClosestResource}}
+\index{findClosestResource@{findClosestResource}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{findClosestResource()}{findClosestResource()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::pair$<$std\+::shared\+\_\+ptr$<$T$>$, \mbox{\hyperlink{structLocation}{Location}}$>$ City\+Game\+::find\+Closest\+Resource (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{industry\+Loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_adef5c49d44b7b5faf191ec7c7684148d}\label{classCityGame_adef5c49d44b7b5faf191ec7c7684148d}} 
+\index{CityGame@{CityGame}!handleBuildStructure@{handleBuildStructure}}
+\index{handleBuildStructure@{handleBuildStructure}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{handleBuildStructure()}{handleBuildStructure()}}
+{\footnotesize\ttfamily void City\+Game\+::handle\+Build\+Structure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{classCityGame_a20ee6b8bf1a6f54c45cb73de906a8282}\label{classCityGame_a20ee6b8bf1a6f54c45cb73de906a8282}} 
+\index{CityGame@{CityGame}!handleCreateZone@{handleCreateZone}}
+\index{handleCreateZone@{handleCreateZone}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{handleCreateZone()}{handleCreateZone()}}
+{\footnotesize\ttfamily void City\+Game\+::handle\+Create\+Zone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{classCityGame_aaa907d85379e71a9bf7a3d573f2d15da}\label{classCityGame_aaa907d85379e71a9bf7a3d573f2d15da}} 
+\index{CityGame@{CityGame}!handleLoadGame@{handleLoadGame}}
+\index{handleLoadGame@{handleLoadGame}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{handleLoadGame()}{handleLoadGame()}}
+{\footnotesize\ttfamily void City\+Game\+::handle\+Load\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{classCityGame_a01a7b85fe89c57b12bfdb291c348f638}\label{classCityGame_a01a7b85fe89c57b12bfdb291c348f638}} 
+\index{CityGame@{CityGame}!handlePlaceTransport@{handlePlaceTransport}}
+\index{handlePlaceTransport@{handlePlaceTransport}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{handlePlaceTransport()}{handlePlaceTransport()}}
+{\footnotesize\ttfamily void City\+Game\+::handle\+Place\+Transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{classCityGame_ab3ae97e4d2c87052b1a0635d5a2bcb77}\label{classCityGame_ab3ae97e4d2c87052b1a0635d5a2bcb77}} 
+\index{CityGame@{CityGame}!handlePlaceUtility@{handlePlaceUtility}}
+\index{handlePlaceUtility@{handlePlaceUtility}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{handlePlaceUtility()}{handlePlaceUtility()}}
+{\footnotesize\ttfamily void City\+Game\+::handle\+Place\+Utility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 16
+Here is the caller graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{classCityGame_addcb4e07c76c1f163be52021d4029c3b}\label{classCityGame_addcb4e07c76c1f163be52021d4029c3b}} 
+\index{CityGame@{CityGame}!handleProcessResources@{handleProcessResources}}
+\index{handleProcessResources@{handleProcessResources}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{handleProcessResources()}{handleProcessResources()}}
+{\footnotesize\ttfamily void City\+Game\+::handle\+Process\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 18
+Here is the caller graph for this function\+:
+% FIG 19
+\mbox{\Hypertarget{classCityGame_a3b78d32844a4db23a82b07d9f63d98a6}\label{classCityGame_a3b78d32844a4db23a82b07d9f63d98a6}} 
+\index{CityGame@{CityGame}!handleSaveGame@{handleSaveGame}}
+\index{handleSaveGame@{handleSaveGame}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{handleSaveGame()}{handleSaveGame()}}
+{\footnotesize\ttfamily void City\+Game\+::handle\+Save\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 20
+Here is the caller graph for this function\+:
+% FIG 21
+\mbox{\Hypertarget{classCityGame_a9f181c1d58a087535143ca99306916c4}\label{classCityGame_a9f181c1d58a087535143ca99306916c4}} 
+\index{CityGame@{CityGame}!hasRequiredResources@{hasRequiredResources}}
+\index{hasRequiredResources@{hasRequiredResources}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{hasRequiredResources()}{hasRequiredResources()}}
+{\footnotesize\ttfamily bool City\+Game\+::has\+Required\+Resources (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{building\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 22
+Here is the caller graph for this function\+:
+% FIG 23
+\mbox{\Hypertarget{classCityGame_a447257454d42498fa6414f663dd362ee}\label{classCityGame_a447257454d42498fa6414f663dd362ee}} 
+\index{CityGame@{CityGame}!initializeResources@{initializeResources}}
+\index{initializeResources@{initializeResources}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{initializeResources()}{initializeResources()}}
+{\footnotesize\ttfamily void City\+Game\+::initialize\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+% FIG 24
+\mbox{\Hypertarget{classCityGame_a28eda6c2828d30badbe5b6c7336f3dd8}\label{classCityGame_a28eda6c2828d30badbe5b6c7336f3dd8}} 
+\index{CityGame@{CityGame}!initializeResourceSystem@{initializeResourceSystem}}
+\index{initializeResourceSystem@{initializeResourceSystem}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{initializeResourceSystem()}{initializeResourceSystem()}}
+{\footnotesize\ttfamily void City\+Game\+::initialize\+Resource\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 25
+Here is the caller graph for this function\+:
+% FIG 26
+\mbox{\Hypertarget{classCityGame_a8c1ac079824bf1cd9f7f82357d3c8384}\label{classCityGame_a8c1ac079824bf1cd9f7f82357d3c8384}} 
+\index{CityGame@{CityGame}!isResourceInRange@{isResourceInRange}}
+\index{isResourceInRange@{isResourceInRange}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{isResourceInRange()}{isResourceInRange()}}
+{\footnotesize\ttfamily bool City\+Game\+::is\+Resource\+In\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{industry\+Loc,  }\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{resource\+Loc,  }\item[{int}]{collection\+Range }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_ad26bc885078e071e3ad2b40787fcca18}\label{classCityGame_ad26bc885078e071e3ad2b40787fcca18}} 
+\index{CityGame@{CityGame}!run@{run}}
+\index{run@{run}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void City\+Game\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 27
+Here is the caller graph for this function\+:
+% FIG 28
+\mbox{\Hypertarget{classCityGame_a80179f957a5ae53c132901b08ac34fa5}\label{classCityGame_a80179f957a5ae53c132901b08ac34fa5}} 
+\index{CityGame@{CityGame}!showStatistics@{showStatistics}}
+\index{showStatistics@{showStatistics}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{showStatistics()}{showStatistics()}}
+{\footnotesize\ttfamily void City\+Game\+::show\+Statistics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 29
+Here is the caller graph for this function\+:
+% FIG 30
+\mbox{\Hypertarget{classCityGame_ad755c82acf274907e597a339a8d7f860}\label{classCityGame_ad755c82acf274907e597a339a8d7f860}} 
+\index{CityGame@{CityGame}!showZoneInfo@{showZoneInfo}}
+\index{showZoneInfo@{showZoneInfo}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{showZoneInfo()}{showZoneInfo()}}
+{\footnotesize\ttfamily void City\+Game\+::show\+Zone\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 31
+Here is the caller graph for this function\+:
+% FIG 32
+\mbox{\Hypertarget{classCityGame_aaec8cad6c61ec2ee45205b6f9dc6b9e8}\label{classCityGame_aaec8cad6c61ec2ee45205b6f9dc6b9e8}} 
+\index{CityGame@{CityGame}!spawnConstructionResource@{spawnConstructionResource}}
+\index{spawnConstructionResource@{spawnConstructionResource}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{spawnConstructionResource()}{spawnConstructionResource()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void City\+Game\+::spawn\+Construction\+Resource (\begin{DoxyParamCaption}\item[{int}]{count,  }\item[{int}]{quantity,  }\item[{int}]{unit\+Cost }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 33
+\mbox{\Hypertarget{classCityGame_a15cdbeda46ca45114a518077ae85f207}\label{classCityGame_a15cdbeda46ca45114a518077ae85f207}} 
+\index{CityGame@{CityGame}!spawnIncomeResource@{spawnIncomeResource}}
+\index{spawnIncomeResource@{spawnIncomeResource}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{spawnIncomeResource()}{spawnIncomeResource()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void City\+Game\+::spawn\+Income\+Resource (\begin{DoxyParamCaption}\item[{int}]{count,  }\item[{int}]{quantity,  }\item[{double}]{market\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 34
+\mbox{\Hypertarget{classCityGame_af7000f22e65262120bcfe970979a19bb}\label{classCityGame_af7000f22e65262120bcfe970979a19bb}} 
+\index{CityGame@{CityGame}!spawnResources@{spawnResources}}
+\index{spawnResources@{spawnResources}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{spawnResources()}{spawnResources()}}
+{\footnotesize\ttfamily void City\+Game\+::spawn\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+% FIG 35
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCityGame_a9f94a72aa7e99ac8a2b5fc9cc98fc9db}\label{classCityGame_a9f94a72aa7e99ac8a2b5fc9cc98fc9db}} 
+\index{CityGame@{CityGame}!city@{city}}
+\index{city@{city}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{city}{city}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classCityComponent}{City\+Component}}$>$ City\+Game\+::city = std\+::make\+\_\+shared$<$\mbox{\hyperlink{classCityComposite}{City\+Composite}}$>$(\char`\"{}Adventure City\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_a37801077d9b4a2060d357b6ecdbc1883}\label{classCityGame_a37801077d9b4a2060d357b6ecdbc1883}} 
+\index{CityGame@{CityGame}!collectedResources@{collectedResources}}
+\index{collectedResources@{collectedResources}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{collectedResources}{collectedResources}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ City\+Game\+::collected\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_ac579ec3bdb70115f9e81f4899728b2be}\label{classCityGame_ac579ec3bdb70115f9e81f4899728b2be}} 
+\index{CityGame@{CityGame}!constructionResourceMap@{constructionResourceMap}}
+\index{constructionResourceMap@{constructionResourceMap}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{constructionResourceMap}{constructionResourceMap}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{structLocation}{Location}}, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}$>$ $>$ City\+Game\+::construction\+Resource\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_a1e31e6a3e21c8974ca08889c917cd73c}\label{classCityGame_a1e31e6a3e21c8974ca08889c917cd73c}} 
+\index{CityGame@{CityGame}!constructionResources@{constructionResources}}
+\index{constructionResources@{constructionResources}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{constructionResources}{constructionResources}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}$>$ $>$ City\+Game\+::construction\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_a89eebb36273596268473299ac7a28b5d}\label{classCityGame_a89eebb36273596268473299ac7a28b5d}} 
+\index{CityGame@{CityGame}!currentSaveIndex@{currentSaveIndex}}
+\index{currentSaveIndex@{currentSaveIndex}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{currentSaveIndex}{currentSaveIndex}}
+{\footnotesize\ttfamily size\+\_\+t City\+Game\+::current\+Save\+Index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_a8612a6eabbb19445d934329c85c6c0fc}\label{classCityGame_a8612a6eabbb19445d934329c85c6c0fc}} 
+\index{CityGame@{CityGame}!government@{government}}
+\index{government@{government}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{government}{government}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGovernment}{Government}}\& City\+Game\+::government = \mbox{\hyperlink{classGovernment_a18e3da6a1d6cae38f6eea1d50fe77288}{Government\+::get\+Instance}}()\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_a7e9bbbc27665fa430790f6f422a22c09}\label{classCityGame_a7e9bbbc27665fa430790f6f422a22c09}} 
+\index{CityGame@{CityGame}!grid@{grid}}
+\index{grid@{grid}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{grid}{grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMapGrid}{Map\+Grid}} City\+Game\+::grid\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_ae6b7910ba0b94bd8fd3a629cac2bbd33}\label{classCityGame_ae6b7910ba0b94bd8fd3a629cac2bbd33}} 
+\index{CityGame@{CityGame}!incomeResourceMap@{incomeResourceMap}}
+\index{incomeResourceMap@{incomeResourceMap}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{incomeResourceMap}{incomeResourceMap}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{structLocation}{Location}}, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}$>$ $>$ City\+Game\+::income\+Resource\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_aa102d8f13427850a6f566d08c71faa22}\label{classCityGame_aa102d8f13427850a6f566d08c71faa22}} 
+\index{CityGame@{CityGame}!incomeResources@{incomeResources}}
+\index{incomeResources@{incomeResources}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{incomeResources}{incomeResources}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}$>$ $>$ City\+Game\+::income\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_adf065d4e325113c13320c5e26054bf70}\label{classCityGame_adf065d4e325113c13320c5e26054bf70}} 
+\index{CityGame@{CityGame}!npcManager@{npcManager}}
+\index{npcManager@{npcManager}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{npcManager}{npcManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNPCManager}{NPCManager}}\& City\+Game\+::npc\+Manager = \mbox{\hyperlink{classNPCManager_a29c578e3b969f7438d6025dd3fc21c50}{NPCManager\+::get\+Instance}}()\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_a4c17c9ebfd6c18b24821041ac7949df6}\label{classCityGame_a4c17c9ebfd6c18b24821041ac7949df6}} 
+\index{CityGame@{CityGame}!running@{running}}
+\index{running@{running}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily bool City\+Game\+::running = true\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_a46eec0ab23a3f749d4721021adc01c47}\label{classCityGame_a46eec0ab23a3f749d4721021adc01c47}} 
+\index{CityGame@{CityGame}!savedStates@{savedStates}}
+\index{savedStates@{savedStates}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{savedStates}{savedStates}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}}$>$ $>$ City\+Game\+::saved\+States\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCityGame_a0ed7ef6e95b609f3d378b68a5bde4b0d}\label{classCityGame_a0ed7ef6e95b609f3d378b68a5bde4b0d}} 
+\index{CityGame@{CityGame}!state@{state}}
+\index{state@{state}!CityGame@{CityGame}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGameState}{Game\+State}} City\+Game\+::state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CityGame_8h}{City\+Game.\+h}}\end{DoxyCompactItemize}

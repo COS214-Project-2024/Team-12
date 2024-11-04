@@ -1,0 +1,15 @@
+digraph "ResourceFactory"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ResourceFactory\n||+ ResourceFactory()\l+ ~ResourceFactory()\l+ createIncomeR()\l+ createConstructionR()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Abstract Factory class for creating resources."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{ChemicalFactory\n||+ ChemicalFactory()\l+ ~ChemicalFactory()\l+ createIncomeR()\l+ createConstructionR()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classChemicalFactory.html",tooltip="A factory class for creating chemical resources used in construction and income generation."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{MetalFactory\n||+ MetalFactory()\l+ ~MetalFactory()\l+ createIncomeR()\l+ createConstructionR()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMetalFactory.html",tooltip="A factory class for creating metal-related resources for income generation and construction."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node4 [label="{PlantFactory\n||+ PlantFactory()\l+ ~PlantFactory()\l+ createIncomeR()\l+ createConstructionR()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlantFactory.html",tooltip="A factory class for creating resources related to plants."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node5 [label="{StoneFactory\n||+ StoneFactory()\l+ ~StoneFactory()\l+ createIncomeR()\l+ createConstructionR()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classStoneFactory.html",tooltip="Factory class for creating stone resources, providing both income and construction products."];
+}

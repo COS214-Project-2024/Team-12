@@ -1,0 +1,124 @@
+\hypertarget{classOil}{}\doxysection{Oil Class Reference}
+\label{classOil}\index{Oil@{Oil}}
+
+
+Represents an oil resource in the simulation.  
+
+
+
+
+{\ttfamily \#include $<$Oil.\+h$>$}
+
+
+
+Inheritance diagram for Oil\+:
+% FIG 0
+
+
+Collaboration diagram for Oil\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOil_aaa6df7b76719f113c271edb7d33aba98}{Oil}} (int \mbox{\hyperlink{classIncomeResourceProduct_a6e42862b30d2020f945befb8d22f4743}{quantity}}, double \mbox{\hyperlink{classIncomeResourceProduct_a476ed7fa88280696223a7874d7f23182}{market\+Value}})
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classOil}{Oil}} resource. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOil_ae43ada5ec5b7d767928890255c707470}{$\sim$\+Oil}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classOil}{Oil}} resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOil_a8512f7fabf633947cd11f46170a34cb7}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the current status of the \mbox{\hyperlink{classOil}{Oil}} resource. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classOil_aae239829228adb45bad9a581d0b9fe24}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the building type of the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an oil resource in the simulation. 
+
+The \mbox{\hyperlink{classOil}{Oil}} class inherits from the \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} and provides functionality to manage the quantity and market value of oil resources. It allows for displaying the current status of the oil resource. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOil_aaa6df7b76719f113c271edb7d33aba98}\label{classOil_aaa6df7b76719f113c271edb7d33aba98}} 
+\index{Oil@{Oil}!Oil@{Oil}}
+\index{Oil@{Oil}!Oil@{Oil}}
+\doxysubsubsection{\texorpdfstring{Oil()}{Oil()}}
+{\footnotesize\ttfamily Oil\+::\+Oil (\begin{DoxyParamCaption}\item[{int}]{quantity,  }\item[{double}]{market\+Value }\end{DoxyParamCaption})}
+
+
+
+Constructs an \mbox{\hyperlink{classOil}{Oil}} resource. 
+
+Constructor for the \mbox{\hyperlink{classOil}{Oil}} resource.
+
+Initializes the \mbox{\hyperlink{classOil}{Oil}} resource with a specified quantity and market value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The initial quantity of the oil resource. \\
+\hline
+{\em market\+Value} & The market value per unit of the oil resource.\\
+\hline
+\end{DoxyParams}
+Initializes an instance of the \mbox{\hyperlink{classOil}{Oil}} resource with the specified quantity and market value. It sets the name of the resource to \char`\"{}\+Oil\char`\"{} and initializes the base class attributes using the constructor of \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The initial quantity of the oil resource. \\
+\hline
+{\em market\+Value} & The market value per unit of the oil resource. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOil_ae43ada5ec5b7d767928890255c707470}\label{classOil_ae43ada5ec5b7d767928890255c707470}} 
+\index{Oil@{Oil}!````~Oil@{$\sim$Oil}}
+\index{````~Oil@{$\sim$Oil}!Oil@{Oil}}
+\doxysubsubsection{\texorpdfstring{$\sim$Oil()}{~Oil()}}
+{\footnotesize\ttfamily Oil\+::$\sim$\+Oil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classOil}{Oil}} resource. 
+
+Cleans up any resources held by the \mbox{\hyperlink{classOil}{Oil}} object.
+
+Cleans up any resources held by the \mbox{\hyperlink{classOil}{Oil}} object. The destructor may be extended in the future to include additional cleanup logic. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOil_a8512f7fabf633947cd11f46170a34cb7}\label{classOil_a8512f7fabf633947cd11f46170a34cb7}} 
+\index{Oil@{Oil}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Oil@{Oil}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Oil\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the current status of the \mbox{\hyperlink{classOil}{Oil}} resource. 
+
+Outputs the name, quantity, market value per unit, and total value of the oil resource.
+
+Outputs the name, quantity, market value per unit, and total value of the oil resource to the standard output. This provides a comprehensive summary of the resource\textquotesingle{}s current state. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classOil_aae239829228adb45bad9a581d0b9fe24}\label{classOil_aae239829228adb45bad9a581d0b9fe24}} 
+\index{Oil@{Oil}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Oil@{Oil}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Oil\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the building type of the resource. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type, which is \char`\"{}\+Oil\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Oil_8h}{Oil.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Oil_8cpp}{Oil.\+cpp}}\end{DoxyCompactItemize}

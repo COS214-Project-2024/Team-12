@@ -1,0 +1,153 @@
+\hypertarget{classWaterSupply}{}\doxysection{Water\+Supply Class Reference}
+\label{classWaterSupply}\index{WaterSupply@{WaterSupply}}
+
+
+Represents a water supply utility that can be connected to city components within a specific radius.  
+
+
+
+
+{\ttfamily \#include $<$Water\+Supply.\+h$>$}
+
+
+
+Inheritance diagram for Water\+Supply\+:
+% FIG 0
+
+
+Collaboration diagram for Water\+Supply\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaterSupply_af780e010e5cfb1f455acbc7472ceee12}{Water\+Supply}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classWaterSupply}{Water\+Supply}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWaterSupply_aa1fe952484a190230f2df536c2201f29}{Water\+Supply}} (const std\+::string \&n, double c, int cap, double radius, bool operational, int l, int consumption, const std\+::map$<$ std\+::string, int $>$ \&resources)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classWaterSupply}{Water\+Supply}} object with specified attributes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaterSupply_a99d93a447020b4b29361d11bdad9926d}{connect}} (double distance)
+\begin{DoxyCompactList}\small\item\em Connects the water supply to a city component within a specified distance. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classWaterSupply_a45c1b8bb8594f65c6c9a88a370f87010}{clone}} () const
+\begin{DoxyCompactList}\small\item\em Clones the \mbox{\hyperlink{classWaterSupply}{Water\+Supply}} object, creating a new instance with the same attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a water supply utility that can be connected to city components within a specific radius. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWaterSupply_af780e010e5cfb1f455acbc7472ceee12}\label{classWaterSupply_af780e010e5cfb1f455acbc7472ceee12}} 
+\index{WaterSupply@{WaterSupply}!WaterSupply@{WaterSupply}}
+\index{WaterSupply@{WaterSupply}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{WaterSupply()}{WaterSupply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Water\+Supply\+::\+Water\+Supply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classWaterSupply}{Water\+Supply}}. 
+
+Default constructor for \mbox{\hyperlink{classWaterSupply}{Water\+Supply}}, initializing it with preset values.
+
+Sets moderate values for cost, capacity, radius, operational status, level, consumption, and required resources such as \mbox{\hyperlink{classSteel}{Steel}} and Plastic. \mbox{\Hypertarget{classWaterSupply_aa1fe952484a190230f2df536c2201f29}\label{classWaterSupply_aa1fe952484a190230f2df536c2201f29}} 
+\index{WaterSupply@{WaterSupply}!WaterSupply@{WaterSupply}}
+\index{WaterSupply@{WaterSupply}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{WaterSupply()}{WaterSupply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Water\+Supply\+::\+Water\+Supply (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{n,  }\item[{double}]{c,  }\item[{int}]{cap,  }\item[{double}]{radius,  }\item[{bool}]{operational,  }\item[{int}]{l,  }\item[{int}]{consumption,  }\item[{const std\+::map$<$ std\+::string, int $>$ \&}]{resources }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classWaterSupply}{Water\+Supply}} object with specified attributes. 
+
+Parameterized constructor for \mbox{\hyperlink{classWaterSupply}{Water\+Supply}} with customizable attributes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The name of the water supply. \\
+\hline
+{\em c} & The cost associated with the water supply. \\
+\hline
+{\em cap} & The capacity of the water supply. \\
+\hline
+{\em radius} & The effective radius within which the water supply can operate. \\
+\hline
+{\em operational} & The operational status of the water supply. \\
+\hline
+{\em l} & The water supply level. \\
+\hline
+{\em consumption} & The consumption rate of the water supply. \\
+\hline
+{\em resources} & A map of resources associated with the water supply.\\
+\hline
+\end{DoxyParams}
+Allows specifying the name, cost, capacity, effect radius, operational status, level, consumption rate, and required resources for the \mbox{\hyperlink{classWaterSupply}{Water\+Supply}} instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The name of the water supply. \\
+\hline
+{\em c} & The cost associated with the water supply. \\
+\hline
+{\em cap} & The capacity of the water supply. \\
+\hline
+{\em radius} & The effective radius within which the water supply can operate. \\
+\hline
+{\em operational} & The operational status of the water supply. \\
+\hline
+{\em l} & The level of the water supply. \\
+\hline
+{\em consumption} & The consumption rate of the water supply. \\
+\hline
+{\em resources} & A map of resources associated with the water supply. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWaterSupply_a45c1b8bb8594f65c6c9a88a370f87010}\label{classWaterSupply_a45c1b8bb8594f65c6c9a88a370f87010}} 
+\index{WaterSupply@{WaterSupply}!clone@{clone}}
+\index{clone@{clone}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ Water\+Supply\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clones the \mbox{\hyperlink{classWaterSupply}{Water\+Supply}} object, creating a new instance with the same attributes. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the cloned \mbox{\hyperlink{classWaterSupply}{Water\+Supply}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityFlyweight_aa85ec727b5273d2cdfa6e3c18a2ead81}{Utility\+Flyweight}}.
+
+\mbox{\Hypertarget{classWaterSupply_a99d93a447020b4b29361d11bdad9926d}\label{classWaterSupply_a99d93a447020b4b29361d11bdad9926d}} 
+\index{WaterSupply@{WaterSupply}!connect@{connect}}
+\index{connect@{connect}!WaterSupply@{WaterSupply}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily void Water\+Supply\+::connect (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Connects the water supply to a city component within a specified distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & The distance to the component being connected to.\\
+\hline
+\end{DoxyParams}
+Outputs a message indicating if the connection is successful based on the operational status and the distance relative to the effect radius.
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & The distance to the component being connected to. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtilityFlyweight_ab99284e3b40f660349b3bfbb3003dc6b}{Utility\+Flyweight}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{WaterSupply_8h}{Water\+Supply.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{WaterSupply_8cpp}{Water\+Supply.\+cpp}}\end{DoxyCompactItemize}

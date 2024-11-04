@@ -1,0 +1,62 @@
+\hypertarget{classHospitalFactory}{}\doxysection{Hospital\+Factory Class Reference}
+\label{classHospitalFactory}\index{HospitalFactory@{HospitalFactory}}
+
+
+A factory class for creating \mbox{\hyperlink{classHospital}{Hospital}} instances.  
+
+
+
+
+{\ttfamily \#include $<$Hospital\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Hospital\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Hospital\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ \mbox{\hyperlink{classHospitalFactory_ace41bc3f41264e5350c1bc53e72fdffe}{create\+Public\+Service}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new instance of a \mbox{\hyperlink{classPublicService}{Public\+Service}}, specifically a \mbox{\hyperlink{classHospital}{Hospital}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A factory class for creating \mbox{\hyperlink{classHospital}{Hospital}} instances. 
+
+The \mbox{\hyperlink{classHospitalFactory}{Hospital\+Factory}} class derives from \mbox{\hyperlink{classPublicServiceFactory}{Public\+Service\+Factory}} and implements a method to create \mbox{\hyperlink{classHospital}{Hospital}} objects. This allows for the encapsulation of the object creation logic, making it easier to manage dependencies and variations in the construction of \mbox{\hyperlink{classHospital}{Hospital}} objects. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHospitalFactory_ace41bc3f41264e5350c1bc53e72fdffe}\label{classHospitalFactory_ace41bc3f41264e5350c1bc53e72fdffe}} 
+\index{HospitalFactory@{HospitalFactory}!createPublicService@{createPublicService}}
+\index{createPublicService@{createPublicService}!HospitalFactory@{HospitalFactory}}
+\doxysubsubsection{\texorpdfstring{createPublicService()}{createPublicService()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ Hospital\+Factory\+::create\+Public\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a new instance of a \mbox{\hyperlink{classPublicService}{Public\+Service}}, specifically a \mbox{\hyperlink{classHospital}{Hospital}}. 
+
+Creates a new \mbox{\hyperlink{classHospital}{Hospital}} instance.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to the newly created \mbox{\hyperlink{classHospital}{Hospital}} object.
+\end{DoxyReturn}
+This method creates and returns a unique pointer to a newly instantiated \mbox{\hyperlink{classHospital}{Hospital}} object. The \mbox{\hyperlink{classHospital}{Hospital}} is constructed using the default constructor, which initializes its attributes.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to the created \mbox{\hyperlink{classHospital}{Hospital}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPublicServiceFactory_aa78ca5e8bad83e979985c738ad43c309}{Public\+Service\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{HospitalFactory_8h}{Hospital\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{HospitalFactory_8cpp}{Hospital\+Factory.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\hypertarget{classWoodAndCoalPlant}{}\doxysection{Wood\+And\+Coal\+Plant Class Reference}
+\label{classWoodAndCoalPlant}\index{WoodAndCoalPlant@{WoodAndCoalPlant}}
+
+
+\mbox{\hyperlink{classConcrete}{Concrete}} \mbox{\hyperlink{classIndustry}{Industry}} for processing lumber and coal resources.  
+
+
+
+
+{\ttfamily \#include $<$Wood\+And\+Coal\+Plant.\+h$>$}
+
+
+
+Inheritance diagram for Wood\+And\+Coal\+Plant\+:
+% FIG 0
+
+
+Collaboration diagram for Wood\+And\+Coal\+Plant\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWoodAndCoalPlant_a2fdd8d33c08385d5adf5a38b9b6c24ff}{Wood\+And\+Coal\+Plant}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ coal, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ wood, \mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$\mbox{\hyperlink{classIndustry_a2fad7ff5b5ae98ded81dba7a60c95720}{grid}}, std\+::map$<$ std\+::string, int $>$ \&\mbox{\hyperlink{classIndustry_a451c5556304acbbdbd5fad53987cdfd8}{collected\+Resources}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classWoodAndCoalPlant}{Wood\+And\+Coal\+Plant}} with specified resource dependencies and map grid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWoodAndCoalPlant_a4529e9e6aa4bd2ebb3639a8ad9b7f4b1}{process\+Coal}} (int amount)
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of coal and updates resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWoodAndCoalPlant_adb393197eb6d430716de853462d796ab}{process\+Wood}} (int amount)
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of wood and updates resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classWoodAndCoalPlant_a9e4cfa0afa2ba85a5b204c3a03a3d618}{WOOD\+\_\+\+COAL\+\_\+\+RANGE}} = 5
+\begin{DoxyCompactList}\small\item\em The processing range for wood and coal resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classConcrete}{Concrete}} \mbox{\hyperlink{classIndustry}{Industry}} for processing lumber and coal resources. 
+
+This class represents a specialized industry for handling wood and coal processing. It performs specific functions to process these resources and interact with the game map grid for resource management. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWoodAndCoalPlant_a2fdd8d33c08385d5adf5a38b9b6c24ff}\label{classWoodAndCoalPlant_a2fdd8d33c08385d5adf5a38b9b6c24ff}} 
+\index{WoodAndCoalPlant@{WoodAndCoalPlant}!WoodAndCoalPlant@{WoodAndCoalPlant}}
+\index{WoodAndCoalPlant@{WoodAndCoalPlant}!WoodAndCoalPlant@{WoodAndCoalPlant}}
+\doxysubsubsection{\texorpdfstring{WoodAndCoalPlant()}{WoodAndCoalPlant()}}
+{\footnotesize\ttfamily Wood\+And\+Coal\+Plant\+::\+Wood\+And\+Coal\+Plant (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$}]{coal,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$}]{wood,  }\item[{\mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$}]{grid,  }\item[{std\+::map$<$ std\+::string, int $>$ \&}]{collected\+Resources }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classWoodAndCoalPlant}{Wood\+And\+Coal\+Plant}} with specified resource dependencies and map grid. 
+
+Constructs a \mbox{\hyperlink{classWoodAndCoalPlant}{Wood\+And\+Coal\+Plant}} with specified coal and wood resources, grid, and resource collection map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em coal} & Shared pointer to the coal income resource product. \\
+\hline
+{\em wood} & Shared pointer to the wood construction resource product. \\
+\hline
+{\em grid} & Pointer to the map grid where the plant is located. \\
+\hline
+{\em collected\+Resources} & Map reference to store the collected resources.\\
+\hline
+{\em coal} & Shared pointer to the coal income resource product. \\
+\hline
+{\em wood} & Shared pointer to the wood construction resource product. \\
+\hline
+{\em grid} & Pointer to the map grid where the plant is located. \\
+\hline
+{\em collected\+Resources} & Reference to the map storing collected resources.\\
+\hline
+\end{DoxyParams}
+Initializes the \mbox{\hyperlink{classWoodAndCoalPlant}{Wood\+And\+Coal\+Plant}} with its specific name, income and construction resource processors, grid, resource collection map, and processing range. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWoodAndCoalPlant_a4529e9e6aa4bd2ebb3639a8ad9b7f4b1}\label{classWoodAndCoalPlant_a4529e9e6aa4bd2ebb3639a8ad9b7f4b1}} 
+\index{WoodAndCoalPlant@{WoodAndCoalPlant}!processCoal@{processCoal}}
+\index{processCoal@{processCoal}!WoodAndCoalPlant@{WoodAndCoalPlant}}
+\doxysubsubsection{\texorpdfstring{processCoal()}{processCoal()}}
+{\footnotesize\ttfamily void Wood\+And\+Coal\+Plant\+::process\+Coal (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Processes a specified amount of coal and updates resources. 
+
+Processes a specified amount of coal, updating resources accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of coal to be processed.\\
+\hline
+{\em amount} & The amount of coal to be processed.\\
+\hline
+\end{DoxyParams}
+Outputs a message to indicate coal processing and uses the inherited process\+Resources function to handle the processing logic. Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classWoodAndCoalPlant_adb393197eb6d430716de853462d796ab}\label{classWoodAndCoalPlant_adb393197eb6d430716de853462d796ab}} 
+\index{WoodAndCoalPlant@{WoodAndCoalPlant}!processWood@{processWood}}
+\index{processWood@{processWood}!WoodAndCoalPlant@{WoodAndCoalPlant}}
+\doxysubsubsection{\texorpdfstring{processWood()}{processWood()}}
+{\footnotesize\ttfamily void Wood\+And\+Coal\+Plant\+::process\+Wood (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Processes a specified amount of wood and updates resources. 
+
+Processes a specified amount of wood, updating resources accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of wood to be processed.\\
+\hline
+{\em amount} & The amount of wood to be processed.\\
+\hline
+\end{DoxyParams}
+Outputs a message to indicate wood processing and uses the inherited process\+Resources function to handle the processing logic. Here is the call graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWoodAndCoalPlant_a9e4cfa0afa2ba85a5b204c3a03a3d618}\label{classWoodAndCoalPlant_a9e4cfa0afa2ba85a5b204c3a03a3d618}} 
+\index{WoodAndCoalPlant@{WoodAndCoalPlant}!WOOD\_COAL\_RANGE@{WOOD\_COAL\_RANGE}}
+\index{WOOD\_COAL\_RANGE@{WOOD\_COAL\_RANGE}!WoodAndCoalPlant@{WoodAndCoalPlant}}
+\doxysubsubsection{\texorpdfstring{WOOD\_COAL\_RANGE}{WOOD\_COAL\_RANGE}}
+{\footnotesize\ttfamily const int Wood\+And\+Coal\+Plant\+::\+WOOD\+\_\+\+COAL\+\_\+\+RANGE = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The processing range for wood and coal resources. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{WoodAndCoalPlant_8h}{Wood\+And\+Coal\+Plant.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{WoodAndCoalPlant_8cpp}{Wood\+And\+Coal\+Plant.\+cpp}}\end{DoxyCompactItemize}

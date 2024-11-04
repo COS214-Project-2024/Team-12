@@ -1,0 +1,31 @@
+digraph "MapGrid::isCompatibleBuilding"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="MapGrid::isCompatibleBuilding",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="MapGrid::canPlaceBuilding",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMapGrid.html#a1eea5ceaf006f0fa065dc80a2dc798e8",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="CityGame::handleBuildStructure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#adef5c49d44b7b5faf191ec7c7684148d",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="CityGame::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#ad26bc885078e071e3ad2b40787fcca18",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="CityGame::handlePlaceUtility",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#ab3ae97e4d2c87052b1a0635d5a2bcb77",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="MapGrid::placeComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMapGrid.html#a43d1675c176dca9e37f6e1027f15c98a",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="PlaceComponentCommand\l::execute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlaceComponentCommand.html#aa4967ddf48dca107ef3b826f14e0e6bf",tooltip="Executes the command, placing the component on the MapGrid."];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="CityGame::spawnConstruction\lResource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#aaec8cad6c61ec2ee45205b6f9dc6b9e8",tooltip=" "];
+  Node7 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="CityGame::spawnIncomeResource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#a15cdbeda46ca45114a518077ae85f207",tooltip=" "];
+  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="PlaceComponentCommand\l::undo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlaceComponentCommand.html#a5350e34b31e5118bdf3c98e984434064",tooltip="Undoes the command, restoring the previous component at the location."];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="MapGrid::isValidZoneForBuilding",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMapGrid.html#ab136accd807ad55211796fc1feb40400",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+digraph "ReactingNPCS::clone"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="ReactingNPCS::clone",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Clones the NPC, creating a copy with the same state."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="CityComponent::addNpc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html#a9529b910e491c49a6ffa19db4e92b81c",tooltip="Adds an NPC observer to the component."];
+}

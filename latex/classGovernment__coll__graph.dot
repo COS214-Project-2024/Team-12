@@ -1,0 +1,7 @@
+digraph "Government"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Government\n|- money\l- productionRate\l- mortalityRate\l- crimeRate\l- population\l- populationGrowth\l- incomeTax\l- incomeTaxRate\l- EMPLOYMENT_RATE\l- publicServiceAmount\l- utilityAmount\l- residentialAmount\l- processedResources\l- resourceValues\l- pollutionLevel\l|+ Government()\l+ operator=()\l+ displayGovernmentStats()\l+ addMoney()\l+ reduceMoney()\l+ reduceProduction()\l+ increaseProduction()\l+ increaseCrimeRate()\l+ getMoney()\l+ getProductionRate()\land 21 more...\l+ getInstance()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The Government class manages the state and functionality of the government in the simulation."];
+}

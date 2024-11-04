@@ -1,0 +1,1413 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}README}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{7}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{11}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Class Documentation}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Cell Struct Reference}{17}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Member Data Documentation}{17}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}affectingUtilities}{17}{subsubsection.5.1.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}component}{17}{subsubsection.5.1.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.1.3}symbol}{17}{subsubsection.5.1.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.1.4}zone}{18}{subsubsection.5.1.1.4}%
+\contentsline {section}{\numberline {5.2}Chemical\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{18}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{18}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Constructor \& Destructor Documentation}{18}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}ChemicalFactory()}{18}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}$\sim $ChemicalFactory()}{19}{subsubsection.5.2.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Member Function Documentation}{19}{subsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.3.1}createConstructionR()}{19}{subsubsection.5.2.3.1}%
+\contentsline {subsubsection}{\numberline {5.2.3.2}createIncomeR()}{19}{subsubsection.5.2.3.2}%
+\contentsline {section}{\numberline {5.3}City\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Class Reference}{20}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{21}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Constructor \& Destructor Documentation}{21}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}$\sim $CityComponent()}{21}{subsubsection.5.3.2.1}%
+\contentsline {subsection}{\numberline {5.3.3}Member Function Documentation}{21}{subsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.1}accept()}{21}{subsubsection.5.3.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.3.2}add()}{22}{subsubsection.5.3.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3.3}addNpc()}{22}{subsubsection.5.3.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.4}displayStatus()}{22}{subsubsection.5.3.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.3.5}getBuildingType()}{23}{subsubsection.5.3.3.5}%
+\contentsline {subsubsection}{\numberline {5.3.3.6}getLocation()}{23}{subsubsection.5.3.3.6}%
+\contentsline {subsubsection}{\numberline {5.3.3.7}notify()}{23}{subsubsection.5.3.3.7}%
+\contentsline {subsubsection}{\numberline {5.3.3.8}remove()}{23}{subsubsection.5.3.3.8}%
+\contentsline {subsubsection}{\numberline {5.3.3.9}removeNpc()}{24}{subsubsection.5.3.3.9}%
+\contentsline {subsubsection}{\numberline {5.3.3.10}setLocation()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{24}{subsubsection.5.3.3.10}%
+\contentsline {subsubsection}{\numberline {5.3.3.11}setLocation()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{24}{subsubsection.5.3.3.11}%
+\contentsline {subsection}{\numberline {5.3.4}Member Data Documentation}{25}{subsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.4.1}location}{25}{subsubsection.5.3.4.1}%
+\contentsline {subsubsection}{\numberline {5.3.4.2}observers}{25}{subsubsection.5.3.4.2}%
+\contentsline {section}{\numberline {5.4}City\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Composite Class Reference}{25}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{26}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Constructor \& Destructor Documentation}{26}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}CityComposite()}{26}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}$\sim $CityComposite()}{26}{subsubsection.5.4.2.2}%
+\contentsline {subsection}{\numberline {5.4.3}Member Function Documentation}{26}{subsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.3.1}accept()}{27}{subsubsection.5.4.3.1}%
+\contentsline {subsubsection}{\numberline {5.4.3.2}add()}{27}{subsubsection.5.4.3.2}%
+\contentsline {subsubsection}{\numberline {5.4.3.3}adjustHappinessBasedOnTaxRate()}{27}{subsubsection.5.4.3.3}%
+\contentsline {subsubsection}{\numberline {5.4.3.4}checkCityConditions()}{28}{subsubsection.5.4.3.4}%
+\contentsline {subsubsection}{\numberline {5.4.3.5}connectZones()}{28}{subsubsection.5.4.3.5}%
+\contentsline {subsubsection}{\numberline {5.4.3.6}displayStatus()}{28}{subsubsection.5.4.3.6}%
+\contentsline {subsubsection}{\numberline {5.4.3.7}getBuildingType()}{29}{subsubsection.5.4.3.7}%
+\contentsline {subsubsection}{\numberline {5.4.3.8}remove()}{29}{subsubsection.5.4.3.8}%
+\contentsline {subsubsection}{\numberline {5.4.3.9}updateHappinessForNewComponent()}{29}{subsubsection.5.4.3.9}%
+\contentsline {subsection}{\numberline {5.4.4}Member Data Documentation}{30}{subsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.4.1}cityName}{30}{subsubsection.5.4.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.4.2}zones}{30}{subsubsection.5.4.4.2}%
+\contentsline {section}{\numberline {5.5}City\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game Class Reference}{30}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Constructor \& Destructor Documentation}{31}{subsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.1}CityGame()}{32}{subsubsection.5.5.1.1}%
+\contentsline {subsection}{\numberline {5.5.2}Member Function Documentation}{32}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}addCollectedResource()}{32}{subsubsection.5.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.5.2.2}collectTaxes()}{32}{subsubsection.5.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.3}consumeResources()}{32}{subsubsection.5.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.5.2.4}displayCollectedResources()}{32}{subsubsection.5.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.5.2.5}displayMenu()}{32}{subsubsection.5.5.2.5}%
+\contentsline {subsubsection}{\numberline {5.5.2.6}displayResourceRequirements()}{33}{subsubsection.5.5.2.6}%
+\contentsline {subsubsection}{\numberline {5.5.2.7}findClosestResource()}{33}{subsubsection.5.5.2.7}%
+\contentsline {subsubsection}{\numberline {5.5.2.8}handleBuildStructure()}{33}{subsubsection.5.5.2.8}%
+\contentsline {subsubsection}{\numberline {5.5.2.9}handleCreateZone()}{33}{subsubsection.5.5.2.9}%
+\contentsline {subsubsection}{\numberline {5.5.2.10}handleLoadGame()}{33}{subsubsection.5.5.2.10}%
+\contentsline {subsubsection}{\numberline {5.5.2.11}handlePlaceTransport()}{33}{subsubsection.5.5.2.11}%
+\contentsline {subsubsection}{\numberline {5.5.2.12}handlePlaceUtility()}{33}{subsubsection.5.5.2.12}%
+\contentsline {subsubsection}{\numberline {5.5.2.13}handleProcessResources()}{34}{subsubsection.5.5.2.13}%
+\contentsline {subsubsection}{\numberline {5.5.2.14}handleSaveGame()}{34}{subsubsection.5.5.2.14}%
+\contentsline {subsubsection}{\numberline {5.5.2.15}hasRequiredResources()}{34}{subsubsection.5.5.2.15}%
+\contentsline {subsubsection}{\numberline {5.5.2.16}initializeResources()}{34}{subsubsection.5.5.2.16}%
+\contentsline {subsubsection}{\numberline {5.5.2.17}initializeResourceSystem()}{34}{subsubsection.5.5.2.17}%
+\contentsline {subsubsection}{\numberline {5.5.2.18}isResourceInRange()}{34}{subsubsection.5.5.2.18}%
+\contentsline {subsubsection}{\numberline {5.5.2.19}run()}{34}{subsubsection.5.5.2.19}%
+\contentsline {subsubsection}{\numberline {5.5.2.20}showStatistics()}{35}{subsubsection.5.5.2.20}%
+\contentsline {subsubsection}{\numberline {5.5.2.21}showZoneInfo()}{35}{subsubsection.5.5.2.21}%
+\contentsline {subsubsection}{\numberline {5.5.2.22}spawnConstructionResource()}{35}{subsubsection.5.5.2.22}%
+\contentsline {subsubsection}{\numberline {5.5.2.23}spawnIncomeResource()}{35}{subsubsection.5.5.2.23}%
+\contentsline {subsubsection}{\numberline {5.5.2.24}spawnResources()}{35}{subsubsection.5.5.2.24}%
+\contentsline {subsection}{\numberline {5.5.3}Member Data Documentation}{35}{subsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.3.1}city}{35}{subsubsection.5.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.5.3.2}collectedResources}{36}{subsubsection.5.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.5.3.3}constructionResourceMap}{36}{subsubsection.5.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.5.3.4}constructionResources}{36}{subsubsection.5.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.5.3.5}currentSaveIndex}{36}{subsubsection.5.5.3.5}%
+\contentsline {subsubsection}{\numberline {5.5.3.6}government}{36}{subsubsection.5.5.3.6}%
+\contentsline {subsubsection}{\numberline {5.5.3.7}grid}{36}{subsubsection.5.5.3.7}%
+\contentsline {subsubsection}{\numberline {5.5.3.8}incomeResourceMap}{36}{subsubsection.5.5.3.8}%
+\contentsline {subsubsection}{\numberline {5.5.3.9}incomeResources}{37}{subsubsection.5.5.3.9}%
+\contentsline {subsubsection}{\numberline {5.5.3.10}npcManager}{37}{subsubsection.5.5.3.10}%
+\contentsline {subsubsection}{\numberline {5.5.3.11}running}{37}{subsubsection.5.5.3.11}%
+\contentsline {subsubsection}{\numberline {5.5.3.12}savedStates}{37}{subsubsection.5.5.3.12}%
+\contentsline {subsubsection}{\numberline {5.5.3.13}state}{37}{subsubsection.5.5.3.13}%
+\contentsline {section}{\numberline {5.6}Coal Class Reference}{37}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{38}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Constructor \& Destructor Documentation}{38}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}Coal()}{38}{subsubsection.5.6.2.1}%
+\contentsline {subsubsection}{\numberline {5.6.2.2}$\sim $Coal()}{38}{subsubsection.5.6.2.2}%
+\contentsline {subsection}{\numberline {5.6.3}Member Function Documentation}{39}{subsection.5.6.3}%
+\contentsline {subsubsection}{\numberline {5.6.3.1}displayStatus()}{39}{subsubsection.5.6.3.1}%
+\contentsline {subsubsection}{\numberline {5.6.3.2}getBuildingType()}{39}{subsubsection.5.6.3.2}%
+\contentsline {section}{\numberline {5.7}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy Class Reference}{39}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{40}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Constructor \& Destructor Documentation}{40}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}$\sim $CollectionStrategy()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{40}{subsubsection.5.7.2.1}%
+\contentsline {subsubsection}{\numberline {5.7.2.2}$\sim $CollectionStrategy()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{40}{subsubsection.5.7.2.2}%
+\contentsline {subsection}{\numberline {5.7.3}Member Function Documentation}{40}{subsection.5.7.3}%
+\contentsline {subsubsection}{\numberline {5.7.3.1}collect()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{40}{subsubsection.5.7.3.1}%
+\contentsline {subsubsection}{\numberline {5.7.3.2}collect()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{41}{subsubsection.5.7.3.2}%
+\contentsline {section}{\numberline {5.8}Command Class Reference}{41}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{42}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Constructor \& Destructor Documentation}{42}{subsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.1}$\sim $Command()}{42}{subsubsection.5.8.2.1}%
+\contentsline {subsection}{\numberline {5.8.3}Member Function Documentation}{42}{subsection.5.8.3}%
+\contentsline {subsubsection}{\numberline {5.8.3.1}clone()}{42}{subsubsection.5.8.3.1}%
+\contentsline {subsubsection}{\numberline {5.8.3.2}execute()}{43}{subsubsection.5.8.3.2}%
+\contentsline {subsubsection}{\numberline {5.8.3.3}undo()}{43}{subsubsection.5.8.3.3}%
+\contentsline {section}{\numberline {5.9}Commercial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building Class Reference}{43}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{44}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Constructor \& Destructor Documentation}{44}{subsection.5.9.2}%
+\contentsline {subsubsection}{\numberline {5.9.2.1}CommercialBuilding()}{44}{subsubsection.5.9.2.1}%
+\contentsline {subsection}{\numberline {5.9.3}Member Function Documentation}{45}{subsection.5.9.3}%
+\contentsline {subsubsection}{\numberline {5.9.3.1}accept()}{45}{subsubsection.5.9.3.1}%
+\contentsline {subsubsection}{\numberline {5.9.3.2}displayStatus()}{46}{subsubsection.5.9.3.2}%
+\contentsline {subsubsection}{\numberline {5.9.3.3}getBuildingType()}{46}{subsubsection.5.9.3.3}%
+\contentsline {subsubsection}{\numberline {5.9.3.4}getDisplayColor()}{46}{subsubsection.5.9.3.4}%
+\contentsline {subsubsection}{\numberline {5.9.3.5}getDisplaySymbol()}{47}{subsubsection.5.9.3.5}%
+\contentsline {subsubsection}{\numberline {5.9.3.6}getPrice()}{47}{subsubsection.5.9.3.6}%
+\contentsline {subsubsection}{\numberline {5.9.3.7}getUtilityCoverage()}{47}{subsubsection.5.9.3.7}%
+\contentsline {subsubsection}{\numberline {5.9.3.8}isTaxPaid()}{47}{subsubsection.5.9.3.8}%
+\contentsline {subsubsection}{\numberline {5.9.3.9}setPowerSupply()}{47}{subsubsection.5.9.3.9}%
+\contentsline {subsubsection}{\numberline {5.9.3.10}setSewageManagement()}{48}{subsubsection.5.9.3.10}%
+\contentsline {subsubsection}{\numberline {5.9.3.11}setTaxPaid()}{48}{subsubsection.5.9.3.11}%
+\contentsline {subsubsection}{\numberline {5.9.3.12}setWasteManagement()}{48}{subsubsection.5.9.3.12}%
+\contentsline {subsubsection}{\numberline {5.9.3.13}setWaterSupply()}{49}{subsubsection.5.9.3.13}%
+\contentsline {subsection}{\numberline {5.9.4}Member Data Documentation}{49}{subsection.5.9.4}%
+\contentsline {subsubsection}{\numberline {5.9.4.1}powerSupply}{49}{subsubsection.5.9.4.1}%
+\contentsline {subsubsection}{\numberline {5.9.4.2}price}{49}{subsubsection.5.9.4.2}%
+\contentsline {subsubsection}{\numberline {5.9.4.3}sewageManagement}{49}{subsubsection.5.9.4.3}%
+\contentsline {subsubsection}{\numberline {5.9.4.4}taxPaid}{49}{subsubsection.5.9.4.4}%
+\contentsline {subsubsection}{\numberline {5.9.4.5}wasteManagement}{50}{subsubsection.5.9.4.5}%
+\contentsline {subsubsection}{\numberline {5.9.4.6}waterSupply}{50}{subsubsection.5.9.4.6}%
+\contentsline {section}{\numberline {5.10}Commercial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{50}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{50}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Constructor \& Destructor Documentation}{50}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}$\sim $CommercialFactory()}{51}{subsubsection.5.10.2.1}%
+\contentsline {subsection}{\numberline {5.10.3}Member Function Documentation}{51}{subsection.5.10.3}%
+\contentsline {subsubsection}{\numberline {5.10.3.1}createBuilding()}{51}{subsubsection.5.10.3.1}%
+\contentsline {section}{\numberline {5.11}Concrete Class Reference}{51}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{52}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Constructor \& Destructor Documentation}{52}{subsection.5.11.2}%
+\contentsline {subsubsection}{\numberline {5.11.2.1}Concrete()}{52}{subsubsection.5.11.2.1}%
+\contentsline {subsubsection}{\numberline {5.11.2.2}$\sim $Concrete()}{52}{subsubsection.5.11.2.2}%
+\contentsline {subsection}{\numberline {5.11.3}Member Function Documentation}{52}{subsection.5.11.3}%
+\contentsline {subsubsection}{\numberline {5.11.3.1}displayStatus()}{53}{subsubsection.5.11.3.1}%
+\contentsline {subsubsection}{\numberline {5.11.3.2}getBuildingType()}{53}{subsubsection.5.11.3.2}%
+\contentsline {section}{\numberline {5.12}Concrete\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tax\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collector Class Reference}{53}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{54}{subsection.5.12.1}%
+\contentsline {subsection}{\numberline {5.12.2}Member Function Documentation}{54}{subsection.5.12.2}%
+\contentsline {subsubsection}{\numberline {5.12.2.1}visit()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{54}{subsubsection.5.12.2.1}%
+\contentsline {subsubsection}{\numberline {5.12.2.2}visit()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{54}{subsubsection.5.12.2.2}%
+\contentsline {subsubsection}{\numberline {5.12.2.3}visit()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{55}{subsubsection.5.12.2.3}%
+\contentsline {section}{\numberline {5.13}Construction\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processor Class Reference}{56}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{56}{subsection.5.13.1}%
+\contentsline {subsection}{\numberline {5.13.2}Constructor \& Destructor Documentation}{56}{subsection.5.13.2}%
+\contentsline {subsubsection}{\numberline {5.13.2.1}ConstructionResourceProcessor()}{56}{subsubsection.5.13.2.1}%
+\contentsline {subsection}{\numberline {5.13.3}Member Function Documentation}{57}{subsection.5.13.3}%
+\contentsline {subsubsection}{\numberline {5.13.3.1}display()}{57}{subsubsection.5.13.3.1}%
+\contentsline {subsubsection}{\numberline {5.13.3.2}getCurrentStorage()}{57}{subsubsection.5.13.3.2}%
+\contentsline {subsubsection}{\numberline {5.13.3.3}process()}{57}{subsubsection.5.13.3.3}%
+\contentsline {subsubsection}{\numberline {5.13.3.4}store()}{58}{subsubsection.5.13.3.4}%
+\contentsline {subsection}{\numberline {5.13.4}Member Data Documentation}{58}{subsection.5.13.4}%
+\contentsline {subsubsection}{\numberline {5.13.4.1}currentStorage}{58}{subsubsection.5.13.4.1}%
+\contentsline {subsubsection}{\numberline {5.13.4.2}maxStorage}{59}{subsubsection.5.13.4.2}%
+\contentsline {subsubsection}{\numberline {5.13.4.3}resource}{59}{subsubsection.5.13.4.3}%
+\contentsline {section}{\numberline {5.14}Construction\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Product Class Reference}{59}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{60}{subsection.5.14.1}%
+\contentsline {subsection}{\numberline {5.14.2}Constructor \& Destructor Documentation}{60}{subsection.5.14.2}%
+\contentsline {subsubsection}{\numberline {5.14.2.1}ConstructionResourceProduct()}{60}{subsubsection.5.14.2.1}%
+\contentsline {subsubsection}{\numberline {5.14.2.2}$\sim $ConstructionResourceProduct()}{60}{subsubsection.5.14.2.2}%
+\contentsline {subsection}{\numberline {5.14.3}Member Function Documentation}{60}{subsection.5.14.3}%
+\contentsline {subsubsection}{\numberline {5.14.3.1}accept()}{61}{subsubsection.5.14.3.1}%
+\contentsline {subsubsection}{\numberline {5.14.3.2}ConsumeResource()}{61}{subsubsection.5.14.3.2}%
+\contentsline {subsubsection}{\numberline {5.14.3.3}displayStatus()}{61}{subsubsection.5.14.3.3}%
+\contentsline {subsubsection}{\numberline {5.14.3.4}getBuildingType()}{61}{subsubsection.5.14.3.4}%
+\contentsline {subsubsection}{\numberline {5.14.3.5}getLocation()}{62}{subsubsection.5.14.3.5}%
+\contentsline {subsubsection}{\numberline {5.14.3.6}getName()}{62}{subsubsection.5.14.3.6}%
+\contentsline {subsubsection}{\numberline {5.14.3.7}getQuantity()}{62}{subsubsection.5.14.3.7}%
+\contentsline {subsubsection}{\numberline {5.14.3.8}getTotalCost()}{62}{subsubsection.5.14.3.8}%
+\contentsline {subsubsection}{\numberline {5.14.3.9}getUnitCost()}{63}{subsubsection.5.14.3.9}%
+\contentsline {subsubsection}{\numberline {5.14.3.10}isReadyForCollection()}{63}{subsubsection.5.14.3.10}%
+\contentsline {subsubsection}{\numberline {5.14.3.11}replenish()}{63}{subsubsection.5.14.3.11}%
+\contentsline {subsubsection}{\numberline {5.14.3.12}setLocation()}{63}{subsubsection.5.14.3.12}%
+\contentsline {subsection}{\numberline {5.14.4}Member Data Documentation}{64}{subsection.5.14.4}%
+\contentsline {subsubsection}{\numberline {5.14.4.1}location}{64}{subsubsection.5.14.4.1}%
+\contentsline {subsubsection}{\numberline {5.14.4.2}name}{64}{subsubsection.5.14.4.2}%
+\contentsline {subsubsection}{\numberline {5.14.4.3}quantity}{64}{subsubsection.5.14.4.3}%
+\contentsline {subsubsection}{\numberline {5.14.4.4}readyForCollection}{64}{subsubsection.5.14.4.4}%
+\contentsline {subsubsection}{\numberline {5.14.4.5}unitCost}{64}{subsubsection.5.14.4.5}%
+\contentsline {section}{\numberline {5.15}Crime\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State Class Reference}{65}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{65}{subsection.5.15.1}%
+\contentsline {subsection}{\numberline {5.15.2}Constructor \& Destructor Documentation}{65}{subsection.5.15.2}%
+\contentsline {subsubsection}{\numberline {5.15.2.1}$\sim $CrimeState()}{65}{subsubsection.5.15.2.1}%
+\contentsline {subsection}{\numberline {5.15.3}Member Function Documentation}{65}{subsection.5.15.3}%
+\contentsline {subsubsection}{\numberline {5.15.3.1}clone()}{66}{subsubsection.5.15.3.1}%
+\contentsline {subsubsection}{\numberline {5.15.3.2}getStateName()}{66}{subsubsection.5.15.3.2}%
+\contentsline {subsubsection}{\numberline {5.15.3.3}handle()}{66}{subsubsection.5.15.3.3}%
+\contentsline {section}{\numberline {5.16}Crystal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Craft\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Industry Class Reference}{67}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{67}{subsection.5.16.1}%
+\contentsline {subsection}{\numberline {5.16.2}Constructor \& Destructor Documentation}{67}{subsection.5.16.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.1}CrystalCraftIndustry()}{67}{subsubsection.5.16.2.1}%
+\contentsline {subsection}{\numberline {5.16.3}Member Function Documentation}{68}{subsection.5.16.3}%
+\contentsline {subsubsection}{\numberline {5.16.3.1}processDiamond()}{68}{subsubsection.5.16.3.1}%
+\contentsline {subsubsection}{\numberline {5.16.3.2}processStone()}{68}{subsubsection.5.16.3.2}%
+\contentsline {subsection}{\numberline {5.16.4}Member Data Documentation}{69}{subsection.5.16.4}%
+\contentsline {subsubsection}{\numberline {5.16.4.1}CRYSTAL\_CRAFT\_RANGE}{69}{subsubsection.5.16.4.1}%
+\contentsline {section}{\numberline {5.17}Cultural\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Center Class Reference}{69}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{70}{subsection.5.17.1}%
+\contentsline {subsection}{\numberline {5.17.2}Constructor \& Destructor Documentation}{70}{subsection.5.17.2}%
+\contentsline {subsubsection}{\numberline {5.17.2.1}CulturalCenter()}{70}{subsubsection.5.17.2.1}%
+\contentsline {subsubsection}{\numberline {5.17.2.2}$\sim $CulturalCenter()}{71}{subsubsection.5.17.2.2}%
+\contentsline {subsection}{\numberline {5.17.3}Member Function Documentation}{71}{subsection.5.17.3}%
+\contentsline {subsubsection}{\numberline {5.17.3.1}clone()}{71}{subsubsection.5.17.3.1}%
+\contentsline {subsubsection}{\numberline {5.17.3.2}displayStatus()}{71}{subsubsection.5.17.3.2}%
+\contentsline {subsubsection}{\numberline {5.17.3.3}getBuildingType()}{71}{subsubsection.5.17.3.3}%
+\contentsline {section}{\numberline {5.18}Cultural\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Center\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{72}{section.5.18}%
+\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{72}{subsection.5.18.1}%
+\contentsline {subsection}{\numberline {5.18.2}Member Function Documentation}{72}{subsection.5.18.2}%
+\contentsline {subsubsection}{\numberline {5.18.2.1}createLandMark()}{72}{subsubsection.5.18.2.1}%
+\contentsline {section}{\numberline {5.19}Diamonds Class Reference}{73}{section.5.19}%
+\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{73}{subsection.5.19.1}%
+\contentsline {subsection}{\numberline {5.19.2}Constructor \& Destructor Documentation}{73}{subsection.5.19.2}%
+\contentsline {subsubsection}{\numberline {5.19.2.1}Diamonds()}{73}{subsubsection.5.19.2.1}%
+\contentsline {subsubsection}{\numberline {5.19.2.2}$\sim $Diamonds()}{74}{subsubsection.5.19.2.2}%
+\contentsline {subsection}{\numberline {5.19.3}Member Function Documentation}{74}{subsection.5.19.3}%
+\contentsline {subsubsection}{\numberline {5.19.3.1}displayStatus()}{74}{subsubsection.5.19.3.1}%
+\contentsline {subsubsection}{\numberline {5.19.3.2}getBuildingType()}{74}{subsubsection.5.19.3.2}%
+\contentsline {section}{\numberline {5.20}Donation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State Class Reference}{75}{section.5.20}%
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{75}{subsection.5.20.1}%
+\contentsline {subsection}{\numberline {5.20.2}Constructor \& Destructor Documentation}{75}{subsection.5.20.2}%
+\contentsline {subsubsection}{\numberline {5.20.2.1}$\sim $DonationState()}{75}{subsubsection.5.20.2.1}%
+\contentsline {subsection}{\numberline {5.20.3}Member Function Documentation}{75}{subsection.5.20.3}%
+\contentsline {subsubsection}{\numberline {5.20.3.1}clone()}{76}{subsubsection.5.20.3.1}%
+\contentsline {subsubsection}{\numberline {5.20.3.2}getStateName()}{76}{subsubsection.5.20.3.2}%
+\contentsline {subsubsection}{\numberline {5.20.3.3}handle()}{76}{subsubsection.5.20.3.3}%
+\contentsline {section}{\numberline {5.21}Estate Class Reference}{77}{section.5.21}%
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{77}{subsection.5.21.1}%
+\contentsline {subsection}{\numberline {5.21.2}Constructor \& Destructor Documentation}{77}{subsection.5.21.2}%
+\contentsline {subsubsection}{\numberline {5.21.2.1}Estate()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{77}{subsubsection.5.21.2.1}%
+\contentsline {subsubsection}{\numberline {5.21.2.2}Estate()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{77}{subsubsection.5.21.2.2}%
+\contentsline {subsection}{\numberline {5.21.3}Member Function Documentation}{78}{subsection.5.21.3}%
+\contentsline {subsubsection}{\numberline {5.21.3.1}getBuildingType()}{78}{subsubsection.5.21.3.1}%
+\contentsline {subsubsection}{\numberline {5.21.3.2}getDisplaySymbol()}{78}{subsubsection.5.21.3.2}%
+\contentsline {subsection}{\numberline {5.21.4}Member Data Documentation}{79}{subsection.5.21.4}%
+\contentsline {subsubsection}{\numberline {5.21.4.1}BASE\_COST}{79}{subsubsection.5.21.4.1}%
+\contentsline {section}{\numberline {5.22}Estate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{79}{section.5.22}%
+\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{79}{subsection.5.22.1}%
+\contentsline {subsection}{\numberline {5.22.2}Member Function Documentation}{79}{subsection.5.22.2}%
+\contentsline {subsubsection}{\numberline {5.22.2.1}createBuilding()}{80}{subsubsection.5.22.2.1}%
+\contentsline {section}{\numberline {5.23}Fast\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy Class Reference}{80}{section.5.23}%
+\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{80}{subsection.5.23.1}%
+\contentsline {subsection}{\numberline {5.23.2}Member Function Documentation}{80}{subsection.5.23.2}%
+\contentsline {subsubsection}{\numberline {5.23.2.1}collect()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{80}{subsubsection.5.23.2.1}%
+\contentsline {subsubsection}{\numberline {5.23.2.2}collect()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{81}{subsubsection.5.23.2.2}%
+\contentsline {section}{\numberline {5.24}Fire\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station Class Reference}{81}{section.5.24}%
+\contentsline {subsection}{\numberline {5.24.1}Detailed Description}{82}{subsection.5.24.1}%
+\contentsline {subsection}{\numberline {5.24.2}Constructor \& Destructor Documentation}{82}{subsection.5.24.2}%
+\contentsline {subsubsection}{\numberline {5.24.2.1}FireStation()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{82}{subsubsection.5.24.2.1}%
+\contentsline {subsubsection}{\numberline {5.24.2.2}FireStation()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{82}{subsubsection.5.24.2.2}%
+\contentsline {subsubsection}{\numberline {5.24.2.3}$\sim $FireStation()}{83}{subsubsection.5.24.2.3}%
+\contentsline {subsection}{\numberline {5.24.3}Member Function Documentation}{83}{subsection.5.24.3}%
+\contentsline {subsubsection}{\numberline {5.24.3.1}clone()}{83}{subsubsection.5.24.3.1}%
+\contentsline {subsubsection}{\numberline {5.24.3.2}displayStatus()}{83}{subsubsection.5.24.3.2}%
+\contentsline {subsubsection}{\numberline {5.24.3.3}getDisplaySymbol()}{84}{subsubsection.5.24.3.3}%
+\contentsline {subsubsection}{\numberline {5.24.3.4}provideService()}{84}{subsubsection.5.24.3.4}%
+\contentsline {subsection}{\numberline {5.24.4}Member Data Documentation}{84}{subsection.5.24.4}%
+\contentsline {subsubsection}{\numberline {5.24.4.1}status}{84}{subsubsection.5.24.4.1}%
+\contentsline {section}{\numberline {5.25}Fire\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{85}{section.5.25}%
+\contentsline {subsection}{\numberline {5.25.1}Detailed Description}{85}{subsection.5.25.1}%
+\contentsline {subsection}{\numberline {5.25.2}Member Function Documentation}{85}{subsection.5.25.2}%
+\contentsline {subsubsection}{\numberline {5.25.2.1}createPublicService()}{85}{subsubsection.5.25.2.1}%
+\contentsline {section}{\numberline {5.26}Flat Class Reference}{86}{section.5.26}%
+\contentsline {subsection}{\numberline {5.26.1}Detailed Description}{86}{subsection.5.26.1}%
+\contentsline {subsection}{\numberline {5.26.2}Constructor \& Destructor Documentation}{86}{subsection.5.26.2}%
+\contentsline {subsubsection}{\numberline {5.26.2.1}Flat()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{86}{subsubsection.5.26.2.1}%
+\contentsline {subsubsection}{\numberline {5.26.2.2}Flat()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{87}{subsubsection.5.26.2.2}%
+\contentsline {subsection}{\numberline {5.26.3}Member Function Documentation}{87}{subsection.5.26.3}%
+\contentsline {subsubsection}{\numberline {5.26.3.1}getBuildingType()}{87}{subsubsection.5.26.3.1}%
+\contentsline {subsubsection}{\numberline {5.26.3.2}getDisplaySymbol()}{88}{subsubsection.5.26.3.2}%
+\contentsline {subsection}{\numberline {5.26.4}Member Data Documentation}{88}{subsection.5.26.4}%
+\contentsline {subsubsection}{\numberline {5.26.4.1}BASE\_COST}{88}{subsubsection.5.26.4.1}%
+\contentsline {section}{\numberline {5.27}Flat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{88}{section.5.27}%
+\contentsline {subsection}{\numberline {5.27.1}Detailed Description}{88}{subsection.5.27.1}%
+\contentsline {subsection}{\numberline {5.27.2}Member Function Documentation}{89}{subsection.5.27.2}%
+\contentsline {subsubsection}{\numberline {5.27.2.1}createBuilding()}{89}{subsubsection.5.27.2.1}%
+\contentsline {section}{\numberline {5.28}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State Class Reference}{89}{section.5.28}%
+\contentsline {subsection}{\numberline {5.28.1}Detailed Description}{90}{subsection.5.28.1}%
+\contentsline {subsection}{\numberline {5.28.2}Member Function Documentation}{90}{subsection.5.28.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.1}createMemento()}{90}{subsubsection.5.28.2.1}%
+\contentsline {subsubsection}{\numberline {5.28.2.2}executeCommand()}{90}{subsubsection.5.28.2.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.3}redo()}{91}{subsubsection.5.28.2.3}%
+\contentsline {subsubsection}{\numberline {5.28.2.4}restoreFromMemento()}{91}{subsubsection.5.28.2.4}%
+\contentsline {subsubsection}{\numberline {5.28.2.5}undo()}{91}{subsubsection.5.28.2.5}%
+\contentsline {subsection}{\numberline {5.28.3}Member Data Documentation}{91}{subsection.5.28.3}%
+\contentsline {subsubsection}{\numberline {5.28.3.1}commandHistory}{91}{subsubsection.5.28.3.1}%
+\contentsline {subsubsection}{\numberline {5.28.3.2}currentCommandIndex}{92}{subsubsection.5.28.3.2}%
+\contentsline {section}{\numberline {5.29}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Memento Class Reference}{92}{section.5.29}%
+\contentsline {subsection}{\numberline {5.29.1}Detailed Description}{92}{subsection.5.29.1}%
+\contentsline {subsection}{\numberline {5.29.2}Constructor \& Destructor Documentation}{93}{subsection.5.29.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.1}GameStateMemento()}{93}{subsubsection.5.29.2.1}%
+\contentsline {subsection}{\numberline {5.29.3}Member Function Documentation}{93}{subsection.5.29.3}%
+\contentsline {subsubsection}{\numberline {5.29.3.1}create()}{93}{subsubsection.5.29.3.1}%
+\contentsline {subsection}{\numberline {5.29.4}Friends And Related Function Documentation}{93}{subsection.5.29.4}%
+\contentsline {subsubsection}{\numberline {5.29.4.1}GameState}{94}{subsubsection.5.29.4.1}%
+\contentsline {subsection}{\numberline {5.29.5}Member Data Documentation}{94}{subsection.5.29.5}%
+\contentsline {subsubsection}{\numberline {5.29.5.1}commandHistory}{94}{subsubsection.5.29.5.1}%
+\contentsline {subsubsection}{\numberline {5.29.5.2}currentCommandIndex}{94}{subsubsection.5.29.5.2}%
+\contentsline {section}{\numberline {5.30}Gold Class Reference}{94}{section.5.30}%
+\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{95}{subsection.5.30.1}%
+\contentsline {subsection}{\numberline {5.30.2}Constructor \& Destructor Documentation}{95}{subsection.5.30.2}%
+\contentsline {subsubsection}{\numberline {5.30.2.1}Gold()}{95}{subsubsection.5.30.2.1}%
+\contentsline {subsubsection}{\numberline {5.30.2.2}$\sim $Gold()}{95}{subsubsection.5.30.2.2}%
+\contentsline {subsection}{\numberline {5.30.3}Member Function Documentation}{95}{subsection.5.30.3}%
+\contentsline {subsubsection}{\numberline {5.30.3.1}displayStatus()}{96}{subsubsection.5.30.3.1}%
+\contentsline {subsubsection}{\numberline {5.30.3.2}getBuildingType()}{96}{subsubsection.5.30.3.2}%
+\contentsline {section}{\numberline {5.31}Government Class Reference}{96}{section.5.31}%
+\contentsline {subsection}{\numberline {5.31.1}Detailed Description}{99}{subsection.5.31.1}%
+\contentsline {subsection}{\numberline {5.31.2}Constructor \& Destructor Documentation}{99}{subsection.5.31.2}%
+\contentsline {subsubsection}{\numberline {5.31.2.1}Government()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{99}{subsubsection.5.31.2.1}%
+\contentsline {subsubsection}{\numberline {5.31.2.2}Government()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{99}{subsubsection.5.31.2.2}%
+\contentsline {subsection}{\numberline {5.31.3}Member Function Documentation}{99}{subsection.5.31.3}%
+\contentsline {subsubsection}{\numberline {5.31.3.1}addMoney()}{99}{subsubsection.5.31.3.1}%
+\contentsline {subsubsection}{\numberline {5.31.3.2}addProcessedResource()}{99}{subsubsection.5.31.3.2}%
+\contentsline {subsubsection}{\numberline {5.31.3.3}calculateTax()}{100}{subsubsection.5.31.3.3}%
+\contentsline {subsubsection}{\numberline {5.31.3.4}decreasePopulation()}{100}{subsubsection.5.31.3.4}%
+\contentsline {subsubsection}{\numberline {5.31.3.5}decrementPollutionLevel()}{100}{subsubsection.5.31.3.5}%
+\contentsline {subsubsection}{\numberline {5.31.3.6}displayGovernmentStats()}{101}{subsubsection.5.31.3.6}%
+\contentsline {subsubsection}{\numberline {5.31.3.7}getBuildingAmount()}{101}{subsubsection.5.31.3.7}%
+\contentsline {subsubsection}{\numberline {5.31.3.8}getCrimeRate()}{101}{subsubsection.5.31.3.8}%
+\contentsline {subsubsection}{\numberline {5.31.3.9}getIncomeTaxRate()}{101}{subsubsection.5.31.3.9}%
+\contentsline {subsubsection}{\numberline {5.31.3.10}getInstance()}{102}{subsubsection.5.31.3.10}%
+\contentsline {subsubsection}{\numberline {5.31.3.11}getMoney()}{102}{subsubsection.5.31.3.11}%
+\contentsline {subsubsection}{\numberline {5.31.3.12}getMortalityRate()}{102}{subsubsection.5.31.3.12}%
+\contentsline {subsubsection}{\numberline {5.31.3.13}getPollutionLevel()}{102}{subsubsection.5.31.3.13}%
+\contentsline {subsubsection}{\numberline {5.31.3.14}getPopulation()}{103}{subsubsection.5.31.3.14}%
+\contentsline {subsubsection}{\numberline {5.31.3.15}getPopulationGrowth()}{103}{subsubsection.5.31.3.15}%
+\contentsline {subsubsection}{\numberline {5.31.3.16}getProductionRate()}{103}{subsubsection.5.31.3.16}%
+\contentsline {subsubsection}{\numberline {5.31.3.17}increaseCrimeRate()}{103}{subsubsection.5.31.3.17}%
+\contentsline {subsubsection}{\numberline {5.31.3.18}increaseEmploymentRate()}{104}{subsubsection.5.31.3.18}%
+\contentsline {subsubsection}{\numberline {5.31.3.19}increasePopulation()}{104}{subsubsection.5.31.3.19}%
+\contentsline {subsubsection}{\numberline {5.31.3.20}increaseProduction()}{104}{subsubsection.5.31.3.20}%
+\contentsline {subsubsection}{\numberline {5.31.3.21}incrementPollutionLevel()}{104}{subsubsection.5.31.3.21}%
+\contentsline {subsubsection}{\numberline {5.31.3.22}operator=()}{105}{subsubsection.5.31.3.22}%
+\contentsline {subsubsection}{\numberline {5.31.3.23}reduceMoney()}{105}{subsubsection.5.31.3.23}%
+\contentsline {subsubsection}{\numberline {5.31.3.24}reduceProduction()}{105}{subsubsection.5.31.3.24}%
+\contentsline {subsubsection}{\numberline {5.31.3.25}setBuildingAmount()}{105}{subsubsection.5.31.3.25}%
+\contentsline {subsubsection}{\numberline {5.31.3.26}setCrimeRate()}{106}{subsubsection.5.31.3.26}%
+\contentsline {subsubsection}{\numberline {5.31.3.27}setPopulationGrowth()}{106}{subsubsection.5.31.3.27}%
+\contentsline {subsubsection}{\numberline {5.31.3.28}setProductionRate()}{106}{subsubsection.5.31.3.28}%
+\contentsline {subsubsection}{\numberline {5.31.3.29}setTax()}{107}{subsubsection.5.31.3.29}%
+\contentsline {subsubsection}{\numberline {5.31.3.30}updatePopulation()}{107}{subsubsection.5.31.3.30}%
+\contentsline {subsection}{\numberline {5.31.4}Member Data Documentation}{107}{subsection.5.31.4}%
+\contentsline {subsubsection}{\numberline {5.31.4.1}crimeRate}{107}{subsubsection.5.31.4.1}%
+\contentsline {subsubsection}{\numberline {5.31.4.2}EMPLOYMENT\_RATE}{107}{subsubsection.5.31.4.2}%
+\contentsline {subsubsection}{\numberline {5.31.4.3}incomeTax}{107}{subsubsection.5.31.4.3}%
+\contentsline {subsubsection}{\numberline {5.31.4.4}incomeTaxRate}{108}{subsubsection.5.31.4.4}%
+\contentsline {subsubsection}{\numberline {5.31.4.5}money}{108}{subsubsection.5.31.4.5}%
+\contentsline {subsubsection}{\numberline {5.31.4.6}mortalityRate}{108}{subsubsection.5.31.4.6}%
+\contentsline {subsubsection}{\numberline {5.31.4.7}pollutionLevel}{108}{subsubsection.5.31.4.7}%
+\contentsline {subsubsection}{\numberline {5.31.4.8}population}{108}{subsubsection.5.31.4.8}%
+\contentsline {subsubsection}{\numberline {5.31.4.9}populationGrowth}{108}{subsubsection.5.31.4.9}%
+\contentsline {subsubsection}{\numberline {5.31.4.10}processedResources}{109}{subsubsection.5.31.4.10}%
+\contentsline {subsubsection}{\numberline {5.31.4.11}productionRate}{109}{subsubsection.5.31.4.11}%
+\contentsline {subsubsection}{\numberline {5.31.4.12}publicServiceAmount}{109}{subsubsection.5.31.4.12}%
+\contentsline {subsubsection}{\numberline {5.31.4.13}residentialAmount}{109}{subsubsection.5.31.4.13}%
+\contentsline {subsubsection}{\numberline {5.31.4.14}resourceValues}{109}{subsubsection.5.31.4.14}%
+\contentsline {subsubsection}{\numberline {5.31.4.15}utilityAmount}{109}{subsubsection.5.31.4.15}%
+\contentsline {section}{\numberline {5.32}Hospital Class Reference}{110}{section.5.32}%
+\contentsline {subsection}{\numberline {5.32.1}Detailed Description}{110}{subsection.5.32.1}%
+\contentsline {subsection}{\numberline {5.32.2}Constructor \& Destructor Documentation}{111}{subsection.5.32.2}%
+\contentsline {subsubsection}{\numberline {5.32.2.1}Hospital()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{111}{subsubsection.5.32.2.1}%
+\contentsline {subsubsection}{\numberline {5.32.2.2}Hospital()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{111}{subsubsection.5.32.2.2}%
+\contentsline {subsubsection}{\numberline {5.32.2.3}$\sim $Hospital()}{111}{subsubsection.5.32.2.3}%
+\contentsline {subsection}{\numberline {5.32.3}Member Function Documentation}{111}{subsection.5.32.3}%
+\contentsline {subsubsection}{\numberline {5.32.3.1}clone()}{112}{subsubsection.5.32.3.1}%
+\contentsline {subsubsection}{\numberline {5.32.3.2}displayStatus()}{112}{subsubsection.5.32.3.2}%
+\contentsline {subsubsection}{\numberline {5.32.3.3}getBuildingType()}{112}{subsubsection.5.32.3.3}%
+\contentsline {subsubsection}{\numberline {5.32.3.4}getDisplaySymbol()}{112}{subsubsection.5.32.3.4}%
+\contentsline {subsubsection}{\numberline {5.32.3.5}provideService()}{113}{subsubsection.5.32.3.5}%
+\contentsline {subsection}{\numberline {5.32.4}Member Data Documentation}{113}{subsection.5.32.4}%
+\contentsline {subsubsection}{\numberline {5.32.4.1}electricity}{113}{subsubsection.5.32.4.1}%
+\contentsline {subsubsection}{\numberline {5.32.4.2}sewage}{113}{subsubsection.5.32.4.2}%
+\contentsline {subsubsection}{\numberline {5.32.4.3}status}{113}{subsubsection.5.32.4.3}%
+\contentsline {subsubsection}{\numberline {5.32.4.4}wasteManagement}{113}{subsubsection.5.32.4.4}%
+\contentsline {subsubsection}{\numberline {5.32.4.5}water}{114}{subsubsection.5.32.4.5}%
+\contentsline {section}{\numberline {5.33}Hospital\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{114}{section.5.33}%
+\contentsline {subsection}{\numberline {5.33.1}Detailed Description}{114}{subsection.5.33.1}%
+\contentsline {subsection}{\numberline {5.33.2}Member Function Documentation}{114}{subsection.5.33.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.1}createPublicService()}{115}{subsubsection.5.33.2.1}%
+\contentsline {section}{\numberline {5.34}House Class Reference}{115}{section.5.34}%
+\contentsline {subsection}{\numberline {5.34.1}Detailed Description}{116}{subsection.5.34.1}%
+\contentsline {subsection}{\numberline {5.34.2}Constructor \& Destructor Documentation}{116}{subsection.5.34.2}%
+\contentsline {subsubsection}{\numberline {5.34.2.1}House()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{116}{subsubsection.5.34.2.1}%
+\contentsline {subsubsection}{\numberline {5.34.2.2}House()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{116}{subsubsection.5.34.2.2}%
+\contentsline {subsection}{\numberline {5.34.3}Member Function Documentation}{116}{subsection.5.34.3}%
+\contentsline {subsubsection}{\numberline {5.34.3.1}getBuildingType()}{117}{subsubsection.5.34.3.1}%
+\contentsline {subsubsection}{\numberline {5.34.3.2}getDisplaySymbol()}{117}{subsubsection.5.34.3.2}%
+\contentsline {subsection}{\numberline {5.34.4}Member Data Documentation}{117}{subsection.5.34.4}%
+\contentsline {subsubsection}{\numberline {5.34.4.1}BASE\_COST}{117}{subsubsection.5.34.4.1}%
+\contentsline {section}{\numberline {5.35}House\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{117}{section.5.35}%
+\contentsline {subsection}{\numberline {5.35.1}Detailed Description}{118}{subsection.5.35.1}%
+\contentsline {subsection}{\numberline {5.35.2}Member Function Documentation}{118}{subsection.5.35.2}%
+\contentsline {subsubsection}{\numberline {5.35.2.1}createBuilding()}{118}{subsubsection.5.35.2.1}%
+\contentsline {section}{\numberline {5.36}Income\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processor Class Reference}{118}{section.5.36}%
+\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{119}{subsection.5.36.1}%
+\contentsline {subsection}{\numberline {5.36.2}Constructor \& Destructor Documentation}{119}{subsection.5.36.2}%
+\contentsline {subsubsection}{\numberline {5.36.2.1}IncomeResourceProcessor()}{119}{subsubsection.5.36.2.1}%
+\contentsline {subsection}{\numberline {5.36.3}Member Function Documentation}{120}{subsection.5.36.3}%
+\contentsline {subsubsection}{\numberline {5.36.3.1}display()}{120}{subsubsection.5.36.3.1}%
+\contentsline {subsubsection}{\numberline {5.36.3.2}getCurrentStorage()}{120}{subsubsection.5.36.3.2}%
+\contentsline {subsubsection}{\numberline {5.36.3.3}process()}{120}{subsubsection.5.36.3.3}%
+\contentsline {subsubsection}{\numberline {5.36.3.4}store()}{121}{subsubsection.5.36.3.4}%
+\contentsline {subsection}{\numberline {5.36.4}Member Data Documentation}{121}{subsection.5.36.4}%
+\contentsline {subsubsection}{\numberline {5.36.4.1}currentStorage}{121}{subsubsection.5.36.4.1}%
+\contentsline {subsubsection}{\numberline {5.36.4.2}maxStorage}{122}{subsubsection.5.36.4.2}%
+\contentsline {subsubsection}{\numberline {5.36.4.3}resource}{122}{subsubsection.5.36.4.3}%
+\contentsline {section}{\numberline {5.37}Income\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Product Class Reference}{122}{section.5.37}%
+\contentsline {subsection}{\numberline {5.37.1}Detailed Description}{123}{subsection.5.37.1}%
+\contentsline {subsection}{\numberline {5.37.2}Constructor \& Destructor Documentation}{123}{subsection.5.37.2}%
+\contentsline {subsubsection}{\numberline {5.37.2.1}IncomeResourceProduct()}{123}{subsubsection.5.37.2.1}%
+\contentsline {subsubsection}{\numberline {5.37.2.2}$\sim $IncomeResourceProduct()}{124}{subsubsection.5.37.2.2}%
+\contentsline {subsection}{\numberline {5.37.3}Member Function Documentation}{124}{subsection.5.37.3}%
+\contentsline {subsubsection}{\numberline {5.37.3.1}accept()}{124}{subsubsection.5.37.3.1}%
+\contentsline {subsubsection}{\numberline {5.37.3.2}calculateIncome()}{124}{subsubsection.5.37.3.2}%
+\contentsline {subsubsection}{\numberline {5.37.3.3}consumeResources()}{124}{subsubsection.5.37.3.3}%
+\contentsline {subsubsection}{\numberline {5.37.3.4}displayStatus()}{125}{subsubsection.5.37.3.4}%
+\contentsline {subsubsection}{\numberline {5.37.3.5}getBuildingType()}{125}{subsubsection.5.37.3.5}%
+\contentsline {subsubsection}{\numberline {5.37.3.6}getLocation()}{125}{subsubsection.5.37.3.6}%
+\contentsline {subsubsection}{\numberline {5.37.3.7}getMarketValue()}{126}{subsubsection.5.37.3.7}%
+\contentsline {subsubsection}{\numberline {5.37.3.8}getName()}{126}{subsubsection.5.37.3.8}%
+\contentsline {subsubsection}{\numberline {5.37.3.9}getQuantity()}{126}{subsubsection.5.37.3.9}%
+\contentsline {subsubsection}{\numberline {5.37.3.10}isReadyForCollection()}{126}{subsubsection.5.37.3.10}%
+\contentsline {subsubsection}{\numberline {5.37.3.11}replenish()}{126}{subsubsection.5.37.3.11}%
+\contentsline {subsubsection}{\numberline {5.37.3.12}setLocation()}{127}{subsubsection.5.37.3.12}%
+\contentsline {subsubsection}{\numberline {5.37.3.13}updateReadyStatus()}{127}{subsubsection.5.37.3.13}%
+\contentsline {subsection}{\numberline {5.37.4}Member Data Documentation}{127}{subsection.5.37.4}%
+\contentsline {subsubsection}{\numberline {5.37.4.1}location}{127}{subsubsection.5.37.4.1}%
+\contentsline {subsubsection}{\numberline {5.37.4.2}marketValue}{127}{subsubsection.5.37.4.2}%
+\contentsline {subsubsection}{\numberline {5.37.4.3}name}{128}{subsubsection.5.37.4.3}%
+\contentsline {subsubsection}{\numberline {5.37.4.4}quantity}{128}{subsubsection.5.37.4.4}%
+\contentsline {subsubsection}{\numberline {5.37.4.5}readyForCollection}{128}{subsubsection.5.37.4.5}%
+\contentsline {section}{\numberline {5.38}Industrial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{128}{section.5.38}%
+\contentsline {subsection}{\numberline {5.38.1}Detailed Description}{128}{subsection.5.38.1}%
+\contentsline {subsection}{\numberline {5.38.2}Constructor \& Destructor Documentation}{129}{subsection.5.38.2}%
+\contentsline {subsubsection}{\numberline {5.38.2.1}$\sim $IndustrialFactory()}{129}{subsubsection.5.38.2.1}%
+\contentsline {section}{\numberline {5.39}Industry Class Reference}{129}{section.5.39}%
+\contentsline {subsection}{\numberline {5.39.1}Detailed Description}{130}{subsection.5.39.1}%
+\contentsline {subsection}{\numberline {5.39.2}Constructor \& Destructor Documentation}{130}{subsection.5.39.2}%
+\contentsline {subsubsection}{\numberline {5.39.2.1}Industry()}{130}{subsubsection.5.39.2.1}%
+\contentsline {subsubsection}{\numberline {5.39.2.2}$\sim $Industry()}{131}{subsubsection.5.39.2.2}%
+\contentsline {subsection}{\numberline {5.39.3}Member Function Documentation}{131}{subsection.5.39.3}%
+\contentsline {subsubsection}{\numberline {5.39.3.1}accept()}{131}{subsubsection.5.39.3.1}%
+\contentsline {subsubsection}{\numberline {5.39.3.2}displayStatus()}{131}{subsubsection.5.39.3.2}%
+\contentsline {subsubsection}{\numberline {5.39.3.3}findIndustryLocation()}{132}{subsubsection.5.39.3.3}%
+\contentsline {subsubsection}{\numberline {5.39.3.4}getBuildingType()}{132}{subsubsection.5.39.3.4}%
+\contentsline {subsubsection}{\numberline {5.39.3.5}getCollectionRange()}{132}{subsubsection.5.39.3.5}%
+\contentsline {subsubsection}{\numberline {5.39.3.6}increasePollution()}{132}{subsubsection.5.39.3.6}%
+\contentsline {subsubsection}{\numberline {5.39.3.7}isResourceInRange()}{133}{subsubsection.5.39.3.7}%
+\contentsline {subsubsection}{\numberline {5.39.3.8}processResources()}{133}{subsubsection.5.39.3.8}%
+\contentsline {subsubsection}{\numberline {5.39.3.9}showCollectionRange()}{134}{subsubsection.5.39.3.9}%
+\contentsline {subsubsection}{\numberline {5.39.3.10}storeResources()}{134}{subsubsection.5.39.3.10}%
+\contentsline {subsection}{\numberline {5.39.4}Member Data Documentation}{134}{subsection.5.39.4}%
+\contentsline {subsubsection}{\numberline {5.39.4.1}collectedResources}{134}{subsubsection.5.39.4.1}%
+\contentsline {subsubsection}{\numberline {5.39.4.2}collectionRange}{135}{subsubsection.5.39.4.2}%
+\contentsline {subsubsection}{\numberline {5.39.4.3}constructionResource}{135}{subsubsection.5.39.4.3}%
+\contentsline {subsubsection}{\numberline {5.39.4.4}grid}{135}{subsubsection.5.39.4.4}%
+\contentsline {subsubsection}{\numberline {5.39.4.5}incomeResource}{135}{subsubsection.5.39.4.5}%
+\contentsline {subsubsection}{\numberline {5.39.4.6}name}{135}{subsubsection.5.39.4.6}%
+\contentsline {subsubsection}{\numberline {5.39.4.7}pollutionLevel}{135}{subsubsection.5.39.4.7}%
+\contentsline {subsubsection}{\numberline {5.39.4.8}primaryProcessor}{136}{subsubsection.5.39.4.8}%
+\contentsline {subsubsection}{\numberline {5.39.4.9}secondaryProcessor}{136}{subsubsection.5.39.4.9}%
+\contentsline {section}{\numberline {5.40}Land\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mark Class Reference}{136}{section.5.40}%
+\contentsline {subsection}{\numberline {5.40.1}Detailed Description}{137}{subsection.5.40.1}%
+\contentsline {subsection}{\numberline {5.40.2}Constructor \& Destructor Documentation}{137}{subsection.5.40.2}%
+\contentsline {subsubsection}{\numberline {5.40.2.1}LandMark()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{137}{subsubsection.5.40.2.1}%
+\contentsline {subsubsection}{\numberline {5.40.2.2}LandMark()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{137}{subsubsection.5.40.2.2}%
+\contentsline {subsection}{\numberline {5.40.3}Member Function Documentation}{138}{subsection.5.40.3}%
+\contentsline {subsubsection}{\numberline {5.40.3.1}accept()}{138}{subsubsection.5.40.3.1}%
+\contentsline {subsubsection}{\numberline {5.40.3.2}displayStatus()}{138}{subsubsection.5.40.3.2}%
+\contentsline {subsubsection}{\numberline {5.40.3.3}getBuildingType()}{139}{subsubsection.5.40.3.3}%
+\contentsline {subsubsection}{\numberline {5.40.3.4}getPrice()}{139}{subsubsection.5.40.3.4}%
+\contentsline {subsubsection}{\numberline {5.40.3.5}getUtilityCoverage()}{139}{subsubsection.5.40.3.5}%
+\contentsline {subsubsection}{\numberline {5.40.3.6}hasUtilities()}{140}{subsubsection.5.40.3.6}%
+\contentsline {subsection}{\numberline {5.40.4}Member Data Documentation}{140}{subsection.5.40.4}%
+\contentsline {subsubsection}{\numberline {5.40.4.1}landMarkType}{140}{subsubsection.5.40.4.1}%
+\contentsline {subsubsection}{\numberline {5.40.4.2}powerSupply}{140}{subsubsection.5.40.4.2}%
+\contentsline {subsubsection}{\numberline {5.40.4.3}price}{140}{subsubsection.5.40.4.3}%
+\contentsline {subsubsection}{\numberline {5.40.4.4}sewageManagement}{140}{subsubsection.5.40.4.4}%
+\contentsline {subsubsection}{\numberline {5.40.4.5}visitorCapacity}{141}{subsubsection.5.40.4.5}%
+\contentsline {subsubsection}{\numberline {5.40.4.6}wasteManagement}{141}{subsubsection.5.40.4.6}%
+\contentsline {subsubsection}{\numberline {5.40.4.7}waterSupply}{141}{subsubsection.5.40.4.7}%
+\contentsline {section}{\numberline {5.41}Land\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mark\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{141}{section.5.41}%
+\contentsline {subsection}{\numberline {5.41.1}Detailed Description}{141}{subsection.5.41.1}%
+\contentsline {subsection}{\numberline {5.41.2}Constructor \& Destructor Documentation}{142}{subsection.5.41.2}%
+\contentsline {subsubsection}{\numberline {5.41.2.1}$\sim $LandMarkFactory()}{142}{subsubsection.5.41.2.1}%
+\contentsline {subsection}{\numberline {5.41.3}Member Function Documentation}{142}{subsection.5.41.3}%
+\contentsline {subsubsection}{\numberline {5.41.3.1}createLandMark()}{142}{subsubsection.5.41.3.1}%
+\contentsline {section}{\numberline {5.42}Location Struct Reference}{142}{section.5.42}%
+\contentsline {subsection}{\numberline {5.42.1}Detailed Description}{143}{subsection.5.42.1}%
+\contentsline {subsection}{\numberline {5.42.2}Constructor \& Destructor Documentation}{143}{subsection.5.42.2}%
+\contentsline {subsubsection}{\numberline {5.42.2.1}Location()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{143}{subsubsection.5.42.2.1}%
+\contentsline {subsubsection}{\numberline {5.42.2.2}Location()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{143}{subsubsection.5.42.2.2}%
+\contentsline {subsection}{\numberline {5.42.3}Member Function Documentation}{144}{subsection.5.42.3}%
+\contentsline {subsubsection}{\numberline {5.42.3.1}distanceTo()}{144}{subsubsection.5.42.3.1}%
+\contentsline {subsubsection}{\numberline {5.42.3.2}isValid()}{144}{subsubsection.5.42.3.2}%
+\contentsline {subsubsection}{\numberline {5.42.3.3}operator"!=()}{144}{subsubsection.5.42.3.3}%
+\contentsline {subsubsection}{\numberline {5.42.3.4}operator$<$()}{145}{subsubsection.5.42.3.4}%
+\contentsline {subsubsection}{\numberline {5.42.3.5}operator==()}{145}{subsubsection.5.42.3.5}%
+\contentsline {subsection}{\numberline {5.42.4}Member Data Documentation}{145}{subsection.5.42.4}%
+\contentsline {subsubsection}{\numberline {5.42.4.1}x}{146}{subsubsection.5.42.4.1}%
+\contentsline {subsubsection}{\numberline {5.42.4.2}y}{146}{subsubsection.5.42.4.2}%
+\contentsline {section}{\numberline {5.43}Malls Class Reference}{146}{section.5.43}%
+\contentsline {subsection}{\numberline {5.43.1}Detailed Description}{146}{subsection.5.43.1}%
+\contentsline {subsection}{\numberline {5.43.2}Constructor \& Destructor Documentation}{147}{subsection.5.43.2}%
+\contentsline {subsubsection}{\numberline {5.43.2.1}Malls()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{147}{subsubsection.5.43.2.1}%
+\contentsline {subsubsection}{\numberline {5.43.2.2}Malls()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{147}{subsubsection.5.43.2.2}%
+\contentsline {subsection}{\numberline {5.43.3}Member Function Documentation}{147}{subsection.5.43.3}%
+\contentsline {subsubsection}{\numberline {5.43.3.1}getBuildingType()}{147}{subsubsection.5.43.3.1}%
+\contentsline {subsubsection}{\numberline {5.43.3.2}getDisplaySymbol()}{148}{subsubsection.5.43.3.2}%
+\contentsline {section}{\numberline {5.44}Malls\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{148}{section.5.44}%
+\contentsline {subsection}{\numberline {5.44.1}Detailed Description}{148}{subsection.5.44.1}%
+\contentsline {subsection}{\numberline {5.44.2}Member Function Documentation}{148}{subsection.5.44.2}%
+\contentsline {subsubsection}{\numberline {5.44.2.1}createBuilding()}{149}{subsubsection.5.44.2.1}%
+\contentsline {section}{\numberline {5.45}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid Class Reference}{149}{section.5.45}%
+\contentsline {subsection}{\numberline {5.45.1}Constructor \& Destructor Documentation}{151}{subsection.5.45.1}%
+\contentsline {subsubsection}{\numberline {5.45.1.1}MapGrid()}{151}{subsubsection.5.45.1.1}%
+\contentsline {subsection}{\numberline {5.45.2}Member Function Documentation}{151}{subsection.5.45.2}%
+\contentsline {subsubsection}{\numberline {5.45.2.1}addUtilityEffect()}{151}{subsubsection.5.45.2.1}%
+\contentsline {subsubsection}{\numberline {5.45.2.2}canPlaceBuilding()}{151}{subsubsection.5.45.2.2}%
+\contentsline {subsubsection}{\numberline {5.45.2.3}canPlaceZone()}{151}{subsubsection.5.45.2.3}%
+\contentsline {subsubsection}{\numberline {5.45.2.4}connectLocations()}{151}{subsubsection.5.45.2.4}%
+\contentsline {subsubsection}{\numberline {5.45.2.5}createZone()}{152}{subsubsection.5.45.2.5}%
+\contentsline {subsubsection}{\numberline {5.45.2.6}displayCollectionRange()}{152}{subsubsection.5.45.2.6}%
+\contentsline {subsubsection}{\numberline {5.45.2.7}getAllZones()}{152}{subsubsection.5.45.2.7}%
+\contentsline {subsubsection}{\numberline {5.45.2.8}getBuildingsInZone()}{152}{subsubsection.5.45.2.8}%
+\contentsline {subsubsection}{\numberline {5.45.2.9}getCell()}{152}{subsubsection.5.45.2.9}%
+\contentsline {subsubsection}{\numberline {5.45.2.10}getComponent()}{152}{subsubsection.5.45.2.10}%
+\contentsline {subsubsection}{\numberline {5.45.2.11}getDisplayString()}{152}{subsubsection.5.45.2.11}%
+\contentsline {subsubsection}{\numberline {5.45.2.12}getHeight()}{153}{subsubsection.5.45.2.12}%
+\contentsline {subsubsection}{\numberline {5.45.2.13}getRandomEmptyLocation()}{153}{subsubsection.5.45.2.13}%
+\contentsline {subsubsection}{\numberline {5.45.2.14}getWidth()}{153}{subsubsection.5.45.2.14}%
+\contentsline {subsubsection}{\numberline {5.45.2.15}getZone()}{153}{subsubsection.5.45.2.15}%
+\contentsline {subsubsection}{\numberline {5.45.2.16}initializeZoneStyles()}{153}{subsubsection.5.45.2.16}%
+\contentsline {subsubsection}{\numberline {5.45.2.17}isCompatibleBuilding()}{153}{subsubsection.5.45.2.17}%
+\contentsline {subsubsection}{\numberline {5.45.2.18}isOverlappingZone()}{153}{subsubsection.5.45.2.18}%
+\contentsline {subsubsection}{\numberline {5.45.2.19}isValidLocation()}{154}{subsubsection.5.45.2.19}%
+\contentsline {subsubsection}{\numberline {5.45.2.20}isValidZoneForBuilding()}{154}{subsubsection.5.45.2.20}%
+\contentsline {subsubsection}{\numberline {5.45.2.21}isZoneBoundary()}{154}{subsubsection.5.45.2.21}%
+\contentsline {subsubsection}{\numberline {5.45.2.22}placeComponent()}{154}{subsubsection.5.45.2.22}%
+\contentsline {subsubsection}{\numberline {5.45.2.23}placePublicService()}{154}{subsubsection.5.45.2.23}%
+\contentsline {subsubsection}{\numberline {5.45.2.24}removeComponent()}{154}{subsubsection.5.45.2.24}%
+\contentsline {subsubsection}{\numberline {5.45.2.25}removeConstructionResource()}{155}{subsubsection.5.45.2.25}%
+\contentsline {subsubsection}{\numberline {5.45.2.26}removeIncomeResource()}{155}{subsubsection.5.45.2.26}%
+\contentsline {subsubsection}{\numberline {5.45.2.27}removeUtilityEffect()}{155}{subsubsection.5.45.2.27}%
+\contentsline {subsubsection}{\numberline {5.45.2.28}setCellSymbol()}{155}{subsubsection.5.45.2.28}%
+\contentsline {subsubsection}{\numberline {5.45.2.29}setTransportEndpoint()}{155}{subsubsection.5.45.2.29}%
+\contentsline {subsubsection}{\numberline {5.45.2.30}setTransportPath()}{155}{subsubsection.5.45.2.30}%
+\contentsline {subsubsection}{\numberline {5.45.2.31}setZone()}{156}{subsubsection.5.45.2.31}%
+\contentsline {subsection}{\numberline {5.45.3}Member Data Documentation}{156}{subsection.5.45.3}%
+\contentsline {subsubsection}{\numberline {5.45.3.1}constructionResourceMap}{156}{subsubsection.5.45.3.1}%
+\contentsline {subsubsection}{\numberline {5.45.3.2}grid}{156}{subsubsection.5.45.3.2}%
+\contentsline {subsubsection}{\numberline {5.45.3.3}gridMap}{156}{subsubsection.5.45.3.3}%
+\contentsline {subsubsection}{\numberline {5.45.3.4}height}{156}{subsubsection.5.45.3.4}%
+\contentsline {subsubsection}{\numberline {5.45.3.5}incomeResourceMap}{156}{subsubsection.5.45.3.5}%
+\contentsline {subsubsection}{\numberline {5.45.3.6}width}{157}{subsubsection.5.45.3.6}%
+\contentsline {subsubsection}{\numberline {5.45.3.7}zoneStyles}{157}{subsubsection.5.45.3.7}%
+\contentsline {section}{\numberline {5.46}Metal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{157}{section.5.46}%
+\contentsline {subsection}{\numberline {5.46.1}Detailed Description}{157}{subsection.5.46.1}%
+\contentsline {subsection}{\numberline {5.46.2}Constructor \& Destructor Documentation}{157}{subsection.5.46.2}%
+\contentsline {subsubsection}{\numberline {5.46.2.1}MetalFactory()}{158}{subsubsection.5.46.2.1}%
+\contentsline {subsubsection}{\numberline {5.46.2.2}$\sim $MetalFactory()}{158}{subsubsection.5.46.2.2}%
+\contentsline {subsection}{\numberline {5.46.3}Member Function Documentation}{158}{subsection.5.46.3}%
+\contentsline {subsubsection}{\numberline {5.46.3.1}createConstructionR()}{158}{subsubsection.5.46.3.1}%
+\contentsline {subsubsection}{\numberline {5.46.3.2}createIncomeR()}{159}{subsubsection.5.46.3.2}%
+\contentsline {section}{\numberline {5.47}Metal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Work\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Facility Class Reference}{160}{section.5.47}%
+\contentsline {subsection}{\numberline {5.47.1}Detailed Description}{160}{subsection.5.47.1}%
+\contentsline {subsection}{\numberline {5.47.2}Constructor \& Destructor Documentation}{160}{subsection.5.47.2}%
+\contentsline {subsubsection}{\numberline {5.47.2.1}MetalWorkFacility()}{160}{subsubsection.5.47.2.1}%
+\contentsline {subsection}{\numberline {5.47.3}Member Function Documentation}{161}{subsection.5.47.3}%
+\contentsline {subsubsection}{\numberline {5.47.3.1}processGold()}{161}{subsubsection.5.47.3.1}%
+\contentsline {subsubsection}{\numberline {5.47.3.2}processSteel()}{162}{subsubsection.5.47.3.2}%
+\contentsline {subsection}{\numberline {5.47.4}Member Data Documentation}{162}{subsection.5.47.4}%
+\contentsline {subsubsection}{\numberline {5.47.4.1}METAL\_WORK\_RANGE}{162}{subsubsection.5.47.4.1}%
+\contentsline {section}{\numberline {5.48}Moderate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy Class Reference}{162}{section.5.48}%
+\contentsline {subsection}{\numberline {5.48.1}Detailed Description}{163}{subsection.5.48.1}%
+\contentsline {subsection}{\numberline {5.48.2}Member Function Documentation}{163}{subsection.5.48.2}%
+\contentsline {subsubsection}{\numberline {5.48.2.1}collect()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{163}{subsubsection.5.48.2.1}%
+\contentsline {subsubsection}{\numberline {5.48.2.2}collect()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{164}{subsubsection.5.48.2.2}%
+\contentsline {section}{\numberline {5.49}Monument Class Reference}{164}{section.5.49}%
+\contentsline {subsection}{\numberline {5.49.1}Detailed Description}{165}{subsection.5.49.1}%
+\contentsline {subsection}{\numberline {5.49.2}Constructor \& Destructor Documentation}{165}{subsection.5.49.2}%
+\contentsline {subsubsection}{\numberline {5.49.2.1}Monument()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{165}{subsubsection.5.49.2.1}%
+\contentsline {subsubsection}{\numberline {5.49.2.2}Monument()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{165}{subsubsection.5.49.2.2}%
+\contentsline {subsubsection}{\numberline {5.49.2.3}$\sim $Monument()}{166}{subsubsection.5.49.2.3}%
+\contentsline {subsection}{\numberline {5.49.3}Member Function Documentation}{166}{subsection.5.49.3}%
+\contentsline {subsubsection}{\numberline {5.49.3.1}clone()}{166}{subsubsection.5.49.3.1}%
+\contentsline {subsubsection}{\numberline {5.49.3.2}displayStatus()}{167}{subsubsection.5.49.3.2}%
+\contentsline {subsubsection}{\numberline {5.49.3.3}getBuildingType()}{167}{subsubsection.5.49.3.3}%
+\contentsline {section}{\numberline {5.50}Monument\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{167}{section.5.50}%
+\contentsline {subsection}{\numberline {5.50.1}Detailed Description}{168}{subsection.5.50.1}%
+\contentsline {subsection}{\numberline {5.50.2}Member Function Documentation}{168}{subsection.5.50.2}%
+\contentsline {subsubsection}{\numberline {5.50.2.1}createLandMark()}{168}{subsubsection.5.50.2.1}%
+\contentsline {section}{\numberline {5.51}Neutral\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State Class Reference}{168}{section.5.51}%
+\contentsline {subsection}{\numberline {5.51.1}Detailed Description}{169}{subsection.5.51.1}%
+\contentsline {subsection}{\numberline {5.51.2}Constructor \& Destructor Documentation}{169}{subsection.5.51.2}%
+\contentsline {subsubsection}{\numberline {5.51.2.1}$\sim $NeutralState()}{169}{subsubsection.5.51.2.1}%
+\contentsline {subsection}{\numberline {5.51.3}Member Function Documentation}{169}{subsection.5.51.3}%
+\contentsline {subsubsection}{\numberline {5.51.3.1}clone()}{169}{subsubsection.5.51.3.1}%
+\contentsline {subsubsection}{\numberline {5.51.3.2}getStateName()}{169}{subsubsection.5.51.3.2}%
+\contentsline {subsubsection}{\numberline {5.51.3.3}handle()}{170}{subsubsection.5.51.3.3}%
+\contentsline {section}{\numberline {5.52}Node Class Reference}{170}{section.5.52}%
+\contentsline {subsection}{\numberline {5.52.1}Detailed Description}{171}{subsection.5.52.1}%
+\contentsline {subsection}{\numberline {5.52.2}Constructor \& Destructor Documentation}{171}{subsection.5.52.2}%
+\contentsline {subsubsection}{\numberline {5.52.2.1}Node()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{171}{subsubsection.5.52.2.1}%
+\contentsline {subsubsection}{\numberline {5.52.2.2}Node()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{171}{subsubsection.5.52.2.2}%
+\contentsline {subsubsection}{\numberline {5.52.2.3}Node()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{171}{subsubsection.5.52.2.3}%
+\contentsline {subsection}{\numberline {5.52.3}Member Function Documentation}{171}{subsection.5.52.3}%
+\contentsline {subsubsection}{\numberline {5.52.3.1}addConnection()}{171}{subsubsection.5.52.3.1}%
+\contentsline {subsubsection}{\numberline {5.52.3.2}getComponent()}{172}{subsubsection.5.52.3.2}%
+\contentsline {subsubsection}{\numberline {5.52.3.3}getLocation()}{172}{subsubsection.5.52.3.3}%
+\contentsline {subsubsection}{\numberline {5.52.3.4}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{172}{subsubsection.5.52.3.4}%
+\contentsline {subsubsection}{\numberline {5.52.3.5}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{173}{subsubsection.5.52.3.5}%
+\contentsline {subsubsection}{\numberline {5.52.3.6}setComponent()}{173}{subsubsection.5.52.3.6}%
+\contentsline {subsection}{\numberline {5.52.4}Member Data Documentation}{173}{subsection.5.52.4}%
+\contentsline {subsubsection}{\numberline {5.52.4.1}component}{173}{subsubsection.5.52.4.1}%
+\contentsline {subsubsection}{\numberline {5.52.4.2}connections}{173}{subsubsection.5.52.4.2}%
+\contentsline {subsubsection}{\numberline {5.52.4.3}location}{173}{subsubsection.5.52.4.3}%
+\contentsline {section}{\numberline {5.53}NPCContext Class Reference}{174}{section.5.53}%
+\contentsline {subsection}{\numberline {5.53.1}Detailed Description}{174}{subsection.5.53.1}%
+\contentsline {subsection}{\numberline {5.53.2}Member Function Documentation}{174}{subsection.5.53.2}%
+\contentsline {subsubsection}{\numberline {5.53.2.1}hireNPC()}{174}{subsubsection.5.53.2.1}%
+\contentsline {section}{\numberline {5.54}NPCManager Class Reference}{175}{section.5.54}%
+\contentsline {subsection}{\numberline {5.54.1}Detailed Description}{176}{subsection.5.54.1}%
+\contentsline {subsection}{\numberline {5.54.2}Constructor \& Destructor Documentation}{176}{subsection.5.54.2}%
+\contentsline {subsubsection}{\numberline {5.54.2.1}NPCManager()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{176}{subsubsection.5.54.2.1}%
+\contentsline {subsubsection}{\numberline {5.54.2.2}NPCManager()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{176}{subsubsection.5.54.2.2}%
+\contentsline {subsection}{\numberline {5.54.3}Member Function Documentation}{176}{subsection.5.54.3}%
+\contentsline {subsubsection}{\numberline {5.54.3.1}decrementCount()}{176}{subsubsection.5.54.3.1}%
+\contentsline {subsubsection}{\numberline {5.54.3.2}EmployeedNpcs()}{177}{subsubsection.5.54.3.2}%
+\contentsline {subsubsection}{\numberline {5.54.3.3}getCrimeCount()}{177}{subsubsection.5.54.3.3}%
+\contentsline {subsubsection}{\numberline {5.54.3.4}getCrimeRate()}{177}{subsubsection.5.54.3.4}%
+\contentsline {subsubsection}{\numberline {5.54.3.5}getDonationCount()}{177}{subsubsection.5.54.3.5}%
+\contentsline {subsubsection}{\numberline {5.54.3.6}getHappinessLevel()}{178}{subsubsection.5.54.3.6}%
+\contentsline {subsubsection}{\numberline {5.54.3.7}getHighestState()}{178}{subsubsection.5.54.3.7}%
+\contentsline {subsubsection}{\numberline {5.54.3.8}getInstance()}{178}{subsubsection.5.54.3.8}%
+\contentsline {subsubsection}{\numberline {5.54.3.9}getNeutralCount()}{179}{subsubsection.5.54.3.9}%
+\contentsline {subsubsection}{\numberline {5.54.3.10}getProductiveCount()}{179}{subsubsection.5.54.3.10}%
+\contentsline {subsubsection}{\numberline {5.54.3.11}getRevoltCount()}{179}{subsubsection.5.54.3.11}%
+\contentsline {subsubsection}{\numberline {5.54.3.12}getTotalNPCs()}{179}{subsubsection.5.54.3.12}%
+\contentsline {subsubsection}{\numberline {5.54.3.13}incrementCount()}{179}{subsubsection.5.54.3.13}%
+\contentsline {subsubsection}{\numberline {5.54.3.14}operator=()}{180}{subsubsection.5.54.3.14}%
+\contentsline {subsubsection}{\numberline {5.54.3.15}resetCounts()}{180}{subsubsection.5.54.3.15}%
+\contentsline {subsubsection}{\numberline {5.54.3.16}setHappinessLevel()}{180}{subsubsection.5.54.3.16}%
+\contentsline {subsection}{\numberline {5.54.4}Member Data Documentation}{180}{subsection.5.54.4}%
+\contentsline {subsubsection}{\numberline {5.54.4.1}crimeCount}{180}{subsubsection.5.54.4.1}%
+\contentsline {subsubsection}{\numberline {5.54.4.2}employedNpcs}{181}{subsubsection.5.54.4.2}%
+\contentsline {subsubsection}{\numberline {5.54.4.3}happinessLevel}{181}{subsubsection.5.54.4.3}%
+\contentsline {subsubsection}{\numberline {5.54.4.4}happyCount}{181}{subsubsection.5.54.4.4}%
+\contentsline {subsubsection}{\numberline {5.54.4.5}neutralCount}{181}{subsubsection.5.54.4.5}%
+\contentsline {subsubsection}{\numberline {5.54.4.6}productiveCount}{181}{subsubsection.5.54.4.6}%
+\contentsline {subsubsection}{\numberline {5.54.4.7}revoltCount}{181}{subsubsection.5.54.4.7}%
+\contentsline {subsubsection}{\numberline {5.54.4.8}unemployedNpcs}{182}{subsubsection.5.54.4.8}%
+\contentsline {section}{\numberline {5.55}NPCObserver Class Reference}{182}{section.5.55}%
+\contentsline {subsection}{\numberline {5.55.1}Detailed Description}{182}{subsection.5.55.1}%
+\contentsline {subsection}{\numberline {5.55.2}Constructor \& Destructor Documentation}{182}{subsection.5.55.2}%
+\contentsline {subsubsection}{\numberline {5.55.2.1}$\sim $NPCObserver()}{182}{subsubsection.5.55.2.1}%
+\contentsline {subsection}{\numberline {5.55.3}Member Function Documentation}{183}{subsection.5.55.3}%
+\contentsline {subsubsection}{\numberline {5.55.3.1}clone()}{183}{subsubsection.5.55.3.1}%
+\contentsline {subsubsection}{\numberline {5.55.3.2}update()}{183}{subsubsection.5.55.3.2}%
+\contentsline {section}{\numberline {5.56}NPCState Class Reference}{183}{section.5.56}%
+\contentsline {subsection}{\numberline {5.56.1}Detailed Description}{184}{subsection.5.56.1}%
+\contentsline {subsection}{\numberline {5.56.2}Constructor \& Destructor Documentation}{184}{subsection.5.56.2}%
+\contentsline {subsubsection}{\numberline {5.56.2.1}$\sim $NPCState()}{184}{subsubsection.5.56.2.1}%
+\contentsline {subsection}{\numberline {5.56.3}Member Function Documentation}{184}{subsection.5.56.3}%
+\contentsline {subsubsection}{\numberline {5.56.3.1}clone()}{184}{subsubsection.5.56.3.1}%
+\contentsline {subsubsection}{\numberline {5.56.3.2}getStateName()}{185}{subsubsection.5.56.3.2}%
+\contentsline {subsubsection}{\numberline {5.56.3.3}handle()}{185}{subsubsection.5.56.3.3}%
+\contentsline {section}{\numberline {5.57}Office Class Reference}{185}{section.5.57}%
+\contentsline {subsection}{\numberline {5.57.1}Detailed Description}{186}{subsection.5.57.1}%
+\contentsline {subsection}{\numberline {5.57.2}Constructor \& Destructor Documentation}{186}{subsection.5.57.2}%
+\contentsline {subsubsection}{\numberline {5.57.2.1}Office()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{186}{subsubsection.5.57.2.1}%
+\contentsline {subsubsection}{\numberline {5.57.2.2}Office()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{186}{subsubsection.5.57.2.2}%
+\contentsline {subsection}{\numberline {5.57.3}Member Function Documentation}{186}{subsection.5.57.3}%
+\contentsline {subsubsection}{\numberline {5.57.3.1}getBuildingType()}{186}{subsubsection.5.57.3.1}%
+\contentsline {subsubsection}{\numberline {5.57.3.2}getDisplaySymbol()}{187}{subsubsection.5.57.3.2}%
+\contentsline {section}{\numberline {5.58}Office\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{187}{section.5.58}%
+\contentsline {subsection}{\numberline {5.58.1}Detailed Description}{187}{subsection.5.58.1}%
+\contentsline {subsection}{\numberline {5.58.2}Member Function Documentation}{188}{subsection.5.58.2}%
+\contentsline {subsubsection}{\numberline {5.58.2.1}createBuilding()}{188}{subsubsection.5.58.2.1}%
+\contentsline {section}{\numberline {5.59}Oil Class Reference}{188}{section.5.59}%
+\contentsline {subsection}{\numberline {5.59.1}Detailed Description}{189}{subsection.5.59.1}%
+\contentsline {subsection}{\numberline {5.59.2}Constructor \& Destructor Documentation}{189}{subsection.5.59.2}%
+\contentsline {subsubsection}{\numberline {5.59.2.1}Oil()}{189}{subsubsection.5.59.2.1}%
+\contentsline {subsubsection}{\numberline {5.59.2.2}$\sim $Oil()}{189}{subsubsection.5.59.2.2}%
+\contentsline {subsection}{\numberline {5.59.3}Member Function Documentation}{190}{subsection.5.59.3}%
+\contentsline {subsubsection}{\numberline {5.59.3.1}displayStatus()}{190}{subsubsection.5.59.3.1}%
+\contentsline {subsubsection}{\numberline {5.59.3.2}getBuildingType()}{190}{subsubsection.5.59.3.2}%
+\contentsline {section}{\numberline {5.60}Park Class Reference}{190}{section.5.60}%
+\contentsline {subsection}{\numberline {5.60.1}Detailed Description}{191}{subsection.5.60.1}%
+\contentsline {subsection}{\numberline {5.60.2}Constructor \& Destructor Documentation}{191}{subsection.5.60.2}%
+\contentsline {subsubsection}{\numberline {5.60.2.1}Park()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{191}{subsubsection.5.60.2.1}%
+\contentsline {subsubsection}{\numberline {5.60.2.2}Park()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{191}{subsubsection.5.60.2.2}%
+\contentsline {subsubsection}{\numberline {5.60.2.3}$\sim $Park()}{192}{subsubsection.5.60.2.3}%
+\contentsline {subsection}{\numberline {5.60.3}Member Function Documentation}{192}{subsection.5.60.3}%
+\contentsline {subsubsection}{\numberline {5.60.3.1}clone()}{192}{subsubsection.5.60.3.1}%
+\contentsline {subsubsection}{\numberline {5.60.3.2}displayStatus()}{192}{subsubsection.5.60.3.2}%
+\contentsline {subsubsection}{\numberline {5.60.3.3}getBuildingType()}{193}{subsubsection.5.60.3.3}%
+\contentsline {section}{\numberline {5.61}Park\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{193}{section.5.61}%
+\contentsline {subsection}{\numberline {5.61.1}Detailed Description}{193}{subsection.5.61.1}%
+\contentsline {subsection}{\numberline {5.61.2}Member Function Documentation}{193}{subsection.5.61.2}%
+\contentsline {subsubsection}{\numberline {5.61.2.1}createLandMark()}{194}{subsubsection.5.61.2.1}%
+\contentsline {section}{\numberline {5.62}Petrochemical\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Facility Class Reference}{194}{section.5.62}%
+\contentsline {subsection}{\numberline {5.62.1}Detailed Description}{195}{subsection.5.62.1}%
+\contentsline {subsection}{\numberline {5.62.2}Constructor \& Destructor Documentation}{195}{subsection.5.62.2}%
+\contentsline {subsubsection}{\numberline {5.62.2.1}PetrochemicalFacility()}{195}{subsubsection.5.62.2.1}%
+\contentsline {subsection}{\numberline {5.62.3}Member Function Documentation}{195}{subsection.5.62.3}%
+\contentsline {subsubsection}{\numberline {5.62.3.1}processConcrete()}{196}{subsubsection.5.62.3.1}%
+\contentsline {subsubsection}{\numberline {5.62.3.2}processOil()}{196}{subsubsection.5.62.3.2}%
+\contentsline {subsection}{\numberline {5.62.4}Member Data Documentation}{196}{subsection.5.62.4}%
+\contentsline {subsubsection}{\numberline {5.62.4.1}PETRO\_CHEMICAL\_RANGE}{197}{subsubsection.5.62.4.1}%
+\contentsline {section}{\numberline {5.63}Place\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Command Class Reference}{197}{section.5.63}%
+\contentsline {subsection}{\numberline {5.63.1}Detailed Description}{197}{subsection.5.63.1}%
+\contentsline {subsection}{\numberline {5.63.2}Constructor \& Destructor Documentation}{198}{subsection.5.63.2}%
+\contentsline {subsubsection}{\numberline {5.63.2.1}PlaceComponentCommand()}{198}{subsubsection.5.63.2.1}%
+\contentsline {subsection}{\numberline {5.63.3}Member Function Documentation}{198}{subsection.5.63.3}%
+\contentsline {subsubsection}{\numberline {5.63.3.1}clone()}{198}{subsubsection.5.63.3.1}%
+\contentsline {subsubsection}{\numberline {5.63.3.2}execute()}{198}{subsubsection.5.63.3.2}%
+\contentsline {subsubsection}{\numberline {5.63.3.3}undo()}{199}{subsubsection.5.63.3.3}%
+\contentsline {subsection}{\numberline {5.63.4}Member Data Documentation}{199}{subsection.5.63.4}%
+\contentsline {subsubsection}{\numberline {5.63.4.1}component}{199}{subsubsection.5.63.4.1}%
+\contentsline {subsubsection}{\numberline {5.63.4.2}grid}{199}{subsubsection.5.63.4.2}%
+\contentsline {subsubsection}{\numberline {5.63.4.3}location}{199}{subsubsection.5.63.4.3}%
+\contentsline {subsubsection}{\numberline {5.63.4.4}previousComponent}{199}{subsubsection.5.63.4.4}%
+\contentsline {section}{\numberline {5.64}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Placement\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result Struct Reference}{200}{section.5.64}%
+\contentsline {subsection}{\numberline {5.64.1}Member Data Documentation}{200}{subsection.5.64.1}%
+\contentsline {subsubsection}{\numberline {5.64.1.1}message}{200}{subsubsection.5.64.1.1}%
+\contentsline {subsubsection}{\numberline {5.64.1.2}success}{200}{subsubsection.5.64.1.2}%
+\contentsline {section}{\numberline {5.65}Plant\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{200}{section.5.65}%
+\contentsline {subsection}{\numberline {5.65.1}Detailed Description}{201}{subsection.5.65.1}%
+\contentsline {subsection}{\numberline {5.65.2}Constructor \& Destructor Documentation}{201}{subsection.5.65.2}%
+\contentsline {subsubsection}{\numberline {5.65.2.1}PlantFactory()}{201}{subsubsection.5.65.2.1}%
+\contentsline {subsubsection}{\numberline {5.65.2.2}$\sim $PlantFactory()}{201}{subsubsection.5.65.2.2}%
+\contentsline {subsection}{\numberline {5.65.3}Member Function Documentation}{201}{subsection.5.65.3}%
+\contentsline {subsubsection}{\numberline {5.65.3.1}createConstructionR()}{201}{subsubsection.5.65.3.1}%
+\contentsline {subsubsection}{\numberline {5.65.3.2}createIncomeR()}{202}{subsubsection.5.65.3.2}%
+\contentsline {section}{\numberline {5.66}Police\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station Class Reference}{203}{section.5.66}%
+\contentsline {subsection}{\numberline {5.66.1}Detailed Description}{203}{subsection.5.66.1}%
+\contentsline {subsection}{\numberline {5.66.2}Constructor \& Destructor Documentation}{204}{subsection.5.66.2}%
+\contentsline {subsubsection}{\numberline {5.66.2.1}PoliceStation()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{204}{subsubsection.5.66.2.1}%
+\contentsline {subsubsection}{\numberline {5.66.2.2}PoliceStation()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{204}{subsubsection.5.66.2.2}%
+\contentsline {subsubsection}{\numberline {5.66.2.3}$\sim $PoliceStation()}{204}{subsubsection.5.66.2.3}%
+\contentsline {subsection}{\numberline {5.66.3}Member Function Documentation}{204}{subsection.5.66.3}%
+\contentsline {subsubsection}{\numberline {5.66.3.1}clone()}{205}{subsubsection.5.66.3.1}%
+\contentsline {subsubsection}{\numberline {5.66.3.2}displayStatus()}{205}{subsubsection.5.66.3.2}%
+\contentsline {subsubsection}{\numberline {5.66.3.3}getDisplaySymbol()}{205}{subsubsection.5.66.3.3}%
+\contentsline {subsubsection}{\numberline {5.66.3.4}provideService()}{205}{subsubsection.5.66.3.4}%
+\contentsline {subsection}{\numberline {5.66.4}Member Data Documentation}{205}{subsection.5.66.4}%
+\contentsline {subsubsection}{\numberline {5.66.4.1}status}{206}{subsubsection.5.66.4.1}%
+\contentsline {section}{\numberline {5.67}Police\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{206}{section.5.67}%
+\contentsline {subsection}{\numberline {5.67.1}Detailed Description}{206}{subsection.5.67.1}%
+\contentsline {subsection}{\numberline {5.67.2}Member Function Documentation}{206}{subsection.5.67.2}%
+\contentsline {subsubsection}{\numberline {5.67.2.1}createPublicService()}{206}{subsubsection.5.67.2.1}%
+\contentsline {section}{\numberline {5.68}Power\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plant Class Reference}{207}{section.5.68}%
+\contentsline {subsection}{\numberline {5.68.1}Detailed Description}{207}{subsection.5.68.1}%
+\contentsline {subsection}{\numberline {5.68.2}Constructor \& Destructor Documentation}{207}{subsection.5.68.2}%
+\contentsline {subsubsection}{\numberline {5.68.2.1}PowerPlant()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{207}{subsubsection.5.68.2.1}%
+\contentsline {subsubsection}{\numberline {5.68.2.2}PowerPlant()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{208}{subsubsection.5.68.2.2}%
+\contentsline {subsection}{\numberline {5.68.3}Member Function Documentation}{209}{subsection.5.68.3}%
+\contentsline {subsubsection}{\numberline {5.68.3.1}clone()}{209}{subsubsection.5.68.3.1}%
+\contentsline {subsubsection}{\numberline {5.68.3.2}connect()}{209}{subsubsection.5.68.3.2}%
+\contentsline {section}{\numberline {5.69}Productive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State Class Reference}{210}{section.5.69}%
+\contentsline {subsection}{\numberline {5.69.1}Detailed Description}{210}{subsection.5.69.1}%
+\contentsline {subsection}{\numberline {5.69.2}Constructor \& Destructor Documentation}{210}{subsection.5.69.2}%
+\contentsline {subsubsection}{\numberline {5.69.2.1}$\sim $ProductiveState()}{210}{subsubsection.5.69.2.1}%
+\contentsline {subsection}{\numberline {5.69.3}Member Function Documentation}{211}{subsection.5.69.3}%
+\contentsline {subsubsection}{\numberline {5.69.3.1}clone()}{211}{subsubsection.5.69.3.1}%
+\contentsline {subsubsection}{\numberline {5.69.3.2}getStateName()}{211}{subsubsection.5.69.3.2}%
+\contentsline {subsubsection}{\numberline {5.69.3.3}handle()}{211}{subsubsection.5.69.3.3}%
+\contentsline {section}{\numberline {5.70}Public\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service Class Reference}{212}{section.5.70}%
+\contentsline {subsection}{\numberline {5.70.1}Detailed Description}{212}{subsection.5.70.1}%
+\contentsline {subsection}{\numberline {5.70.2}Constructor \& Destructor Documentation}{213}{subsection.5.70.2}%
+\contentsline {subsubsection}{\numberline {5.70.2.1}PublicService()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{213}{subsubsection.5.70.2.1}%
+\contentsline {subsubsection}{\numberline {5.70.2.2}PublicService()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{213}{subsubsection.5.70.2.2}%
+\contentsline {subsubsection}{\numberline {5.70.2.3}$\sim $PublicService()}{213}{subsubsection.5.70.2.3}%
+\contentsline {subsection}{\numberline {5.70.3}Member Function Documentation}{214}{subsection.5.70.3}%
+\contentsline {subsubsection}{\numberline {5.70.3.1}accept()}{214}{subsubsection.5.70.3.1}%
+\contentsline {subsubsection}{\numberline {5.70.3.2}displayStatus()}{214}{subsubsection.5.70.3.2}%
+\contentsline {subsubsection}{\numberline {5.70.3.3}getBuildingType()}{214}{subsubsection.5.70.3.3}%
+\contentsline {subsubsection}{\numberline {5.70.3.4}getDisplaySymbol()}{215}{subsubsection.5.70.3.4}%
+\contentsline {subsubsection}{\numberline {5.70.3.5}getUtilityCoverage()}{215}{subsubsection.5.70.3.5}%
+\contentsline {subsubsection}{\numberline {5.70.3.6}hasUtilities()}{215}{subsubsection.5.70.3.6}%
+\contentsline {subsubsection}{\numberline {5.70.3.7}provideService()}{215}{subsubsection.5.70.3.7}%
+\contentsline {subsection}{\numberline {5.70.4}Member Data Documentation}{215}{subsection.5.70.4}%
+\contentsline {subsubsection}{\numberline {5.70.4.1}powerSupply}{216}{subsubsection.5.70.4.1}%
+\contentsline {subsubsection}{\numberline {5.70.4.2}sewageManagement}{216}{subsubsection.5.70.4.2}%
+\contentsline {subsubsection}{\numberline {5.70.4.3}wasteManagement}{216}{subsubsection.5.70.4.3}%
+\contentsline {subsubsection}{\numberline {5.70.4.4}waterSupply}{216}{subsubsection.5.70.4.4}%
+\contentsline {section}{\numberline {5.71}Public\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{216}{section.5.71}%
+\contentsline {subsection}{\numberline {5.71.1}Detailed Description}{217}{subsection.5.71.1}%
+\contentsline {subsection}{\numberline {5.71.2}Constructor \& Destructor Documentation}{217}{subsection.5.71.2}%
+\contentsline {subsubsection}{\numberline {5.71.2.1}$\sim $PublicServiceFactory()}{217}{subsubsection.5.71.2.1}%
+\contentsline {subsection}{\numberline {5.71.3}Member Function Documentation}{217}{subsection.5.71.3}%
+\contentsline {subsubsection}{\numberline {5.71.3.1}createPublicService()}{217}{subsubsection.5.71.3.1}%
+\contentsline {section}{\numberline {5.72}Reacting\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCS Class Reference}{218}{section.5.72}%
+\contentsline {subsection}{\numberline {5.72.1}Detailed Description}{218}{subsection.5.72.1}%
+\contentsline {subsection}{\numberline {5.72.2}Constructor \& Destructor Documentation}{218}{subsection.5.72.2}%
+\contentsline {subsubsection}{\numberline {5.72.2.1}ReactingNPCS()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{218}{subsubsection.5.72.2.1}%
+\contentsline {subsubsection}{\numberline {5.72.2.2}$\sim $ReactingNPCS()}{219}{subsubsection.5.72.2.2}%
+\contentsline {subsubsection}{\numberline {5.72.2.3}ReactingNPCS()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{219}{subsubsection.5.72.2.3}%
+\contentsline {subsection}{\numberline {5.72.3}Member Function Documentation}{219}{subsection.5.72.3}%
+\contentsline {subsubsection}{\numberline {5.72.3.1}changeState()}{219}{subsubsection.5.72.3.1}%
+\contentsline {subsubsection}{\numberline {5.72.3.2}clone()}{219}{subsubsection.5.72.3.2}%
+\contentsline {subsubsection}{\numberline {5.72.3.3}getState()}{220}{subsubsection.5.72.3.3}%
+\contentsline {subsubsection}{\numberline {5.72.3.4}update()}{220}{subsubsection.5.72.3.4}%
+\contentsline {subsection}{\numberline {5.72.4}Member Data Documentation}{220}{subsection.5.72.4}%
+\contentsline {subsubsection}{\numberline {5.72.4.1}state}{220}{subsubsection.5.72.4.1}%
+\contentsline {section}{\numberline {5.73}Residential\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building Class Reference}{221}{section.5.73}%
+\contentsline {subsection}{\numberline {5.73.1}Detailed Description}{222}{subsection.5.73.1}%
+\contentsline {subsection}{\numberline {5.73.2}Constructor \& Destructor Documentation}{222}{subsection.5.73.2}%
+\contentsline {subsubsection}{\numberline {5.73.2.1}ResidentialBuilding()}{222}{subsubsection.5.73.2.1}%
+\contentsline {subsection}{\numberline {5.73.3}Member Function Documentation}{222}{subsection.5.73.3}%
+\contentsline {subsubsection}{\numberline {5.73.3.1}accept()}{222}{subsubsection.5.73.3.1}%
+\contentsline {subsubsection}{\numberline {5.73.3.2}displayStatus()}{223}{subsubsection.5.73.3.2}%
+\contentsline {subsubsection}{\numberline {5.73.3.3}getBuildingType()}{223}{subsubsection.5.73.3.3}%
+\contentsline {subsubsection}{\numberline {5.73.3.4}getDisplayColor()}{223}{subsubsection.5.73.3.4}%
+\contentsline {subsubsection}{\numberline {5.73.3.5}getDisplaySymbol()}{224}{subsubsection.5.73.3.5}%
+\contentsline {subsubsection}{\numberline {5.73.3.6}getPrice()}{224}{subsubsection.5.73.3.6}%
+\contentsline {subsubsection}{\numberline {5.73.3.7}getUtilityCoverage()}{224}{subsubsection.5.73.3.7}%
+\contentsline {subsubsection}{\numberline {5.73.3.8}hasUtilities()}{224}{subsubsection.5.73.3.8}%
+\contentsline {subsubsection}{\numberline {5.73.3.9}isTaxPaid()}{225}{subsubsection.5.73.3.9}%
+\contentsline {subsubsection}{\numberline {5.73.3.10}setPowerSupply()}{225}{subsubsection.5.73.3.10}%
+\contentsline {subsubsection}{\numberline {5.73.3.11}setSewageManagement()}{225}{subsubsection.5.73.3.11}%
+\contentsline {subsubsection}{\numberline {5.73.3.12}setTaxPaid()}{225}{subsubsection.5.73.3.12}%
+\contentsline {subsubsection}{\numberline {5.73.3.13}setWasteManagement()}{225}{subsubsection.5.73.3.13}%
+\contentsline {subsubsection}{\numberline {5.73.3.14}setWaterSupply()}{226}{subsubsection.5.73.3.14}%
+\contentsline {subsection}{\numberline {5.73.4}Member Data Documentation}{226}{subsection.5.73.4}%
+\contentsline {subsubsection}{\numberline {5.73.4.1}bedrooms}{226}{subsubsection.5.73.4.1}%
+\contentsline {subsubsection}{\numberline {5.73.4.2}powerSupply}{226}{subsubsection.5.73.4.2}%
+\contentsline {subsubsection}{\numberline {5.73.4.3}price}{226}{subsubsection.5.73.4.3}%
+\contentsline {subsubsection}{\numberline {5.73.4.4}sewageManagement}{226}{subsubsection.5.73.4.4}%
+\contentsline {subsubsection}{\numberline {5.73.4.5}taxPaid}{227}{subsubsection.5.73.4.5}%
+\contentsline {subsubsection}{\numberline {5.73.4.6}wasteManagement}{227}{subsubsection.5.73.4.6}%
+\contentsline {subsubsection}{\numberline {5.73.4.7}waterSupply}{227}{subsubsection.5.73.4.7}%
+\contentsline {section}{\numberline {5.74}Residential\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{227}{section.5.74}%
+\contentsline {subsection}{\numberline {5.74.1}Detailed Description}{227}{subsection.5.74.1}%
+\contentsline {subsection}{\numberline {5.74.2}Constructor \& Destructor Documentation}{228}{subsection.5.74.2}%
+\contentsline {subsubsection}{\numberline {5.74.2.1}$\sim $ResidentialBuildingFactory()}{228}{subsubsection.5.74.2.1}%
+\contentsline {subsection}{\numberline {5.74.3}Member Function Documentation}{228}{subsection.5.74.3}%
+\contentsline {subsubsection}{\numberline {5.74.3.1}createBuilding()}{228}{subsubsection.5.74.3.1}%
+\contentsline {section}{\numberline {5.75}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{228}{section.5.75}%
+\contentsline {subsection}{\numberline {5.75.1}Detailed Description}{229}{subsection.5.75.1}%
+\contentsline {subsection}{\numberline {5.75.2}Constructor \& Destructor Documentation}{229}{subsection.5.75.2}%
+\contentsline {subsubsection}{\numberline {5.75.2.1}ResourceFactory()}{229}{subsubsection.5.75.2.1}%
+\contentsline {subsubsection}{\numberline {5.75.2.2}$\sim $ResourceFactory()}{229}{subsubsection.5.75.2.2}%
+\contentsline {subsection}{\numberline {5.75.3}Member Function Documentation}{229}{subsection.5.75.3}%
+\contentsline {subsubsection}{\numberline {5.75.3.1}createConstructionR()}{229}{subsubsection.5.75.3.1}%
+\contentsline {subsubsection}{\numberline {5.75.3.2}createIncomeR()}{230}{subsubsection.5.75.3.2}%
+\contentsline {section}{\numberline {5.76}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processor Class Reference}{230}{section.5.76}%
+\contentsline {subsection}{\numberline {5.76.1}Detailed Description}{231}{subsection.5.76.1}%
+\contentsline {subsection}{\numberline {5.76.2}Constructor \& Destructor Documentation}{231}{subsection.5.76.2}%
+\contentsline {subsubsection}{\numberline {5.76.2.1}$\sim $ResourceProcessor()}{231}{subsubsection.5.76.2.1}%
+\contentsline {subsection}{\numberline {5.76.3}Member Function Documentation}{231}{subsection.5.76.3}%
+\contentsline {subsubsection}{\numberline {5.76.3.1}display()}{231}{subsubsection.5.76.3.1}%
+\contentsline {subsubsection}{\numberline {5.76.3.2}getCurrentStorage()}{232}{subsubsection.5.76.3.2}%
+\contentsline {subsubsection}{\numberline {5.76.3.3}process()}{232}{subsubsection.5.76.3.3}%
+\contentsline {subsubsection}{\numberline {5.76.3.4}store()}{232}{subsubsection.5.76.3.4}%
+\contentsline {section}{\numberline {5.77}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Requirement Struct Reference}{233}{section.5.77}%
+\contentsline {subsection}{\numberline {5.77.1}Detailed Description}{233}{subsection.5.77.1}%
+\contentsline {subsection}{\numberline {5.77.2}Constructor \& Destructor Documentation}{233}{subsection.5.77.2}%
+\contentsline {subsubsection}{\numberline {5.77.2.1}ResourceRequirement()}{233}{subsubsection.5.77.2.1}%
+\contentsline {subsection}{\numberline {5.77.3}Member Data Documentation}{234}{subsection.5.77.3}%
+\contentsline {subsubsection}{\numberline {5.77.3.1}concrete}{234}{subsubsection.5.77.3.1}%
+\contentsline {subsubsection}{\numberline {5.77.3.2}steel}{234}{subsubsection.5.77.3.2}%
+\contentsline {subsubsection}{\numberline {5.77.3.3}stone}{234}{subsubsection.5.77.3.3}%
+\contentsline {subsubsection}{\numberline {5.77.3.4}wood}{234}{subsubsection.5.77.3.4}%
+\contentsline {section}{\numberline {5.78}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spot Struct Reference}{234}{section.5.78}%
+\contentsline {subsection}{\numberline {5.78.1}Member Data Documentation}{234}{subsection.5.78.1}%
+\contentsline {subsubsection}{\numberline {5.78.1.1}discovered}{235}{subsubsection.5.78.1.1}%
+\contentsline {subsubsection}{\numberline {5.78.1.2}resource}{235}{subsubsection.5.78.1.2}%
+\contentsline {section}{\numberline {5.79}Revolt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State Class Reference}{235}{section.5.79}%
+\contentsline {subsection}{\numberline {5.79.1}Detailed Description}{235}{subsection.5.79.1}%
+\contentsline {subsection}{\numberline {5.79.2}Constructor \& Destructor Documentation}{235}{subsection.5.79.2}%
+\contentsline {subsubsection}{\numberline {5.79.2.1}$\sim $RevoltState()}{236}{subsubsection.5.79.2.1}%
+\contentsline {subsection}{\numberline {5.79.3}Member Function Documentation}{236}{subsection.5.79.3}%
+\contentsline {subsubsection}{\numberline {5.79.3.1}clone()}{236}{subsubsection.5.79.3.1}%
+\contentsline {subsubsection}{\numberline {5.79.3.2}getStateName()}{236}{subsubsection.5.79.3.2}%
+\contentsline {subsubsection}{\numberline {5.79.3.3}handle()}{237}{subsubsection.5.79.3.3}%
+\contentsline {section}{\numberline {5.80}Roads Class Reference}{237}{section.5.80}%
+\contentsline {subsection}{\numberline {5.80.1}Detailed Description}{238}{subsection.5.80.1}%
+\contentsline {subsection}{\numberline {5.80.2}Constructor \& Destructor Documentation}{238}{subsection.5.80.2}%
+\contentsline {subsubsection}{\numberline {5.80.2.1}Roads()}{238}{subsubsection.5.80.2.1}%
+\contentsline {subsubsection}{\numberline {5.80.2.2}$\sim $Roads()}{238}{subsubsection.5.80.2.2}%
+\contentsline {subsection}{\numberline {5.80.3}Member Function Documentation}{238}{subsection.5.80.3}%
+\contentsline {subsubsection}{\numberline {5.80.3.1}clone()}{238}{subsubsection.5.80.3.1}%
+\contentsline {subsubsection}{\numberline {5.80.3.2}getCapacity()}{239}{subsubsection.5.80.3.2}%
+\contentsline {subsubsection}{\numberline {5.80.3.3}getCost()}{239}{subsubsection.5.80.3.3}%
+\contentsline {subsubsection}{\numberline {5.80.3.4}getMaintainanceCost()}{239}{subsubsection.5.80.3.4}%
+\contentsline {subsubsection}{\numberline {5.80.3.5}getSpeed()}{240}{subsubsection.5.80.3.5}%
+\contentsline {subsubsection}{\numberline {5.80.3.6}getType()}{240}{subsubsection.5.80.3.6}%
+\contentsline {subsection}{\numberline {5.80.4}Member Data Documentation}{240}{subsection.5.80.4}%
+\contentsline {subsubsection}{\numberline {5.80.4.1}road}{240}{subsubsection.5.80.4.1}%
+\contentsline {subsubsection}{\numberline {5.80.4.2}trafficCapacity}{240}{subsubsection.5.80.4.2}%
+\contentsline {section}{\numberline {5.81}Roads\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{241}{section.5.81}%
+\contentsline {subsection}{\numberline {5.81.1}Detailed Description}{241}{subsection.5.81.1}%
+\contentsline {subsection}{\numberline {5.81.2}Member Function Documentation}{241}{subsection.5.81.2}%
+\contentsline {subsubsection}{\numberline {5.81.2.1}createTransport()}{241}{subsubsection.5.81.2.1}%
+\contentsline {section}{\numberline {5.82}School Class Reference}{242}{section.5.82}%
+\contentsline {subsection}{\numberline {5.82.1}Constructor \& Destructor Documentation}{242}{subsection.5.82.1}%
+\contentsline {subsubsection}{\numberline {5.82.1.1}School()}{242}{subsubsection.5.82.1.1}%
+\contentsline {subsubsection}{\numberline {5.82.1.2}$\sim $School()}{242}{subsubsection.5.82.1.2}%
+\contentsline {subsection}{\numberline {5.82.2}Member Function Documentation}{243}{subsection.5.82.2}%
+\contentsline {subsubsection}{\numberline {5.82.2.1}displayStatus()}{243}{subsubsection.5.82.2.1}%
+\contentsline {subsubsection}{\numberline {5.82.2.2}getDisplaySymbol()}{243}{subsubsection.5.82.2.2}%
+\contentsline {subsubsection}{\numberline {5.82.2.3}provideService()}{243}{subsubsection.5.82.2.3}%
+\contentsline {subsection}{\numberline {5.82.3}Member Data Documentation}{243}{subsection.5.82.3}%
+\contentsline {subsubsection}{\numberline {5.82.3.1}status}{243}{subsubsection.5.82.3.1}%
+\contentsline {section}{\numberline {5.83}Sewage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{244}{section.5.83}%
+\contentsline {subsection}{\numberline {5.83.1}Detailed Description}{244}{subsection.5.83.1}%
+\contentsline {subsection}{\numberline {5.83.2}Constructor \& Destructor Documentation}{244}{subsection.5.83.2}%
+\contentsline {subsubsection}{\numberline {5.83.2.1}SewageSystem()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{244}{subsubsection.5.83.2.1}%
+\contentsline {subsubsection}{\numberline {5.83.2.2}SewageSystem()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{245}{subsubsection.5.83.2.2}%
+\contentsline {subsection}{\numberline {5.83.3}Member Function Documentation}{245}{subsection.5.83.3}%
+\contentsline {subsubsection}{\numberline {5.83.3.1}clone()}{245}{subsubsection.5.83.3.1}%
+\contentsline {subsubsection}{\numberline {5.83.3.2}connect()}{246}{subsubsection.5.83.3.2}%
+\contentsline {section}{\numberline {5.84}Shops Class Reference}{247}{section.5.84}%
+\contentsline {subsection}{\numberline {5.84.1}Detailed Description}{247}{subsection.5.84.1}%
+\contentsline {subsection}{\numberline {5.84.2}Constructor \& Destructor Documentation}{247}{subsection.5.84.2}%
+\contentsline {subsubsection}{\numberline {5.84.2.1}Shops()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{247}{subsubsection.5.84.2.1}%
+\contentsline {subsubsection}{\numberline {5.84.2.2}Shops()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{247}{subsubsection.5.84.2.2}%
+\contentsline {subsection}{\numberline {5.84.3}Member Function Documentation}{248}{subsection.5.84.3}%
+\contentsline {subsubsection}{\numberline {5.84.3.1}getBuildingType()}{248}{subsubsection.5.84.3.1}%
+\contentsline {subsubsection}{\numberline {5.84.3.2}getDisplaySymbol()}{248}{subsubsection.5.84.3.2}%
+\contentsline {section}{\numberline {5.85}Shops\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{249}{section.5.85}%
+\contentsline {subsection}{\numberline {5.85.1}Detailed Description}{249}{subsection.5.85.1}%
+\contentsline {subsection}{\numberline {5.85.2}Member Function Documentation}{249}{subsection.5.85.2}%
+\contentsline {subsubsection}{\numberline {5.85.2.1}createBuilding()}{249}{subsubsection.5.85.2.1}%
+\contentsline {section}{\numberline {5.86}Slow\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy Class Reference}{250}{section.5.86}%
+\contentsline {subsection}{\numberline {5.86.1}Detailed Description}{250}{subsection.5.86.1}%
+\contentsline {subsection}{\numberline {5.86.2}Member Function Documentation}{250}{subsection.5.86.2}%
+\contentsline {subsubsection}{\numberline {5.86.2.1}collect()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{250}{subsubsection.5.86.2.1}%
+\contentsline {subsubsection}{\numberline {5.86.2.2}collect()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{251}{subsubsection.5.86.2.2}%
+\contentsline {section}{\numberline {5.87}Steel Class Reference}{251}{section.5.87}%
+\contentsline {subsection}{\numberline {5.87.1}Detailed Description}{252}{subsection.5.87.1}%
+\contentsline {subsection}{\numberline {5.87.2}Constructor \& Destructor Documentation}{252}{subsection.5.87.2}%
+\contentsline {subsubsection}{\numberline {5.87.2.1}Steel()}{252}{subsubsection.5.87.2.1}%
+\contentsline {subsubsection}{\numberline {5.87.2.2}$\sim $Steel()}{252}{subsubsection.5.87.2.2}%
+\contentsline {subsection}{\numberline {5.87.3}Member Function Documentation}{253}{subsection.5.87.3}%
+\contentsline {subsubsection}{\numberline {5.87.3.1}displayStatus()}{253}{subsubsection.5.87.3.1}%
+\contentsline {subsubsection}{\numberline {5.87.3.2}getBuildingType()}{253}{subsubsection.5.87.3.2}%
+\contentsline {section}{\numberline {5.88}Stone Class Reference}{253}{section.5.88}%
+\contentsline {subsection}{\numberline {5.88.1}Detailed Description}{254}{subsection.5.88.1}%
+\contentsline {subsection}{\numberline {5.88.2}Constructor \& Destructor Documentation}{254}{subsection.5.88.2}%
+\contentsline {subsubsection}{\numberline {5.88.2.1}Stone()}{254}{subsubsection.5.88.2.1}%
+\contentsline {subsubsection}{\numberline {5.88.2.2}$\sim $Stone()}{255}{subsubsection.5.88.2.2}%
+\contentsline {subsection}{\numberline {5.88.3}Member Function Documentation}{255}{subsection.5.88.3}%
+\contentsline {subsubsection}{\numberline {5.88.3.1}displayStatus()}{255}{subsubsection.5.88.3.1}%
+\contentsline {subsubsection}{\numberline {5.88.3.2}getBuildingType()}{255}{subsubsection.5.88.3.2}%
+\contentsline {section}{\numberline {5.89}Stone\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{256}{section.5.89}%
+\contentsline {subsection}{\numberline {5.89.1}Detailed Description}{256}{subsection.5.89.1}%
+\contentsline {subsection}{\numberline {5.89.2}Constructor \& Destructor Documentation}{256}{subsection.5.89.2}%
+\contentsline {subsubsection}{\numberline {5.89.2.1}StoneFactory()}{256}{subsubsection.5.89.2.1}%
+\contentsline {subsubsection}{\numberline {5.89.2.2}$\sim $StoneFactory()}{256}{subsubsection.5.89.2.2}%
+\contentsline {subsection}{\numberline {5.89.3}Member Function Documentation}{257}{subsection.5.89.3}%
+\contentsline {subsubsection}{\numberline {5.89.3.1}createConstructionR()}{257}{subsubsection.5.89.3.1}%
+\contentsline {subsubsection}{\numberline {5.89.3.2}createIncomeR()}{257}{subsubsection.5.89.3.2}%
+\contentsline {section}{\numberline {5.90}tax\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collector Class Reference}{258}{section.5.90}%
+\contentsline {subsection}{\numberline {5.90.1}Detailed Description}{259}{subsection.5.90.1}%
+\contentsline {subsection}{\numberline {5.90.2}Constructor \& Destructor Documentation}{259}{subsection.5.90.2}%
+\contentsline {subsubsection}{\numberline {5.90.2.1}taxCollector()}{259}{subsubsection.5.90.2.1}%
+\contentsline {subsubsection}{\numberline {5.90.2.2}$\sim $taxCollector()}{259}{subsubsection.5.90.2.2}%
+\contentsline {subsection}{\numberline {5.90.3}Member Function Documentation}{259}{subsection.5.90.3}%
+\contentsline {subsubsection}{\numberline {5.90.3.1}getGovernment()}{259}{subsubsection.5.90.3.1}%
+\contentsline {subsubsection}{\numberline {5.90.3.2}visit()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{259}{subsubsection.5.90.3.2}%
+\contentsline {subsubsection}{\numberline {5.90.3.3}visit()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{260}{subsubsection.5.90.3.3}%
+\contentsline {subsubsection}{\numberline {5.90.3.4}visit()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{260}{subsubsection.5.90.3.4}%
+\contentsline {section}{\numberline {5.91}Townhouse Class Reference}{260}{section.5.91}%
+\contentsline {subsection}{\numberline {5.91.1}Detailed Description}{261}{subsection.5.91.1}%
+\contentsline {subsection}{\numberline {5.91.2}Constructor \& Destructor Documentation}{261}{subsection.5.91.2}%
+\contentsline {subsubsection}{\numberline {5.91.2.1}Townhouse()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{261}{subsubsection.5.91.2.1}%
+\contentsline {subsubsection}{\numberline {5.91.2.2}Townhouse()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{261}{subsubsection.5.91.2.2}%
+\contentsline {subsection}{\numberline {5.91.3}Member Function Documentation}{262}{subsection.5.91.3}%
+\contentsline {subsubsection}{\numberline {5.91.3.1}getBuildingType()}{262}{subsubsection.5.91.3.1}%
+\contentsline {subsubsection}{\numberline {5.91.3.2}getDisplaySymbol()}{262}{subsubsection.5.91.3.2}%
+\contentsline {subsection}{\numberline {5.91.4}Member Data Documentation}{263}{subsection.5.91.4}%
+\contentsline {subsubsection}{\numberline {5.91.4.1}BASE\_COST}{263}{subsubsection.5.91.4.1}%
+\contentsline {section}{\numberline {5.92}Townhouse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{263}{section.5.92}%
+\contentsline {subsection}{\numberline {5.92.1}Detailed Description}{263}{subsection.5.92.1}%
+\contentsline {subsection}{\numberline {5.92.2}Member Function Documentation}{263}{subsection.5.92.2}%
+\contentsline {subsubsection}{\numberline {5.92.2.1}createBuilding()}{264}{subsubsection.5.92.2.1}%
+\contentsline {section}{\numberline {5.93}Trains Class Reference}{264}{section.5.93}%
+\contentsline {subsection}{\numberline {5.93.1}Detailed Description}{265}{subsection.5.93.1}%
+\contentsline {subsection}{\numberline {5.93.2}Constructor \& Destructor Documentation}{265}{subsection.5.93.2}%
+\contentsline {subsubsection}{\numberline {5.93.2.1}Trains()}{265}{subsubsection.5.93.2.1}%
+\contentsline {subsubsection}{\numberline {5.93.2.2}$\sim $Trains()}{265}{subsubsection.5.93.2.2}%
+\contentsline {subsection}{\numberline {5.93.3}Member Function Documentation}{265}{subsection.5.93.3}%
+\contentsline {subsubsection}{\numberline {5.93.3.1}clone()}{266}{subsubsection.5.93.3.1}%
+\contentsline {subsubsection}{\numberline {5.93.3.2}getCapacity()}{266}{subsubsection.5.93.3.2}%
+\contentsline {subsubsection}{\numberline {5.93.3.3}getCost()}{266}{subsubsection.5.93.3.3}%
+\contentsline {subsubsection}{\numberline {5.93.3.4}getMaintainanceCost()}{267}{subsubsection.5.93.3.4}%
+\contentsline {subsubsection}{\numberline {5.93.3.5}getSpeed()}{267}{subsubsection.5.93.3.5}%
+\contentsline {subsubsection}{\numberline {5.93.3.6}getType()}{267}{subsubsection.5.93.3.6}%
+\contentsline {subsection}{\numberline {5.93.4}Member Data Documentation}{268}{subsection.5.93.4}%
+\contentsline {subsubsection}{\numberline {5.93.4.1}cargoCapacity}{268}{subsubsection.5.93.4.1}%
+\contentsline {subsubsection}{\numberline {5.93.4.2}numberOfStations}{268}{subsubsection.5.93.4.2}%
+\contentsline {subsubsection}{\numberline {5.93.4.3}railwayLength}{268}{subsubsection.5.93.4.3}%
+\contentsline {section}{\numberline {5.94}Trains\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{268}{section.5.94}%
+\contentsline {subsection}{\numberline {5.94.1}Detailed Description}{269}{subsection.5.94.1}%
+\contentsline {subsection}{\numberline {5.94.2}Member Function Documentation}{269}{subsection.5.94.2}%
+\contentsline {subsubsection}{\numberline {5.94.2.1}createTransport()}{269}{subsubsection.5.94.2.1}%
+\contentsline {section}{\numberline {5.95}Transport Class Reference}{269}{section.5.95}%
+\contentsline {subsection}{\numberline {5.95.1}Detailed Description}{270}{subsection.5.95.1}%
+\contentsline {subsection}{\numberline {5.95.2}Constructor \& Destructor Documentation}{270}{subsection.5.95.2}%
+\contentsline {subsubsection}{\numberline {5.95.2.1}$\sim $Transport()}{270}{subsubsection.5.95.2.1}%
+\contentsline {subsection}{\numberline {5.95.3}Member Function Documentation}{270}{subsection.5.95.3}%
+\contentsline {subsubsection}{\numberline {5.95.3.1}clone()}{271}{subsubsection.5.95.3.1}%
+\contentsline {subsubsection}{\numberline {5.95.3.2}getCapacity()}{271}{subsubsection.5.95.3.2}%
+\contentsline {subsubsection}{\numberline {5.95.3.3}getCost()}{271}{subsubsection.5.95.3.3}%
+\contentsline {subsubsection}{\numberline {5.95.3.4}getMaintainanceCost()}{272}{subsubsection.5.95.3.4}%
+\contentsline {subsubsection}{\numberline {5.95.3.5}getSpeed()}{272}{subsubsection.5.95.3.5}%
+\contentsline {subsubsection}{\numberline {5.95.3.6}getType()}{272}{subsubsection.5.95.3.6}%
+\contentsline {section}{\numberline {5.96}Transportation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{273}{section.5.96}%
+\contentsline {subsection}{\numberline {5.96.1}Detailed Description}{273}{subsection.5.96.1}%
+\contentsline {subsection}{\numberline {5.96.2}Constructor \& Destructor Documentation}{273}{subsection.5.96.2}%
+\contentsline {subsubsection}{\numberline {5.96.2.1}$\sim $TransportationFactory()}{273}{subsubsection.5.96.2.1}%
+\contentsline {subsection}{\numberline {5.96.3}Member Function Documentation}{273}{subsection.5.96.3}%
+\contentsline {subsubsection}{\numberline {5.96.3.1}createTransport()}{274}{subsubsection.5.96.3.1}%
+\contentsline {section}{\numberline {5.97}Utility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{274}{section.5.97}%
+\contentsline {subsection}{\numberline {5.97.1}Detailed Description}{275}{subsection.5.97.1}%
+\contentsline {subsection}{\numberline {5.97.2}Member Function Documentation}{275}{subsection.5.97.2}%
+\contentsline {subsubsection}{\numberline {5.97.2.1}getUtility()}{275}{subsubsection.5.97.2.1}%
+\contentsline {subsubsection}{\numberline {5.97.2.2}getUtilityByType()}{276}{subsubsection.5.97.2.2}%
+\contentsline {subsubsection}{\numberline {5.97.2.3}getUtilityCost()}{276}{subsubsection.5.97.2.3}%
+\contentsline {subsubsection}{\numberline {5.97.2.4}getUtilityName()}{277}{subsubsection.5.97.2.4}%
+\contentsline {subsection}{\numberline {5.97.3}Member Data Documentation}{277}{subsection.5.97.3}%
+\contentsline {subsubsection}{\numberline {5.97.3.1}flyweights}{277}{subsubsection.5.97.3.1}%
+\contentsline {section}{\numberline {5.98}Utility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flyweight Class Reference}{277}{section.5.98}%
+\contentsline {subsection}{\numberline {5.98.1}Detailed Description}{279}{subsection.5.98.1}%
+\contentsline {subsection}{\numberline {5.98.2}Constructor \& Destructor Documentation}{279}{subsection.5.98.2}%
+\contentsline {subsubsection}{\numberline {5.98.2.1}UtilityFlyweight()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{279}{subsubsection.5.98.2.1}%
+\contentsline {subsubsection}{\numberline {5.98.2.2}UtilityFlyweight()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{279}{subsubsection.5.98.2.2}%
+\contentsline {subsubsection}{\numberline {5.98.2.3}$\sim $UtilityFlyweight()}{280}{subsubsection.5.98.2.3}%
+\contentsline {subsection}{\numberline {5.98.3}Member Function Documentation}{280}{subsection.5.98.3}%
+\contentsline {subsubsection}{\numberline {5.98.3.1}accept()}{280}{subsubsection.5.98.3.1}%
+\contentsline {subsubsection}{\numberline {5.98.3.2}activate()}{281}{subsubsection.5.98.3.2}%
+\contentsline {subsubsection}{\numberline {5.98.3.3}clone()}{281}{subsubsection.5.98.3.3}%
+\contentsline {subsubsection}{\numberline {5.98.3.4}connect()}{281}{subsubsection.5.98.3.4}%
+\contentsline {subsubsection}{\numberline {5.98.3.5}deactivate()}{281}{subsubsection.5.98.3.5}%
+\contentsline {subsubsection}{\numberline {5.98.3.6}displayStatus()}{282}{subsubsection.5.98.3.6}%
+\contentsline {subsubsection}{\numberline {5.98.3.7}getBuildingType()}{282}{subsubsection.5.98.3.7}%
+\contentsline {subsubsection}{\numberline {5.98.3.8}getCapacity()}{282}{subsubsection.5.98.3.8}%
+\contentsline {subsubsection}{\numberline {5.98.3.9}getCost()}{282}{subsubsection.5.98.3.9}%
+\contentsline {subsubsection}{\numberline {5.98.3.10}getEffectRadius()}{283}{subsubsection.5.98.3.10}%
+\contentsline {subsubsection}{\numberline {5.98.3.11}getLevel()}{283}{subsubsection.5.98.3.11}%
+\contentsline {subsubsection}{\numberline {5.98.3.12}getName()}{283}{subsubsection.5.98.3.12}%
+\contentsline {subsubsection}{\numberline {5.98.3.13}getOperationalStatus()}{283}{subsubsection.5.98.3.13}%
+\contentsline {subsubsection}{\numberline {5.98.3.14}getRadius()}{284}{subsubsection.5.98.3.14}%
+\contentsline {subsubsection}{\numberline {5.98.3.15}getResourceConsumption()}{284}{subsubsection.5.98.3.15}%
+\contentsline {subsubsection}{\numberline {5.98.3.16}getResourceNeeds()}{284}{subsubsection.5.98.3.16}%
+\contentsline {subsubsection}{\numberline {5.98.3.17}incrementLevel()}{284}{subsubsection.5.98.3.17}%
+\contentsline {subsubsection}{\numberline {5.98.3.18}setResourceConsumption()}{284}{subsubsection.5.98.3.18}%
+\contentsline {subsection}{\numberline {5.98.4}Member Data Documentation}{285}{subsection.5.98.4}%
+\contentsline {subsubsection}{\numberline {5.98.4.1}capacity}{285}{subsubsection.5.98.4.1}%
+\contentsline {subsubsection}{\numberline {5.98.4.2}cost}{285}{subsubsection.5.98.4.2}%
+\contentsline {subsubsection}{\numberline {5.98.4.3}effectRadius}{285}{subsubsection.5.98.4.3}%
+\contentsline {subsubsection}{\numberline {5.98.4.4}isOperational}{285}{subsubsection.5.98.4.4}%
+\contentsline {subsubsection}{\numberline {5.98.4.5}level}{285}{subsubsection.5.98.4.5}%
+\contentsline {subsubsection}{\numberline {5.98.4.6}name}{286}{subsubsection.5.98.4.6}%
+\contentsline {subsubsection}{\numberline {5.98.4.7}resourceConsumption}{286}{subsubsection.5.98.4.7}%
+\contentsline {subsubsection}{\numberline {5.98.4.8}resourceNeeds}{286}{subsubsection.5.98.4.8}%
+\contentsline {section}{\numberline {5.99}Waste\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Management Class Reference}{286}{section.5.99}%
+\contentsline {subsection}{\numberline {5.99.1}Detailed Description}{287}{subsection.5.99.1}%
+\contentsline {subsection}{\numberline {5.99.2}Constructor \& Destructor Documentation}{287}{subsection.5.99.2}%
+\contentsline {subsubsection}{\numberline {5.99.2.1}WasteManagement()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{287}{subsubsection.5.99.2.1}%
+\contentsline {subsubsection}{\numberline {5.99.2.2}WasteManagement()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{287}{subsubsection.5.99.2.2}%
+\contentsline {subsection}{\numberline {5.99.3}Member Function Documentation}{288}{subsection.5.99.3}%
+\contentsline {subsubsection}{\numberline {5.99.3.1}clone()}{288}{subsubsection.5.99.3.1}%
+\contentsline {subsubsection}{\numberline {5.99.3.2}connect()}{288}{subsubsection.5.99.3.2}%
+\contentsline {section}{\numberline {5.100}Water\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Supply Class Reference}{289}{section.5.100}%
+\contentsline {subsection}{\numberline {5.100.1}Detailed Description}{289}{subsection.5.100.1}%
+\contentsline {subsection}{\numberline {5.100.2}Constructor \& Destructor Documentation}{290}{subsection.5.100.2}%
+\contentsline {subsubsection}{\numberline {5.100.2.1}WaterSupply()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{290}{subsubsection.5.100.2.1}%
+\contentsline {subsubsection}{\numberline {5.100.2.2}WaterSupply()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{290}{subsubsection.5.100.2.2}%
+\contentsline {subsection}{\numberline {5.100.3}Member Function Documentation}{291}{subsection.5.100.3}%
+\contentsline {subsubsection}{\numberline {5.100.3.1}clone()}{291}{subsubsection.5.100.3.1}%
+\contentsline {subsubsection}{\numberline {5.100.3.2}connect()}{291}{subsubsection.5.100.3.2}%
+\contentsline {section}{\numberline {5.101}Wood Class Reference}{292}{section.5.101}%
+\contentsline {subsection}{\numberline {5.101.1}Detailed Description}{292}{subsection.5.101.1}%
+\contentsline {subsection}{\numberline {5.101.2}Constructor \& Destructor Documentation}{292}{subsection.5.101.2}%
+\contentsline {subsubsection}{\numberline {5.101.2.1}Wood()}{292}{subsubsection.5.101.2.1}%
+\contentsline {subsubsection}{\numberline {5.101.2.2}$\sim $Wood()}{293}{subsubsection.5.101.2.2}%
+\contentsline {subsection}{\numberline {5.101.3}Member Function Documentation}{293}{subsection.5.101.3}%
+\contentsline {subsubsection}{\numberline {5.101.3.1}displayStatus()}{293}{subsubsection.5.101.3.1}%
+\contentsline {subsubsection}{\numberline {5.101.3.2}getBuildingType()}{293}{subsubsection.5.101.3.2}%
+\contentsline {section}{\numberline {5.102}Wood\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}And\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Coal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plant Class Reference}{294}{section.5.102}%
+\contentsline {subsection}{\numberline {5.102.1}Detailed Description}{294}{subsection.5.102.1}%
+\contentsline {subsection}{\numberline {5.102.2}Constructor \& Destructor Documentation}{294}{subsection.5.102.2}%
+\contentsline {subsubsection}{\numberline {5.102.2.1}WoodAndCoalPlant()}{294}{subsubsection.5.102.2.1}%
+\contentsline {subsection}{\numberline {5.102.3}Member Function Documentation}{295}{subsection.5.102.3}%
+\contentsline {subsubsection}{\numberline {5.102.3.1}processCoal()}{295}{subsubsection.5.102.3.1}%
+\contentsline {subsubsection}{\numberline {5.102.3.2}processWood()}{295}{subsubsection.5.102.3.2}%
+\contentsline {subsection}{\numberline {5.102.4}Member Data Documentation}{296}{subsection.5.102.4}%
+\contentsline {subsubsection}{\numberline {5.102.4.1}WOOD\_COAL\_RANGE}{296}{subsubsection.5.102.4.1}%
+\contentsline {section}{\numberline {5.103}Worker\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPC Class Reference}{296}{section.5.103}%
+\contentsline {subsection}{\numberline {5.103.1}Detailed Description}{297}{subsection.5.103.1}%
+\contentsline {subsection}{\numberline {5.103.2}Constructor \& Destructor Documentation}{297}{subsection.5.103.2}%
+\contentsline {subsubsection}{\numberline {5.103.2.1}WorkerNPC()}{297}{subsubsection.5.103.2.1}%
+\contentsline {subsection}{\numberline {5.103.3}Member Function Documentation}{297}{subsection.5.103.3}%
+\contentsline {subsubsection}{\numberline {5.103.3.1}collect()}{297}{subsubsection.5.103.3.1}%
+\contentsline {subsubsection}{\numberline {5.103.3.2}getCost()}{298}{subsubsection.5.103.3.2}%
+\contentsline {subsubsection}{\numberline {5.103.3.3}getName()}{298}{subsubsection.5.103.3.3}%
+\contentsline {subsection}{\numberline {5.103.4}Member Data Documentation}{298}{subsection.5.103.4}%
+\contentsline {subsubsection}{\numberline {5.103.4.1}cost}{298}{subsubsection.5.103.4.1}%
+\contentsline {subsubsection}{\numberline {5.103.4.2}name}{298}{subsubsection.5.103.4.2}%
+\contentsline {subsubsection}{\numberline {5.103.4.3}strategy}{298}{subsubsection.5.103.4.3}%
+\contentsline {section}{\numberline {5.104}Zone\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Composite Class Reference}{299}{section.5.104}%
+\contentsline {subsection}{\numberline {5.104.1}Detailed Description}{299}{subsection.5.104.1}%
+\contentsline {subsection}{\numberline {5.104.2}Constructor \& Destructor Documentation}{299}{subsection.5.104.2}%
+\contentsline {subsubsection}{\numberline {5.104.2.1}ZoneComposite()}{300}{subsubsection.5.104.2.1}%
+\contentsline {subsection}{\numberline {5.104.3}Member Function Documentation}{300}{subsection.5.104.3}%
+\contentsline {subsubsection}{\numberline {5.104.3.1}accept()}{300}{subsubsection.5.104.3.1}%
+\contentsline {subsubsection}{\numberline {5.104.3.2}add()}{300}{subsubsection.5.104.3.2}%
+\contentsline {subsubsection}{\numberline {5.104.3.3}displayStatus()}{301}{subsubsection.5.104.3.3}%
+\contentsline {subsubsection}{\numberline {5.104.3.4}getBottomRight()}{301}{subsubsection.5.104.3.4}%
+\contentsline {subsubsection}{\numberline {5.104.3.5}getBuildings()}{301}{subsubsection.5.104.3.5}%
+\contentsline {subsubsection}{\numberline {5.104.3.6}getBuildingType()}{302}{subsubsection.5.104.3.6}%
+\contentsline {subsubsection}{\numberline {5.104.3.7}getTopLeft()}{302}{subsubsection.5.104.3.7}%
+\contentsline {subsubsection}{\numberline {5.104.3.8}remove()}{302}{subsubsection.5.104.3.8}%
+\contentsline {subsection}{\numberline {5.104.4}Member Data Documentation}{302}{subsection.5.104.4}%
+\contentsline {subsubsection}{\numberline {5.104.4.1}bounds}{302}{subsubsection.5.104.4.1}%
+\contentsline {subsubsection}{\numberline {5.104.4.2}buildings}{303}{subsubsection.5.104.4.2}%
+\contentsline {subsubsection}{\numberline {5.104.4.3}zoneType}{303}{subsubsection.5.104.4.3}%
+\contentsline {section}{\numberline {5.105}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Zone\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Style Struct Reference}{303}{section.5.105}%
+\contentsline {subsection}{\numberline {5.105.1}Constructor \& Destructor Documentation}{303}{subsection.5.105.1}%
+\contentsline {subsubsection}{\numberline {5.105.1.1}ZoneStyle()}{303}{subsubsection.5.105.1.1}%
+\contentsline {subsection}{\numberline {5.105.2}Member Data Documentation}{303}{subsection.5.105.2}%
+\contentsline {subsubsection}{\numberline {5.105.2.1}backgroundColor}{304}{subsubsection.5.105.2.1}%
+\contentsline {subsubsection}{\numberline {5.105.2.2}borderChars}{304}{subsubsection.5.105.2.2}%
+\contentsline {chapter}{\numberline {6}File Documentation}{305}{chapter.6}%
+\contentsline {section}{\numberline {6.1}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Advanced\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Technology\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Decorator.cpp File Reference}{305}{section.6.1}%
+\contentsline {section}{\numberline {6.2}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Advanced\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Technology\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Decorator.h File Reference}{305}{section.6.2}%
+\contentsline {section}{\numberline {6.3}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Requirements.cpp File Reference}{305}{section.6.3}%
+\contentsline {section}{\numberline {6.4}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Requirements.h File Reference}{305}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Function Documentation}{306}{subsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.1.1}checkResourceRequirements()}{306}{subsubsection.6.4.1.1}%
+\contentsline {subsubsection}{\numberline {6.4.1.2}initializeCollectedResources()}{306}{subsubsection.6.4.1.2}%
+\contentsline {subsection}{\numberline {6.4.2}Variable Documentation}{307}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}buildingResourceRequirements}{307}{subsubsection.6.4.2.1}%
+\contentsline {section}{\numberline {6.5}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Chemical\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{307}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{307}{subsection.6.5.1}%
+\contentsline {section}{\numberline {6.6}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Chemical\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{307}{section.6.6}%
+\contentsline {section}{\numberline {6.7}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}City\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.cpp File Reference}{308}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{308}{subsection.6.7.1}%
+\contentsline {section}{\numberline {6.8}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}City\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.h File Reference}{308}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{308}{subsection.6.8.1}%
+\contentsline {section}{\numberline {6.9}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}City\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Composite.cpp File Reference}{309}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{309}{subsection.6.9.1}%
+\contentsline {section}{\numberline {6.10}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}City\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Composite.h File Reference}{309}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{309}{subsection.6.10.1}%
+\contentsline {section}{\numberline {6.11}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}City\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game.cpp File Reference}{310}{section.6.11}%
+\contentsline {section}{\numberline {6.12}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}City\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game.h File Reference}{310}{section.6.12}%
+\contentsline {section}{\numberline {6.13}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Coal.cpp File Reference}{311}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{311}{subsection.6.13.1}%
+\contentsline {section}{\numberline {6.14}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Coal.h File Reference}{311}{section.6.14}%
+\contentsline {section}{\numberline {6.15}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy.cpp File Reference}{311}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{312}{subsection.6.15.1}%
+\contentsline {section}{\numberline {6.16}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy.h File Reference}{312}{section.6.16}%
+\contentsline {section}{\numberline {6.17}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Command.cpp File Reference}{312}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Detailed Description}{312}{subsection.6.17.1}%
+\contentsline {section}{\numberline {6.18}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Command.h File Reference}{312}{section.6.18}%
+\contentsline {section}{\numberline {6.19}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Commercial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building.cpp File Reference}{313}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Detailed Description}{313}{subsection.6.19.1}%
+\contentsline {section}{\numberline {6.20}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Commercial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building.h File Reference}{313}{section.6.20}%
+\contentsline {section}{\numberline {6.21}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Commercial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{313}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Detailed Description}{313}{subsection.6.21.1}%
+\contentsline {section}{\numberline {6.22}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Commercial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{313}{section.6.22}%
+\contentsline {section}{\numberline {6.23}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Concrete.cpp File Reference}{314}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Detailed Description}{314}{subsection.6.23.1}%
+\contentsline {section}{\numberline {6.24}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Concrete.h File Reference}{314}{section.6.24}%
+\contentsline {section}{\numberline {6.25}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/concrete\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tax\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collector.cpp File Reference}{314}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Detailed Description}{314}{subsection.6.25.1}%
+\contentsline {section}{\numberline {6.26}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/concrete\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tax\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collector.h File Reference}{315}{section.6.26}%
+\contentsline {section}{\numberline {6.27}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Construction\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processor.cpp File Reference}{315}{section.6.27}%
+\contentsline {subsection}{\numberline {6.27.1}Detailed Description}{315}{subsection.6.27.1}%
+\contentsline {section}{\numberline {6.28}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Construction\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processor.h File Reference}{315}{section.6.28}%
+\contentsline {section}{\numberline {6.29}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Construction\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Product.cpp File Reference}{316}{section.6.29}%
+\contentsline {section}{\numberline {6.30}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Construction\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Product.h File Reference}{316}{section.6.30}%
+\contentsline {section}{\numberline {6.31}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Crime\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.cpp File Reference}{316}{section.6.31}%
+\contentsline {subsection}{\numberline {6.31.1}Detailed Description}{316}{subsection.6.31.1}%
+\contentsline {section}{\numberline {6.32}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Crime\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.h File Reference}{316}{section.6.32}%
+\contentsline {subsection}{\numberline {6.32.1}Detailed Description}{317}{subsection.6.32.1}%
+\contentsline {section}{\numberline {6.33}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Crystal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Craft\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Industry.cpp File Reference}{317}{section.6.33}%
+\contentsline {subsection}{\numberline {6.33.1}Detailed Description}{317}{subsection.6.33.1}%
+\contentsline {section}{\numberline {6.34}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Crystal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Craft\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Industry.h File Reference}{317}{section.6.34}%
+\contentsline {subsection}{\numberline {6.34.1}Detailed Description}{317}{subsection.6.34.1}%
+\contentsline {section}{\numberline {6.35}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cultural\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Center.cpp File Reference}{318}{section.6.35}%
+\contentsline {subsection}{\numberline {6.35.1}Detailed Description}{318}{subsection.6.35.1}%
+\contentsline {section}{\numberline {6.36}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cultural\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Center.h File Reference}{318}{section.6.36}%
+\contentsline {subsection}{\numberline {6.36.1}Detailed Description}{318}{subsection.6.36.1}%
+\contentsline {section}{\numberline {6.37}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cultural\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Center\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{318}{section.6.37}%
+\contentsline {subsection}{\numberline {6.37.1}Detailed Description}{318}{subsection.6.37.1}%
+\contentsline {section}{\numberline {6.38}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cultural\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Center\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{319}{section.6.38}%
+\contentsline {subsection}{\numberline {6.38.1}Detailed Description}{319}{subsection.6.38.1}%
+\contentsline {section}{\numberline {6.39}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Delivery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Truck.h File Reference}{319}{section.6.39}%
+\contentsline {section}{\numberline {6.40}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Diamonds.cpp File Reference}{319}{section.6.40}%
+\contentsline {section}{\numberline {6.41}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Diamonds.h File Reference}{319}{section.6.41}%
+\contentsline {subsection}{\numberline {6.41.1}Detailed Description}{319}{subsection.6.41.1}%
+\contentsline {section}{\numberline {6.42}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Donation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.cpp File Reference}{320}{section.6.42}%
+\contentsline {section}{\numberline {6.43}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Donation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.h File Reference}{320}{section.6.43}%
+\contentsline {section}{\numberline {6.44}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Estate.cpp File Reference}{320}{section.6.44}%
+\contentsline {section}{\numberline {6.45}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Estate.h File Reference}{320}{section.6.45}%
+\contentsline {section}{\numberline {6.46}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Estate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{320}{section.6.46}%
+\contentsline {section}{\numberline {6.47}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Estate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{321}{section.6.47}%
+\contentsline {section}{\numberline {6.48}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fast\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy.cpp File Reference}{321}{section.6.48}%
+\contentsline {section}{\numberline {6.49}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fast\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy.h File Reference}{321}{section.6.49}%
+\contentsline {section}{\numberline {6.50}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fire\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station.cpp File Reference}{321}{section.6.50}%
+\contentsline {section}{\numberline {6.51}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fire\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station.h File Reference}{321}{section.6.51}%
+\contentsline {section}{\numberline {6.52}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fire\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{322}{section.6.52}%
+\contentsline {section}{\numberline {6.53}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fire\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{322}{section.6.53}%
+\contentsline {section}{\numberline {6.54}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flat.cpp File Reference}{322}{section.6.54}%
+\contentsline {section}{\numberline {6.55}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flat.h File Reference}{322}{section.6.55}%
+\contentsline {section}{\numberline {6.56}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{322}{section.6.56}%
+\contentsline {section}{\numberline {6.57}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{323}{section.6.57}%
+\contentsline {section}{\numberline {6.58}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forward\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Declarations.cpp File Reference}{323}{section.6.58}%
+\contentsline {section}{\numberline {6.59}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forward\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Declarations.h File Reference}{323}{section.6.59}%
+\contentsline {section}{\numberline {6.60}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.cpp File Reference}{323}{section.6.60}%
+\contentsline {subsection}{\numberline {6.60.1}Detailed Description}{323}{subsection.6.60.1}%
+\contentsline {section}{\numberline {6.61}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.h File Reference}{323}{section.6.61}%
+\contentsline {section}{\numberline {6.62}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Memento.cpp File Reference}{324}{section.6.62}%
+\contentsline {section}{\numberline {6.63}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Memento.h File Reference}{324}{section.6.63}%
+\contentsline {section}{\numberline {6.64}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gold.cpp File Reference}{324}{section.6.64}%
+\contentsline {section}{\numberline {6.65}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gold.h File Reference}{324}{section.6.65}%
+\contentsline {section}{\numberline {6.66}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Government.cpp File Reference}{325}{section.6.66}%
+\contentsline {section}{\numberline {6.67}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Government.h File Reference}{325}{section.6.67}%
+\contentsline {section}{\numberline {6.68}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Green\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Technology\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Decorator.cpp File Reference}{325}{section.6.68}%
+\contentsline {section}{\numberline {6.69}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Green\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Technology\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Decorator.h File Reference}{325}{section.6.69}%
+\contentsline {section}{\numberline {6.70}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hospital.cpp File Reference}{325}{section.6.70}%
+\contentsline {section}{\numberline {6.71}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hospital.h File Reference}{325}{section.6.71}%
+\contentsline {section}{\numberline {6.72}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hospital\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{326}{section.6.72}%
+\contentsline {subsection}{\numberline {6.72.1}Detailed Description}{326}{subsection.6.72.1}%
+\contentsline {section}{\numberline {6.73}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hospital\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{326}{section.6.73}%
+\contentsline {subsection}{\numberline {6.73.1}Detailed Description}{326}{subsection.6.73.1}%
+\contentsline {section}{\numberline {6.74}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}House.cpp File Reference}{326}{section.6.74}%
+\contentsline {section}{\numberline {6.75}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}House.h File Reference}{326}{section.6.75}%
+\contentsline {subsection}{\numberline {6.75.1}Detailed Description}{327}{subsection.6.75.1}%
+\contentsline {section}{\numberline {6.76}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}House\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{327}{section.6.76}%
+\contentsline {section}{\numberline {6.77}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}House\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{327}{section.6.77}%
+\contentsline {section}{\numberline {6.78}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Income\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processor.cpp File Reference}{327}{section.6.78}%
+\contentsline {section}{\numberline {6.79}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Income\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processor.h File Reference}{327}{section.6.79}%
+\contentsline {section}{\numberline {6.80}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Income\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Product.cpp File Reference}{328}{section.6.80}%
+\contentsline {section}{\numberline {6.81}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Income\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Product.h File Reference}{328}{section.6.81}%
+\contentsline {section}{\numberline {6.82}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Industrial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{328}{section.6.82}%
+\contentsline {section}{\numberline {6.83}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Industry.cpp File Reference}{328}{section.6.83}%
+\contentsline {section}{\numberline {6.84}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Industry.h File Reference}{328}{section.6.84}%
+\contentsline {section}{\numberline {6.85}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Land\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mark.cpp File Reference}{329}{section.6.85}%
+\contentsline {section}{\numberline {6.86}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Land\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mark.h File Reference}{329}{section.6.86}%
+\contentsline {subsection}{\numberline {6.86.1}Detailed Description}{329}{subsection.6.86.1}%
+\contentsline {section}{\numberline {6.87}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Land\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mark\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{329}{section.6.87}%
+\contentsline {section}{\numberline {6.88}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Land\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mark\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{329}{section.6.88}%
+\contentsline {section}{\numberline {6.89}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Location.cpp File Reference}{330}{section.6.89}%
+\contentsline {section}{\numberline {6.90}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Location.h File Reference}{330}{section.6.90}%
+\contentsline {section}{\numberline {6.91}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/main.cpp File Reference}{330}{section.6.91}%
+\contentsline {subsection}{\numberline {6.91.1}Function Documentation}{330}{subsection.6.91.1}%
+\contentsline {subsubsection}{\numberline {6.91.1.1}main()}{330}{subsubsection.6.91.1.1}%
+\contentsline {section}{\numberline {6.92}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Malls.cpp File Reference}{330}{section.6.92}%
+\contentsline {section}{\numberline {6.93}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Malls.h File Reference}{331}{section.6.93}%
+\contentsline {section}{\numberline {6.94}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Malls\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{331}{section.6.94}%
+\contentsline {section}{\numberline {6.95}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Malls\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{331}{section.6.95}%
+\contentsline {section}{\numberline {6.96}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid.cpp File Reference}{331}{section.6.96}%
+\contentsline {section}{\numberline {6.97}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid.h File Reference}{332}{section.6.97}%
+\contentsline {section}{\numberline {6.98}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Metal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{332}{section.6.98}%
+\contentsline {section}{\numberline {6.99}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Metal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{332}{section.6.99}%
+\contentsline {section}{\numberline {6.100}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Metal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Work\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Facility.cpp File Reference}{333}{section.6.100}%
+\contentsline {section}{\numberline {6.101}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Metal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Work\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Facility.h File Reference}{333}{section.6.101}%
+\contentsline {section}{\numberline {6.102}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Moderate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy.cpp File Reference}{333}{section.6.102}%
+\contentsline {section}{\numberline {6.103}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Moderate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy.h File Reference}{333}{section.6.103}%
+\contentsline {section}{\numberline {6.104}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monument.cpp File Reference}{334}{section.6.104}%
+\contentsline {section}{\numberline {6.105}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monument.h File Reference}{334}{section.6.105}%
+\contentsline {section}{\numberline {6.106}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monument\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{334}{section.6.106}%
+\contentsline {section}{\numberline {6.107}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monument\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{334}{section.6.107}%
+\contentsline {section}{\numberline {6.108}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Neutral\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.cpp File Reference}{334}{section.6.108}%
+\contentsline {section}{\numberline {6.109}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Neutral\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.h File Reference}{335}{section.6.109}%
+\contentsline {section}{\numberline {6.110}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Node.cpp File Reference}{335}{section.6.110}%
+\contentsline {section}{\numberline {6.111}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Node.h File Reference}{335}{section.6.111}%
+\contentsline {section}{\numberline {6.112}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCContext.cpp File Reference}{335}{section.6.112}%
+\contentsline {section}{\numberline {6.113}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCContext.h File Reference}{335}{section.6.113}%
+\contentsline {section}{\numberline {6.114}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCManager.cpp File Reference}{335}{section.6.114}%
+\contentsline {section}{\numberline {6.115}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCManager.h File Reference}{336}{section.6.115}%
+\contentsline {section}{\numberline {6.116}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCObserver.cpp File Reference}{336}{section.6.116}%
+\contentsline {section}{\numberline {6.117}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCObserver.h File Reference}{336}{section.6.117}%
+\contentsline {section}{\numberline {6.118}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCState.h File Reference}{336}{section.6.118}%
+\contentsline {section}{\numberline {6.119}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCSystem.cpp File Reference}{336}{section.6.119}%
+\contentsline {section}{\numberline {6.120}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCSystem.h File Reference}{337}{section.6.120}%
+\contentsline {section}{\numberline {6.121}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Office.cpp File Reference}{337}{section.6.121}%
+\contentsline {section}{\numberline {6.122}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Office.h File Reference}{337}{section.6.122}%
+\contentsline {section}{\numberline {6.123}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Office\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{337}{section.6.123}%
+\contentsline {section}{\numberline {6.124}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Office\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{338}{section.6.124}%
+\contentsline {section}{\numberline {6.125}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Oil.cpp File Reference}{338}{section.6.125}%
+\contentsline {section}{\numberline {6.126}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Oil.h File Reference}{338}{section.6.126}%
+\contentsline {section}{\numberline {6.127}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Park.cpp File Reference}{338}{section.6.127}%
+\contentsline {section}{\numberline {6.128}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Park.h File Reference}{338}{section.6.128}%
+\contentsline {section}{\numberline {6.129}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Park\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{339}{section.6.129}%
+\contentsline {section}{\numberline {6.130}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Park\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{339}{section.6.130}%
+\contentsline {section}{\numberline {6.131}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Petro\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Chemical\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Facility.cpp File Reference}{339}{section.6.131}%
+\contentsline {section}{\numberline {6.132}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Petro\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Chemical\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Facility.h File Reference}{339}{section.6.132}%
+\contentsline {section}{\numberline {6.133}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plant\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{339}{section.6.133}%
+\contentsline {section}{\numberline {6.134}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plant\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{340}{section.6.134}%
+\contentsline {section}{\numberline {6.135}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Police\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station.cpp File Reference}{340}{section.6.135}%
+\contentsline {section}{\numberline {6.136}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Police\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station.h File Reference}{340}{section.6.136}%
+\contentsline {section}{\numberline {6.137}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Police\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{340}{section.6.137}%
+\contentsline {section}{\numberline {6.138}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Police\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{340}{section.6.138}%
+\contentsline {section}{\numberline {6.139}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Power\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plant.cpp File Reference}{341}{section.6.139}%
+\contentsline {section}{\numberline {6.140}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Power\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plant.h File Reference}{341}{section.6.140}%
+\contentsline {section}{\numberline {6.141}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Productive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.cpp File Reference}{341}{section.6.141}%
+\contentsline {section}{\numberline {6.142}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Productive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.h File Reference}{341}{section.6.142}%
+\contentsline {section}{\numberline {6.143}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Public\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service.cpp File Reference}{342}{section.6.143}%
+\contentsline {section}{\numberline {6.144}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Public\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service.h File Reference}{342}{section.6.144}%
+\contentsline {section}{\numberline {6.145}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Public\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{342}{section.6.145}%
+\contentsline {section}{\numberline {6.146}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Public\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{342}{section.6.146}%
+\contentsline {subsection}{\numberline {6.146.1}Detailed Description}{342}{subsection.6.146.1}%
+\contentsline {section}{\numberline {6.147}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Public\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transit.cpp File Reference}{343}{section.6.147}%
+\contentsline {section}{\numberline {6.148}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Public\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transit.h File Reference}{343}{section.6.148}%
+\contentsline {section}{\numberline {6.149}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Public\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{343}{section.6.149}%
+\contentsline {section}{\numberline {6.150}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Public\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{343}{section.6.150}%
+\contentsline {section}{\numberline {6.151}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Reacting\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCS.cpp File Reference}{343}{section.6.151}%
+\contentsline {section}{\numberline {6.152}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Reacting\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPCS.h File Reference}{343}{section.6.152}%
+\contentsline {section}{\numberline {6.153}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}README.md File Reference}{343}{section.6.153}%
+\contentsline {section}{\numberline {6.154}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Residential\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building.cpp File Reference}{343}{section.6.154}%
+\contentsline {section}{\numberline {6.155}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Residential\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building.h File Reference}{344}{section.6.155}%
+\contentsline {section}{\numberline {6.156}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Residential\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{344}{section.6.156}%
+\contentsline {section}{\numberline {6.157}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Residential\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Building\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{344}{section.6.157}%
+\contentsline {section}{\numberline {6.158}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{344}{section.6.158}%
+\contentsline {section}{\numberline {6.159}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{344}{section.6.159}%
+\contentsline {section}{\numberline {6.160}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processor.cpp File Reference}{345}{section.6.160}%
+\contentsline {section}{\numberline {6.161}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processor.h File Reference}{345}{section.6.161}%
+\contentsline {section}{\numberline {6.162}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Revolt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.cpp File Reference}{345}{section.6.162}%
+\contentsline {section}{\numberline {6.163}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Revolt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.h File Reference}{345}{section.6.163}%
+\contentsline {section}{\numberline {6.164}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Roads.cpp File Reference}{346}{section.6.164}%
+\contentsline {section}{\numberline {6.165}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Roads.h File Reference}{346}{section.6.165}%
+\contentsline {subsection}{\numberline {6.165.1}Enumeration Type Documentation}{346}{subsection.6.165.1}%
+\contentsline {subsubsection}{\numberline {6.165.1.1}roadType}{346}{subsubsection.6.165.1.1}%
+\contentsline {section}{\numberline {6.166}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Roads\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{347}{section.6.166}%
+\contentsline {section}{\numberline {6.167}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Roads\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{347}{section.6.167}%
+\contentsline {section}{\numberline {6.168}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}School.cpp File Reference}{347}{section.6.168}%
+\contentsline {section}{\numberline {6.169}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}School.h File Reference}{347}{section.6.169}%
+\contentsline {section}{\numberline {6.170}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}School\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{347}{section.6.170}%
+\contentsline {section}{\numberline {6.171}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}School\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{347}{section.6.171}%
+\contentsline {section}{\numberline {6.172}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sewage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.cpp File Reference}{347}{section.6.172}%
+\contentsline {section}{\numberline {6.173}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sewage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.h File Reference}{348}{section.6.173}%
+\contentsline {section}{\numberline {6.174}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shops.cpp File Reference}{348}{section.6.174}%
+\contentsline {section}{\numberline {6.175}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shops.h File Reference}{348}{section.6.175}%
+\contentsline {section}{\numberline {6.176}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shops\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{348}{section.6.176}%
+\contentsline {section}{\numberline {6.177}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shops\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{348}{section.6.177}%
+\contentsline {section}{\numberline {6.178}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Slow\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy.cpp File Reference}{349}{section.6.178}%
+\contentsline {section}{\numberline {6.179}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Slow\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collection\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Strategy.h File Reference}{349}{section.6.179}%
+\contentsline {section}{\numberline {6.180}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Steel.cpp File Reference}{349}{section.6.180}%
+\contentsline {section}{\numberline {6.181}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Steel.h File Reference}{349}{section.6.181}%
+\contentsline {section}{\numberline {6.182}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stone.cpp File Reference}{349}{section.6.182}%
+\contentsline {section}{\numberline {6.183}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stone.h File Reference}{349}{section.6.183}%
+\contentsline {section}{\numberline {6.184}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stone\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{350}{section.6.184}%
+\contentsline {section}{\numberline {6.185}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stone\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{350}{section.6.185}%
+\contentsline {section}{\numberline {6.186}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/tax\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collector.cpp File Reference}{350}{section.6.186}%
+\contentsline {section}{\numberline {6.187}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/tax\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collector.h File Reference}{350}{section.6.187}%
+\contentsline {section}{\numberline {6.188}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Townhouse.cpp File Reference}{351}{section.6.188}%
+\contentsline {section}{\numberline {6.189}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Townhouse.h File Reference}{351}{section.6.189}%
+\contentsline {section}{\numberline {6.190}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Townhouse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{351}{section.6.190}%
+\contentsline {section}{\numberline {6.191}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Townhouse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{351}{section.6.191}%
+\contentsline {section}{\numberline {6.192}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trains.cpp File Reference}{351}{section.6.192}%
+\contentsline {section}{\numberline {6.193}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trains.h File Reference}{352}{section.6.193}%
+\contentsline {section}{\numberline {6.194}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trains\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{352}{section.6.194}%
+\contentsline {section}{\numberline {6.195}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trains\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{352}{section.6.195}%
+\contentsline {section}{\numberline {6.196}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transport.cpp File Reference}{352}{section.6.196}%
+\contentsline {section}{\numberline {6.197}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transport.h File Reference}{352}{section.6.197}%
+\contentsline {section}{\numberline {6.198}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transportation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{353}{section.6.198}%
+\contentsline {section}{\numberline {6.199}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transportation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{353}{section.6.199}%
+\contentsline {section}{\numberline {6.200}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utilities\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Testing.cpp File Reference}{353}{section.6.200}%
+\contentsline {section}{\numberline {6.201}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Decorator.cpp File Reference}{353}{section.6.201}%
+\contentsline {section}{\numberline {6.202}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Decorator.h File Reference}{353}{section.6.202}%
+\contentsline {section}{\numberline {6.203}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.cpp File Reference}{353}{section.6.203}%
+\contentsline {section}{\numberline {6.204}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.h File Reference}{353}{section.6.204}%
+\contentsline {section}{\numberline {6.205}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flyweight.cpp File Reference}{354}{section.6.205}%
+\contentsline {section}{\numberline {6.206}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flyweight.h File Reference}{354}{section.6.206}%
+\contentsline {section}{\numberline {6.207}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Waste\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Management.cpp File Reference}{354}{section.6.207}%
+\contentsline {section}{\numberline {6.208}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Waste\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Management.h File Reference}{354}{section.6.208}%
+\contentsline {section}{\numberline {6.209}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Water\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Supply.cpp File Reference}{355}{section.6.209}%
+\contentsline {section}{\numberline {6.210}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Water\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Supply.h File Reference}{355}{section.6.210}%
+\contentsline {section}{\numberline {6.211}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wood.cpp File Reference}{355}{section.6.211}%
+\contentsline {section}{\numberline {6.212}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wood.h File Reference}{355}{section.6.212}%
+\contentsline {section}{\numberline {6.213}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wood\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}And\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Coal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plant.cpp File Reference}{355}{section.6.213}%
+\contentsline {section}{\numberline {6.214}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wood\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}And\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Coal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plant.h File Reference}{356}{section.6.214}%
+\contentsline {section}{\numberline {6.215}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Worker\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPC.cpp File Reference}{356}{section.6.215}%
+\contentsline {section}{\numberline {6.216}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Worker\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NPC.h File Reference}{356}{section.6.216}%
+\contentsline {section}{\numberline {6.217}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Zone\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Composite.cpp File Reference}{356}{section.6.217}%
+\contentsline {section}{\numberline {6.218}COS214-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poject/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Zone\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Composite.h File Reference}{356}{section.6.218}%
+\contentsline {chapter}{Index}{357}{section*.287}%

@@ -1,0 +1,10 @@
+digraph "CommercialBuilding::setTaxPaid"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="CommercialBuilding\l::setTaxPaid",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Sets the tax-paid status for the building."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ConcreteTaxCollector\l::visit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConcreteTaxCollector.html#aad0ef53e248f7316be1bc248446ab01f",tooltip="Collects tax from a commercial building."];
+}

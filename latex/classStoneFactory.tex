@@ -1,0 +1,139 @@
+\hypertarget{classStoneFactory}{}\doxysection{Stone\+Factory Class Reference}
+\label{classStoneFactory}\index{StoneFactory@{StoneFactory}}
+
+
+Factory class for creating stone resources, providing both income and construction products.  
+
+
+
+
+{\ttfamily \#include $<$Stone\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Stone\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Stone\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStoneFactory_a81211ed62fa49f7a40cc8e16d17dad2f}{Stone\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classStoneFactory}{Stone\+Factory}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStoneFactory_a142730806d295790a9ae5829c2adb04f}{$\sim$\+Stone\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classStoneFactory}{Stone\+Factory}}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ \mbox{\hyperlink{classStoneFactory_a73556546d72d99f528958f2f1f76644d}{create\+IncomeR}} (int quantity) override
+\begin{DoxyCompactList}\small\item\em Creates an income resource product representing stone. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ \mbox{\hyperlink{classStoneFactory_a551333d501ab1eec14791df93e677851}{create\+ConstructionR}} (int quantity) override
+\begin{DoxyCompactList}\small\item\em Creates a construction resource product representing stone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating stone resources, providing both income and construction products. 
+
+The {\ttfamily \mbox{\hyperlink{classStoneFactory}{Stone\+Factory}}} class inherits from {\ttfamily \mbox{\hyperlink{classResourceFactory}{Resource\+Factory}}} and overrides methods to create {\ttfamily \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}} and {\ttfamily \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}} objects representing stone resources. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStoneFactory_a81211ed62fa49f7a40cc8e16d17dad2f}\label{classStoneFactory_a81211ed62fa49f7a40cc8e16d17dad2f}} 
+\index{StoneFactory@{StoneFactory}!StoneFactory@{StoneFactory}}
+\index{StoneFactory@{StoneFactory}!StoneFactory@{StoneFactory}}
+\doxysubsubsection{\texorpdfstring{StoneFactory()}{StoneFactory()}}
+{\footnotesize\ttfamily Stone\+Factory\+::\+Stone\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classStoneFactory}{Stone\+Factory}}. 
+
+Initializes any necessary components for the factory to create stone products.
+
+Initializes the \mbox{\hyperlink{classStoneFactory}{Stone\+Factory}} and outputs a creation message to the console. \mbox{\Hypertarget{classStoneFactory_a142730806d295790a9ae5829c2adb04f}\label{classStoneFactory_a142730806d295790a9ae5829c2adb04f}} 
+\index{StoneFactory@{StoneFactory}!````~StoneFactory@{$\sim$StoneFactory}}
+\index{````~StoneFactory@{$\sim$StoneFactory}!StoneFactory@{StoneFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$StoneFactory()}{~StoneFactory()}}
+{\footnotesize\ttfamily Stone\+Factory\+::$\sim$\+Stone\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classStoneFactory}{Stone\+Factory}}. 
+
+Cleans up any allocated resources for the factory.
+
+Outputs a deletion message to the console upon factory destruction. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStoneFactory_a551333d501ab1eec14791df93e677851}\label{classStoneFactory_a551333d501ab1eec14791df93e677851}} 
+\index{StoneFactory@{StoneFactory}!createConstructionR@{createConstructionR}}
+\index{createConstructionR@{createConstructionR}!StoneFactory@{StoneFactory}}
+\doxysubsubsection{\texorpdfstring{createConstructionR()}{createConstructionR()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ Stone\+Factory\+::create\+ConstructionR (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a construction resource product representing stone. 
+
+Creates a construction resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of stone for the construction resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to a {\ttfamily \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}} representing stone.
+\end{DoxyReturn}
+This method generates a resource product for construction, represented as \mbox{\hyperlink{classStone}{Stone}}, with the specified quantity and a default unit price.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the construction resource to be created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to a {\ttfamily \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}} representing \mbox{\hyperlink{classStone}{Stone}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceFactory_a004800d9d6db381507ee78d3d197e8ac}{Resource\+Factory}}.
+
+\mbox{\Hypertarget{classStoneFactory_a73556546d72d99f528958f2f1f76644d}\label{classStoneFactory_a73556546d72d99f528958f2f1f76644d}} 
+\index{StoneFactory@{StoneFactory}!createIncomeR@{createIncomeR}}
+\index{createIncomeR@{createIncomeR}!StoneFactory@{StoneFactory}}
+\doxysubsubsection{\texorpdfstring{createIncomeR()}{createIncomeR()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ Stone\+Factory\+::create\+IncomeR (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates an income resource product representing stone. 
+
+Creates an income-\/generating resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of stone for the income resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to an {\ttfamily \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}} representing stone.
+\end{DoxyReturn}
+This method generates a resource product for income, represented as \mbox{\hyperlink{classDiamonds}{Diamonds}}, with the specified quantity and a default unit price.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the income-\/generating resource to be created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to an {\ttfamily \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}} representing \mbox{\hyperlink{classDiamonds}{Diamonds}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceFactory_a564e63149bd3348f2e6f749ab6768369}{Resource\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{StoneFactory_8h}{Stone\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{StoneFactory_8cpp}{Stone\+Factory.\+cpp}}\end{DoxyCompactItemize}

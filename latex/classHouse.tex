@@ -1,0 +1,131 @@
+\hypertarget{classHouse}{}\doxysection{House Class Reference}
+\label{classHouse}\index{House@{House}}
+
+
+Represents a house, which is a type of residential building.  
+
+
+
+
+{\ttfamily \#include $<$House.\+h$>$}
+
+
+
+Inheritance diagram for House\+:
+% FIG 0
+
+
+Collaboration diagram for House\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHouse_a21bec2b1cbc4b866ec6f31201f4589c5}{House}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classHouse}{House}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHouse_a08f6948d47acd47e5017d07f5d315a10}{House}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for the \mbox{\hyperlink{classHouse}{House}} class. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classHouse_a940121ab1d64e7d75d6c989100a3fc15}{get\+Display\+Symbol}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the display symbol for the house. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHouse_afd8c72354887da000ce9477f676b4e13}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the building type of the house. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{classHouse_adb0a0810604ec51c67babcdd15c958cd}{BASE\+\_\+\+COST}} = 100
+\begin{DoxyCompactList}\small\item\em Base cost of the house. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a house, which is a type of residential building. 
+
+This class inherits from the \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} class and adds specific properties and methods related to a house. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHouse_a21bec2b1cbc4b866ec6f31201f4589c5}\label{classHouse_a21bec2b1cbc4b866ec6f31201f4589c5}} 
+\index{House@{House}!House@{House}}
+\index{House@{House}!House@{House}}
+\doxysubsubsection{\texorpdfstring{House()}{House()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily House\+::\+House (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \mbox{\hyperlink{classHouse}{House}} class. 
+
+Initializes a house with default values for its utilities. \mbox{\Hypertarget{classHouse_a08f6948d47acd47e5017d07f5d315a10}\label{classHouse_a08f6948d47acd47e5017d07f5d315a10}} 
+\index{House@{House}!House@{House}}
+\index{House@{House}!House@{House}}
+\doxysubsubsection{\texorpdfstring{House()}{House()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily House\+::\+House (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for the \mbox{\hyperlink{classHouse}{House}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & A shared pointer to the water utility. \\
+\hline
+{\em power} & A shared pointer to the power utility. \\
+\hline
+{\em waste} & A shared pointer to the waste utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHouse_afd8c72354887da000ce9477f676b4e13}\label{classHouse_afd8c72354887da000ce9477f676b4e13}} 
+\index{House@{House}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!House@{House}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string House\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the building type of the house. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+\mbox{\Hypertarget{classHouse_a940121ab1d64e7d75d6c989100a3fc15}\label{classHouse_a940121ab1d64e7d75d6c989100a3fc15}} 
+\index{House@{House}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!House@{House}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char House\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the display symbol for the house. 
+
+\begin{DoxyReturn}{Returns}
+A character representing the house (H). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidentialBuilding_ac0839490cde74967340bbd82fb65bd4d}{Residential\+Building}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classHouse_adb0a0810604ec51c67babcdd15c958cd}\label{classHouse_adb0a0810604ec51c67babcdd15c958cd}} 
+\index{House@{House}!BASE\_COST@{BASE\_COST}}
+\index{BASE\_COST@{BASE\_COST}!House@{House}}
+\doxysubsubsection{\texorpdfstring{BASE\_COST}{BASE\_COST}}
+{\footnotesize\ttfamily constexpr int House\+::\+BASE\+\_\+\+COST = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Base cost of the house. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{House_8h}{House.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{House_8cpp}{House.\+cpp}}\end{DoxyCompactItemize}

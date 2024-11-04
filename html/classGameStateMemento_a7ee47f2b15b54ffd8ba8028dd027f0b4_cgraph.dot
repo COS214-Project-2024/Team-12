@@ -1,0 +1,10 @@
+digraph "GameStateMemento::create"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="GameStateMemento::create",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Static factory method to create a new GameStateMemento instance."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="GameStateMemento::GameState\lMemento",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameStateMemento.html#acdc14356628f0179d4d31813f5bbee54",tooltip="Constructs a GameStateMemento with a command history and current command index."];
+}

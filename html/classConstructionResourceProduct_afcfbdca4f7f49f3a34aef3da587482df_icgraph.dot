@@ -1,0 +1,18 @@
+digraph "ConstructionResourceProduct::getTotalCost"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="ConstructionResourceProduct\l::getTotalCost",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Calculates and returns the total cost of the available resource."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ConstructionResourceProduct\l::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConstructionResourceProduct.html#a86159081d7b03a975af6d0506c41f9e7",tooltip="Displays the current status of the resource, including name, quantity, and total cost."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Concrete::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConcrete.html#aabdabab9ef7c84f8bc2b3d60ba13913e",tooltip="Displays the current status of the concrete resource."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Steel::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSteel.html#afff1b81cc7ca89dad46059562a5a5db7",tooltip="Displays the current status of the Steel resource."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Stone::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classStone.html#a680ba377edd24fc2e10dd4f17acbc323",tooltip="Displays the current status of the Stone resource."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Wood::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWood.html#ab79555e198afba0bec85c8ea06715675",tooltip="Displays the current status of the wood resource."];
+}

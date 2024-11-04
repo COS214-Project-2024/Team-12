@@ -1,0 +1,166 @@
+\hypertarget{classPlaceComponentCommand}{}\doxysection{Place\+Component\+Command Class Reference}
+\label{classPlaceComponentCommand}\index{PlaceComponentCommand@{PlaceComponentCommand}}
+
+
+\mbox{\hyperlink{classCommand}{Command}} to place a \mbox{\hyperlink{classCityComponent}{City\+Component}} on a \mbox{\hyperlink{classMapGrid}{Map\+Grid}} at a specified \mbox{\hyperlink{structLocation}{Location}}.  
+
+
+
+
+{\ttfamily \#include $<$Command.\+h$>$}
+
+
+
+Inheritance diagram for Place\+Component\+Command\+:
+% FIG 0
+
+
+Collaboration diagram for Place\+Component\+Command\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlaceComponentCommand_a1e6f3763c238b781351874b26e385e14}{Place\+Component\+Command}} (\mbox{\hyperlink{classMapGrid}{Map\+Grid}} \&\mbox{\hyperlink{classPlaceComponentCommand_a7d432a49bdfd177e42f16263a44cdbae}{grid}}, \mbox{\hyperlink{structLocation}{Location}} loc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ comp)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPlaceComponentCommand}{Place\+Component\+Command}} with specified \mbox{\hyperlink{classMapGrid}{Map\+Grid}}, \mbox{\hyperlink{structLocation}{Location}}, and component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlaceComponentCommand_aa4967ddf48dca107ef3b826f14e0e6bf}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the command, placing the component on the \mbox{\hyperlink{classMapGrid}{Map\+Grid}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlaceComponentCommand_a5350e34b31e5118bdf3c98e984434064}{undo}} () override
+\begin{DoxyCompactList}\small\item\em Undoes the command, restoring the previous component at the location. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommand}{Command}} $>$ \mbox{\hyperlink{classPlaceComponentCommand_adaa77f953f8d2d14f057c976f318b31a}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clones the \mbox{\hyperlink{classPlaceComponentCommand}{Place\+Component\+Command}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMapGrid}{Map\+Grid}} \& \mbox{\hyperlink{classPlaceComponentCommand_a7d432a49bdfd177e42f16263a44cdbae}{grid}}
+\begin{DoxyCompactList}\small\item\em Reference to the \mbox{\hyperlink{classMapGrid}{Map\+Grid}} where the component is placed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{classPlaceComponentCommand_a108d13d8fc7abb73e9709a7d8303f84e}{location}}
+\begin{DoxyCompactList}\small\item\em The location on the \mbox{\hyperlink{classMapGrid}{Map\+Grid}} for the component. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \mbox{\hyperlink{classPlaceComponentCommand_ad19d38c48d29b3ff2d92ec29b7c2dae2}{component}}
+\begin{DoxyCompactList}\small\item\em The component to place on the \mbox{\hyperlink{classMapGrid}{Map\+Grid}}. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \mbox{\hyperlink{classPlaceComponentCommand_acb44da5fcda9add842ce4e32215a5789}{previous\+Component}}
+\begin{DoxyCompactList}\small\item\em Stores the previous component at the location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classCommand}{Command}} to place a \mbox{\hyperlink{classCityComponent}{City\+Component}} on a \mbox{\hyperlink{classMapGrid}{Map\+Grid}} at a specified \mbox{\hyperlink{structLocation}{Location}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlaceComponentCommand_a1e6f3763c238b781351874b26e385e14}\label{classPlaceComponentCommand_a1e6f3763c238b781351874b26e385e14}} 
+\index{PlaceComponentCommand@{PlaceComponentCommand}!PlaceComponentCommand@{PlaceComponentCommand}}
+\index{PlaceComponentCommand@{PlaceComponentCommand}!PlaceComponentCommand@{PlaceComponentCommand}}
+\doxysubsubsection{\texorpdfstring{PlaceComponentCommand()}{PlaceComponentCommand()}}
+{\footnotesize\ttfamily Place\+Component\+Command\+::\+Place\+Component\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMapGrid}{Map\+Grid}} \&}]{grid,  }\item[{\mbox{\hyperlink{structLocation}{Location}}}]{loc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPlaceComponentCommand}{Place\+Component\+Command}} with specified \mbox{\hyperlink{classMapGrid}{Map\+Grid}}, \mbox{\hyperlink{structLocation}{Location}}, and component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid} & Reference to the \mbox{\hyperlink{classMapGrid}{Map\+Grid}}. \\
+\hline
+{\em loc} & The location to place the component. \\
+\hline
+{\em comp} & Shared pointer to the \mbox{\hyperlink{classCityComponent}{City\+Component}} to be placed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlaceComponentCommand_adaa77f953f8d2d14f057c976f318b31a}\label{classPlaceComponentCommand_adaa77f953f8d2d14f057c976f318b31a}} 
+\index{PlaceComponentCommand@{PlaceComponentCommand}!clone@{clone}}
+\index{clone@{clone}!PlaceComponentCommand@{PlaceComponentCommand}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classCommand}{Command}}$>$ Place\+Component\+Command\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clones the \mbox{\hyperlink{classPlaceComponentCommand}{Place\+Component\+Command}}. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a new \mbox{\hyperlink{classPlaceComponentCommand}{Place\+Component\+Command}} instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommand_ab80b3fee06aa2d3d0781857a608ea420}{Command}}.
+
+\mbox{\Hypertarget{classPlaceComponentCommand_aa4967ddf48dca107ef3b826f14e0e6bf}\label{classPlaceComponentCommand_aa4967ddf48dca107ef3b826f14e0e6bf}} 
+\index{PlaceComponentCommand@{PlaceComponentCommand}!execute@{execute}}
+\index{execute@{execute}!PlaceComponentCommand@{PlaceComponentCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Place\+Component\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the command, placing the component on the \mbox{\hyperlink{classMapGrid}{Map\+Grid}}. 
+
+
+
+Implements \mbox{\hyperlink{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{Command}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classPlaceComponentCommand_a5350e34b31e5118bdf3c98e984434064}\label{classPlaceComponentCommand_a5350e34b31e5118bdf3c98e984434064}} 
+\index{PlaceComponentCommand@{PlaceComponentCommand}!undo@{undo}}
+\index{undo@{undo}!PlaceComponentCommand@{PlaceComponentCommand}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Place\+Component\+Command\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Undoes the command, restoring the previous component at the location. 
+
+
+
+Implements \mbox{\hyperlink{classCommand_ad5eccd34dc85abda2cd0c21d819c17dc}{Command}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPlaceComponentCommand_ad19d38c48d29b3ff2d92ec29b7c2dae2}\label{classPlaceComponentCommand_ad19d38c48d29b3ff2d92ec29b7c2dae2}} 
+\index{PlaceComponentCommand@{PlaceComponentCommand}!component@{component}}
+\index{component@{component}!PlaceComponentCommand@{PlaceComponentCommand}}
+\doxysubsubsection{\texorpdfstring{component}{component}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classCityComponent}{City\+Component}}$>$ Place\+Component\+Command\+::component\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The component to place on the \mbox{\hyperlink{classMapGrid}{Map\+Grid}}. 
+
+\mbox{\Hypertarget{classPlaceComponentCommand_a7d432a49bdfd177e42f16263a44cdbae}\label{classPlaceComponentCommand_a7d432a49bdfd177e42f16263a44cdbae}} 
+\index{PlaceComponentCommand@{PlaceComponentCommand}!grid@{grid}}
+\index{grid@{grid}!PlaceComponentCommand@{PlaceComponentCommand}}
+\doxysubsubsection{\texorpdfstring{grid}{grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMapGrid}{Map\+Grid}}\& Place\+Component\+Command\+::grid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the \mbox{\hyperlink{classMapGrid}{Map\+Grid}} where the component is placed. 
+
+\mbox{\Hypertarget{classPlaceComponentCommand_a108d13d8fc7abb73e9709a7d8303f84e}\label{classPlaceComponentCommand_a108d13d8fc7abb73e9709a7d8303f84e}} 
+\index{PlaceComponentCommand@{PlaceComponentCommand}!location@{location}}
+\index{location@{location}!PlaceComponentCommand@{PlaceComponentCommand}}
+\doxysubsubsection{\texorpdfstring{location}{location}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLocation}{Location}} Place\+Component\+Command\+::location\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The location on the \mbox{\hyperlink{classMapGrid}{Map\+Grid}} for the component. 
+
+\mbox{\Hypertarget{classPlaceComponentCommand_acb44da5fcda9add842ce4e32215a5789}\label{classPlaceComponentCommand_acb44da5fcda9add842ce4e32215a5789}} 
+\index{PlaceComponentCommand@{PlaceComponentCommand}!previousComponent@{previousComponent}}
+\index{previousComponent@{previousComponent}!PlaceComponentCommand@{PlaceComponentCommand}}
+\doxysubsubsection{\texorpdfstring{previousComponent}{previousComponent}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classCityComponent}{City\+Component}}$>$ Place\+Component\+Command\+::previous\+Component\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores the previous component at the location. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Command_8h}{Command.\+h}}\end{DoxyCompactItemize}

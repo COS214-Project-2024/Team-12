@@ -1,0 +1,148 @@
+\hypertarget{classFlat}{}\doxysection{Flat Class Reference}
+\label{classFlat}\index{Flat@{Flat}}
+
+
+Represents a residential building of type \mbox{\hyperlink{classFlat}{Flat}}.  
+
+
+
+
+{\ttfamily \#include $<$Flat.\+h$>$}
+
+
+
+Inheritance diagram for Flat\+:
+% FIG 0
+
+
+Collaboration diagram for Flat\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFlat_a224698a4f0c7c2d77638e4d2755fd705}{Flat}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classFlat}{Flat}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFlat_a9f2c447d42e460b59ef6d8ebe0d04566}{Flat}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for \mbox{\hyperlink{classFlat}{Flat}}. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classFlat_a78b080f31c2ee95833293fd37422cd2d}{get\+Display\+Symbol}} () const override
+\begin{DoxyCompactList}\small\item\em Get the display symbol for \mbox{\hyperlink{classFlat}{Flat}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classFlat_af9896f1d45430df3f06e17b89a655031}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Get the building type for \mbox{\hyperlink{classFlat}{Flat}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{classFlat_acf8c7a29fb55273915210f25af9186c8}{BASE\+\_\+\+COST}} = 150
+\begin{DoxyCompactList}\small\item\em Base cost of constructing a \mbox{\hyperlink{classFlat}{Flat}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a residential building of type \mbox{\hyperlink{classFlat}{Flat}}. 
+
+The \mbox{\hyperlink{classFlat}{Flat}} class inherits from \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} and includes specific properties and methods related to a flat residential structure, such as base cost and utility connections. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFlat_a224698a4f0c7c2d77638e4d2755fd705}\label{classFlat_a224698a4f0c7c2d77638e4d2755fd705}} 
+\index{Flat@{Flat}!Flat@{Flat}}
+\index{Flat@{Flat}!Flat@{Flat}}
+\doxysubsubsection{\texorpdfstring{Flat()}{Flat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Flat\+::\+Flat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classFlat}{Flat}}. 
+
+Default constructor for the \mbox{\hyperlink{classFlat}{Flat}} class.
+
+This constructor initializes a \mbox{\hyperlink{classFlat}{Flat}} object with default parameters, setting the number of floors to 2 and the base cost to \$150.\+00. \mbox{\Hypertarget{classFlat_a9f2c447d42e460b59ef6d8ebe0d04566}\label{classFlat_a9f2c447d42e460b59ef6d8ebe0d04566}} 
+\index{Flat@{Flat}!Flat@{Flat}}
+\index{Flat@{Flat}!Flat@{Flat}}
+\doxysubsubsection{\texorpdfstring{Flat()}{Flat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Flat\+::\+Flat (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for \mbox{\hyperlink{classFlat}{Flat}}. 
+
+Parameterized constructor for the \mbox{\hyperlink{classFlat}{Flat}} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & A shared pointer to the \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} for water supply. \\
+\hline
+{\em power} & A shared pointer to the \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} for power supply. \\
+\hline
+{\em waste} & A shared pointer to the \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} for waste management. \\
+\hline
+{\em sewage} & A shared pointer to the \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} for sewage management.\\
+\hline
+\end{DoxyParams}
+This constructor initializes a \mbox{\hyperlink{classFlat}{Flat}} object with the specified utility connections, the number of floors set to 2, and the base cost set to \$150.\+00.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & A shared pointer to the \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} for water supply. \\
+\hline
+{\em power} & A shared pointer to the \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} for power supply. \\
+\hline
+{\em waste} & A shared pointer to the \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} for waste management. \\
+\hline
+{\em sewage} & A shared pointer to the \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} for sewage management. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFlat_af9896f1d45430df3f06e17b89a655031}\label{classFlat_af9896f1d45430df3f06e17b89a655031}} 
+\index{Flat@{Flat}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Flat@{Flat}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Flat\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the building type for \mbox{\hyperlink{classFlat}{Flat}}. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building, which is \char`\"{}\+Flat\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+\mbox{\Hypertarget{classFlat_a78b080f31c2ee95833293fd37422cd2d}\label{classFlat_a78b080f31c2ee95833293fd37422cd2d}} 
+\index{Flat@{Flat}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!Flat@{Flat}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char Flat\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the display symbol for \mbox{\hyperlink{classFlat}{Flat}}. 
+
+\begin{DoxyReturn}{Returns}
+A character symbol representing the \mbox{\hyperlink{classFlat}{Flat}} (usually \textquotesingle{}F\textquotesingle{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidentialBuilding_ac0839490cde74967340bbd82fb65bd4d}{Residential\+Building}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classFlat_acf8c7a29fb55273915210f25af9186c8}\label{classFlat_acf8c7a29fb55273915210f25af9186c8}} 
+\index{Flat@{Flat}!BASE\_COST@{BASE\_COST}}
+\index{BASE\_COST@{BASE\_COST}!Flat@{Flat}}
+\doxysubsubsection{\texorpdfstring{BASE\_COST}{BASE\_COST}}
+{\footnotesize\ttfamily constexpr int Flat\+::\+BASE\+\_\+\+COST = 150\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Base cost of constructing a \mbox{\hyperlink{classFlat}{Flat}}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Flat_8h}{Flat.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Flat_8cpp}{Flat.\+cpp}}\end{DoxyCompactItemize}

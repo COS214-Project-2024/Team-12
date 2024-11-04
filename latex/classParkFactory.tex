@@ -1,0 +1,59 @@
+\hypertarget{classParkFactory}{}\doxysection{Park\+Factory Class Reference}
+\label{classParkFactory}\index{ParkFactory@{ParkFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classPark}{Park}} objects.  
+
+
+
+
+{\ttfamily \#include $<$Park\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Park\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Park\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ \mbox{\hyperlink{classParkFactory_a19ce3879379176c97a750055705b4f77}{create\+Land\+Mark}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{classPark}{Park}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classPark}{Park}} objects. 
+
+The \mbox{\hyperlink{classParkFactory}{Park\+Factory}} class is responsible for creating instances of the \mbox{\hyperlink{classPark}{Park}} class, allowing for encapsulation of the \mbox{\hyperlink{classPark}{Park}} creation process within the city simulation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParkFactory_a19ce3879379176c97a750055705b4f77}\label{classParkFactory_a19ce3879379176c97a750055705b4f77}} 
+\index{ParkFactory@{ParkFactory}!createLandMark@{createLandMark}}
+\index{createLandMark@{createLandMark}!ParkFactory@{ParkFactory}}
+\doxysubsubsection{\texorpdfstring{createLandMark()}{createLandMark()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ Park\+Factory\+::create\+Land\+Mark (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new \mbox{\hyperlink{classPark}{Park}} object. 
+
+This method creates and returns a unique pointer to a new \mbox{\hyperlink{classPark}{Park}} instance.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a newly created \mbox{\hyperlink{classPark}{Park}} object.
+\end{DoxyReturn}
+This method creates a unique pointer to a new \mbox{\hyperlink{classPark}{Park}} instance, which can be used to represent a park in the city simulation.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a newly created \mbox{\hyperlink{classPark}{Park}} object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ParkFactory_8h}{Park\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ParkFactory_8cpp}{Park\+Factory.\+cpp}}\end{DoxyCompactItemize}

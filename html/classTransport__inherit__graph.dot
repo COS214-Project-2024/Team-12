@@ -1,0 +1,11 @@
+digraph "Transport"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Transport\n||+ getCost()\l+ getMaintainanceCost()\l+ getSpeed()\l+ getCapacity()\l+ getType()\l+ clone()\l+ ~Transport()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Abstract class representing a generic transport."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{Roads\n|- trafficCapacity\l- road\l|+ clone()\l+ getSpeed()\l+ getCost()\l+ getMaintainanceCost()\l+ getCapacity()\l+ getType()\l+ Roads()\l+ ~Roads()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRoads.html",tooltip="A concrete implementation of Transport representing various types of roads."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{Trains\n|- cargoCapacity\l- railwayLength\l- numberOfStations\l|+ clone()\l+ getSpeed()\l+ getCost()\l+ getMaintainanceCost()\l+ getCapacity()\l+ getType()\l+ Trains()\l+ ~Trains()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTrains.html",tooltip="A concrete implementation of the Transport class representing a train."];
+}

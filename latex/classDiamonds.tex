@@ -1,0 +1,118 @@
+\hypertarget{classDiamonds}{}\doxysection{Diamonds Class Reference}
+\label{classDiamonds}\index{Diamonds@{Diamonds}}
+
+
+Represents diamonds as an income-\/generating resource in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Diamonds.\+h$>$}
+
+
+
+Inheritance diagram for Diamonds\+:
+% FIG 0
+
+
+Collaboration diagram for Diamonds\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDiamonds_a9e33e7c88af079d8d59a71f6db6dd290}{Diamonds}} (int \mbox{\hyperlink{classIncomeResourceProduct_a6e42862b30d2020f945befb8d22f4743}{quantity}}, double \mbox{\hyperlink{classIncomeResourceProduct_a476ed7fa88280696223a7874d7f23182}{market\+Value}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classDiamonds}{Diamonds}} resource with specified quantity and market value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDiamonds_af71854940033bb33229dbd73bb1ebfc4}{$\sim$\+Diamonds}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classDiamonds}{Diamonds}} resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDiamonds_aeaa39c0a314032f7b50cb08f2571371e}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the current status of the diamond resource. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDiamonds_a9156de222b3125740ef7672d033e5d0b}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the building type of this resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents diamonds as an income-\/generating resource in the city simulation. 
+
+The \mbox{\hyperlink{classDiamonds}{Diamonds}} class inherits from \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} and provides functionalities specific to diamond resources, including displaying their status and fetching their type. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDiamonds_a9e33e7c88af079d8d59a71f6db6dd290}\label{classDiamonds_a9e33e7c88af079d8d59a71f6db6dd290}} 
+\index{Diamonds@{Diamonds}!Diamonds@{Diamonds}}
+\index{Diamonds@{Diamonds}!Diamonds@{Diamonds}}
+\doxysubsubsection{\texorpdfstring{Diamonds()}{Diamonds()}}
+{\footnotesize\ttfamily Diamonds\+::\+Diamonds (\begin{DoxyParamCaption}\item[{int}]{quantity,  }\item[{double}]{market\+Value }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classDiamonds}{Diamonds}} resource with specified quantity and market value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The amount of diamonds available. \\
+\hline
+{\em market\+Value} & The market value per unit of diamonds.\\
+\hline
+\end{DoxyParams}
+Initializes the \mbox{\hyperlink{classDiamonds}{Diamonds}} resource with a given quantity and market value per unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The amount of diamonds available. \\
+\hline
+{\em market\+Value} & The market value per unit of diamonds. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDiamonds_af71854940033bb33229dbd73bb1ebfc4}\label{classDiamonds_af71854940033bb33229dbd73bb1ebfc4}} 
+\index{Diamonds@{Diamonds}!````~Diamonds@{$\sim$Diamonds}}
+\index{````~Diamonds@{$\sim$Diamonds}!Diamonds@{Diamonds}}
+\doxysubsubsection{\texorpdfstring{$\sim$Diamonds()}{~Diamonds()}}
+{\footnotesize\ttfamily Diamonds\+::$\sim$\+Diamonds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classDiamonds}{Diamonds}} resource. 
+
+Cleans up resources associated with the \mbox{\hyperlink{classDiamonds}{Diamonds}} object upon destruction. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDiamonds_aeaa39c0a314032f7b50cb08f2571371e}\label{classDiamonds_aeaa39c0a314032f7b50cb08f2571371e}} 
+\index{Diamonds@{Diamonds}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Diamonds@{Diamonds}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Diamonds\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the current status of the diamond resource. 
+
+Displays the current status of the \mbox{\hyperlink{classDiamonds}{Diamonds}} resource.
+
+Outputs the resource\textquotesingle{}s name, quantity, market value per unit, and total calculated income to the console. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classDiamonds_a9156de222b3125740ef7672d033e5d0b}\label{classDiamonds_a9156de222b3125740ef7672d033e5d0b}} 
+\index{Diamonds@{Diamonds}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Diamonds@{Diamonds}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Diamonds\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the building type of this resource. 
+
+\begin{DoxyReturn}{Returns}
+A string indicating the resource type, \char`\"{}\+Diamond\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Diamonds_8h}{Diamonds.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Diamonds_8cpp}{Diamonds.\+cpp}}\end{DoxyCompactItemize}

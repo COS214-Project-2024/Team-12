@@ -1,0 +1,463 @@
+\hypertarget{classNPCManager}{}\doxysection{NPCManager Class Reference}
+\label{classNPCManager}\index{NPCManager@{NPCManager}}
+
+
+Singleton class managing the state and statistics of NPCs.  
+
+
+
+
+{\ttfamily \#include $<$NPCManager.\+h$>$}
+
+
+
+Collaboration diagram for NPCManager\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNPCManager_aa90545d9ee295d6ea236c9ff674199b8}{NPCManager}} (\mbox{\hyperlink{classNPCManager}{NPCManager}} const \&)=delete
+\item 
+void \mbox{\hyperlink{classNPCManager_a72263041c0f192310783cbdc922aa9b0}{operator=}} (\mbox{\hyperlink{classNPCManager}{NPCManager}} const \&)=delete
+\item 
+int \mbox{\hyperlink{classNPCManager_ac21c34d2e87c6a8801bc4bfc1c6d0201}{get\+Happiness\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current happiness level of NPCs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNPCManager_aa5532ef54b02558f6e97c9fdea5cd98e}{set\+Happiness\+Level}} (int level)
+\begin{DoxyCompactList}\small\item\em Sets or adjusts the NPC happiness level. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_a4eddd0fa270ec6fdb115de8c94d5ce32}{get\+Donation\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the count of NPCs in the Donation (happy) state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_a87b812f4d1f79a397737a29ddddaa4fb}{get\+Neutral\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the count of NPCs in the Neutral state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_a2b545c7ba2dc9ff52c70f898a087e371}{get\+Revolt\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the count of NPCs in the Revolt state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_a127118e337db428998e8f9548b013b79}{get\+Productive\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the count of NPCs in the Productive state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_aef57949eebfff083058a656219b8cc43}{get\+Crime\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the count of NPCs in the Crime state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNPCManager_a615e87109c27f59edbc1eccb2df972d2}{increment\+Count}} (const std\+::string \&state\+Name)
+\begin{DoxyCompactList}\small\item\em Increments the count for a given NPC state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNPCManager_a2780f5424c98766d052c9860eedd9412}{decrement\+Count}} (const std\+::string \&state\+Name)
+\begin{DoxyCompactList}\small\item\em Decrements the count for a given NPC state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNPCManager_a66e24e21929ec64c56949b162851cb53}{reset\+Counts}} ()
+\begin{DoxyCompactList}\small\item\em Resets all state counts to zero. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classNPCManager_a3d9ca8170cdadc9a47b78893c6383e1c}{get\+Highest\+State}} () const
+\begin{DoxyCompactList}\small\item\em Determines the state with the highest count. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_a40647dd39fc3e38634f97bb1e93cd282}{get\+Total\+NPCs}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of NPCs across all states. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNPCManager_adc79b7ee61f388392c74137eac04fa96}{Employeed\+Npcs}} ()
+\begin{DoxyCompactList}\small\item\em Calculates employment levels based on the dominant state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNPCManager_a110affcb21b7c60f405d4bfd3d0761d4}{get\+Crime\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Updates and retrieves the crime rate based on NPC counts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classNPCManager}{NPCManager}} \& \mbox{\hyperlink{classNPCManager_a29c578e3b969f7438d6025dd3fc21c50}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the singleton instance of \mbox{\hyperlink{classNPCManager}{NPCManager}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNPCManager_afcb885be8500ae3f25beb3b64d31a2f1}{NPCManager}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classNPCManager}{NPCManager}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classNPCManager_a72a6167b14863426d17ff21047086916}{happiness\+Level}}
+\begin{DoxyCompactList}\small\item\em Overall happiness level of NPCs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_ab39086b23f84859820566ea850c1b459}{happy\+Count}}
+\begin{DoxyCompactList}\small\item\em Count of NPCs in the Donation (happy) state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_a804ce0aeff514697bdf3307229ce50c2}{neutral\+Count}}
+\begin{DoxyCompactList}\small\item\em Count of NPCs in the Neutral state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_ae740dab7696fc0d860d598a444b009a9}{revolt\+Count}}
+\begin{DoxyCompactList}\small\item\em Count of NPCs in the Revolt state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_a0d0b1ba25d4b3e0dfcef79b3070dcf37}{productive\+Count}}
+\begin{DoxyCompactList}\small\item\em Count of NPCs in the Productive state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_a560031a3991ce16d257e9d22135652a7}{crime\+Count}}
+\begin{DoxyCompactList}\small\item\em Count of NPCs in the Crime state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_ac9f55a7412d41251ab723658fbc6a711}{employed\+Npcs}}
+\begin{DoxyCompactList}\small\item\em Number of employed NPCs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNPCManager_a158c47e03a035389f37622f9615e8b71}{unemployed\+Npcs}}
+\begin{DoxyCompactList}\small\item\em Number of unemployed NPCs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton class managing the state and statistics of NPCs. 
+
+The \mbox{\hyperlink{classNPCManager}{NPCManager}} class tracks various NPC states, their counts, and calculates city-\/wide metrics such as happiness level, employment, and crime rate. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNPCManager_aa90545d9ee295d6ea236c9ff674199b8}\label{classNPCManager_aa90545d9ee295d6ea236c9ff674199b8}} 
+\index{NPCManager@{NPCManager}!NPCManager@{NPCManager}}
+\index{NPCManager@{NPCManager}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{NPCManager()}{NPCManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily NPCManager\+::\+NPCManager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNPCManager}{NPCManager}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classNPCManager_afcb885be8500ae3f25beb3b64d31a2f1}\label{classNPCManager_afcb885be8500ae3f25beb3b64d31a2f1}} 
+\index{NPCManager@{NPCManager}!NPCManager@{NPCManager}}
+\index{NPCManager@{NPCManager}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{NPCManager()}{NPCManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily NPCManager\+::\+NPCManager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classNPCManager}{NPCManager}}. 
+
+Default constructor initializing \mbox{\hyperlink{classNPCManager}{NPCManager}} with default values. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNPCManager_a2780f5424c98766d052c9860eedd9412}\label{classNPCManager_a2780f5424c98766d052c9860eedd9412}} 
+\index{NPCManager@{NPCManager}!decrementCount@{decrementCount}}
+\index{decrementCount@{decrementCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{decrementCount()}{decrementCount()}}
+{\footnotesize\ttfamily void NPCManager\+::decrement\+Count (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{state\+Name }\end{DoxyParamCaption})}
+
+
+
+Decrements the count for a given NPC state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Name} & The name of the state to decrement.\\
+\hline
+{\em state\+Name} & Name of the state to decrement count for. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classNPCManager_adc79b7ee61f388392c74137eac04fa96}\label{classNPCManager_adc79b7ee61f388392c74137eac04fa96}} 
+\index{NPCManager@{NPCManager}!EmployeedNpcs@{EmployeedNpcs}}
+\index{EmployeedNpcs@{EmployeedNpcs}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{EmployeedNpcs()}{EmployeedNpcs()}}
+{\footnotesize\ttfamily void NPCManager\+::\+Employeed\+Npcs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates employment levels based on the dominant state. 
+
+Calculates employment based on the dominant state and updates the \mbox{\hyperlink{classGovernment}{Government}}\textquotesingle{}s employment rate. Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classNPCManager_aef57949eebfff083058a656219b8cc43}\label{classNPCManager_aef57949eebfff083058a656219b8cc43}} 
+\index{NPCManager@{NPCManager}!getCrimeCount@{getCrimeCount}}
+\index{getCrimeCount@{getCrimeCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{getCrimeCount()}{getCrimeCount()}}
+{\footnotesize\ttfamily int NPCManager\+::get\+Crime\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the count of NPCs in the Crime state. 
+
+Retrieves the number of NPCs in the Crime state.
+
+\begin{DoxyReturn}{Returns}
+int Count of NPCs in the Crime state.
+
+int The count of Crime state NPCs. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classNPCManager_a110affcb21b7c60f405d4bfd3d0761d4}\label{classNPCManager_a110affcb21b7c60f405d4bfd3d0761d4}} 
+\index{NPCManager@{NPCManager}!getCrimeRate@{getCrimeRate}}
+\index{getCrimeRate@{getCrimeRate}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{getCrimeRate()}{getCrimeRate()}}
+{\footnotesize\ttfamily void NPCManager\+::get\+Crime\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates and retrieves the crime rate based on NPC counts. 
+
+Updates the \mbox{\hyperlink{classGovernment}{Government}}\textquotesingle{}s crime rate based on NPCs in the Crime state. Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classNPCManager_a4eddd0fa270ec6fdb115de8c94d5ce32}\label{classNPCManager_a4eddd0fa270ec6fdb115de8c94d5ce32}} 
+\index{NPCManager@{NPCManager}!getDonationCount@{getDonationCount}}
+\index{getDonationCount@{getDonationCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{getDonationCount()}{getDonationCount()}}
+{\footnotesize\ttfamily int NPCManager\+::get\+Donation\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the count of NPCs in the Donation (happy) state. 
+
+Retrieves the number of NPCs in the Donation state.
+
+\begin{DoxyReturn}{Returns}
+int Count of NPCs in the Donation state.
+
+int The count of Donation state NPCs. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classNPCManager_ac21c34d2e87c6a8801bc4bfc1c6d0201}\label{classNPCManager_ac21c34d2e87c6a8801bc4bfc1c6d0201}} 
+\index{NPCManager@{NPCManager}!getHappinessLevel@{getHappinessLevel}}
+\index{getHappinessLevel@{getHappinessLevel}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{getHappinessLevel()}{getHappinessLevel()}}
+{\footnotesize\ttfamily int NPCManager\+::get\+Happiness\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current happiness level of NPCs. 
+
+Retrieves the current happiness level.
+
+\begin{DoxyReturn}{Returns}
+int The current happiness level. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classNPCManager_a3d9ca8170cdadc9a47b78893c6383e1c}\label{classNPCManager_a3d9ca8170cdadc9a47b78893c6383e1c}} 
+\index{NPCManager@{NPCManager}!getHighestState@{getHighestState}}
+\index{getHighestState@{getHighestState}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{getHighestState()}{getHighestState()}}
+{\footnotesize\ttfamily std\+::string NPCManager\+::get\+Highest\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Determines the state with the highest count. 
+
+Determines the state with the highest count among NPCs.
+
+\begin{DoxyReturn}{Returns}
+std\+::string Name of the state with the highest count.
+
+std\+::string The name of the state with the highest count. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classNPCManager_a29c578e3b969f7438d6025dd3fc21c50}\label{classNPCManager_a29c578e3b969f7438d6025dd3fc21c50}} 
+\index{NPCManager@{NPCManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNPCManager}{NPCManager}} \& NPCManager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves the singleton instance of \mbox{\hyperlink{classNPCManager}{NPCManager}}. 
+
+Singleton instance getter for \mbox{\hyperlink{classNPCManager}{NPCManager}}.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classNPCManager}{NPCManager}}\& Reference to the singleton instance.
+
+\mbox{\hyperlink{classNPCManager}{NPCManager}}\& Singleton instance of \mbox{\hyperlink{classNPCManager}{NPCManager}}. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{classNPCManager_a87b812f4d1f79a397737a29ddddaa4fb}\label{classNPCManager_a87b812f4d1f79a397737a29ddddaa4fb}} 
+\index{NPCManager@{NPCManager}!getNeutralCount@{getNeutralCount}}
+\index{getNeutralCount@{getNeutralCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{getNeutralCount()}{getNeutralCount()}}
+{\footnotesize\ttfamily int NPCManager\+::get\+Neutral\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the count of NPCs in the Neutral state. 
+
+Retrieves the number of NPCs in the Neutral state.
+
+\begin{DoxyReturn}{Returns}
+int Count of NPCs in the Neutral state.
+
+int The count of Neutral state NPCs. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{classNPCManager_a127118e337db428998e8f9548b013b79}\label{classNPCManager_a127118e337db428998e8f9548b013b79}} 
+\index{NPCManager@{NPCManager}!getProductiveCount@{getProductiveCount}}
+\index{getProductiveCount@{getProductiveCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{getProductiveCount()}{getProductiveCount()}}
+{\footnotesize\ttfamily int NPCManager\+::get\+Productive\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the count of NPCs in the Productive state. 
+
+Retrieves the number of NPCs in the Productive state.
+
+\begin{DoxyReturn}{Returns}
+int Count of NPCs in the Productive state.
+
+int The count of Productive state NPCs. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{classNPCManager_a2b545c7ba2dc9ff52c70f898a087e371}\label{classNPCManager_a2b545c7ba2dc9ff52c70f898a087e371}} 
+\index{NPCManager@{NPCManager}!getRevoltCount@{getRevoltCount}}
+\index{getRevoltCount@{getRevoltCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{getRevoltCount()}{getRevoltCount()}}
+{\footnotesize\ttfamily int NPCManager\+::get\+Revolt\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the count of NPCs in the Revolt state. 
+
+Retrieves the number of NPCs in the Revolt state.
+
+\begin{DoxyReturn}{Returns}
+int Count of NPCs in the Revolt state.
+
+int The count of Revolt state NPCs. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{classNPCManager_a40647dd39fc3e38634f97bb1e93cd282}\label{classNPCManager_a40647dd39fc3e38634f97bb1e93cd282}} 
+\index{NPCManager@{NPCManager}!getTotalNPCs@{getTotalNPCs}}
+\index{getTotalNPCs@{getTotalNPCs}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{getTotalNPCs()}{getTotalNPCs()}}
+{\footnotesize\ttfamily int NPCManager\+::get\+Total\+NPCs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the total number of NPCs across all states. 
+
+Retrieves the total number of NPCs across all states.
+
+\begin{DoxyReturn}{Returns}
+int Total number of NPCs. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{classNPCManager_a615e87109c27f59edbc1eccb2df972d2}\label{classNPCManager_a615e87109c27f59edbc1eccb2df972d2}} 
+\index{NPCManager@{NPCManager}!incrementCount@{incrementCount}}
+\index{incrementCount@{incrementCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{incrementCount()}{incrementCount()}}
+{\footnotesize\ttfamily void NPCManager\+::increment\+Count (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{state\+Name }\end{DoxyParamCaption})}
+
+
+
+Increments the count for a given NPC state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Name} & The name of the state to increment.\\
+\hline
+{\em state\+Name} & Name of the state to increment count for. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{classNPCManager_a72263041c0f192310783cbdc922aa9b0}\label{classNPCManager_a72263041c0f192310783cbdc922aa9b0}} 
+\index{NPCManager@{NPCManager}!operator=@{operator=}}
+\index{operator=@{operator=}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void NPCManager\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNPCManager}{NPCManager}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classNPCManager_a66e24e21929ec64c56949b162851cb53}\label{classNPCManager_a66e24e21929ec64c56949b162851cb53}} 
+\index{NPCManager@{NPCManager}!resetCounts@{resetCounts}}
+\index{resetCounts@{resetCounts}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{resetCounts()}{resetCounts()}}
+{\footnotesize\ttfamily void NPCManager\+::reset\+Counts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets all state counts to zero. 
+
+\mbox{\Hypertarget{classNPCManager_aa5532ef54b02558f6e97c9fdea5cd98e}\label{classNPCManager_aa5532ef54b02558f6e97c9fdea5cd98e}} 
+\index{NPCManager@{NPCManager}!setHappinessLevel@{setHappinessLevel}}
+\index{setHappinessLevel@{setHappinessLevel}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{setHappinessLevel()}{setHappinessLevel()}}
+{\footnotesize\ttfamily void NPCManager\+::set\+Happiness\+Level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Sets or adjusts the NPC happiness level. 
+
+Sets and updates the happiness level within a defined range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The value to adjust the happiness level by.\\
+\hline
+{\em level} & The level to add to the current happiness. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classNPCManager_a560031a3991ce16d257e9d22135652a7}\label{classNPCManager_a560031a3991ce16d257e9d22135652a7}} 
+\index{NPCManager@{NPCManager}!crimeCount@{crimeCount}}
+\index{crimeCount@{crimeCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{crimeCount}{crimeCount}}
+{\footnotesize\ttfamily int NPCManager\+::crime\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Count of NPCs in the Crime state. 
+
+\mbox{\Hypertarget{classNPCManager_ac9f55a7412d41251ab723658fbc6a711}\label{classNPCManager_ac9f55a7412d41251ab723658fbc6a711}} 
+\index{NPCManager@{NPCManager}!employedNpcs@{employedNpcs}}
+\index{employedNpcs@{employedNpcs}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{employedNpcs}{employedNpcs}}
+{\footnotesize\ttfamily int NPCManager\+::employed\+Npcs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of employed NPCs. 
+
+\mbox{\Hypertarget{classNPCManager_a72a6167b14863426d17ff21047086916}\label{classNPCManager_a72a6167b14863426d17ff21047086916}} 
+\index{NPCManager@{NPCManager}!happinessLevel@{happinessLevel}}
+\index{happinessLevel@{happinessLevel}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{happinessLevel}{happinessLevel}}
+{\footnotesize\ttfamily int NPCManager\+::happiness\+Level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Overall happiness level of NPCs. 
+
+\mbox{\Hypertarget{classNPCManager_ab39086b23f84859820566ea850c1b459}\label{classNPCManager_ab39086b23f84859820566ea850c1b459}} 
+\index{NPCManager@{NPCManager}!happyCount@{happyCount}}
+\index{happyCount@{happyCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{happyCount}{happyCount}}
+{\footnotesize\ttfamily int NPCManager\+::happy\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Count of NPCs in the Donation (happy) state. 
+
+\mbox{\Hypertarget{classNPCManager_a804ce0aeff514697bdf3307229ce50c2}\label{classNPCManager_a804ce0aeff514697bdf3307229ce50c2}} 
+\index{NPCManager@{NPCManager}!neutralCount@{neutralCount}}
+\index{neutralCount@{neutralCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{neutralCount}{neutralCount}}
+{\footnotesize\ttfamily int NPCManager\+::neutral\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Count of NPCs in the Neutral state. 
+
+\mbox{\Hypertarget{classNPCManager_a0d0b1ba25d4b3e0dfcef79b3070dcf37}\label{classNPCManager_a0d0b1ba25d4b3e0dfcef79b3070dcf37}} 
+\index{NPCManager@{NPCManager}!productiveCount@{productiveCount}}
+\index{productiveCount@{productiveCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{productiveCount}{productiveCount}}
+{\footnotesize\ttfamily int NPCManager\+::productive\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Count of NPCs in the Productive state. 
+
+\mbox{\Hypertarget{classNPCManager_ae740dab7696fc0d860d598a444b009a9}\label{classNPCManager_ae740dab7696fc0d860d598a444b009a9}} 
+\index{NPCManager@{NPCManager}!revoltCount@{revoltCount}}
+\index{revoltCount@{revoltCount}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{revoltCount}{revoltCount}}
+{\footnotesize\ttfamily int NPCManager\+::revolt\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Count of NPCs in the Revolt state. 
+
+\mbox{\Hypertarget{classNPCManager_a158c47e03a035389f37622f9615e8b71}\label{classNPCManager_a158c47e03a035389f37622f9615e8b71}} 
+\index{NPCManager@{NPCManager}!unemployedNpcs@{unemployedNpcs}}
+\index{unemployedNpcs@{unemployedNpcs}!NPCManager@{NPCManager}}
+\doxysubsubsection{\texorpdfstring{unemployedNpcs}{unemployedNpcs}}
+{\footnotesize\ttfamily int NPCManager\+::unemployed\+Npcs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of unemployed NPCs. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NPCManager_8h}{NPCManager.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NPCManager_8cpp}{NPCManager.\+cpp}}\end{DoxyCompactItemize}

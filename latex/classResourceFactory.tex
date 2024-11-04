@@ -1,0 +1,110 @@
+\hypertarget{classResourceFactory}{}\doxysection{Resource\+Factory Class Reference}
+\label{classResourceFactory}\index{ResourceFactory@{ResourceFactory}}
+
+
+Abstract Factory class for creating resources.  
+
+
+
+
+{\ttfamily \#include $<$Resource\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Resource\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Resource\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResourceFactory_a1193e800e2e7ed095e4269c89c072b50}{Resource\+Factory}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classResourceFactory}{Resource\+Factory}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classResourceFactory_aa494d0057442667fac62f69bdc4c8fac}{$\sim$\+Resource\+Factory}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classResourceFactory}{Resource\+Factory}}, allowing derived classes to clean up resources. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ \mbox{\hyperlink{classResourceFactory_a564e63149bd3348f2e6f749ab6768369}{create\+IncomeR}} (int quantity)=0
+\begin{DoxyCompactList}\small\item\em Creates an income-\/generating resource. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ \mbox{\hyperlink{classResourceFactory_a004800d9d6db381507ee78d3d197e8ac}{create\+ConstructionR}} (int quantity)=0
+\begin{DoxyCompactList}\small\item\em Creates a construction resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Factory class for creating resources. 
+
+The \mbox{\hyperlink{classResourceFactory}{Resource\+Factory}} class defines the interface for creating income-\/generating and construction-\/based resources. Derived classes will implement the specific creation logic for different types of resources. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classResourceFactory_a1193e800e2e7ed095e4269c89c072b50}\label{classResourceFactory_a1193e800e2e7ed095e4269c89c072b50}} 
+\index{ResourceFactory@{ResourceFactory}!ResourceFactory@{ResourceFactory}}
+\index{ResourceFactory@{ResourceFactory}!ResourceFactory@{ResourceFactory}}
+\doxysubsubsection{\texorpdfstring{ResourceFactory()}{ResourceFactory()}}
+{\footnotesize\ttfamily Resource\+Factory\+::\+Resource\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classResourceFactory}{Resource\+Factory}}. 
+
+\mbox{\Hypertarget{classResourceFactory_aa494d0057442667fac62f69bdc4c8fac}\label{classResourceFactory_aa494d0057442667fac62f69bdc4c8fac}} 
+\index{ResourceFactory@{ResourceFactory}!````~ResourceFactory@{$\sim$ResourceFactory}}
+\index{````~ResourceFactory@{$\sim$ResourceFactory}!ResourceFactory@{ResourceFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResourceFactory()}{~ResourceFactory()}}
+{\footnotesize\ttfamily virtual Resource\+Factory\+::$\sim$\+Resource\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classResourceFactory}{Resource\+Factory}}, allowing derived classes to clean up resources. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResourceFactory_a004800d9d6db381507ee78d3d197e8ac}\label{classResourceFactory_a004800d9d6db381507ee78d3d197e8ac}} 
+\index{ResourceFactory@{ResourceFactory}!createConstructionR@{createConstructionR}}
+\index{createConstructionR@{createConstructionR}!ResourceFactory@{ResourceFactory}}
+\doxysubsubsection{\texorpdfstring{createConstructionR()}{createConstructionR()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}$>$ Resource\+Factory\+::create\+ConstructionR (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates a construction resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the construction resource to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to a \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStoneFactory_a551333d501ab1eec14791df93e677851}{Stone\+Factory}}, \mbox{\hyperlink{classPlantFactory_aafedaa2ac311a7300fa7755cd95e3d72}{Plant\+Factory}}, \mbox{\hyperlink{classMetalFactory_aec5d1bc613351b649c8012bf6149a521}{Metal\+Factory}}, and \mbox{\hyperlink{classChemicalFactory_acc31f8ccd953eba2864a0f88e68a35ef}{Chemical\+Factory}}.
+
+\mbox{\Hypertarget{classResourceFactory_a564e63149bd3348f2e6f749ab6768369}\label{classResourceFactory_a564e63149bd3348f2e6f749ab6768369}} 
+\index{ResourceFactory@{ResourceFactory}!createIncomeR@{createIncomeR}}
+\index{createIncomeR@{createIncomeR}!ResourceFactory@{ResourceFactory}}
+\doxysubsubsection{\texorpdfstring{createIncomeR()}{createIncomeR()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}$>$ Resource\+Factory\+::create\+IncomeR (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates an income-\/generating resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the income resource to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to an \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStoneFactory_a73556546d72d99f528958f2f1f76644d}{Stone\+Factory}}, \mbox{\hyperlink{classPlantFactory_a9f44671971389432cf7843c9e2bce40c}{Plant\+Factory}}, \mbox{\hyperlink{classMetalFactory_ad649f29601ffe868a6e753aa1dedf80d}{Metal\+Factory}}, and \mbox{\hyperlink{classChemicalFactory_a3177fb40bfadad6fc558ae6c227f3cb8}{Chemical\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ResourceFactory_8h}{Resource\+Factory.\+h}}\end{DoxyCompactItemize}

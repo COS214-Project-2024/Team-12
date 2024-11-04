@@ -1,0 +1,69 @@
+\hypertarget{classPublicServiceFactory}{}\doxysection{Public\+Service\+Factory Class Reference}
+\label{classPublicServiceFactory}\index{PublicServiceFactory@{PublicServiceFactory}}
+
+
+An abstract factory class for creating instances of \mbox{\hyperlink{classPublicService}{Public\+Service}}.  
+
+
+
+
+{\ttfamily \#include $<$Public\+Service\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Public\+Service\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Public\+Service\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ \mbox{\hyperlink{classPublicServiceFactory_aa78ca5e8bad83e979985c738ad43c309}{create\+Public\+Service}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to create a \mbox{\hyperlink{classPublicService}{Public\+Service}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPublicServiceFactory_ad8083e0e31f8ca6044d3baf4a4e00333}{$\sim$\+Public\+Service\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classPublicServiceFactory}{Public\+Service\+Factory}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract factory class for creating instances of \mbox{\hyperlink{classPublicService}{Public\+Service}}. 
+
+This factory provides an interface for creating public service buildings in the city simulation. Derived classes must implement the {\ttfamily create\+Public\+Service} function to provide specific types of public services. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPublicServiceFactory_ad8083e0e31f8ca6044d3baf4a4e00333}\label{classPublicServiceFactory_ad8083e0e31f8ca6044d3baf4a4e00333}} 
+\index{PublicServiceFactory@{PublicServiceFactory}!````~PublicServiceFactory@{$\sim$PublicServiceFactory}}
+\index{````~PublicServiceFactory@{$\sim$PublicServiceFactory}!PublicServiceFactory@{PublicServiceFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$PublicServiceFactory()}{~PublicServiceFactory()}}
+{\footnotesize\ttfamily virtual Public\+Service\+Factory\+::$\sim$\+Public\+Service\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classPublicServiceFactory}{Public\+Service\+Factory}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPublicServiceFactory_aa78ca5e8bad83e979985c738ad43c309}\label{classPublicServiceFactory_aa78ca5e8bad83e979985c738ad43c309}} 
+\index{PublicServiceFactory@{PublicServiceFactory}!createPublicService@{createPublicService}}
+\index{createPublicService@{createPublicService}!PublicServiceFactory@{PublicServiceFactory}}
+\doxysubsubsection{\texorpdfstring{createPublicService()}{createPublicService()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classPublicService}{Public\+Service}}$>$ Public\+Service\+Factory\+::create\+Public\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to create a \mbox{\hyperlink{classPublicService}{Public\+Service}} object. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to the created \mbox{\hyperlink{classPublicService}{Public\+Service}} object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPoliceStationFactory_a515904f192f5b6a75149f7c42c297cb9}{Police\+Station\+Factory}}, \mbox{\hyperlink{classHospitalFactory_ace41bc3f41264e5350c1bc53e72fdffe}{Hospital\+Factory}}, and \mbox{\hyperlink{classFireStationFactory_af5f9fac69abb075665fe69539f701ea1}{Fire\+Station\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PublicServiceFactory_8h}{Public\+Service\+Factory.\+h}}\end{DoxyCompactItemize}

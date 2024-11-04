@@ -1,0 +1,209 @@
+\hypertarget{classNode}{}\doxysection{Node Class Reference}
+\label{classNode}\index{Node@{Node}}
+
+
+Represents a node within the city grid, which holds a location, an optional city component, and connections to other nodes via transport methods.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+
+
+Collaboration diagram for Node\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode_a23a19f53dfbb18fec58cdac90de3d144}{Node}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classNode}{Node}} with specified x and y coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode_ad8b67882f10552130e0e646546bcfbba}{Node}} (\mbox{\hyperlink{classNode}{Node}} \&\&)=default
+\item 
+\mbox{\hyperlink{classNode}{Node}} \& \mbox{\hyperlink{classNode_ab6505694f014d45e40307295071feb43}{operator=}} (\mbox{\hyperlink{classNode}{Node}} \&\&)=default
+\item 
+\mbox{\hyperlink{classNode_a54b83cd085cd4f9fda3faad9c0d558ed}{Node}} (const \mbox{\hyperlink{classNode}{Node}} \&)=delete
+\item 
+\mbox{\hyperlink{classNode}{Node}} \& \mbox{\hyperlink{classNode_a09b5a3e9d987903488452a880ed0a2e4}{operator=}} (const \mbox{\hyperlink{classNode}{Node}} \&)=delete
+\item 
+void \mbox{\hyperlink{classNode_a5b57fe187d134bc8b847cc18211747f7}{add\+Connection}} (\mbox{\hyperlink{classNode}{Node}} $\ast$node, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ transport)
+\begin{DoxyCompactList}\small\item\em Adds a connection from this node to another node using a specified transport type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCityComponent}{City\+Component}} $\ast$ \mbox{\hyperlink{classNode_a69ef76a7edde8565f6041092bc095808}{get\+Component}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the \mbox{\hyperlink{classCityComponent}{City\+Component}} associated with this node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_a30040f146b529651c626bd987391f9f5}{set\+Component}} (\mbox{\hyperlink{classCityComponent}{City\+Component}} $\ast$comp)
+\begin{DoxyCompactList}\small\item\em Sets the \mbox{\hyperlink{classCityComponent}{City\+Component}} for this node. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structLocation}{Location}} \& \mbox{\hyperlink{classNode_a89b33ae5dbe7d798a9ba09c725bf94f8}{get\+Location}} () const
+\begin{DoxyCompactList}\small\item\em Gets the location of the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{classNode_ad955a8d0e9eaf9fba8f43820c4b4d74e}{location}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structLocation}{Location}} of the node on the city grid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCityComponent}{City\+Component}} $\ast$ \mbox{\hyperlink{classNode_a92597ca0a2f07dff77daeda85ce887da}{component}}
+\begin{DoxyCompactList}\small\item\em Pointer to a city component assigned to this node. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classNode}{Node}} $\ast$, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ $>$ \mbox{\hyperlink{classNode_a8ed7821f573c1a7472416ed7ec7d180a}{connections}}
+\begin{DoxyCompactList}\small\item\em Connections to neighboring nodes with transport types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a node within the city grid, which holds a location, an optional city component, and connections to other nodes via transport methods. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNode_a23a19f53dfbb18fec58cdac90de3d144}\label{classNode_a23a19f53dfbb18fec58cdac90de3d144}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classNode}{Node}} with specified x and y coordinates. 
+
+Constructs a \mbox{\hyperlink{classNode}{Node}} with a specific location.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the node. \\
+\hline
+{\em y} & The y-\/coordinate of the node. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNode_ad8b67882f10552130e0e646546bcfbba}\label{classNode_ad8b67882f10552130e0e646546bcfbba}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classNode_a54b83cd085cd4f9fda3faad9c0d558ed}\label{classNode_a54b83cd085cd4f9fda3faad9c0d558ed}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classNode}{Node}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNode_a5b57fe187d134bc8b847cc18211747f7}\label{classNode_a5b57fe187d134bc8b847cc18211747f7}} 
+\index{Node@{Node}!addConnection@{addConnection}}
+\index{addConnection@{addConnection}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{addConnection()}{addConnection()}}
+{\footnotesize\ttfamily void Node\+::add\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{node,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$}]{transport }\end{DoxyParamCaption})}
+
+
+
+Adds a connection from this node to another node using a specified transport type. 
+
+Adds a connection from this node to another node.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Pointer to the node to connect to. \\
+\hline
+{\em transport} & Unique pointer to the \mbox{\hyperlink{classTransport}{Transport}} type for the connection.\\
+\hline
+\end{DoxyParams}
+This function establishes a connection between the current node and the given node using the specified transport method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Pointer to the destination node. \\
+\hline
+{\em transport} & Unique pointer to the \mbox{\hyperlink{classTransport}{Transport}} object used for the connection. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNode_a69ef76a7edde8565f6041092bc095808}\label{classNode_a69ef76a7edde8565f6041092bc095808}} 
+\index{Node@{Node}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCityComponent}{City\+Component}} $\ast$ Node\+::get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the \mbox{\hyperlink{classCityComponent}{City\+Component}} associated with this node. 
+
+\begin{DoxyReturn}{Returns}
+City\+Component$\ast$ Pointer to the component in this node, or nullptr if none is set.
+
+City\+Component$\ast$ Pointer to the component stored in this node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_a89b33ae5dbe7d798a9ba09c725bf94f8}\label{classNode_a89b33ae5dbe7d798a9ba09c725bf94f8}} 
+\index{Node@{Node}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structLocation}{Location}} \& Node\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the location of the node. 
+
+\begin{DoxyReturn}{Returns}
+const \mbox{\hyperlink{structLocation}{Location}}\& Reference to the node\textquotesingle{}s location. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_a09b5a3e9d987903488452a880ed0a2e4}\label{classNode_a09b5a3e9d987903488452a880ed0a2e4}} 
+\index{Node@{Node}!operator=@{operator=}}
+\index{operator=@{operator=}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}\& Node\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classNode}{Node}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classNode_ab6505694f014d45e40307295071feb43}\label{classNode_ab6505694f014d45e40307295071feb43}} 
+\index{Node@{Node}!operator=@{operator=}}
+\index{operator=@{operator=}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}\& Node\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classNode_a30040f146b529651c626bd987391f9f5}\label{classNode_a30040f146b529651c626bd987391f9f5}} 
+\index{Node@{Node}!setComponent@{setComponent}}
+\index{setComponent@{setComponent}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{setComponent()}{setComponent()}}
+{\footnotesize\ttfamily void Node\+::set\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityComponent}{City\+Component}} $\ast$}]{comp }\end{DoxyParamCaption})}
+
+
+
+Sets the \mbox{\hyperlink{classCityComponent}{City\+Component}} for this node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comp} & Pointer to the \mbox{\hyperlink{classCityComponent}{City\+Component}} to be assigned to this node.\\
+\hline
+{\em comp} & Pointer to the \mbox{\hyperlink{classCityComponent}{City\+Component}} to be stored in this node. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classNode_a92597ca0a2f07dff77daeda85ce887da}\label{classNode_a92597ca0a2f07dff77daeda85ce887da}} 
+\index{Node@{Node}!component@{component}}
+\index{component@{component}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{component}{component}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCityComponent}{City\+Component}}$\ast$ Node\+::component}
+
+
+
+Pointer to a city component assigned to this node. 
+
+\mbox{\Hypertarget{classNode_a8ed7821f573c1a7472416ed7ec7d180a}\label{classNode_a8ed7821f573c1a7472416ed7ec7d180a}} 
+\index{Node@{Node}!connections@{connections}}
+\index{connections@{connections}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{connections}{connections}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$\mbox{\hyperlink{classNode}{Node}}$\ast$, std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classTransport}{Transport}}$>$ $>$ Node\+::connections}
+
+
+
+Connections to neighboring nodes with transport types. 
+
+\mbox{\Hypertarget{classNode_ad955a8d0e9eaf9fba8f43820c4b4d74e}\label{classNode_ad955a8d0e9eaf9fba8f43820c4b4d74e}} 
+\index{Node@{Node}!location@{location}}
+\index{location@{location}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{location}{location}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLocation}{Location}} Node\+::location}
+
+
+
+\mbox{\hyperlink{structLocation}{Location}} of the node on the city grid. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Node_8h}{Node.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Node_8cpp}{Node.\+cpp}}\end{DoxyCompactItemize}

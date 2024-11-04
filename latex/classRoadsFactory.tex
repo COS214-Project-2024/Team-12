@@ -1,0 +1,62 @@
+\hypertarget{classRoadsFactory}{}\doxysection{Roads\+Factory Class Reference}
+\label{classRoadsFactory}\index{RoadsFactory@{RoadsFactory}}
+
+
+Factory class for creating Road transport objects.  
+
+
+
+
+{\ttfamily \#include $<$Roads\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Roads\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Roads\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ \mbox{\hyperlink{classRoadsFactory_af298fc67e41ef82cafbed8cc4e8ccf2e}{create\+Transport}} ()
+\begin{DoxyCompactList}\small\item\em Creates a Road transport object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating Road transport objects. 
+
+\mbox{\hyperlink{classRoadsFactory}{Roads\+Factory}} is a concrete implementation of the \mbox{\hyperlink{classTransportationFactory}{Transportation\+Factory}}. It provides a method to create Road transport objects, following the Factory Pattern. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRoadsFactory_af298fc67e41ef82cafbed8cc4e8ccf2e}\label{classRoadsFactory_af298fc67e41ef82cafbed8cc4e8ccf2e}} 
+\index{RoadsFactory@{RoadsFactory}!createTransport@{createTransport}}
+\index{createTransport@{createTransport}!RoadsFactory@{RoadsFactory}}
+\doxysubsubsection{\texorpdfstring{createTransport()}{createTransport()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ Roads\+Factory\+::create\+Transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a Road transport object. 
+
+Creates a new \mbox{\hyperlink{classRoads}{Roads}} transport object.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Transport$>$ A unique pointer to a new Road transport object.
+\end{DoxyReturn}
+This method instantiates and returns a unique pointer to a new \mbox{\hyperlink{classRoads}{Roads}} object, which represents a type of transport infrastructure in the city simulation.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Transport$>$ A unique pointer to a \mbox{\hyperlink{classRoads}{Roads}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransportationFactory_a9710992771d2070fc47319516e8caea4}{Transportation\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{RoadsFactory_8h}{Roads\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{RoadsFactory_8cpp}{Roads\+Factory.\+cpp}}\end{DoxyCompactItemize}

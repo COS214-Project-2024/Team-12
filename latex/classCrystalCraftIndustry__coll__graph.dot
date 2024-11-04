@@ -1,0 +1,15 @@
+digraph "CrystalCraftIndustry"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{CrystalCraftIndustry\n|+ CRYSTAL_CRAFT_RANGE\l|+ CrystalCraftIndustry()\l+ processDiamond()\l+ processStone()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Represents an industry focused on processing diamonds and stone for various uses."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{Industry\n|# name\l# primaryProcessor\l# secondaryProcessor\l# pollutionLevel\l# collectionRange\l# incomeResource\l# constructionResource\l# collectedResources\l|+ Industry()\l+ isResourceInRange()\l+ getCollectionRange()\l+ findIndustryLocation()\l+ showCollectionRange()\l+ processResources()\l+ storeResources()\l+ displayStatus()\l+ getBuildingType()\l+ accept()\l# increasePollution()\l# ~Industry()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIndustry.html",tooltip="Represents an industrial facility in the city."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{CityComponent\n|- observers\l|+ add()\l+ remove()\l+ displayStatus()\l+ ~CityComponent()\l+ addNpc()\l+ removeNpc()\l+ notify()\l+ getBuildingType()\l+ accept()\l+ setLocation()\l+ setLocation()\l+ getLocation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html",tooltip="Abstract base class representing a component of a city."];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" -location" ,arrowhead="odiamond"];
+  Node4 [label="{Location\n|+ x\l+ y\l|+ Location()\l+ Location()\l+ operator==()\l+ operator!=()\l+ operator\<()\l+ distanceTo()\l+ isValid()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structLocation.html",tooltip="Represents a 2D coordinate location on a grid."];
+  Node5 -> Node2 [color="grey25",fontsize="10",style="solid",label=" #grid" ,arrowhead="odiamond"];
+  Node5 [label="{MapGrid\n|- gridMap\l- incomeResourceMap\l- constructionResourceMap\l- grid\l- width\l- height\l- zoneStyles\l|+ getCell()\l+ setCellSymbol()\l+ setTransportEndpoint()\l+ setTransportPath()\l+ getRandomEmptyLocation()\l+ getHeight()\l+ getWidth()\l+ getAllZones()\l+ getBuildingsInZone()\l+ canPlaceZone()\land 18 more...\l- isOverlappingZone()\l- isCompatibleBuilding()\l- initializeZoneStyles()\l- isZoneBoundary()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMapGrid.html",tooltip=" "];
+}

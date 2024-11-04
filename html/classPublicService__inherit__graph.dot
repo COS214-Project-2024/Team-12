@@ -1,0 +1,17 @@
+digraph "PublicService"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{PublicService\n|# waterSupply\l# powerSupply\l# wasteManagement\l# sewageManagement\l|+ PublicService()\l+ PublicService()\l+ provideService()\l+ ~PublicService()\l+ displayStatus()\l+ getBuildingType()\l+ getDisplaySymbol()\l+ getUtilityCoverage()\l+ hasUtilities()\l+ accept()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Abstract base class representing a public service."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{CityComponent\n|- observers\l- location\l|+ add()\l+ remove()\l+ displayStatus()\l+ ~CityComponent()\l+ addNpc()\l+ removeNpc()\l+ notify()\l+ getBuildingType()\l+ accept()\l+ setLocation()\l+ setLocation()\l+ getLocation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html",tooltip="Abstract base class representing a component of a city."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{FireStation\n|- status\l|+ FireStation()\l+ FireStation()\l+ ~FireStation()\l+ provideService()\l+ clone()\l+ getDisplaySymbol()\l+ displayStatus()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFireStation.html",tooltip="Represents a fire station in the city."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{Hospital\n|- water\l- electricity\l- sewage\l- wasteManagement\l- status\l|+ Hospital()\l+ Hospital()\l+ ~Hospital()\l+ provideService()\l+ clone()\l+ displayStatus()\l+ getDisplaySymbol()\l+ getBuildingType()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHospital.html",tooltip="Represents a hospital that provides medical services to citizens."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{PoliceStation\n|- status\l|+ PoliceStation()\l+ PoliceStation()\l+ ~PoliceStation()\l+ provideService()\l+ clone()\l+ displayStatus()\l+ getDisplaySymbol()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPoliceStation.html",tooltip="Represents a police station public service in the city."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{School\n|- status\l|+ School()\l+ ~School()\l+ provideService()\l+ displayStatus()\l+ getDisplaySymbol()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSchool.html",tooltip=" "];
+}

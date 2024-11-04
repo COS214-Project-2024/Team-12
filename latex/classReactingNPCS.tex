@@ -1,0 +1,188 @@
+\hypertarget{classReactingNPCS}{}\doxysection{Reacting\+NPCS Class Reference}
+\label{classReactingNPCS}\index{ReactingNPCS@{ReactingNPCS}}
+
+
+\mbox{\hyperlink{classConcrete}{Concrete}} observer class representing an NPC that reacts to state changes.  
+
+
+
+
+{\ttfamily \#include $<$Reacting\+NPCS.\+h$>$}
+
+
+
+Inheritance diagram for Reacting\+NPCS\+:
+% FIG 0
+
+
+Collaboration diagram for Reacting\+NPCS\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classReactingNPCS_a9eb11a607b24c4e834d110e4ceea8c5f}{Reacting\+NPCS}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializing the NPC in a neutral state. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classReactingNPCS_a44682cbcc278214f361a1afd6440f599}{$\sim$\+Reacting\+NPCS}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for cleaning up dynamically allocated state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classReactingNPCS_a11707314c2fde30474927ab42c521026}{Reacting\+NPCS}} (const \mbox{\hyperlink{classReactingNPCS}{Reacting\+NPCS}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for deep copying \mbox{\hyperlink{classReactingNPCS}{Reacting\+NPCS}} objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReactingNPCS_afc206d145750358e98204a9135b05276}{update}} () override
+\begin{DoxyCompactList}\small\item\em Updates the NPC\textquotesingle{}s state based on observed changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReactingNPCS_a76e8ef118165123d68fffa6ffc9bad90}{change\+State}} (\mbox{\hyperlink{classNPCState}{NPCState}} $\ast$new\+State)
+\begin{DoxyCompactList}\small\item\em Changes the current state of the NPC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ \mbox{\hyperlink{classReactingNPCS_a57f8ea6af62e122bd20985b81c065f02}{get\+State}} ()
+\item 
+\mbox{\hyperlink{classNPCObserver}{NPCObserver}} $\ast$ \mbox{\hyperlink{classReactingNPCS_afa5a0fce89da50127b5b648ef77af00c}{clone}} () override
+\begin{DoxyCompactList}\small\item\em Clones the NPC, creating a copy with the same state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ \mbox{\hyperlink{classReactingNPCS_ae9e4865617fcfe3366e548da80a6f0b8}{state}}
+\begin{DoxyCompactList}\small\item\em Current state of the NPC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classConcrete}{Concrete}} observer class representing an NPC that reacts to state changes. 
+
+\mbox{\hyperlink{classReactingNPCS}{Reacting\+NPCS}} observes changes in the game environment and responds by changing its state. It utilizes a state pattern to manage different NPC states and behaviors. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classReactingNPCS_a9eb11a607b24c4e834d110e4ceea8c5f}\label{classReactingNPCS_a9eb11a607b24c4e834d110e4ceea8c5f}} 
+\index{ReactingNPCS@{ReactingNPCS}!ReactingNPCS@{ReactingNPCS}}
+\index{ReactingNPCS@{ReactingNPCS}!ReactingNPCS@{ReactingNPCS}}
+\doxysubsubsection{\texorpdfstring{ReactingNPCS()}{ReactingNPCS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Reacting\+NPCS\+::\+Reacting\+NPCS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor initializing the NPC in a neutral state. 
+
+Constructs a \mbox{\hyperlink{classReactingNPCS}{Reacting\+NPCS}} object in the \mbox{\hyperlink{classNeutralState}{Neutral\+State}} and increments the \mbox{\hyperlink{classNPCManager}{NPCManager}} count. Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classReactingNPCS_a44682cbcc278214f361a1afd6440f599}\label{classReactingNPCS_a44682cbcc278214f361a1afd6440f599}} 
+\index{ReactingNPCS@{ReactingNPCS}!````~ReactingNPCS@{$\sim$ReactingNPCS}}
+\index{````~ReactingNPCS@{$\sim$ReactingNPCS}!ReactingNPCS@{ReactingNPCS}}
+\doxysubsubsection{\texorpdfstring{$\sim$ReactingNPCS()}{~ReactingNPCS()}}
+{\footnotesize\ttfamily Reacting\+NPCS\+::$\sim$\+Reacting\+NPCS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for cleaning up dynamically allocated state. 
+
+Destructor for \mbox{\hyperlink{classReactingNPCS}{Reacting\+NPCS}}, ensuring the \mbox{\hyperlink{classNPCManager}{NPCManager}} count is decremented for the current state. Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classReactingNPCS_a11707314c2fde30474927ab42c521026}\label{classReactingNPCS_a11707314c2fde30474927ab42c521026}} 
+\index{ReactingNPCS@{ReactingNPCS}!ReactingNPCS@{ReactingNPCS}}
+\index{ReactingNPCS@{ReactingNPCS}!ReactingNPCS@{ReactingNPCS}}
+\doxysubsubsection{\texorpdfstring{ReactingNPCS()}{ReactingNPCS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Reacting\+NPCS\+::\+Reacting\+NPCS (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classReactingNPCS}{Reacting\+NPCS}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor for deep copying \mbox{\hyperlink{classReactingNPCS}{Reacting\+NPCS}} objects. 
+
+Copy constructor to create a deep copy of the \mbox{\hyperlink{classReactingNPCS}{Reacting\+NPCS}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \mbox{\hyperlink{classReactingNPCS}{Reacting\+NPCS}} instance to copy.\\
+\hline
+{\em other} & The \mbox{\hyperlink{classReactingNPCS}{Reacting\+NPCS}} object to copy. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 5
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classReactingNPCS_a76e8ef118165123d68fffa6ffc9bad90}\label{classReactingNPCS_a76e8ef118165123d68fffa6ffc9bad90}} 
+\index{ReactingNPCS@{ReactingNPCS}!changeState@{changeState}}
+\index{changeState@{changeState}!ReactingNPCS@{ReactingNPCS}}
+\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}}
+{\footnotesize\ttfamily void Reacting\+NPCS\+::change\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNPCState}{NPCState}} $\ast$}]{new\+State }\end{DoxyParamCaption})}
+
+
+
+Changes the current state of the NPC. 
+
+Changes the state of the NPC, managing \mbox{\hyperlink{classNPCManager}{NPCManager}} counts for each state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+State} & Pointer to the new \mbox{\hyperlink{classNPCState}{NPCState}} to transition into.\\
+\hline
+{\em new\+State} & The new state for the NPC. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classReactingNPCS_afa5a0fce89da50127b5b648ef77af00c}\label{classReactingNPCS_afa5a0fce89da50127b5b648ef77af00c}} 
+\index{ReactingNPCS@{ReactingNPCS}!clone@{clone}}
+\index{clone@{clone}!ReactingNPCS@{ReactingNPCS}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNPCObserver}{NPCObserver}} $\ast$ Reacting\+NPCS\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clones the NPC, creating a copy with the same state. 
+
+Clones the NPC by creating a deep copy using the copy constructor.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the cloned \mbox{\hyperlink{classNPCObserver}{NPCObserver}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCObserver_ad1ef2d36df71137e50a9ed96973ffbd6}{NPCObserver}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{classReactingNPCS_a57f8ea6af62e122bd20985b81c065f02}\label{classReactingNPCS_a57f8ea6af62e122bd20985b81c065f02}} 
+\index{ReactingNPCS@{ReactingNPCS}!getState@{getState}}
+\index{getState@{getState}!ReactingNPCS@{ReactingNPCS}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNPCState}{NPCState}}$\ast$ Reacting\+NPCS\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classReactingNPCS_afc206d145750358e98204a9135b05276}\label{classReactingNPCS_afc206d145750358e98204a9135b05276}} 
+\index{ReactingNPCS@{ReactingNPCS}!update@{update}}
+\index{update@{update}!ReactingNPCS@{ReactingNPCS}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Reacting\+NPCS\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the NPC\textquotesingle{}s state based on observed changes. 
+
+Updates the NPC\textquotesingle{}s state based on the current happiness and pollution levels, with a chance of following consensus.
+
+This method is called when there is a change in the observed subject, allowing the NPC to respond accordingly. 
+
+Implements \mbox{\hyperlink{classNPCObserver_ae8f7f9fbb8d74f4738de689166cfc600}{NPCObserver}}.
+
+Here is the call graph for this function\+:
+% FIG 10
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classReactingNPCS_ae9e4865617fcfe3366e548da80a6f0b8}\label{classReactingNPCS_ae9e4865617fcfe3366e548da80a6f0b8}} 
+\index{ReactingNPCS@{ReactingNPCS}!state@{state}}
+\index{state@{state}!ReactingNPCS@{ReactingNPCS}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNPCState}{NPCState}}$\ast$ Reacting\+NPCS\+::state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current state of the NPC. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ReactingNPCS_8h}{Reacting\+NPCS.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ReactingNPCS_8cpp}{Reacting\+NPCS.\+cpp}}\end{DoxyCompactItemize}

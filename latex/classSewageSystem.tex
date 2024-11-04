@@ -1,0 +1,178 @@
+\hypertarget{classSewageSystem}{}\doxysection{Sewage\+System Class Reference}
+\label{classSewageSystem}\index{SewageSystem@{SewageSystem}}
+
+
+A concrete \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} that represents a sewage management utility.  
+
+
+
+
+{\ttfamily \#include $<$Sewage\+System.\+h$>$}
+
+
+
+Inheritance diagram for Sewage\+System\+:
+% FIG 0
+
+
+Collaboration diagram for Sewage\+System\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSewageSystem_a523579d06af3a5d8a046c90cc3138745}{Sewage\+System}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classSewageSystem}{Sewage\+System}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSewageSystem_a3f70e8b736c2a354dfe3fe4bca44c305}{Sewage\+System}} (const std\+::string \&n, double c, int cap, double radius, bool operational, int l, int consumption, const std\+::map$<$ std\+::string, int $>$ \&resources)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for \mbox{\hyperlink{classSewageSystem}{Sewage\+System}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSewageSystem_ab16b97d1f11f9659e2d7f9dea647f389}{connect}} (double distance)
+\begin{DoxyCompactList}\small\item\em Connects the sewage system to a building within a certain distance. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classSewageSystem_aa679873ac66f93293abe43bc193bf31d}{clone}} () const
+\begin{DoxyCompactList}\small\item\em Clones the \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A concrete \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} that represents a sewage management utility. 
+
+The \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} class models a sewage utility, which provides sewage handling services for buildings within a defined range. It offers specific functionality such as connecting to nearby buildings and creating copies of itself. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSewageSystem_a523579d06af3a5d8a046c90cc3138745}\label{classSewageSystem_a523579d06af3a5d8a046c90cc3138745}} 
+\index{SewageSystem@{SewageSystem}!SewageSystem@{SewageSystem}}
+\index{SewageSystem@{SewageSystem}!SewageSystem@{SewageSystem}}
+\doxysubsubsection{\texorpdfstring{SewageSystem()}{SewageSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sewage\+System\+::\+Sewage\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classSewageSystem}{Sewage\+System}}. 
+
+Initializes a \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} instance with preset attributes, including cost, capacity, and effect radius.
+
+Initializes a \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} instance with preset attributes\+:
+\begin{DoxyItemize}
+\item Name\+: \char`\"{}\+Sewage System\char`\"{}
+\item Cost\+: 175.\+0
+\item Capacity\+: 40 buildings
+\item Radius\+: 2.\+5 units
+\item Operational\+: true
+\item Level\+: 1
+\item Consumption\+: 8 resource units
+\item Resources\+: \{\char`\"{}\+Steel\char`\"{}\+: 30, \char`\"{}\+Plastic\char`\"{}\+: 40, \char`\"{}\+Concrete\char`\"{}\+: 20\} 
+\end{DoxyItemize}\mbox{\Hypertarget{classSewageSystem_a3f70e8b736c2a354dfe3fe4bca44c305}\label{classSewageSystem_a3f70e8b736c2a354dfe3fe4bca44c305}} 
+\index{SewageSystem@{SewageSystem}!SewageSystem@{SewageSystem}}
+\index{SewageSystem@{SewageSystem}!SewageSystem@{SewageSystem}}
+\doxysubsubsection{\texorpdfstring{SewageSystem()}{SewageSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sewage\+System\+::\+Sewage\+System (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{n,  }\item[{double}]{c,  }\item[{int}]{cap,  }\item[{double}]{radius,  }\item[{bool}]{operational,  }\item[{int}]{l,  }\item[{int}]{consumption,  }\item[{const std\+::map$<$ std\+::string, int $>$ \&}]{resources }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for \mbox{\hyperlink{classSewageSystem}{Sewage\+System}}. 
+
+Initializes a \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} instance with specified attributes, including name, cost, capacity, effect radius, operational status, level, resource consumption, and required resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Name of the sewage system. \\
+\hline
+{\em c} & Cost to build the sewage system. \\
+\hline
+{\em cap} & Capacity to serve buildings. \\
+\hline
+{\em radius} & Coverage radius of the sewage system. \\
+\hline
+{\em operational} & Operational status of the system. \\
+\hline
+{\em l} & Level of the sewage system. \\
+\hline
+{\em consumption} & Resources consumed per cycle. \\
+\hline
+{\em resources} & Map of resources needed for construction.\\
+\hline
+\end{DoxyParams}
+Initializes a \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} instance with specified attributes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Name of the sewage system. \\
+\hline
+{\em c} & Cost of the sewage system. \\
+\hline
+{\em cap} & Capacity of the sewage system to serve buildings. \\
+\hline
+{\em radius} & Coverage radius of the sewage system. \\
+\hline
+{\em operational} & Initial operational status. \\
+\hline
+{\em l} & Level of the sewage system. \\
+\hline
+{\em consumption} & Resources consumed per cycle. \\
+\hline
+{\em resources} & Map of resources required for construction. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSewageSystem_aa679873ac66f93293abe43bc193bf31d}\label{classSewageSystem_aa679873ac66f93293abe43bc193bf31d}} 
+\index{SewageSystem@{SewageSystem}!clone@{clone}}
+\index{clone@{clone}!SewageSystem@{SewageSystem}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ Sewage\+System\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clones the \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} instance. 
+
+Clones the current \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} instance.
+
+Implements the Prototype pattern to create a copy of the current \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} instance.
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Utility\+Flyweight$>$ Shared pointer to the cloned \mbox{\hyperlink{classSewageSystem}{Sewage\+System}}.
+\end{DoxyReturn}
+Creates a copy of the \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} instance, implementing the Prototype pattern.
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Utility\+Flyweight$>$ A shared pointer to the cloned \mbox{\hyperlink{classSewageSystem}{Sewage\+System}} instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityFlyweight_aa85ec727b5273d2cdfa6e3c18a2ead81}{Utility\+Flyweight}}.
+
+\mbox{\Hypertarget{classSewageSystem_ab16b97d1f11f9659e2d7f9dea647f389}\label{classSewageSystem_ab16b97d1f11f9659e2d7f9dea647f389}} 
+\index{SewageSystem@{SewageSystem}!connect@{connect}}
+\index{connect@{connect}!SewageSystem@{SewageSystem}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily void Sewage\+System\+::connect (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Connects the sewage system to a building within a certain distance. 
+
+Connects the sewage system to a building within a specified distance.
+
+Checks if the building is within range and, if so, connects to it, otherwise notifies that it is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & Distance to the building attempting to connect.\\
+\hline
+\end{DoxyParams}
+If the building is within range, connects to it; otherwise, notifies that it is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & Distance to the building attempting to connect. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtilityFlyweight_ab99284e3b40f660349b3bfbb3003dc6b}{Utility\+Flyweight}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{SewageSystem_8h}{Sewage\+System.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{SewageSystem_8cpp}{Sewage\+System.\+cpp}}\end{DoxyCompactItemize}

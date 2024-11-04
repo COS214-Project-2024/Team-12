@@ -1,0 +1,114 @@
+\hypertarget{classNPCState}{}\doxysection{NPCState Class Reference}
+\label{classNPCState}\index{NPCState@{NPCState}}
+
+
+Abstract base class representing a state in the NPC state machine.  
+
+
+
+
+{\ttfamily \#include $<$NPCState.\+h$>$}
+
+
+
+Inheritance diagram for NPCState\+:
+% FIG 0
+
+
+Collaboration diagram for NPCState\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classNPCState_ae26888ff3d2981261c9f3e937600c762}{handle}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to handle the behavior associated with the state. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classNPCState_afc1b8c7e3747024d0bbb3ded0a4a7d56}{get\+State\+Name}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the name of the state. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ \mbox{\hyperlink{classNPCState_a2a50964882d982c937f166ec31882c5a}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to clone the state. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classNPCState_ad0bfb3264f282a41cb7f1a6e3ec0fe6d}{$\sim$\+NPCState}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a state in the NPC state machine. 
+
+The \mbox{\hyperlink{classNPCState}{NPCState}} class provides an interface for NPC states, allowing each state to define its own behavior, retrieve its name, and be cloned. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNPCState_ad0bfb3264f282a41cb7f1a6e3ec0fe6d}\label{classNPCState_ad0bfb3264f282a41cb7f1a6e3ec0fe6d}} 
+\index{NPCState@{NPCState}!````~NPCState@{$\sim$NPCState}}
+\index{````~NPCState@{$\sim$NPCState}!NPCState@{NPCState}}
+\doxysubsubsection{\texorpdfstring{$\sim$NPCState()}{~NPCState()}}
+{\footnotesize\ttfamily virtual NPCState\+::$\sim$\+NPCState (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Ensures that derived classes are properly destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNPCState_a2a50964882d982c937f166ec31882c5a}\label{classNPCState_a2a50964882d982c937f166ec31882c5a}} 
+\index{NPCState@{NPCState}!clone@{clone}}
+\index{clone@{clone}!NPCState@{NPCState}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classNPCState}{NPCState}}$\ast$ NPCState\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to clone the state. 
+
+Allows derived state types to create a copy of themselves.
+
+\begin{DoxyReturn}{Returns}
+NPCState$\ast$ Pointer to the cloned state instance. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classRevoltState_a07086c1b8293b02c4cd28c1feaf884aa}{Revolt\+State}}, \mbox{\hyperlink{classProductiveState_a7273420c9d50d54260f30a8f1299fa8b}{Productive\+State}}, \mbox{\hyperlink{classNeutralState_a6d0618682e775982ba81d2ef52c1291d}{Neutral\+State}}, \mbox{\hyperlink{classDonationState_a581766b6524845b6159c439568757f92}{Donation\+State}}, and \mbox{\hyperlink{classCrimeState_a56399f1c978088b5605e3e313ff6f757}{Crime\+State}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classNPCState_afc1b8c7e3747024d0bbb3ded0a4a7d56}\label{classNPCState_afc1b8c7e3747024d0bbb3ded0a4a7d56}} 
+\index{NPCState@{NPCState}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!NPCState@{NPCState}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily virtual std\+::string NPCState\+::get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the name of the state. 
+
+Provides a string representing the name of the state.
+
+\begin{DoxyReturn}{Returns}
+std\+::string Name of the state. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classRevoltState_a0f90c2eb23eb25ba16c188b86663d88a}{Revolt\+State}}, \mbox{\hyperlink{classProductiveState_a638abf289aa69b32a329cf395238ea31}{Productive\+State}}, \mbox{\hyperlink{classNeutralState_aa740a5fa520dde4c3571855f9798cc09}{Neutral\+State}}, \mbox{\hyperlink{classDonationState_ae98246e9b01c5602bc98e2ab8e1bafe7}{Donation\+State}}, and \mbox{\hyperlink{classCrimeState_a94ad5e20378f9a01a1eee3a267ab6618}{Crime\+State}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classNPCState_ae26888ff3d2981261c9f3e937600c762}\label{classNPCState_ae26888ff3d2981261c9f3e937600c762}} 
+\index{NPCState@{NPCState}!handle@{handle}}
+\index{handle@{handle}!NPCState@{NPCState}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily virtual void NPCState\+::handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to handle the behavior associated with the state. 
+
+Derived classes must implement this function to define the specific actions associated with each state. 
+
+Implemented in \mbox{\hyperlink{classRevoltState_acbad174f543875c807178a9856258502}{Revolt\+State}}, \mbox{\hyperlink{classProductiveState_adab42ecd6fb4772c38dd408a9f6c5cce}{Productive\+State}}, \mbox{\hyperlink{classNeutralState_a1e35937b2d9b341a10b8e8c330dfb710}{Neutral\+State}}, \mbox{\hyperlink{classDonationState_a8d29aec9e7bc25867be29f4e205a38cd}{Donation\+State}}, and \mbox{\hyperlink{classCrimeState_ada7bdb702a48d7ba3847bf4b77d5e5cd}{Crime\+State}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NPCState_8h}{NPCState.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,127 @@
+\hypertarget{classResourceProcessor}{}\doxysection{Resource\+Processor Class Reference}
+\label{classResourceProcessor}\index{ResourceProcessor@{ResourceProcessor}}
+
+
+Abstract base class for processing and managing resources.  
+
+
+
+
+{\ttfamily \#include $<$Resource\+Processor.\+h$>$}
+
+
+
+Inheritance diagram for Resource\+Processor\+:
+% FIG 0
+
+
+Collaboration diagram for Resource\+Processor\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classResourceProcessor_a238f6d371a1633c05e39b431c8f100be}{process}} (int amount)=0
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of resource. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classResourceProcessor_a6ac368c461e1b059e92b7a8f2a0344af}{store}} (int amount)=0
+\begin{DoxyCompactList}\small\item\em Stores a specified amount of resource. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classResourceProcessor_a9560a2b0703ed45ef5aba546cdaffe11}{display}} () const =0
+\begin{DoxyCompactList}\small\item\em Displays the current status of the resource processor. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classResourceProcessor_ae9c44f848cce0ab5d754da4b39ecd63c}{get\+Current\+Storage}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the current amount of resource in storage. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classResourceProcessor_a701bf8b0d89a9a40a73ce53272b107f5}{$\sim$\+Resource\+Processor}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}}, allowing derived classes to clean up resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for processing and managing resources. 
+
+The \mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}} class defines the interface for processing, storing, and displaying resource-\/related information. Derived classes will implement the specific processing and storage logic for different types of resources. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classResourceProcessor_a701bf8b0d89a9a40a73ce53272b107f5}\label{classResourceProcessor_a701bf8b0d89a9a40a73ce53272b107f5}} 
+\index{ResourceProcessor@{ResourceProcessor}!````~ResourceProcessor@{$\sim$ResourceProcessor}}
+\index{````~ResourceProcessor@{$\sim$ResourceProcessor}!ResourceProcessor@{ResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResourceProcessor()}{~ResourceProcessor()}}
+{\footnotesize\ttfamily virtual Resource\+Processor\+::$\sim$\+Resource\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}}, allowing derived classes to clean up resources. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResourceProcessor_a9560a2b0703ed45ef5aba546cdaffe11}\label{classResourceProcessor_a9560a2b0703ed45ef5aba546cdaffe11}} 
+\index{ResourceProcessor@{ResourceProcessor}!display@{display}}
+\index{display@{display}!ResourceProcessor@{ResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily virtual void Resource\+Processor\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Displays the current status of the resource processor. 
+
+This function provides information about the processor\textquotesingle{}s current state, typically including storage and processing details. 
+
+Implemented in \mbox{\hyperlink{classIncomeResourceProcessor_af4d45a6fc3516ea8ebf2bb0a507632e0}{Income\+Resource\+Processor}}, and \mbox{\hyperlink{classConstructionResourceProcessor_aec12a688800461ae4dc809d88d47442a}{Construction\+Resource\+Processor}}.
+
+\mbox{\Hypertarget{classResourceProcessor_ae9c44f848cce0ab5d754da4b39ecd63c}\label{classResourceProcessor_ae9c44f848cce0ab5d754da4b39ecd63c}} 
+\index{ResourceProcessor@{ResourceProcessor}!getCurrentStorage@{getCurrentStorage}}
+\index{getCurrentStorage@{getCurrentStorage}!ResourceProcessor@{ResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{getCurrentStorage()}{getCurrentStorage()}}
+{\footnotesize\ttfamily virtual int Resource\+Processor\+::get\+Current\+Storage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieves the current amount of resource in storage. 
+
+\begin{DoxyReturn}{Returns}
+int The current storage level. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classIncomeResourceProcessor_a44d7da7fa83fc35e2c0bd0cfdb6eeb2c}{Income\+Resource\+Processor}}, and \mbox{\hyperlink{classConstructionResourceProcessor_a87c4579933c7b76c33e44c7779fadae4}{Construction\+Resource\+Processor}}.
+
+\mbox{\Hypertarget{classResourceProcessor_a238f6d371a1633c05e39b431c8f100be}\label{classResourceProcessor_a238f6d371a1633c05e39b431c8f100be}} 
+\index{ResourceProcessor@{ResourceProcessor}!process@{process}}
+\index{process@{process}!ResourceProcessor@{ResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily virtual void Resource\+Processor\+::process (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Processes a specified amount of resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of resource to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classIncomeResourceProcessor_a57461057a6b0143e300ab00326dbe5c5}{Income\+Resource\+Processor}}, and \mbox{\hyperlink{classConstructionResourceProcessor_a35dadf3e138249785f1a14bf11343abd}{Construction\+Resource\+Processor}}.
+
+\mbox{\Hypertarget{classResourceProcessor_a6ac368c461e1b059e92b7a8f2a0344af}\label{classResourceProcessor_a6ac368c461e1b059e92b7a8f2a0344af}} 
+\index{ResourceProcessor@{ResourceProcessor}!store@{store}}
+\index{store@{store}!ResourceProcessor@{ResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}}
+{\footnotesize\ttfamily virtual void Resource\+Processor\+::store (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Stores a specified amount of resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of resource to store. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classIncomeResourceProcessor_ad777d4da29ad3cb8a9c2517ddc76796f}{Income\+Resource\+Processor}}, and \mbox{\hyperlink{classConstructionResourceProcessor_aab77a4a3e54fef6a43281765000f6947}{Construction\+Resource\+Processor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ResourceProcessor_8h}{Resource\+Processor.\+h}}\end{DoxyCompactItemize}

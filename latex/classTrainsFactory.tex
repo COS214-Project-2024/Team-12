@@ -1,0 +1,64 @@
+\hypertarget{classTrainsFactory}{}\doxysection{Trains\+Factory Class Reference}
+\label{classTrainsFactory}\index{TrainsFactory@{TrainsFactory}}
+
+
+Factory class for creating train transport instances.  
+
+
+
+
+{\ttfamily \#include $<$Trains\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Trains\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Trains\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ \mbox{\hyperlink{classTrainsFactory_a09c26ec599c2166e8e11453e3589ce8c}{create\+Transport}} ()
+\begin{DoxyCompactList}\small\item\em Create a new train transport instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating train transport instances. 
+
+\mbox{\hyperlink{classTrainsFactory}{Trains\+Factory}} is a concrete factory that implements the \mbox{\hyperlink{classTransportationFactory}{Transportation\+Factory}} interface. This class is responsible for creating and returning instances of train transports using the Factory Method pattern. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTrainsFactory_a09c26ec599c2166e8e11453e3589ce8c}\label{classTrainsFactory_a09c26ec599c2166e8e11453e3589ce8c}} 
+\index{TrainsFactory@{TrainsFactory}!createTransport@{createTransport}}
+\index{createTransport@{createTransport}!TrainsFactory@{TrainsFactory}}
+\doxysubsubsection{\texorpdfstring{createTransport()}{createTransport()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ Trains\+Factory\+::create\+Transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create a new train transport instance. 
+
+Creates a new instance of the \mbox{\hyperlink{classTrains}{Trains}} transport.
+
+Implements the Factory Method to create a unique instance of a train transport. This method encapsulates the instantiation details of the transport and returns a pointer to the created object.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a new \mbox{\hyperlink{classTransport}{Transport}} instance representing a train.
+\end{DoxyReturn}
+This method implements the Factory Method pattern by creating and returning a unique instance of the \mbox{\hyperlink{classTrains}{Trains}} class. The returned instance represents a train transport with all its specific properties.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Transport$>$ A unique pointer to the newly created \mbox{\hyperlink{classTrains}{Trains}} instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransportationFactory_a9710992771d2070fc47319516e8caea4}{Transportation\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{TrainsFactory_8h}{Trains\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{TrainsFactory_8cpp}{Trains\+Factory.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\hypertarget{classConcreteTaxCollector}{}\doxysection{Concrete\+Tax\+Collector Class Reference}
+\label{classConcreteTaxCollector}\index{ConcreteTaxCollector@{ConcreteTaxCollector}}
+
+
+A concrete implementation of the \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} interface, responsible for collecting taxes from various types of buildings and zones.  
+
+
+
+
+{\ttfamily \#include $<$concrete\+Tax\+Collector.\+h$>$}
+
+
+
+Inheritance diagram for Concrete\+Tax\+Collector\+:
+% FIG 0
+
+
+Collaboration diagram for Concrete\+Tax\+Collector\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classConcreteTaxCollector_aff35926ad68639e9190cc2f5d4bdf54e}{visit}} (\mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $\ast$RB)
+\begin{DoxyCompactList}\small\item\em Collects tax from a residential building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConcreteTaxCollector_aad0ef53e248f7316be1bc248446ab01f}{visit}} (\mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $\ast$CB)
+\begin{DoxyCompactList}\small\item\em Collects tax from a commercial building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConcreteTaxCollector_a1781cb789ce841223f98bea3ccf769ac}{visit}} (\mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $\ast$Rzone)
+\begin{DoxyCompactList}\small\item\em Collects tax from a composite zone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of the \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} interface, responsible for collecting taxes from various types of buildings and zones. 
+
+The \mbox{\hyperlink{classConcreteTaxCollector}{Concrete\+Tax\+Collector}} class defines specific tax collection behaviors for residential buildings, commercial buildings, and zones within the city. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConcreteTaxCollector_aad0ef53e248f7316be1bc248446ab01f}\label{classConcreteTaxCollector_aad0ef53e248f7316be1bc248446ab01f}} 
+\index{ConcreteTaxCollector@{ConcreteTaxCollector}!visit@{visit}}
+\index{visit@{visit}!ConcreteTaxCollector@{ConcreteTaxCollector}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Concrete\+Tax\+Collector\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $\ast$}]{CB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Collects tax from a commercial building. 
+
+Defines the tax collection behavior for commercial buildings, taking into account specific commercial tax rules.
+
+
+\begin{DoxyParams}{Parameters}
+{\em CB} & Pointer to the \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} from which to collect tax.\\
+\hline
+\end{DoxyParams}
+Calculates an 8\% tax based on the building’s price and adds it to the government’s funds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em CB} & Pointer to the \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} from which to collect tax. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtaxCollector_a7f8104ebb0284407879ff5aca4140abd}{tax\+Collector}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classConcreteTaxCollector_aff35926ad68639e9190cc2f5d4bdf54e}\label{classConcreteTaxCollector_aff35926ad68639e9190cc2f5d4bdf54e}} 
+\index{ConcreteTaxCollector@{ConcreteTaxCollector}!visit@{visit}}
+\index{visit@{visit}!ConcreteTaxCollector@{ConcreteTaxCollector}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Concrete\+Tax\+Collector\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $\ast$}]{RB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Collects tax from a residential building. 
+
+Defines the tax collection behavior for residential buildings by accessing the necessary resources and applying tax rates specific to residential properties.
+
+
+\begin{DoxyParams}{Parameters}
+{\em RB} & Pointer to the \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} from which to collect tax.\\
+\hline
+\end{DoxyParams}
+Calculates a 5\% tax based on the building’s price and adds it to the government’s funds. If no NPCs are present in the building, no tax is collected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em RB} & Pointer to the \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} from which to collect tax. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtaxCollector_aa98f1c2919031e6e4e1b9e3eb8e9ae1c}{tax\+Collector}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classConcreteTaxCollector_a1781cb789ce841223f98bea3ccf769ac}\label{classConcreteTaxCollector_a1781cb789ce841223f98bea3ccf769ac}} 
+\index{ConcreteTaxCollector@{ConcreteTaxCollector}!visit@{visit}}
+\index{visit@{visit}!ConcreteTaxCollector@{ConcreteTaxCollector}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Concrete\+Tax\+Collector\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $\ast$}]{zone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Collects tax from a composite zone. 
+
+Collects tax from all buildings within a zone.
+
+Defines the tax collection behavior for a zone, which may encompass multiple buildings of various types.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Rzone} & Pointer to the \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} from which to collect tax.\\
+\hline
+\end{DoxyParams}
+Iterates through the buildings in the given \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} and collects tax from each by invoking the appropriate tax collection method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zone} & Pointer to the \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} containing buildings to collect tax from. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtaxCollector_a6f24c000ec7c95546c4c91d492af4fb2}{tax\+Collector}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{concreteTaxCollector_8h}{concrete\+Tax\+Collector.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{concreteTaxCollector_8cpp}{concrete\+Tax\+Collector.\+cpp}}\end{DoxyCompactItemize}

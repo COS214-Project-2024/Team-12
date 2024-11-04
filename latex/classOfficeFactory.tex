@@ -1,0 +1,62 @@
+\hypertarget{classOfficeFactory}{}\doxysection{Office\+Factory Class Reference}
+\label{classOfficeFactory}\index{OfficeFactory@{OfficeFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classOffice}{Office}} buildings.  
+
+
+
+
+{\ttfamily \#include $<$Office\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Office\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Office\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $>$ \mbox{\hyperlink{classOfficeFactory_a237448a7d70489efc990bccc8360b1da}{create\+Building}} () override
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{classOffice}{Office}} building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classOffice}{Office}} buildings. 
+
+The \mbox{\hyperlink{classOfficeFactory}{Office\+Factory}} class provides a method to create \mbox{\hyperlink{classOffice}{Office}} buildings, implementing the factory pattern for creating instances of the \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} type. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOfficeFactory_a237448a7d70489efc990bccc8360b1da}\label{classOfficeFactory_a237448a7d70489efc990bccc8360b1da}} 
+\index{OfficeFactory@{OfficeFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!OfficeFactory@{OfficeFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $>$ Office\+Factory\+::create\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a new \mbox{\hyperlink{classOffice}{Office}} building. 
+
+Creates an instance of an \mbox{\hyperlink{classOffice}{Office}} building.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a new \mbox{\hyperlink{classOffice}{Office}} building.
+\end{DoxyReturn}
+This method implements the create\+Building function defined in the \mbox{\hyperlink{classOfficeFactory}{Office\+Factory}} class. It creates and returns a unique pointer to a new \mbox{\hyperlink{classOffice}{Office}} instance, allowing the management of \mbox{\hyperlink{classOffice}{Office}} buildings within the city simulation.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Commercial\+Building$>$ A unique pointer to the newly created \mbox{\hyperlink{classOffice}{Office}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercialFactory_ac8fee8091c378e0f563f1e2146693264}{Commercial\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{OfficeFactory_8h}{Office\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{OfficeFactory_8cpp}{Office\+Factory.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,255 @@
+\hypertarget{classZoneComposite}{}\doxysection{Zone\+Composite Class Reference}
+\label{classZoneComposite}\index{ZoneComposite@{ZoneComposite}}
+
+
+A composite class representing a zone in the city, containing multiple buildings and managing their operations.  
+
+
+
+
+{\ttfamily \#include $<$Zone\+Composite.\+h$>$}
+
+
+
+Inheritance diagram for Zone\+Composite\+:
+% FIG 0
+
+
+Collaboration diagram for Zone\+Composite\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classZoneComposite_a01701cdd75e05852e024169e17b17e0d}{Zone\+Composite}} (const std\+::string \&type, const \mbox{\hyperlink{structLocation}{Location}} \&top\+Left, const \mbox{\hyperlink{structLocation}{Location}} \&bottom\+Right)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} with a specified type and boundary locations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classZoneComposite_ab96da75104b7641dfb8efe57f7c5f73f}{add}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Adds a building component to the zone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classZoneComposite_a1d716d62677a17a30ea81b8e665046c6}{remove}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Removes a building component from the zone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classZoneComposite_a04d7d032e164270de8b2e72fb6a4ae4b}{display\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Displays the status of all buildings within the zone. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classZoneComposite_aae2ad85b81fd6d43526090e1c526cbb0}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Returns the building type for the zone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classZoneComposite_a610264e3ceac427c3628e68a6808a1ab}{accept}} (\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$TC) override
+\begin{DoxyCompactList}\small\item\em Accepts a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} visitor to apply tax operations within the zone. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ $>$ \& \mbox{\hyperlink{classZoneComposite_aa439045c71bbdde45d1adabbe6c6fbdc}{get\+Buildings}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves all buildings in the zone. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structLocation}{Location}} \& \mbox{\hyperlink{classZoneComposite_a4e67ba6dc93429783e525417fd5930d8}{get\+Top\+Left}} () const
+\begin{DoxyCompactList}\small\item\em Gets the top-\/left boundary location of the zone. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structLocation}{Location}} \& \mbox{\hyperlink{classZoneComposite_aaac207e340af1dbe51bcf04f5b29916b}{get\+Bottom\+Right}} () const
+\begin{DoxyCompactList}\small\item\em Gets the bottom-\/right boundary location of the zone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ $>$ \mbox{\hyperlink{classZoneComposite_a42b58481adcb81ffffe17303ad157d3b}{buildings}}
+\begin{DoxyCompactList}\small\item\em Vector storing shared pointers to buildings in the zone. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classZoneComposite_a4444d7359a5204bfaa1496a1c6d96ec9}{zone\+Type}}
+\begin{DoxyCompactList}\small\item\em Type of zone (e.\+g., Residential, Commercial, Industrial). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{classZoneComposite_a75583259b181b854ad88c284a265797d}{bounds}} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Boundaries of the zone\+: bounds\mbox{[}0\mbox{]} = top-\/left, bounds\mbox{[}1\mbox{]} = bottom-\/right. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A composite class representing a zone in the city, containing multiple buildings and managing their operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classZoneComposite_a01701cdd75e05852e024169e17b17e0d}\label{classZoneComposite_a01701cdd75e05852e024169e17b17e0d}} 
+\index{ZoneComposite@{ZoneComposite}!ZoneComposite@{ZoneComposite}}
+\index{ZoneComposite@{ZoneComposite}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{ZoneComposite()}{ZoneComposite()}}
+{\footnotesize\ttfamily Zone\+Composite\+::\+Zone\+Composite (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type,  }\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{top\+Left,  }\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{bottom\+Right }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} with a specified type and boundary locations. 
+
+Constructs a \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} object with specified type and boundary coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the zone (e.\+g., Residential, Commercial). \\
+\hline
+{\em top\+Left} & The top-\/left boundary of the zone. \\
+\hline
+{\em bottom\+Right} & The bottom-\/right boundary of the zone.\\
+\hline
+{\em type} & The type of zone (e.\+g., Residential, Commercial). \\
+\hline
+{\em top\+Left} & The top-\/left boundary of the zone. \\
+\hline
+{\em bottom\+Right} & The bottom-\/right boundary of the zone. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classZoneComposite_a610264e3ceac427c3628e68a6808a1ab}\label{classZoneComposite_a610264e3ceac427c3628e68a6808a1ab}} 
+\index{ZoneComposite@{ZoneComposite}!accept@{accept}}
+\index{accept@{accept}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Zone\+Composite\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$}]{TC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accepts a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} visitor to apply tax operations within the zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & Pointer to a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} object. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classZoneComposite_ab96da75104b7641dfb8efe57f7c5f73f}\label{classZoneComposite_ab96da75104b7641dfb8efe57f7c5f73f}} 
+\index{ZoneComposite@{ZoneComposite}!add@{add}}
+\index{add@{add}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Zone\+Composite\+::add (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a building component to the zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Shared pointer to the building component to add. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classCityComponent_ad3ca8bd75f083095089b658efaf0c863}{City\+Component}}.
+
+\mbox{\Hypertarget{classZoneComposite_a04d7d032e164270de8b2e72fb6a4ae4b}\label{classZoneComposite_a04d7d032e164270de8b2e72fb6a4ae4b}} 
+\index{ZoneComposite@{ZoneComposite}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Zone\+Composite\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays the status of all buildings within the zone. 
+
+
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+\mbox{\Hypertarget{classZoneComposite_aaac207e340af1dbe51bcf04f5b29916b}\label{classZoneComposite_aaac207e340af1dbe51bcf04f5b29916b}} 
+\index{ZoneComposite@{ZoneComposite}!getBottomRight@{getBottomRight}}
+\index{getBottomRight@{getBottomRight}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{getBottomRight()}{getBottomRight()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structLocation}{Location}}\& Zone\+Composite\+::get\+Bottom\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the bottom-\/right boundary location of the zone. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the bottom-\/right \mbox{\hyperlink{structLocation}{Location}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classZoneComposite_aa439045c71bbdde45d1adabbe6c6fbdc}\label{classZoneComposite_aa439045c71bbdde45d1adabbe6c6fbdc}} 
+\index{ZoneComposite@{ZoneComposite}!getBuildings@{getBuildings}}
+\index{getBuildings@{getBuildings}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{getBuildings()}{getBuildings()}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classCityComponent}{City\+Component}}$>$ $>$\& Zone\+Composite\+::get\+Buildings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves all buildings in the zone. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the vector of buildings. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classZoneComposite_aae2ad85b81fd6d43526090e1c526cbb0}\label{classZoneComposite_aae2ad85b81fd6d43526090e1c526cbb0}} 
+\index{ZoneComposite@{ZoneComposite}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Zone\+Composite\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the building type for the zone. 
+
+\begin{DoxyReturn}{Returns}
+The type of building as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+\mbox{\Hypertarget{classZoneComposite_a4e67ba6dc93429783e525417fd5930d8}\label{classZoneComposite_a4e67ba6dc93429783e525417fd5930d8}} 
+\index{ZoneComposite@{ZoneComposite}!getTopLeft@{getTopLeft}}
+\index{getTopLeft@{getTopLeft}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{getTopLeft()}{getTopLeft()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structLocation}{Location}}\& Zone\+Composite\+::get\+Top\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the top-\/left boundary location of the zone. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the top-\/left \mbox{\hyperlink{structLocation}{Location}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classZoneComposite_a1d716d62677a17a30ea81b8e665046c6}\label{classZoneComposite_a1d716d62677a17a30ea81b8e665046c6}} 
+\index{ZoneComposite@{ZoneComposite}!remove@{remove}}
+\index{remove@{remove}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Zone\+Composite\+::remove (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes a building component from the zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Shared pointer to the building component to remove. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classCityComponent_a0ab80333e03ea72cedcd70e5045a6831}{City\+Component}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classZoneComposite_a75583259b181b854ad88c284a265797d}\label{classZoneComposite_a75583259b181b854ad88c284a265797d}} 
+\index{ZoneComposite@{ZoneComposite}!bounds@{bounds}}
+\index{bounds@{bounds}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{bounds}{bounds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLocation}{Location}} Zone\+Composite\+::bounds\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Boundaries of the zone\+: bounds\mbox{[}0\mbox{]} = top-\/left, bounds\mbox{[}1\mbox{]} = bottom-\/right. 
+
+\mbox{\Hypertarget{classZoneComposite_a42b58481adcb81ffffe17303ad157d3b}\label{classZoneComposite_a42b58481adcb81ffffe17303ad157d3b}} 
+\index{ZoneComposite@{ZoneComposite}!buildings@{buildings}}
+\index{buildings@{buildings}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{buildings}{buildings}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classCityComponent}{City\+Component}}$>$ $>$ Zone\+Composite\+::buildings\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector storing shared pointers to buildings in the zone. 
+
+\mbox{\Hypertarget{classZoneComposite_a4444d7359a5204bfaa1496a1c6d96ec9}\label{classZoneComposite_a4444d7359a5204bfaa1496a1c6d96ec9}} 
+\index{ZoneComposite@{ZoneComposite}!zoneType@{zoneType}}
+\index{zoneType@{zoneType}!ZoneComposite@{ZoneComposite}}
+\doxysubsubsection{\texorpdfstring{zoneType}{zoneType}}
+{\footnotesize\ttfamily std\+::string Zone\+Composite\+::zone\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Type of zone (e.\+g., Residential, Commercial, Industrial). 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ZoneComposite_8h}{Zone\+Composite.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ZoneComposite_8cpp}{Zone\+Composite.\+cpp}}\end{DoxyCompactItemize}

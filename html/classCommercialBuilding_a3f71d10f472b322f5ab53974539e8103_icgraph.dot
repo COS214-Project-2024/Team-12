@@ -1,0 +1,12 @@
+digraph "CommercialBuilding::getUtilityCoverage"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="CommercialBuilding\l::getUtilityCoverage",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Calculates the building's utility coverage."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CommercialBuilding\l::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommercialBuilding.html#a84177b0025929b8d39859256f29e1b79",tooltip="Displays the status of the building, including utility and tax information."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CommercialBuilding\l::getDisplayColor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommercialBuilding.html#a9746a3e86c5d37bc1840f1fe7783c8a1",tooltip="Gets the display color based on utility coverage."];
+}

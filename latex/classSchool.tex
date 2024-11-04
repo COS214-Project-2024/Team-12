@@ -1,0 +1,112 @@
+\hypertarget{classSchool}{}\doxysection{School Class Reference}
+\label{classSchool}\index{School@{School}}
+
+
+{\ttfamily \#include $<$School.\+h$>$}
+
+
+
+Inheritance diagram for School\+:
+% FIG 0
+
+
+Collaboration diagram for School\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSchool_aad5781cd84daa372297af56712272ebe}{School}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage, const std\+::string \&building\+Status)
+\item 
+\mbox{\hyperlink{classSchool_af854d6f38c9deae0c4cd9f0a59597a42}{$\sim$\+School}} () override=default
+\item 
+void \mbox{\hyperlink{classSchool_adbb2ba634866eedd68137afd3bbced09}{provide\+Service}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual function to provide a specific service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSchool_a2ba854bfe7e04ae9ae5bf3560a47d96e}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual function to display the status of the public service. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classSchool_ab91a4e94be8cce18279e020c2569a0ea}{get\+Display\+Symbol}} () const override
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the display symbol for the public service on a map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classSchool_ae3d801231b641cb9cd69a3a0274a5801}{status}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSchool_aad5781cd84daa372297af56712272ebe}\label{classSchool_aad5781cd84daa372297af56712272ebe}} 
+\index{School@{School}!School@{School}}
+\index{School@{School}!School@{School}}
+\doxysubsubsection{\texorpdfstring{School()}{School()}}
+{\footnotesize\ttfamily School\+::\+School (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage,  }\item[{const std\+::string \&}]{building\+Status }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSchool_af854d6f38c9deae0c4cd9f0a59597a42}\label{classSchool_af854d6f38c9deae0c4cd9f0a59597a42}} 
+\index{School@{School}!````~School@{$\sim$School}}
+\index{````~School@{$\sim$School}!School@{School}}
+\doxysubsubsection{\texorpdfstring{$\sim$School()}{~School()}}
+{\footnotesize\ttfamily School\+::$\sim$\+School (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSchool_a2ba854bfe7e04ae9ae5bf3560a47d96e}\label{classSchool_a2ba854bfe7e04ae9ae5bf3560a47d96e}} 
+\index{School@{School}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!School@{School}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void School\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function to display the status of the public service. 
+
+
+
+Implements \mbox{\hyperlink{classPublicService_ad14d878606280cf2c180c5c84a241a35}{Public\+Service}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classSchool_ab91a4e94be8cce18279e020c2569a0ea}\label{classSchool_ab91a4e94be8cce18279e020c2569a0ea}} 
+\index{School@{School}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!School@{School}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char School\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function to get the display symbol for the public service on a map. 
+
+
+
+Implements \mbox{\hyperlink{classPublicService_a2341fa64a393890c3e563832f8007109}{Public\+Service}}.
+
+\mbox{\Hypertarget{classSchool_adbb2ba634866eedd68137afd3bbced09}\label{classSchool_adbb2ba634866eedd68137afd3bbced09}} 
+\index{School@{School}!provideService@{provideService}}
+\index{provideService@{provideService}!School@{School}}
+\doxysubsubsection{\texorpdfstring{provideService()}{provideService()}}
+{\footnotesize\ttfamily void School\+::provide\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function to provide a specific service. 
+
+This function must be implemented by derived classes. 
+
+Implements \mbox{\hyperlink{classPublicService_a6598b39358e9b4ad849671b526f37e32}{Public\+Service}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSchool_ae3d801231b641cb9cd69a3a0274a5801}\label{classSchool_ae3d801231b641cb9cd69a3a0274a5801}} 
+\index{School@{School}!status@{status}}
+\index{status@{status}!School@{School}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily std\+::string School\+::status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{School_8h}{School.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{School_8cpp}{School.\+cpp}}\end{DoxyCompactItemize}

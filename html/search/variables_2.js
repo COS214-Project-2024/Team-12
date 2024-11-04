@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['capacity_1358',['capacity',['../classUtilityFlyweight.html#a1ae6c23b23735da1c466f6711a37a58c',1,'UtilityFlyweight']]],
+  ['cargocapacity_1359',['cargoCapacity',['../classTrains.html#a23f64e9efb55c5e0a408d28e0a69f770',1,'Trains']]],
+  ['city_1360',['city',['../classCityGame.html#a9f94a72aa7e99ac8a2b5fc9cc98fc9db',1,'CityGame']]],
+  ['cityname_1361',['cityName',['../classCityComposite.html#ae8b710285f100a9d8fdb2d2804de174d',1,'CityComposite']]],
+  ['collectedresources_1362',['collectedResources',['../classCityGame.html#a37801077d9b4a2060d357b6ecdbc1883',1,'CityGame::collectedResources()'],['../classIndustry.html#a451c5556304acbbdbd5fad53987cdfd8',1,'Industry::collectedResources()']]],
+  ['collectionrange_1363',['collectionRange',['../classIndustry.html#afa1ddf2a9ddbf862b07818f64a428589',1,'Industry']]],
+  ['commandhistory_1364',['commandHistory',['../classGameState.html#a5f1e58e79162c3545326bf42a9522dee',1,'GameState::commandHistory()'],['../classGameStateMemento.html#a2f993e59c4802aa333e013ab74cf15e8',1,'GameStateMemento::commandHistory()']]],
+  ['component_1365',['component',['../classPlaceComponentCommand.html#ad19d38c48d29b3ff2d92ec29b7c2dae2',1,'PlaceComponentCommand::component()'],['../structMapGrid_1_1Cell.html#aa578ccaf504f48e81821dc2b75633fa2',1,'MapGrid::Cell::component()'],['../classNode.html#a92597ca0a2f07dff77daeda85ce887da',1,'Node::component()']]],
+  ['concrete_1366',['concrete',['../structResourceRequirement.html#a0f2458c150161c9607ec6927895e00a2',1,'ResourceRequirement']]],
+  ['connections_1367',['connections',['../classNode.html#a8ed7821f573c1a7472416ed7ec7d180a',1,'Node']]],
+  ['constructionresource_1368',['constructionResource',['../classIndustry.html#a5a07ec748dea554e7450dcf6ea779c3c',1,'Industry']]],
+  ['constructionresourcemap_1369',['constructionResourceMap',['../classCityGame.html#ac579ec3bdb70115f9e81f4899728b2be',1,'CityGame::constructionResourceMap()'],['../classMapGrid.html#ae756bfaef35e661740cd9e9a4fb08e6d',1,'MapGrid::constructionResourceMap()']]],
+  ['constructionresources_1370',['constructionResources',['../classCityGame.html#a1e31e6a3e21c8974ca08889c917cd73c',1,'CityGame']]],
+  ['cost_1371',['cost',['../classWorkerNPC.html#a2ba1141c72f120cbc92c74d3aa98771e',1,'WorkerNPC::cost()'],['../classUtilityFlyweight.html#a50c6820515fba3e39881f9e9075b1651',1,'UtilityFlyweight::cost()']]],
+  ['crimecount_1372',['crimeCount',['../classNPCManager.html#a560031a3991ce16d257e9d22135652a7',1,'NPCManager']]],
+  ['crimerate_1373',['crimeRate',['../classGovernment.html#a2abcbf3936790d26d7e82e398f2ee2f2',1,'Government']]],
+  ['crystal_5fcraft_5frange_1374',['CRYSTAL_CRAFT_RANGE',['../classCrystalCraftIndustry.html#afd3f520d33f5251f8b90410b8bc11084',1,'CrystalCraftIndustry']]],
+  ['currentcommandindex_1375',['currentCommandIndex',['../classGameState.html#a5d2a2bb77cc77e8f8a09359c0b7b2188',1,'GameState::currentCommandIndex()'],['../classGameStateMemento.html#ab88a379656ca1f450ad9e7ee85103e11',1,'GameStateMemento::currentCommandIndex()']]],
+  ['currentsaveindex_1376',['currentSaveIndex',['../classCityGame.html#a89eebb36273596268473299ac7a28b5d',1,'CityGame']]],
+  ['currentstorage_1377',['currentStorage',['../classConstructionResourceProcessor.html#a500304c5a5c3cf42d8ba1dd3acc848e5',1,'ConstructionResourceProcessor::currentStorage()'],['../classIncomeResourceProcessor.html#adc4e8039483ee814fb5b0c0624f5a9af',1,'IncomeResourceProcessor::currentStorage()']]]
+];

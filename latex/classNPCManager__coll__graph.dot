@@ -1,0 +1,7 @@
+digraph "NPCManager"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{NPCManager\n|- happinessLevel\l- happyCount\l- neutralCount\l- revoltCount\l- productiveCount\l- crimeCount\l- employedNpcs\l- unemployedNpcs\l|+ NPCManager()\l+ operator=()\l+ getHappinessLevel()\l+ setHappinessLevel()\l+ getDonationCount()\l+ getNeutralCount()\l+ getRevoltCount()\l+ getProductiveCount()\l+ getCrimeCount()\l+ incrementCount()\land 6 more...\l+ getInstance()\l# NPCManager()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Singleton class managing the state and statistics of NPCs."];
+}

@@ -1,0 +1,211 @@
+\hypertarget{classIncomeResourceProcessor}{}\doxysection{Income\+Resource\+Processor Class Reference}
+\label{classIncomeResourceProcessor}\index{IncomeResourceProcessor@{IncomeResourceProcessor}}
+
+
+Processes and manages storage for income-\/generating resources.  
+
+
+
+
+{\ttfamily \#include $<$Income\+Resource\+Processor.\+h$>$}
+
+
+
+Inheritance diagram for Income\+Resource\+Processor\+:
+% FIG 0
+
+
+Collaboration diagram for Income\+Resource\+Processor\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIncomeResourceProcessor_aeb7bbee2b3488ac96fec8a486619a61f}{Income\+Resource\+Processor}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ res, int \mbox{\hyperlink{classIncomeResourceProcessor_afee9d9c35ab9f3564323f7b65413e452}{max\+Storage}}=200)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classIncomeResourceProcessor}{Income\+Resource\+Processor}} with a given resource and optional storage limit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIncomeResourceProcessor_a57461057a6b0143e300ab00326dbe5c5}{process}} (int amount)
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of the resource, deducting it from storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIncomeResourceProcessor_ad777d4da29ad3cb8a9c2517ddc76796f}{store}} (int amount)
+\begin{DoxyCompactList}\small\item\em Stores a specified amount of resource, increasing the current storage up to max capacity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIncomeResourceProcessor_af4d45a6fc3516ea8ebf2bb0a507632e0}{display}} () const
+\begin{DoxyCompactList}\small\item\em Displays the current storage status and calls the resource\textquotesingle{}s status display. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIncomeResourceProcessor_a44d7da7fa83fc35e2c0bd0cfdb6eeb2c}{get\+Current\+Storage}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current amount of resource in storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ \mbox{\hyperlink{classIncomeResourceProcessor_a600697fd813979586f76a0d304b57e31}{resource}}
+\begin{DoxyCompactList}\small\item\em Pointer to the resource being processed. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIncomeResourceProcessor_adc4e8039483ee814fb5b0c0624f5a9af}{current\+Storage}}
+\begin{DoxyCompactList}\small\item\em Current amount of resource in storage. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classIncomeResourceProcessor_afee9d9c35ab9f3564323f7b65413e452}{max\+Storage}}
+\begin{DoxyCompactList}\small\item\em Maximum storage capacity for the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Processes and manages storage for income-\/generating resources. 
+
+The \mbox{\hyperlink{classIncomeResourceProcessor}{Income\+Resource\+Processor}} class handles storing and processing resources that generate income. It maintains a current storage level and a maximum storage capacity. The processed resources contribute their market value to the \mbox{\hyperlink{classGovernment}{Government}} instance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIncomeResourceProcessor_aeb7bbee2b3488ac96fec8a486619a61f}\label{classIncomeResourceProcessor_aeb7bbee2b3488ac96fec8a486619a61f}} 
+\index{IncomeResourceProcessor@{IncomeResourceProcessor}!IncomeResourceProcessor@{IncomeResourceProcessor}}
+\index{IncomeResourceProcessor@{IncomeResourceProcessor}!IncomeResourceProcessor@{IncomeResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{IncomeResourceProcessor()}{IncomeResourceProcessor()}}
+{\footnotesize\ttfamily Income\+Resource\+Processor\+::\+Income\+Resource\+Processor (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$}]{res,  }\item[{int}]{max\+Storage = {\ttfamily 200} }\end{DoxyParamCaption})}
+
+
+
+Constructs an \mbox{\hyperlink{classIncomeResourceProcessor}{Income\+Resource\+Processor}} with a given resource and optional storage limit. 
+
+Constructs an \mbox{\hyperlink{classIncomeResourceProcessor}{Income\+Resource\+Processor}} with a given resource and storage limit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & Shared pointer to an \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} to be processed. \\
+\hline
+{\em max\+Storage} & Maximum storage capacity for the resource (default is 200).\\
+\hline
+{\em res} & Shared pointer to an \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} to be processed. \\
+\hline
+{\em max\+Storage} & Maximum storage capacity for the resource. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIncomeResourceProcessor_af4d45a6fc3516ea8ebf2bb0a507632e0}\label{classIncomeResourceProcessor_af4d45a6fc3516ea8ebf2bb0a507632e0}} 
+\index{IncomeResourceProcessor@{IncomeResourceProcessor}!display@{display}}
+\index{display@{display}!IncomeResourceProcessor@{IncomeResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Income\+Resource\+Processor\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays the current storage status and calls the resource\textquotesingle{}s status display. 
+
+Displays the current storage status and resource status information.
+
+This function outputs the current storage usage and invokes the resource\textquotesingle{}s display\+Status() function.
+
+This function outputs the current storage usage and calls the resource\textquotesingle{}s display\+Status() function. 
+
+Implements \mbox{\hyperlink{classResourceProcessor_a9560a2b0703ed45ef5aba546cdaffe11}{Resource\+Processor}}.
+
+\mbox{\Hypertarget{classIncomeResourceProcessor_a44d7da7fa83fc35e2c0bd0cfdb6eeb2c}\label{classIncomeResourceProcessor_a44d7da7fa83fc35e2c0bd0cfdb6eeb2c}} 
+\index{IncomeResourceProcessor@{IncomeResourceProcessor}!getCurrentStorage@{getCurrentStorage}}
+\index{getCurrentStorage@{getCurrentStorage}!IncomeResourceProcessor@{IncomeResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{getCurrentStorage()}{getCurrentStorage()}}
+{\footnotesize\ttfamily int Income\+Resource\+Processor\+::get\+Current\+Storage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the current amount of resource in storage. 
+
+\begin{DoxyReturn}{Returns}
+int Current storage level of the resource. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceProcessor_ae9c44f848cce0ab5d754da4b39ecd63c}{Resource\+Processor}}.
+
+\mbox{\Hypertarget{classIncomeResourceProcessor_a57461057a6b0143e300ab00326dbe5c5}\label{classIncomeResourceProcessor_a57461057a6b0143e300ab00326dbe5c5}} 
+\index{IncomeResourceProcessor@{IncomeResourceProcessor}!process@{process}}
+\index{process@{process}!IncomeResourceProcessor@{IncomeResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Income\+Resource\+Processor\+::process (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Processes a specified amount of the resource, deducting it from storage. 
+
+Processes a specified amount of resource, deducting it from storage and adding its monetary value to the government.
+
+If the specified amount exists in storage, it is processed, and its monetary value is added to the \mbox{\hyperlink{classGovernment}{Government}} instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of resource to process.\\
+\hline
+\end{DoxyParams}
+If the current storage has at least the specified amount, it is processed by deducting the amount from the storage and calculating the monetary value based on the resource\textquotesingle{}s market value. The processed amount and monetary value are added to the \mbox{\hyperlink{classGovernment}{Government}} instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of resource to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResourceProcessor_a238f6d371a1633c05e39b431c8f100be}{Resource\+Processor}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classIncomeResourceProcessor_ad777d4da29ad3cb8a9c2517ddc76796f}\label{classIncomeResourceProcessor_ad777d4da29ad3cb8a9c2517ddc76796f}} 
+\index{IncomeResourceProcessor@{IncomeResourceProcessor}!store@{store}}
+\index{store@{store}!IncomeResourceProcessor@{IncomeResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}}
+{\footnotesize\ttfamily void Income\+Resource\+Processor\+::store (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stores a specified amount of resource, increasing the current storage up to max capacity. 
+
+Stores a specified amount of resource, increasing the current storage up to the maximum limit.
+
+If adding the specified amount does not exceed the max storage capacity, it is added to the current storage level.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of resource to store.\\
+\hline
+\end{DoxyParams}
+If adding the specified amount does not exceed the max storage capacity, it is added to the current storage. Otherwise, a warning is issued that the storage capacity has been exceeded.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of resource to store. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResourceProcessor_a6ac368c461e1b059e92b7a8f2a0344af}{Resource\+Processor}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classIncomeResourceProcessor_adc4e8039483ee814fb5b0c0624f5a9af}\label{classIncomeResourceProcessor_adc4e8039483ee814fb5b0c0624f5a9af}} 
+\index{IncomeResourceProcessor@{IncomeResourceProcessor}!currentStorage@{currentStorage}}
+\index{currentStorage@{currentStorage}!IncomeResourceProcessor@{IncomeResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{currentStorage}{currentStorage}}
+{\footnotesize\ttfamily int Income\+Resource\+Processor\+::current\+Storage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current amount of resource in storage. 
+
+\mbox{\Hypertarget{classIncomeResourceProcessor_afee9d9c35ab9f3564323f7b65413e452}\label{classIncomeResourceProcessor_afee9d9c35ab9f3564323f7b65413e452}} 
+\index{IncomeResourceProcessor@{IncomeResourceProcessor}!maxStorage@{maxStorage}}
+\index{maxStorage@{maxStorage}!IncomeResourceProcessor@{IncomeResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{maxStorage}{maxStorage}}
+{\footnotesize\ttfamily const int Income\+Resource\+Processor\+::max\+Storage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum storage capacity for the resource. 
+
+\mbox{\Hypertarget{classIncomeResourceProcessor_a600697fd813979586f76a0d304b57e31}\label{classIncomeResourceProcessor_a600697fd813979586f76a0d304b57e31}} 
+\index{IncomeResourceProcessor@{IncomeResourceProcessor}!resource@{resource}}
+\index{resource@{resource}!IncomeResourceProcessor@{IncomeResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{resource}{resource}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}$>$ Income\+Resource\+Processor\+::resource\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the resource being processed. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{IncomeResourceProcessor_8h}{Income\+Resource\+Processor.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{IncomeResourceProcessor_8cpp}{Income\+Resource\+Processor.\+cpp}}\end{DoxyCompactItemize}

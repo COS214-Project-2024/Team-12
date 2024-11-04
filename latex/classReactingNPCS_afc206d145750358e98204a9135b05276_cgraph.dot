@@ -1,0 +1,27 @@
+digraph "ReactingNPCS::update"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ReactingNPCS::update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Updates the NPC's state based on observed changes."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ReactingNPCS::changeState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#a76e8ef118165123d68fffa6ffc9bad90",tooltip="Changes the current state of the NPC."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="NPCManager::decrementCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#a2780f5424c98766d052c9860eedd9412",tooltip="Decrements the count for a given NPC state."];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NPCManager::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#a29c578e3b969f7438d6025dd3fc21c50",tooltip="Retrieves the singleton instance of NPCManager."];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="NPCState::getStateName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCState.html#afc1b8c7e3747024d0bbb3ded0a4a7d56",tooltip="Pure virtual function to get the name of the state."];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="NPCManager::incrementCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#a615e87109c27f59edbc1eccb2df972d2",tooltip="Increments the count for a given NPC state."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="NPCManager::getHappiness\lLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#ac21c34d2e87c6a8801bc4bfc1c6d0201",tooltip="Gets the current happiness level of NPCs."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Government::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a18e3da6a1d6cae38f6eea1d50fe77288",tooltip="Retrieves the singleton instance of the Government class."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Government::getPollution\lLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a8e1807a604d9140593513a2dcdd75c90",tooltip="Gets the current pollution level."];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="NPCState::handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCState.html#ae26888ff3d2981261c9f3e937600c762",tooltip="Pure virtual function to handle the behavior associated with the state."];
+}

@@ -1,0 +1,24 @@
+digraph "Industry::processResources"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Industry::processResources",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Processes resources based on the specified amount."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="WoodAndCoalPlant::processCoal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWoodAndCoalPlant.html#a4529e9e6aa4bd2ebb3639a8ad9b7f4b1",tooltip="Processes a specified amount of coal and updates resources."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PetrochemicalFacility\l::processConcrete",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPetrochemicalFacility.html#a49e64fa2c54f0897290548c784032b45",tooltip="Processes a specified amount of concrete in the facility."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CrystalCraftIndustry\l::processDiamond",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCrystalCraftIndustry.html#a65147a09e9ae5746ea83d88b44bf7077",tooltip="Processes a specified amount of diamonds."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="MetalWorkFacility::\lprocessGold",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMetalWorkFacility.html#a9f506921a29f4fe41ec91b071175b2fd",tooltip="Processes a specified amount of gold."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="PetrochemicalFacility\l::processOil",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPetrochemicalFacility.html#aae7ecfabcaf2d05fcbc20c90e4fe9c04",tooltip="Processes a specified amount of oil in the facility."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="MetalWorkFacility::\lprocessSteel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMetalWorkFacility.html#aa724f47f3e8a634e902577dbc73068fa",tooltip="Processes a specified amount of steel."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="CrystalCraftIndustry\l::processStone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCrystalCraftIndustry.html#acb8df467a3568ce62d1696df523d439d",tooltip="Processes a specified amount of stone."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="WoodAndCoalPlant::processWood",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWoodAndCoalPlant.html#adb393197eb6d430716de853462d796ab",tooltip="Processes a specified amount of wood and updates resources."];
+}

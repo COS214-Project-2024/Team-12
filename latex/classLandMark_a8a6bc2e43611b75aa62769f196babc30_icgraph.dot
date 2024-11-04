@@ -1,0 +1,14 @@
+digraph "LandMark::displayStatus"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="LandMark::displayStatus",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Displays the status of the landmark."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="CulturalCenter::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCulturalCenter.html#a8571cfd46c8bfda933a44e564882e59c",tooltip="Displays the current status of the cultural center, including capacity and utility connections."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Monument::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMonument.html#a995d088a578818a95bb2ae0307ca6e59",tooltip="Displays the status of the Monument, including its type, capacity, price, and utilities."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Park::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPark.html#adc60642002790fdcccc2e1846e29e7e0",tooltip="Displays the current status of the Park."];
+}

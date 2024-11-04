@@ -1,0 +1,14 @@
+digraph "IncomeResourceProcessor::process"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="IncomeResourceProcessor\l::process",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Processes a specified amount of the resource, deducting it from storage."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Government::addMoney",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a1d05771ae8b221d76ecd5ba315b2473e",tooltip="Adds a specified amount of money to the government funds."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Government::addProcessed\lResource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#ac2653007af2558b7edfc8c5a80aae0c7",tooltip="Adds a processed resource to the government's records."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Government::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a18e3da6a1d6cae38f6eea1d50fe77288",tooltip="Retrieves the singleton instance of the Government class."];
+}

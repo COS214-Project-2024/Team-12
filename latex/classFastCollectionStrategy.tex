@@ -1,0 +1,71 @@
+\hypertarget{classFastCollectionStrategy}{}\doxysection{Fast\+Collection\+Strategy Class Reference}
+\label{classFastCollectionStrategy}\index{FastCollectionStrategy@{FastCollectionStrategy}}
+
+
+Collection strategy for fast collection rate.  
+
+
+
+
+{\ttfamily \#include $<$Fast\+Collection\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Fast\+Collection\+Strategy\+:
+% FIG 0
+
+
+Collaboration diagram for Fast\+Collection\+Strategy\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classFastCollectionStrategy_a1fb6f488dbfe1816860c9953fc2121d0}{collect}} (int base\+Amount)
+\item 
+int \mbox{\hyperlink{classFastCollectionStrategy_ab2e020968bb0f5a81168f6ceb4d0e456}{collect}} (int amount) const override
+\begin{DoxyCompactList}\small\item\em Pure virtual function to collect resources based on a strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Collection strategy for fast collection rate. 
+
+Implements a 200\% collection efficiency. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFastCollectionStrategy_ab2e020968bb0f5a81168f6ceb4d0e456}\label{classFastCollectionStrategy_ab2e020968bb0f5a81168f6ceb4d0e456}} 
+\index{FastCollectionStrategy@{FastCollectionStrategy}!collect@{collect}}
+\index{collect@{collect}!FastCollectionStrategy@{FastCollectionStrategy}}
+\doxysubsubsection{\texorpdfstring{collect()}{collect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Fast\+Collection\+Strategy\+::collect (\begin{DoxyParamCaption}\item[{int}]{base\+Amount }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function to collect resources based on a strategy. 
+
+Derived classes implement this method to adjust the amount collected based on a specific collection strategy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Amount} & The base amount to be collected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The adjusted amount collected based on the strategy. 
+\end{DoxyReturn}
+$<$ Returns double the input amount.
+
+Implements \mbox{\hyperlink{classCollectionStrategy_a771a216c00c12dcf6643befb9300d381}{Collection\+Strategy}}.
+
+\mbox{\Hypertarget{classFastCollectionStrategy_a1fb6f488dbfe1816860c9953fc2121d0}\label{classFastCollectionStrategy_a1fb6f488dbfe1816860c9953fc2121d0}} 
+\index{FastCollectionStrategy@{FastCollectionStrategy}!collect@{collect}}
+\index{collect@{collect}!FastCollectionStrategy@{FastCollectionStrategy}}
+\doxysubsubsection{\texorpdfstring{collect()}{collect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Fast\+Collection\+Strategy\+::collect (\begin{DoxyParamCaption}\item[{int}]{base\+Amount }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{FastCollectionStrategy_8h}{Fast\+Collection\+Strategy.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NPCSystem_8h}{NPCSystem.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{FastCollectionStrategy_8cpp}{Fast\+Collection\+Strategy.\+cpp}}\end{DoxyCompactItemize}

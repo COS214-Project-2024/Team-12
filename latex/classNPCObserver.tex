@@ -1,0 +1,87 @@
+\hypertarget{classNPCObserver}{}\doxysection{NPCObserver Class Reference}
+\label{classNPCObserver}\index{NPCObserver@{NPCObserver}}
+
+
+Abstract base class for NPC observers.  
+
+
+
+
+{\ttfamily \#include $<$NPCObserver.\+h$>$}
+
+
+
+Inheritance diagram for NPCObserver\+:
+% FIG 0
+
+
+Collaboration diagram for NPCObserver\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classNPCObserver_ae8f7f9fbb8d74f4738de689166cfc600}{update}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to update the observer with new state information. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classNPCObserver}{NPCObserver}} $\ast$ \mbox{\hyperlink{classNPCObserver_ad1ef2d36df71137e50a9ed96973ffbd6}{clone}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to clone the observer. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classNPCObserver_a0b9ff2639c7c72cd18b9f378d26f52f8}{$\sim$\+NPCObserver}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for NPC observers. 
+
+The \mbox{\hyperlink{classNPCObserver}{NPCObserver}} class provides an interface for objects that observe changes in NPC states and respond to updates accordingly. It also supports cloning, allowing derived observer types to be duplicated. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNPCObserver_a0b9ff2639c7c72cd18b9f378d26f52f8}\label{classNPCObserver_a0b9ff2639c7c72cd18b9f378d26f52f8}} 
+\index{NPCObserver@{NPCObserver}!````~NPCObserver@{$\sim$NPCObserver}}
+\index{````~NPCObserver@{$\sim$NPCObserver}!NPCObserver@{NPCObserver}}
+\doxysubsubsection{\texorpdfstring{$\sim$NPCObserver()}{~NPCObserver()}}
+{\footnotesize\ttfamily virtual NPCObserver\+::$\sim$\+NPCObserver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Ensures that derived classes are properly destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNPCObserver_ad1ef2d36df71137e50a9ed96973ffbd6}\label{classNPCObserver_ad1ef2d36df71137e50a9ed96973ffbd6}} 
+\index{NPCObserver@{NPCObserver}!clone@{clone}}
+\index{clone@{clone}!NPCObserver@{NPCObserver}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classNPCObserver}{NPCObserver}}$\ast$ NPCObserver\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to clone the observer. 
+
+Allows derived observer types to create a copy of themselves.
+
+\begin{DoxyReturn}{Returns}
+NPCObserver$\ast$ Pointer to the cloned observer instance. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classReactingNPCS_afa5a0fce89da50127b5b648ef77af00c}{Reacting\+NPCS}}.
+
+\mbox{\Hypertarget{classNPCObserver_ae8f7f9fbb8d74f4738de689166cfc600}\label{classNPCObserver_ae8f7f9fbb8d74f4738de689166cfc600}} 
+\index{NPCObserver@{NPCObserver}!update@{update}}
+\index{update@{update}!NPCObserver@{NPCObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void NPCObserver\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to update the observer with new state information. 
+
+Derived classes must implement this function to define their response to updates. 
+
+Implemented in \mbox{\hyperlink{classReactingNPCS_afc206d145750358e98204a9135b05276}{Reacting\+NPCS}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NPCObserver_8h}{NPCObserver.\+h}}\end{DoxyCompactItemize}

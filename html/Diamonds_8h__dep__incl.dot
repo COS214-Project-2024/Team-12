@@ -1,0 +1,19 @@
+digraph "COS214-Poject/src/Diamonds.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="COS214-Poject/src/Diamonds.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Defines the Diamonds class representing an income-generating resource in the city simulation."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="COS214-Poject/src/CityGame.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CityGame_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="COS214-Poject/src/CityGame.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CityGame_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="COS214-Poject/src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="COS214-Poject/src/Diamonds.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Diamonds_8cpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="COS214-Poject/src/MapGrid.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$MapGrid_8cpp.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="COS214-Poject/src/StoneFactory.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$StoneFactory_8cpp.html",tooltip=" "];
+}

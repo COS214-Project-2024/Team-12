@@ -1,0 +1,12 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="ResourceProcessor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classResourceProcessor.html",tooltip="Abstract base class for processing and managing resources."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="ConstructionResourceProcessor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConstructionResourceProcessor.html",tooltip="Manages the processing and storage of construction resources within the game."];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="IncomeResourceProcessor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIncomeResourceProcessor.html",tooltip="Processes and manages storage for income-generating resources."];
+}

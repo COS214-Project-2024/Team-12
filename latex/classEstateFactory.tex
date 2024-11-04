@@ -1,0 +1,62 @@
+\hypertarget{classEstateFactory}{}\doxysection{Estate\+Factory Class Reference}
+\label{classEstateFactory}\index{EstateFactory@{EstateFactory}}
+
+
+The \mbox{\hyperlink{classEstateFactory}{Estate\+Factory}} class is responsible for creating \mbox{\hyperlink{classEstate}{Estate}} buildings.  
+
+
+
+
+{\ttfamily \#include $<$Estate\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Estate\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Estate\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $>$ \mbox{\hyperlink{classEstateFactory_ab2228a744dca448f8448716f437ebd91}{create\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new instance of an \mbox{\hyperlink{classEstate}{Estate}} building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classEstateFactory}{Estate\+Factory}} class is responsible for creating \mbox{\hyperlink{classEstate}{Estate}} buildings. 
+
+This class inherits from the \mbox{\hyperlink{classResidentialBuildingFactory}{Residential\+Building\+Factory}} and provides a concrete implementation for creating instances of \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} specifically for the \mbox{\hyperlink{classEstate}{Estate}} type. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEstateFactory_ab2228a744dca448f8448716f437ebd91}\label{classEstateFactory_ab2228a744dca448f8448716f437ebd91}} 
+\index{EstateFactory@{EstateFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!EstateFactory@{EstateFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $>$ Estate\+Factory\+::create\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a new instance of an \mbox{\hyperlink{classEstate}{Estate}} building. 
+
+This method returns a unique pointer to a \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} that is specifically an \mbox{\hyperlink{classEstate}{Estate}}.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Residential\+Building$>$ A unique pointer to the newly created \mbox{\hyperlink{classEstate}{Estate}} building.
+\end{DoxyReturn}
+This method overrides the create\+Building method from the \mbox{\hyperlink{classResidentialBuildingFactory}{Residential\+Building\+Factory}} class to specifically create an instance of an \mbox{\hyperlink{classEstate}{Estate}}. It returns a unique pointer to the newly created \mbox{\hyperlink{classEstate}{Estate}} object.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Residential\+Building$>$ A unique pointer to the newly created \mbox{\hyperlink{classEstate}{Estate}} building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidentialBuildingFactory_a1eb3108adbe02e3a18d9b925915a5fc3}{Residential\+Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{EstateFactory_8h}{Estate\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{EstateFactory_8cpp}{Estate\+Factory.\+cpp}}\end{DoxyCompactItemize}

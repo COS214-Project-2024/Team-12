@@ -1,0 +1,119 @@
+\hypertarget{classRevoltState}{}\doxysection{Revolt\+State Class Reference}
+\label{classRevoltState}\index{RevoltState@{RevoltState}}
+
+
+Represents the state of NPCs when they are in revolt.  
+
+
+
+
+{\ttfamily \#include $<$Revolt\+State.\+h$>$}
+
+
+
+Inheritance diagram for Revolt\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Revolt\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRevoltState_acbad174f543875c807178a9856258502}{handle}} () override
+\begin{DoxyCompactList}\small\item\em Executes actions specific to the revolt state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRevoltState_a0f90c2eb23eb25ba16c188b86663d88a}{get\+State\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the name of this state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ \mbox{\hyperlink{classRevoltState_a07086c1b8293b02c4cd28c1feaf884aa}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clones the current state, creating a new instance with the same properties. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRevoltState_ae5b74b1063cd25f958af6962e538244a}{$\sim$\+Revolt\+State}} () override
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classRevoltState}{Revolt\+State}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the state of NPCs when they are in revolt. 
+
+This state class handles the behavior and actions taken by NPCs when they are revolting due to low satisfaction or poor city conditions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRevoltState_ae5b74b1063cd25f958af6962e538244a}\label{classRevoltState_ae5b74b1063cd25f958af6962e538244a}} 
+\index{RevoltState@{RevoltState}!````~RevoltState@{$\sim$RevoltState}}
+\index{````~RevoltState@{$\sim$RevoltState}!RevoltState@{RevoltState}}
+\doxysubsubsection{\texorpdfstring{$\sim$RevoltState()}{~RevoltState()}}
+{\footnotesize\ttfamily Revolt\+State\+::$\sim$\+Revolt\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classRevoltState}{Revolt\+State}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRevoltState_a07086c1b8293b02c4cd28c1feaf884aa}\label{classRevoltState_a07086c1b8293b02c4cd28c1feaf884aa}} 
+\index{RevoltState@{RevoltState}!clone@{clone}}
+\index{clone@{clone}!RevoltState@{RevoltState}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ Revolt\+State\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clones the current state, creating a new instance with the same properties. 
+
+Creates a clone of the current \mbox{\hyperlink{classRevoltState}{Revolt\+State}}.
+
+\begin{DoxyReturn}{Returns}
+NPCState$\ast$ A pointer to the cloned \mbox{\hyperlink{classRevoltState}{Revolt\+State}} object.
+
+NPCState$\ast$ A pointer to a new \mbox{\hyperlink{classRevoltState}{Revolt\+State}} object with the same properties. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCState_a2a50964882d982c937f166ec31882c5a}{NPCState}}.
+
+\mbox{\Hypertarget{classRevoltState_a0f90c2eb23eb25ba16c188b86663d88a}\label{classRevoltState_a0f90c2eb23eb25ba16c188b86663d88a}} 
+\index{RevoltState@{RevoltState}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!RevoltState@{RevoltState}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily std\+::string Revolt\+State\+::get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the name of this state. 
+
+Returns the name of this state.
+
+\begin{DoxyReturn}{Returns}
+std\+::string The name of the state, typically \char`\"{}\+Revolt\char`\"{}.
+
+std\+::string The state name, \char`\"{}\+Revolt\+State\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCState_afc1b8c7e3747024d0bbb3ded0a4a7d56}{NPCState}}.
+
+\mbox{\Hypertarget{classRevoltState_acbad174f543875c807178a9856258502}\label{classRevoltState_acbad174f543875c807178a9856258502}} 
+\index{RevoltState@{RevoltState}!handle@{handle}}
+\index{handle@{handle}!RevoltState@{RevoltState}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Revolt\+State\+::handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes actions specific to the revolt state. 
+
+Executes the handling logic for the revolt state.
+
+This method defines what happens when NPCs are in revolt, potentially affecting the city’s operations and resources.
+
+This function calculates the chance of a revolt occurring based on the number of NPCs in the revolt state. If a revolt occurs, it reduces the city\textquotesingle{}s production rate by a factor based on the number of revolting NPCs, up to a maximum limit. 
+
+Implements \mbox{\hyperlink{classNPCState_ae26888ff3d2981261c9f3e937600c762}{NPCState}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{RevoltState_8h}{Revolt\+State.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{RevoltState_8cpp}{Revolt\+State.\+cpp}}\end{DoxyCompactItemize}

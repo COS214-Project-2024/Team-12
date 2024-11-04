@@ -1,0 +1,295 @@
+\hypertarget{classLandMark}{}\doxysection{Land\+Mark Class Reference}
+\label{classLandMark}\index{LandMark@{LandMark}}
+
+
+Represents a landmark within the city.  
+
+
+
+
+{\ttfamily \#include $<$Land\+Mark.\+h$>$}
+
+
+
+Inheritance diagram for Land\+Mark\+:
+% FIG 0
+
+
+Collaboration diagram for Land\+Mark\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLandMark_a5c52e12a5a33278dc2c9e60dad3145eb}{Land\+Mark}} ()=default
+\item 
+\mbox{\hyperlink{classLandMark_aac6a838f5dc96651dbda10ab628cf766}{Land\+Mark}} (const std\+::string \&type, int capacity, double \mbox{\hyperlink{classLandMark_a6d9b52dbf50f52e9f74a36432e521712}{price}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classLandMark}{Land\+Mark}} with specified parameters. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLandMark_a8a6bc2e43611b75aa62769f196babc30}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the status of the landmark. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classLandMark_a1bcf6c815a8aa2325dd243eda6f16414}{get\+Price}} () const
+\begin{DoxyCompactList}\small\item\em Gets the price of the landmark. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLandMark_affaa4753ae912ee46ff23f45a1ddad33}{get\+Utility\+Coverage}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of utilities connected to the landmark. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandMark_ab790b7b9b85ab005e15b5e7b484247e2}{has\+Utilities}} () const
+\begin{DoxyCompactList}\small\item\em Checks if all utilities are connected. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classLandMark_a1101a3f9949ec928fce30b4dadfedb87}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the building type of the landmark. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandMark_a8dfc14106a45c906e36000d98ac65213}{accept}} (\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$TC)
+\begin{DoxyCompactList}\small\item\em Accepts a tax collector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classLandMark_aad621ec13b47fea2762cea3a50527fa2}{land\+Mark\+Type}}
+\begin{DoxyCompactList}\small\item\em The type of landmark. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLandMark_a800980d35a2e94102a4a8678cacb7de4}{visitor\+Capacity}}
+\begin{DoxyCompactList}\small\item\em The maximum number of visitors the landmark can accommodate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classLandMark_a6d9b52dbf50f52e9f74a36432e521712}{price}}
+\begin{DoxyCompactList}\small\item\em The price associated with the landmark. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classLandMark_a7290581dfc78b10d3de83e47353ada21}{water\+Supply}}
+\begin{DoxyCompactList}\small\item\em Water utility connection. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classLandMark_ae1fc06e86728742ed150627fdaec3246}{power\+Supply}}
+\begin{DoxyCompactList}\small\item\em Power utility connection. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classLandMark_a58fa2f62d106d87390759729e3a2b231}{waste\+Management}}
+\begin{DoxyCompactList}\small\item\em Waste management utility connection. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classLandMark_a8167f688368a4be5170b4260e1ab1585}{sewage\+Management}}
+\begin{DoxyCompactList}\small\item\em Sewage management utility connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a landmark within the city. 
+
+This class inherits from \mbox{\hyperlink{classCityComponent}{City\+Component}} and provides functionality specific to landmarks, including utility connections and visitor capacity. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLandMark_a5c52e12a5a33278dc2c9e60dad3145eb}\label{classLandMark_a5c52e12a5a33278dc2c9e60dad3145eb}} 
+\index{LandMark@{LandMark}!LandMark@{LandMark}}
+\index{LandMark@{LandMark}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{LandMark()}{LandMark()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Land\+Mark\+::\+Land\+Mark (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classLandMark_aac6a838f5dc96651dbda10ab628cf766}\label{classLandMark_aac6a838f5dc96651dbda10ab628cf766}} 
+\index{LandMark@{LandMark}!LandMark@{LandMark}}
+\index{LandMark@{LandMark}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{LandMark()}{LandMark()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Land\+Mark\+::\+Land\+Mark (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type,  }\item[{int}]{capacity,  }\item[{double}]{price,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classLandMark}{Land\+Mark}} with specified parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the landmark. \\
+\hline
+{\em capacity} & The visitor capacity of the landmark. \\
+\hline
+{\em price} & The price of the landmark. \\
+\hline
+{\em water} & A shared pointer to the water utility. \\
+\hline
+{\em power} & A shared pointer to the power utility. \\
+\hline
+{\em waste} & A shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage management utility.\\
+\hline
+{\em type} & The type of the landmark. \\
+\hline
+{\em capacity} & The visitor capacity of the landmark. \\
+\hline
+{\em price} & The price associated with the landmark. \\
+\hline
+{\em water} & A shared pointer to the water utility. \\
+\hline
+{\em power} & A shared pointer to the power utility. \\
+\hline
+{\em waste} & A shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage management utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLandMark_a8dfc14106a45c906e36000d98ac65213}\label{classLandMark_a8dfc14106a45c906e36000d98ac65213}} 
+\index{LandMark@{LandMark}!accept@{accept}}
+\index{accept@{accept}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Land\+Mark\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$}]{TC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Accepts a tax collector. 
+
+This method can be overridden by derived classes to implement specific tax collection behavior.
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & Pointer to the tax collector. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}{City\+Component}}.
+
+\mbox{\Hypertarget{classLandMark_a8a6bc2e43611b75aa62769f196babc30}\label{classLandMark_a8a6bc2e43611b75aa62769f196babc30}} 
+\index{LandMark@{LandMark}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Land\+Mark\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the status of the landmark. 
+
+This method overrides the display\+Status method in \mbox{\hyperlink{classCityComponent}{City\+Component}} to provide specific details for the landmark.
+
+This method provides details about the landmark, including its type, visitor capacity, price, and the status of each connected utility. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPark_adc60642002790fdcccc2e1846e29e7e0}{Park}}, \mbox{\hyperlink{classMonument_a995d088a578818a95bb2ae0307ca6e59}{Monument}}, and \mbox{\hyperlink{classCulturalCenter_a8571cfd46c8bfda933a44e564882e59c}{Cultural\+Center}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classLandMark_a1101a3f9949ec928fce30b4dadfedb87}\label{classLandMark_a1101a3f9949ec928fce30b4dadfedb87}} 
+\index{LandMark@{LandMark}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Land\+Mark\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the building type of the landmark. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPark_a70c431ec29b0bd76ae762bd1a1d60e59}{Park}}, and \mbox{\hyperlink{classMonument_a926b800a6fae012397509674d30af10d}{Monument}}.
+
+\mbox{\Hypertarget{classLandMark_a1bcf6c815a8aa2325dd243eda6f16414}\label{classLandMark_a1bcf6c815a8aa2325dd243eda6f16414}} 
+\index{LandMark@{LandMark}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily double Land\+Mark\+::get\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the price of the landmark. 
+
+\begin{DoxyReturn}{Returns}
+The price of the landmark. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLandMark_affaa4753ae912ee46ff23f45a1ddad33}\label{classLandMark_affaa4753ae912ee46ff23f45a1ddad33}} 
+\index{LandMark@{LandMark}!getUtilityCoverage@{getUtilityCoverage}}
+\index{getUtilityCoverage@{getUtilityCoverage}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{getUtilityCoverage()}{getUtilityCoverage()}}
+{\footnotesize\ttfamily int Land\+Mark\+::get\+Utility\+Coverage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the number of utilities connected to the landmark. 
+
+\begin{DoxyReturn}{Returns}
+The count of utility connections. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLandMark_ab790b7b9b85ab005e15b5e7b484247e2}\label{classLandMark_ab790b7b9b85ab005e15b5e7b484247e2}} 
+\index{LandMark@{LandMark}!hasUtilities@{hasUtilities}}
+\index{hasUtilities@{hasUtilities}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{hasUtilities()}{hasUtilities()}}
+{\footnotesize\ttfamily bool Land\+Mark\+::has\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if all utilities are connected. 
+
+\begin{DoxyReturn}{Returns}
+True if all utilities are connected, false otherwise. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLandMark_aad621ec13b47fea2762cea3a50527fa2}\label{classLandMark_aad621ec13b47fea2762cea3a50527fa2}} 
+\index{LandMark@{LandMark}!landMarkType@{landMarkType}}
+\index{landMarkType@{landMarkType}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{landMarkType}{landMarkType}}
+{\footnotesize\ttfamily std\+::string Land\+Mark\+::land\+Mark\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The type of landmark. 
+
+\mbox{\Hypertarget{classLandMark_ae1fc06e86728742ed150627fdaec3246}\label{classLandMark_ae1fc06e86728742ed150627fdaec3246}} 
+\index{LandMark@{LandMark}!powerSupply@{powerSupply}}
+\index{powerSupply@{powerSupply}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{powerSupply}{powerSupply}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Land\+Mark\+::power\+Supply\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Power utility connection. 
+
+\mbox{\Hypertarget{classLandMark_a6d9b52dbf50f52e9f74a36432e521712}\label{classLandMark_a6d9b52dbf50f52e9f74a36432e521712}} 
+\index{LandMark@{LandMark}!price@{price}}
+\index{price@{price}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily double Land\+Mark\+::price\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The price associated with the landmark. 
+
+\mbox{\Hypertarget{classLandMark_a8167f688368a4be5170b4260e1ab1585}\label{classLandMark_a8167f688368a4be5170b4260e1ab1585}} 
+\index{LandMark@{LandMark}!sewageManagement@{sewageManagement}}
+\index{sewageManagement@{sewageManagement}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{sewageManagement}{sewageManagement}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Land\+Mark\+::sewage\+Management\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sewage management utility connection. 
+
+\mbox{\Hypertarget{classLandMark_a800980d35a2e94102a4a8678cacb7de4}\label{classLandMark_a800980d35a2e94102a4a8678cacb7de4}} 
+\index{LandMark@{LandMark}!visitorCapacity@{visitorCapacity}}
+\index{visitorCapacity@{visitorCapacity}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{visitorCapacity}{visitorCapacity}}
+{\footnotesize\ttfamily int Land\+Mark\+::visitor\+Capacity\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The maximum number of visitors the landmark can accommodate. 
+
+\mbox{\Hypertarget{classLandMark_a58fa2f62d106d87390759729e3a2b231}\label{classLandMark_a58fa2f62d106d87390759729e3a2b231}} 
+\index{LandMark@{LandMark}!wasteManagement@{wasteManagement}}
+\index{wasteManagement@{wasteManagement}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{wasteManagement}{wasteManagement}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Land\+Mark\+::waste\+Management\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Waste management utility connection. 
+
+\mbox{\Hypertarget{classLandMark_a7290581dfc78b10d3de83e47353ada21}\label{classLandMark_a7290581dfc78b10d3de83e47353ada21}} 
+\index{LandMark@{LandMark}!waterSupply@{waterSupply}}
+\index{waterSupply@{waterSupply}!LandMark@{LandMark}}
+\doxysubsubsection{\texorpdfstring{waterSupply}{waterSupply}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Land\+Mark\+::water\+Supply\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Water utility connection. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{LandMark_8h}{Land\+Mark.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{LandMark_8cpp}{Land\+Mark.\+cpp}}\end{DoxyCompactItemize}

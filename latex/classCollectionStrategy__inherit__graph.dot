@@ -1,0 +1,13 @@
+digraph "CollectionStrategy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{CollectionStrategy\n||+ ~CollectionStrategy()\l+ collect()\l+ ~CollectionStrategy()\l+ collect()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Base class for collection strategies in the NPC system."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{FastCollectionStrategy\n||+ collect()\l+ collect()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFastCollectionStrategy.html",tooltip="Collection strategy for fast collection rate."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{ModerateCollectionStrategy\n||+ collect()\l+ collect()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classModerateCollectionStrategy.html",tooltip="Collection strategy for moderate collection rate."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node4 [label="{SlowCollectionStrategy\n||+ collect()\l+ collect()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSlowCollectionStrategy.html",tooltip="Collection strategy for slow collection rate."];
+}

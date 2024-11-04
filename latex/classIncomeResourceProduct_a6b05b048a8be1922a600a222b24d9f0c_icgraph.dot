@@ -1,0 +1,16 @@
+digraph "IncomeResourceProduct::getQuantity"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="IncomeResourceProduct\l::getQuantity",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Gets the current quantity of the resource."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Coal::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCoal.html#abc54d2541a553dd47f02f850b24c5553",tooltip="Displays the status of the coal resource."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Diamonds::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDiamonds.html#aeaa39c0a314032f7b50cb08f2571371e",tooltip="Displays the current status of the diamond resource."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Gold::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGold.html#ae68b954c6fb437dd8749bde90e9c307d",tooltip="Displays the status of the gold resource."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Oil::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOil.html#a8512f7fabf633947cd11f46170a34cb7",tooltip="Displays the current status of the Oil resource."];
+}

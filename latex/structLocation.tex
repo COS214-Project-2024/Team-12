@@ -1,0 +1,190 @@
+\hypertarget{structLocation}{}\doxysection{Location Struct Reference}
+\label{structLocation}\index{Location@{Location}}
+
+
+Represents a 2D coordinate location on a grid.  
+
+
+
+
+{\ttfamily \#include $<$Location.\+h$>$}
+
+
+
+Collaboration diagram for Location\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structLocation_a87790c14997fd8cdd12080c78c9794bb}{Location}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializing location to (0, 0). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLocation_ac038ac4e62ee919c1a1b35453b654077}{Location}} (int x\+Coord, int y\+Coord)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor to initialize location with specific coordinates. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structLocation_a0c99c1e65cc6607121da4abdb4894b74}{operator==}} (const \mbox{\hyperlink{structLocation}{Location}} \&other) const
+\begin{DoxyCompactList}\small\item\em Equality operator to compare two locations. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structLocation_a590e07e7851fc6c6eae29822a3fbed6f}{operator!=}} (const \mbox{\hyperlink{structLocation}{Location}} \&other) const
+\begin{DoxyCompactList}\small\item\em Inequality operator to compare two locations. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structLocation_af22acefb6d1dd7de7482915b1c2eae5d}{operator$<$}} (const \mbox{\hyperlink{structLocation}{Location}} \&other) const
+\begin{DoxyCompactList}\small\item\em Less-\/than operator to order locations, primarily for use in sorted containers. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structLocation_aac8bfecbc9116118ddd80678f6bc1e96}{distance\+To}} (const \mbox{\hyperlink{structLocation}{Location}} \&other) const
+\begin{DoxyCompactList}\small\item\em Calculates the Euclidean distance to another location. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structLocation_a480c6b2846e6bf17aefcde61a00795fa}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the location is valid (non-\/negative coordinates). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structLocation_aea76eebc474e30c04c53e5f03c6749e3}{x}}
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the location. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structLocation_a307809776b981810147af56d9304e273}{y}}
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a 2D coordinate location on a grid. 
+
+The {\ttfamily \mbox{\hyperlink{structLocation}{Location}}} struct stores x and y coordinates, providing utilities to compare, validate, and calculate the distance between locations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structLocation_a87790c14997fd8cdd12080c78c9794bb}\label{structLocation_a87790c14997fd8cdd12080c78c9794bb}} 
+\index{Location@{Location}!Location@{Location}}
+\index{Location@{Location}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{Location()}{Location()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Location\+::\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor initializing location to (0, 0). 
+
+\mbox{\Hypertarget{structLocation_ac038ac4e62ee919c1a1b35453b654077}\label{structLocation_ac038ac4e62ee919c1a1b35453b654077}} 
+\index{Location@{Location}!Location@{Location}}
+\index{Location@{Location}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{Location()}{Location()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Location\+::\+Location (\begin{DoxyParamCaption}\item[{int}]{x\+Coord,  }\item[{int}]{y\+Coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Parameterized constructor to initialize location with specific coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Coord} & The x-\/coordinate. \\
+\hline
+{\em y\+Coord} & The y-\/coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structLocation_aac8bfecbc9116118ddd80678f6bc1e96}\label{structLocation_aac8bfecbc9116118ddd80678f6bc1e96}} 
+\index{Location@{Location}!distanceTo@{distanceTo}}
+\index{distanceTo@{distanceTo}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{distanceTo()}{distanceTo()}}
+{\footnotesize\ttfamily double Location\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the Euclidean distance to another location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance to the other location. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structLocation_a480c6b2846e6bf17aefcde61a00795fa}\label{structLocation_a480c6b2846e6bf17aefcde61a00795fa}} 
+\index{Location@{Location}!isValid@{isValid}}
+\index{isValid@{isValid}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Location\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the location is valid (non-\/negative coordinates). 
+
+\begin{DoxyReturn}{Returns}
+True if the location has non-\/negative x and y values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structLocation_a590e07e7851fc6c6eae29822a3fbed6f}\label{structLocation_a590e07e7851fc6c6eae29822a3fbed6f}} 
+\index{Location@{Location}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Location\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inequality operator to compare two locations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another location to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the locations have different coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structLocation_af22acefb6d1dd7de7482915b1c2eae5d}\label{structLocation_af22acefb6d1dd7de7482915b1c2eae5d}} 
+\index{Location@{Location}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Location\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Less-\/than operator to order locations, primarily for use in sorted containers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another location to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this location is less than the other based on x and y coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structLocation_a0c99c1e65cc6607121da4abdb4894b74}\label{structLocation_a0c99c1e65cc6607121da4abdb4894b74}} 
+\index{Location@{Location}!operator==@{operator==}}
+\index{operator==@{operator==}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Location\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Equality operator to compare two locations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another location to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the locations have the same coordinates. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLocation_aea76eebc474e30c04c53e5f03c6749e3}\label{structLocation_aea76eebc474e30c04c53e5f03c6749e3}} 
+\index{Location@{Location}!x@{x}}
+\index{x@{x}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Location\+::x}
+
+
+
+X-\/coordinate of the location. 
+
+\mbox{\Hypertarget{structLocation_a307809776b981810147af56d9304e273}\label{structLocation_a307809776b981810147af56d9304e273}} 
+\index{Location@{Location}!y@{y}}
+\index{y@{y}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int Location\+::y}
+
+
+
+Y-\/coordinate of the location. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Location_8h}{Location.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,140 @@
+\hypertarget{classGameState}{}\doxysection{Game\+State Class Reference}
+\label{classGameState}\index{GameState@{GameState}}
+
+
+Manages the game state and command history.  
+
+
+
+
+{\ttfamily \#include $<$Game\+State.\+h$>$}
+
+
+
+Collaboration diagram for Game\+State\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}} $>$ \mbox{\hyperlink{classGameState_a333a164f514d63a169fac893ab2ee664}{create\+Memento}} () const
+\begin{DoxyCompactList}\small\item\em Creates a memento that captures the current game state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameState_a32ac71fc3feb75e71b93a3a892cf2878}{restore\+From\+Memento}} (const \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}} \&memento)
+\begin{DoxyCompactList}\small\item\em Restores the game state from a given memento. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameState_abf6e9d545191796a9a805c304722d230}{execute\+Command}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommand}{Command}} $>$ command)
+\begin{DoxyCompactList}\small\item\em Executes a command and adds it to the command history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameState_a4fd55f309ab32a0d95990991fcca1da5}{undo}} ()
+\begin{DoxyCompactList}\small\item\em Undoes the last executed command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameState_ac708211f780aa0e3a08457a01ba5a31f}{redo}} ()
+\begin{DoxyCompactList}\small\item\em Redoes the last undone command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommand}{Command}} $>$ $>$ \mbox{\hyperlink{classGameState_a5f1e58e79162c3545326bf42a9522dee}{command\+History}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classGameState_a5d2a2bb77cc77e8f8a09359c0b7b2188}{current\+Command\+Index}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the game state and command history. 
+
+The \mbox{\hyperlink{classGameState}{Game\+State}} class maintains a history of executed commands and allows undoing and redoing of commands. It also supports saving and restoring the game state using mementos. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameState_a333a164f514d63a169fac893ab2ee664}\label{classGameState_a333a164f514d63a169fac893ab2ee664}} 
+\index{GameState@{GameState}!createMemento@{createMemento}}
+\index{createMemento@{createMemento}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{createMemento()}{createMemento()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}}$>$ Game\+State\+::create\+Memento (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a memento that captures the current game state. 
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Game\+State\+Memento$>$ A unique pointer to the created memento, containing the current command history and index. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classGameState_abf6e9d545191796a9a805c304722d230}\label{classGameState_abf6e9d545191796a9a805c304722d230}} 
+\index{GameState@{GameState}!executeCommand@{executeCommand}}
+\index{executeCommand@{executeCommand}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{executeCommand()}{executeCommand()}}
+{\footnotesize\ttfamily void Game\+State\+::execute\+Command (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommand}{Command}} $>$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Executes a command and adds it to the command history. 
+
+This method clears any redo history when a new command is executed, then executes the command and adds it to the history.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & A unique pointer to the command to execute. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classGameState_ac708211f780aa0e3a08457a01ba5a31f}\label{classGameState_ac708211f780aa0e3a08457a01ba5a31f}} 
+\index{GameState@{GameState}!redo@{redo}}
+\index{redo@{redo}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Game\+State\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Redoes the last undone command. 
+
+If there is a command to redo, it executes the command at the current command index and increments the index. Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classGameState_a32ac71fc3feb75e71b93a3a892cf2878}\label{classGameState_a32ac71fc3feb75e71b93a3a892cf2878}} 
+\index{GameState@{GameState}!restoreFromMemento@{restoreFromMemento}}
+\index{restoreFromMemento@{restoreFromMemento}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{restoreFromMemento()}{restoreFromMemento()}}
+{\footnotesize\ttfamily void Game\+State\+::restore\+From\+Memento (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}} \&}]{memento }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Restores the game state from a given memento. 
+
+This function clears the existing command history and restores it from the specified memento, including the current command index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em memento} & The memento to restore the game state from. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classGameState_a4fd55f309ab32a0d95990991fcca1da5}\label{classGameState_a4fd55f309ab32a0d95990991fcca1da5}} 
+\index{GameState@{GameState}!undo@{undo}}
+\index{undo@{undo}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Game\+State\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Undoes the last executed command. 
+
+If there is a command to undo, it decrements the current command index and invokes the undo operation on the last command. Here is the caller graph for this function\+:
+% FIG 5
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGameState_a5f1e58e79162c3545326bf42a9522dee}\label{classGameState_a5f1e58e79162c3545326bf42a9522dee}} 
+\index{GameState@{GameState}!commandHistory@{commandHistory}}
+\index{commandHistory@{commandHistory}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{commandHistory}{commandHistory}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classCommand}{Command}}$>$ $>$ Game\+State\+::command\+History\hspace{0.3cm}{\ttfamily [private]}}
+
+A history of executed commands. \mbox{\Hypertarget{classGameState_a5d2a2bb77cc77e8f8a09359c0b7b2188}\label{classGameState_a5d2a2bb77cc77e8f8a09359c0b7b2188}} 
+\index{GameState@{GameState}!currentCommandIndex@{currentCommandIndex}}
+\index{currentCommandIndex@{currentCommandIndex}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{currentCommandIndex}{currentCommandIndex}}
+{\footnotesize\ttfamily size\+\_\+t Game\+State\+::current\+Command\+Index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+The index of the current command for undo/redo operations. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{GameState_8h}{Game\+State.\+h}}\end{DoxyCompactItemize}

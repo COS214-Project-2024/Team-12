@@ -1,0 +1,429 @@
+\hypertarget{classIndustry}{}\doxysection{Industry Class Reference}
+\label{classIndustry}\index{Industry@{Industry}}
+
+
+Represents an industrial facility in the city.  
+
+
+
+
+{\ttfamily \#include $<$Industry.\+h$>$}
+
+
+
+Inheritance diagram for Industry\+:
+% FIG 0
+
+
+Collaboration diagram for Industry\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIndustry_a0e83c6beafbad26015046bc620cc0d0c}{Industry}} (const std\+::string \&\mbox{\hyperlink{classIndustry_a5ee8e0f0f4af1ce5056532d1cfc30f4e}{name}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}} $>$ primary, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}} $>$ secondary, \mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$\mbox{\hyperlink{classIndustry_a2fad7ff5b5ae98ded81dba7a60c95720}{grid}}, std\+::map$<$ std\+::string, int $>$ \&\mbox{\hyperlink{classIndustry_a451c5556304acbbdbd5fad53987cdfd8}{collected\+Resources}}, int range=1)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classIndustry}{Industry}} object with the specified parameters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndustry_ab20d8e092ef2064d1e2ffea1ddc85dc3}{is\+Resource\+In\+Range}} (const \mbox{\hyperlink{structLocation}{Location}} \&industry\+Loc, const \mbox{\hyperlink{structLocation}{Location}} \&resource\+Loc) const
+\begin{DoxyCompactList}\small\item\em Checks if a resource is within the collection range. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndustry_a9154eb3798bcb2cee676c6424a0ad6ab}{get\+Collection\+Range}} () const
+\begin{DoxyCompactList}\small\item\em Gets the collection range of the industry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{classIndustry_aa17e0e9d6e9a7acd6d5e487ccfccfd80}{find\+Industry\+Location}} () const
+\begin{DoxyCompactList}\small\item\em Finds the location of the industry on the map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndustry_ac85241265742e74b5d7e85ccf53de84f}{show\+Collection\+Range}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc) const
+\begin{DoxyCompactList}\small\item\em Displays the collection range on the map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndustry_af8a58f057bb9be2f8b2d84ed03918904}{process\+Resources}} (int amount, bool is\+Income\+Resource)
+\begin{DoxyCompactList}\small\item\em Processes resources based on the specified amount. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIndustry_a1abb66cdaa6662715af6a2a89beb4b30}{store\+Resources}} (int amount, bool to\+Primary=true)
+\begin{DoxyCompactList}\small\item\em Stores resources in the industry. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIndustry_a0a1718e76a1362c4601b2d058512a5ea}{display\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Displays the status of the industry, including pollution and resources. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classIndustry_adb674d8738a8b51c379f399864fdcd61}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the type of building as a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIndustry_aecf1f0b0145d18ec4cc5b9de29412f41}{accept}} (\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$TC)
+\begin{DoxyCompactList}\small\item\em Accepts a tax collector visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classIndustry_aaa0d162fb37ebbc4930f3e695d002208}{increase\+Pollution}} (int amount)
+\begin{DoxyCompactList}\small\item\em Increases pollution level by a specified amount. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classIndustry_a1167e8f8e01d96518b14adb242dff7ba}{$\sim$\+Industry}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classIndustry}{Industry}} to allow proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classIndustry_a5ee8e0f0f4af1ce5056532d1cfc30f4e}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the industry. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}} $>$ \mbox{\hyperlink{classIndustry_ae506e2add0628a871a21763e0d8ac87f}{primary\+Processor}}
+\begin{DoxyCompactList}\small\item\em Processor for primary resource. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}} $>$ \mbox{\hyperlink{classIndustry_ac8be1b2c856dbad94dc2c9f3cd8348aa}{secondary\+Processor}}
+\begin{DoxyCompactList}\small\item\em Processor for secondary resource. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndustry_ac188737110fe769d01802c160685ec73}{pollution\+Level}}
+\begin{DoxyCompactList}\small\item\em Pollution level caused by the industry. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndustry_afa1ddf2a9ddbf862b07818f64a428589}{collection\+Range}}
+\begin{DoxyCompactList}\small\item\em Range in which the industry can collect resources. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$ \mbox{\hyperlink{classIndustry_a2fad7ff5b5ae98ded81dba7a60c95720}{grid}}
+\begin{DoxyCompactList}\small\item\em Pointer to the map grid for location purposes. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ \mbox{\hyperlink{classIndustry_a6093208b43dde46b6f799cc0f384749c}{income\+Resource}}
+\begin{DoxyCompactList}\small\item\em Income resource for the industry. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ \mbox{\hyperlink{classIndustry_a5a07ec748dea554e7450dcf6ea779c3c}{construction\+Resource}}
+\begin{DoxyCompactList}\small\item\em Construction resource for the industry. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \& \mbox{\hyperlink{classIndustry_a451c5556304acbbdbd5fad53987cdfd8}{collected\+Resources}}
+\begin{DoxyCompactList}\small\item\em Reference to collected resources map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an industrial facility in the city. 
+
+The \mbox{\hyperlink{classIndustry}{Industry}} class inherits from \mbox{\hyperlink{classCityComponent}{City\+Component}} and is responsible for processing resources, managing pollution, and interacting with resources in the vicinity. It supports income and construction resources and integrates with a city map grid. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIndustry_a0e83c6beafbad26015046bc620cc0d0c}\label{classIndustry_a0e83c6beafbad26015046bc620cc0d0c}} 
+\index{Industry@{Industry}!Industry@{Industry}}
+\index{Industry@{Industry}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{Industry()}{Industry()}}
+{\footnotesize\ttfamily Industry\+::\+Industry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}} $>$}]{primary,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}} $>$}]{secondary,  }\item[{\mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$}]{grid,  }\item[{std\+::map$<$ std\+::string, int $>$ \&}]{collected\+Resources,  }\item[{int}]{range = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Constructs an \mbox{\hyperlink{classIndustry}{Industry}} object with the specified parameters. 
+
+Constructs an \mbox{\hyperlink{classIndustry}{Industry}} with specified parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the industry \\
+\hline
+{\em primary} & Primary resource processor \\
+\hline
+{\em secondary} & Secondary resource processor \\
+\hline
+{\em grid} & Pointer to the map grid \\
+\hline
+{\em collected\+Resources} & Map of collected resources \\
+\hline
+{\em range} & Collection range of the industry\\
+\hline
+{\em name} & Name of the industry \\
+\hline
+{\em primary} & Primary resource processor \\
+\hline
+{\em secondary} & Secondary resource processor \\
+\hline
+{\em grid} & Pointer to the map grid \\
+\hline
+{\em collected\+Resources} & Map for tracking collected resources \\
+\hline
+{\em range} & Collection range for the industry \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIndustry_a1167e8f8e01d96518b14adb242dff7ba}\label{classIndustry_a1167e8f8e01d96518b14adb242dff7ba}} 
+\index{Industry@{Industry}!````~Industry@{$\sim$Industry}}
+\index{````~Industry@{$\sim$Industry}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{$\sim$Industry()}{~Industry()}}
+{\footnotesize\ttfamily virtual Industry\+::$\sim$\+Industry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classIndustry}{Industry}} to allow proper cleanup of derived classes. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIndustry_aecf1f0b0145d18ec4cc5b9de29412f41}\label{classIndustry_aecf1f0b0145d18ec4cc5b9de29412f41}} 
+\index{Industry@{Industry}!accept@{accept}}
+\index{accept@{accept}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Industry\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$}]{TC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Accepts a tax collector visitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & Pointer to the tax collector visitor \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}{City\+Component}}.
+
+\mbox{\Hypertarget{classIndustry_a0a1718e76a1362c4601b2d058512a5ea}\label{classIndustry_a0a1718e76a1362c4601b2d058512a5ea}} 
+\index{Industry@{Industry}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Industry\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays the status of the industry, including pollution and resources. 
+
+Displays the status of the industry, including storage and pollution level. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+\mbox{\Hypertarget{classIndustry_aa17e0e9d6e9a7acd6d5e487ccfccfd80}\label{classIndustry_aa17e0e9d6e9a7acd6d5e487ccfccfd80}} 
+\index{Industry@{Industry}!findIndustryLocation@{findIndustryLocation}}
+\index{findIndustryLocation@{findIndustryLocation}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{findIndustryLocation()}{findIndustryLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLocation}{Location}} Industry\+::find\+Industry\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Finds the location of the industry on the map. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structLocation}{Location}} of the industry
+
+\mbox{\hyperlink{structLocation}{Location}} of the industry or (-\/1, -\/1) if not found 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classIndustry_adb674d8738a8b51c379f399864fdcd61}\label{classIndustry_adb674d8738a8b51c379f399864fdcd61}} 
+\index{Industry@{Industry}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Industry\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of building as a string. 
+
+Gets the building type of the industry.
+
+\begin{DoxyReturn}{Returns}
+Type of building as a string
+
+Building type as a string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+\mbox{\Hypertarget{classIndustry_a9154eb3798bcb2cee676c6424a0ad6ab}\label{classIndustry_a9154eb3798bcb2cee676c6424a0ad6ab}} 
+\index{Industry@{Industry}!getCollectionRange@{getCollectionRange}}
+\index{getCollectionRange@{getCollectionRange}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{getCollectionRange()}{getCollectionRange()}}
+{\footnotesize\ttfamily int Industry\+::get\+Collection\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the collection range of the industry. 
+
+\begin{DoxyReturn}{Returns}
+Collection range as an integer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIndustry_aaa0d162fb37ebbc4930f3e695d002208}\label{classIndustry_aaa0d162fb37ebbc4930f3e695d002208}} 
+\index{Industry@{Industry}!increasePollution@{increasePollution}}
+\index{increasePollution@{increasePollution}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{increasePollution()}{increasePollution()}}
+{\footnotesize\ttfamily void Industry\+::increase\+Pollution (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Increases pollution level by a specified amount. 
+
+Increases the pollution level of the industry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount to increase pollution by\\
+\hline
+\end{DoxyParams}
+If pollution exceeds a certain threshold, a warning is displayed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount to increase pollution by \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIndustry_ab20d8e092ef2064d1e2ffea1ddc85dc3}\label{classIndustry_ab20d8e092ef2064d1e2ffea1ddc85dc3}} 
+\index{Industry@{Industry}!isResourceInRange@{isResourceInRange}}
+\index{isResourceInRange@{isResourceInRange}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{isResourceInRange()}{isResourceInRange()}}
+{\footnotesize\ttfamily bool Industry\+::is\+Resource\+In\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{industry\+Loc,  }\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{resource\+Loc }\end{DoxyParamCaption}) const}
+
+
+
+Checks if a resource is within the collection range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em industry\+Loc} & \mbox{\hyperlink{structLocation}{Location}} of the industry \\
+\hline
+{\em resource\+Loc} & \mbox{\hyperlink{structLocation}{Location}} of the resource \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the resource is within range, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIndustry_af8a58f057bb9be2f8b2d84ed03918904}\label{classIndustry_af8a58f057bb9be2f8b2d84ed03918904}} 
+\index{Industry@{Industry}!processResources@{processResources}}
+\index{processResources@{processResources}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{processResources()}{processResources()}}
+{\footnotesize\ttfamily void Industry\+::process\+Resources (\begin{DoxyParamCaption}\item[{int}]{amount,  }\item[{bool}]{is\+Income\+Resource }\end{DoxyParamCaption})}
+
+
+
+Processes resources based on the specified amount. 
+
+Processes a specified amount of resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of resource to process \\
+\hline
+{\em is\+Income\+Resource} & True if processing income resources, false for construction resources\\
+\hline
+\end{DoxyParams}
+If resources are depleted, they are removed from the grid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of resource to process \\
+\hline
+{\em is\+Income\+Resource} & True for income resources, false for construction resources \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classIndustry_ac85241265742e74b5d7e85ccf53de84f}\label{classIndustry_ac85241265742e74b5d7e85ccf53de84f}} 
+\index{Industry@{Industry}!showCollectionRange@{showCollectionRange}}
+\index{showCollectionRange@{showCollectionRange}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{showCollectionRange()}{showCollectionRange()}}
+{\footnotesize\ttfamily void Industry\+::show\+Collection\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc }\end{DoxyParamCaption}) const}
+
+
+
+Displays the collection range on the map. 
+
+Displays the collection range of the industry on the map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & \mbox{\hyperlink{structLocation}{Location}} to display the range from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIndustry_a1abb66cdaa6662715af6a2a89beb4b30}\label{classIndustry_a1abb66cdaa6662715af6a2a89beb4b30}} 
+\index{Industry@{Industry}!storeResources@{storeResources}}
+\index{storeResources@{storeResources}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{storeResources()}{storeResources()}}
+{\footnotesize\ttfamily void Industry\+::store\+Resources (\begin{DoxyParamCaption}\item[{int}]{amount,  }\item[{bool}]{to\+Primary = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stores resources in the industry. 
+
+Stores a specified amount of resources in the specified processor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of resource to store \\
+\hline
+{\em to\+Primary} & True to store in primary processor, false for secondary processor\\
+\hline
+{\em amount} & Amount of resource to store \\
+\hline
+{\em to\+Primary} & True to store in the primary processor, false for secondary \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classIndustry_a451c5556304acbbdbd5fad53987cdfd8}\label{classIndustry_a451c5556304acbbdbd5fad53987cdfd8}} 
+\index{Industry@{Industry}!collectedResources@{collectedResources}}
+\index{collectedResources@{collectedResources}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{collectedResources}{collectedResources}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$\& Industry\+::collected\+Resources\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reference to collected resources map. 
+
+\mbox{\Hypertarget{classIndustry_afa1ddf2a9ddbf862b07818f64a428589}\label{classIndustry_afa1ddf2a9ddbf862b07818f64a428589}} 
+\index{Industry@{Industry}!collectionRange@{collectionRange}}
+\index{collectionRange@{collectionRange}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{collectionRange}{collectionRange}}
+{\footnotesize\ttfamily int Industry\+::collection\+Range\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Range in which the industry can collect resources. 
+
+\mbox{\Hypertarget{classIndustry_a5a07ec748dea554e7450dcf6ea779c3c}\label{classIndustry_a5a07ec748dea554e7450dcf6ea779c3c}} 
+\index{Industry@{Industry}!constructionResource@{constructionResource}}
+\index{constructionResource@{constructionResource}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{constructionResource}{constructionResource}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}$>$ Industry\+::construction\+Resource\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Construction resource for the industry. 
+
+\mbox{\Hypertarget{classIndustry_a2fad7ff5b5ae98ded81dba7a60c95720}\label{classIndustry_a2fad7ff5b5ae98ded81dba7a60c95720}} 
+\index{Industry@{Industry}!grid@{grid}}
+\index{grid@{grid}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{grid}{grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMapGrid}{Map\+Grid}}$\ast$ Industry\+::grid\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to the map grid for location purposes. 
+
+\mbox{\Hypertarget{classIndustry_a6093208b43dde46b6f799cc0f384749c}\label{classIndustry_a6093208b43dde46b6f799cc0f384749c}} 
+\index{Industry@{Industry}!incomeResource@{incomeResource}}
+\index{incomeResource@{incomeResource}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{incomeResource}{incomeResource}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}$>$ Industry\+::income\+Resource\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Income resource for the industry. 
+
+\mbox{\Hypertarget{classIndustry_a5ee8e0f0f4af1ce5056532d1cfc30f4e}\label{classIndustry_a5ee8e0f0f4af1ce5056532d1cfc30f4e}} 
+\index{Industry@{Industry}!name@{name}}
+\index{name@{name}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Industry\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Name of the industry. 
+
+\mbox{\Hypertarget{classIndustry_ac188737110fe769d01802c160685ec73}\label{classIndustry_ac188737110fe769d01802c160685ec73}} 
+\index{Industry@{Industry}!pollutionLevel@{pollutionLevel}}
+\index{pollutionLevel@{pollutionLevel}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{pollutionLevel}{pollutionLevel}}
+{\footnotesize\ttfamily int Industry\+::pollution\+Level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pollution level caused by the industry. 
+
+\mbox{\Hypertarget{classIndustry_ae506e2add0628a871a21763e0d8ac87f}\label{classIndustry_ae506e2add0628a871a21763e0d8ac87f}} 
+\index{Industry@{Industry}!primaryProcessor@{primaryProcessor}}
+\index{primaryProcessor@{primaryProcessor}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{primaryProcessor}{primaryProcessor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}}$>$ Industry\+::primary\+Processor\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Processor for primary resource. 
+
+\mbox{\Hypertarget{classIndustry_ac8be1b2c856dbad94dc2c9f3cd8348aa}\label{classIndustry_ac8be1b2c856dbad94dc2c9f3cd8348aa}} 
+\index{Industry@{Industry}!secondaryProcessor@{secondaryProcessor}}
+\index{secondaryProcessor@{secondaryProcessor}!Industry@{Industry}}
+\doxysubsubsection{\texorpdfstring{secondaryProcessor}{secondaryProcessor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classResourceProcessor}{Resource\+Processor}}$>$ Industry\+::secondary\+Processor\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Processor for secondary resource. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Industry_8h}{Industry.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Industry_8cpp}{Industry.\+cpp}}\end{DoxyCompactItemize}

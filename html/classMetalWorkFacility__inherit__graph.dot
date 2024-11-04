@@ -1,0 +1,11 @@
+digraph "MetalWorkFacility"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{MetalWorkFacility\n|+ METAL_WORK_RANGE\l|+ MetalWorkFacility()\l+ processGold()\l+ processSteel()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A concrete implementation of an Industry for processing metal resources."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{Industry\n|# name\l# primaryProcessor\l# secondaryProcessor\l# pollutionLevel\l# collectionRange\l# grid\l# incomeResource\l# constructionResource\l# collectedResources\l|+ Industry()\l+ isResourceInRange()\l+ getCollectionRange()\l+ findIndustryLocation()\l+ showCollectionRange()\l+ processResources()\l+ storeResources()\l+ displayStatus()\l+ getBuildingType()\l+ accept()\l# increasePollution()\l# ~Industry()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIndustry.html",tooltip="Represents an industrial facility in the city."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{CityComponent\n|- observers\l- location\l|+ add()\l+ remove()\l+ displayStatus()\l+ ~CityComponent()\l+ addNpc()\l+ removeNpc()\l+ notify()\l+ getBuildingType()\l+ accept()\l+ setLocation()\l+ setLocation()\l+ getLocation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html",tooltip="Abstract base class representing a component of a city."];
+}

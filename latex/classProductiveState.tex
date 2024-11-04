@@ -1,0 +1,118 @@
+\hypertarget{classProductiveState}{}\doxysection{Productive\+State Class Reference}
+\label{classProductiveState}\index{ProductiveState@{ProductiveState}}
+
+
+Represents the productive state of NPCs.  
+
+
+
+
+{\ttfamily \#include $<$Productive\+State.\+h$>$}
+
+
+
+Inheritance diagram for Productive\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Productive\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classProductiveState_adab42ecd6fb4772c38dd408a9f6c5cce}{handle}} () override
+\begin{DoxyCompactList}\small\item\em Handles the logic for productivity boosts. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classProductiveState_a638abf289aa69b32a329cf395238ea31}{get\+State\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the productive state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ \mbox{\hyperlink{classProductiveState_a7273420c9d50d54260f30a8f1299fa8b}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clones the current \mbox{\hyperlink{classProductiveState}{Productive\+State}} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classProductiveState_a9d99e2a60b56132e1b21e234dce75f13}{$\sim$\+Productive\+State}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classProductiveState}{Productive\+State}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the productive state of NPCs. 
+
+This class handles the logic for NPCs that are in a productive state, including the calculation of productivity boosts based on the number of productive NPCs. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProductiveState_a9d99e2a60b56132e1b21e234dce75f13}\label{classProductiveState_a9d99e2a60b56132e1b21e234dce75f13}} 
+\index{ProductiveState@{ProductiveState}!````~ProductiveState@{$\sim$ProductiveState}}
+\index{````~ProductiveState@{$\sim$ProductiveState}!ProductiveState@{ProductiveState}}
+\doxysubsubsection{\texorpdfstring{$\sim$ProductiveState()}{~ProductiveState()}}
+{\footnotesize\ttfamily Productive\+State\+::$\sim$\+Productive\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classProductiveState}{Productive\+State}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classProductiveState_a7273420c9d50d54260f30a8f1299fa8b}\label{classProductiveState_a7273420c9d50d54260f30a8f1299fa8b}} 
+\index{ProductiveState@{ProductiveState}!clone@{clone}}
+\index{clone@{clone}!ProductiveState@{ProductiveState}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ Productive\+State\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clones the current \mbox{\hyperlink{classProductiveState}{Productive\+State}} instance. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created \mbox{\hyperlink{classProductiveState}{Productive\+State}} instance.
+\end{DoxyReturn}
+This method creates a new instance of \mbox{\hyperlink{classProductiveState}{Productive\+State}} that is a copy of the current instance.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created \mbox{\hyperlink{classProductiveState}{Productive\+State}} instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCState_a2a50964882d982c937f166ec31882c5a}{NPCState}}.
+
+\mbox{\Hypertarget{classProductiveState_a638abf289aa69b32a329cf395238ea31}\label{classProductiveState_a638abf289aa69b32a329cf395238ea31}} 
+\index{ProductiveState@{ProductiveState}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!ProductiveState@{ProductiveState}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily std\+::string Productive\+State\+::get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the name of the productive state. 
+
+Retrieves the name of the state.
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCState_afc1b8c7e3747024d0bbb3ded0a4a7d56}{NPCState}}.
+
+\mbox{\Hypertarget{classProductiveState_adab42ecd6fb4772c38dd408a9f6c5cce}\label{classProductiveState_adab42ecd6fb4772c38dd408a9f6c5cce}} 
+\index{ProductiveState@{ProductiveState}!handle@{handle}}
+\index{handle@{handle}!ProductiveState@{ProductiveState}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Productive\+State\+::handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles the logic for productivity boosts. 
+
+Handles the logic for the productive state of NPCs.
+
+This method calculates the chance of a productivity boost and applies it to the production rate in the \mbox{\hyperlink{classGovernment}{Government}} class if applicable.
+
+This method calculates the chance of a productivity boost based on the number of NPCs in the productive state. If the productivity boost occurs, it increases the production rate in the \mbox{\hyperlink{classGovernment}{Government}} class. 
+
+Implements \mbox{\hyperlink{classNPCState_ae26888ff3d2981261c9f3e937600c762}{NPCState}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ProductiveState_8h}{Productive\+State.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ProductiveState_8cpp}{Productive\+State.\+cpp}}\end{DoxyCompactItemize}

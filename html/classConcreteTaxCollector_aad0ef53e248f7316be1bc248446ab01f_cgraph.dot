@@ -1,0 +1,19 @@
+digraph "ConcreteTaxCollector::visit"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ConcreteTaxCollector\l::visit",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Collects tax from a commercial building."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Government::addMoney",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a1d05771ae8b221d76ecd5ba315b2473e",tooltip="Adds a specified amount of money to the government funds."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Government::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a18e3da6a1d6cae38f6eea1d50fe77288",tooltip="Retrieves the singleton instance of the Government class."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CommercialBuilding\l::getPrice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommercialBuilding.html#a6df46c952ff8aa4e2f14f81ca9eec50e",tooltip="Gets the price of the building."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CommercialBuilding\l::setTaxPaid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommercialBuilding.html#a4a49231fd62aaf457696ef7ee6edbcf3",tooltip="Sets the tax-paid status for the building."];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Government::increaseEmploymentRate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a37a62c0a07cabbff4f38fbdecc1a8b16",tooltip="Increases the employment rate by a specified amount."];
+}

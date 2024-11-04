@@ -1,0 +1,14 @@
+digraph "taxCollector::visit"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="taxCollector::visit",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Visit a residential building to collect taxes."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="CommercialBuilding\l::accept",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommercialBuilding.html#a9a93ba3f406d9ffda72692df6d5a8cdb",tooltip="Accepts a tax collector to process tax collection for the building."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ResidentialBuilding\l::accept",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classResidentialBuilding.html#adee553dc461abe2ba3e2f50613854522",tooltip="Accepts a taxCollector visitor to collect taxes from this building."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ZoneComposite::accept",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classZoneComposite.html#a610264e3ceac427c3628e68a6808a1ab",tooltip="Accepts a taxCollector visitor to apply tax operations within the zone."];
+}

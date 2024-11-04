@@ -1,0 +1,11 @@
+digraph "ParkFactory"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ParkFactory\n||+ createLandMark()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Factory class for creating Park objects."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{LandMark\n|# landMarkType\l# visitorCapacity\l# price\l# waterSupply\l# powerSupply\l# wasteManagement\l# sewageManagement\l|+ LandMark()\l+ LandMark()\l+ displayStatus()\l+ getPrice()\l+ getUtilityCoverage()\l+ hasUtilities()\l+ getBuildingType()\l+ accept()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classLandMark.html",tooltip="Represents a landmark within the city."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{CityComponent\n|- observers\l- location\l|+ add()\l+ remove()\l+ displayStatus()\l+ ~CityComponent()\l+ addNpc()\l+ removeNpc()\l+ notify()\l+ getBuildingType()\l+ accept()\l+ setLocation()\l+ setLocation()\l+ getLocation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html",tooltip="Abstract base class representing a component of a city."];
+}

@@ -1,0 +1,18 @@
+digraph "NPCManager::incrementCount"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="NPCManager::incrementCount",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Increments the count for a given NPC state."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ReactingNPCS::changeState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#a76e8ef118165123d68fffa6ffc9bad90",tooltip="Changes the current state of the NPC."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ReactingNPCS::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#afc206d145750358e98204a9135b05276",tooltip="Updates the NPC's state based on observed changes."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ReactingNPCS::ReactingNPCS",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#a9eb11a607b24c4e834d110e4ceea8c5f",tooltip="Default constructor initializing the NPC in a neutral state."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ReactingNPCS::clone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#afa5a0fce89da50127b5b648ef77af00c",tooltip="Clones the NPC, creating a copy with the same state."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CityComponent::addNpc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html#a9529b910e491c49a6ffa19db4e92b81c",tooltip="Adds an NPC observer to the component."];
+}

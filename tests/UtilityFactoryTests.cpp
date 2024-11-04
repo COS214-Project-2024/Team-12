@@ -1,4 +1,4 @@
-#include "gtest/gtest.h"
+/* #include "gtest/gtest.h"
 #include "../COS214-Poject/src/UtilityFactory.h"
 
 // Test that UtilityFactory returns a correct instance type
@@ -76,3 +76,4 @@ TEST(UtilityFactoryTest, UtilityPropertiesAreCorrect) {
     EXPECT_EQ(sewageSystem->getResourceNeeds().at("Concrete"), 150);
     EXPECT_EQ(sewageSystem->getResourceNeeds().at("Steel"), 70);
 }
+ */

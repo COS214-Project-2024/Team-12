@@ -66,19 +66,25 @@ public:
      * @brief Retrieves all buildings in the zone.
      * @return A constant reference to the vector of buildings.
      */
-    const std::vector<std::shared_ptr<CityComponent>>& getBuildings() const;
+    const std::vector<std::shared_ptr<CityComponent>>& getBuildings() const {
+        return buildings;
+    }
 
     /**
      * @brief Gets the top-left boundary location of the zone.
      * @return A constant reference to the top-left Location.
      */
-    const Location& getTopLeft() const;
+    const Location& getTopLeft() const {
+		return bounds[0];
+	}
 
     /**
      * @brief Gets the bottom-right boundary location of the zone.
      * @return A constant reference to the bottom-right Location.
      */
-    const Location& getBottomRight() const;
+    const Location& getBottomRight() const {
+		return bounds[1];
+	}
 };
 
 #endif

@@ -77,7 +77,9 @@ public:
      * @brief Gets the building type.
      * @return A string representing the type of the building.
      */
-    std::string getBuildingType() const override;
+std::string getBuildingType() const override{
+        return "Residential Building";
+    }
 
     /**
      * @brief Gets the symbol used for map display.
@@ -89,25 +91,45 @@ public:
      * @brief Calculates the utility coverage for this building.
      * @return The number of connected utilities.
      */
-    int getUtilityCoverage() const;
+      int getUtilityCoverage() const {
+        int coverage = 0;
+        if (waterSupply) coverage++;
+        if (powerSupply) coverage++;
+        if (wasteManagement) coverage++;
+        if (sewageManagement) coverage++;
+        return coverage;
+    }
 
     /**
      * @brief Checks if the building has all essential utilities connected.
      * @return True if all utilities are connected, false otherwise.
      */
-    bool hasUtilities() const;
+     bool hasUtilities() const {
+        return waterSupply && powerSupply && 
+            wasteManagement && sewageManagement;
+    }
 
     // Setters for utility connections
-    void setWaterSupply(std::shared_ptr<UtilityFlyweight> utility);
-    void setPowerSupply(std::shared_ptr<UtilityFlyweight> utility);
-    void setWasteManagement(std::shared_ptr<UtilityFlyweight> utility);
-    void setSewageManagement(std::shared_ptr<UtilityFlyweight> utility);
+    void setWaterSupply(std::shared_ptr<UtilityFlyweight> utility) { waterSupply = utility; }
+    void setPowerSupply(std::shared_ptr<UtilityFlyweight> utility) { powerSupply = utility; }
+    void setWasteManagement(std::shared_ptr<UtilityFlyweight> utility) { wasteManagement = utility; }
+    void setSewageManagement(std::shared_ptr<UtilityFlyweight> utility) { sewageManagement = utility; }
 
     /**
      * @brief Gets the display color based on utility coverage.
      * @return ANSI color code string for the building's utility coverage status.
      */
-    virtual std::string getDisplayColor() const;
+    virtual std::string getDisplayColor() const {
+        int coverage = getUtilityCoverage();
+        std::cout << "Residential coverage: " << coverage << " for " << getBuildingType() << std::endl;
+        if (coverage == 4) {
+            return "\033[1;32m"; // Green for full
+        } else if (coverage >= 2) {
+            return "\033[1;33m"; // Yellow for partial
+        } else {
+            return "\033[1;31m"; // Red for insufficient
+        }
+    }
 };
 
 #endif // RESIDENTIALBUILDING_H

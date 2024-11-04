@@ -1,5 +1,5 @@
 #ifndef SHOPS_H
-#define SHOPs_H
+#define SHOPS_H
 
 #include <string>
 
@@ -16,7 +16,7 @@ public:
           std::shared_ptr<UtilityFlyweight> sewage);
     
     char getDisplaySymbol() const  { return 'S'; }
-    std::string getBuildingType() override { return "Shops"; }
+    std::string getBuildingType() const override { return "Shops"; }
 };
 
 

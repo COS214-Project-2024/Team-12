@@ -13,6 +13,9 @@ public:
 	~Coal();
 
 	void displayStatus() override;
+	std::string getBuildingType() const {
+		return "Coal";
+	}
 };
 
 #endif

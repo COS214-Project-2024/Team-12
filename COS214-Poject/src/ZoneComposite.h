@@ -32,7 +32,7 @@ class ZoneComposite : public CityComponent{
 
 	void displayStatus();
 
-	std::string getBuildingType();
+	std::string getBuildingType() const;
 
 	void accept(taxCollector* TC) override;
 

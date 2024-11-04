@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <map>
 
 
 class Government {
@@ -45,6 +46,10 @@ public:
     int getBuildingAmount(std::string);
 
     void decreasePopulation(int amount);
+
+    //Resource Tracking
+    void addProcessedResource(const std::string& resourceName, int amount, double value);
+
     void increasePopulation(int amount);
 
     void incrementPollutionLevel(int);
@@ -79,6 +84,9 @@ private:
     int publicServiceAmount;
     int utilityAmount;
     int residentialAmount;
+
+    std::map<std::string, int> processedResources;  // Store processed resources
+    std::map<std::string, double> resourceValues;   // Store resource market values
 
     //polution stuff
     int pollutionLevel;

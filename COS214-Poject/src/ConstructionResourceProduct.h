@@ -15,6 +15,7 @@ private:
 	int unitCost;
 	string name;
 	bool readyForCollection;
+	Location location;
 	
 
 public:
@@ -30,12 +31,23 @@ public:
 	int getQuantity() const;
 
 	void replenish(int amount);
+	std::string getBuildingType()
+	{
+		return "ConstructionResourceProduct";
+	}
 
 	int getUnitCost() const;
 	//double getTaxRevenue() override;
 	bool isReadyForCollection(); 
 
 	virtual void accept(taxCollector* TC) {}
+
+	std::string getName() const {
+		return name;
+	}
+
+    void setLocation(const Location& loc) { location = loc; }
+    Location getLocation() const { return location; }
 };
 
 #endif

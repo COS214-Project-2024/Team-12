@@ -1,131 +1,121 @@
 #include "Industry.h"
+#include "MapGrid.h"
+#include <iostream>
+#include <algorithm>
 
-Industry::Industry() : industryName(""), incomeResource(nullptr), constructionResource(nullptr) {}
+Industry::Industry(const std::string& name,
+                  std::shared_ptr<ResourceProcessor> primary,
+                  std::shared_ptr<ResourceProcessor> secondary,
+                  MapGrid* grid,
+                  std::map<std::string, int>& collectedResources,
+                  int range)
+    : name(name),
+      primaryProcessor(primary),
+      secondaryProcessor(secondary),
+      grid(grid),
+      collectedResources(collectedResources),
+      collectionRange(range),
+      pollutionLevel(0)
+{}
 
-Industry::Industry(const std::string& name, 
-            std::shared_ptr<IncomeResourceProduct> incomeRes, 
-            std::shared_ptr<ConstructionResourceProduct> constructionRes)
-        : industryName(name), incomeResource(std::move(incomeRes)), constructionResource(std::move(constructionRes)) {}
+bool Industry::isResourceInRange(const Location& industryLoc, const Location& resourceLoc) const {
+    return (abs(industryLoc.x - resourceLoc.x) <= collectionRange && 
+            abs(industryLoc.y - resourceLoc.y) <= collectionRange);
+}
 
-bool Industry::gatherResourceManually(int amount, ResourcePriority resourceType) {
-    if (checkStorage(amount)) {
-        if (resourceType == ResourcePriority::Income) {
-            incomeResource->consumeResources(amount);
-            std::cout << "Manually gathered " << amount << " units of income resource.\n";
-        } else {
-            constructionResource->ConsumeResource(amount);
-            std::cout << "Manually gathered " << amount << " units of construction resource.\n";
+int Industry::getCollectionRange() const { 
+    return collectionRange; 
+}
+
+Location Industry::findIndustryLocation() const {
+    for (int y = 0; y < grid->getHeight(); y++) {
+        for (int x = 0; x < grid->getWidth(); x++) {
+            Location loc{x, y};
+            if (grid->getComponent(loc).get() == this) {
+                return loc;
+            }
         }
-        currentStorage += amount;
-        return true;
-    } else {
-        std::cout << "Not enough storage space to gather more resources.\n";
-        return false;
+    }
+    return Location{-1, -1};
+}
+
+void Industry::showCollectionRange(const Location& loc) const {
+    std::cout << "Collection range for " << name << " at (" << loc.x << "," << loc.y << "):\n";
+    for (int y = loc.y - collectionRange; y <= loc.y + collectionRange; y++) {
+        for (int x = loc.x - collectionRange; x <= loc.x + collectionRange; x++) {
+            if (x == loc.x && y == loc.y) {
+                std::cout << "[I]";
+            } else {
+                std::cout << "[ ]";
+            }
+        }
+        std::cout << "\n";
     }
 }
 
-void Industry::hireWorkerNPC(const std::string& npcType) {
-    workerNPC = NPCContext::hireNPC(npcType);
-    if(workerNPC) {
-        std::cout << workerNPC->getName() << " hired for $" << workerNPC->getCost() << "\n"; 
-    } else {
-        std::cout << "Invalid NPC type selected.\n";
+void Industry::processResources(int amount, bool isIncomeResource) {
+    int availableAmount = 0;
+
+    if (isIncomeResource && incomeResource) {
+        if (incomeResource->getQuantity() > 0) {
+            availableAmount = std::min(amount, incomeResource->getQuantity());
+            incomeResource->consumeResources(availableAmount);
+
+            if (incomeResource->getQuantity() == 0) {
+                grid->removeComponent(incomeResource->getLocation());
+                grid->removeIncomeResource(incomeResource->getLocation());
+                std::cout << incomeResource->getName() << " at (" << incomeResource->getLocation().x
+                          << ", " << incomeResource->getLocation().y << ") has been depleted and removed.\n";
+                incomeResource = nullptr;
+            }
+            collectedResources[incomeResource->getName()] += availableAmount;
+        }
+    } else if (!isIncomeResource && constructionResource) {
+        if (constructionResource->getQuantity() > 0) {
+            availableAmount = std::min(amount, constructionResource->getQuantity());
+            constructionResource->ConsumeResource(availableAmount);
+
+            if (constructionResource->getQuantity() == 0) {
+                grid->removeComponent(constructionResource->getLocation());
+                grid->removeConstructionResource(constructionResource->getLocation());
+                std::cout << constructionResource->getName() << " at (" << constructionResource->getLocation().x
+                          << ", " << constructionResource->getLocation().y << ") has been depleted and removed.\n";
+                constructionResource = nullptr;
+            }
+            collectedResources[constructionResource->getName()] += availableAmount;
+        }
     }
 }
 
-// Process Income Resource Independently
-void Industry::processIncomeResource(int amount) {
-    if (currentStorage == 0) {
-        std::cout << "No resources in storage. Gather resources before processing income resource.\n";
-        return;
-    }
-    if (currentStorage >= amount && incomeResource) {
-        std::cout << industryName << " processing income resource: "
-                  << incomeResource->getQuantity() << " units at $"
-                  << incomeResource->getMarketValue() << " per unit." << std::endl;
-        
-        incomeResource->consumeResources(amount);
-        currentStorage -= amount;
-    } else {
-        std::cout << "Insufficient stored resources or no income resource initialized.\n";
-    }
-}
-// Process Construction Resource Independently
-void Industry::processConstructionResource(int amount) {
-    if (currentStorage == 0) {  // Check if storage is empty first
-        std::cout << "No resources in storage. Gather resources before processing construction resource.\n";
-        return;
-    }
-    if (currentStorage >= amount) {  // Ensure enough resources in storage
-        std::cout << industryName << " processing construction resource: " 
-                  << constructionResource->getQuantity() << " units at $" 
-                  << constructionResource->getUnitCost() << " per unit." << std::endl;
-        constructionResource->ConsumeResource(amount);
-        currentStorage -= amount;  // Decrease storage after processing
-    } else {
-        std::cout << "Insufficient stored resources to process construction resource.\n";
+void Industry::storeResources(int amount, bool toPrimary) {
+    auto processor = toPrimary ? primaryProcessor : secondaryProcessor;
+    if (processor) {
+        processor->store(amount);
     }
 }
 
 void Industry::displayStatus() {
-    std::cout << "Industry: " << industryName << std::endl;
-    incomeResource->displayStatus();
-    constructionResource->displayStatus();
-    std::cout << "Current Storage: " << currentStorage << "/" << maxStorage << std::endl;
-    std::cout << "Pollution Level: " << pollutionLevel << "\n" << std::endl;
-}
-
-void Industry::setPriorityResource(ResourcePriority priority) {
-        priorityResource = priority;
-        std::cout << "Priority set to "
-                << (priority == ResourcePriority::Income ? "Income Resource" : "Construction Resource") 
-                << std::endl;
-}
-
-void Industry::processPrioritizedResource(int amount) {
-    if (priorityResource == ResourcePriority::Income) {
-        processIncomeResource(amount);
-    } else {
-        processConstructionResource(amount);
+    std::cout << "\n=== " << name << " Status ===\n";
+    if (primaryProcessor) {
+        std::cout << "Primary Storage:\n";
+        primaryProcessor->display();
     }
-}
-
-// Delegate to workerNPC
-void Industry::startAutoGathering() {
-    autoGatheringActive = true;
-}
-
-void Industry::stopAutoGathering() {
-    autoGatheringActive = false;
-}
-
-void Industry::autoGatherResource(int baseIncomeAmount, int baseConstructionAmount) {
-    if (autoGatheringActive && workerNPC) {
-        int incomeAmount = workerNPC->collect(baseIncomeAmount);
-        int constructionAmount = workerNPC->collect(baseConstructionAmount);
-
-        if (checkStorage(incomeAmount) && checkStorage(constructionAmount)) {
-            processIncomeResource(incomeAmount);
-            processConstructionResource(constructionAmount);
-        } else {
-            std::cout << "Not enough storage to gather resources.\n";
-        }
-    } else if (!workerNPC) {
-        std::cout << "No Worker NPC assigned for auto-gathering.\n";
+    if (secondaryProcessor) {
+        std::cout << "Secondary Storage:\n";
+        secondaryProcessor->display();
     }
+    std::cout << "Pollution Level: " << pollutionLevel << "\n";
 }
 
-bool Industry::checkStorage(int amount) {
-    return (currentStorage + amount <= maxStorage);
+std::string Industry::getBuildingType() const {
+    return "Industry";
 }
+
+void Industry::accept(taxCollector* TC) {}
 
 void Industry::increasePollution(int amount) {
     pollutionLevel += amount;
-    std::cout << industryName << " pollution level increased to " << pollutionLevel << std::endl;
-
     if (pollutionLevel > 100) {
-        std::cout << "Warning! High pollution level. Consider reducing production or upgrading." << std::endl;
-        // Trigger penalties or NPC reaction here
+        std::cout << "WARNING: High pollution levels!\n";
     }
 }
-

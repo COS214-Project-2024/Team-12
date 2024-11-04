@@ -1,9 +1,7 @@
 #include "HouseFactory.h"
 #include "House.h"
 
-class HouseFactory : public ResidentialBuildingFactory {
-public:
-    std::unique_ptr<ResidentialBuilding> createBuilding() override {
-        return std::make_unique<House>();
-    }
-};
+std::unique_ptr<ResidentialBuilding> HouseFactory::createBuilding(){
+    return std::make_unique<House>();
+}
+

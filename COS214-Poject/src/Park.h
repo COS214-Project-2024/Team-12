@@ -5,11 +5,13 @@
 
 class Park : public LandMark {
 public:
+    Park() = default;
     Park(const std::string& type, int  capacity, double price, std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
-    Park();
-    void displayStatus();
+    ~Park();
+    void displayStatus() override;
     std::unique_ptr<LandMark> clone() const;
+    std::string getBuildingType() const;
 };
 
 #endif

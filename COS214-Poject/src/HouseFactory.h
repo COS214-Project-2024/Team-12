@@ -6,7 +6,7 @@
 
 class HouseFactory : public ResidentialBuildingFactory {
 public:
-    std::unique_ptr<ResidentialBuilding> createBuilding();
+    std::unique_ptr<ResidentialBuilding> createBuilding() override;
 };
 
 #endif

@@ -12,6 +12,7 @@ private:
 	int quantity;
 	double marketValue;
 	bool readyForCollection;//Boolean variable to noify that resources are ready to be collected for proccessing
+	Location location;
 
 public:
    IncomeResourceProduct(string name, int quantity, double marketValue);
@@ -32,6 +33,21 @@ public:
 	void replenish(int amount);
 
 	void accept(taxCollector* TC) {}
+		std::string getBuildingType()
+	{
+		return "IncomeResourceProduct";
+	}
+
+	std::string getName() const {
+		return name;
+	}
+
+	void updateReadyStatus() {
+    	readyForCollection = (quantity >= 150);
+	}
+
+	void setLocation(const Location& loc) { location = loc; }
+    Location getLocation() const { return location; }
 
 };
 

@@ -1,6 +1,7 @@
 #ifndef MAPGRID_H
 #define MAPGRID_H
 
+
 #include "CityComponent.h"
 #include "UtilityFlyweight.h"
 #include "ResidentialBuilding.h"
@@ -8,18 +9,51 @@
 #include "ZoneComposite.h"
 #include "Industry.h"
 #include "Transport.h"
+#include "Hospital.h"
+#include "FireStation.h"
+#include "PublicService.h"
+#include "PoliceStation.h"
+#include "LandMark.h"
+#include "Monument.h"
+#include "Park.h"
+#include "CulturalCenter.h"
+
 #include <memory>
 #include <vector>
-#include <sstream>
-#include <iomanip>
+#include <string>
+#include <random>
+#include <set>
 #include <algorithm>
 #include <map>
 #include <array>
-#include <set>
-#include <unordered_set>
+#include <sstream>
+
+#include "ForwardDeclarations.h"
+#include "Location.h"
+#include "CityComponent.h"
+#include "ZoneComposite.h"
+#include "UtilityFlyweight.h"
+
+
+
+
 
 class MapGrid {
 private:
+
+    std::map<Location, std::shared_ptr<CityComponent>> gridMap;
+    std::map<Location, std::shared_ptr<IncomeResourceProduct>> incomeResourceMap;
+    std::map<Location, std::shared_ptr<ConstructionResourceProduct>> constructionResourceMap;
+
+    // In MapGrid.h
+    struct ResourceSpot {
+        std::shared_ptr<CityComponent> resource;
+        bool discovered;  // Whether the resource has been discovered
+    };
+
+    // Add method to find random empty position
+
+
 	// Add zone validation methods
 	bool isOverlappingZone(const Location& topLeft, const Location& bottomRight) const {
         for (int y = topLeft.y; y <= bottomRight.y; y++) {
@@ -33,6 +67,7 @@ private:
     }
 
 	bool isCompatibleBuilding(const std::shared_ptr<CityComponent>& building,
+
 	const std::shared_ptr<ZoneComposite>& zone) const {
 		if(!building || !zone) return false;
         std::string buildingType = building->getBuildingType();
@@ -44,10 +79,13 @@ private:
             return dynamic_cast<CommercialBuilding*>(building.get()) != nullptr;
         else if (zoneType == "Industrial")
             return dynamic_cast<Industry*>(building.get()) != nullptr;
-            
+             else if (zoneType == "Public Service")
+        return dynamic_cast<PublicService*>(building.get()) != nullptr;
+
         return false;
 	
 	}
+
 
     struct ZoneStyle {
         std::array<std::string, 9> borderChars; // Changed to std::string
@@ -62,11 +100,33 @@ private:
         std::shared_ptr<CityComponent> component;
         std::vector<std::shared_ptr<UtilityFlyweight>> affectingUtilities;
         std::shared_ptr<ZoneComposite> zone;  // Added zone support
+         char symbol = ' ';
     };
 
     std::vector<std::vector<Cell>> grid;
     int width, height;
     
+    public:
+      Cell& getCell(int x, int y) {
+        return grid[y][x];
+    }
+
+    void setCellSymbol(int x, int y, char symbol) {
+        grid[y][x].symbol = symbol;
+    }
+
+    void setTransportEndpoint(const Location& loc, char type) {
+    setCellSymbol(loc.x, loc.y, (type == 'R') ? 'R' : 'T');
+}
+
+
+void setTransportPath(const Location& loc, char pathSymbol) {
+    setCellSymbol(loc.x, loc.y, pathSymbol);  // Use setCellSymbol to set the symbol directly
+}
+
+
+private:
+
     // Initialize zone styles
     std::map<std::string, ZoneStyle> zoneStyles;
 
@@ -105,6 +165,21 @@ private:
     }
 
 public:
+    Location getRandomEmptyLocation() const {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> disX(0, width - 1);
+        std::uniform_int_distribution<> disY(0, height - 1);
+        
+        Location loc;
+        do {
+            loc.x = disX(gen);
+            loc.y = disY(gen);
+        } while (!isValidLocation(loc) || grid[loc.y][loc.x].component != nullptr);
+        
+        return loc;
+    }
+
 	int getHeight() const {
 		return height;
 	}
@@ -126,26 +201,11 @@ public:
         
         	return std::vector<std::shared_ptr<ZoneComposite>>(uniqueZones.begin(), uniqueZones.end());
     	}
+    // MapGrid.h
+
 
     // Method to get all buildings in a specific zone
-    std::vector<std::shared_ptr<CityComponent>> getBuildingsInZone(const std::shared_ptr<ZoneComposite>& zone) const {
-        std::vector<std::shared_ptr<CityComponent>> buildings;
-        
-        // Get zone boundaries
-        Location topLeft = zone->getTopLeft();
-        Location bottomRight = zone->getBottomRight();
-        
-        // Collect all buildings within zone boundaries
-        for (int y = topLeft.y; y <= bottomRight.y; y++) {
-            for (int x = topLeft.x; x <= bottomRight.x; x++) {
-                if (grid[y][x].component) {
-                    buildings.push_back(grid[y][x].component);
-                }
-            }
-        }
-        
-        return buildings;
-    }
+    std::vector<std::shared_ptr<CityComponent>> getBuildingsInZone(const std::shared_ptr<ZoneComposite>& zone) const;
 	// Enhanced placement checks
 	struct PlacementResult {
 		bool success;
@@ -226,32 +286,51 @@ public:
         return loc.x >= 0 && loc.x < width && loc.y >= 0 && loc.y < height;
     }
 
-    bool placeComponent(const Location& loc, std::shared_ptr<CityComponent> component) {
-        // Use the validation methods before placement
-        auto result = canPlaceBuilding(loc, component);
-        if (!result.success) {
-            std::cout << "\033[1;31m" << result.message << "\033[0m\n";
-            return false;
-        }
-
-        grid[loc.y][loc.x].component = component;
-        if (component) {
-            component->setLocation(loc);
-        }
-        return true;
-    }
+	bool placeComponent(const Location& loc, std::shared_ptr<CityComponent> component) ;
 
 	bool connectLocations(const Location& start, const Location& end, 
                         std::shared_ptr<Transport> transport) {
-        // Implementation of connection logic
-        return true;
-    }
-
-    void removeComponent(const Location& loc) {
-        if (isValidLocation(loc)) {
-            grid[loc.y][loc.x].component.reset();
+            if (start.x == end.x) { // Vertical path
+        for (int y = start.y; y <= end.y; ++y) {
+            setCellSymbol(start.x, y, '|');
+        }
+    } else if (start.y == end.y) { // Horizontal path
+        for (int x = start.x; x <= end.x; ++x) {
+            setCellSymbol(x, start.y, '-');
         }
     }
+
+
+    // Set the endpoints
+    setCellSymbol(start.x, start.y, (transport->getType() == "Road") ? 'R' : 'T');
+    setCellSymbol(end.x, end.y, (transport->getType() == "Road") ? 'R' : 'T');
+
+    return true;
+    }
+    
+   
+    bool placePublicService(const Location& loc, std::shared_ptr<PublicService> publicService) {
+    if (!isValidLocation(loc)) {
+        std::cout << "\033[1;31mInvalid location!\033[0m\n";
+        return false;
+    }
+
+    if (getComponent(loc)) {
+        std::cout << "\033[1;31mLocation already occupied!\033[0m\n";
+        return false;
+    }
+
+    // Place the public service on the map
+    grid[loc.y][loc.x].component = publicService;
+    std::cout << "\033[1;32mPublic service placed successfully!\033[0m\n";
+    return true;
+}
+
+    // void removeComponent(const Location& loc) {
+    //     if (isValidLocation(loc)) {
+    //         grid[loc.y][loc.x].component.reset();
+    //     }
+    // }
 
     std::shared_ptr<CityComponent> getComponent(const Location& loc) const {
         return isValidLocation(loc) ? grid[loc.y][loc.x].component : nullptr;
@@ -264,29 +343,11 @@ public:
     //     }
     // }
 
-		void addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
-			if (isValidLocation(loc)) {
-				grid[loc.y][loc.x].affectingUtilities.push_back(utility);
-				
-				// If there's a building in this cell, connect it to the utility
-				if (auto building = grid[loc.y][loc.x].component) {
-					if (auto residential = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
-						// Connect utility to residential building using setters
-						if (utility->getName() == "Water Supply") residential->setWaterSupply(utility);
-						else if (utility->getName() == "Power Plant") residential->setPowerSupply(utility);
-						else if (utility->getName() == "Waste Management") residential->setWasteManagement(utility);
-						else if (utility->getName() == "Sewage System") residential->setSewageManagement(utility);
-					}
-					else if (auto commercial = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
-						// Connect utility to commercial building using setters
-						if (utility->getName() == "Water Supply") commercial->setWaterSupply(utility);
-						else if (utility->getName() == "Power Plant") commercial->setPowerSupply(utility);
-						else if (utility->getName() == "Waste Management") commercial->setWasteManagement(utility);
-						else if (utility->getName() == "Sewage System") commercial->setSewageManagement(utility);
-					}
-				}
-			}
-		}
+void addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility);
+
+// In MapGrid.h
+void displayCollectionRange(const Location& industryLoc);
+
 
 	void removeUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlyweight> utility) {
     if (isValidLocation(loc)) {
@@ -306,140 +367,16 @@ public:
         return isCompatibleBuilding(building, zone);
     }
 
-std::string getDisplayString() const {
-    std::stringstream ss;
-    
-    // Header
-    ss << "\033[1;36m=== City Map ===\033[0m\n\n";
-    
-    // Column numbers
-    ss << "   ";
-    for (int x = 0; x < width; x++) {
-        ss << std::setw(3) << x;
-    }
-    ss << "\n";
-    
-    // Grid content with zones
-    for (int y = 0; y < height; y++) {
-        ss << std::setw(2) << y << " ";
-        for (int x = 0; x < width; x++) {
-            const auto& cell = grid[y][x];
-            
-            // Start zone styling if cell is in a zone
-            if (cell.zone) {
-                std::string zoneType = cell.zone->getBuildingType();
-                // Add different background colors for different zone types
-                if (zoneType == "Residential")
-                    ss << "\033[48;5;17m"; // Dark blue background
-                else if (zoneType == "Commercial")
-                    ss << "\033[48;5;52m"; // Dark red background
-                else if (zoneType == "Industrial")
-                    ss << "\033[48;5;58m"; // Dark yellow background
-            }
 
-            // Display cell content
-            if (cell.component) {
-                // Building Types
-				// In MapGrid's getDisplayString()
-				if (auto residential = dynamic_cast<ResidentialBuilding*>(cell.component.get())) {
-					char symbol = residential->getDisplaySymbol();
-					int coverage = residential->getUtilityCoverage();
-					std::cout << "Residential coverage: " << coverage << std::endl;  // Debug output
-					if (coverage == 4) {
-						ss << "\033[1;32m[" << symbol << "]\033[0m";  // Green
-					} else if (coverage >= 2) {
-						ss << "\033[1;33m[" << symbol << "]\033[0m";  // Yellow
-					} else {
-						ss << "\033[1;31m[" << symbol << "]\033[0m";  // Red
-					}
-				} 
-				else if (auto commercial = dynamic_cast<CommercialBuilding*>(cell.component.get())) {
-					char symbol = commercial->getDisplaySymbol();
-					int coverage = commercial->getUtilityCoverage();
-					std::cout << "Commercial coverage: " << coverage << std::endl;  // Debug output
-					if (coverage == 4) {
-						ss << "\033[1;36m[" << symbol << "]\033[0m";  // Cyan
-					} else if (coverage >= 2) {
-						ss << "\033[1;37m[" << symbol << "]\033[0m";  // White
-					} else {
-						ss << "\033[1;31m[" << symbol << "]\033[0m";  // Red
-					}
-				}
-				else if (dynamic_cast<Industry*>(cell.component.get())) {
-                    ss << "\033[1;31m[I]\033[0m"; 
-                } else if (auto utility = dynamic_cast<UtilityFlyweight*>(cell.component.get())) {
-                    std::string type = utility->getName();
-                    if (type == "Water Supply") {
-                        ss << "\033[1;34m[W]\033[0m";
-                    } else if (type == "Power Plant") {
-                        ss << "\033[1;35m[P]\033[0m";
-                    } else if (type == "Sewage System") {
-                        ss << "\033[1;36m[S]\033[0m";
-                    } else if (type == "Waste Management") {
-                        ss << "\033[1;32m[M]\033[0m";
-                    }
-                }
-            } else {
-                // Coverage display with color gradient
-                if (!cell.affectingUtilities.empty()) {
-                    int coverageCount = cell.affectingUtilities.size();
-                    switch(coverageCount) {
-                        case 1: 
-                            ss << "\033[1;34m[1]\033[0m";
-                            break;
-                        case 2:
-                            ss << "\033[1;36m[2]\033[0m";
-                            break;
-                        case 3:
-                            ss << "\033[1;35m[3]\033[0m";
-                            break;
-                        case 4:
-                            ss << "\033[1;37m[4]\033[0m";
-                            break;
-                    }
-                } else {
-                    ss << "\033[1;30m[ ]\033[0m";
-                }
-            }
+std::string getDisplayString() const;
 
-            // Reset background color if we're in a zone
-            if (cell.zone) {
-                ss << "\033[0m";
-            }
-        }
-        ss << "\n";
-    }
-    
-	ss << "\nLegend:\n"
-	<< "=== Zones ===\n"
-	<< "\033[48;5;17m   \033[0m - Residential Zone\n"
-	<< "\033[48;5;52m   \033[0m - Commercial Zone\n"
-	<< "\033[48;5;58m   \033[0m - Industrial Zone\n"
-	<< "\n=== Buildings ===\n"
-	<< "Residential:\n"
-	<< "\033[1;32m[H]\033[0m - House\n"
-	<< "\033[1;32m[F]\033[0m - Flat\n"
-	<< "\033[1;32m[T]\033[0m - Townhouse\n"
-	<< "\033[1;32m[E]\033[0m - Estate\n"
-	<< "\nCommercial:\n"
-	<< "\033[1;33m[S]\033[0m - Shop\n"
-	<< "\033[1;33m[O]\033[0m - Office\n"
-	<< "\033[1;33m[M]\033[0m - Mall\n"
-	<< "\n=== Utilities ===\n"
-	<< "\033[1;34m[W]\033[0m - Water Supply\n"
-	<< "\033[1;35m[P]\033[0m - Power Plant\n"
-	<< "\033[1;36m[S]\033[0m - Sewage System\n"
-	<< "\033[1;32m[M]\033[0m - Waste Management\n"
-	<< "\n=== Coverage ===\n"
-	<< "\033[1;34m[1]\033[0m - Single Utility\n"
-	<< "\033[1;36m[2]\033[0m - Double Coverage\n"
-	<< "\033[1;35m[3]\033[0m - Triple Coverage\n"
-	<< "\033[1;37m[4]\033[0m - Full Coverage\n"
-	<< "\033[1;30m[ ]\033[0m - Empty\n";
-	   
+    void removeComponent(const Location& loc);
 
-    return ss.str();
-}
+    // Methods to remove resources from resource maps
+    void removeIncomeResource(const Location& loc);
+    void removeConstructionResource(const Location& loc);
+
+
 };
 
 #endif

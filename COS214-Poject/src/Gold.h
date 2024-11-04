@@ -11,6 +11,9 @@ public:
     Gold(int quantity, double marketValue);
     ~Gold();
     void displayStatus() override;
+    std::string getBuildingType() const {
+		return "Gold";
+	}
 };
 
 #endif

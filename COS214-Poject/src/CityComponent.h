@@ -21,7 +21,7 @@ public:
 	void removeNpc();
 	void notify();
 
-	virtual std::string getBuildingType() = 0;
+	virtual std::string getBuildingType() const = 0;
 	virtual void accept(taxCollector*) = 0;
 
 	//setting the location

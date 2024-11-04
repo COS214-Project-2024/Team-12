@@ -5,16 +5,18 @@
 
 class FireStation : public PublicService  {
 private:
-    bool water;
-    bool electricity;
-    bool sewage;
-    bool wasteManagement;
     std::string status;
 public:
-    FireStation(bool waterStatus, bool electricityStatus, bool wasteManagementStatus, bool sewageStatus, std::string buildingStatus);
-    ~FireStation();
-    void provideService();
+   FireStation() = default;
+   FireStation(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> electricity,
+                std::shared_ptr<UtilityFlyweight> wasteManagement, std::shared_ptr<UtilityFlyweight> sewage, 
+                std::string buildingStatus);
+    ~FireStation() = default;
+    void provideService() override;
     std::unique_ptr<PublicService> clone() const;
+    char getDisplaySymbol() const override;
+    void displayStatus() override;
+
 
 };
 

@@ -1,13 +1,11 @@
 #include "Hospital.h"
 #include <iostream>
 
-Hospital::Hospital(bool waterStatus, bool electricityStatus, bool wasteManagementStatus, bool sewageStatus, std::string buildingStatus) :PublicService(waterStatus,electricityStatus, wasteManagementStatus, sewageStatus, buildingStatus) {
-
-}
-
-Hospital::Hospital() : Hospital(false,false,false,false,"Not opertational") {};
-void Hospital::provideService(){
-    std::cout << "Providing health care to all citizens in need." << std::endl;
+Hospital::Hospital(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> electricity,
+                   std::shared_ptr<UtilityFlyweight> wasteManagement, std::shared_ptr<UtilityFlyweight> sewage,
+                   std::string buildingStatus)
+    : PublicService(water, electricity, wasteManagement, sewage) {
+    status = buildingStatus;
 }
 
 std::unique_ptr<PublicService> Hospital::clone() const {
@@ -15,10 +13,21 @@ std::unique_ptr<PublicService> Hospital::clone() const {
 
 }
 
-void Hospital::accept(taxCollector* tax){
 
+
+void Hospital::displayStatus() {
+    std::cout << "Status of Hospital:\n";
+    std::cout << " - Water: " << (waterSupply ? "Connected" : "Not Connected") << "\n";
+    std::cout << " - Electricity: " << (powerSupply ? "Connected" : "Not Connected") << "\n";
+    std::cout << " - Waste Management: " << (wasteManagement ? "Connected" : "Not Connected") << "\n";
+    std::cout << " - Sewage: " << (sewageManagement ? "Connected" : "Not Connected") << "\n";
+    std::cout << "Overall Status: " << status << "\n";
 }
 
-void Hospital::displayStatus(){
-    std::cout << "Hospital bread" << std::endl;
+char Hospital::getDisplaySymbol() const {
+    return 'H'; // Character symbol for Hospital
+}
+
+std::string Hospital::getBuildingType() const {
+    return "Hospital";
 }

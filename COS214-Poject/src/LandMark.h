@@ -22,9 +22,10 @@ protected:
 
 
 public:
+    LandMark() = default;
     LandMark(const std::string& type, int  capacity, double price,std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> power,
             std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
-	void displayStatus();
+	virtual void displayStatus() override;
     double getPrice() const {return price;}
     
     // Utility-related methods
@@ -41,7 +42,7 @@ public:
             wasteManagement && sewageManagement;
     }
 
-    std::string getBuildingType() override{
+    std::string getBuildingType() const override{
         return "LandMark";
     }
 

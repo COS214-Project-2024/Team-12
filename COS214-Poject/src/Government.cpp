@@ -105,13 +105,56 @@ void Government::displayGovernmentStats(){
 	std::cout << "Income Tax rate: " << incomeTaxRate << std::endl;
 	std::cout << "Employment Rate: " << EMPLOYMENT_RATE << "%\n";
 	std::cout << "Production Rate: " << productionRate << std::endl;
-	//std::cout << "Crime Rate: " << getCrimeRate() <<std::endl;
-	std::cout << "Mortality Rate: " << getMortalityRate() <<std::endl;
-	std::cout << "Population growth: " << populationGrowth <<std::endl;
+	std::cout << "Crime Rate: " << crimeRate <<std::endl;
+	std::cout << "Mortality Rate: " << mortalityRate <<std::endl;
+	std::cout << "Population growth: " << mortalityRate <<std::endl;
+
+	// Display Resource Information
+	std::cout << "\n=== Resource Treasury ===" << std::endl;
+	
+	// Income Resources
+	std::cout << "Income Resources:" << std::endl;
+	if (processedResources.count("Gold")) 
+		std::cout << "  Gold: " << processedResources["Gold"] << " units (Value: $"
+					<< processedResources["Gold"] * resourceValues["Gold"] << ")" << std::endl;
+	if (processedResources.count("Diamond")) 
+		std::cout << "  Diamond: " << processedResources["Diamond"] << " units (Value: $"
+					<< processedResources["Diamond"] * resourceValues["Diamond"] << ")" << std::endl;
+	if (processedResources.count("Coal")) 
+		std::cout << "  Coal: " << processedResources["Coal"] << " units (Value: $"
+					<< processedResources["Coal"] * resourceValues["Coal"] << ")" << std::endl;
+	if (processedResources.count("Oil")) 
+		std::cout << "  Oil: " << processedResources["Oil"] << " units (Value: $"
+					<< processedResources["Oil"] * resourceValues["Oil"] << ")" << std::endl;
+	
+	// Construction Resources
+	std::cout << "\nConstruction Resources:" << std::endl;
+	if (processedResources.count("Steel"))
+		std::cout << "  Steel: " << processedResources["Steel"] << " units" << std::endl;
+	if (processedResources.count("Wood"))
+		std::cout << "  Wood: " << processedResources["Wood"] << " units" << std::endl;
+	if (processedResources.count("Stone"))
+		std::cout << "  Stone: " << processedResources["Stone"] << " units" << std::endl;
+	if (processedResources.count("Concrete"))
+		std::cout << "  Concrete: " << processedResources["Concrete"] << " units" << std::endl;
+	
+	// Total Resource Value
+	double totalResourceValue = 0;
+	for (const auto& [resource, amount] : processedResources) {
+		totalResourceValue += amount * resourceValues[resource];
+	}
+	std::cout << "\nTotal Resource Value: $" << totalResourceValue << std::endl;
+	std::cout << "Total Treasury: $" << (money + totalResourceValue) << std::endl;
+    
 }
 
 void Government::decreasePopulation(int amount){
 	population -= amount;
+}
+
+void Government::addProcessedResource(const std::string& resourceName, int amount, double value = 0.0) {
+	processedResources[resourceName] += amount;
+	resourceValues[resourceName] = value;  // Store the value/unit
 }
 
 void Government::increasePopulation(int amount){

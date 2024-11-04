@@ -11,69 +11,40 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Find threading package explicitly
 find_package(Threads REQUIRED)
 
-# Add the source files for city_simulator
-add_executable(city_simulator
-    COS214-Poject/src/main.cpp
-    COS214-Poject/src/CityComposite.cpp
-    COS214-Poject/src/GameState.cpp
-    COS214-Poject/src/MapGrid.cpp
-    COS214-Poject/src/CityComponent.cpp
-    COS214-Poject/src/ResidentialBuilding.cpp
-    COS214-Poject/src/CommercialBuilding.cpp
-    COS214-Poject/src/Industry.cpp
-    COS214-Poject/src/House.cpp
-    COS214-Poject/src/UtilityFlyweight.cpp
-    COS214-Poject/src/UtilityFactory.cpp
-    COS214-Poject/src/WaterSupply.cpp
-    COS214-Poject/src/PowerPlant.cpp
-    COS214-Poject/src/SewageSystem.cpp
-    COS214-Poject/src/WasteManagement.cpp
-    COS214-Poject/src/IncomeResourceProduct.cpp
-    COS214-Poject/src/ConstructionResourceProduct.cpp
-    COS214-Poject/src/NPCSystem.cpp
-    COS214-Poject/src/Government.cpp
-    COS214-Poject/src/NPCManager.cpp
-    COS214-Poject/src/ReactingNPCS.cpp
-    COS214-Poject/src/NeutralState.cpp
-    COS214-Poject/src/DonationState.cpp
-    COS214-Poject/src/CrimeState.cpp
-    COS214-Poject/src/ProductiveState.cpp
-    COS214-Poject/src/RevoltState.cpp
-    COS214-Poject/src/Flat.cpp
-    COS214-Poject/src/Townhouse.cpp
-    COS214-Poject/src/ZoneComposite.cpp
-    COS214-Poject/src/Estate.cpp
-    COS214-Poject/src/Shops.cpp
-    COS214-Poject/src/Malls.cpp
-    COS214-Poject/src/Office.cpp
-    COS214-Poject/src/concreteTaxCollector.cpp
-)
+# Define the path to the source and test directories
+set(SRC_DIR "${CMAKE_SOURCE_DIR}/COS214-Poject/src")
+set(TEST_DIR "${CMAKE_SOURCE_DIR}/tests")
 
-# Add Google Test using FetchContent
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/refs/heads/main.zip
-  DOWNLOAD_EXTRACT_TIMESTAMP true  # Adds this line to address the warning
-)
-FetchContent_MakeAvailable(googletest)
+# Find all .cpp files in the source and test directories
+file(GLOB SOURCES "${SRC_DIR}/*.cpp")
+file(GLOB TEST_SOURCES "${TEST_DIR}/*.cpp")
 
-# Add the test executable with necessary source files
-add_executable(runTests
-    tests/NPCManagerTests.cpp
-    tests/NPCStatesTests.cpp
-    tests/ReactingNPCTests.cpp
+# Separate main.cpp from the rest of the sources
+list(REMOVE_ITEM SOURCES "${SRC_DIR}/main.cpp")
 
-    # Include any additional source files for testing
-    COS214-Poject/src/Government.cpp
-    COS214-Poject/src/NPCManager.cpp
-    COS214-Poject/src/ReactingNPCS.cpp
-    COS214-Poject/src/NeutralState.cpp
-    COS214-Poject/src/DonationState.cpp
-    COS214-Poject/src/CrimeState.cpp
-    COS214-Poject/src/ProductiveState.cpp
-    COS214-Poject/src/RevoltState.cpp
-)
+# Add the main executable target with all source files including main.cpp
+add_executable(city_simulator ${SOURCES} "${SRC_DIR}/main.cpp")
+
+# Link Threads to the main executable if necessary
+target_link_libraries(city_simulator ${CMAKE_THREAD_LIBS_INIT})
+
+# Check if gtests directory exists
+if(EXISTS "${PROJECT_SOURCE_DIR}/gtests")
+    # If gtests exists locally, use it
+    add_subdirectory(gtests)
+else()
+    # If not, use FetchContent to download Google Test
+    include(FetchContent)
+    FetchContent_Declare(
+      googletest
+      URL https://github.com/google/googletest/archive/refs/heads/main.zip
+      DOWNLOAD_EXTRACT_TIMESTAMP true
+    )
+    FetchContent_MakeAvailable(googletest)
+endif()
+
+# Add the test executable with necessary test source files, without main.cpp
+add_executable(runTests ${SOURCES} ${TEST_SOURCES})
 
 # Link Google Test and Threads to the test executable
 target_link_libraries(runTests gtest gtest_main ${CMAKE_THREAD_LIBS_INIT})

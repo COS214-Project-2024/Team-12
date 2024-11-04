@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../COS214-Poject/src/ConcreteTaxCollector.h"
+#include "../COS214-Poject/src/concreteTaxCollector.h"
 #include "../COS214-Poject/src/Government.h"
 #include "../COS214-Poject/src/ResidentialBuilding.h"
 #include "../COS214-Poject/src/CommercialBuilding.h"

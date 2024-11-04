@@ -33,19 +33,14 @@ if(EXISTS "${PROJECT_SOURCE_DIR}/gtests")
     # If gtests exists locally, use it
     add_subdirectory(gtests)
 else()
-include(FetchContent)
-
-# Fetch Google Test
-FetchContent_Declare(
-    googletest
-    URL https://github.com/google/googletest/archive/refs/heads/main.zip
-    DOWNLOAD_EXTRACT_TIMESTAMP
-)
-FetchContent_MakeAvailable(googletest)
-
-# Link Google Test libraries
-target_link_libraries(${PROJECT_NAME} gtest gtest_main)
-
+    # If not, use FetchContent to download Google Test
+    include(FetchContent)
+    FetchContent_Declare(
+      googletest
+      URL https://github.com/google/googletest/archive/refs/heads/main.zip
+      DOWNLOAD_EXTRACT_TIMESTAMP true
+    )
+    FetchContent_MakeAvailable(googletest)
 endif()
 
 # Add the test executable with necessary test source files, without main.cpp

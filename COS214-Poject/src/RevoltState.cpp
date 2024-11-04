@@ -6,8 +6,16 @@
 #include <random>
 #include <string>
 
+/// Destructor for the RevoltState class.
 RevoltState::~RevoltState() = default;
 
+/**
+ * @brief Executes the handling logic for the revolt state.
+ *
+ * This function calculates the chance of a revolt occurring based on the number of NPCs
+ * in the revolt state. If a revolt occurs, it reduces the city's production rate by a factor
+ * based on the number of revolting NPCs, up to a maximum limit.
+ */
 void RevoltState::handle() {
     // Base values for revolt impact
     const float BASE_REVOLT_CHANCE = 0.1f;
@@ -32,10 +40,18 @@ void RevoltState::handle() {
     }
 }
 
+/**
+ * @brief Returns the name of this state.
+ * @return std::string The state name, "RevoltState".
+ */
 std::string RevoltState::getStateName() {
     return "RevoltState";
 }
 
-NPCState* RevoltState::clone() const{
+/**
+ * @brief Creates a clone of the current RevoltState.
+ * @return NPCState* A pointer to a new RevoltState object with the same properties.
+ */
+NPCState* RevoltState::clone() const {
     return new RevoltState(*this);
 }

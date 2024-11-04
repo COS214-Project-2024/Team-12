@@ -29,7 +29,7 @@
 #include "PowerPlant.h"
 #include "SewageSystem.h"
 #include "WasteManagement.h"
-#include "ConcreteTaxCollector.h"
+#include "concreteTaxCollector.h"
 #include "TaxCollector.h"
 #include "NPCManager.h"
 #include "Gold.h"

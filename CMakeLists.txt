@@ -19,8 +19,11 @@ set(TEST_DIR "${CMAKE_SOURCE_DIR}/tests")
 file(GLOB SOURCES "${SRC_DIR}/*.cpp")
 file(GLOB TEST_SOURCES "${TEST_DIR}/*.cpp")
 
-# Add the main executable target with all source files
-add_executable(city_simulator ${SOURCES})
+# Separate main.cpp from the rest of the sources
+list(REMOVE_ITEM SOURCES "${SRC_DIR}/main.cpp")
+
+# Add the main executable target with all source files including main.cpp
+add_executable(city_simulator ${SOURCES} "${SRC_DIR}/main.cpp")
 
 # Link Threads to the main executable if necessary
 target_link_libraries(city_simulator ${CMAKE_THREAD_LIBS_INIT})
@@ -40,8 +43,7 @@ else()
     FetchContent_MakeAvailable(googletest)
 endif()
 
-# Add the test executable with both source and test files
-# Including main source files in tests to prevent undefined references
+# Add the test executable with necessary test source files, without main.cpp
 add_executable(runTests ${SOURCES} ${TEST_SOURCES})
 
 # Link Google Test and Threads to the test executable

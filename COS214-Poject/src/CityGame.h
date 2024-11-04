@@ -30,7 +30,7 @@
 #include "SewageSystem.h"
 #include "WasteManagement.h"
 #include "concreteTaxCollector.h"
-#include "TaxCollector.h"
+#include "taxCollector.h"
 #include "NPCManager.h"
 #include "Gold.h"
 #include "Diamonds.h"

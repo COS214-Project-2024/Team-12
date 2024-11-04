@@ -50,7 +50,7 @@ void ReactingNPCS::update() {
     }
 
     if (followsConsensus) {
-        if (happinessLevel > 85 && dynamic_cast<DonationState*>(state) == nullptr) {
+        if (happinessLevel > 75 && dynamic_cast<DonationState*>(state) == nullptr) {
             changeState(new DonationState());
         }
         else if (happinessLevel > 70 && dynamic_cast<ProductiveState*>(state) == nullptr) {

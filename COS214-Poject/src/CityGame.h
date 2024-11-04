@@ -65,6 +65,9 @@ private:
     GameState state;
     bool running = true;
 
+    //the city
+    std::shared_ptr<CityComponent> city = std::make_shared<CityComposite>("Adventure City");
+
     // Resource Management
     std::map<Location, std::shared_ptr<IncomeResourceProduct>> incomeResourceMap;
     std::map<Location, std::shared_ptr<ConstructionResourceProduct>> constructionResourceMap;
@@ -146,8 +149,8 @@ private:
         std::cout << "\n\033[1;36m=== City Builder ===\033[0m\n"
                   << "Money: $" << government.getMoney()
                   << " | Happiness: " << npcManager.getHappinessLevel() << "%\n"
-                  << "Population: " << government.getPopulation()
-                  << " | Crime Rate: " << government.getCrimeRate() * 100 << "%\n\n"
+                  << "Population: " << government.getPopulation() << "%\n"
+                  //<< " | Crime Rate: " << (NPCManager::getInstance().getCrimeCount()/government.getPopulation()) * 100 << "%\n\n"
                   << "1. Build Structure\n"
                   << "2. Place Utility\n"
                   << "3. Show Statistics\n"
@@ -590,6 +593,7 @@ private:
             }
             government.reduceMoney(cost);
             paymentSuccess = true;
+            
             std::cout << "\033[1;32m" << buildingType << " will be built using money!\033[0m\n";
         } else {
             std::cout << "\033[1;31mInvalid payment choice!\033[0m\n";
@@ -745,6 +749,8 @@ private:
         // Place the Building
         auto command = std::make_unique<PlaceComponentCommand>(grid, placeLoc, building);
         state.executeCommand(std::move(command));
+        city->add(building);
+        city->addNpc();
         std::cout << "\033[1;32m" << buildingType << " placed successfully at ("
                   << placeLoc.x << ", " << placeLoc.y << ")!\033[0m\n";
     }
@@ -798,6 +804,7 @@ private:
             government.setBuildingAmount("Utility", 1);
 
             auto command = std::make_unique<PlaceComponentCommand>(grid, loc, utility);
+            city->add(utility);
             state.executeCommand(std::move(command));
 
             // Add utility effect to surrounding cells
@@ -813,6 +820,7 @@ private:
 
             std::cout << "\033[1;32m" << utility->getName()
                       << " placed successfully!\033[0m\n";
+            city->addNpc();
         }
         catch (const std::out_of_range& e) {
             std::cout << "\033[1;31mInvalid choice!\033[0m\n";
@@ -821,6 +829,35 @@ private:
 
     void collectTaxes() {
         ConcreteTaxCollector collector;
+
+        //Prompt the user to set or adjust the income tax rate
+    if (government.getIncomeTaxRate() == 0) {
+        std::cout << "Income tax rate is not set. Please set an income tax rate (0-100%): ";
+        double rate;
+        std::cin >> rate;
+        if (rate >= 0 && rate <= 100) {
+            government.setTax(rate / 100); // Store as a decimal (e.g., 20% becomes 0.2)
+            std::cout << "\033[1;32mIncome tax rate set to " << rate << "%.\033[0m\n";
+        } else {
+            std::cout << "\033[1;31mInvalid rate! Income tax rate not changed.\033[0m\n";
+        }
+    } else {
+        std::cout << "Current income tax rate is " << government.getIncomeTaxRate() * 100 << "%.\n"
+                  << "Would you like to change it? (y/n): ";
+        char choice;
+        std::cin >> choice;
+        if (choice == 'y' || choice == 'Y') {
+            std::cout << "Enter new income tax rate (0-100%): ";
+            double rate;
+            std::cin >> rate;
+            if (rate >= 0 && rate <= 100) {
+                government.setTax(rate / 100);
+                std::cout << "\033[1;32mIncome tax rate updated to " << rate << "%.\033[0m\n";
+            } else {
+                std::cout << "\033[1;31mInvalid rate! Income tax rate not changed.\033[0m\n";
+            }
+        }
+    }
 
         // Collect taxes from all buildings on the grid
         for (int y = 0; y < grid.getHeight(); y++) {
@@ -835,6 +872,8 @@ private:
                 }
             }
         }
+
+        government.calculateTax();
 
         std::cout << "\033[1;32mTaxes collected successfully!\033[0m\n";
         std::cout << "Government funds: $" << government.getMoney() << "\n";

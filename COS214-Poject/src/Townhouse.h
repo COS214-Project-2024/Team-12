@@ -17,6 +17,7 @@ public:
     
     char getDisplaySymbol() const override { return 'T'; }
     std::string getBuildingType() const override { return "Townhouse"; }
+
 };
 
 #endif

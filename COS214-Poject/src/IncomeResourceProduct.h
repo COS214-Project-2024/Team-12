@@ -33,6 +33,10 @@ public:
 	void replenish(int amount);
 
 	void accept(taxCollector* TC) {}
+		std::string getBuildingType()
+	{
+		return "IncomeResourceProduct";
+	}
 
 	std::string getName() const {
 		return name;

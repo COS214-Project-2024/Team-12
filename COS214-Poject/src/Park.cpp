@@ -4,7 +4,7 @@ Park::Park(const std::string& type, int  capacity, double price, std::shared_ptr
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
         : LandMark(type,capacity,price, water, power, waste, sewage) {}
 
-Park::Park(): LandMark("Park", 50,30000.00,nullptr, nullptr,nullptr,nullptr){}
+Park::~Park(){}
 
 void Park::displayStatus(){
     std::cout << "Park Status:\n";
@@ -13,5 +13,10 @@ void Park::displayStatus(){
 
 
 std::unique_ptr<LandMark> Park::clone() const {
-    return std::make_unique<Park>(*this);
+    std::unique_ptr<Park> park = std::make_unique<Park>(
+    landMarkType, visitorCapacity, price, waterSupply, powerSupply, wasteManagement, sewageManagement
+);
+
+    return park;
+
 }

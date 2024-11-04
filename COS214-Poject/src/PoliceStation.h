@@ -5,19 +5,20 @@
 
 class PoliceStation : public PublicService  {
 private:
-    bool water;
-    bool electricity;
-    bool sewage;
-    bool wasteManagement;
     std::string status;
 public:
-    PoliceStation();  // Default constructor
-    PoliceStation(bool waterStatus, bool electricityStatus, bool wasteManagementStatus, bool sewageStatus, std::string buildingStatus);
-    ~PoliceStation();
-    void provideService();
+     PoliceStation(std::shared_ptr<UtilityFlyweight> water, std::shared_ptr<UtilityFlyweight> electricity,
+                  std::shared_ptr<UtilityFlyweight> wasteManagement, std::shared_ptr<UtilityFlyweight> sewage,
+                  std::string buildingStatus);
+    ~PoliceStation() =default;
+   void provideService() override{
+    std::cout << "Police Station is ensuring public safety.\n";
+}
     std::unique_ptr<PublicService> clone() const;
     void displayStatus() override;
-    void accept(taxCollector* TC) override;
+  
+    char getDisplaySymbol() const override;
+
 
 };
 

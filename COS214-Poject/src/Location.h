@@ -14,6 +14,10 @@ struct Location {
         return x == other.x && y == other.y;
     }
 
+     bool operator!=(const Location& other) const {
+        return !(*this == other);
+    }
+
     bool operator<(const Location& other) const {
         if (x != other.x)
             return x < other.x;

@@ -4,7 +4,7 @@ CulturalCenter::CulturalCenter(const std::string& type, int  capacity, double pr
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage)
         : LandMark(type,capacity,price, water, power, waste, sewage) {}
 
-CulturalCenter::CulturalCenter(): LandMark("Cultural Center", 80,40000.00,nullptr, nullptr,nullptr,nullptr){}
+CulturalCenter::~CulturalCenter(){}
 
 void CulturalCenter::displayStatus(){
     std::cout << "Cultural Center Status:\n";
@@ -13,5 +13,10 @@ void CulturalCenter::displayStatus(){
 
 
 std::unique_ptr<LandMark> CulturalCenter::clone() const {
-    return std::make_unique<CulturalCenter>(*this);
+    std::unique_ptr<CulturalCenter> culturalCenter = std::make_unique<CulturalCenter>(
+    landMarkType, visitorCapacity, price, waterSupply, powerSupply, wasteManagement, sewageManagement
+);
+
+    return culturalCenter;
+
 }

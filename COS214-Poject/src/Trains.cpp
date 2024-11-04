@@ -2,6 +2,11 @@
 #include <string>
 #include "Trains.h"
 
+std::unique_ptr<Transport> Trains::clone() const {
+    return std::make_unique<Trains>(*this);
+}
+
+
 double Trains::getCapacity() const{
     return 500;
 }

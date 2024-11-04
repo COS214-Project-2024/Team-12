@@ -10,6 +10,7 @@ public:
     ~Monument();
     void displayStatus();
     std::unique_ptr<LandMark> clone() const;
+    std::string getBuildingType() const ;
 };
 
 #endif

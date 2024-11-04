@@ -9,6 +9,7 @@ public:
         std::shared_ptr<UtilityFlyweight> waste, std::shared_ptr<UtilityFlyweight> sewage);
     ~CulturalCenter();
     void displayStatus();
+    std::string getBuildingType() const;
     std::unique_ptr<LandMark> clone() const;
 };
 

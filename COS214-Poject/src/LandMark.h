@@ -41,7 +41,7 @@ public:
             wasteManagement && sewageManagement;
     }
 
-    std::string getBuildingType() override{
+    std::string getBuildingType() const override{
         return "LandMark";
     }
 

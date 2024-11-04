@@ -39,7 +39,7 @@ public:
     std::string getBuildingType() const override{
         return "Residential Building";
     }
-    virtual std::string getDisplaySymbol() const = 0; // For map display
+    virtual char getDisplaySymbol() const = 0; // For map display
 
     // Utility-related methods - For NPC Mananger Singleton
     int getUtilityCoverage() const {

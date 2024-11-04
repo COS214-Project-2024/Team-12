@@ -22,7 +22,7 @@ public:
     std::unique_ptr<PublicService> clone() const;
     void displayStatus() override;
     char getDisplaySymbol() const override;
-
+    std::string getBuildingType() const;
 
 };
 

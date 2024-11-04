@@ -27,3 +27,7 @@ void Hospital::displayStatus() {
 char Hospital::getDisplaySymbol() const {
     return 'H'; // Character symbol for Hospital
 }
+
+std::string Hospital::getBuildingType() const {
+    return "Hospital";
+}

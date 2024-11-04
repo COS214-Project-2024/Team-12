@@ -20,3 +20,7 @@ std::unique_ptr<LandMark> Park::clone() const {
     return park;
 
 }
+
+std::string Park::getBuildingType() const {
+    return "Park";
+}

@@ -20,3 +20,7 @@ std::unique_ptr<LandMark> CulturalCenter::clone() const {
     return culturalCenter;
 
 }
+
+std::string CulturalCenter::getBuildingType() const {
+    return "Cultural Center";
+}

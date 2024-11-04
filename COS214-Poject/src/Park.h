@@ -10,6 +10,7 @@ public:
     ~Park();
     void displayStatus() override;
     std::unique_ptr<LandMark> clone() const;
+    std::string getBuildingType() const;
 };
 
 #endif

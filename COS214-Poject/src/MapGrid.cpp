@@ -122,22 +122,6 @@ void MapGrid::addUtilityEffect(const Location& loc, std::shared_ptr<UtilityFlywe
     std::cout << "\033[1;34m========================\033[0m\n";
 }
 
-bool MapGrid::isCompatibleBuilding(const std::shared_ptr<CityComponent>& building,
-	const std::shared_ptr<ZoneComposite>& zone) const {
-        if(!building || !zone) return false;
-        std::string buildingType = building->getBuildingType();
-        std::string zoneType = zone->getBuildingType();
-        
-        if (zoneType == "Residential") 
-            return dynamic_cast<ResidentialBuilding*>(building.get()) != nullptr;
-        else if (zoneType == "Commercial")
-            return dynamic_cast<CommercialBuilding*>(building.get()) != nullptr;
-        else if (zoneType == "Industrial")
-            return dynamic_cast<Industry*>(building.get()) != nullptr;
-            
-        return false;
-}
-
 std::vector<std::shared_ptr<CityComponent>> MapGrid::getBuildingsInZone(const std::shared_ptr<ZoneComposite>& zone) const {
     std::vector<std::shared_ptr<CityComponent>> buildings;
     
@@ -210,12 +194,24 @@ std::string MapGrid::getDisplayString() const {
     }
     ss << "\n";
     
-    // Grid content with zones
+    // Grid content with zones and transport links
     for (int y = 0; y < height; y++) {
         ss << std::setw(2) << y << " ";
         for (int x = 0; x < width; x++) {
             const auto& cell = grid[y][x];
             
+            // Check if the cell is a transport link
+            if (cell.symbol == 'R') {
+                ss << "\033[1;96m[R]\033[0m";  // Bright Cyan for Road endpoint
+                continue;
+            } else if (cell.symbol == 'T') {
+                ss << "\033[1;95m[T]\033[0m";  // Bright Magenta for Train endpoint
+                continue;
+            } else if (cell.symbol == '-' || cell.symbol == '|' || cell.symbol == '+') {
+                ss << "\033[1;33m[" << cell.symbol << "]\033[0m";  // Yellow for all links
+                continue;
+            }
+
             // Start zone styling if cell is in a zone
             if (cell.zone) {
                 std::string zoneType = cell.zone->getBuildingType();
@@ -228,80 +224,131 @@ std::string MapGrid::getDisplayString() const {
                     ss << "\033[48;5;58m"; // Dark yellow background
             }
 
-			// Display cell content
-			if (cell.component) {
-				if (auto building = std::dynamic_pointer_cast<CityComponent>(cell.component)) {
-					std::string color;
-					char symbol	;
-
-					if (auto res = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
-						color = res->getDisplayColor();
-						symbol = res->getDisplaySymbol();
-						ss << color << "[" << symbol << "]\033[0m";
-					} 
-					else if (auto com = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
-						color = com->getDisplayColor();
-						symbol = com->getDisplaySymbol();
-						ss << color << "[" << symbol << "]\033[0m";
-					}
-					else if (auto industry = std::dynamic_pointer_cast<Industry>(building)) {
-						ss << "\033[1;31m[I]\033[0m";
-					}
-					else if (auto utility = std::dynamic_pointer_cast<UtilityFlyweight>(building)) {
-						std::string type = utility->getName();
-						if (type == "Water Supply") {
-							ss << "\033[1;34m[W]\033[0m";
-						} else if (type == "Power Plant") {
-							ss << "\033[1;35m[P]\033[0m";
-						} else if (type == "Sewage System") {
-							ss << "\033[1;36m[S]\033[0m";
-						} else if (type == "Waste Management") {
-							ss << "\033[1;32m[M]\033[0m";
-						}
-					}// In MapGrid::getDisplayString(), add to the display section:
-                    else if (auto incomeResource = std::dynamic_pointer_cast<IncomeResourceProduct>(cell.component)) {
-                        if (dynamic_cast<Gold*>(incomeResource.get())) 
-                            ss << "\033[1;33m[⚜]\033[0m";  // Gold symbol (fleur-de-lis)
-                        else if (dynamic_cast<Diamonds*>(incomeResource.get())) 
-                            ss << "\033[1;36m[♦]\033[0m";  // Diamond symbol
-                        else if (dynamic_cast<Coal*>(incomeResource.get())) 
-                            ss << "\033[1;30m[◆]\033[0m";  // Coal symbol (black diamond)
-                        else if (dynamic_cast<Oil*>(incomeResource.get())) 
-                            ss << "\033[1;32m[●]\033[0m";  // Oil symbol (black circle)
+            // Display cell content
+            if (cell.component) {
+                // Building Types
+                auto building = cell.component;
+                // Residential Buildings
+                if (auto residential = std::dynamic_pointer_cast<ResidentialBuilding>(building)) {
+                    char symbol = residential->getDisplaySymbol();
+                    int coverage = residential->getUtilityCoverage();
+                    if (coverage == 4) {
+                        ss << "\033[1;32m[" << symbol << "]\033[0m";  // Green
+                    } else if (coverage >= 2) {
+                        ss << "\033[1;33m[" << symbol << "]\033[0m";  // Yellow
+                    } else {
+                        ss << "\033[1;31m[" << symbol << "]\033[0m";  // Red
                     }
-                    else if (auto constructionResource = std::dynamic_pointer_cast<ConstructionResourceProduct>(cell.component)) {
-                        if (dynamic_cast<Stone*>(constructionResource.get())) 
-                            ss << "\033[1;37m[◈]\033[0m";  // Stone symbol
-                        else if (dynamic_cast<Wood*>(constructionResource.get())) 
-                            ss << "\033[1;33m[⚏]\033[0m";  // Wood symbol
-                        else if (dynamic_cast<Concrete*>(constructionResource.get())) 
-                            ss << "\033[1;37m[⬢]\033[0m";  // Concrete symbol (hexagon)
-                        else if (dynamic_cast<Steel*>(constructionResource.get())) 
-                            ss << "\033[1;36m[⬡]\033[0m";  // Steel symbol (hollow hexagon)
+                } 
+                // Commercial Buildings
+                else if (auto commercial = std::dynamic_pointer_cast<CommercialBuilding>(building)) {
+                    char symbol = commercial->getDisplaySymbol();
+                    int coverage = commercial->getUtilityCoverage();
+                    if (coverage == 4) {
+                        ss << "\033[1;36m[" << symbol << "]\033[0m";  // Cyan
+                    } else if (coverage >= 2) {
+                        ss << "\033[1;37m[" << symbol << "]\033[0m";  // White
+                    } else {
+                        ss << "\033[1;31m[" << symbol << "]\033[0m";  // Red
                     }
-				}
-			} else {
-				// Empty cell - show utility coverage if any
-				if (!cell.affectingUtilities.empty()) {
-					int coverageCount = cell.affectingUtilities.size();
-					switch(coverageCount) {
-						case 1: 
-							ss << "\033[1;34m[1]\033[0m";
-							break;
-						case 2:
-							ss << "\033[1;36m[2]\033[0m";
-							break;
-						case 3:
-							ss << "\033[1;35m[3]\033[0m";
-							break;
-						case 4:
-							ss << "\033[1;37m[4]\033[0m";
-							break;
-					}
-				} else  {
-					ss << "\033[1;30m[ ]\033[0m";
-				}
-			}
+                }
+                // Industry
+                else if (std::dynamic_pointer_cast<Industry>(building)) {
+                    ss << "\033[1;31m[I]\033[0m"; 
+                }
+                // Utilities
+                else if (auto utility = std::dynamic_pointer_cast<UtilityFlyweight>(building)) {
+                    std::string type = utility->getName();
+                    if (type == "Water Supply") {
+                        ss << "\033[1;34m[W]\033[0m";
+                    } else if (type == "Power Plant") {
+                        ss << "\033[1;35m[P]\033[0m";
+                    } else if (type == "Sewage System") {
+                        ss << "\033[1;36m[S]\033[0m";
+                    } else if (type == "Waste Management") {
+                        ss << "\033[1;32m[M]\033[0m";
+                    }
+                }
+                // Public Services
+                else if (auto publicService = std::dynamic_pointer_cast<PublicService>(building)) {
+                    char symbol = publicService->getDisplaySymbol();
+                    int coverage = publicService->getUtilityCoverage();
+                    
+                    if (std::dynamic_pointer_cast<FireStation>(publicService)) {
+                        ss << (coverage == 4 ? "\033[1;91m[F]\033[0m" : "\033[1;33m[F]\033[0m"); // Red for FireStation
+                    } else if (std::dynamic_pointer_cast<Hospital>(publicService)) {
+                        ss << (coverage == 4 ? "\033[1;92m[H]\033[0m" : "\033[1;32m[H]\033[0m"); // Green for Hospital
+                    } else if (std::dynamic_pointer_cast<PoliceStation>(publicService)) {
+                        ss << (coverage == 4 ? "\033[1;94m[P]\033[0m" : "\033[1;36m[P]\033[0m"); // Blue for PoliceStation
+                    }
+                }
+                // Landmarks
+                else if (auto landmark = std::dynamic_pointer_cast<LandMark>(building)) {
+                    char symbol = 'L'; // Default symbol for landmark
+                    int coverage = landmark->getUtilityCoverage();
+                    
+                    if (std::dynamic_pointer_cast<Monument>(landmark)) {
+                        symbol = 'M';
+                        ss << (coverage == 4 ? "\033[1;35m[M]\033[0m" : "\033[1;33m[M]\033[0m"); // Purple if fully covered
+                    } else if (std::dynamic_pointer_cast<CulturalCenter>(landmark)) {
+                        symbol = 'C';
+                        ss << (coverage == 4 ? "\033[1;34m[C]\033[0m" : "\033[1;36m[C]\033[0m"); // Blue if fully covered
+                    } else if (std::dynamic_pointer_cast<Park>(landmark)) {
+                        symbol = 'P';
+                        ss << (coverage == 4 ? "\033[1;32m[P]\033[0m" : "\033[1;33m[P]\033[0m"); // Green if fully covered
+                    }
+                }
+                // Income Resources
+                else if (auto incomeResource = std::dynamic_pointer_cast<IncomeResourceProduct>(building)) {
+                    if (std::dynamic_pointer_cast<Gold>(incomeResource)) 
+                        ss << "\033[1;33m[⚜]\033[0m";  // Gold symbol (fleur-de-lis)
+                    else if (std::dynamic_pointer_cast<Diamonds>(incomeResource)) 
+                        ss << "\033[1;36m[♦]\033[0m";  // Diamond symbol
+                    else if (std::dynamic_pointer_cast<Coal>(incomeResource)) 
+                        ss << "\033[1;30m[◆]\033[0m";  // Coal symbol (black diamond)
+                    else if (std::dynamic_pointer_cast<Oil>(incomeResource)) 
+                        ss << "\033[1;32m[●]\033[0m";  // Oil symbol (black circle)
+                }
+                // Construction Resources
+                else if (auto constructionResource = std::dynamic_pointer_cast<ConstructionResourceProduct>(building)) {
+                    if (std::dynamic_pointer_cast<Stone>(constructionResource)) 
+                        ss << "\033[1;37m[◈]\033[0m";  // Stone symbol
+                    else if (std::dynamic_pointer_cast<Wood>(constructionResource)) 
+                        ss << "\033[1;33m[⚏]\033[0m";  // Wood symbol
+                    else if (std::dynamic_pointer_cast<Concrete>(constructionResource)) 
+                        ss << "\033[1;37m[⬢]\033[0m";  // Concrete symbol (hexagon)
+                    else if (std::dynamic_pointer_cast<Steel>(constructionResource)) 
+                        ss << "\033[1;36m[⬡]\033[0m";  // Steel symbol (hollow hexagon)
+                }
+                // Default case
+                else {
+                    ss << "\033[1;30m[?]\033[0m";
+                }
+            } else {
+                // Empty cell - show utility coverage if any
+                if (!cell.affectingUtilities.empty()) {
+                    int coverageCount = cell.affectingUtilities.size();
+                    switch(coverageCount) {
+                        case 1: 
+                            ss << "\033[1;34m[1]\033[0m";
+                            break;
+                        case 2:
+                            ss << "\033[1;36m[2]\033[0m";
+                            break;
+                        case 3:
+                            ss << "\033[1;35m[3]\033[0m";
+                            break;
+                        case 4:
+                            ss << "\033[1;37m[4]\033[0m";
+                            break;
+                        default:
+                            ss << "\033[1;30m[ ]\033[0m";
+                            break;
+                    }
+                } else {
+                    ss << "\033[1;30m[ ]\033[0m";
+                }
+            }
 
             // Reset background color if we're in a zone
             if (cell.zone) {
@@ -311,32 +358,43 @@ std::string MapGrid::getDisplayString() const {
         ss << "\n";
     }
     
-	ss << "\nLegend:\n"
-	<< "=== Zones ===\n"
-	<< "\033[48;5;17m   \033[0m - Residential Zone\n"
-	<< "\033[48;5;52m   \033[0m - Commercial Zone\n"
-	<< "\033[48;5;58m   \033[0m - Industrial Zone\n"
-	<< "\n=== Buildings ===\n"
-	<< "Residential:\n"
-	<< "\033[1;32m[H]\033[0m - House\n"
-	<< "\033[1;32m[F]\033[0m - Flat\n"
-	<< "\033[1;32m[T]\033[0m - Townhouse\n"
-	<< "\033[1;32m[E]\033[0m - Estate\n"
-	<< "\nCommercial:\n"
-	<< "\033[1;33m[S]\033[0m - Shop\n"
-	<< "\033[1;33m[O]\033[0m - Office\n"
-	<< "\033[1;33m[M]\033[0m - Mall\n"
-	<< "\n=== Utilities ===\n"
-	<< "\033[1;34m[W]\033[0m - Water Supply\n"
-	<< "\033[1;35m[P]\033[0m - Power Plant\n"
-	<< "\033[1;36m[S]\033[0m - Sewage System\n"
-	<< "\033[1;32m[M]\033[0m - Waste Management\n"
-	<< "\n=== Coverage ===\n"
-	<< "\033[1;34m[1]\033[0m - Single Utility\n"
-	<< "\033[1;36m[2]\033[0m - Double Coverage\n"
-	<< "\033[1;35m[3]\033[0m - Triple Coverage\n"
-	<< "\033[1;37m[4]\033[0m - Full Coverage\n"
-	<< "\033[1;30m[ ]\033[0m - Empty\n"
+    // Legend
+    ss << "\nLegend:\n"
+    << "=== Zones ===\n"
+    << "\033[48;5;17m   \033[0m - Residential Zone\n"
+    << "\033[48;5;52m   \033[0m - Commercial Zone\n"
+    << "\033[48;5;58m   \033[0m - Industrial Zone\n"
+    << "\n=== Buildings ===\n"
+    << "Residential:\n"
+    << "\033[1;32m[H]\033[0m - House\n"
+    << "\033[1;32m[F]\033[0m - Flat\n"
+    << "\033[1;32m[T]\033[0m - Townhouse\n"
+    << "\033[1;32m[E]\033[0m - Estate\n"
+    << "\nCommercial:\n"
+    << "\033[1;33m[S]\033[0m - Shop\n"
+    << "\033[1;33m[O]\033[0m - Office\n"
+    << "\033[1;33m[M]\033[0m - Mall\n"
+    << "\nIndustrial:\n"
+    << "\033[1;31m[I]\033[0m - Industry\n"
+    << "\n=== Utilities ===\n"
+    << "\033[1;34m[W]\033[0m - Water Supply\n"
+    << "\033[1;35m[P]\033[0m - Power Plant\n"
+    << "\033[1;36m[S]\033[0m - Sewage System\n"
+    << "\033[1;32m[M]\033[0m - Waste Management\n"
+    << "\n=== Public Services ===\n"
+    << "\033[1;91m[F]\033[0m - Fire Station\n"
+    << "\033[1;92m[H]\033[0m - Hospital\n"
+    << "\033[1;94m[P]\033[0m - Police Station\n"
+    << "\n=== Landmarks ===\n"
+    << "\033[1;35m[M]\033[0m - Monument\n"
+    << "\033[1;34m[C]\033[0m - Cultural Center\n"
+    << "\033[1;32m[P]\033[0m - Park\n"
+    << "\n=== Transport Links ===\n"
+    << "\033[1;96m[R]\033[0m - Road Endpoint\n"      // Bright Cyan for Road
+    << "\033[1;95m[T]\033[0m - Train Endpoint\n"     // Bright Magenta for Train
+    << "\033[1;33m[-]\033[0m - Horizontal Link\n"    // Yellow for links
+    << "\033[1;33m[|]\033[0m - Vertical Link\n"
+    << "\033[1;33m[+]\033[0m - Intersection\n"
     << "\n=== Resources ===\n"
     << "\033[1;33m[⚜]\033[0m - Gold\n"
     << "\033[1;36m[♦]\033[0m - Diamond\n"
@@ -345,10 +403,17 @@ std::string MapGrid::getDisplayString() const {
     << "\033[1;37m[◈]\033[0m - Stone\n"
     << "\033[1;33m[⚏]\033[0m - Wood\n"
     << "\033[1;37m[⬢]\033[0m - Concrete\n"
-    << "\033[1;36m[⬡]\033[0m - Steel\n";
+    << "\033[1;36m[⬡]\033[0m - Steel\n"
+    << "\n=== Coverage ===\n"
+    << "\033[1;34m[1]\033[0m - Single Utility\n"
+    << "\033[1;36m[2]\033[0m - Double Coverage\n"
+    << "\033[1;35m[3]\033[0m - Triple Coverage\n"
+    << "\033[1;37m[4]\033[0m - Full Coverage\n"
+    << "\033[1;30m[ ]\033[0m - Empty\n";
 
     return ss.str();
 }
+
 
 void MapGrid::removeComponent(const Location& loc) {
     gridMap.erase(loc);

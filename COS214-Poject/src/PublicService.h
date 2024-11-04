@@ -24,7 +24,7 @@ public:
    virtual ~PublicService() = default;
       // Display methods
     virtual void displayStatus() = 0;
-    std::string getBuildingType() override{
+    std::string getBuildingType() const override{
       return "Public Service";
     }
     virtual char getDisplaySymbol() const = 0; // For map display

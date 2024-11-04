@@ -6,7 +6,7 @@ Monument::Monument(const std::string& type, int  capacity, double price, std::sh
 
 Monument::~Monument(){}
 
-void Monument::displayStatus(){
+void Monument::displayStatus() {
     std::cout << "Monument Status:\n";
     LandMark::displayStatus();
 }
@@ -19,4 +19,8 @@ std::unique_ptr<LandMark> Monument::clone() const {
 
     return monument;
 
+}
+
+std::string Monument::getBuildingType() const {
+    return "Monument";
 }

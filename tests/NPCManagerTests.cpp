@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 #include "../COS214-Poject/src/NPCManager.h"
+#include "../COS214-Poject/src/Government.h"
 
 TEST(NPCManagerTest, SingletonInstance) {
     NPCManager& instance1 = NPCManager::getInstance();

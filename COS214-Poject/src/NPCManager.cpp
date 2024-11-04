@@ -1,16 +1,26 @@
 #include "NPCManager.h"
+#include "Government.h"
 
 #include <utility>
 #include <string>
 #include <algorithm>
 #include <iostream>
+ 
+NPCManager& NPCManager::getInstance(){
+    static NPCManager instance;  // Guaranteed to be destroyed, instantiated on first use
+        return instance;
+}
 
+NPCManager::NPCManager()  : happinessLevel(0), happyCount(0), neutralCount(0), revoltCount(0), productiveCount(0), crimeCount(0), employedNpcs(0) {}
 
 int NPCManager::getHappinessLevel() const{
 	return happinessLevel;
 }
 
 void NPCManager::setHappinessLevel(int level){
+    if(Government::getInstance().getPopulation() == 0){
+        return;
+    }
 	happinessLevel += level;
 
 	if(happinessLevel > 100){
@@ -95,4 +105,33 @@ std::string NPCManager::getHighestState() const{
 
 int NPCManager::getTotalNPCs() const{
     return happyCount + neutralCount + revoltCount + productiveCount + crimeCount;
+}
+
+void NPCManager::EmployeedNpcs() { 
+    int total = getTotalNPCs();
+
+    if (getHighestState() == "Neutral") {
+        employedNpcs = total * 0.85;    // 85% employed
+        unemployedNpcs = total * 0.15;  // 15% unemployed
+    } else if (getHighestState() == "Happy") {
+        employedNpcs = total * 0.92;    // 92% employed
+        unemployedNpcs = total * 0.08;  // 8% unemployed
+    } else if (getHighestState() == "Productive") {
+        employedNpcs = total * 0.88;    // 88% employed
+        unemployedNpcs = total * 0.12;  // 12% unemployed
+    } else if (getHighestState() == "Crime") {
+        employedNpcs = total * 0.75;    // 75% employed
+        unemployedNpcs = total * 0.25;  // 25% unemployed, as crime might reduce employment
+    } else if (getHighestState() == "Revolt") {
+        employedNpcs = total * 0.6;     // 60% employed
+        unemployedNpcs = total * 0.4;   // 40% unemployed
+    }
+
+    // Update the Government's employment rate based on this information
+    double employmentRate = static_cast<double>(employedNpcs) / total * 100;
+    Government::getInstance().increaseEmploymentRate(employmentRate);
+}
+
+void NPCManager::getCrimeRate(){
+    Government::getInstance().setCrimeRate(crimeCount/getTotalNPCs());
 }

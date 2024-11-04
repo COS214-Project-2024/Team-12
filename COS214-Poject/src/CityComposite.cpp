@@ -2,46 +2,34 @@
 #include "CityComponent.h"
 #include "NPCObserver.h"
 #include "Government.h"
+#include "NPCManager.h"
 
 #include <iostream>
 #include <vector>
 #include <string>
 
-CityComposite::CityComposite(const std::string &name, MapGrid *cityMap) : cityName(name), budget(0), map(cityMap) {}
+CityComposite::CityComposite(const std::string &name) : cityName(name) {}
 
 CityComposite::~CityComposite()
 {
     for (auto zone : zones)
     {
-        delete zone;
+        //delete zone;
     }
     zones.clear();
 }
 
-void CityComposite::add(CityComponent *zone, int x, int y)
+void CityComposite::add(std::shared_ptr<CityComponent> component)
 {
-    Location loc(x, y);
-
-    // Convert raw pointer to shared_ptr if needed
-    auto zonePtr = std::shared_ptr<CityComponent>(zone);
-
-    if(map->placeComponent(loc, zonePtr)) {
-        zones.push_back(zone);
-        zone->setLocation(loc);
+    zones.push_back(component);
+    if(Government::getInstance().getPopulation() != 0){
+        updateHappinessForNewComponent(component);
     }
-
-    // zones.push_back(zone);
-    // map->placeComponent(zone, x, y);
-
-    // Remeber to change for citizens
-    /* checkCityConditions();
-
-    notify(); */
 }
 
-void CityComposite::remove(CityComponent *zone)
+void CityComposite::remove(std::shared_ptr<CityComponent> component)
 {
-    zones.erase(std::remove(zones.begin(), zones.end(), zone), zones.end());
+    zones.erase(std::remove(zones.begin(), zones.end(), component), zones.end());
 }
 
 void CityComposite::displayStatus()
@@ -55,7 +43,7 @@ void CityComposite::displayStatus()
     Government::getInstance().displayGovernmentStats();
 }
 
-double CityComposite::getBudget() const
+/* double CityComposite::getBudget() const
 {
     return Government::getInstance().getMoney();
 }
@@ -84,7 +72,7 @@ void CityComposite::addBudget(double amount)
     {
         std::cout << "Invalid amount. Budget not updated.\n";
     }
-}
+} */
 
 bool CityComposite::checkCityConditions()
 {
@@ -125,7 +113,7 @@ bool CityComposite::checkCityConditions()
 //     }
 // }
 
-void CityComposite::connectZones(CityComponent* zoneA, CityComponent* zoneB, 
+/* void CityComposite::connectZones(CityComponent* zoneA, CityComponent* zoneB, 
                                 std::unique_ptr<Transport> transport) {
     Location startLoc = zoneA->getLocation();
     Location endLoc = zoneB->getLocation();
@@ -135,4 +123,73 @@ void CityComposite::connectZones(CityComponent* zoneA, CityComponent* zoneB,
     } else {
         std::cout << "Failed to connect zones.\n";
     }
+}
+ */
+
+void CityComposite::updateHappinessForNewComponent(const std::shared_ptr<CityComponent>& component) {
+    // Base happiness modifier for new components
+    int happinessImpact = 0;
+
+    // Determine happiness impact based on component type
+    if (component->getBuildingType() == "House") {
+        happinessImpact = 1;  // Base happiness for residential buildings
+    } 
+    else if (component->getBuildingType() == "Flat" || component->getBuildingType() == "Townhouse" || component->getBuildingType() == "Estate") {
+        happinessImpact = 2;  // More happiness for higher-end residential buildings
+    } 
+    else if (component->getBuildingType() == "Shop" || component->getBuildingType() == "Mall") {
+        happinessImpact = 3;  // Happiness boost for commercial buildings
+        Government::getInstance().increaseEmploymentRate(5);  // Increase employment due to new jobs
+    } 
+    else if (component->getBuildingType() == "Office") {
+        happinessImpact = 2;  // Moderate happiness boost for offices
+        Government::getInstance().increaseEmploymentRate(8);  // Larger employment boost
+    } 
+    else if (component->getBuildingType() == "MetalWorkFacility" || component->getBuildingType() == "PetrochemicalFacility" ||
+             component->getBuildingType() == "CrystalCraftIndustry" || component->getBuildingType() == "WoodAndCoalPlant") {
+        happinessImpact = -2;  // Industrial pollution decreases happiness
+        Government::getInstance().increaseEmploymentRate(10);  // Significant employment increase
+        Government::getInstance().incrementPollutionLevel(5);  // Increase pollution
+    } 
+    else if (component->getBuildingType() == "Utility") {
+        happinessImpact = 2;  // Utilities boost happiness in surrounding areas
+    } 
+    else if (component->getBuildingType() == "Park" || component->getBuildingType() == "Monument" || component->getBuildingType() == "CulturalCenter") {
+        happinessImpact = 4;  // Landmarks provide a strong happiness boost
+    }
+
+    // Adjust happiness in NPCManager
+    NPCManager::getInstance().setHappinessLevel(happinessImpact);
+
+    // Notify observers if needed (e.g., for GUI updates)
+    notify();
+}
+
+void CityComposite::adjustHappinessBasedOnTaxRate() {
+    auto& government = Government::getInstance();
+    auto& npcManager = NPCManager::getInstance();
+
+    double taxRate = government.getIncomeTaxRate(); // Income tax rate (0.0 to 1.0)
+    int happinessAdjustment = 0; // Default to no change
+
+    // Define tax rate thresholds
+    if (taxRate <= 0.1) { 
+        happinessAdjustment = 2;  // Slight increase for low tax rates
+    } 
+    else if (taxRate > 0.1 && taxRate <= 0.2) { 
+        happinessAdjustment = -1; // Small decrease
+    }
+    else if (taxRate > 0.2 && taxRate <= 0.3) {
+        happinessAdjustment = -3; // Noticeable decrease
+    } 
+    else if (taxRate > 0.3) {
+        happinessAdjustment = -5; // Significant decrease
+    }
+
+    // Apply the happiness adjustment
+    npcManager.setHappinessLevel(happinessAdjustment);
+
+    // Provide feedback
+    std::cout << "Tax rate is at " << (taxRate * 100) << "%, adjusting happiness by " 
+              << happinessAdjustment << " points.\n";
 }

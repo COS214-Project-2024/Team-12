@@ -7,6 +7,7 @@
 #include "../COS214-Poject/src/ProductiveState.h"
 #include "../COS214-Poject/src/CrimeState.h"
 #include "../COS214-Poject/src/NPCState.h"
+#include "../COS214-Poject/src/Government.h"
 
 // Helper to reset all counts in NPCManager for a clean test environment
 void resetNPCManagerCounts() {

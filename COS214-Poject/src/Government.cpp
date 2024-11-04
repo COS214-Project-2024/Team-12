@@ -40,6 +40,10 @@ double Government::getCrimeRate() const{
 	return crimeRate;
 }
 
+void Government::setCrimeRate(int rate){
+	crimeRate = rate/100;
+}
+
 int Government::getPopulationGrowth() const{
 	return populationGrowth;
 }
@@ -67,7 +71,7 @@ void Government::setTax(double rate){
 }
 
 void Government::increaseEmploymentRate(double rate){
-	EMPLOYMENT_RATE = rate/100;
+	EMPLOYMENT_RATE = rate;
 }
 
 void Government::setProductionRate(double rate){
@@ -99,7 +103,7 @@ void Government::displayGovernmentStats(){
 	std::cout << "Population: " << population << std::endl;
 	std::cout << "Money: " << money << std::endl;
 	std::cout << "Income Tax rate: " << incomeTaxRate << std::endl;
-	std::cout << "Employment Rate: " << EMPLOYMENT_RATE*100 << "%\n";
+	std::cout << "Employment Rate: " << EMPLOYMENT_RATE << "%\n";
 	std::cout << "Production Rate: " << productionRate << std::endl;
 	std::cout << "Crime Rate: " << crimeRate <<std::endl;
 	std::cout << "Mortality Rate: " << mortalityRate <<std::endl;
@@ -151,4 +155,23 @@ void Government::decreasePopulation(int amount){
 void Government::addProcessedResource(const std::string& resourceName, int amount, double value = 0.0) {
 	processedResources[resourceName] += amount;
 	resourceValues[resourceName] = value;  // Store the value/unit
+}
+
+void Government::increasePopulation(int amount){
+	population += amount;
+}
+void Government::incrementPollutionLevel(int amount){
+	pollutionLevel += amount;
+}
+
+void Government::decrementPollutionLevel(int amount){
+	pollutionLevel -= amount;
+}
+
+int Government::getPollutionLevel(){
+	return pollutionLevel;
+}
+
+double Government::getIncomeTaxRate(){
+	return incomeTaxRate;
 }

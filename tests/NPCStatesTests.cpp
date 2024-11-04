@@ -3,6 +3,8 @@
 #include "../COS214-Poject/src/DonationState.h"
 #include "../COS214-Poject/src/RevoltState.h"
 #include "../COS214-Poject/src/ReactingNPCS.h"
+#include "../COS214-Poject/src/NPCManager.h"
+
 
 // Test DonationState handle effect
 TEST(DonationStateTest, IncreasesCityMoney) {

@@ -15,3 +15,9 @@ The City Simulation Project is designed to provide an interactive experience whe
 
 The software applies three main design patterns: Singleton, Observer, and State. These patterns support complex interactions within the city, ensuring that changes propagate seamlessly and that citizens react to the city's changing conditions.
 
+Features
+City Building and Management: Add and manage residential, commercial, and public service buildings.
+Utility System: Connect water, power, sewage, and waste management utilities to various zones and buildings.
+Dynamic Citizen Reactions: Citizens react to changes in utilities, policies, and overall city environment.
+Economic System: Manage tax collection, resource processing, and citizen-driven donations based on their happiness level.
+

@@ -42,3 +42,7 @@ Abstract Factory Pattern
 Usage: The Abstract Factory is applied to create different families of resources, including income-generating and construction resources, as well as to provide utilities.
 Purpose: It supports the creation of cohesive resource families through specific factories, such as StoneFactory and WoodFactory, which generate consistent resource types. This pattern is also used for utilities to provide consistent access to utility types like water, power, sewage, and waste management through the UtilityFactory.
 
+Prototype Pattern
+Usage: The Prototype pattern is used for creating complex or frequently reused objects, particularly in the citizen and resource management systems.
+Purpose: Citizens are instantiated from prototypes instead of repeated manual construction, ensuring consistent properties and reducing instantiation costs. Resources, such as Steel, Wood, and Stone, are also created by cloning existing instances with adjusted attributes. This reduces memory allocation time and ensures that new resources maintain the same properties as the original prototypes.
+

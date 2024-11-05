@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-
+//updated variables
 #include "PublicTransit.h"
 
 PublicTransit::PublicTransit(int cap, double cost, double maintenanceC, std::string name, int passengerC, int freqOfOperation) : Transport(5000, 400000.00, 20000.00, "Public Transit") {

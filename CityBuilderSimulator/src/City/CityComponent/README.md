@@ -1,1 +1,1 @@
-
+implementing tax collector from residential and commercial building as they are concrete elements in the visitor design pattern

@@ -1,0 +1,116 @@
+\hypertarget{classGold}{}\doxysection{Gold Class Reference}
+\label{classGold}\index{Gold@{Gold}}
+
+
+Class representing the \mbox{\hyperlink{classGold}{Gold}} resource.  
+
+
+
+
+{\ttfamily \#include $<$Gold.\+h$>$}
+
+
+
+Inheritance diagram for Gold\+:
+% FIG 0
+
+
+Collaboration diagram for Gold\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGold_a5666afc9f27087c280e611db0588e9b5}{Gold}} (int \mbox{\hyperlink{classIncomeResourceProduct_a6e42862b30d2020f945befb8d22f4743}{quantity}}, double \mbox{\hyperlink{classIncomeResourceProduct_a476ed7fa88280696223a7874d7f23182}{market\+Value}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classGold}{Gold}} object with specified quantity and market value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGold_ad06ecff4f5d011e05870f25b9c923981}{$\sim$\+Gold}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classGold}{Gold}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGold_ae68b954c6fb437dd8749bde90e9c307d}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the status of the gold resource. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGold_a311c66af946308637e8ffb375c0cc996}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Returns the type of building represented by this resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the \mbox{\hyperlink{classGold}{Gold}} resource. 
+
+Inherits from \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} and provides functionalities specific to the \mbox{\hyperlink{classGold}{Gold}} resource, including its quantity and market value. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGold_a5666afc9f27087c280e611db0588e9b5}\label{classGold_a5666afc9f27087c280e611db0588e9b5}} 
+\index{Gold@{Gold}!Gold@{Gold}}
+\index{Gold@{Gold}!Gold@{Gold}}
+\doxysubsubsection{\texorpdfstring{Gold()}{Gold()}}
+{\footnotesize\ttfamily Gold\+::\+Gold (\begin{DoxyParamCaption}\item[{int}]{quantity,  }\item[{double}]{market\+Value }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classGold}{Gold}} object with specified quantity and market value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The amount of gold. \\
+\hline
+{\em market\+Value} & The market value of a single unit of gold.\\
+\hline
+\end{DoxyParams}
+Initializes the \mbox{\hyperlink{classGold}{Gold}} resource with its name, quantity, and market value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The amount of gold. \\
+\hline
+{\em market\+Value} & The market value of a single unit of gold. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGold_ad06ecff4f5d011e05870f25b9c923981}\label{classGold_ad06ecff4f5d011e05870f25b9c923981}} 
+\index{Gold@{Gold}!````~Gold@{$\sim$Gold}}
+\index{````~Gold@{$\sim$Gold}!Gold@{Gold}}
+\doxysubsubsection{\texorpdfstring{$\sim$Gold()}{~Gold()}}
+{\footnotesize\ttfamily Gold\+::$\sim$\+Gold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classGold}{Gold}} object. 
+
+Cleans up resources associated with the \mbox{\hyperlink{classGold}{Gold}} object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGold_ae68b954c6fb437dd8749bde90e9c307d}\label{classGold_ae68b954c6fb437dd8749bde90e9c307d}} 
+\index{Gold@{Gold}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Gold@{Gold}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Gold\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the status of the gold resource. 
+
+Outputs the quantity, market value per unit, and total value of the gold resource to the console. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classGold_a311c66af946308637e8ffb375c0cc996}\label{classGold_a311c66af946308637e8ffb375c0cc996}} 
+\index{Gold@{Gold}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Gold@{Gold}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Gold\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of building represented by this resource. 
+
+\begin{DoxyReturn}{Returns}
+A string indicating the resource type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Gold_8h}{Gold.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Gold_8cpp}{Gold.\+cpp}}\end{DoxyCompactItemize}

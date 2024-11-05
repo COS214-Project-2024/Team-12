@@ -1,0 +1,401 @@
+\hypertarget{classResidentialBuilding}{}\doxysection{Residential\+Building Class Reference}
+\label{classResidentialBuilding}\index{ResidentialBuilding@{ResidentialBuilding}}
+
+
+Represents a residential building within the city.  
+
+
+
+
+{\ttfamily \#include $<$Residential\+Building.\+h$>$}
+
+
+
+Inheritance diagram for Residential\+Building\+:
+% FIG 0
+
+
+Collaboration diagram for Residential\+Building\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResidentialBuilding_a1fbd7ca7f4b114218c475e2f85efd124}{Residential\+Building}} (int \mbox{\hyperlink{classResidentialBuilding_a2a346f1e34e7295e8dc5bda7a148f5e1}{bedrooms}}, double cost, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} with specified utilities and attributes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidentialBuilding_a3f132f415d67fb5f3f4fdbc04419e1f7}{set\+Tax\+Paid}} (bool paid)
+\begin{DoxyCompactList}\small\item\em Sets the tax-\/paid status. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResidentialBuilding_a7dfc8ae6174717589cb7ddeeb1c64e3a}{is\+Tax\+Paid}} () const
+\begin{DoxyCompactList}\small\item\em Checks if taxes have been paid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidentialBuilding_adee553dc461abe2ba3e2f50613854522}{accept}} (\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$TC) override
+\begin{DoxyCompactList}\small\item\em Accepts a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} visitor to collect taxes from this building. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classResidentialBuilding_a0f624ac4317aa54010f601581aba8170}{get\+Price}} () const
+\begin{DoxyCompactList}\small\item\em Gets the price of the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidentialBuilding_a88540ce1ca4099cdbb10caaa33939cdb}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the status of the residential building. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classResidentialBuilding_afd1404c6d59a48932e8190b8dfad83cb}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the building type. \end{DoxyCompactList}\item 
+virtual char \mbox{\hyperlink{classResidentialBuilding_ac0839490cde74967340bbd82fb65bd4d}{get\+Display\+Symbol}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the symbol used for map display. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classResidentialBuilding_a248f6c5f3f6bd5deb419960c55806c69}{get\+Utility\+Coverage}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the utility coverage for this building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResidentialBuilding_a9c022863badc7e5001f1d6b93220b82b}{has\+Utilities}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the building has all essential utilities connected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidentialBuilding_a48bd990a84e36be60d3de00289875a12}{set\+Water\+Supply}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ utility)
+\item 
+void \mbox{\hyperlink{classResidentialBuilding_ac49d816dfc6e21c9697568ce37ce28d7}{set\+Power\+Supply}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ utility)
+\item 
+void \mbox{\hyperlink{classResidentialBuilding_a8b6693e54b3781377b45f89d67ecd94a}{set\+Waste\+Management}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ utility)
+\item 
+void \mbox{\hyperlink{classResidentialBuilding_a0520bfd31b7ebe162b63239c8dee0aae}{set\+Sewage\+Management}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ utility)
+\item 
+virtual std\+::string \mbox{\hyperlink{classResidentialBuilding_ad90cfe33e3ec74723198750728e0c118}{get\+Display\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Gets the display color based on utility coverage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classResidentialBuilding_a2a346f1e34e7295e8dc5bda7a148f5e1}{bedrooms}}
+\begin{DoxyCompactList}\small\item\em Number of bedrooms in the building. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classResidentialBuilding_ac5d044b1f5255605c12d08ecd4793b89}{price}}
+\begin{DoxyCompactList}\small\item\em Price of the residential building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResidentialBuilding_ad90f69bdace97398ec9e009460ce767b}{tax\+Paid}}
+\begin{DoxyCompactList}\small\item\em Flag indicating whether taxes are paid. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classResidentialBuilding_a4cba8ba791c190861a2e376e4e207376}{water\+Supply}}
+\begin{DoxyCompactList}\small\item\em Water utility connection. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classResidentialBuilding_a1d930ae500bc253c5a3a514b8e059d57}{power\+Supply}}
+\begin{DoxyCompactList}\small\item\em Power utility connection. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classResidentialBuilding_a9de2b63d5bb2c1a47bfa3aea9fd010d4}{waste\+Management}}
+\begin{DoxyCompactList}\small\item\em Waste management utility connection. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classResidentialBuilding_a5e2e080c366d22873de34534f1196bfa}{sewage\+Management}}
+\begin{DoxyCompactList}\small\item\em Sewage management utility connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a residential building within the city. 
+
+The \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} class provides functionality for managing utility connections, displaying building status, and handling tax-\/related actions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classResidentialBuilding_a1fbd7ca7f4b114218c475e2f85efd124}\label{classResidentialBuilding_a1fbd7ca7f4b114218c475e2f85efd124}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!ResidentialBuilding@{ResidentialBuilding}}
+\index{ResidentialBuilding@{ResidentialBuilding}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{ResidentialBuilding()}{ResidentialBuilding()}}
+{\footnotesize\ttfamily Residential\+Building\+::\+Residential\+Building (\begin{DoxyParamCaption}\item[{int}]{bedrooms,  }\item[{double}]{price,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} with specified utilities and attributes. 
+
+Constructs a \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} with specified attributes and utilities.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bedrooms} & Number of bedrooms in the building. \\
+\hline
+{\em cost} & Price of the building. \\
+\hline
+{\em water} & Water supply connection. \\
+\hline
+{\em power} & Power supply connection. \\
+\hline
+{\em waste} & Waste management connection. \\
+\hline
+{\em sewage} & Sewage management connection.\\
+\hline
+{\em bedrooms} & Number of bedrooms in the building. \\
+\hline
+{\em price} & Price of the building. \\
+\hline
+{\em water} & Shared pointer to the water utility. \\
+\hline
+{\em power} & Shared pointer to the power utility. \\
+\hline
+{\em waste} & Shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & Shared pointer to the sewage management utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResidentialBuilding_adee553dc461abe2ba3e2f50613854522}\label{classResidentialBuilding_adee553dc461abe2ba3e2f50613854522}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!accept@{accept}}
+\index{accept@{accept}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Residential\+Building\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$}]{TC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accepts a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} visitor to collect taxes from this building. 
+
+Accepts a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} visitor to collect taxes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & Pointer to the tax collector.\\
+\hline
+{\em TC} & Pointer to the \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} visiting the building. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classResidentialBuilding_a88540ce1ca4099cdbb10caaa33939cdb}\label{classResidentialBuilding_a88540ce1ca4099cdbb10caaa33939cdb}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Residential\+Building\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the status of the residential building. 
+
+Displays the status of the residential building, including utility connections and tax status. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classResidentialBuilding_afd1404c6d59a48932e8190b8dfad83cb}\label{classResidentialBuilding_afd1404c6d59a48932e8190b8dfad83cb}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Residential\+Building\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the building type. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of the building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classTownhouse_a3d04e94b61fde62771ad38b8d87881d3}{Townhouse}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classResidentialBuilding_ad90cfe33e3ec74723198750728e0c118}\label{classResidentialBuilding_ad90cfe33e3ec74723198750728e0c118}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!getDisplayColor@{getDisplayColor}}
+\index{getDisplayColor@{getDisplayColor}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{getDisplayColor()}{getDisplayColor()}}
+{\footnotesize\ttfamily virtual std\+::string Residential\+Building\+::get\+Display\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the display color based on utility coverage. 
+
+\begin{DoxyReturn}{Returns}
+ANSI color code string for the building\textquotesingle{}s utility coverage status. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classResidentialBuilding_ac0839490cde74967340bbd82fb65bd4d}\label{classResidentialBuilding_ac0839490cde74967340bbd82fb65bd4d}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily virtual char Residential\+Building\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the symbol used for map display. 
+
+\begin{DoxyReturn}{Returns}
+A character symbol representing the building. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTownhouse_ace0fd73d63c82219bbf9da8d165b6d89}{Townhouse}}, \mbox{\hyperlink{classHouse_a940121ab1d64e7d75d6c989100a3fc15}{House}}, \mbox{\hyperlink{classFlat_a78b080f31c2ee95833293fd37422cd2d}{Flat}}, and \mbox{\hyperlink{classEstate_ac004993bc029b169d71a3da379e0a0ca}{Estate}}.
+
+\mbox{\Hypertarget{classResidentialBuilding_a0f624ac4317aa54010f601581aba8170}\label{classResidentialBuilding_a0f624ac4317aa54010f601581aba8170}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily double Residential\+Building\+::get\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the price of the building. 
+
+\begin{DoxyReturn}{Returns}
+The price of the building. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classResidentialBuilding_a248f6c5f3f6bd5deb419960c55806c69}\label{classResidentialBuilding_a248f6c5f3f6bd5deb419960c55806c69}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!getUtilityCoverage@{getUtilityCoverage}}
+\index{getUtilityCoverage@{getUtilityCoverage}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{getUtilityCoverage()}{getUtilityCoverage()}}
+{\footnotesize\ttfamily int Residential\+Building\+::get\+Utility\+Coverage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the utility coverage for this building. 
+
+\begin{DoxyReturn}{Returns}
+The number of connected utilities. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classResidentialBuilding_a9c022863badc7e5001f1d6b93220b82b}\label{classResidentialBuilding_a9c022863badc7e5001f1d6b93220b82b}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!hasUtilities@{hasUtilities}}
+\index{hasUtilities@{hasUtilities}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{hasUtilities()}{hasUtilities()}}
+{\footnotesize\ttfamily bool Residential\+Building\+::has\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the building has all essential utilities connected. 
+
+\begin{DoxyReturn}{Returns}
+True if all utilities are connected, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{classResidentialBuilding_a7dfc8ae6174717589cb7ddeeb1c64e3a}\label{classResidentialBuilding_a7dfc8ae6174717589cb7ddeeb1c64e3a}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!isTaxPaid@{isTaxPaid}}
+\index{isTaxPaid@{isTaxPaid}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{isTaxPaid()}{isTaxPaid()}}
+{\footnotesize\ttfamily bool Residential\+Building\+::is\+Tax\+Paid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if taxes have been paid. 
+
+Checks if the tax has been paid for this building.
+
+\begin{DoxyReturn}{Returns}
+True if taxes are paid, false otherwise.
+
+True if the tax is paid, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classResidentialBuilding_ac49d816dfc6e21c9697568ce37ce28d7}\label{classResidentialBuilding_ac49d816dfc6e21c9697568ce37ce28d7}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!setPowerSupply@{setPowerSupply}}
+\index{setPowerSupply@{setPowerSupply}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{setPowerSupply()}{setPowerSupply()}}
+{\footnotesize\ttfamily void Residential\+Building\+::set\+Power\+Supply (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{utility }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classResidentialBuilding_a0520bfd31b7ebe162b63239c8dee0aae}\label{classResidentialBuilding_a0520bfd31b7ebe162b63239c8dee0aae}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!setSewageManagement@{setSewageManagement}}
+\index{setSewageManagement@{setSewageManagement}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{setSewageManagement()}{setSewageManagement()}}
+{\footnotesize\ttfamily void Residential\+Building\+::set\+Sewage\+Management (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{utility }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classResidentialBuilding_a3f132f415d67fb5f3f4fdbc04419e1f7}\label{classResidentialBuilding_a3f132f415d67fb5f3f4fdbc04419e1f7}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!setTaxPaid@{setTaxPaid}}
+\index{setTaxPaid@{setTaxPaid}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{setTaxPaid()}{setTaxPaid()}}
+{\footnotesize\ttfamily void Residential\+Building\+::set\+Tax\+Paid (\begin{DoxyParamCaption}\item[{bool}]{paid }\end{DoxyParamCaption})}
+
+
+
+Sets the tax-\/paid status. 
+
+Sets the tax-\/paid status and affects NPC happiness if applicable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paid} & True if tax has been paid, false otherwise. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{classResidentialBuilding_a8b6693e54b3781377b45f89d67ecd94a}\label{classResidentialBuilding_a8b6693e54b3781377b45f89d67ecd94a}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!setWasteManagement@{setWasteManagement}}
+\index{setWasteManagement@{setWasteManagement}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{setWasteManagement()}{setWasteManagement()}}
+{\footnotesize\ttfamily void Residential\+Building\+::set\+Waste\+Management (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{utility }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classResidentialBuilding_a48bd990a84e36be60d3de00289875a12}\label{classResidentialBuilding_a48bd990a84e36be60d3de00289875a12}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!setWaterSupply@{setWaterSupply}}
+\index{setWaterSupply@{setWaterSupply}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{setWaterSupply()}{setWaterSupply()}}
+{\footnotesize\ttfamily void Residential\+Building\+::set\+Water\+Supply (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{utility }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classResidentialBuilding_a2a346f1e34e7295e8dc5bda7a148f5e1}\label{classResidentialBuilding_a2a346f1e34e7295e8dc5bda7a148f5e1}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!bedrooms@{bedrooms}}
+\index{bedrooms@{bedrooms}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{bedrooms}{bedrooms}}
+{\footnotesize\ttfamily int Residential\+Building\+::bedrooms\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of bedrooms in the building. 
+
+\mbox{\Hypertarget{classResidentialBuilding_a1d930ae500bc253c5a3a514b8e059d57}\label{classResidentialBuilding_a1d930ae500bc253c5a3a514b8e059d57}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!powerSupply@{powerSupply}}
+\index{powerSupply@{powerSupply}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{powerSupply}{powerSupply}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Residential\+Building\+::power\+Supply\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Power utility connection. 
+
+\mbox{\Hypertarget{classResidentialBuilding_ac5d044b1f5255605c12d08ecd4793b89}\label{classResidentialBuilding_ac5d044b1f5255605c12d08ecd4793b89}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!price@{price}}
+\index{price@{price}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily double Residential\+Building\+::price\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Price of the residential building. 
+
+\mbox{\Hypertarget{classResidentialBuilding_a5e2e080c366d22873de34534f1196bfa}\label{classResidentialBuilding_a5e2e080c366d22873de34534f1196bfa}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!sewageManagement@{sewageManagement}}
+\index{sewageManagement@{sewageManagement}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{sewageManagement}{sewageManagement}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Residential\+Building\+::sewage\+Management\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sewage management utility connection. 
+
+\mbox{\Hypertarget{classResidentialBuilding_ad90f69bdace97398ec9e009460ce767b}\label{classResidentialBuilding_ad90f69bdace97398ec9e009460ce767b}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!taxPaid@{taxPaid}}
+\index{taxPaid@{taxPaid}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{taxPaid}{taxPaid}}
+{\footnotesize\ttfamily bool Residential\+Building\+::tax\+Paid\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag indicating whether taxes are paid. 
+
+\mbox{\Hypertarget{classResidentialBuilding_a9de2b63d5bb2c1a47bfa3aea9fd010d4}\label{classResidentialBuilding_a9de2b63d5bb2c1a47bfa3aea9fd010d4}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!wasteManagement@{wasteManagement}}
+\index{wasteManagement@{wasteManagement}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{wasteManagement}{wasteManagement}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Residential\+Building\+::waste\+Management\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Waste management utility connection. 
+
+\mbox{\Hypertarget{classResidentialBuilding_a4cba8ba791c190861a2e376e4e207376}\label{classResidentialBuilding_a4cba8ba791c190861a2e376e4e207376}} 
+\index{ResidentialBuilding@{ResidentialBuilding}!waterSupply@{waterSupply}}
+\index{waterSupply@{waterSupply}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{waterSupply}{waterSupply}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Residential\+Building\+::water\+Supply\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Water utility connection. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ResidentialBuilding_8h}{Residential\+Building.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ResidentialBuilding_8cpp}{Residential\+Building.\+cpp}}\end{DoxyCompactItemize}

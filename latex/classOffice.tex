@@ -1,0 +1,113 @@
+\hypertarget{classOffice}{}\doxysection{Office Class Reference}
+\label{classOffice}\index{Office@{Office}}
+
+
+Represents an office building, a type of commercial building with utility connections.  
+
+
+
+
+{\ttfamily \#include $<$Office.\+h$>$}
+
+
+
+Inheritance diagram for Office\+:
+% FIG 0
+
+
+Collaboration diagram for Office\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOffice_ae799d600814e4b8282c00cfb0b882305}{Office}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classOffice}{Office}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOffice_ad3a465535add50904d0431b8b3add913}{Office}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classOffice}{Office}} with specified utility connections. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classOffice_a698526ec4dd9584aa21998067fc68cd9}{get\+Display\+Symbol}} () const
+\begin{DoxyCompactList}\small\item\em Gets the display symbol for the \mbox{\hyperlink{classOffice}{Office}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classOffice_a961d4a850fb017336524b6c244b2890a}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the building type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an office building, a type of commercial building with utility connections. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOffice_ae799d600814e4b8282c00cfb0b882305}\label{classOffice_ae799d600814e4b8282c00cfb0b882305}} 
+\index{Office@{Office}!Office@{Office}}
+\index{Office@{Office}!Office@{Office}}
+\doxysubsubsection{\texorpdfstring{Office()}{Office()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Office\+::\+Office (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classOffice}{Office}}. 
+
+Initializes an \mbox{\hyperlink{classOffice}{Office}} building with a base capacity of 600.\+0 and no connected utilities. \mbox{\Hypertarget{classOffice_ad3a465535add50904d0431b8b3add913}\label{classOffice_ad3a465535add50904d0431b8b3add913}} 
+\index{Office@{Office}!Office@{Office}}
+\index{Office@{Office}!Office@{Office}}
+\doxysubsubsection{\texorpdfstring{Office()}{Office()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Office\+::\+Office (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Constructs an \mbox{\hyperlink{classOffice}{Office}} with specified utility connections. 
+
+Initializes an \mbox{\hyperlink{classOffice}{Office}} building with a base capacity of 600.\+0 and connects to the specified water, power, waste, and sewage utilities.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Shared pointer to the water utility. \\
+\hline
+{\em power} & Shared pointer to the power utility. \\
+\hline
+{\em waste} & Shared pointer to the waste utility. \\
+\hline
+{\em sewage} & Shared pointer to the sewage utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOffice_a961d4a850fb017336524b6c244b2890a}\label{classOffice_a961d4a850fb017336524b6c244b2890a}} 
+\index{Office@{Office}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Office@{Office}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Office\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the building type. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type (\char`\"{}\+Office\char`\"{}). 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCommercialBuilding_aff579a01599a39f3d43196790ba1c0cb}{Commercial\+Building}}.
+
+\mbox{\Hypertarget{classOffice_a698526ec4dd9584aa21998067fc68cd9}\label{classOffice_a698526ec4dd9584aa21998067fc68cd9}} 
+\index{Office@{Office}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!Office@{Office}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char Office\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the display symbol for the \mbox{\hyperlink{classOffice}{Office}}. 
+
+\begin{DoxyReturn}{Returns}
+Character symbol representing the \mbox{\hyperlink{classOffice}{Office}} (\textquotesingle{}O\textquotesingle{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercialBuilding_afc4afd257826aa0c42814e469e776a64}{Commercial\+Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Office_8h}{Office.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Office_8cpp}{Office.\+cpp}}\end{DoxyCompactItemize}

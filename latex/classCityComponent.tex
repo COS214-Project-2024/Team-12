@@ -1,0 +1,288 @@
+\hypertarget{classCityComponent}{}\doxysection{City\+Component Class Reference}
+\label{classCityComponent}\index{CityComponent@{CityComponent}}
+
+
+Abstract base class representing a component of a city.  
+
+
+
+
+{\ttfamily \#include $<$City\+Component.\+h$>$}
+
+
+
+Inheritance diagram for City\+Component\+:
+% FIG 0
+
+
+Collaboration diagram for City\+Component\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classCityComponent_ad3ca8bd75f083095089b658efaf0c863}{add}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Adds a subcomponent to the city component. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCityComponent_a0ab80333e03ea72cedcd70e5045a6831}{remove}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Removes a subcomponent from the city component. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{display\+Status}} ()=0
+\begin{DoxyCompactList}\small\item\em Displays the status of the city component. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCityComponent_a61ecfecc656602ddc0a87601d76ee6a4}{$\sim$\+City\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classCityComponent}{City\+Component}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComponent_a9529b910e491c49a6ffa19db4e92b81c}{add\+Npc}} ()
+\begin{DoxyCompactList}\small\item\em Adds an NPC observer to the component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComponent_a8975812793b87b8578a21ce2ed13b015}{remove\+Npc}} ()
+\begin{DoxyCompactList}\small\item\em Removes an NPC observer from the component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComponent_a323bb79bc68085ac2256f81812a79f52}{notify}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all observers of changes in the city component. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{get\+Building\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the type of building as a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}{accept}} (\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$collector)=0
+\begin{DoxyCompactList}\small\item\em Accepts a tax collector visitor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComponent_a0c5a590c09949e739b09855fdf903edf}{set\+Location}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Sets the location of the component using x and y coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComponent_ad715f7ce61b1319a7aa1f0639d670048}{set\+Location}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc)
+\begin{DoxyCompactList}\small\item\em Sets the location of the component using a \mbox{\hyperlink{structLocation}{Location}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{classCityComponent_a1979284dbec19f23fce08c6fe74a3b59}{get\+Location}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current location of the component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classNPCObserver}{NPCObserver}} $\ast$ $>$ \mbox{\hyperlink{classCityComponent_ae31f426b6f2e17065a0be8ce17387f1a}{observers}}
+\item 
+\mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{classCityComponent_a9ca98813ea608fdfb04a85e9b2d3814b}{location}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a component of a city. 
+
+This class defines an interface for city components, allowing for adding/removing subcomponents, managing NPC observers, setting locations, and displaying status. Derived classes represent specific city components, such as buildings or utilities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCityComponent_a61ecfecc656602ddc0a87601d76ee6a4}\label{classCityComponent_a61ecfecc656602ddc0a87601d76ee6a4}} 
+\index{CityComponent@{CityComponent}!````~CityComponent@{$\sim$CityComponent}}
+\index{````~CityComponent@{$\sim$CityComponent}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{$\sim$CityComponent()}{~CityComponent()}}
+{\footnotesize\ttfamily City\+Component\+::$\sim$\+City\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for \mbox{\hyperlink{classCityComponent}{City\+Component}}. 
+
+Destructor for the \mbox{\hyperlink{classCityComponent}{City\+Component}} class.
+
+Cleans up resources and observers when a \mbox{\hyperlink{classCityComponent}{City\+Component}} is destroyed.
+
+Cleans up all dynamically allocated NPC observers to prevent memory leaks. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}\label{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}} 
+\index{CityComponent@{CityComponent}!accept@{accept}}
+\index{accept@{accept}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily virtual void City\+Component\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$}]{collector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Accepts a tax collector visitor. 
+
+Part of the Visitor pattern, allowing tax collectors to visit city components and perform operations based on the component\textquotesingle{}s type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em collector} & A pointer to a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} object. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classZoneComposite_a610264e3ceac427c3628e68a6808a1ab}{Zone\+Composite}}, \mbox{\hyperlink{classResidentialBuilding_adee553dc461abe2ba3e2f50613854522}{Residential\+Building}}, \mbox{\hyperlink{classPublicService_a26c59603f0b079197976bb29fb03acb1}{Public\+Service}}, \mbox{\hyperlink{classCommercialBuilding_a9a93ba3f406d9ffda72692df6d5a8cdb}{Commercial\+Building}}, \mbox{\hyperlink{classLandMark_a8dfc14106a45c906e36000d98ac65213}{Land\+Mark}}, \mbox{\hyperlink{classIndustry_aecf1f0b0145d18ec4cc5b9de29412f41}{Industry}}, \mbox{\hyperlink{classIncomeResourceProduct_a0ec09a431226e980b08bdd8c256587ef}{Income\+Resource\+Product}}, \mbox{\hyperlink{classConstructionResourceProduct_a583a18c63fee942bef2b76068b174357}{Construction\+Resource\+Product}}, \mbox{\hyperlink{classCityComposite_a5e1f7555a5aa2ac4efbfb83f42dfebc4}{City\+Composite}}, and \mbox{\hyperlink{classUtilityFlyweight_a98b71d118175dab6ff5343be7bf44009}{Utility\+Flyweight}}.
+
+\mbox{\Hypertarget{classCityComponent_ad3ca8bd75f083095089b658efaf0c863}\label{classCityComponent_ad3ca8bd75f083095089b658efaf0c863}} 
+\index{CityComponent@{CityComponent}!add@{add}}
+\index{add@{add}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily virtual void City\+Component\+::add (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Adds a subcomponent to the city component. 
+
+Allows derived classes to implement adding subcomponents, supporting composite structures.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & The city component to add as a subcomponent. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classCityComposite_af4002bc47fa8f38a9747523ce6ac6f56}{City\+Composite}}, and \mbox{\hyperlink{classZoneComposite_ab96da75104b7641dfb8efe57f7c5f73f}{Zone\+Composite}}.
+
+\mbox{\Hypertarget{classCityComponent_a9529b910e491c49a6ffa19db4e92b81c}\label{classCityComponent_a9529b910e491c49a6ffa19db4e92b81c}} 
+\index{CityComponent@{CityComponent}!addNpc@{addNpc}}
+\index{addNpc@{addNpc}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{addNpc()}{addNpc()}}
+{\footnotesize\ttfamily void City\+Component\+::add\+Npc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Adds an NPC observer to the component. 
+
+Adds NPCs to the city component and adjusts the city\textquotesingle{}s population growth and happiness level.
+
+This method calculates the population growth based on the city\textquotesingle{}s residential and utility infrastructure, creates new NPCs based on this growth, and adjusts the overall happiness level depending on available housing and job opportunities. Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}\label{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}} 
+\index{CityComponent@{CityComponent}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily virtual void City\+Component\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Displays the status of the city component. 
+
+A pure virtual function that must be implemented by derived classes to show component-\/specific information. 
+
+Implemented in \mbox{\hyperlink{classPublicService_ad14d878606280cf2c180c5c84a241a35}{Public\+Service}}, \mbox{\hyperlink{classWood_ab79555e198afba0bec85c8ea06715675}{Wood}}, \mbox{\hyperlink{classStone_a680ba377edd24fc2e10dd4f17acbc323}{Stone}}, \mbox{\hyperlink{classSteel_afff1b81cc7ca89dad46059562a5a5db7}{Steel}}, \mbox{\hyperlink{classSchool_a2ba854bfe7e04ae9ae5bf3560a47d96e}{School}}, \mbox{\hyperlink{classResidentialBuilding_a88540ce1ca4099cdbb10caaa33939cdb}{Residential\+Building}}, \mbox{\hyperlink{classPoliceStation_adfc6792da46e488d77c7ef15debba72b}{Police\+Station}}, \mbox{\hyperlink{classPark_adc60642002790fdcccc2e1846e29e7e0}{Park}}, \mbox{\hyperlink{classOil_a8512f7fabf633947cd11f46170a34cb7}{Oil}}, \mbox{\hyperlink{classLandMark_a8a6bc2e43611b75aa62769f196babc30}{Land\+Mark}}, \mbox{\hyperlink{classHospital_a0b8b738415eb260c8378ca542c8ffdf0}{Hospital}}, \mbox{\hyperlink{classGold_ae68b954c6fb437dd8749bde90e9c307d}{Gold}}, \mbox{\hyperlink{classFireStation_aea55c46413850b6428a98e48d5de8057}{Fire\+Station}}, \mbox{\hyperlink{classDiamonds_aeaa39c0a314032f7b50cb08f2571371e}{Diamonds}}, \mbox{\hyperlink{classConcrete_aabdabab9ef7c84f8bc2b3d60ba13913e}{Concrete}}, \mbox{\hyperlink{classCommercialBuilding_a84177b0025929b8d39859256f29e1b79}{Commercial\+Building}}, \mbox{\hyperlink{classCoal_abc54d2541a553dd47f02f850b24c5553}{Coal}}, \mbox{\hyperlink{classCityComposite_a03cd415fe63acff9a0199eb06363818d}{City\+Composite}}, \mbox{\hyperlink{classZoneComposite_a04d7d032e164270de8b2e72fb6a4ae4b}{Zone\+Composite}}, \mbox{\hyperlink{classUtilityFlyweight_a64e27a4415b981b3fbd5544cec07c455}{Utility\+Flyweight}}, \mbox{\hyperlink{classMonument_a995d088a578818a95bb2ae0307ca6e59}{Monument}}, \mbox{\hyperlink{classIndustry_a0a1718e76a1362c4601b2d058512a5ea}{Industry}}, \mbox{\hyperlink{classCulturalCenter_a8571cfd46c8bfda933a44e564882e59c}{Cultural\+Center}}, and \mbox{\hyperlink{classConstructionResourceProduct_a86159081d7b03a975af6d0506c41f9e7}{Construction\+Resource\+Product}}.
+
+\mbox{\Hypertarget{classCityComponent_a868401dfcb348dd24405626be9a1bece}\label{classCityComponent_a868401dfcb348dd24405626be9a1bece}} 
+\index{CityComponent@{CityComponent}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily virtual std\+::string City\+Component\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the type of building as a string. 
+
+A pure virtual function for retrieving the type of building represented by the component.
+
+\begin{DoxyReturn}{Returns}
+The type of building as a string. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classUtilityFlyweight_a13bf8b17147ed212c1894579e0b958aa}{Utility\+Flyweight}}, \mbox{\hyperlink{classTownhouse_a3d04e94b61fde62771ad38b8d87881d3}{Townhouse}}, \mbox{\hyperlink{classStone_a06b28652a2f0c47fb6230c55c9874e28}{Stone}}, \mbox{\hyperlink{classShops_a2d960646df78fad0e42e1b5cfce61a8e}{Shops}}, \mbox{\hyperlink{classResidentialBuilding_afd1404c6d59a48932e8190b8dfad83cb}{Residential\+Building}}, \mbox{\hyperlink{classPublicService_ad6edc27872b4932f67dc12184641feee}{Public\+Service}}, \mbox{\hyperlink{classOffice_a961d4a850fb017336524b6c244b2890a}{Office}}, \mbox{\hyperlink{classMalls_afa4b949cfc046951e4f9f0ec07348185}{Malls}}, \mbox{\hyperlink{classLandMark_a1101a3f9949ec928fce30b4dadfedb87}{Land\+Mark}}, \mbox{\hyperlink{classIndustry_adb674d8738a8b51c379f399864fdcd61}{Industry}}, \mbox{\hyperlink{classHouse_afd8c72354887da000ce9477f676b4e13}{House}}, \mbox{\hyperlink{classFlat_af9896f1d45430df3f06e17b89a655031}{Flat}}, \mbox{\hyperlink{classEstate_a10848ddf01731e5de15bffe2e6d87559}{Estate}}, \mbox{\hyperlink{classCommercialBuilding_aff579a01599a39f3d43196790ba1c0cb}{Commercial\+Building}}, \mbox{\hyperlink{classCityComposite_aef17e4cbc0da086507b44658453967d1}{City\+Composite}}, \mbox{\hyperlink{classZoneComposite_aae2ad85b81fd6d43526090e1c526cbb0}{Zone\+Composite}}, \mbox{\hyperlink{classWood_afc96ce68472360825f0f6d1021e14255}{Wood}}, \mbox{\hyperlink{classSteel_a4abe56baf126e38bf7a49e0a75b99790}{Steel}}, \mbox{\hyperlink{classPark_a70c431ec29b0bd76ae762bd1a1d60e59}{Park}}, \mbox{\hyperlink{classOil_aae239829228adb45bad9a581d0b9fe24}{Oil}}, \mbox{\hyperlink{classMonument_a926b800a6fae012397509674d30af10d}{Monument}}, \mbox{\hyperlink{classHospital_ab3226433f8f3bc8a8c903dbfdb824397}{Hospital}}, \mbox{\hyperlink{classGold_a311c66af946308637e8ffb375c0cc996}{Gold}}, \mbox{\hyperlink{classDiamonds_a9156de222b3125740ef7672d033e5d0b}{Diamonds}}, \mbox{\hyperlink{classCulturalCenter_ab1e5c583ed274fe403cb9af9eeabb0e3}{Cultural\+Center}}, \mbox{\hyperlink{classConcrete_a088bb58d079278aa6a2b0f6a5cfc687f}{Concrete}}, and \mbox{\hyperlink{classCoal_a870a0e6bb6762d2a2b152ec5087d2cbb}{Coal}}.
+
+\mbox{\Hypertarget{classCityComponent_a1979284dbec19f23fce08c6fe74a3b59}\label{classCityComponent_a1979284dbec19f23fce08c6fe74a3b59}} 
+\index{CityComponent@{CityComponent}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLocation}{Location}} City\+Component\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current location of the component. 
+
+Gets the current location of the city component.
+
+\begin{DoxyReturn}{Returns}
+The current location as a \mbox{\hyperlink{structLocation}{Location}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCityComponent_a323bb79bc68085ac2256f81812a79f52}\label{classCityComponent_a323bb79bc68085ac2256f81812a79f52}} 
+\index{CityComponent@{CityComponent}!notify@{notify}}
+\index{notify@{notify}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily void City\+Component\+::notify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifies all observers of changes in the city component. 
+
+Notifies all NPC observers of changes in the city component.
+
+This function iterates through the list of observers and calls their {\ttfamily update} method to respond to changes. Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classCityComponent_a0ab80333e03ea72cedcd70e5045a6831}\label{classCityComponent_a0ab80333e03ea72cedcd70e5045a6831}} 
+\index{CityComponent@{CityComponent}!remove@{remove}}
+\index{remove@{remove}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily virtual void City\+Component\+::remove (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Removes a subcomponent from the city component. 
+
+Allows derived classes to implement removal of subcomponents.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & The city component to remove. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classCityComposite_adcb5872d470fdd2a5397e11a927afab4}{City\+Composite}}, and \mbox{\hyperlink{classZoneComposite_a1d716d62677a17a30ea81b8e665046c6}{Zone\+Composite}}.
+
+\mbox{\Hypertarget{classCityComponent_a8975812793b87b8578a21ce2ed13b015}\label{classCityComponent_a8975812793b87b8578a21ce2ed13b015}} 
+\index{CityComponent@{CityComponent}!removeNpc@{removeNpc}}
+\index{removeNpc@{removeNpc}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{removeNpc()}{removeNpc()}}
+{\footnotesize\ttfamily void City\+Component\+::remove\+Npc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes an NPC observer from the component. 
+
+Removes NPCs from the city component based on certain conditions.
+
+This method decreases the population based on the city\textquotesingle{}s highest state (Crime or Revolt), simulating citizen departures or deaths. It removes NPC observers up to the calculated decrease amount. Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classCityComponent_ad715f7ce61b1319a7aa1f0639d670048}\label{classCityComponent_ad715f7ce61b1319a7aa1f0639d670048}} 
+\index{CityComponent@{CityComponent}!setLocation@{setLocation}}
+\index{setLocation@{setLocation}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{setLocation()}{setLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void City\+Component\+::set\+Location (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc }\end{DoxyParamCaption})}
+
+
+
+Sets the location of the component using a \mbox{\hyperlink{structLocation}{Location}} object. 
+
+Sets the location of the city component using a \mbox{\hyperlink{structLocation}{Location}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & A \mbox{\hyperlink{structLocation}{Location}} object representing the new location. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCityComponent_a0c5a590c09949e739b09855fdf903edf}\label{classCityComponent_a0c5a590c09949e739b09855fdf903edf}} 
+\index{CityComponent@{CityComponent}!setLocation@{setLocation}}
+\index{setLocation@{setLocation}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{setLocation()}{setLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void City\+Component\+::set\+Location (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the location of the component using x and y coordinates. 
+
+Sets the location of the city component using x and y coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the location. \\
+\hline
+{\em y} & The y-\/coordinate of the location. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCityComponent_a9ca98813ea608fdfb04a85e9b2d3814b}\label{classCityComponent_a9ca98813ea608fdfb04a85e9b2d3814b}} 
+\index{CityComponent@{CityComponent}!location@{location}}
+\index{location@{location}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{location}{location}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLocation}{Location}} City\+Component\+::location\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\hyperlink{structLocation}{Location}} of the city component \mbox{\Hypertarget{classCityComponent_ae31f426b6f2e17065a0be8ce17387f1a}\label{classCityComponent_ae31f426b6f2e17065a0be8ce17387f1a}} 
+\index{CityComponent@{CityComponent}!observers@{observers}}
+\index{observers@{observers}!CityComponent@{CityComponent}}
+\doxysubsubsection{\texorpdfstring{observers}{observers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classNPCObserver}{NPCObserver}}$\ast$$>$ City\+Component\+::observers\hspace{0.3cm}{\ttfamily [private]}}
+
+List of NPC observers observing this component 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CityComponent_8h}{City\+Component.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CityComponent_8cpp}{City\+Component.\+cpp}}\end{DoxyCompactItemize}

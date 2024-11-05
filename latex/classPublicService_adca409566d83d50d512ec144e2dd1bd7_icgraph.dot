@@ -1,0 +1,10 @@
+digraph "PublicService::getUtilityCoverage"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="PublicService::getUtility\lCoverage",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Calculates the coverage of utilities connected to the public service."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="School::displayStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSchool.html#a2ba854bfe7e04ae9ae5bf3560a47d96e",tooltip="Pure virtual function to display the status of the public service."];
+}

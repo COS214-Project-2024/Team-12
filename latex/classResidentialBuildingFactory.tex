@@ -1,0 +1,69 @@
+\hypertarget{classResidentialBuildingFactory}{}\doxysection{Residential\+Building\+Factory Class Reference}
+\label{classResidentialBuildingFactory}\index{ResidentialBuildingFactory@{ResidentialBuildingFactory}}
+
+
+Abstract Factory class for creating residential buildings.  
+
+
+
+
+{\ttfamily \#include $<$Residential\+Building\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Residential\+Building\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Residential\+Building\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $>$ \mbox{\hyperlink{classResidentialBuildingFactory_a1eb3108adbe02e3a18d9b925915a5fc3}{create\+Building}} ()=0
+\begin{DoxyCompactList}\small\item\em Creates a residential building. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classResidentialBuildingFactory_a292eb5badf3e8b60522f5a52f7ca4422}{$\sim$\+Residential\+Building\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classResidentialBuildingFactory}{Residential\+Building\+Factory}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Factory class for creating residential buildings. 
+
+The \mbox{\hyperlink{classResidentialBuildingFactory}{Residential\+Building\+Factory}} class provides an interface for creating residential building objects. \mbox{\hyperlink{classConcrete}{Concrete}} factories derived from this class will implement the specific creation logic for different types of residential buildings. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classResidentialBuildingFactory_a292eb5badf3e8b60522f5a52f7ca4422}\label{classResidentialBuildingFactory_a292eb5badf3e8b60522f5a52f7ca4422}} 
+\index{ResidentialBuildingFactory@{ResidentialBuildingFactory}!````~ResidentialBuildingFactory@{$\sim$ResidentialBuildingFactory}}
+\index{````~ResidentialBuildingFactory@{$\sim$ResidentialBuildingFactory}!ResidentialBuildingFactory@{ResidentialBuildingFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResidentialBuildingFactory()}{~ResidentialBuildingFactory()}}
+{\footnotesize\ttfamily virtual Residential\+Building\+Factory\+::$\sim$\+Residential\+Building\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classResidentialBuildingFactory}{Residential\+Building\+Factory}}. 
+
+Ensures proper cleanup of derived classes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResidentialBuildingFactory_a1eb3108adbe02e3a18d9b925915a5fc3}\label{classResidentialBuildingFactory_a1eb3108adbe02e3a18d9b925915a5fc3}} 
+\index{ResidentialBuildingFactory@{ResidentialBuildingFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!ResidentialBuildingFactory@{ResidentialBuildingFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}}$>$ Residential\+Building\+Factory\+::create\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates a residential building. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}}.
+\end{DoxyReturn}
+This function is intended to be overridden in derived classes to create specific types of residential buildings. 
+
+Implemented in \mbox{\hyperlink{classTownhouseFactory_a84f06a033cca3acfa9da8fef0528e308}{Townhouse\+Factory}}, \mbox{\hyperlink{classHouseFactory_a7dbda6d230a099a5853bba49c877e694}{House\+Factory}}, \mbox{\hyperlink{classFlatFactory_ae4c87e00ba4695418c68c8ef9a9105f2}{Flat\+Factory}}, and \mbox{\hyperlink{classEstateFactory_ab2228a744dca448f8448716f437ebd91}{Estate\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ResidentialBuildingFactory_8h}{Residential\+Building\+Factory.\+h}}\end{DoxyCompactItemize}

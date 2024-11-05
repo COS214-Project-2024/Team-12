@@ -1,0 +1,246 @@
+\hypertarget{classTrains}{}\doxysection{Trains Class Reference}
+\label{classTrains}\index{Trains@{Trains}}
+
+
+A concrete implementation of the \mbox{\hyperlink{classTransport}{Transport}} class representing a train.  
+
+
+
+
+{\ttfamily \#include $<$Trains.\+h$>$}
+
+
+
+Inheritance diagram for Trains\+:
+% FIG 0
+
+
+Collaboration diagram for Trains\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ \mbox{\hyperlink{classTrains_a00d57362a78d6cb97290286aeee0a878}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Creates a copy of the current \mbox{\hyperlink{classTrains}{Trains}} instance. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTrains_ace8f93617ffcf9048c97bf3c6e7c614a}{get\+Speed}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the speed of the train. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTrains_ade57c8976a0addc8da7109ea1a37651f}{get\+Cost}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the cost associated with the train. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTrains_a1e7a43679166e18027bbcc8a918fe286}{get\+Maintainance\+Cost}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the maintenance cost for the train. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTrains_a6a2d2614190d6220aba0865fbd621817}{get\+Capacity}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the capacity of the train. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTrains_ae4680db9e700350b68b0cfe8349d272e}{get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of transport as a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTrains_ab52e649b0486f66651809e0a89db8ce7}{Trains}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classTrains}{Trains}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTrains_a628a1712ae35d34d0945835c7a1355ae}{$\sim$\+Trains}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classTrains}{Trains}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classTrains_a23f64e9efb55c5e0a408d28e0a69f770}{cargo\+Capacity}}
+\begin{DoxyCompactList}\small\item\em Capacity of the train for carrying cargo. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTrains_a92e8a8ae97a971d0021675af388a8836}{railway\+Length}}
+\begin{DoxyCompactList}\small\item\em Total length of railway covered by the train. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTrains_a54a02f259e5c8003119f438a16e391b3}{number\+Of\+Stations}}
+\begin{DoxyCompactList}\small\item\em Number of stations the train stops at. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of the \mbox{\hyperlink{classTransport}{Transport}} class representing a train. 
+
+The \mbox{\hyperlink{classTrains}{Trains}} class encapsulates the properties and behaviors of a train transport, including its capacity, speed, cost, and maintenance requirements. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTrains_ab52e649b0486f66651809e0a89db8ce7}\label{classTrains_ab52e649b0486f66651809e0a89db8ce7}} 
+\index{Trains@{Trains}!Trains@{Trains}}
+\index{Trains@{Trains}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{Trains()}{Trains()}}
+{\footnotesize\ttfamily Trains\+::\+Trains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classTrains}{Trains}}. 
+
+\mbox{\Hypertarget{classTrains_a628a1712ae35d34d0945835c7a1355ae}\label{classTrains_a628a1712ae35d34d0945835c7a1355ae}} 
+\index{Trains@{Trains}!````~Trains@{$\sim$Trains}}
+\index{````~Trains@{$\sim$Trains}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{$\sim$Trains()}{~Trains()}}
+{\footnotesize\ttfamily Trains\+::$\sim$\+Trains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for \mbox{\hyperlink{classTrains}{Trains}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTrains_a00d57362a78d6cb97290286aeee0a878}\label{classTrains_a00d57362a78d6cb97290286aeee0a878}} 
+\index{Trains@{Trains}!clone@{clone}}
+\index{clone@{clone}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ Trains\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a copy of the current \mbox{\hyperlink{classTrains}{Trains}} instance. 
+
+Creates a clone of the current \mbox{\hyperlink{classTrains}{Trains}} instance.
+
+Implements the Prototype pattern, allowing for the creation of a new instance with the same properties as the current one.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Transport$>$ A unique pointer to the cloned \mbox{\hyperlink{classTrains}{Trains}} instance.
+\end{DoxyReturn}
+Implements the Prototype pattern to provide a new instance with the same properties as the existing \mbox{\hyperlink{classTrains}{Trains}} instance.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Transport$>$ A unique pointer to the cloned \mbox{\hyperlink{classTrains}{Trains}} instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_aa755da6fbe3b8a100a5e7c47be02b915}{Transport}}.
+
+\mbox{\Hypertarget{classTrains_a6a2d2614190d6220aba0865fbd621817}\label{classTrains_a6a2d2614190d6220aba0865fbd621817}} 
+\index{Trains@{Trains}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily double Trains\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the capacity of the train. 
+
+Gets the cargo capacity of the train.
+
+\begin{DoxyReturn}{Returns}
+double Capacity of the train.
+
+double Capacity of the train in terms of cargo. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_a798643c78ec7196d422545b9386746d2}{Transport}}.
+
+\mbox{\Hypertarget{classTrains_ade57c8976a0addc8da7109ea1a37651f}\label{classTrains_ade57c8976a0addc8da7109ea1a37651f}} 
+\index{Trains@{Trains}!getCost@{getCost}}
+\index{getCost@{getCost}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily double Trains\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the cost associated with the train. 
+
+Gets the cost associated with the train.
+
+\begin{DoxyReturn}{Returns}
+double Cost of the train.
+
+double Cost to acquire or build the train. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_ad7c413b9f0d60e109cfee5784c1abde3}{Transport}}.
+
+\mbox{\Hypertarget{classTrains_a1e7a43679166e18027bbcc8a918fe286}\label{classTrains_a1e7a43679166e18027bbcc8a918fe286}} 
+\index{Trains@{Trains}!getMaintainanceCost@{getMaintainanceCost}}
+\index{getMaintainanceCost@{getMaintainanceCost}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{getMaintainanceCost()}{getMaintainanceCost()}}
+{\footnotesize\ttfamily double Trains\+::get\+Maintainance\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the maintenance cost for the train. 
+
+Gets the maintenance cost of the train.
+
+\begin{DoxyReturn}{Returns}
+double Maintenance cost of the train.
+
+double Ongoing maintenance cost of the train. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_aa4f060e3af93a70d7305b066a49937c6}{Transport}}.
+
+\mbox{\Hypertarget{classTrains_ace8f93617ffcf9048c97bf3c6e7c614a}\label{classTrains_ace8f93617ffcf9048c97bf3c6e7c614a}} 
+\index{Trains@{Trains}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily double Trains\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the speed of the train. 
+
+Gets the speed of the train.
+
+\begin{DoxyReturn}{Returns}
+double Speed of the train. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_a04f8f0c3c89b6c8ac1677b87b914015d}{Transport}}.
+
+\mbox{\Hypertarget{classTrains_ae4680db9e700350b68b0cfe8349d272e}\label{classTrains_ae4680db9e700350b68b0cfe8349d272e}} 
+\index{Trains@{Trains}!getType@{getType}}
+\index{getType@{getType}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily std\+::string Trains\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of transport as a string. 
+
+Gets the type of the transport.
+
+\begin{DoxyReturn}{Returns}
+std\+::string Type of transport, e.\+g., \char`\"{}\+Train\char`\"{}.
+
+std\+::string Type of transport, which is \char`\"{}\+Train\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_a003be8d6e11a974895559269fb37065d}{Transport}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTrains_a23f64e9efb55c5e0a408d28e0a69f770}\label{classTrains_a23f64e9efb55c5e0a408d28e0a69f770}} 
+\index{Trains@{Trains}!cargoCapacity@{cargoCapacity}}
+\index{cargoCapacity@{cargoCapacity}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{cargoCapacity}{cargoCapacity}}
+{\footnotesize\ttfamily int Trains\+::cargo\+Capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Capacity of the train for carrying cargo. 
+
+\mbox{\Hypertarget{classTrains_a54a02f259e5c8003119f438a16e391b3}\label{classTrains_a54a02f259e5c8003119f438a16e391b3}} 
+\index{Trains@{Trains}!numberOfStations@{numberOfStations}}
+\index{numberOfStations@{numberOfStations}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{numberOfStations}{numberOfStations}}
+{\footnotesize\ttfamily int Trains\+::number\+Of\+Stations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of stations the train stops at. 
+
+\mbox{\Hypertarget{classTrains_a92e8a8ae97a971d0021675af388a8836}\label{classTrains_a92e8a8ae97a971d0021675af388a8836}} 
+\index{Trains@{Trains}!railwayLength@{railwayLength}}
+\index{railwayLength@{railwayLength}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{railwayLength}{railwayLength}}
+{\footnotesize\ttfamily double Trains\+::railway\+Length\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Total length of railway covered by the train. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Trains_8h}{Trains.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Trains_8cpp}{Trains.\+cpp}}\end{DoxyCompactItemize}

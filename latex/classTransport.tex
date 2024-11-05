@@ -1,0 +1,176 @@
+\hypertarget{classTransport}{}\doxysection{Transport Class Reference}
+\label{classTransport}\index{Transport@{Transport}}
+
+
+Abstract class representing a generic transport.  
+
+
+
+
+{\ttfamily \#include $<$Transport.\+h$>$}
+
+
+
+Inheritance diagram for Transport\+:
+% FIG 0
+
+
+Collaboration diagram for Transport\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{classTransport_ad7c413b9f0d60e109cfee5784c1abde3}{get\+Cost}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the cost of the transport. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classTransport_aa4f060e3af93a70d7305b066a49937c6}{get\+Maintainance\+Cost}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the maintenance cost of the transport. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classTransport_a04f8f0c3c89b6c8ac1677b87b914015d}{get\+Speed}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the speed of the transport. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classTransport_a798643c78ec7196d422545b9386746d2}{get\+Capacity}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the capacity of the transport. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classTransport_a003be8d6e11a974895559269fb37065d}{get\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the type of transport. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ \mbox{\hyperlink{classTransport_aa755da6fbe3b8a100a5e7c47be02b915}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Clone the transport object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classTransport_ac3e3efa8367c9139707870808d0ef96f}{$\sim$\+Transport}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classTransport}{Transport}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class representing a generic transport. 
+
+The \mbox{\hyperlink{classTransport}{Transport}} class defines a prototype for various types of transportation. Derived classes must implement the specific transportation details, such as cost, maintenance cost, speed, capacity, and type. The class also provides a clone method to support creating copies of transport objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTransport_ac3e3efa8367c9139707870808d0ef96f}\label{classTransport_ac3e3efa8367c9139707870808d0ef96f}} 
+\index{Transport@{Transport}!````~Transport@{$\sim$Transport}}
+\index{````~Transport@{$\sim$Transport}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{$\sim$Transport()}{~Transport()}}
+{\footnotesize\ttfamily virtual Transport\+::$\sim$\+Transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for the \mbox{\hyperlink{classTransport}{Transport}} class. 
+
+Ensures proper cleanup of derived transport instances when deleted through a pointer to the base class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTransport_aa755da6fbe3b8a100a5e7c47be02b915}\label{classTransport_aa755da6fbe3b8a100a5e7c47be02b915}} 
+\index{Transport@{Transport}!clone@{clone}}
+\index{clone@{clone}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classTransport}{Transport}}$>$ Transport\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clone the transport object. 
+
+Virtual function using the Prototype pattern to create a copy of the transport object. Derived classes should implement specific cloning logic.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to the cloned transport object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTrains_a00d57362a78d6cb97290286aeee0a878}{Trains}}, and \mbox{\hyperlink{classRoads_ab0a4d46d0bf50da8bc685bc8664d6fc3}{Roads}}.
+
+\mbox{\Hypertarget{classTransport_a798643c78ec7196d422545b9386746d2}\label{classTransport_a798643c78ec7196d422545b9386746d2}} 
+\index{Transport@{Transport}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily virtual double Transport\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the capacity of the transport. 
+
+Pure virtual function to retrieve the capacity for transportation.
+
+\begin{DoxyReturn}{Returns}
+The capacity of the transport. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTrains_a6a2d2614190d6220aba0865fbd621817}{Trains}}, and \mbox{\hyperlink{classRoads_a683b9658a5b9943a0f862818091a6e0e}{Roads}}.
+
+\mbox{\Hypertarget{classTransport_ad7c413b9f0d60e109cfee5784c1abde3}\label{classTransport_ad7c413b9f0d60e109cfee5784c1abde3}} 
+\index{Transport@{Transport}!getCost@{getCost}}
+\index{getCost@{getCost}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily virtual double Transport\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the cost of the transport. 
+
+Pure virtual function to retrieve the cost associated with the transport.
+
+\begin{DoxyReturn}{Returns}
+The cost of the transport. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTrains_ade57c8976a0addc8da7109ea1a37651f}{Trains}}, and \mbox{\hyperlink{classRoads_ab8ec9f807a8a9487795c9e3f20a3272e}{Roads}}.
+
+\mbox{\Hypertarget{classTransport_aa4f060e3af93a70d7305b066a49937c6}\label{classTransport_aa4f060e3af93a70d7305b066a49937c6}} 
+\index{Transport@{Transport}!getMaintainanceCost@{getMaintainanceCost}}
+\index{getMaintainanceCost@{getMaintainanceCost}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{getMaintainanceCost()}{getMaintainanceCost()}}
+{\footnotesize\ttfamily virtual double Transport\+::get\+Maintainance\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the maintenance cost of the transport. 
+
+Pure virtual function to retrieve the ongoing maintenance cost.
+
+\begin{DoxyReturn}{Returns}
+The maintenance cost of the transport. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTrains_a1e7a43679166e18027bbcc8a918fe286}{Trains}}, and \mbox{\hyperlink{classRoads_ad70817c480db99327914a87cc4ab928c}{Roads}}.
+
+\mbox{\Hypertarget{classTransport_a04f8f0c3c89b6c8ac1677b87b914015d}\label{classTransport_a04f8f0c3c89b6c8ac1677b87b914015d}} 
+\index{Transport@{Transport}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily virtual double Transport\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the speed of the transport. 
+
+Pure virtual function to retrieve the speed.
+
+\begin{DoxyReturn}{Returns}
+The speed of the transport. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTrains_ace8f93617ffcf9048c97bf3c6e7c614a}{Trains}}, and \mbox{\hyperlink{classRoads_aaee9349c4c7f38ad16f2bd8167e32ef5}{Roads}}.
+
+\mbox{\Hypertarget{classTransport_a003be8d6e11a974895559269fb37065d}\label{classTransport_a003be8d6e11a974895559269fb37065d}} 
+\index{Transport@{Transport}!getType@{getType}}
+\index{getType@{getType}!Transport@{Transport}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily virtual std\+::string Transport\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the type of transport. 
+
+Pure virtual function to retrieve the type of transport as a string.
+
+\begin{DoxyReturn}{Returns}
+The type of transport. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTrains_ae4680db9e700350b68b0cfe8349d272e}{Trains}}, and \mbox{\hyperlink{classRoads_a41b6a5e283c6cfec905332d2fc3f3fac}{Roads}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Transport_8h}{Transport.\+h}}\end{DoxyCompactItemize}

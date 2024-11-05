@@ -1,0 +1,142 @@
+\hypertarget{classTownhouse}{}\doxysection{Townhouse Class Reference}
+\label{classTownhouse}\index{Townhouse@{Townhouse}}
+
+
+A concrete class representing a townhouse, derived from \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}}.  
+
+
+
+
+{\ttfamily \#include $<$Townhouse.\+h$>$}
+
+
+
+Inheritance diagram for Townhouse\+:
+% FIG 0
+
+
+Collaboration diagram for Townhouse\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTownhouse_ae95cfcbba3b301297e23aacfeda535b1}{Townhouse}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classTownhouse}{Townhouse}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTownhouse_abe772bb62e9cb479149f183f87d6e392}{Townhouse}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classTownhouse}{Townhouse}} with specified utility connections. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTownhouse_ace0fd73d63c82219bbf9da8d165b6d89}{get\+Display\+Symbol}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the display symbol for the townhouse. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTownhouse_a3d04e94b61fde62771ad38b8d87881d3}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the building type as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{classTownhouse_a8325b87e41879f93a52220a42396c9be}{BASE\+\_\+\+COST}} = 200
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A concrete class representing a townhouse, derived from \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}}. 
+
+The \mbox{\hyperlink{classTownhouse}{Townhouse}} class defines a residential building type with specific characteristics. It provides utility connections (e.\+g., water, power, waste, sewage) and has a display symbol. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTownhouse_ae95cfcbba3b301297e23aacfeda535b1}\label{classTownhouse_ae95cfcbba3b301297e23aacfeda535b1}} 
+\index{Townhouse@{Townhouse}!Townhouse@{Townhouse}}
+\index{Townhouse@{Townhouse}!Townhouse@{Townhouse}}
+\doxysubsubsection{\texorpdfstring{Townhouse()}{Townhouse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Townhouse\+::\+Townhouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classTownhouse}{Townhouse}}. 
+
+Constructs a \mbox{\hyperlink{classTownhouse}{Townhouse}} with a default capacity of 4 occupants and a cost of 200.\+00, with no initial utility connections. \mbox{\Hypertarget{classTownhouse_abe772bb62e9cb479149f183f87d6e392}\label{classTownhouse_abe772bb62e9cb479149f183f87d6e392}} 
+\index{Townhouse@{Townhouse}!Townhouse@{Townhouse}}
+\index{Townhouse@{Townhouse}!Townhouse@{Townhouse}}
+\doxysubsubsection{\texorpdfstring{Townhouse()}{Townhouse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Townhouse\+::\+Townhouse (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classTownhouse}{Townhouse}} with specified utility connections. 
+
+Parameterized constructor for \mbox{\hyperlink{classTownhouse}{Townhouse}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & A shared pointer to the water utility connection. \\
+\hline
+{\em power} & A shared pointer to the power utility connection. \\
+\hline
+{\em waste} & A shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage system utility.\\
+\hline
+\end{DoxyParams}
+Constructs a \mbox{\hyperlink{classTownhouse}{Townhouse}} with specified utility connections and assigns it a capacity of 4 occupants and a cost of 200.\+00.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & A shared pointer to the water utility connection. \\
+\hline
+{\em power} & A shared pointer to the power utility connection. \\
+\hline
+{\em waste} & A shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage system utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTownhouse_a3d04e94b61fde62771ad38b8d87881d3}\label{classTownhouse_a3d04e94b61fde62771ad38b8d87881d3}} 
+\index{Townhouse@{Townhouse}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Townhouse@{Townhouse}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Townhouse\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the building type as a string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The type of the building (\char`\"{}\+Townhouse\char`\"{}). 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classResidentialBuilding_afd1404c6d59a48932e8190b8dfad83cb}{Residential\+Building}}.
+
+\mbox{\Hypertarget{classTownhouse_ace0fd73d63c82219bbf9da8d165b6d89}\label{classTownhouse_ace0fd73d63c82219bbf9da8d165b6d89}} 
+\index{Townhouse@{Townhouse}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!Townhouse@{Townhouse}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char Townhouse\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the display symbol for the townhouse. 
+
+\begin{DoxyReturn}{Returns}
+char The symbol representing a townhouse (\textquotesingle{}T\textquotesingle{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidentialBuilding_ac0839490cde74967340bbd82fb65bd4d}{Residential\+Building}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTownhouse_a8325b87e41879f93a52220a42396c9be}\label{classTownhouse_a8325b87e41879f93a52220a42396c9be}} 
+\index{Townhouse@{Townhouse}!BASE\_COST@{BASE\_COST}}
+\index{BASE\_COST@{BASE\_COST}!Townhouse@{Townhouse}}
+\doxysubsubsection{\texorpdfstring{BASE\_COST}{BASE\_COST}}
+{\footnotesize\ttfamily constexpr int Townhouse\+::\+BASE\+\_\+\+COST = 200\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+Base cost for constructing a townhouse. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Townhouse_8h}{Townhouse.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Townhouse_8cpp}{Townhouse.\+cpp}}\end{DoxyCompactItemize}

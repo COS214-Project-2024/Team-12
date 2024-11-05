@@ -1,0 +1,115 @@
+\hypertarget{classMalls}{}\doxysection{Malls Class Reference}
+\label{classMalls}\index{Malls@{Malls}}
+
+
+Represents a Mall, a type of \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}}.  
+
+
+
+
+{\ttfamily \#include $<$Malls.\+h$>$}
+
+
+
+Inheritance diagram for Malls\+:
+% FIG 0
+
+
+Collaboration diagram for Malls\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMalls_ae65002393463540b2f18887f0414e788}{Malls}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classMalls}{Malls}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMalls_a4ee56417d40c824d137f8ec80d530807}{Malls}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Constructs a Mall with specified utility connections. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classMalls_a11111e6f0237c68e611a416ea83f55f5}{get\+Display\+Symbol}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the display symbol for a Mall. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMalls_afa4b949cfc046951e4f9f0ec07348185}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the building type of the Mall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a Mall, a type of \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}}. 
+
+\mbox{\hyperlink{classMalls}{Malls}} are initialized with a base area and optional utility connections for water, power, waste management, and sewage. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMalls_ae65002393463540b2f18887f0414e788}\label{classMalls_ae65002393463540b2f18887f0414e788}} 
+\index{Malls@{Malls}!Malls@{Malls}}
+\index{Malls@{Malls}!Malls@{Malls}}
+\doxysubsubsection{\texorpdfstring{Malls()}{Malls()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Malls\+::\+Malls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classMalls}{Malls}}. 
+
+Initializes a Mall with a base area and no utility connections.
+
+Initializes a Mall with a base area of 400.\+0 and no utility connections. \mbox{\Hypertarget{classMalls_a4ee56417d40c824d137f8ec80d530807}\label{classMalls_a4ee56417d40c824d137f8ec80d530807}} 
+\index{Malls@{Malls}!Malls@{Malls}}
+\index{Malls@{Malls}!Malls@{Malls}}
+\doxysubsubsection{\texorpdfstring{Malls()}{Malls()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Malls\+::\+Malls (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Constructs a Mall with specified utility connections. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Shared pointer to water utility. \\
+\hline
+{\em power} & Shared pointer to power utility. \\
+\hline
+{\em waste} & Shared pointer to waste management utility. \\
+\hline
+{\em sewage} & Shared pointer to sewage management utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMalls_afa4b949cfc046951e4f9f0ec07348185}\label{classMalls_afa4b949cfc046951e4f9f0ec07348185}} 
+\index{Malls@{Malls}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Malls@{Malls}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Malls\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the building type of the Mall. 
+
+\begin{DoxyReturn}{Returns}
+A string \char`\"{}\+Mall\char`\"{} representing the type of the building. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCommercialBuilding_aff579a01599a39f3d43196790ba1c0cb}{Commercial\+Building}}.
+
+\mbox{\Hypertarget{classMalls_a11111e6f0237c68e611a416ea83f55f5}\label{classMalls_a11111e6f0237c68e611a416ea83f55f5}} 
+\index{Malls@{Malls}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!Malls@{Malls}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char Malls\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the display symbol for a Mall. 
+
+\begin{DoxyReturn}{Returns}
+The character \textquotesingle{}M\textquotesingle{} representing the Mall on a map. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercialBuilding_afc4afd257826aa0c42814e469e776a64}{Commercial\+Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Malls_8h}{Malls.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Malls_8cpp}{Malls.\+cpp}}\end{DoxyCompactItemize}

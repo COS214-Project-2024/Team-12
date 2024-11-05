@@ -1,0 +1,16 @@
+digraph "NPCManager::getHappinessLevel"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="NPCManager::getHappiness\lLevel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Gets the current happiness level of NPCs."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="CityGame::displayMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#a2a952bf02a70fa83a8a5a4beae9c825e",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="CityGame::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#ad26bc885078e071e3ad2b40787fcca18",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ReactingNPCS::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#afc206d145750358e98204a9135b05276",tooltip="Updates the NPC's state based on observed changes."];
+}

@@ -1,0 +1,64 @@
+\hypertarget{classMallsFactory}{}\doxysection{Malls\+Factory Class Reference}
+\label{classMallsFactory}\index{MallsFactory@{MallsFactory}}
+
+
+Factory class for creating Mall buildings.  
+
+
+
+
+{\ttfamily \#include $<$Malls\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Malls\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Malls\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $>$ \mbox{\hyperlink{classMallsFactory_a75263affd45af02093e72fa8dd9ac2ef}{create\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Creates an instance of a Mall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating Mall buildings. 
+
+This class implements the factory pattern to create instances of {\ttfamily Mall}, a specific type of {\ttfamily \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMallsFactory_a75263affd45af02093e72fa8dd9ac2ef}\label{classMallsFactory_a75263affd45af02093e72fa8dd9ac2ef}} 
+\index{MallsFactory@{MallsFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!MallsFactory@{MallsFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $>$ Malls\+Factory\+::create\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates an instance of a Mall. 
+
+Creates a new instance of a Mall.
+
+Overrides the {\ttfamily create\+Building} function to provide a specific implementation for creating a {\ttfamily Mall} object.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a {\ttfamily \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}}} instance representing a {\ttfamily Mall}.
+\end{DoxyReturn}
+This function overrides the {\ttfamily create\+Building} method from {\ttfamily Commercial\+Building\+Factory} to provide a specific implementation for creating a {\ttfamily Mall}.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a {\ttfamily \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}}} instance representing a {\ttfamily Mall}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercialFactory_ac8fee8091c378e0f563f1e2146693264}{Commercial\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{MallsFactory_8h}{Malls\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{MallsFactory_8cpp}{Malls\+Factory.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,53 @@
+\hypertarget{classNPCContext}{}\doxysection{NPCContext Class Reference}
+\label{classNPCContext}\index{NPCContext@{NPCContext}}
+
+
+Factory class to hire Worker NPCs with specific collection strategies.  
+
+
+
+
+{\ttfamily \#include $<$NPCSystem.\+h$>$}
+
+
+
+Collaboration diagram for NPCContext\+:
+% FIG 0
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classWorkerNPC}{Worker\+NPC}} $>$ \mbox{\hyperlink{classNPCContext_aae4197c089f5738ef1a6ecc3795202d5}{hire\+NPC}} (const std\+::string \&npc\+Type)
+\begin{DoxyCompactList}\small\item\em Hires a Worker NPC of a specified type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class to hire Worker NPCs with specific collection strategies. 
+
+Creates different types of Worker NPCs based on the specified type. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNPCContext_aae4197c089f5738ef1a6ecc3795202d5}\label{classNPCContext_aae4197c089f5738ef1a6ecc3795202d5}} 
+\index{NPCContext@{NPCContext}!hireNPC@{hireNPC}}
+\index{hireNPC@{hireNPC}!NPCContext@{NPCContext}}
+\doxysubsubsection{\texorpdfstring{hireNPC()}{hireNPC()}}
+{\footnotesize\ttfamily static std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classWorkerNPC}{Worker\+NPC}}$>$ NPCContext\+::hire\+NPC (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{npc\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Hires a Worker NPC of a specified type. 
+
+The type determines the collection strategy and cost of the NPC.
+
+
+\begin{DoxyParams}{Parameters}
+{\em npc\+Type} & The type of NPC to hire (\char`\"{}\+Slow\char`\"{}, \char`\"{}\+Moderate\char`\"{}, \char`\"{}\+Fast\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Worker\+NPC$>$ A unique pointer to the hired Worker NPC. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NPCSystem_8h}{NPCSystem.\+h}}\end{DoxyCompactItemize}

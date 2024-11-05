@@ -1,0 +1,30 @@
+digraph "CityComponent::addNpc"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CityComponent::addNpc",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Adds an NPC observer to the component."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ReactingNPCS::clone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#afa5a0fce89da50127b5b648ef77af00c",tooltip="Clones the NPC, creating a copy with the same state."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ReactingNPCS::ReactingNPCS",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#a9eb11a607b24c4e834d110e4ceea8c5f",tooltip="Default constructor initializing the NPC in a neutral state."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NPCManager::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#a29c578e3b969f7438d6025dd3fc21c50",tooltip="Retrieves the singleton instance of NPCManager."];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="NPCManager::incrementCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#a615e87109c27f59edbc1eccb2df972d2",tooltip="Increments the count for a given NPC state."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Government::getBuildingAmount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a5328feb8fa9465f9efcef22b012697ff",tooltip="Gets the amount of a specified building type."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Government::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a18e3da6a1d6cae38f6eea1d50fe77288",tooltip="Retrieves the singleton instance of the Government class."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Government::increasePopulation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#ad61e555af707711933f640f63f52d53f",tooltip="Increases the population by a specified amount."];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="CityComponent::notify",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html#a323bb79bc68085ac2256f81812a79f52",tooltip="Notifies all observers of changes in the city component."];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="NPCManager::setHappiness\lLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#aa5532ef54b02558f6e97c9fdea5cd98e",tooltip="Sets or adjusts the NPC happiness level."];
+  Node10 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="Government::setPopulation\lGrowth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a766c3c36ec135a05bb38db0ea1755197",tooltip="Sets the population growth rate."];
+}

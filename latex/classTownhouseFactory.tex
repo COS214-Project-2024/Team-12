@@ -1,0 +1,62 @@
+\hypertarget{classTownhouseFactory}{}\doxysection{Townhouse\+Factory Class Reference}
+\label{classTownhouseFactory}\index{TownhouseFactory@{TownhouseFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classTownhouse}{Townhouse}} residential buildings.  
+
+
+
+
+{\ttfamily \#include $<$Townhouse\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Townhouse\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Townhouse\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $>$ \mbox{\hyperlink{classTownhouseFactory_a84f06a033cca3acfa9da8fef0528e308}{create\+Building}} () override
+\begin{DoxyCompactList}\small\item\em Creates a new instance of a townhouse building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classTownhouse}{Townhouse}} residential buildings. 
+
+This class implements the \mbox{\hyperlink{classResidentialBuildingFactory}{Residential\+Building\+Factory}} interface to produce instances of townhouses. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTownhouseFactory_a84f06a033cca3acfa9da8fef0528e308}\label{classTownhouseFactory_a84f06a033cca3acfa9da8fef0528e308}} 
+\index{TownhouseFactory@{TownhouseFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!TownhouseFactory@{TownhouseFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $>$ Townhouse\+Factory\+::create\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a new instance of a townhouse building. 
+
+Implements the Factory Method to produce a specific type of residential building, which in this case is a townhouse.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Residential\+Building$>$ A unique pointer to the created townhouse.
+\end{DoxyReturn}
+This function overrides the create\+Building function in the \mbox{\hyperlink{classResidentialBuildingFactory}{Residential\+Building\+Factory}} interface. It creates and returns a unique pointer to a \mbox{\hyperlink{classTownhouse}{Townhouse}} instance.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Residential\+Building$>$ A unique pointer to the created townhouse. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidentialBuildingFactory_a1eb3108adbe02e3a18d9b925915a5fc3}{Residential\+Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{TownhouseFactory_8h}{Townhouse\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{TownhouseFactory_8cpp}{Townhouse\+Factory.\+cpp}}\end{DoxyCompactItemize}

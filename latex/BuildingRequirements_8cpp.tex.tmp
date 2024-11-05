@@ -1,0 +1,16 @@
+\hypertarget{BuildingRequirements_8cpp}{}\doxysection{COS214-\/\+Poject/src/\+Building\+Requirements.cpp File Reference}
+\label{BuildingRequirements_8cpp}\index{COS214-\/Poject/src/BuildingRequirements.cpp@{COS214-\/Poject/src/BuildingRequirements.cpp}}
+
+
+Implementation file that includes the definitions for resource management and building requirements.  
+
+
+{\ttfamily \#include \char`\"{}Building\+Requirements.\+h\char`\"{}}\newline
+Include dependency graph for Building\+Requirements.\+cpp\+:
+% FIG 0
+
+
+\doxysubsection{Detailed Description}
+Implementation file that includes the definitions for resource management and building requirements. 
+
+This file includes {\ttfamily \mbox{\hyperlink{BuildingRequirements_8h}{Building\+Requirements.\+h}}}, which contains all the necessary resource requirements definitions and helper functions for managing building resources. 

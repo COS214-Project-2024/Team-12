@@ -1,0 +1,57 @@
+\hypertarget{classHouseFactory}{}\doxysection{House\+Factory Class Reference}
+\label{classHouseFactory}\index{HouseFactory@{HouseFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classHouse}{House}} objects.  
+
+
+
+
+{\ttfamily \#include $<$House\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for House\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for House\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $>$ \mbox{\hyperlink{classHouseFactory_a7dbda6d230a099a5853bba49c877e694}{create\+Building}} () override
+\begin{DoxyCompactList}\small\item\em Creates a unique pointer to a new \mbox{\hyperlink{classHouse}{House}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classHouse}{House}} objects. 
+
+The \mbox{\hyperlink{classHouseFactory}{House\+Factory}} is a concrete factory class that implements the \mbox{\hyperlink{classResidentialBuildingFactory}{Residential\+Building\+Factory}} interface to produce \mbox{\hyperlink{classHouse}{House}} objects. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHouseFactory_a7dbda6d230a099a5853bba49c877e694}\label{classHouseFactory_a7dbda6d230a099a5853bba49c877e694}} 
+\index{HouseFactory@{HouseFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!HouseFactory@{HouseFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $>$ House\+Factory\+::create\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a unique pointer to a new \mbox{\hyperlink{classHouse}{House}} object. 
+
+This function overrides the create\+Building method in \mbox{\hyperlink{classResidentialBuildingFactory}{Residential\+Building\+Factory}} to return a \mbox{\hyperlink{classHouse}{House}}, which is a specific type of \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}}.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Residential\+Building$>$ A unique pointer to a newly created \mbox{\hyperlink{classHouse}{House}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidentialBuildingFactory_a1eb3108adbe02e3a18d9b925915a5fc3}{Residential\+Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{HouseFactory_8h}{House\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{HouseFactory_8cpp}{House\+Factory.\+cpp}}\end{DoxyCompactItemize}

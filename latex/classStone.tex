@@ -1,0 +1,122 @@
+\hypertarget{classStone}{}\doxysection{Stone Class Reference}
+\label{classStone}\index{Stone@{Stone}}
+
+
+Represents a construction resource product of type \mbox{\hyperlink{classStone}{Stone}}.  
+
+
+
+
+{\ttfamily \#include $<$Stone.\+h$>$}
+
+
+
+Inheritance diagram for Stone\+:
+% FIG 0
+
+
+Collaboration diagram for Stone\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStone_a6d96d48d6d6e603bce66e754d9d32c56}{Stone}} (int \mbox{\hyperlink{classConstructionResourceProduct_aa474a41014b41340b5fdf1d6c0901108}{quantity}}, int \mbox{\hyperlink{classConstructionResourceProduct_ad858e22527c4b10a3a83145049745253}{unit\+Cost}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classStone}{Stone}} object with a specified quantity and unit cost. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStone_ac942dff317bd3c4a7b42ecadd5eadfe2}{$\sim$\+Stone}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classStone}{Stone}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStone_a680ba377edd24fc2e10dd4f17acbc323}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the current status of the \mbox{\hyperlink{classStone}{Stone}} resource. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classStone_a06b28652a2f0c47fb6230c55c9874e28}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the type of building resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a construction resource product of type \mbox{\hyperlink{classStone}{Stone}}. 
+
+Inherits from {\ttfamily \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}} and provides additional functionality specific to stone resources, including cost and quantity tracking. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStone_a6d96d48d6d6e603bce66e754d9d32c56}\label{classStone_a6d96d48d6d6e603bce66e754d9d32c56}} 
+\index{Stone@{Stone}!Stone@{Stone}}
+\index{Stone@{Stone}!Stone@{Stone}}
+\doxysubsubsection{\texorpdfstring{Stone()}{Stone()}}
+{\footnotesize\ttfamily Stone\+::\+Stone (\begin{DoxyParamCaption}\item[{int}]{quantity,  }\item[{int}]{unit\+Cost }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classStone}{Stone}} object with a specified quantity and unit cost. 
+
+Constructs a \mbox{\hyperlink{classStone}{Stone}} object with specified quantity and unit cost.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The initial quantity of \mbox{\hyperlink{classStone}{Stone}}. \\
+\hline
+{\em unit\+Cost} & The cost per unit of \mbox{\hyperlink{classStone}{Stone}}.\\
+\hline
+\end{DoxyParams}
+Initializes the \mbox{\hyperlink{classStone}{Stone}} resource with a name, quantity, and unit cost.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The initial quantity of \mbox{\hyperlink{classStone}{Stone}}. \\
+\hline
+{\em unit\+Cost} & The cost per unit of \mbox{\hyperlink{classStone}{Stone}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStone_ac942dff317bd3c4a7b42ecadd5eadfe2}\label{classStone_ac942dff317bd3c4a7b42ecadd5eadfe2}} 
+\index{Stone@{Stone}!````~Stone@{$\sim$Stone}}
+\index{````~Stone@{$\sim$Stone}!Stone@{Stone}}
+\doxysubsubsection{\texorpdfstring{$\sim$Stone()}{~Stone()}}
+{\footnotesize\ttfamily Stone\+::$\sim$\+Stone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classStone}{Stone}}. 
+
+Outputs a message to the console when the \mbox{\hyperlink{classStone}{Stone}} object is destroyed.
+
+This is where any specific cleanup would be done for \mbox{\hyperlink{classStone}{Stone}} objects. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStone_a680ba377edd24fc2e10dd4f17acbc323}\label{classStone_a680ba377edd24fc2e10dd4f17acbc323}} 
+\index{Stone@{Stone}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Stone@{Stone}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Stone\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the current status of the \mbox{\hyperlink{classStone}{Stone}} resource. 
+
+Overrides the {\ttfamily display\+Status} method from {\ttfamily \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}} to provide specific information related to \mbox{\hyperlink{classStone}{Stone}} resources.
+
+Outputs detailed information about the \mbox{\hyperlink{classStone}{Stone}} resource, including its type, quantity, unit cost, and total cost. 
+
+Reimplemented from \mbox{\hyperlink{classConstructionResourceProduct_a86159081d7b03a975af6d0506c41f9e7}{Construction\+Resource\+Product}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classStone_a06b28652a2f0c47fb6230c55c9874e28}\label{classStone_a06b28652a2f0c47fb6230c55c9874e28}} 
+\index{Stone@{Stone}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Stone@{Stone}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Stone\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of building resource. 
+
+\begin{DoxyReturn}{Returns}
+A string indicating the resource type, \char`\"{}\+Stone\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Stone_8h}{Stone.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Stone_8cpp}{Stone.\+cpp}}\end{DoxyCompactItemize}

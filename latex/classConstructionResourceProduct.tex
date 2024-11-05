@@ -1,0 +1,339 @@
+\hypertarget{classConstructionResourceProduct}{}\doxysection{Construction\+Resource\+Product Class Reference}
+\label{classConstructionResourceProduct}\index{ConstructionResourceProduct@{ConstructionResourceProduct}}
+
+
+Represents a construction resource product in the city-\/building simulation.  
+
+
+
+
+{\ttfamily \#include $<$Construction\+Resource\+Product.\+h$>$}
+
+
+
+Inheritance diagram for Construction\+Resource\+Product\+:
+% FIG 0
+
+
+Collaboration diagram for Construction\+Resource\+Product\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConstructionResourceProduct_a8cd76f106adb274cd3926e9ccd3458d3}{Construction\+Resource\+Product}} (string \mbox{\hyperlink{classConstructionResourceProduct_a9b6db6f7a547934571c0eaf093b63f18}{name}}, int \mbox{\hyperlink{classConstructionResourceProduct_aa474a41014b41340b5fdf1d6c0901108}{quantity}}, int \mbox{\hyperlink{classConstructionResourceProduct_ad858e22527c4b10a3a83145049745253}{unit\+Cost}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} with specified name, quantity, and unit cost. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConstructionResourceProduct_a344ffabf856e4af7e364501f8747ddb3}{$\sim$\+Construction\+Resource\+Product}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConstructionResourceProduct_a98913ad52797e71809ba73eee3d64945}{Consume\+Resource}} (int amount)
+\begin{DoxyCompactList}\small\item\em Consumes a specified amount of the resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConstructionResourceProduct_a86159081d7b03a975af6d0506c41f9e7}{display\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Displays the current status of the resource, including name, quantity, and total cost. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classConstructionResourceProduct_afcfbdca4f7f49f3a34aef3da587482df}{get\+Total\+Cost}} () const
+\begin{DoxyCompactList}\small\item\em Calculates and returns the total cost of the available resource. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classConstructionResourceProduct_a67c8ad80f6488e89eb86aa857ad6f04a}{get\+Quantity}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current quantity of the resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConstructionResourceProduct_a94b981c7c454f483e3770b1757b04a4a}{replenish}} (int amount)
+\begin{DoxyCompactList}\small\item\em Replenishes the resource by adding a specified amount. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classConstructionResourceProduct_a77fb7182bb462829f26293fe23196842}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the building type for this resource product. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classConstructionResourceProduct_a700b644c02153b6f6f35b53162f2524f}{get\+Unit\+Cost}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the unit cost of the resource. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classConstructionResourceProduct_a6f66fac03b2de723076d1c150e9c4ce0}{is\+Ready\+For\+Collection}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the resource is ready for collection. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classConstructionResourceProduct_a583a18c63fee942bef2b76068b174357}{accept}} (\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$TC)
+\begin{DoxyCompactList}\small\item\em Allows tax collection on the resource by accepting a tax collector. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classConstructionResourceProduct_aed78990a302235012aaae711981b5cca}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConstructionResourceProduct_aa6b5ecaba7f3f631a2acac68b085cede}{set\+Location}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc)
+\begin{DoxyCompactList}\small\item\em Sets the location of the resource. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{classConstructionResourceProduct_aeff9b7b34fd4c5ce7d69546828bb3780}{get\+Location}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the location of the resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classConstructionResourceProduct_aa474a41014b41340b5fdf1d6c0901108}{quantity}}
+\item 
+int \mbox{\hyperlink{classConstructionResourceProduct_ad858e22527c4b10a3a83145049745253}{unit\+Cost}}
+\item 
+string \mbox{\hyperlink{classConstructionResourceProduct_a9b6db6f7a547934571c0eaf093b63f18}{name}}
+\item 
+bool \mbox{\hyperlink{classConstructionResourceProduct_adbe5c97ee839ae1f38fbf07d7da0bf16}{ready\+For\+Collection}}
+\item 
+\mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{classConstructionResourceProduct_a70b68310f5e851e8c5a1ccbed229baed}{location}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a construction resource product in the city-\/building simulation. 
+
+This class models a resource used for construction, managing attributes like quantity, unit cost, and location, and providing methods for consumption, replenishment, and status display. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConstructionResourceProduct_a8cd76f106adb274cd3926e9ccd3458d3}\label{classConstructionResourceProduct_a8cd76f106adb274cd3926e9ccd3458d3}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{ConstructionResourceProduct()}{ConstructionResourceProduct()}}
+{\footnotesize\ttfamily Construction\+Resource\+Product\+::\+Construction\+Resource\+Product (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{int}]{quantity,  }\item[{int}]{unit\+Cost }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} with specified name, quantity, and unit cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the resource. \\
+\hline
+{\em quantity} & The initial quantity of the resource. \\
+\hline
+{\em unit\+Cost} & The cost per unit of the resource. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classConstructionResourceProduct_a344ffabf856e4af7e364501f8747ddb3}\label{classConstructionResourceProduct_a344ffabf856e4af7e364501f8747ddb3}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!````~ConstructionResourceProduct@{$\sim$ConstructionResourceProduct}}
+\index{````~ConstructionResourceProduct@{$\sim$ConstructionResourceProduct}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{$\sim$ConstructionResourceProduct()}{~ConstructionResourceProduct()}}
+{\footnotesize\ttfamily Construction\+Resource\+Product\+::$\sim$\+Construction\+Resource\+Product (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConstructionResourceProduct_a583a18c63fee942bef2b76068b174357}\label{classConstructionResourceProduct_a583a18c63fee942bef2b76068b174357}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!accept@{accept}}
+\index{accept@{accept}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily virtual void Construction\+Resource\+Product\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$}]{TC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Allows tax collection on the resource by accepting a tax collector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & The tax collector. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}{City\+Component}}.
+
+\mbox{\Hypertarget{classConstructionResourceProduct_a98913ad52797e71809ba73eee3d64945}\label{classConstructionResourceProduct_a98913ad52797e71809ba73eee3d64945}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!ConsumeResource@{ConsumeResource}}
+\index{ConsumeResource@{ConsumeResource}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{ConsumeResource()}{ConsumeResource()}}
+{\footnotesize\ttfamily void Construction\+Resource\+Product\+::\+Consume\+Resource (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Consumes a specified amount of the resource. 
+
+Consumes a specified amount of the resource, decreasing the quantity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to consume. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classConstructionResourceProduct_a86159081d7b03a975af6d0506c41f9e7}\label{classConstructionResourceProduct_a86159081d7b03a975af6d0506c41f9e7}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Construction\+Resource\+Product\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays the current status of the resource, including name, quantity, and total cost. 
+
+Displays the current status of the resource, including its name, quantity, unit cost, and total value. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classWood_ab79555e198afba0bec85c8ea06715675}{Wood}}, \mbox{\hyperlink{classStone_a680ba377edd24fc2e10dd4f17acbc323}{Stone}}, and \mbox{\hyperlink{classSteel_afff1b81cc7ca89dad46059562a5a5db7}{Steel}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classConstructionResourceProduct_a77fb7182bb462829f26293fe23196842}\label{classConstructionResourceProduct_a77fb7182bb462829f26293fe23196842}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Construction\+Resource\+Product\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the building type for this resource product. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConstructionResourceProduct_aeff9b7b34fd4c5ce7d69546828bb3780}\label{classConstructionResourceProduct_aeff9b7b34fd4c5ce7d69546828bb3780}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLocation}{Location}} Construction\+Resource\+Product\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the location of the resource. 
+
+\begin{DoxyReturn}{Returns}
+The location of the resource. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConstructionResourceProduct_aed78990a302235012aaae711981b5cca}\label{classConstructionResourceProduct_aed78990a302235012aaae711981b5cca}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!getName@{getName}}
+\index{getName@{getName}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Construction\+Resource\+Product\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the name of the resource. 
+
+\begin{DoxyReturn}{Returns}
+The name of the resource. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConstructionResourceProduct_a67c8ad80f6488e89eb86aa857ad6f04a}\label{classConstructionResourceProduct_a67c8ad80f6488e89eb86aa857ad6f04a}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!getQuantity@{getQuantity}}
+\index{getQuantity@{getQuantity}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{getQuantity()}{getQuantity()}}
+{\footnotesize\ttfamily int Construction\+Resource\+Product\+::get\+Quantity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the current quantity of the resource. 
+
+Gets the current quantity of the resource.
+
+\begin{DoxyReturn}{Returns}
+The quantity of the resource.
+
+The current quantity of the resource. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classConstructionResourceProduct_afcfbdca4f7f49f3a34aef3da587482df}\label{classConstructionResourceProduct_afcfbdca4f7f49f3a34aef3da587482df}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!getTotalCost@{getTotalCost}}
+\index{getTotalCost@{getTotalCost}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{getTotalCost()}{getTotalCost()}}
+{\footnotesize\ttfamily int Construction\+Resource\+Product\+::get\+Total\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calculates and returns the total cost of the available resource. 
+
+\begin{DoxyReturn}{Returns}
+The total cost of the resource.
+
+The total cost, calculated as quantity $\ast$ unit cost. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classConstructionResourceProduct_a700b644c02153b6f6f35b53162f2524f}\label{classConstructionResourceProduct_a700b644c02153b6f6f35b53162f2524f}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!getUnitCost@{getUnitCost}}
+\index{getUnitCost@{getUnitCost}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{getUnitCost()}{getUnitCost()}}
+{\footnotesize\ttfamily int Construction\+Resource\+Product\+::get\+Unit\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the unit cost of the resource. 
+
+\begin{DoxyReturn}{Returns}
+The unit cost of the resource. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classConstructionResourceProduct_a6f66fac03b2de723076d1c150e9c4ce0}\label{classConstructionResourceProduct_a6f66fac03b2de723076d1c150e9c4ce0}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!isReadyForCollection@{isReadyForCollection}}
+\index{isReadyForCollection@{isReadyForCollection}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{isReadyForCollection()}{isReadyForCollection()}}
+{\footnotesize\ttfamily bool Construction\+Resource\+Product\+::is\+Ready\+For\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the resource is ready for collection. 
+
+Checks if the resource is ready for collection based on a minimum threshold.
+
+\begin{DoxyReturn}{Returns}
+True if the resource is ready for collection, false otherwise.
+
+True if the resource quantity is above or equal to the threshold, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConstructionResourceProduct_a94b981c7c454f483e3770b1757b04a4a}\label{classConstructionResourceProduct_a94b981c7c454f483e3770b1757b04a4a}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!replenish@{replenish}}
+\index{replenish@{replenish}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{replenish()}{replenish()}}
+{\footnotesize\ttfamily void Construction\+Resource\+Product\+::replenish (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Replenishes the resource by adding a specified amount. 
+
+Replenishes the resource by adding a specified amount to the quantity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to add to the resource quantity.\\
+\hline
+{\em amount} & The amount to add to the current quantity. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classConstructionResourceProduct_aa6b5ecaba7f3f631a2acac68b085cede}\label{classConstructionResourceProduct_aa6b5ecaba7f3f631a2acac68b085cede}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!setLocation@{setLocation}}
+\index{setLocation@{setLocation}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{setLocation()}{setLocation()}}
+{\footnotesize\ttfamily void Construction\+Resource\+Product\+::set\+Location (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the location of the resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & The location to set for the resource. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classConstructionResourceProduct_a70b68310f5e851e8c5a1ccbed229baed}\label{classConstructionResourceProduct_a70b68310f5e851e8c5a1ccbed229baed}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!location@{location}}
+\index{location@{location}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{location}{location}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLocation}{Location}} Construction\+Resource\+Product\+::location\hspace{0.3cm}{\ttfamily [private]}}
+
+The location of the resource \mbox{\Hypertarget{classConstructionResourceProduct_a9b6db6f7a547934571c0eaf093b63f18}\label{classConstructionResourceProduct_a9b6db6f7a547934571c0eaf093b63f18}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!name@{name}}
+\index{name@{name}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Construction\+Resource\+Product\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+Name of the resource \mbox{\Hypertarget{classConstructionResourceProduct_aa474a41014b41340b5fdf1d6c0901108}\label{classConstructionResourceProduct_aa474a41014b41340b5fdf1d6c0901108}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!quantity@{quantity}}
+\index{quantity@{quantity}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{quantity}{quantity}}
+{\footnotesize\ttfamily int Construction\+Resource\+Product\+::quantity\hspace{0.3cm}{\ttfamily [private]}}
+
+The quantity of the resource available \mbox{\Hypertarget{classConstructionResourceProduct_adbe5c97ee839ae1f38fbf07d7da0bf16}\label{classConstructionResourceProduct_adbe5c97ee839ae1f38fbf07d7da0bf16}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!readyForCollection@{readyForCollection}}
+\index{readyForCollection@{readyForCollection}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{readyForCollection}{readyForCollection}}
+{\footnotesize\ttfamily bool Construction\+Resource\+Product\+::ready\+For\+Collection\hspace{0.3cm}{\ttfamily [private]}}
+
+Indicates if the resource is ready for collection \mbox{\Hypertarget{classConstructionResourceProduct_ad858e22527c4b10a3a83145049745253}\label{classConstructionResourceProduct_ad858e22527c4b10a3a83145049745253}} 
+\index{ConstructionResourceProduct@{ConstructionResourceProduct}!unitCost@{unitCost}}
+\index{unitCost@{unitCost}!ConstructionResourceProduct@{ConstructionResourceProduct}}
+\doxysubsubsection{\texorpdfstring{unitCost}{unitCost}}
+{\footnotesize\ttfamily int Construction\+Resource\+Product\+::unit\+Cost\hspace{0.3cm}{\ttfamily [private]}}
+
+The cost per unit of the resource 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ConstructionResourceProduct_8h}{Construction\+Resource\+Product.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ConstructionResourceProduct_8cpp}{Construction\+Resource\+Product.\+cpp}}\end{DoxyCompactItemize}

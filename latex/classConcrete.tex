@@ -1,0 +1,122 @@
+\hypertarget{classConcrete}{}\doxysection{Concrete Class Reference}
+\label{classConcrete}\index{Concrete@{Concrete}}
+
+
+Represents a concrete resource used for construction within the game.  
+
+
+
+
+{\ttfamily \#include $<$Concrete.\+h$>$}
+
+
+
+Inheritance diagram for Concrete\+:
+% FIG 0
+
+
+Collaboration diagram for Concrete\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConcrete_acfd7ce73e6a28b2e25852371ba94511b}{Concrete}} (int \mbox{\hyperlink{classConstructionResourceProduct_aa474a41014b41340b5fdf1d6c0901108}{quantity}}, int \mbox{\hyperlink{classConstructionResourceProduct_ad858e22527c4b10a3a83145049745253}{unit\+Cost}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classConcrete}{Concrete}} resource with specified quantity and unit cost. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConcrete_a6db3e311e5f743751ff5ec286e55a01f}{$\sim$\+Concrete}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classConcrete}{Concrete}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConcrete_aabdabab9ef7c84f8bc2b3d60ba13913e}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the current status of the concrete resource. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classConcrete_a088bb58d079278aa6a2b0f6a5cfc687f}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Gets the building type for this resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a concrete resource used for construction within the game. 
+
+This class provides specific functionality and characteristics for concrete as a construction resource, including cost and quantity management. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConcrete_acfd7ce73e6a28b2e25852371ba94511b}\label{classConcrete_acfd7ce73e6a28b2e25852371ba94511b}} 
+\index{Concrete@{Concrete}!Concrete@{Concrete}}
+\index{Concrete@{Concrete}!Concrete@{Concrete}}
+\doxysubsubsection{\texorpdfstring{Concrete()}{Concrete()}}
+{\footnotesize\ttfamily Concrete\+::\+Concrete (\begin{DoxyParamCaption}\item[{int}]{quantity,  }\item[{int}]{unit\+Cost }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classConcrete}{Concrete}} resource with specified quantity and unit cost. 
+
+Constructs a \mbox{\hyperlink{classConcrete}{Concrete}} resource with a specified quantity and unit cost.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The amount of concrete units available. \\
+\hline
+{\em unit\+Cost} & The cost per unit of concrete.\\
+\hline
+\end{DoxyParams}
+Initializes the concrete resource, setting its name to \char`\"{}\+Concrete\char`\"{} and establishing the initial quantity and cost per unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The amount of concrete available. \\
+\hline
+{\em unit\+Cost} & The cost per unit of concrete. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classConcrete_a6db3e311e5f743751ff5ec286e55a01f}\label{classConcrete_a6db3e311e5f743751ff5ec286e55a01f}} 
+\index{Concrete@{Concrete}!````~Concrete@{$\sim$Concrete}}
+\index{````~Concrete@{$\sim$Concrete}!Concrete@{Concrete}}
+\doxysubsubsection{\texorpdfstring{$\sim$Concrete()}{~Concrete()}}
+{\footnotesize\ttfamily Concrete\+::$\sim$\+Concrete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classConcrete}{Concrete}} class. 
+
+Cleans up resources associated with the \mbox{\hyperlink{classConcrete}{Concrete}} object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConcrete_aabdabab9ef7c84f8bc2b3d60ba13913e}\label{classConcrete_aabdabab9ef7c84f8bc2b3d60ba13913e}} 
+\index{Concrete@{Concrete}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Concrete@{Concrete}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Concrete\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the current status of the concrete resource. 
+
+Displays the status of the concrete resource.
+
+Outputs details specific to concrete, including quantity and cost, to the console.
+
+Outputs details specific to the concrete resource, including its quantity, unit cost, and total cost, to the console. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classConcrete_a088bb58d079278aa6a2b0f6a5cfc687f}\label{classConcrete_a088bb58d079278aa6a2b0f6a5cfc687f}} 
+\index{Concrete@{Concrete}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Concrete@{Concrete}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Concrete\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the building type for this resource. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type (\char`\"{}\+Concrete\char`\"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Concrete_8h}{Concrete.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Concrete_8cpp}{Concrete.\+cpp}}\end{DoxyCompactItemize}

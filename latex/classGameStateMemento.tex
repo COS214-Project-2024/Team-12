@@ -1,0 +1,130 @@
+\hypertarget{classGameStateMemento}{}\doxysection{Game\+State\+Memento Class Reference}
+\label{classGameStateMemento}\index{GameStateMemento@{GameStateMemento}}
+
+
+Represents a memento for the \mbox{\hyperlink{classGameState}{Game\+State}}, capturing command history and the current command index.  
+
+
+
+
+{\ttfamily \#include $<$Game\+State\+Memento.\+h$>$}
+
+
+
+Collaboration diagram for Game\+State\+Memento\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameStateMemento_acdc14356628f0179d4d31813f5bbee54}{Game\+State\+Memento}} (const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommand}{Command}} $>$$>$ \&history, size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}} with a command history and current command index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}} $>$ \mbox{\hyperlink{classGameStateMemento_a7ee47f2b15b54ffd8ba8028dd027f0b4}{create}} (const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommand}{Command}} $>$$>$ \&history, size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Static factory method to create a new \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommand}{Command}} $>$ $>$ \mbox{\hyperlink{classGameStateMemento_a2f993e59c4802aa333e013ab74cf15e8}{command\+History}}
+\begin{DoxyCompactList}\small\item\em The history of commands executed. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classGameStateMemento_ab88a379656ca1f450ad9e7ee85103e11}{current\+Command\+Index}}
+\begin{DoxyCompactList}\small\item\em The index of the current command in the history. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGameStateMemento_aefef8d7a397219a28f7808dc064e03c6}{Game\+State}}
+\begin{DoxyCompactList}\small\item\em Allows \mbox{\hyperlink{classGameState}{Game\+State}} to access private members. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a memento for the \mbox{\hyperlink{classGameState}{Game\+State}}, capturing command history and the current command index. 
+
+The \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}} class allows for saving and restoring the state of the game, specifically the history of commands executed and the current position in that history. It provides a way to implement undo and redo functionality. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameStateMemento_acdc14356628f0179d4d31813f5bbee54}\label{classGameStateMemento_acdc14356628f0179d4d31813f5bbee54}} 
+\index{GameStateMemento@{GameStateMemento}!GameStateMemento@{GameStateMemento}}
+\index{GameStateMemento@{GameStateMemento}!GameStateMemento@{GameStateMemento}}
+\doxysubsubsection{\texorpdfstring{GameStateMemento()}{GameStateMemento()}}
+{\footnotesize\ttfamily Game\+State\+Memento\+::\+Game\+State\+Memento (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommand}{Command}} $>$$>$ \&}]{history,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}} with a command history and current command index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em history} & A vector of unique pointers to the command history. \\
+\hline
+{\em index} & The current command index. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameStateMemento_a7ee47f2b15b54ffd8ba8028dd027f0b4}\label{classGameStateMemento_a7ee47f2b15b54ffd8ba8028dd027f0b4}} 
+\index{GameStateMemento@{GameStateMemento}!create@{create}}
+\index{create@{create}!GameStateMemento@{GameStateMemento}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}}$>$ Game\+State\+Memento\+::create (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommand}{Command}} $>$$>$ \&}]{history,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Static factory method to create a new \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}} instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em history} & A vector of unique pointers to the command history. \\
+\hline
+{\em index} & The current command index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the newly created \mbox{\hyperlink{classGameStateMemento}{Game\+State\+Memento}}. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 2
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classGameStateMemento_aefef8d7a397219a28f7808dc064e03c6}\label{classGameStateMemento_aefef8d7a397219a28f7808dc064e03c6}} 
+\index{GameStateMemento@{GameStateMemento}!GameState@{GameState}}
+\index{GameState@{GameState}!GameStateMemento@{GameStateMemento}}
+\doxysubsubsection{\texorpdfstring{GameState}{GameState}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classGameState}{Game\+State}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Allows \mbox{\hyperlink{classGameState}{Game\+State}} to access private members. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGameStateMemento_a2f993e59c4802aa333e013ab74cf15e8}\label{classGameStateMemento_a2f993e59c4802aa333e013ab74cf15e8}} 
+\index{GameStateMemento@{GameStateMemento}!commandHistory@{commandHistory}}
+\index{commandHistory@{commandHistory}!GameStateMemento@{GameStateMemento}}
+\doxysubsubsection{\texorpdfstring{commandHistory}{commandHistory}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classCommand}{Command}}$>$ $>$ Game\+State\+Memento\+::command\+History\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The history of commands executed. 
+
+\mbox{\Hypertarget{classGameStateMemento_ab88a379656ca1f450ad9e7ee85103e11}\label{classGameStateMemento_ab88a379656ca1f450ad9e7ee85103e11}} 
+\index{GameStateMemento@{GameStateMemento}!currentCommandIndex@{currentCommandIndex}}
+\index{currentCommandIndex@{currentCommandIndex}!GameStateMemento@{GameStateMemento}}
+\doxysubsubsection{\texorpdfstring{currentCommandIndex}{currentCommandIndex}}
+{\footnotesize\ttfamily size\+\_\+t Game\+State\+Memento\+::current\+Command\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The index of the current command in the history. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{GameStateMemento_8h}{Game\+State\+Memento.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,14 @@
+digraph "NPCManager::decrementCount"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="NPCManager::decrementCount",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Decrements the count for a given NPC state."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ReactingNPCS::changeState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#a76e8ef118165123d68fffa6ffc9bad90",tooltip="Changes the current state of the NPC."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ReactingNPCS::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#afc206d145750358e98204a9135b05276",tooltip="Updates the NPC's state based on observed changes."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ReactingNPCS::~ReactingNPCS",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#a44682cbcc278214f361a1afd6440f599",tooltip="Destructor for cleaning up dynamically allocated state."];
+}

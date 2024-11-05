@@ -1,0 +1,10 @@
+digraph "Government::increaseCrimeRate"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Government::increaseCrimeRate",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Increases the crime rate by a specified factor."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="CrimeState::handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCrimeState.html#ada7bdb702a48d7ba3847bf4b77d5e5cd",tooltip="Handles actions specific to the crime state."];
+}

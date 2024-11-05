@@ -1,0 +1,12 @@
+digraph "ResidentialBuilding::displayStatus"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ResidentialBuilding\l::displayStatus",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Displays the status of the residential building."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ResidentialBuilding\l::getBuildingType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classResidentialBuilding.html#afd1404c6d59a48932e8190b8dfad83cb",tooltip="Gets the building type."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ResidentialBuilding\l::hasUtilities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classResidentialBuilding.html#a9c022863badc7e5001f1d6b93220b82b",tooltip="Checks if the building has all essential utilities connected."];
+}

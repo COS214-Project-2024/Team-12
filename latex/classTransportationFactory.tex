@@ -1,0 +1,71 @@
+\hypertarget{classTransportationFactory}{}\doxysection{Transportation\+Factory Class Reference}
+\label{classTransportationFactory}\index{TransportationFactory@{TransportationFactory}}
+
+
+Abstract Factory class for creating transportation objects.  
+
+
+
+
+{\ttfamily \#include $<$Transportation\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Transportation\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Transportation\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ \mbox{\hyperlink{classTransportationFactory_a9710992771d2070fc47319516e8caea4}{create\+Transport}} ()=0
+\begin{DoxyCompactList}\small\item\em Creates a transport object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classTransportationFactory_a1b561e0aaf60d744d3b1e73cd0511495}{$\sim$\+Transportation\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classTransportationFactory}{Transportation\+Factory}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Factory class for creating transportation objects. 
+
+The \mbox{\hyperlink{classTransportationFactory}{Transportation\+Factory}} defines an interface for creating various types of \mbox{\hyperlink{classTransport}{Transport}} objects. Derived classes will implement the specific transport creation logic. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTransportationFactory_a1b561e0aaf60d744d3b1e73cd0511495}\label{classTransportationFactory_a1b561e0aaf60d744d3b1e73cd0511495}} 
+\index{TransportationFactory@{TransportationFactory}!````~TransportationFactory@{$\sim$TransportationFactory}}
+\index{````~TransportationFactory@{$\sim$TransportationFactory}!TransportationFactory@{TransportationFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$TransportationFactory()}{~TransportationFactory()}}
+{\footnotesize\ttfamily virtual Transportation\+Factory\+::$\sim$\+Transportation\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classTransportationFactory}{Transportation\+Factory}}. 
+
+Ensures proper cleanup of derived factory instances when deleted through a pointer to the base class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTransportationFactory_a9710992771d2070fc47319516e8caea4}\label{classTransportationFactory_a9710992771d2070fc47319516e8caea4}} 
+\index{TransportationFactory@{TransportationFactory}!createTransport@{createTransport}}
+\index{createTransport@{createTransport}!TransportationFactory@{TransportationFactory}}
+\doxysubsubsection{\texorpdfstring{createTransport()}{createTransport()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classTransport}{Transport}}$>$ Transportation\+Factory\+::create\+Transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates a transport object. 
+
+This pure virtual function must be overridden by derived factory classes to instantiate specific types of transport objects.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a \mbox{\hyperlink{classTransport}{Transport}} object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTrainsFactory_a09c26ec599c2166e8e11453e3589ce8c}{Trains\+Factory}}, and \mbox{\hyperlink{classRoadsFactory_af298fc67e41ef82cafbed8cc4e8ccf2e}{Roads\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{TransportationFactory_8h}{Transportation\+Factory.\+h}}\end{DoxyCompactItemize}

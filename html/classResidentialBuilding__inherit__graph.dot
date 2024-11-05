@@ -1,0 +1,17 @@
+digraph "ResidentialBuilding"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ResidentialBuilding\n|# bedrooms\l# price\l# taxPaid\l# waterSupply\l# powerSupply\l# wasteManagement\l# sewageManagement\l|+ ResidentialBuilding()\l+ setTaxPaid()\l+ isTaxPaid()\l+ accept()\l+ getPrice()\l+ displayStatus()\l+ getBuildingType()\l+ getDisplaySymbol()\l+ getUtilityCoverage()\l+ hasUtilities()\l+ setWaterSupply()\l+ setPowerSupply()\l+ setWasteManagement()\l+ setSewageManagement()\l+ getDisplayColor()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Represents a residential building within the city."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{CityComponent\n|- observers\l- location\l|+ add()\l+ remove()\l+ displayStatus()\l+ ~CityComponent()\l+ addNpc()\l+ removeNpc()\l+ notify()\l+ getBuildingType()\l+ accept()\l+ setLocation()\l+ setLocation()\l+ getLocation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html",tooltip="Abstract base class representing a component of a city."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{Estate\n|+ BASE_COST\l|+ Estate()\l+ Estate()\l+ getDisplaySymbol()\l+ getBuildingType()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEstate.html",tooltip="Represents an estate building in the city simulation."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{Flat\n|+ BASE_COST\l|+ Flat()\l+ Flat()\l+ getDisplaySymbol()\l+ getBuildingType()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFlat.html",tooltip="Represents a residential building of type Flat."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{House\n|+ BASE_COST\l|+ House()\l+ House()\l+ getDisplaySymbol()\l+ getBuildingType()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHouse.html",tooltip="Represents a house, which is a type of residential building."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{Townhouse\n|+ BASE_COST\l|+ Townhouse()\l+ Townhouse()\l+ getDisplaySymbol()\l+ getBuildingType()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTownhouse.html",tooltip="A concrete class representing a townhouse, derived from ResidentialBuilding."];
+}

@@ -1,0 +1,130 @@
+\hypertarget{classShops}{}\doxysection{Shops Class Reference}
+\label{classShops}\index{Shops@{Shops}}
+
+
+Represents a commercial building of type \mbox{\hyperlink{classShops}{Shops}}.  
+
+
+
+
+{\ttfamily \#include $<$Shops.\+h$>$}
+
+
+
+Inheritance diagram for Shops\+:
+% FIG 0
+
+
+Collaboration diagram for Shops\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classShops_a44a2bf9028430b9a0f05c9ec47bff2f6}{Shops}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classShops}{Shops}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classShops_ac427349b0cabcd213f717d5159203c55}{Shops}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classShops}{Shops}} instance with utility connections. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classShops_a1674ffe434c05f774a3c2077e368c157}{get\+Display\+Symbol}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the display symbol for \mbox{\hyperlink{classShops}{Shops}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classShops_a2d960646df78fad0e42e1b5cfce61a8e}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the building type as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a commercial building of type \mbox{\hyperlink{classShops}{Shops}}. 
+
+The \mbox{\hyperlink{classShops}{Shops}} class inherits from \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} and represents a specific type of commercial building. It includes methods for retrieving building details and display symbols. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classShops_a44a2bf9028430b9a0f05c9ec47bff2f6}\label{classShops_a44a2bf9028430b9a0f05c9ec47bff2f6}} 
+\index{Shops@{Shops}!Shops@{Shops}}
+\index{Shops@{Shops}!Shops@{Shops}}
+\doxysubsubsection{\texorpdfstring{Shops()}{Shops()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Shops\+::\+Shops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classShops}{Shops}}. 
+
+Initializes a \mbox{\hyperlink{classShops}{Shops}} instance with default utilities (no utility connections).
+
+Initializes a \mbox{\hyperlink{classShops}{Shops}} instance with a default cost and no utility connections. \mbox{\Hypertarget{classShops_ac427349b0cabcd213f717d5159203c55}\label{classShops_ac427349b0cabcd213f717d5159203c55}} 
+\index{Shops@{Shops}!Shops@{Shops}}
+\index{Shops@{Shops}!Shops@{Shops}}
+\doxysubsubsection{\texorpdfstring{Shops()}{Shops()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Shops\+::\+Shops (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classShops}{Shops}} instance with utility connections. 
+
+Constructs a \mbox{\hyperlink{classShops}{Shops}} instance with specified utility connections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Shared pointer to a water utility. \\
+\hline
+{\em power} & Shared pointer to a power utility. \\
+\hline
+{\em waste} & Shared pointer to a waste utility. \\
+\hline
+{\em sewage} & Shared pointer to a sewage utility.\\
+\hline
+\end{DoxyParams}
+This constructor initializes a \mbox{\hyperlink{classShops}{Shops}} instance with a specified cost and connections to various utilities (water, power, waste, and sewage).
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Shared pointer to a water utility. \\
+\hline
+{\em power} & Shared pointer to a power utility. \\
+\hline
+{\em waste} & Shared pointer to a waste utility. \\
+\hline
+{\em sewage} & Shared pointer to a sewage utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classShops_a2d960646df78fad0e42e1b5cfce61a8e}\label{classShops_a2d960646df78fad0e42e1b5cfce61a8e}} 
+\index{Shops@{Shops}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Shops@{Shops}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Shops\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the building type as a string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The building type, \char`\"{}\+Shops\char`\"{}. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCommercialBuilding_aff579a01599a39f3d43196790ba1c0cb}{Commercial\+Building}}.
+
+\mbox{\Hypertarget{classShops_a1674ffe434c05f774a3c2077e368c157}\label{classShops_a1674ffe434c05f774a3c2077e368c157}} 
+\index{Shops@{Shops}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!Shops@{Shops}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char Shops\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the display symbol for \mbox{\hyperlink{classShops}{Shops}}. 
+
+\begin{DoxyReturn}{Returns}
+char The display symbol representing \mbox{\hyperlink{classShops}{Shops}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercialBuilding_afc4afd257826aa0c42814e469e776a64}{Commercial\+Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Shops_8h}{Shops.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Shops_8cpp}{Shops.\+cpp}}\end{DoxyCompactItemize}

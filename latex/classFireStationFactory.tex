@@ -1,0 +1,62 @@
+\hypertarget{classFireStationFactory}{}\doxysection{Fire\+Station\+Factory Class Reference}
+\label{classFireStationFactory}\index{FireStationFactory@{FireStationFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classFireStation}{Fire\+Station}} objects.  
+
+
+
+
+{\ttfamily \#include $<$Fire\+Station\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Fire\+Station\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Fire\+Station\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ \mbox{\hyperlink{classFireStationFactory_af5f9fac69abb075665fe69539f701ea1}{create\+Public\+Service}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{classFireStation}{Fire\+Station}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classFireStation}{Fire\+Station}} objects. 
+
+Inherits from the \mbox{\hyperlink{classPublicServiceFactory}{Public\+Service\+Factory}} and provides the functionality to create instances of \mbox{\hyperlink{classFireStation}{Fire\+Station}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFireStationFactory_af5f9fac69abb075665fe69539f701ea1}\label{classFireStationFactory_af5f9fac69abb075665fe69539f701ea1}} 
+\index{FireStationFactory@{FireStationFactory}!createPublicService@{createPublicService}}
+\index{createPublicService@{createPublicService}!FireStationFactory@{FireStationFactory}}
+\doxysubsubsection{\texorpdfstring{createPublicService()}{createPublicService()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ Fire\+Station\+Factory\+::create\+Public\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a new \mbox{\hyperlink{classFireStation}{Fire\+Station}} object. 
+
+This method returns a unique pointer to a newly created \mbox{\hyperlink{classFireStation}{Fire\+Station}} instance.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a \mbox{\hyperlink{classPublicService}{Public\+Service}} (\mbox{\hyperlink{classFireStation}{Fire\+Station}}).
+\end{DoxyReturn}
+This function utilizes the \mbox{\hyperlink{classFireStation}{Fire\+Station}} class to instantiate a new \mbox{\hyperlink{classFireStation}{Fire\+Station}} object and returns it as a unique pointer to the \mbox{\hyperlink{classPublicService}{Public\+Service}} base class.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a \mbox{\hyperlink{classPublicService}{Public\+Service}} representing the newly created \mbox{\hyperlink{classFireStation}{Fire\+Station}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPublicServiceFactory_aa78ca5e8bad83e979985c738ad43c309}{Public\+Service\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{FireStationFactory_8h}{Fire\+Station\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{FireStationFactory_8cpp}{Fire\+Station\+Factory.\+cpp}}\end{DoxyCompactItemize}

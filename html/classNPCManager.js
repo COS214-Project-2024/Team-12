@@ -1,0 +1,28 @@
+var classNPCManager =
+[
+    [ "NPCManager", "classNPCManager.html#aa90545d9ee295d6ea236c9ff674199b8", null ],
+    [ "NPCManager", "classNPCManager.html#afcb885be8500ae3f25beb3b64d31a2f1", null ],
+    [ "decrementCount", "classNPCManager.html#a2780f5424c98766d052c9860eedd9412", null ],
+    [ "EmployeedNpcs", "classNPCManager.html#adc79b7ee61f388392c74137eac04fa96", null ],
+    [ "getCrimeCount", "classNPCManager.html#aef57949eebfff083058a656219b8cc43", null ],
+    [ "getCrimeRate", "classNPCManager.html#a110affcb21b7c60f405d4bfd3d0761d4", null ],
+    [ "getDonationCount", "classNPCManager.html#a4eddd0fa270ec6fdb115de8c94d5ce32", null ],
+    [ "getHappinessLevel", "classNPCManager.html#ac21c34d2e87c6a8801bc4bfc1c6d0201", null ],
+    [ "getHighestState", "classNPCManager.html#a3d9ca8170cdadc9a47b78893c6383e1c", null ],
+    [ "getNeutralCount", "classNPCManager.html#a87b812f4d1f79a397737a29ddddaa4fb", null ],
+    [ "getProductiveCount", "classNPCManager.html#a127118e337db428998e8f9548b013b79", null ],
+    [ "getRevoltCount", "classNPCManager.html#a2b545c7ba2dc9ff52c70f898a087e371", null ],
+    [ "getTotalNPCs", "classNPCManager.html#a40647dd39fc3e38634f97bb1e93cd282", null ],
+    [ "incrementCount", "classNPCManager.html#a615e87109c27f59edbc1eccb2df972d2", null ],
+    [ "operator=", "classNPCManager.html#a72263041c0f192310783cbdc922aa9b0", null ],
+    [ "resetCounts", "classNPCManager.html#a66e24e21929ec64c56949b162851cb53", null ],
+    [ "setHappinessLevel", "classNPCManager.html#aa5532ef54b02558f6e97c9fdea5cd98e", null ],
+    [ "crimeCount", "classNPCManager.html#a560031a3991ce16d257e9d22135652a7", null ],
+    [ "employedNpcs", "classNPCManager.html#ac9f55a7412d41251ab723658fbc6a711", null ],
+    [ "happinessLevel", "classNPCManager.html#a72a6167b14863426d17ff21047086916", null ],
+    [ "happyCount", "classNPCManager.html#ab39086b23f84859820566ea850c1b459", null ],
+    [ "neutralCount", "classNPCManager.html#a804ce0aeff514697bdf3307229ce50c2", null ],
+    [ "productiveCount", "classNPCManager.html#a0d0b1ba25d4b3e0dfcef79b3070dcf37", null ],
+    [ "revoltCount", "classNPCManager.html#ae740dab7696fc0d860d598a444b009a9", null ],
+    [ "unemployedNpcs", "classNPCManager.html#a158c47e03a035389f37622f9615e8b71", null ]
+];

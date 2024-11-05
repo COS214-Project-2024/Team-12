@@ -1,0 +1,145 @@
+\hypertarget{classMetalFactory}{}\doxysection{Metal\+Factory Class Reference}
+\label{classMetalFactory}\index{MetalFactory@{MetalFactory}}
+
+
+A factory class for creating metal-\/related resources for income generation and construction.  
+
+
+
+
+{\ttfamily \#include $<$Metal\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Metal\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Metal\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMetalFactory_a00c11c8ca3e8484d1e08f5b7c27a0ea5}{Metal\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classMetalFactory}{Metal\+Factory}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMetalFactory_acc08da55235f3606894066aec1d111ae}{$\sim$\+Metal\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classMetalFactory}{Metal\+Factory}}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ \mbox{\hyperlink{classMetalFactory_ad649f29601ffe868a6e753aa1dedf80d}{create\+IncomeR}} (int quantity) override
+\begin{DoxyCompactList}\small\item\em Creates an income-\/generating metal resource. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ \mbox{\hyperlink{classMetalFactory_aec5d1bc613351b649c8012bf6149a521}{create\+ConstructionR}} (int quantity) override
+\begin{DoxyCompactList}\small\item\em Creates a construction metal resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A factory class for creating metal-\/related resources for income generation and construction. 
+
+The \mbox{\hyperlink{classMetalFactory}{Metal\+Factory}} is derived from \mbox{\hyperlink{classResourceFactory}{Resource\+Factory}} and specializes in creating resources related to metals, such as gold for income and steel for construction. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMetalFactory_a00c11c8ca3e8484d1e08f5b7c27a0ea5}\label{classMetalFactory_a00c11c8ca3e8484d1e08f5b7c27a0ea5}} 
+\index{MetalFactory@{MetalFactory}!MetalFactory@{MetalFactory}}
+\index{MetalFactory@{MetalFactory}!MetalFactory@{MetalFactory}}
+\doxysubsubsection{\texorpdfstring{MetalFactory()}{MetalFactory()}}
+{\footnotesize\ttfamily Metal\+Factory\+::\+Metal\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classMetalFactory}{Metal\+Factory}}. 
+
+Constructor for the \mbox{\hyperlink{classMetalFactory}{Metal\+Factory}}.
+
+Initializes a \mbox{\hyperlink{classMetalFactory}{Metal\+Factory}} instance that can create metal-\/related resources.
+
+Initializes a \mbox{\hyperlink{classMetalFactory}{Metal\+Factory}} instance, used to produce metal-\/related resources for income generation and construction. \mbox{\Hypertarget{classMetalFactory_acc08da55235f3606894066aec1d111ae}\label{classMetalFactory_acc08da55235f3606894066aec1d111ae}} 
+\index{MetalFactory@{MetalFactory}!````~MetalFactory@{$\sim$MetalFactory}}
+\index{````~MetalFactory@{$\sim$MetalFactory}!MetalFactory@{MetalFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$MetalFactory()}{~MetalFactory()}}
+{\footnotesize\ttfamily Metal\+Factory\+::$\sim$\+Metal\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classMetalFactory}{Metal\+Factory}}. 
+
+Destructor for the \mbox{\hyperlink{classMetalFactory}{Metal\+Factory}}.
+
+Cleans up resources associated with the \mbox{\hyperlink{classMetalFactory}{Metal\+Factory}} instance. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMetalFactory_aec5d1bc613351b649c8012bf6149a521}\label{classMetalFactory_aec5d1bc613351b649c8012bf6149a521}} 
+\index{MetalFactory@{MetalFactory}!createConstructionR@{createConstructionR}}
+\index{createConstructionR@{createConstructionR}!MetalFactory@{MetalFactory}}
+\doxysubsubsection{\texorpdfstring{createConstructionR()}{createConstructionR()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ Metal\+Factory\+::create\+ConstructionR (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a construction metal resource. 
+
+Creates a construction resource.
+
+Creates and returns a {\ttfamily \mbox{\hyperlink{classSteel}{Steel}}} object, a construction resource, with a specified quantity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the construction resource to be produced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to a {\ttfamily \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}} representing {\ttfamily \mbox{\hyperlink{classSteel}{Steel}}}.
+\end{DoxyReturn}
+This method creates and returns a {\ttfamily \mbox{\hyperlink{classSteel}{Steel}}} object, a construction resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the construction resource to be produced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to a {\ttfamily \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}} representing {\ttfamily \mbox{\hyperlink{classSteel}{Steel}}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceFactory_a004800d9d6db381507ee78d3d197e8ac}{Resource\+Factory}}.
+
+\mbox{\Hypertarget{classMetalFactory_ad649f29601ffe868a6e753aa1dedf80d}\label{classMetalFactory_ad649f29601ffe868a6e753aa1dedf80d}} 
+\index{MetalFactory@{MetalFactory}!createIncomeR@{createIncomeR}}
+\index{createIncomeR@{createIncomeR}!MetalFactory@{MetalFactory}}
+\doxysubsubsection{\texorpdfstring{createIncomeR()}{createIncomeR()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ Metal\+Factory\+::create\+IncomeR (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates an income-\/generating metal resource. 
+
+Creates an income-\/generating resource.
+
+Creates and returns a {\ttfamily \mbox{\hyperlink{classGold}{Gold}}} object, an income-\/generating resource, with a specified quantity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the income resource to be produced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to an {\ttfamily \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}} representing {\ttfamily \mbox{\hyperlink{classGold}{Gold}}}.
+\end{DoxyReturn}
+This method creates and returns a {\ttfamily \mbox{\hyperlink{classGold}{Gold}}} object, an income-\/generating resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the resource to be produced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to an {\ttfamily \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}} representing {\ttfamily \mbox{\hyperlink{classGold}{Gold}}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceFactory_a564e63149bd3348f2e6f749ab6768369}{Resource\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{MetalFactory_8h}{Metal\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{MetalFactory_8cpp}{Metal\+Factory.\+cpp}}\end{DoxyCompactItemize}

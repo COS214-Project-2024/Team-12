@@ -1,0 +1,14 @@
+digraph "Wood::displayStatus"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Wood::displayStatus",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Displays the current status of the wood resource."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ConstructionResourceProduct\l::getQuantity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConstructionResourceProduct.html#a67c8ad80f6488e89eb86aa857ad6f04a",tooltip="Returns the current quantity of the resource."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ConstructionResourceProduct\l::getTotalCost",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConstructionResourceProduct.html#afcfbdca4f7f49f3a34aef3da587482df",tooltip="Calculates and returns the total cost of the available resource."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ConstructionResourceProduct\l::getUnitCost",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConstructionResourceProduct.html#a700b644c02153b6f6f35b53162f2524f",tooltip="Retrieves the unit cost of the resource."];
+}

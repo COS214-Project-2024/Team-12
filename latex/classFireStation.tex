@@ -1,0 +1,198 @@
+\hypertarget{classFireStation}{}\doxysection{Fire\+Station Class Reference}
+\label{classFireStation}\index{FireStation@{FireStation}}
+
+
+Represents a fire station in the city.  
+
+
+
+
+{\ttfamily \#include $<$Fire\+Station.\+h$>$}
+
+
+
+Inheritance diagram for Fire\+Station\+:
+% FIG 0
+
+
+Collaboration diagram for Fire\+Station\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFireStation_a6443e178f2c2d055aaffc84fcee67f81}{Fire\+Station}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classFireStation}{Fire\+Station}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFireStation_aa08e7e9fc522ed88cd32c6f52cea9c3a}{Fire\+Station}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ electricity, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classPublicService_a90e8197e95215be863ae3e60fff874c7}{waste\+Management}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage, std\+::string building\+Status)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for \mbox{\hyperlink{classFireStation}{Fire\+Station}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFireStation_ac426a2ecde4c3a28fb9b55bb5bc23683}{$\sim$\+Fire\+Station}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for \mbox{\hyperlink{classFireStation}{Fire\+Station}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFireStation_a4efafa5971760f21b41102245fb99ceb}{provide\+Service}} () override
+\begin{DoxyCompactList}\small\item\em Provides fire protection services. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ \mbox{\hyperlink{classFireStation_af2e5211a99bdf5d921faedd139652973}{clone}} () const
+\begin{DoxyCompactList}\small\item\em Clones the current \mbox{\hyperlink{classFireStation}{Fire\+Station}} object. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classFireStation_ac17dde3bf2e3f7d8de5fd88e76142ccd}{get\+Display\+Symbol}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the display symbol for the fire station. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFireStation_aea55c46413850b6428a98e48d5de8057}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the current status of the fire station. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classFireStation_abd252ad2ca24602cdef5acb6cf5e2906}{status}}
+\begin{DoxyCompactList}\small\item\em Current status of the fire station (e.\+g., Operational, Out of Service). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a fire station in the city. 
+
+The \mbox{\hyperlink{classFireStation}{Fire\+Station}} class is a concrete implementation of the \mbox{\hyperlink{classPublicService}{Public\+Service}} interface. It provides services related to fire safety and emergency response within the city. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFireStation_a6443e178f2c2d055aaffc84fcee67f81}\label{classFireStation_a6443e178f2c2d055aaffc84fcee67f81}} 
+\index{FireStation@{FireStation}!FireStation@{FireStation}}
+\index{FireStation@{FireStation}!FireStation@{FireStation}}
+\doxysubsubsection{\texorpdfstring{FireStation()}{FireStation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Fire\+Station\+::\+Fire\+Station (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classFireStation}{Fire\+Station}}. 
+
+\mbox{\Hypertarget{classFireStation_aa08e7e9fc522ed88cd32c6f52cea9c3a}\label{classFireStation_aa08e7e9fc522ed88cd32c6f52cea9c3a}} 
+\index{FireStation@{FireStation}!FireStation@{FireStation}}
+\index{FireStation@{FireStation}!FireStation@{FireStation}}
+\doxysubsubsection{\texorpdfstring{FireStation()}{FireStation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Fire\+Station\+::\+Fire\+Station (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{electricity,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste\+Management,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage,  }\item[{std\+::string}]{building\+Status }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for \mbox{\hyperlink{classFireStation}{Fire\+Station}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Shared pointer to the water utility. \\
+\hline
+{\em electricity} & Shared pointer to the electricity utility. \\
+\hline
+{\em waste\+Management} & Shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & Shared pointer to the sewage utility. \\
+\hline
+{\em building\+Status} & Status of the fire station (e.\+g., Operational).\\
+\hline
+\end{DoxyParams}
+Initializes a \mbox{\hyperlink{classFireStation}{Fire\+Station}} object with the specified utilities and building status.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Shared pointer to the water utility. \\
+\hline
+{\em electricity} & Shared pointer to the electricity utility. \\
+\hline
+{\em waste\+Management} & Shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & Shared pointer to the sewage utility. \\
+\hline
+{\em building\+Status} & The operational status of the fire station. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFireStation_ac426a2ecde4c3a28fb9b55bb5bc23683}\label{classFireStation_ac426a2ecde4c3a28fb9b55bb5bc23683}} 
+\index{FireStation@{FireStation}!````~FireStation@{$\sim$FireStation}}
+\index{````~FireStation@{$\sim$FireStation}!FireStation@{FireStation}}
+\doxysubsubsection{\texorpdfstring{$\sim$FireStation()}{~FireStation()}}
+{\footnotesize\ttfamily Fire\+Station\+::$\sim$\+Fire\+Station (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor for \mbox{\hyperlink{classFireStation}{Fire\+Station}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFireStation_af2e5211a99bdf5d921faedd139652973}\label{classFireStation_af2e5211a99bdf5d921faedd139652973}} 
+\index{FireStation@{FireStation}!clone@{clone}}
+\index{clone@{clone}!FireStation@{FireStation}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ Fire\+Station\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Clones the current \mbox{\hyperlink{classFireStation}{Fire\+Station}} object. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a new \mbox{\hyperlink{classFireStation}{Fire\+Station}} object that is a clone of this one.
+
+A unique pointer to a new \mbox{\hyperlink{classFireStation}{Fire\+Station}} object that is a copy of this one. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFireStation_aea55c46413850b6428a98e48d5de8057}\label{classFireStation_aea55c46413850b6428a98e48d5de8057}} 
+\index{FireStation@{FireStation}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!FireStation@{FireStation}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Fire\+Station\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the current status of the fire station. 
+
+This method outputs relevant information about the fire station\textquotesingle{}s status and operational capacity.
+
+Outputs information regarding the connectivity of utilities and the overall operational status of the fire station. 
+
+Implements \mbox{\hyperlink{classPublicService_ad14d878606280cf2c180c5c84a241a35}{Public\+Service}}.
+
+\mbox{\Hypertarget{classFireStation_ac17dde3bf2e3f7d8de5fd88e76142ccd}\label{classFireStation_ac17dde3bf2e3f7d8de5fd88e76142ccd}} 
+\index{FireStation@{FireStation}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!FireStation@{FireStation}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char Fire\+Station\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the display symbol for the fire station. 
+
+\begin{DoxyReturn}{Returns}
+The character symbol representing the fire station.
+
+The character symbol representing the fire station, which is \textquotesingle{}F\textquotesingle{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPublicService_a2341fa64a393890c3e563832f8007109}{Public\+Service}}.
+
+\mbox{\Hypertarget{classFireStation_a4efafa5971760f21b41102245fb99ceb}\label{classFireStation_a4efafa5971760f21b41102245fb99ceb}} 
+\index{FireStation@{FireStation}!provideService@{provideService}}
+\index{provideService@{provideService}!FireStation@{FireStation}}
+\doxysubsubsection{\texorpdfstring{provideService()}{provideService()}}
+{\footnotesize\ttfamily void Fire\+Station\+::provide\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides fire protection services. 
+
+Provides fire extinguishing services.
+
+This method implements the service provision functionality specific to the fire station.
+
+This method simulates the fire station providing services to citizens in need of fire assistance. 
+
+Implements \mbox{\hyperlink{classPublicService_a6598b39358e9b4ad849671b526f37e32}{Public\+Service}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classFireStation_abd252ad2ca24602cdef5acb6cf5e2906}\label{classFireStation_abd252ad2ca24602cdef5acb6cf5e2906}} 
+\index{FireStation@{FireStation}!status@{status}}
+\index{status@{status}!FireStation@{FireStation}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily std\+::string Fire\+Station\+::status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current status of the fire station (e.\+g., Operational, Out of Service). 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{FireStation_8h}{Fire\+Station.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{FireStation_8cpp}{Fire\+Station.\+cpp}}\end{DoxyCompactItemize}

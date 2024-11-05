@@ -1,0 +1,144 @@
+\hypertarget{classEstate}{}\doxysection{Estate Class Reference}
+\label{classEstate}\index{Estate@{Estate}}
+
+
+Represents an estate building in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Estate.\+h$>$}
+
+
+
+Inheritance diagram for Estate\+:
+% FIG 0
+
+
+Collaboration diagram for Estate\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEstate_a61fa5dc41265a8afd306301c66d73878}{Estate}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classEstate}{Estate}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEstate_a1f955d5512b4a84b0a0375c32e33e384}{Estate}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for the \mbox{\hyperlink{classEstate}{Estate}} class. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classEstate_ac004993bc029b169d71a3da379e0a0ca}{get\+Display\+Symbol}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the display symbol for the estate. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEstate_a10848ddf01731e5de15bffe2e6d87559}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the type of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{classEstate_ada6813684868a83c7aedbd498a3df7a7}{BASE\+\_\+\+COST}} = 300
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an estate building in the city simulation. 
+
+Inherits from the \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} class and provides functionality specific to estate buildings, including their cost and utility connections. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEstate_a61fa5dc41265a8afd306301c66d73878}\label{classEstate_a61fa5dc41265a8afd306301c66d73878}} 
+\index{Estate@{Estate}!Estate@{Estate}}
+\index{Estate@{Estate}!Estate@{Estate}}
+\doxysubsubsection{\texorpdfstring{Estate()}{Estate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Estate\+::\+Estate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \mbox{\hyperlink{classEstate}{Estate}} class. 
+
+Initializes an estate with default settings.
+
+Initializes an estate with a base capacity of 6 and a base cost of \$300. All utility connections are set to nullptr. \mbox{\Hypertarget{classEstate_a1f955d5512b4a84b0a0375c32e33e384}\label{classEstate_a1f955d5512b4a84b0a0375c32e33e384}} 
+\index{Estate@{Estate}!Estate@{Estate}}
+\index{Estate@{Estate}!Estate@{Estate}}
+\doxysubsubsection{\texorpdfstring{Estate()}{Estate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Estate\+::\+Estate (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for the \mbox{\hyperlink{classEstate}{Estate}} class. 
+
+Initializes an estate with the specified utility connections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & A shared pointer to the water utility. \\
+\hline
+{\em power} & A shared pointer to the power utility. \\
+\hline
+{\em waste} & A shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage management utility.\\
+\hline
+\end{DoxyParams}
+Initializes an estate with specified utility connections and a base capacity of 6 and a base cost of \$300.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & A shared pointer to the water utility. \\
+\hline
+{\em power} & A shared pointer to the power utility. \\
+\hline
+{\em waste} & A shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage management utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEstate_a10848ddf01731e5de15bffe2e6d87559}\label{classEstate_a10848ddf01731e5de15bffe2e6d87559}} 
+\index{Estate@{Estate}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Estate@{Estate}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Estate\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of the building. 
+
+\begin{DoxyReturn}{Returns}
+A string indicating the building type (\char`\"{}\+Estate\char`\"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+\mbox{\Hypertarget{classEstate_ac004993bc029b169d71a3da379e0a0ca}\label{classEstate_ac004993bc029b169d71a3da379e0a0ca}} 
+\index{Estate@{Estate}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!Estate@{Estate}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char Estate\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the display symbol for the estate. 
+
+\begin{DoxyReturn}{Returns}
+A character representing the estate on the city grid (\textquotesingle{}E\textquotesingle{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidentialBuilding_ac0839490cde74967340bbd82fb65bd4d}{Residential\+Building}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEstate_ada6813684868a83c7aedbd498a3df7a7}\label{classEstate_ada6813684868a83c7aedbd498a3df7a7}} 
+\index{Estate@{Estate}!BASE\_COST@{BASE\_COST}}
+\index{BASE\_COST@{BASE\_COST}!Estate@{Estate}}
+\doxysubsubsection{\texorpdfstring{BASE\_COST}{BASE\_COST}}
+{\footnotesize\ttfamily constexpr int Estate\+::\+BASE\+\_\+\+COST = 300\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+Base cost for constructing an estate. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Estate_8h}{Estate.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Estate_8cpp}{Estate.\+cpp}}\end{DoxyCompactItemize}

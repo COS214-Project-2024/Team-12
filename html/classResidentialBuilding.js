@@ -1,0 +1,25 @@
+var classResidentialBuilding =
+[
+    [ "ResidentialBuilding", "classResidentialBuilding.html#a1fbd7ca7f4b114218c475e2f85efd124", null ],
+    [ "accept", "classResidentialBuilding.html#adee553dc461abe2ba3e2f50613854522", null ],
+    [ "displayStatus", "classResidentialBuilding.html#a88540ce1ca4099cdbb10caaa33939cdb", null ],
+    [ "getBuildingType", "classResidentialBuilding.html#afd1404c6d59a48932e8190b8dfad83cb", null ],
+    [ "getDisplayColor", "classResidentialBuilding.html#ad90cfe33e3ec74723198750728e0c118", null ],
+    [ "getDisplaySymbol", "classResidentialBuilding.html#ac0839490cde74967340bbd82fb65bd4d", null ],
+    [ "getPrice", "classResidentialBuilding.html#a0f624ac4317aa54010f601581aba8170", null ],
+    [ "getUtilityCoverage", "classResidentialBuilding.html#a248f6c5f3f6bd5deb419960c55806c69", null ],
+    [ "hasUtilities", "classResidentialBuilding.html#a9c022863badc7e5001f1d6b93220b82b", null ],
+    [ "isTaxPaid", "classResidentialBuilding.html#a7dfc8ae6174717589cb7ddeeb1c64e3a", null ],
+    [ "setPowerSupply", "classResidentialBuilding.html#ac49d816dfc6e21c9697568ce37ce28d7", null ],
+    [ "setSewageManagement", "classResidentialBuilding.html#a0520bfd31b7ebe162b63239c8dee0aae", null ],
+    [ "setTaxPaid", "classResidentialBuilding.html#a3f132f415d67fb5f3f4fdbc04419e1f7", null ],
+    [ "setWasteManagement", "classResidentialBuilding.html#a8b6693e54b3781377b45f89d67ecd94a", null ],
+    [ "setWaterSupply", "classResidentialBuilding.html#a48bd990a84e36be60d3de00289875a12", null ],
+    [ "bedrooms", "classResidentialBuilding.html#a2a346f1e34e7295e8dc5bda7a148f5e1", null ],
+    [ "powerSupply", "classResidentialBuilding.html#a1d930ae500bc253c5a3a514b8e059d57", null ],
+    [ "price", "classResidentialBuilding.html#ac5d044b1f5255605c12d08ecd4793b89", null ],
+    [ "sewageManagement", "classResidentialBuilding.html#a5e2e080c366d22873de34534f1196bfa", null ],
+    [ "taxPaid", "classResidentialBuilding.html#ad90f69bdace97398ec9e009460ce767b", null ],
+    [ "wasteManagement", "classResidentialBuilding.html#a9de2b63d5bb2c1a47bfa3aea9fd010d4", null ],
+    [ "waterSupply", "classResidentialBuilding.html#a4cba8ba791c190861a2e376e4e207376", null ]
+];

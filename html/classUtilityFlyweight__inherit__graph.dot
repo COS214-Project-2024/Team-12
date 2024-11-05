@@ -1,0 +1,17 @@
+digraph "UtilityFlyweight"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{UtilityFlyweight\n|# name\l# cost\l# capacity\l# effectRadius\l# isOperational\l# level\l# resourceConsumption\l# resourceNeeds\l|+ UtilityFlyweight()\l+ UtilityFlyweight()\l+ connect()\l+ ~UtilityFlyweight()\l+ clone()\l+ getName()\l+ getOperationalStatus()\l+ getCost()\l+ getEffectRadius()\l+ getCapacity()\land 10 more...\l# setResourceConsumption()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Abstract base class for utility components, providing shared functionality."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{CityComponent\n|- observers\l- location\l|+ add()\l+ remove()\l+ displayStatus()\l+ ~CityComponent()\l+ addNpc()\l+ removeNpc()\l+ notify()\l+ getBuildingType()\l+ accept()\l+ setLocation()\l+ setLocation()\l+ getLocation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html",tooltip="Abstract base class representing a component of a city."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{PowerPlant\n||+ PowerPlant()\l+ PowerPlant()\l+ connect()\l+ clone()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPowerPlant.html",tooltip="Represents a Power Plant in the utility system."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{SewageSystem\n||+ SewageSystem()\l+ SewageSystem()\l+ connect()\l+ clone()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSewageSystem.html",tooltip="A concrete UtilityFlyweight that represents a sewage management utility."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{WasteManagement\n||+ WasteManagement()\l+ WasteManagement()\l+ connect()\l+ clone()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWasteManagement.html",tooltip="Concrete class for managing waste utility in the city."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{WaterSupply\n||+ WaterSupply()\l+ WaterSupply()\l+ connect()\l+ clone()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWaterSupply.html",tooltip="Represents a water supply utility that can be connected to city components within a specific radius."];
+}

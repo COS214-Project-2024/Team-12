@@ -1,0 +1,49 @@
+digraph "NPCManager::getInstance"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="NPCManager::getInstance",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Retrieves the singleton instance of NPCManager."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="CityComponent::addNpc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html#a9529b910e491c49a6ffa19db4e92b81c",tooltip="Adds an NPC observer to the component."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="CityComposite::adjustHappiness\lBasedOnTaxRate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComposite.html#ad80dca22cc5acb873c8f99148a9fc5ea",tooltip="Adjusts the city's happiness level based on the current tax rate."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ReactingNPCS::changeState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#a76e8ef118165123d68fffa6ffc9bad90",tooltip="Changes the current state of the NPC."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ReactingNPCS::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#afc206d145750358e98204a9135b05276",tooltip="Updates the NPC's state based on observed changes."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="CrimeState::handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCrimeState.html#ada7bdb702a48d7ba3847bf4b77d5e5cd",tooltip="Handles actions specific to the crime state."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="DonationState::handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDonationState.html#a8d29aec9e7bc25867be29f4e205a38cd",tooltip="Handles the donation logic for NPCs in this state."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="ProductiveState::handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classProductiveState.html#adab42ecd6fb4772c38dd408a9f6c5cce",tooltip="Handles the logic for productivity boosts."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="RevoltState::handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRevoltState.html#acbad174f543875c807178a9856258502",tooltip="Executes actions specific to the revolt state."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="ReactingNPCS::ReactingNPCS",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#a9eb11a607b24c4e834d110e4ceea8c5f",tooltip="Default constructor initializing the NPC in a neutral state."];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="ReactingNPCS::clone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#afa5a0fce89da50127b5b648ef77af00c",tooltip="Clones the NPC, creating a copy with the same state."];
+  Node11 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="CityComponent::removeNpc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html#a8975812793b87b8578a21ce2ed13b015",tooltip="Removes an NPC observer from the component."];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="ResidentialBuilding\l::setTaxPaid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classResidentialBuilding.html#a3f132f415d67fb5f3f4fdbc04419e1f7",tooltip="Sets the tax-paid status."];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="ConcreteTaxCollector\l::visit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConcreteTaxCollector.html#aff35926ad68639e9190cc2f5d4bdf54e",tooltip="Collects tax from a residential building."];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="CityGame::collectTaxes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#ab286962cca4449729475a62431fa3bc6",tooltip=" "];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="CityGame::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#ad26bc885078e071e3ad2b40787fcca18",tooltip=" "];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="CityComposite::updateHappiness\lForNewComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComposite.html#ae3eb3b1ea611b29194c58d7d69994cf7",tooltip="Updates the city’s happiness level based on the addition of a new component."];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="CityComposite::add",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComposite.html#af4002bc47fa8f38a9747523ce6ac6f56",tooltip="Adds a city component (zone) to the composite."];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node20 [label="ReactingNPCS::~ReactingNPCS",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReactingNPCS.html#a44682cbcc278214f361a1afd6440f599",tooltip="Destructor for cleaning up dynamically allocated state."];
+}

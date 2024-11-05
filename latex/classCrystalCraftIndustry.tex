@@ -1,0 +1,148 @@
+\hypertarget{classCrystalCraftIndustry}{}\doxysection{Crystal\+Craft\+Industry Class Reference}
+\label{classCrystalCraftIndustry}\index{CrystalCraftIndustry@{CrystalCraftIndustry}}
+
+
+Represents an industry focused on processing diamonds and stone for various uses.  
+
+
+
+
+{\ttfamily \#include $<$Crystal\+Craft\+Industry.\+h$>$}
+
+
+
+Inheritance diagram for Crystal\+Craft\+Industry\+:
+% FIG 0
+
+
+Collaboration diagram for Crystal\+Craft\+Industry\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCrystalCraftIndustry_acff84a6530f941de40102ae295f4be4f}{Crystal\+Craft\+Industry}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ diamond, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ stone, \mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$\mbox{\hyperlink{classIndustry_a2fad7ff5b5ae98ded81dba7a60c95720}{grid}}, std\+::map$<$ std\+::string, int $>$ \&\mbox{\hyperlink{classIndustry_a451c5556304acbbdbd5fad53987cdfd8}{collected\+Resources}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classCrystalCraftIndustry}{Crystal\+Craft\+Industry}} with specific resources and map grid location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCrystalCraftIndustry_a65147a09e9ae5746ea83d88b44bf7077}{process\+Diamond}} (int amount)
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of diamonds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCrystalCraftIndustry_acb8df467a3568ce62d1696df523d439d}{process\+Stone}} (int amount)
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of stone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classCrystalCraftIndustry_afd3f520d33f5251f8b90410b8bc11084}{CRYSTAL\+\_\+\+CRAFT\+\_\+\+RANGE}} = 5
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an industry focused on processing diamonds and stone for various uses. 
+
+This class defines specialized methods for processing diamonds and stone, leveraging specific resource processors. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCrystalCraftIndustry_acff84a6530f941de40102ae295f4be4f}\label{classCrystalCraftIndustry_acff84a6530f941de40102ae295f4be4f}} 
+\index{CrystalCraftIndustry@{CrystalCraftIndustry}!CrystalCraftIndustry@{CrystalCraftIndustry}}
+\index{CrystalCraftIndustry@{CrystalCraftIndustry}!CrystalCraftIndustry@{CrystalCraftIndustry}}
+\doxysubsubsection{\texorpdfstring{CrystalCraftIndustry()}{CrystalCraftIndustry()}}
+{\footnotesize\ttfamily Crystal\+Craft\+Industry\+::\+Crystal\+Craft\+Industry (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$}]{diamond,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$}]{stone,  }\item[{\mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$}]{grid,  }\item[{std\+::map$<$ std\+::string, int $>$ \&}]{collected\+Resources }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classCrystalCraftIndustry}{Crystal\+Craft\+Industry}} with specific resources and map grid location. 
+
+Constructs a \mbox{\hyperlink{classCrystalCraftIndustry}{Crystal\+Craft\+Industry}} with specified diamond and stone resources, along with map grid and collected resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em diamond} & Shared pointer to an \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} representing diamond. \\
+\hline
+{\em stone} & Shared pointer to a \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} representing stone. \\
+\hline
+{\em grid} & Pointer to the \mbox{\hyperlink{classMapGrid}{Map\+Grid}} where the industry is located. \\
+\hline
+{\em collected\+Resources} & Reference to a map of collected resources.\\
+\hline
+\end{DoxyParams}
+Initializes the industry with processors for income and construction resources, setting up the necessary infrastructure for resource processing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em diamond} & Shared pointer to an \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} representing diamond. \\
+\hline
+{\em stone} & Shared pointer to a \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} representing stone. \\
+\hline
+{\em grid} & Pointer to the \mbox{\hyperlink{classMapGrid}{Map\+Grid}} object, which manages the industry\textquotesingle{}s location and layout. \\
+\hline
+{\em collected\+Resources} & Reference to a map of collected resources for the city. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCrystalCraftIndustry_a65147a09e9ae5746ea83d88b44bf7077}\label{classCrystalCraftIndustry_a65147a09e9ae5746ea83d88b44bf7077}} 
+\index{CrystalCraftIndustry@{CrystalCraftIndustry}!processDiamond@{processDiamond}}
+\index{processDiamond@{processDiamond}!CrystalCraftIndustry@{CrystalCraftIndustry}}
+\doxysubsubsection{\texorpdfstring{processDiamond()}{processDiamond()}}
+{\footnotesize\ttfamily void Crystal\+Craft\+Industry\+::process\+Diamond (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Processes a specified amount of diamonds. 
+
+Processes a specified amount of diamond, contributing to the city\textquotesingle{}s income resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of diamonds to process.\\
+\hline
+\end{DoxyParams}
+The method uses the income resource processor to convert diamond quantities into processed output.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of diamond to process. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classCrystalCraftIndustry_acb8df467a3568ce62d1696df523d439d}\label{classCrystalCraftIndustry_acb8df467a3568ce62d1696df523d439d}} 
+\index{CrystalCraftIndustry@{CrystalCraftIndustry}!processStone@{processStone}}
+\index{processStone@{processStone}!CrystalCraftIndustry@{CrystalCraftIndustry}}
+\doxysubsubsection{\texorpdfstring{processStone()}{processStone()}}
+{\footnotesize\ttfamily void Crystal\+Craft\+Industry\+::process\+Stone (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Processes a specified amount of stone. 
+
+Processes a specified amount of stone, contributing to the city\textquotesingle{}s construction resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of stone to process.\\
+\hline
+\end{DoxyParams}
+The method uses the construction resource processor to convert stone quantities into processed output.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of stone to process. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCrystalCraftIndustry_afd3f520d33f5251f8b90410b8bc11084}\label{classCrystalCraftIndustry_afd3f520d33f5251f8b90410b8bc11084}} 
+\index{CrystalCraftIndustry@{CrystalCraftIndustry}!CRYSTAL\_CRAFT\_RANGE@{CRYSTAL\_CRAFT\_RANGE}}
+\index{CRYSTAL\_CRAFT\_RANGE@{CRYSTAL\_CRAFT\_RANGE}!CrystalCraftIndustry@{CrystalCraftIndustry}}
+\doxysubsubsection{\texorpdfstring{CRYSTAL\_CRAFT\_RANGE}{CRYSTAL\_CRAFT\_RANGE}}
+{\footnotesize\ttfamily const int Crystal\+Craft\+Industry\+::\+CRYSTAL\+\_\+\+CRAFT\+\_\+\+RANGE = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+The range within which this industry can gather resources. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CrystalCraftIndustry_8h}{Crystal\+Craft\+Industry.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CrystalCraftIndustry_8cpp}{Crystal\+Craft\+Industry.\+cpp}}\end{DoxyCompactItemize}

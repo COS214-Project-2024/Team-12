@@ -1,0 +1,170 @@
+\hypertarget{classMonument}{}\doxysection{Monument Class Reference}
+\label{classMonument}\index{Monument@{Monument}}
+
+
+Represents a \mbox{\hyperlink{classMonument}{Monument}}, a type of \mbox{\hyperlink{classLandMark}{Land\+Mark}} with specific characteristics and utilities.  
+
+
+
+
+{\ttfamily \#include $<$Monument.\+h$>$}
+
+
+
+Inheritance diagram for Monument\+:
+% FIG 0
+
+
+Collaboration diagram for Monument\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMonument_abd4de7df2b2638e1c268d04c30297767}{Monument}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classMonument}{Monument}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMonument_ac95ffdbf5cad588e7e8583a463cfdbeb}{Monument}} (const std\+::string \&type, int capacity, double \mbox{\hyperlink{classLandMark_a6d9b52dbf50f52e9f74a36432e521712}{price}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classMonument}{Monument}} with specified type, visitor capacity, price, and utility connections. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMonument_aa6d1fb71958d3006da268b2b4ed136c3}{$\sim$\+Monument}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classMonument}{Monument}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMonument_a995d088a578818a95bb2ae0307ca6e59}{display\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Displays the status of the \mbox{\hyperlink{classMonument}{Monument}}, including its type, capacity, price, and utilities. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ \mbox{\hyperlink{classMonument_ac17cf17724fc8cc067a95ff7d87152e3}{clone}} () const
+\begin{DoxyCompactList}\small\item\em Clones the \mbox{\hyperlink{classMonument}{Monument}}, creating a unique pointer to a new \mbox{\hyperlink{classMonument}{Monument}} with identical properties. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMonument_a926b800a6fae012397509674d30af10d}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the building type for this \mbox{\hyperlink{classMonument}{Monument}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a \mbox{\hyperlink{classMonument}{Monument}}, a type of \mbox{\hyperlink{classLandMark}{Land\+Mark}} with specific characteristics and utilities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMonument_abd4de7df2b2638e1c268d04c30297767}\label{classMonument_abd4de7df2b2638e1c268d04c30297767}} 
+\index{Monument@{Monument}!Monument@{Monument}}
+\index{Monument@{Monument}!Monument@{Monument}}
+\doxysubsubsection{\texorpdfstring{Monument()}{Monument()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Monument\+::\+Monument (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classMonument}{Monument}}. 
+
+\mbox{\Hypertarget{classMonument_ac95ffdbf5cad588e7e8583a463cfdbeb}\label{classMonument_ac95ffdbf5cad588e7e8583a463cfdbeb}} 
+\index{Monument@{Monument}!Monument@{Monument}}
+\index{Monument@{Monument}!Monument@{Monument}}
+\doxysubsubsection{\texorpdfstring{Monument()}{Monument()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Monument\+::\+Monument (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type,  }\item[{int}]{capacity,  }\item[{double}]{price,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classMonument}{Monument}} with specified type, visitor capacity, price, and utility connections. 
+
+Constructs a \mbox{\hyperlink{classMonument}{Monument}} object with specified type, capacity, price, and utility connections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the monument. \\
+\hline
+{\em capacity} & The visitor capacity of the monument. \\
+\hline
+{\em price} & The price or cost associated with the monument. \\
+\hline
+{\em water} & Shared pointer to the water utility flyweight. \\
+\hline
+{\em power} & Shared pointer to the power utility flyweight. \\
+\hline
+{\em waste} & Shared pointer to the waste management utility flyweight. \\
+\hline
+{\em sewage} & Shared pointer to the sewage management utility flyweight.\\
+\hline
+{\em type} & The type of the monument. \\
+\hline
+{\em capacity} & The visitor capacity of the monument. \\
+\hline
+{\em price} & The price or cost associated with the monument. \\
+\hline
+{\em water} & Shared pointer to water utility flyweight. \\
+\hline
+{\em power} & Shared pointer to power utility flyweight. \\
+\hline
+{\em waste} & Shared pointer to waste management utility flyweight. \\
+\hline
+{\em sewage} & Shared pointer to sewage management utility flyweight. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMonument_aa6d1fb71958d3006da268b2b4ed136c3}\label{classMonument_aa6d1fb71958d3006da268b2b4ed136c3}} 
+\index{Monument@{Monument}!````~Monument@{$\sim$Monument}}
+\index{````~Monument@{$\sim$Monument}!Monument@{Monument}}
+\doxysubsubsection{\texorpdfstring{$\sim$Monument()}{~Monument()}}
+{\footnotesize\ttfamily Monument\+::$\sim$\+Monument (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classMonument}{Monument}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMonument_ac17cf17724fc8cc067a95ff7d87152e3}\label{classMonument_ac17cf17724fc8cc067a95ff7d87152e3}} 
+\index{Monument@{Monument}!clone@{clone}}
+\index{clone@{clone}!Monument@{Monument}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ Monument\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Clones the \mbox{\hyperlink{classMonument}{Monument}}, creating a unique pointer to a new \mbox{\hyperlink{classMonument}{Monument}} with identical properties. 
+
+Creates a clone of the \mbox{\hyperlink{classMonument}{Monument}} object.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Land\+Mark$>$ A unique pointer to the cloned \mbox{\hyperlink{classMonument}{Monument}} object.
+\end{DoxyReturn}
+This method returns a unique pointer to a new \mbox{\hyperlink{classMonument}{Monument}} object with the same properties as the current one.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a cloned \mbox{\hyperlink{classMonument}{Monument}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMonument_a995d088a578818a95bb2ae0307ca6e59}\label{classMonument_a995d088a578818a95bb2ae0307ca6e59}} 
+\index{Monument@{Monument}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Monument@{Monument}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Monument\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays the status of the \mbox{\hyperlink{classMonument}{Monument}}, including its type, capacity, price, and utilities. 
+
+Displays the status of the monument, including its type, capacity, price, and connected utilities. 
+
+Reimplemented from \mbox{\hyperlink{classLandMark_a8a6bc2e43611b75aa62769f196babc30}{Land\+Mark}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classMonument_a926b800a6fae012397509674d30af10d}\label{classMonument_a926b800a6fae012397509674d30af10d}} 
+\index{Monument@{Monument}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Monument@{Monument}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Monument\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the building type for this \mbox{\hyperlink{classMonument}{Monument}}. 
+
+Gets the building type of the monument.
+
+\begin{DoxyReturn}{Returns}
+std\+::string A string representing the building type, which is \char`\"{}\+Monument\char`\"{}.
+
+A string representing the building type, which is \char`\"{}\+Monument\char`\"{} for this class. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLandMark_a1101a3f9949ec928fce30b4dadfedb87}{Land\+Mark}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Monument_8h}{Monument.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Monument_8cpp}{Monument.\+cpp}}\end{DoxyCompactItemize}

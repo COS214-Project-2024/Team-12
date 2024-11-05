@@ -1,0 +1,13 @@
+digraph "Townhouse"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Townhouse\n|+ BASE_COST\l|+ Townhouse()\l+ Townhouse()\l+ getDisplaySymbol()\l+ getBuildingType()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A concrete class representing a townhouse, derived from ResidentialBuilding."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{ResidentialBuilding\n|# bedrooms\l# price\l# taxPaid\l# waterSupply\l# powerSupply\l# wasteManagement\l# sewageManagement\l|+ ResidentialBuilding()\l+ setTaxPaid()\l+ isTaxPaid()\l+ accept()\l+ getPrice()\l+ displayStatus()\l+ getBuildingType()\l+ getDisplaySymbol()\l+ getUtilityCoverage()\l+ hasUtilities()\l+ setWaterSupply()\l+ setPowerSupply()\l+ setWasteManagement()\l+ setSewageManagement()\l+ getDisplayColor()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classResidentialBuilding.html",tooltip="Represents a residential building within the city."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{CityComponent\n|- observers\l|+ add()\l+ remove()\l+ displayStatus()\l+ ~CityComponent()\l+ addNpc()\l+ removeNpc()\l+ notify()\l+ getBuildingType()\l+ accept()\l+ setLocation()\l+ setLocation()\l+ getLocation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html",tooltip="Abstract base class representing a component of a city."];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" -location" ,arrowhead="odiamond"];
+  Node4 [label="{Location\n|+ x\l+ y\l|+ Location()\l+ Location()\l+ operator==()\l+ operator!=()\l+ operator\<()\l+ distanceTo()\l+ isValid()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structLocation.html",tooltip="Represents a 2D coordinate location on a grid."];
+}

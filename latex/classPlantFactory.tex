@@ -1,0 +1,135 @@
+\hypertarget{classPlantFactory}{}\doxysection{Plant\+Factory Class Reference}
+\label{classPlantFactory}\index{PlantFactory@{PlantFactory}}
+
+
+A factory class for creating resources related to plants.  
+
+
+
+
+{\ttfamily \#include $<$Plant\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Plant\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Plant\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlantFactory_ae91e2cccbb28fe8079534c175649d123}{Plant\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPlantFactory}{Plant\+Factory}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlantFactory_a1cd68b17cb257af5762654594a98f5f7}{$\sim$\+Plant\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classPlantFactory}{Plant\+Factory}}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ \mbox{\hyperlink{classPlantFactory_a9f44671971389432cf7843c9e2bce40c}{create\+IncomeR}} (int quantity) override
+\begin{DoxyCompactList}\small\item\em Creates an income-\/generating resource. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ \mbox{\hyperlink{classPlantFactory_aafedaa2ac311a7300fa7755cd95e3d72}{create\+ConstructionR}} (int quantity) override
+\begin{DoxyCompactList}\small\item\em Creates a construction resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A factory class for creating resources related to plants. 
+
+The \mbox{\hyperlink{classPlantFactory}{Plant\+Factory}} class is responsible for creating income-\/generating and construction resources, specifically \mbox{\hyperlink{classCoal}{Coal}} and \mbox{\hyperlink{classWood}{Wood}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlantFactory_ae91e2cccbb28fe8079534c175649d123}\label{classPlantFactory_ae91e2cccbb28fe8079534c175649d123}} 
+\index{PlantFactory@{PlantFactory}!PlantFactory@{PlantFactory}}
+\index{PlantFactory@{PlantFactory}!PlantFactory@{PlantFactory}}
+\doxysubsubsection{\texorpdfstring{PlantFactory()}{PlantFactory()}}
+{\footnotesize\ttfamily Plant\+Factory\+::\+Plant\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classPlantFactory}{Plant\+Factory}}. 
+
+Initializes the \mbox{\hyperlink{classPlantFactory}{Plant\+Factory}} instance.
+
+This constructor initializes the \mbox{\hyperlink{classPlantFactory}{Plant\+Factory}} and outputs a message indicating that the factory has been created. \mbox{\Hypertarget{classPlantFactory_a1cd68b17cb257af5762654594a98f5f7}\label{classPlantFactory_a1cd68b17cb257af5762654594a98f5f7}} 
+\index{PlantFactory@{PlantFactory}!````~PlantFactory@{$\sim$PlantFactory}}
+\index{````~PlantFactory@{$\sim$PlantFactory}!PlantFactory@{PlantFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$PlantFactory()}{~PlantFactory()}}
+{\footnotesize\ttfamily Plant\+Factory\+::$\sim$\+Plant\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the \mbox{\hyperlink{classPlantFactory}{Plant\+Factory}}. 
+
+Cleans up resources used by the \mbox{\hyperlink{classPlantFactory}{Plant\+Factory}}.
+
+This destructor cleans up the \mbox{\hyperlink{classPlantFactory}{Plant\+Factory}} resources and outputs a message indicating that the factory has been deleted. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlantFactory_aafedaa2ac311a7300fa7755cd95e3d72}\label{classPlantFactory_aafedaa2ac311a7300fa7755cd95e3d72}} 
+\index{PlantFactory@{PlantFactory}!createConstructionR@{createConstructionR}}
+\index{createConstructionR@{createConstructionR}!PlantFactory@{PlantFactory}}
+\doxysubsubsection{\texorpdfstring{createConstructionR()}{createConstructionR()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ Plant\+Factory\+::create\+ConstructionR (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a construction resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the construction resource to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the created \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}.
+\end{DoxyReturn}
+This method creates an instance of a construction resource (\mbox{\hyperlink{classWood}{Wood}}) with the specified quantity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the construction resource to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the created \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} (\mbox{\hyperlink{classWood}{Wood}}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceFactory_a004800d9d6db381507ee78d3d197e8ac}{Resource\+Factory}}.
+
+\mbox{\Hypertarget{classPlantFactory_a9f44671971389432cf7843c9e2bce40c}\label{classPlantFactory_a9f44671971389432cf7843c9e2bce40c}} 
+\index{PlantFactory@{PlantFactory}!createIncomeR@{createIncomeR}}
+\index{createIncomeR@{createIncomeR}!PlantFactory@{PlantFactory}}
+\doxysubsubsection{\texorpdfstring{createIncomeR()}{createIncomeR()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ Plant\+Factory\+::create\+IncomeR (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates an income-\/generating resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the income-\/generating resource to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the created \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}.
+\end{DoxyReturn}
+This method creates an instance of an income-\/generating resource (\mbox{\hyperlink{classCoal}{Coal}}) with the specified quantity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the income-\/generating resource to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the created \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} (\mbox{\hyperlink{classCoal}{Coal}}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceFactory_a564e63149bd3348f2e6f749ab6768369}{Resource\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PlantFactory_8h}{Plant\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PlantFactory_8cpp}{Plant\+Factory.\+cpp}}\end{DoxyCompactItemize}

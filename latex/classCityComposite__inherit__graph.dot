@@ -1,0 +1,9 @@
+digraph "CityComposite"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{CityComposite\n|- zones\l- cityName\l|+ CityComposite()\l+ ~CityComposite()\l+ add()\l+ remove()\l+ displayStatus()\l+ checkCityConditions()\l+ getBuildingType()\l+ accept()\l+ connectZones()\l+ updateHappinessForNewComponent()\l+ adjustHappinessBasedOnTax\lRate()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A composite class representing the entire city and containing multiple zones."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{CityComponent\n|- observers\l- location\l|+ add()\l+ remove()\l+ displayStatus()\l+ ~CityComponent()\l+ addNpc()\l+ removeNpc()\l+ notify()\l+ getBuildingType()\l+ accept()\l+ setLocation()\l+ setLocation()\l+ getLocation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html",tooltip="Abstract base class representing a component of a city."];
+}

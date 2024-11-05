@@ -1,0 +1,57 @@
+\hypertarget{classMonumentFactory}{}\doxysection{Monument\+Factory Class Reference}
+\label{classMonumentFactory}\index{MonumentFactory@{MonumentFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classMonument}{Monument}} instances.  
+
+
+
+
+{\ttfamily \#include $<$Monument\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Monument\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Monument\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ \mbox{\hyperlink{classMonumentFactory_a005987e3893a51f239d1940cea2f9ea0}{create\+Land\+Mark}} () override
+\begin{DoxyCompactList}\small\item\em Creates a new instance of a \mbox{\hyperlink{classMonument}{Monument}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classMonument}{Monument}} instances. 
+
+The \mbox{\hyperlink{classMonumentFactory}{Monument\+Factory}} class inherits from \mbox{\hyperlink{classLandMarkFactory}{Land\+Mark\+Factory}} and provides a method to create new \mbox{\hyperlink{classMonument}{Monument}} objects. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMonumentFactory_a005987e3893a51f239d1940cea2f9ea0}\label{classMonumentFactory_a005987e3893a51f239d1940cea2f9ea0}} 
+\index{MonumentFactory@{MonumentFactory}!createLandMark@{createLandMark}}
+\index{createLandMark@{createLandMark}!MonumentFactory@{MonumentFactory}}
+\doxysubsubsection{\texorpdfstring{createLandMark()}{createLandMark()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ Monument\+Factory\+::create\+Land\+Mark (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a new instance of a \mbox{\hyperlink{classMonument}{Monument}}. 
+
+Creates a new instance of a \mbox{\hyperlink{classMonument}{Monument}} as a \mbox{\hyperlink{classLandMark}{Land\+Mark}}.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Land\+Mark$>$ A unique pointer to the newly created \mbox{\hyperlink{classMonument}{Monument}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLandMarkFactory_a9a9072da869cc6de21f8368e1ed2c8e2}{Land\+Mark\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{MonumentFactory_8h}{Monument\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{MonumentFactory_8cpp}{Monument\+Factory.\+cpp}}\end{DoxyCompactItemize}

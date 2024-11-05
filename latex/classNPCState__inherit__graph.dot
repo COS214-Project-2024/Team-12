@@ -1,0 +1,17 @@
+digraph "NPCState"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{NPCState\n||+ handle()\l+ getStateName()\l+ clone()\l+ ~NPCState()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Abstract base class representing a state in the NPC state machine."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{CrimeState\n||+ handle()\l+ getStateName()\l+ clone()\l+ ~CrimeState()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCrimeState.html",tooltip="Represents the crime state for NPCs, impacting their behavior and the city's overall conditions."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{DonationState\n||+ handle()\l+ getStateName()\l+ clone()\l+ ~DonationState()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDonationState.html",tooltip="Represents the state where NPCs are in a donation mood."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node4 [label="{NeutralState\n||+ handle()\l+ getStateName()\l+ clone()\l+ ~NeutralState()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNeutralState.html",tooltip="Represents a neutral state in which no specific action is taken by the NPC."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node5 [label="{ProductiveState\n||+ handle()\l+ getStateName()\l+ clone()\l+ ~ProductiveState()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classProductiveState.html",tooltip="Represents the productive state of NPCs."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node6 [label="{RevoltState\n||+ handle()\l+ getStateName()\l+ clone()\l+ ~RevoltState()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRevoltState.html",tooltip="Represents the state of NPCs when they are in revolt."];
+}

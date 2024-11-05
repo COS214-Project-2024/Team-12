@@ -1,0 +1,16 @@
+digraph "CrimeState::handle"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CrimeState::handle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Handles actions specific to the crime state."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="NPCManager::getCrimeCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#aef57949eebfff083058a656219b8cc43",tooltip="Retrieves the count of NPCs in the Crime state."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Government::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a18e3da6a1d6cae38f6eea1d50fe77288",tooltip="Retrieves the singleton instance of the Government class."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="NPCManager::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#a29c578e3b969f7438d6025dd3fc21c50",tooltip="Retrieves the singleton instance of NPCManager."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Government::increaseCrimeRate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#aa83bd740f4ad281c97c5abf8fe75b6f6",tooltip="Increases the crime rate by a specified factor."];
+}

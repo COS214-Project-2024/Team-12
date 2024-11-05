@@ -1,0 +1,135 @@
+\hypertarget{classChemicalFactory}{}\doxysection{Chemical\+Factory Class Reference}
+\label{classChemicalFactory}\index{ChemicalFactory@{ChemicalFactory}}
+
+
+A factory class for creating chemical resources used in construction and income generation.  
+
+
+
+
+{\ttfamily \#include $<$Chemical\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Chemical\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Chemical\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChemicalFactory_a5c0bc23d44a867aded321ff647f30279}{Chemical\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classChemicalFactory}{Chemical\+Factory}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classChemicalFactory_a9adb154b08edafcc3c20f63225ab6d3e}{$\sim$\+Chemical\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classChemicalFactory}{Chemical\+Factory}} object. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ \mbox{\hyperlink{classChemicalFactory_a3177fb40bfadad6fc558ae6c227f3cb8}{create\+IncomeR}} (int quantity) override
+\begin{DoxyCompactList}\small\item\em Creates an income-\/generating resource. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ \mbox{\hyperlink{classChemicalFactory_acc31f8ccd953eba2864a0f88e68a35ef}{create\+ConstructionR}} (int quantity) override
+\begin{DoxyCompactList}\small\item\em Creates a construction resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A factory class for creating chemical resources used in construction and income generation. 
+
+The {\ttfamily \mbox{\hyperlink{classChemicalFactory}{Chemical\+Factory}}} class specializes in producing income-\/generating and construction resources. It inherits from {\ttfamily \mbox{\hyperlink{classResourceFactory}{Resource\+Factory}}} and implements the factory methods to create specific types of resource products. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classChemicalFactory_a5c0bc23d44a867aded321ff647f30279}\label{classChemicalFactory_a5c0bc23d44a867aded321ff647f30279}} 
+\index{ChemicalFactory@{ChemicalFactory}!ChemicalFactory@{ChemicalFactory}}
+\index{ChemicalFactory@{ChemicalFactory}!ChemicalFactory@{ChemicalFactory}}
+\doxysubsubsection{\texorpdfstring{ChemicalFactory()}{ChemicalFactory()}}
+{\footnotesize\ttfamily Chemical\+Factory\+::\+Chemical\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{classChemicalFactory}{Chemical\+Factory}} object. 
+
+Initializes any required state for the chemical resource factory.
+
+Outputs a message indicating the creation of a \mbox{\hyperlink{classChemicalFactory}{Chemical\+Factory}} instance. \mbox{\Hypertarget{classChemicalFactory_a9adb154b08edafcc3c20f63225ab6d3e}\label{classChemicalFactory_a9adb154b08edafcc3c20f63225ab6d3e}} 
+\index{ChemicalFactory@{ChemicalFactory}!````~ChemicalFactory@{$\sim$ChemicalFactory}}
+\index{````~ChemicalFactory@{$\sim$ChemicalFactory}!ChemicalFactory@{ChemicalFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$ChemicalFactory()}{~ChemicalFactory()}}
+{\footnotesize\ttfamily Chemical\+Factory\+::$\sim$\+Chemical\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the \mbox{\hyperlink{classChemicalFactory}{Chemical\+Factory}} object. 
+
+Cleans up resources allocated by the factory.
+
+Outputs a message indicating the deletion of a \mbox{\hyperlink{classChemicalFactory}{Chemical\+Factory}} instance. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classChemicalFactory_acc31f8ccd953eba2864a0f88e68a35ef}\label{classChemicalFactory_acc31f8ccd953eba2864a0f88e68a35ef}} 
+\index{ChemicalFactory@{ChemicalFactory}!createConstructionR@{createConstructionR}}
+\index{createConstructionR@{createConstructionR}!ChemicalFactory@{ChemicalFactory}}
+\doxysubsubsection{\texorpdfstring{createConstructionR()}{createConstructionR()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ Chemical\+Factory\+::create\+ConstructionR (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a construction resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The amount of construction resource to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to a {\ttfamily \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}} instance.
+\end{DoxyReturn}
+This method creates a construction resource of type {\ttfamily \mbox{\hyperlink{classConcrete}{Concrete}}} with a specified quantity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the construction resource to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to a {\ttfamily \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}} instance representing the construction resource. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceFactory_a004800d9d6db381507ee78d3d197e8ac}{Resource\+Factory}}.
+
+\mbox{\Hypertarget{classChemicalFactory_a3177fb40bfadad6fc558ae6c227f3cb8}\label{classChemicalFactory_a3177fb40bfadad6fc558ae6c227f3cb8}} 
+\index{ChemicalFactory@{ChemicalFactory}!createIncomeR@{createIncomeR}}
+\index{createIncomeR@{createIncomeR}!ChemicalFactory@{ChemicalFactory}}
+\doxysubsubsection{\texorpdfstring{createIncomeR()}{createIncomeR()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ Chemical\+Factory\+::create\+IncomeR (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates an income-\/generating resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The amount of income resource to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to an {\ttfamily \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}} instance.
+\end{DoxyReturn}
+This method creates an income resource of type {\ttfamily \mbox{\hyperlink{classOil}{Oil}}} with a specified quantity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of the income resource to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to an {\ttfamily \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}} instance representing the income resource. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceFactory_a564e63149bd3348f2e6f749ab6768369}{Resource\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ChemicalFactory_8h}{Chemical\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ChemicalFactory_8cpp}{Chemical\+Factory.\+cpp}}\end{DoxyCompactItemize}

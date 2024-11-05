@@ -1,0 +1,152 @@
+\hypertarget{classPetrochemicalFacility}{}\doxysection{Petrochemical\+Facility Class Reference}
+\label{classPetrochemicalFacility}\index{PetrochemicalFacility@{PetrochemicalFacility}}
+
+
+Represents a petrochemical facility that processes oil and concrete.  
+
+
+
+
+{\ttfamily \#include $<$Petro\+Chemical\+Facility.\+h$>$}
+
+
+
+Inheritance diagram for Petrochemical\+Facility\+:
+% FIG 0
+
+
+Collaboration diagram for Petrochemical\+Facility\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPetrochemicalFacility_a1849f652886e9751db61a4e1b7ca56bf}{Petrochemical\+Facility}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ oil, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ concrete, \mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$\mbox{\hyperlink{classIndustry_a2fad7ff5b5ae98ded81dba7a60c95720}{grid}}, std\+::map$<$ std\+::string, int $>$ \&\mbox{\hyperlink{classIndustry_a451c5556304acbbdbd5fad53987cdfd8}{collected\+Resources}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPetrochemicalFacility}{Petrochemical\+Facility}} with specified resources and grid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPetrochemicalFacility_aae7ecfabcaf2d05fcbc20c90e4fe9c04}{process\+Oil}} (int amount)
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of oil in the facility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPetrochemicalFacility_a49e64fa2c54f0897290548c784032b45}{process\+Concrete}} (int amount)
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of concrete in the facility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classPetrochemicalFacility_ada672a6f12bc959c217f2548071af987}{PETRO\+\_\+\+CHEMICAL\+\_\+\+RANGE}} = 5
+\begin{DoxyCompactList}\small\item\em The collection range for the petrochemical facility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a petrochemical facility that processes oil and concrete. 
+
+The \mbox{\hyperlink{classPetrochemicalFacility}{Petrochemical\+Facility}} class is derived from the \mbox{\hyperlink{classIndustry}{Industry}} class and provides functionality to process oil and concrete resources, while managing the associated pollution levels and collection ranges. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPetrochemicalFacility_a1849f652886e9751db61a4e1b7ca56bf}\label{classPetrochemicalFacility_a1849f652886e9751db61a4e1b7ca56bf}} 
+\index{PetrochemicalFacility@{PetrochemicalFacility}!PetrochemicalFacility@{PetrochemicalFacility}}
+\index{PetrochemicalFacility@{PetrochemicalFacility}!PetrochemicalFacility@{PetrochemicalFacility}}
+\doxysubsubsection{\texorpdfstring{PetrochemicalFacility()}{PetrochemicalFacility()}}
+{\footnotesize\ttfamily Petrochemical\+Facility\+::\+Petrochemical\+Facility (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$}]{oil,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$}]{concrete,  }\item[{\mbox{\hyperlink{classMapGrid}{Map\+Grid}} $\ast$}]{grid,  }\item[{std\+::map$<$ std\+::string, int $>$ \&}]{collected\+Resources }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classPetrochemicalFacility}{Petrochemical\+Facility}} with specified resources and grid. 
+
+Constructor for the \mbox{\hyperlink{classPetrochemicalFacility}{Petrochemical\+Facility}} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oil} & A shared pointer to an \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} representing oil. \\
+\hline
+{\em concrete} & A shared pointer to a \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} representing concrete. \\
+\hline
+{\em grid} & A pointer to the \mbox{\hyperlink{classMapGrid}{Map\+Grid}} for managing resource locations. \\
+\hline
+{\em collected\+Resources} & A reference to a map tracking collected resources.\\
+\hline
+\end{DoxyParams}
+Initializes a \mbox{\hyperlink{classPetrochemicalFacility}{Petrochemical\+Facility}} with specified resources, processing capabilities, and a grid for resource management.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oil} & A shared pointer to an \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} representing oil. \\
+\hline
+{\em concrete} & A shared pointer to a \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} representing concrete. \\
+\hline
+{\em grid} & A pointer to the \mbox{\hyperlink{classMapGrid}{Map\+Grid}} for resource allocation and management. \\
+\hline
+{\em collected\+Resources} & A reference to a map that tracks collected resources. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPetrochemicalFacility_a49e64fa2c54f0897290548c784032b45}\label{classPetrochemicalFacility_a49e64fa2c54f0897290548c784032b45}} 
+\index{PetrochemicalFacility@{PetrochemicalFacility}!processConcrete@{processConcrete}}
+\index{processConcrete@{processConcrete}!PetrochemicalFacility@{PetrochemicalFacility}}
+\doxysubsubsection{\texorpdfstring{processConcrete()}{processConcrete()}}
+{\footnotesize\ttfamily void Petrochemical\+Facility\+::process\+Concrete (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Processes a specified amount of concrete in the facility. 
+
+This method handles the processing of the given amount of concrete.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of concrete to be processed.\\
+\hline
+\end{DoxyParams}
+This method processes the given amount of concrete and updates the collected resources accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of concrete to be processed. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classPetrochemicalFacility_aae7ecfabcaf2d05fcbc20c90e4fe9c04}\label{classPetrochemicalFacility_aae7ecfabcaf2d05fcbc20c90e4fe9c04}} 
+\index{PetrochemicalFacility@{PetrochemicalFacility}!processOil@{processOil}}
+\index{processOil@{processOil}!PetrochemicalFacility@{PetrochemicalFacility}}
+\doxysubsubsection{\texorpdfstring{processOil()}{processOil()}}
+{\footnotesize\ttfamily void Petrochemical\+Facility\+::process\+Oil (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Processes a specified amount of oil in the facility. 
+
+This method handles the processing of the given amount of oil.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of oil to be processed.\\
+\hline
+\end{DoxyParams}
+This method processes the given amount of oil and updates the collected resources accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of oil to be processed. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPetrochemicalFacility_ada672a6f12bc959c217f2548071af987}\label{classPetrochemicalFacility_ada672a6f12bc959c217f2548071af987}} 
+\index{PetrochemicalFacility@{PetrochemicalFacility}!PETRO\_CHEMICAL\_RANGE@{PETRO\_CHEMICAL\_RANGE}}
+\index{PETRO\_CHEMICAL\_RANGE@{PETRO\_CHEMICAL\_RANGE}!PetrochemicalFacility@{PetrochemicalFacility}}
+\doxysubsubsection{\texorpdfstring{PETRO\_CHEMICAL\_RANGE}{PETRO\_CHEMICAL\_RANGE}}
+{\footnotesize\ttfamily const int Petrochemical\+Facility\+::\+PETRO\+\_\+\+CHEMICAL\+\_\+\+RANGE = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The collection range for the petrochemical facility. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PetroChemicalFacility_8h}{Petro\+Chemical\+Facility.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PetroChemicalFacility_8cpp}{Petro\+Chemical\+Facility.\+cpp}}\end{DoxyCompactItemize}

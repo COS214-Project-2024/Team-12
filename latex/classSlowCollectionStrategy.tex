@@ -1,0 +1,99 @@
+\hypertarget{classSlowCollectionStrategy}{}\doxysection{Slow\+Collection\+Strategy Class Reference}
+\label{classSlowCollectionStrategy}\index{SlowCollectionStrategy@{SlowCollectionStrategy}}
+
+
+Collection strategy for slow collection rate.  
+
+
+
+
+{\ttfamily \#include $<$NPCSystem.\+h$>$}
+
+
+
+Inheritance diagram for Slow\+Collection\+Strategy\+:
+% FIG 0
+
+
+Collaboration diagram for Slow\+Collection\+Strategy\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classSlowCollectionStrategy_a65cf053322c791c3d9308deddd70d271}{collect}} (int amount) const override
+\begin{DoxyCompactList}\small\item\em Pure virtual function to collect resources based on a strategy. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSlowCollectionStrategy_a55b325adf7ad3d6189c2bd6e3f7bcffb}{collect}} (int base\+Amount)
+\begin{DoxyCompactList}\small\item\em Collects resources based on a slow strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Collection strategy for slow collection rate. 
+
+Strategy for slow resource collection.
+
+Implements a 50\% collection efficiency.
+
+This class defines a slow collection strategy that collects a specified amount of resources based on a base amount. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSlowCollectionStrategy_a65cf053322c791c3d9308deddd70d271}\label{classSlowCollectionStrategy_a65cf053322c791c3d9308deddd70d271}} 
+\index{SlowCollectionStrategy@{SlowCollectionStrategy}!collect@{collect}}
+\index{collect@{collect}!SlowCollectionStrategy@{SlowCollectionStrategy}}
+\doxysubsubsection{\texorpdfstring{collect()}{collect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Slow\+Collection\+Strategy\+::collect (\begin{DoxyParamCaption}\item[{int}]{base\+Amount }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function to collect resources based on a strategy. 
+
+Derived classes implement this method to adjust the amount collected based on a specific collection strategy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Amount} & The base amount to be collected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The adjusted amount collected based on the strategy. 
+\end{DoxyReturn}
+$<$ Returns half of the input amount.
+
+Implements \mbox{\hyperlink{classCollectionStrategy_a771a216c00c12dcf6643befb9300d381}{Collection\+Strategy}}.
+
+\mbox{\Hypertarget{classSlowCollectionStrategy_a55b325adf7ad3d6189c2bd6e3f7bcffb}\label{classSlowCollectionStrategy_a55b325adf7ad3d6189c2bd6e3f7bcffb}} 
+\index{SlowCollectionStrategy@{SlowCollectionStrategy}!collect@{collect}}
+\index{collect@{collect}!SlowCollectionStrategy@{SlowCollectionStrategy}}
+\doxysubsubsection{\texorpdfstring{collect()}{collect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Slow\+Collection\+Strategy\+::collect (\begin{DoxyParamCaption}\item[{int}]{base\+Amount }\end{DoxyParamCaption})}
+
+
+
+Collects resources based on a slow strategy. 
+
+This method reduces the base amount to simulate a slower collection rate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Amount} & The base amount of resources to be collected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Adjusted amount of resources collected according to the slow strategy.
+\end{DoxyReturn}
+This method simulates a slow collection rate by halving the base amount.
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Amount} & The base amount of resources to be collected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Adjusted amount of resources collected according to the slow strategy. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NPCSystem_8h}{NPCSystem.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{SlowCollectionStrategy_8h}{Slow\+Collection\+Strategy.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{SlowCollectionStrategy_8cpp}{Slow\+Collection\+Strategy.\+cpp}}\end{DoxyCompactItemize}

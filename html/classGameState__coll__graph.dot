@@ -1,0 +1,7 @@
+digraph "GameState"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{GameState\n|- commandHistory\l- currentCommandIndex\l|+ createMemento()\l+ restoreFromMemento()\l+ executeCommand()\l+ undo()\l+ redo()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Manages the game state and command history."];
+}

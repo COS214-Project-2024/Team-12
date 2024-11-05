@@ -1,0 +1,783 @@
+\hypertarget{classGovernment}{}\doxysection{Government Class Reference}
+\label{classGovernment}\index{Government@{Government}}
+
+
+The \mbox{\hyperlink{classGovernment}{Government}} class manages the state and functionality of the government in the simulation.  
+
+
+
+
+{\ttfamily \#include $<$Government.\+h$>$}
+
+
+
+Collaboration diagram for Government\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGovernment_a9f459fca17e25e56a570766e4c4a5ffc}{Government}} (const \mbox{\hyperlink{classGovernment}{Government}} \&)=delete
+\item 
+\mbox{\hyperlink{classGovernment}{Government}} \& \mbox{\hyperlink{classGovernment_a904cfa3f8f730cde7ba225db229ae469}{operator=}} (const \mbox{\hyperlink{classGovernment}{Government}} \&)=delete
+\item 
+void \mbox{\hyperlink{classGovernment_aceac464a35057f762fe84f6613955637}{display\+Government\+Stats}} ()
+\begin{DoxyCompactList}\small\item\em Displays the current statistics of the government. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a1d05771ae8b221d76ecd5ba315b2473e}{add\+Money}} (double amount)
+\begin{DoxyCompactList}\small\item\em Adds a specified amount of money to the government funds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_abc74e6201f243ebd3bef8e3881f4c403}{reduce\+Money}} (double amount)
+\begin{DoxyCompactList}\small\item\em Reduces the government funds by a specified amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_ab48367899a2d3099d29080d4a3e6beaa}{reduce\+Production}} (double factor)
+\begin{DoxyCompactList}\small\item\em Reduces the production rate by a specified factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_ac8c79964bc70d1551d801732bc4defc2}{increase\+Production}} (double factor)
+\begin{DoxyCompactList}\small\item\em Increases the production rate by a specified factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_aa83bd740f4ad281c97c5abf8fe75b6f6}{increase\+Crime\+Rate}} (double factor)
+\begin{DoxyCompactList}\small\item\em Increases the crime rate by a specified factor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_aa2f8430a40de5935049844c311382110}{get\+Money}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current amount of money the government has. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_a722f000d91ed67889577dd999e20e8bd}{get\+Production\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current production rate of the government. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a1477b0ff60e91569a347dff44cb03916}{set\+Production\+Rate}} (double rate)
+\begin{DoxyCompactList}\small\item\em Sets the production rate of the government. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_aad4a1bbabdfc5d177ec90f7ea1b0c36c}{get\+Mortality\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current mortality rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_a39018c141cef813b76f6f95f3fb10adc}{get\+Crime\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current crime rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a17eebb288e9dfeba9aefea2a134dc85d}{set\+Crime\+Rate}} (int rate)
+\begin{DoxyCompactList}\small\item\em Sets the crime rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_af60103acf5dfdb4c9cffadfffa82c00a}{get\+Population\+Growth}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current population growth rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a766c3c36ec135a05bb38db0ea1755197}{set\+Population\+Growth}} (int growth)
+\begin{DoxyCompactList}\small\item\em Sets the population growth rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_a41177521c660fed52a9b692b71c5af1f}{get\+Population}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current population of the city. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a1a54a3e4eb1b4c6df7d4d1cd6024b5fc}{update\+Population}} ()
+\begin{DoxyCompactList}\small\item\em Updates the population based on various factors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a1d925a490e5d0d8416f4366724865012}{set\+Tax}} (double rate)
+\begin{DoxyCompactList}\small\item\em Sets the tax rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a37a62c0a07cabbff4f38fbdecc1a8b16}{increase\+Employment\+Rate}} (double rate)
+\begin{DoxyCompactList}\small\item\em Increases the employment rate by a specified amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a637ea1083183e6733ecd787b4bb89595}{set\+Building\+Amount}} (std\+::string type, int amount)
+\begin{DoxyCompactList}\small\item\em Sets the amount of a specified building type. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_a5328feb8fa9465f9efcef22b012697ff}{get\+Building\+Amount}} (std\+::string type)
+\begin{DoxyCompactList}\small\item\em Gets the amount of a specified building type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_ac7ae1dd7b3c17a403e55394b2511f3ab}{decrease\+Population}} (int amount)
+\begin{DoxyCompactList}\small\item\em Decreases the population by a specified amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_ac2653007af2558b7edfc8c5a80aae0c7}{add\+Processed\+Resource}} (const std\+::string \&resource\+Name, int amount, double value)
+\begin{DoxyCompactList}\small\item\em Adds a processed resource to the government\textquotesingle{}s records. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_ad61e555af707711933f640f63f52d53f}{increase\+Population}} (int amount)
+\begin{DoxyCompactList}\small\item\em Increases the population by a specified amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a80b9b35905bca60494ca649da69cd381}{increment\+Pollution\+Level}} (int amount)
+\begin{DoxyCompactList}\small\item\em Increments the pollution level by a specified amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_acee63e282f70e3893667da12c6bad8b2}{decrement\+Pollution\+Level}} (int amount)
+\begin{DoxyCompactList}\small\item\em Decrements the pollution level by a specified amount. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_a8e1807a604d9140593513a2dcdd75c90}{get\+Pollution\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current pollution level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_af0ab45b88a2545890637ddcd10071ef4}{calculate\+Tax}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the tax revenue based on current settings. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_aa0500d2a69bb145fed8321a90ebdcf4a}{get\+Income\+Tax\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current income tax rate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGovernment_ad06c951e706c3a9e43e18b11c75d8888}{Government}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classGovernment}{Government}} object with default values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGovernment}{Government}} \& \mbox{\hyperlink{classGovernment_a18e3da6a1d6cae38f6eea1d50fe77288}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the singleton instance of the \mbox{\hyperlink{classGovernment}{Government}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classGovernment_a52f3e4161c91f77c375295c6748f8e09}{money}}
+\begin{DoxyCompactList}\small\item\em Current money of the government. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_a0281e7f277c45237269730845dbe2ac9}{production\+Rate}}
+\begin{DoxyCompactList}\small\item\em Current production rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_acc939d812d45c49480a2f0161a4d4c9e}{mortality\+Rate}}
+\begin{DoxyCompactList}\small\item\em Current mortality rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_a2abcbf3936790d26d7e82e398f2ee2f2}{crime\+Rate}}
+\begin{DoxyCompactList}\small\item\em Current crime rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_aac0a50deaef49415afa947b8bf581356}{population}}
+\begin{DoxyCompactList}\small\item\em Current population of the city. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_ad341a3879548f450735bbeb61a8bfc1a}{population\+Growth}}
+\begin{DoxyCompactList}\small\item\em Current population growth rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_a767e3125aa79535e02ed49122c2e465c}{income\+Tax}}
+\begin{DoxyCompactList}\small\item\em Current income tax. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_a1b8a4f1bd6e0e670ebe62f956c2fcaa4}{income\+Tax\+Rate}}
+\begin{DoxyCompactList}\small\item\em Current income tax rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGovernment_a5bb41622871de440fb80e9c983f73cc9}{EMPLOYMENT\+\_\+\+RATE}}
+\begin{DoxyCompactList}\small\item\em Current employment rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_a0e4b257293b434afca407b062b11c996}{public\+Service\+Amount}}
+\begin{DoxyCompactList}\small\item\em Number of public service buildings. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_ab3c25ebd1833d5fd5db2a9b85729ad7e}{utility\+Amount}}
+\begin{DoxyCompactList}\small\item\em Number of utility buildings. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_a39f85c8197d879dea7985a6236e6d367}{residential\+Amount}}
+\begin{DoxyCompactList}\small\item\em Number of residential buildings. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classGovernment_ace466c7d7ad3513d94b9ee0f97934df8}{processed\+Resources}}
+\begin{DoxyCompactList}\small\item\em Store processed resources. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classGovernment_a20bb50d806a62bf0c9151f2efaf82246}{resource\+Values}}
+\begin{DoxyCompactList}\small\item\em Store resource market values. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_ac616f9e72773b751f7c94afa9583db11}{pollution\+Level}}
+\begin{DoxyCompactList}\small\item\em Current pollution level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGovernment}{Government}} class manages the state and functionality of the government in the simulation. 
+
+This class follows the Singleton design pattern, ensuring only one instance exists throughout the application. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGovernment_a9f459fca17e25e56a570766e4c4a5ffc}\label{classGovernment_a9f459fca17e25e56a570766e4c4a5ffc}} 
+\index{Government@{Government}!Government@{Government}}
+\index{Government@{Government}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{Government()}{Government()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Government\+::\+Government (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGovernment}{Government}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classGovernment_ad06c951e706c3a9e43e18b11c75d8888}\label{classGovernment_ad06c951e706c3a9e43e18b11c75d8888}} 
+\index{Government@{Government}!Government@{Government}}
+\index{Government@{Government}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{Government()}{Government()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Government\+::\+Government (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classGovernment}{Government}} object with default values. 
+
+This constructor is private to ensure the singleton pattern is maintained. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGovernment_a1d05771ae8b221d76ecd5ba315b2473e}\label{classGovernment_a1d05771ae8b221d76ecd5ba315b2473e}} 
+\index{Government@{Government}!addMoney@{addMoney}}
+\index{addMoney@{addMoney}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{addMoney()}{addMoney()}}
+{\footnotesize\ttfamily void Government\+::add\+Money (\begin{DoxyParamCaption}\item[{double}]{amount }\end{DoxyParamCaption})}
+
+
+
+Adds a specified amount of money to the government funds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of money to add. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classGovernment_ac2653007af2558b7edfc8c5a80aae0c7}\label{classGovernment_ac2653007af2558b7edfc8c5a80aae0c7}} 
+\index{Government@{Government}!addProcessedResource@{addProcessedResource}}
+\index{addProcessedResource@{addProcessedResource}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{addProcessedResource()}{addProcessedResource()}}
+{\footnotesize\ttfamily void Government\+::add\+Processed\+Resource (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{resource\+Name,  }\item[{int}]{amount,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Adds a processed resource to the government\textquotesingle{}s records. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Name} & The name of the resource. \\
+\hline
+{\em amount} & The amount of the resource. \\
+\hline
+{\em value} & The market value of the resource.\\
+\hline
+{\em resource\+Name} & The name of the resource. \\
+\hline
+{\em amount} & The amount of the resource. \\
+\hline
+{\em value} & The market value of the resource (optional). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classGovernment_af0ab45b88a2545890637ddcd10071ef4}\label{classGovernment_af0ab45b88a2545890637ddcd10071ef4}} 
+\index{Government@{Government}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily void Government\+::calculate\+Tax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the tax revenue based on current settings. 
+
+Calculates the income tax based on the current population and tax rate. Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classGovernment_ac7ae1dd7b3c17a403e55394b2511f3ab}\label{classGovernment_ac7ae1dd7b3c17a403e55394b2511f3ab}} 
+\index{Government@{Government}!decreasePopulation@{decreasePopulation}}
+\index{decreasePopulation@{decreasePopulation}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{decreasePopulation()}{decreasePopulation()}}
+{\footnotesize\ttfamily void Government\+::decrease\+Population (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Decreases the population by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to decrease the population. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classGovernment_acee63e282f70e3893667da12c6bad8b2}\label{classGovernment_acee63e282f70e3893667da12c6bad8b2}} 
+\index{Government@{Government}!decrementPollutionLevel@{decrementPollutionLevel}}
+\index{decrementPollutionLevel@{decrementPollutionLevel}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{decrementPollutionLevel()}{decrementPollutionLevel()}}
+{\footnotesize\ttfamily void Government\+::decrement\+Pollution\+Level (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Decrements the pollution level by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to decrement pollution. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_aceac464a35057f762fe84f6613955637}\label{classGovernment_aceac464a35057f762fe84f6613955637}} 
+\index{Government@{Government}!displayGovernmentStats@{displayGovernmentStats}}
+\index{displayGovernmentStats@{displayGovernmentStats}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{displayGovernmentStats()}{displayGovernmentStats()}}
+{\footnotesize\ttfamily void Government\+::display\+Government\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the current statistics of the government. 
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classGovernment_a5328feb8fa9465f9efcef22b012697ff}\label{classGovernment_a5328feb8fa9465f9efcef22b012697ff}} 
+\index{Government@{Government}!getBuildingAmount@{getBuildingAmount}}
+\index{getBuildingAmount@{getBuildingAmount}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getBuildingAmount()}{getBuildingAmount()}}
+{\footnotesize\ttfamily int Government\+::get\+Building\+Amount (\begin{DoxyParamCaption}\item[{std\+::string}]{type }\end{DoxyParamCaption})}
+
+
+
+Gets the amount of a specified building type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of building. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The amount of the specified building type. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classGovernment_a39018c141cef813b76f6f95f3fb10adc}\label{classGovernment_a39018c141cef813b76f6f95f3fb10adc}} 
+\index{Government@{Government}!getCrimeRate@{getCrimeRate}}
+\index{getCrimeRate@{getCrimeRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getCrimeRate()}{getCrimeRate()}}
+{\footnotesize\ttfamily double Government\+::get\+Crime\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current crime rate. 
+
+\begin{DoxyReturn}{Returns}
+double The current crime rate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGovernment_aa0500d2a69bb145fed8321a90ebdcf4a}\label{classGovernment_aa0500d2a69bb145fed8321a90ebdcf4a}} 
+\index{Government@{Government}!getIncomeTaxRate@{getIncomeTaxRate}}
+\index{getIncomeTaxRate@{getIncomeTaxRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getIncomeTaxRate()}{getIncomeTaxRate()}}
+{\footnotesize\ttfamily double Government\+::get\+Income\+Tax\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current income tax rate. 
+
+\begin{DoxyReturn}{Returns}
+double The current income tax rate. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classGovernment_a18e3da6a1d6cae38f6eea1d50fe77288}\label{classGovernment_a18e3da6a1d6cae38f6eea1d50fe77288}} 
+\index{Government@{Government}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classGovernment}{Government}}\& Government\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Retrieves the singleton instance of the \mbox{\hyperlink{classGovernment}{Government}} class. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classGovernment}{Government}}\& Reference to the singleton instance. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{classGovernment_aa2f8430a40de5935049844c311382110}\label{classGovernment_aa2f8430a40de5935049844c311382110}} 
+\index{Government@{Government}!getMoney@{getMoney}}
+\index{getMoney@{getMoney}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getMoney()}{getMoney()}}
+{\footnotesize\ttfamily double Government\+::get\+Money (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current amount of money the government has. 
+
+\begin{DoxyReturn}{Returns}
+double The current money. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{classGovernment_aad4a1bbabdfc5d177ec90f7ea1b0c36c}\label{classGovernment_aad4a1bbabdfc5d177ec90f7ea1b0c36c}} 
+\index{Government@{Government}!getMortalityRate@{getMortalityRate}}
+\index{getMortalityRate@{getMortalityRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getMortalityRate()}{getMortalityRate()}}
+{\footnotesize\ttfamily double Government\+::get\+Mortality\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current mortality rate. 
+
+\begin{DoxyReturn}{Returns}
+double The current mortality rate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGovernment_a8e1807a604d9140593513a2dcdd75c90}\label{classGovernment_a8e1807a604d9140593513a2dcdd75c90}} 
+\index{Government@{Government}!getPollutionLevel@{getPollutionLevel}}
+\index{getPollutionLevel@{getPollutionLevel}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getPollutionLevel()}{getPollutionLevel()}}
+{\footnotesize\ttfamily int Government\+::get\+Pollution\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current pollution level. 
+
+\begin{DoxyReturn}{Returns}
+int The current pollution level. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{classGovernment_a41177521c660fed52a9b692b71c5af1f}\label{classGovernment_a41177521c660fed52a9b692b71c5af1f}} 
+\index{Government@{Government}!getPopulation@{getPopulation}}
+\index{getPopulation@{getPopulation}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getPopulation()}{getPopulation()}}
+{\footnotesize\ttfamily int Government\+::get\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current population of the city. 
+
+\begin{DoxyReturn}{Returns}
+int The current population. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{classGovernment_af60103acf5dfdb4c9cffadfffa82c00a}\label{classGovernment_af60103acf5dfdb4c9cffadfffa82c00a}} 
+\index{Government@{Government}!getPopulationGrowth@{getPopulationGrowth}}
+\index{getPopulationGrowth@{getPopulationGrowth}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getPopulationGrowth()}{getPopulationGrowth()}}
+{\footnotesize\ttfamily int Government\+::get\+Population\+Growth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current population growth rate. 
+
+\begin{DoxyReturn}{Returns}
+int The current population growth.
+
+int The current population growth rate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGovernment_a722f000d91ed67889577dd999e20e8bd}\label{classGovernment_a722f000d91ed67889577dd999e20e8bd}} 
+\index{Government@{Government}!getProductionRate@{getProductionRate}}
+\index{getProductionRate@{getProductionRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getProductionRate()}{getProductionRate()}}
+{\footnotesize\ttfamily double Government\+::get\+Production\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current production rate of the government. 
+
+\begin{DoxyReturn}{Returns}
+double The current production rate. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{classGovernment_aa83bd740f4ad281c97c5abf8fe75b6f6}\label{classGovernment_aa83bd740f4ad281c97c5abf8fe75b6f6}} 
+\index{Government@{Government}!increaseCrimeRate@{increaseCrimeRate}}
+\index{increaseCrimeRate@{increaseCrimeRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{increaseCrimeRate()}{increaseCrimeRate()}}
+{\footnotesize\ttfamily void Government\+::increase\+Crime\+Rate (\begin{DoxyParamCaption}\item[{double}]{factor }\end{DoxyParamCaption})}
+
+
+
+Increases the crime rate by a specified factor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em factor} & The factor by which to increase crime. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{classGovernment_a37a62c0a07cabbff4f38fbdecc1a8b16}\label{classGovernment_a37a62c0a07cabbff4f38fbdecc1a8b16}} 
+\index{Government@{Government}!increaseEmploymentRate@{increaseEmploymentRate}}
+\index{increaseEmploymentRate@{increaseEmploymentRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{increaseEmploymentRate()}{increaseEmploymentRate()}}
+{\footnotesize\ttfamily void Government\+::increase\+Employment\+Rate (\begin{DoxyParamCaption}\item[{double}]{rate }\end{DoxyParamCaption})}
+
+
+
+Increases the employment rate by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & The amount to increase the employment rate. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{classGovernment_ad61e555af707711933f640f63f52d53f}\label{classGovernment_ad61e555af707711933f640f63f52d53f}} 
+\index{Government@{Government}!increasePopulation@{increasePopulation}}
+\index{increasePopulation@{increasePopulation}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{increasePopulation()}{increasePopulation()}}
+{\footnotesize\ttfamily void Government\+::increase\+Population (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Increases the population by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to increase the population. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{classGovernment_ac8c79964bc70d1551d801732bc4defc2}\label{classGovernment_ac8c79964bc70d1551d801732bc4defc2}} 
+\index{Government@{Government}!increaseProduction@{increaseProduction}}
+\index{increaseProduction@{increaseProduction}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{increaseProduction()}{increaseProduction()}}
+{\footnotesize\ttfamily void Government\+::increase\+Production (\begin{DoxyParamCaption}\item[{double}]{factor }\end{DoxyParamCaption})}
+
+
+
+Increases the production rate by a specified factor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em factor} & The factor by which to increase production. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 16
+\mbox{\Hypertarget{classGovernment_a80b9b35905bca60494ca649da69cd381}\label{classGovernment_a80b9b35905bca60494ca649da69cd381}} 
+\index{Government@{Government}!incrementPollutionLevel@{incrementPollutionLevel}}
+\index{incrementPollutionLevel@{incrementPollutionLevel}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{incrementPollutionLevel()}{incrementPollutionLevel()}}
+{\footnotesize\ttfamily void Government\+::increment\+Pollution\+Level (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Increments the pollution level by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to increment pollution. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{classGovernment_a904cfa3f8f730cde7ba225db229ae469}\label{classGovernment_a904cfa3f8f730cde7ba225db229ae469}} 
+\index{Government@{Government}!operator=@{operator=}}
+\index{operator=@{operator=}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGovernment}{Government}}\& Government\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGovernment}{Government}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classGovernment_abc74e6201f243ebd3bef8e3881f4c403}\label{classGovernment_abc74e6201f243ebd3bef8e3881f4c403}} 
+\index{Government@{Government}!reduceMoney@{reduceMoney}}
+\index{reduceMoney@{reduceMoney}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{reduceMoney()}{reduceMoney()}}
+{\footnotesize\ttfamily void Government\+::reduce\+Money (\begin{DoxyParamCaption}\item[{double}]{amount }\end{DoxyParamCaption})}
+
+
+
+Reduces the government funds by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of money to reduce. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 18
+\mbox{\Hypertarget{classGovernment_ab48367899a2d3099d29080d4a3e6beaa}\label{classGovernment_ab48367899a2d3099d29080d4a3e6beaa}} 
+\index{Government@{Government}!reduceProduction@{reduceProduction}}
+\index{reduceProduction@{reduceProduction}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{reduceProduction()}{reduceProduction()}}
+{\footnotesize\ttfamily void Government\+::reduce\+Production (\begin{DoxyParamCaption}\item[{double}]{factor }\end{DoxyParamCaption})}
+
+
+
+Reduces the production rate by a specified factor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em factor} & The factor by which to reduce production. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 19
+\mbox{\Hypertarget{classGovernment_a637ea1083183e6733ecd787b4bb89595}\label{classGovernment_a637ea1083183e6733ecd787b4bb89595}} 
+\index{Government@{Government}!setBuildingAmount@{setBuildingAmount}}
+\index{setBuildingAmount@{setBuildingAmount}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{setBuildingAmount()}{setBuildingAmount()}}
+{\footnotesize\ttfamily void Government\+::set\+Building\+Amount (\begin{DoxyParamCaption}\item[{std\+::string}]{type,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Sets the amount of a specified building type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of building. \\
+\hline
+{\em amount} & The amount of the building type to set. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 20
+\mbox{\Hypertarget{classGovernment_a17eebb288e9dfeba9aefea2a134dc85d}\label{classGovernment_a17eebb288e9dfeba9aefea2a134dc85d}} 
+\index{Government@{Government}!setCrimeRate@{setCrimeRate}}
+\index{setCrimeRate@{setCrimeRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{setCrimeRate()}{setCrimeRate()}}
+{\footnotesize\ttfamily void Government\+::set\+Crime\+Rate (\begin{DoxyParamCaption}\item[{int}]{rate }\end{DoxyParamCaption})}
+
+
+
+Sets the crime rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & The new crime rate.\\
+\hline
+{\em rate} & The new crime rate as a percentage. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 21
+\mbox{\Hypertarget{classGovernment_a766c3c36ec135a05bb38db0ea1755197}\label{classGovernment_a766c3c36ec135a05bb38db0ea1755197}} 
+\index{Government@{Government}!setPopulationGrowth@{setPopulationGrowth}}
+\index{setPopulationGrowth@{setPopulationGrowth}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{setPopulationGrowth()}{setPopulationGrowth()}}
+{\footnotesize\ttfamily void Government\+::set\+Population\+Growth (\begin{DoxyParamCaption}\item[{int}]{growth }\end{DoxyParamCaption})}
+
+
+
+Sets the population growth rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em growth} & The new population growth.\\
+\hline
+{\em growth} & The new population growth rate. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 22
+\mbox{\Hypertarget{classGovernment_a1477b0ff60e91569a347dff44cb03916}\label{classGovernment_a1477b0ff60e91569a347dff44cb03916}} 
+\index{Government@{Government}!setProductionRate@{setProductionRate}}
+\index{setProductionRate@{setProductionRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{setProductionRate()}{setProductionRate()}}
+{\footnotesize\ttfamily void Government\+::set\+Production\+Rate (\begin{DoxyParamCaption}\item[{double}]{rate }\end{DoxyParamCaption})}
+
+
+
+Sets the production rate of the government. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & The new production rate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_a1d925a490e5d0d8416f4366724865012}\label{classGovernment_a1d925a490e5d0d8416f4366724865012}} 
+\index{Government@{Government}!setTax@{setTax}}
+\index{setTax@{setTax}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{setTax()}{setTax()}}
+{\footnotesize\ttfamily void Government\+::set\+Tax (\begin{DoxyParamCaption}\item[{double}]{rate }\end{DoxyParamCaption})}
+
+
+
+Sets the tax rate. 
+
+Sets the income tax rate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & The new tax rate.\\
+\hline
+{\em rate} & The new income tax rate. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 23
+\mbox{\Hypertarget{classGovernment_a1a54a3e4eb1b4c6df7d4d1cd6024b5fc}\label{classGovernment_a1a54a3e4eb1b4c6df7d4d1cd6024b5fc}} 
+\index{Government@{Government}!updatePopulation@{updatePopulation}}
+\index{updatePopulation@{updatePopulation}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{updatePopulation()}{updatePopulation()}}
+{\footnotesize\ttfamily void Government\+::update\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the population based on various factors. 
+
+Updates the population based on growth and mortality rate. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGovernment_a2abcbf3936790d26d7e82e398f2ee2f2}\label{classGovernment_a2abcbf3936790d26d7e82e398f2ee2f2}} 
+\index{Government@{Government}!crimeRate@{crimeRate}}
+\index{crimeRate@{crimeRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{crimeRate}{crimeRate}}
+{\footnotesize\ttfamily double Government\+::crime\+Rate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current crime rate. 
+
+\mbox{\Hypertarget{classGovernment_a5bb41622871de440fb80e9c983f73cc9}\label{classGovernment_a5bb41622871de440fb80e9c983f73cc9}} 
+\index{Government@{Government}!EMPLOYMENT\_RATE@{EMPLOYMENT\_RATE}}
+\index{EMPLOYMENT\_RATE@{EMPLOYMENT\_RATE}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{EMPLOYMENT\_RATE}{EMPLOYMENT\_RATE}}
+{\footnotesize\ttfamily double Government\+::\+EMPLOYMENT\+\_\+\+RATE\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current employment rate. 
+
+\mbox{\Hypertarget{classGovernment_a767e3125aa79535e02ed49122c2e465c}\label{classGovernment_a767e3125aa79535e02ed49122c2e465c}} 
+\index{Government@{Government}!incomeTax@{incomeTax}}
+\index{incomeTax@{incomeTax}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{incomeTax}{incomeTax}}
+{\footnotesize\ttfamily double Government\+::income\+Tax\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current income tax. 
+
+\mbox{\Hypertarget{classGovernment_a1b8a4f1bd6e0e670ebe62f956c2fcaa4}\label{classGovernment_a1b8a4f1bd6e0e670ebe62f956c2fcaa4}} 
+\index{Government@{Government}!incomeTaxRate@{incomeTaxRate}}
+\index{incomeTaxRate@{incomeTaxRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{incomeTaxRate}{incomeTaxRate}}
+{\footnotesize\ttfamily double Government\+::income\+Tax\+Rate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current income tax rate. 
+
+\mbox{\Hypertarget{classGovernment_a52f3e4161c91f77c375295c6748f8e09}\label{classGovernment_a52f3e4161c91f77c375295c6748f8e09}} 
+\index{Government@{Government}!money@{money}}
+\index{money@{money}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{money}{money}}
+{\footnotesize\ttfamily double Government\+::money\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current money of the government. 
+
+\mbox{\Hypertarget{classGovernment_acc939d812d45c49480a2f0161a4d4c9e}\label{classGovernment_acc939d812d45c49480a2f0161a4d4c9e}} 
+\index{Government@{Government}!mortalityRate@{mortalityRate}}
+\index{mortalityRate@{mortalityRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{mortalityRate}{mortalityRate}}
+{\footnotesize\ttfamily double Government\+::mortality\+Rate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current mortality rate. 
+
+\mbox{\Hypertarget{classGovernment_ac616f9e72773b751f7c94afa9583db11}\label{classGovernment_ac616f9e72773b751f7c94afa9583db11}} 
+\index{Government@{Government}!pollutionLevel@{pollutionLevel}}
+\index{pollutionLevel@{pollutionLevel}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{pollutionLevel}{pollutionLevel}}
+{\footnotesize\ttfamily int Government\+::pollution\+Level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current pollution level. 
+
+\mbox{\Hypertarget{classGovernment_aac0a50deaef49415afa947b8bf581356}\label{classGovernment_aac0a50deaef49415afa947b8bf581356}} 
+\index{Government@{Government}!population@{population}}
+\index{population@{population}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{population}{population}}
+{\footnotesize\ttfamily int Government\+::population\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current population of the city. 
+
+\mbox{\Hypertarget{classGovernment_ad341a3879548f450735bbeb61a8bfc1a}\label{classGovernment_ad341a3879548f450735bbeb61a8bfc1a}} 
+\index{Government@{Government}!populationGrowth@{populationGrowth}}
+\index{populationGrowth@{populationGrowth}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{populationGrowth}{populationGrowth}}
+{\footnotesize\ttfamily int Government\+::population\+Growth\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current population growth rate. 
+
+\mbox{\Hypertarget{classGovernment_ace466c7d7ad3513d94b9ee0f97934df8}\label{classGovernment_ace466c7d7ad3513d94b9ee0f97934df8}} 
+\index{Government@{Government}!processedResources@{processedResources}}
+\index{processedResources@{processedResources}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{processedResources}{processedResources}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Government\+::processed\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Store processed resources. 
+
+\mbox{\Hypertarget{classGovernment_a0281e7f277c45237269730845dbe2ac9}\label{classGovernment_a0281e7f277c45237269730845dbe2ac9}} 
+\index{Government@{Government}!productionRate@{productionRate}}
+\index{productionRate@{productionRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{productionRate}{productionRate}}
+{\footnotesize\ttfamily double Government\+::production\+Rate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current production rate. 
+
+\mbox{\Hypertarget{classGovernment_a0e4b257293b434afca407b062b11c996}\label{classGovernment_a0e4b257293b434afca407b062b11c996}} 
+\index{Government@{Government}!publicServiceAmount@{publicServiceAmount}}
+\index{publicServiceAmount@{publicServiceAmount}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{publicServiceAmount}{publicServiceAmount}}
+{\footnotesize\ttfamily int Government\+::public\+Service\+Amount\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of public service buildings. 
+
+\mbox{\Hypertarget{classGovernment_a39f85c8197d879dea7985a6236e6d367}\label{classGovernment_a39f85c8197d879dea7985a6236e6d367}} 
+\index{Government@{Government}!residentialAmount@{residentialAmount}}
+\index{residentialAmount@{residentialAmount}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{residentialAmount}{residentialAmount}}
+{\footnotesize\ttfamily int Government\+::residential\+Amount\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of residential buildings. 
+
+\mbox{\Hypertarget{classGovernment_a20bb50d806a62bf0c9151f2efaf82246}\label{classGovernment_a20bb50d806a62bf0c9151f2efaf82246}} 
+\index{Government@{Government}!resourceValues@{resourceValues}}
+\index{resourceValues@{resourceValues}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{resourceValues}{resourceValues}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, double$>$ Government\+::resource\+Values\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Store resource market values. 
+
+\mbox{\Hypertarget{classGovernment_ab3c25ebd1833d5fd5db2a9b85729ad7e}\label{classGovernment_ab3c25ebd1833d5fd5db2a9b85729ad7e}} 
+\index{Government@{Government}!utilityAmount@{utilityAmount}}
+\index{utilityAmount@{utilityAmount}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{utilityAmount}{utilityAmount}}
+{\footnotesize\ttfamily int Government\+::utility\+Amount\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of utility buildings. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Government_8h}{Government.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Government_8cpp}{Government.\+cpp}}\end{DoxyCompactItemize}

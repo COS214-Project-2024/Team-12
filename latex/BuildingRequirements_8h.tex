@@ -1,0 +1,110 @@
+\hypertarget{BuildingRequirements_8h}{}\doxysection{COS214-\/\+Poject/src/\+Building\+Requirements.h File Reference}
+\label{BuildingRequirements_8h}\index{COS214-\/Poject/src/BuildingRequirements.h@{COS214-\/Poject/src/BuildingRequirements.h}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Building\+Requirements.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structResourceRequirement}{Resource\+Requirement}}
+\begin{DoxyCompactList}\small\item\em Defines the resource requirements for constructing a building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{BuildingRequirements_8h_aee1969b2f667aef34ff8a891ebe2fce9}{initialize\+Collected\+Resources}} (std\+::map$<$ std\+::string, int $>$ \&collected\+Resources)
+\begin{DoxyCompactList}\small\item\em Initializes the collected resources map with zero values. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{BuildingRequirements_8h_a4e6e5e7f0f7d64101fb10a49203edd0c}{check\+Resource\+Requirements}} (const std\+::string \&building\+Type, const std\+::map$<$ std\+::string, int $>$ \&collected\+Resources, bool display\+Info=true)
+\begin{DoxyCompactList}\small\item\em Checks if the collected resources meet the requirements for a specified building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::map$<$ std\+::string, \mbox{\hyperlink{structResourceRequirement}{Resource\+Requirement}} $>$ \mbox{\hyperlink{BuildingRequirements_8h_ac783f8cd7e68615b0a235a468fe774a7}{building\+Resource\+Requirements}}
+\begin{DoxyCompactList}\small\item\em A map that associates building types with their respective resource requirements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{BuildingRequirements_8h_a4e6e5e7f0f7d64101fb10a49203edd0c}\label{BuildingRequirements_8h_a4e6e5e7f0f7d64101fb10a49203edd0c}} 
+\index{BuildingRequirements.h@{BuildingRequirements.h}!checkResourceRequirements@{checkResourceRequirements}}
+\index{checkResourceRequirements@{checkResourceRequirements}!BuildingRequirements.h@{BuildingRequirements.h}}
+\doxysubsubsection{\texorpdfstring{checkResourceRequirements()}{checkResourceRequirements()}}
+{\footnotesize\ttfamily bool check\+Resource\+Requirements (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{building\+Type,  }\item[{const std\+::map$<$ std\+::string, int $>$ \&}]{collected\+Resources,  }\item[{bool}]{display\+Info = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the collected resources meet the requirements for a specified building. 
+
+This function compares collected resource quantities against the requirements for a given building type. Optionally, it displays information about the requirements and current resource levels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em building\+Type} & The type of building to check resources for. \\
+\hline
+{\em collected\+Resources} & A map containing the currently collected resource quantities. \\
+\hline
+{\em display\+Info} & Flag to control the display of requirement information (default\+: true). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if resources meet or exceed the requirements; false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{BuildingRequirements_8h_aee1969b2f667aef34ff8a891ebe2fce9}\label{BuildingRequirements_8h_aee1969b2f667aef34ff8a891ebe2fce9}} 
+\index{BuildingRequirements.h@{BuildingRequirements.h}!initializeCollectedResources@{initializeCollectedResources}}
+\index{initializeCollectedResources@{initializeCollectedResources}!BuildingRequirements.h@{BuildingRequirements.h}}
+\doxysubsubsection{\texorpdfstring{initializeCollectedResources()}{initializeCollectedResources()}}
+{\footnotesize\ttfamily void initialize\+Collected\+Resources (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, int $>$ \&}]{collected\+Resources }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the collected resources map with zero values. 
+
+This function populates the given map with resource types as keys and initializes their values to zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em collected\+Resources} & A map to hold the quantities of collected resources. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{BuildingRequirements_8h_ac783f8cd7e68615b0a235a468fe774a7}\label{BuildingRequirements_8h_ac783f8cd7e68615b0a235a468fe774a7}} 
+\index{BuildingRequirements.h@{BuildingRequirements.h}!buildingResourceRequirements@{buildingResourceRequirements}}
+\index{buildingResourceRequirements@{buildingResourceRequirements}!BuildingRequirements.h@{BuildingRequirements.h}}
+\doxysubsubsection{\texorpdfstring{buildingResourceRequirements}{buildingResourceRequirements}}
+{\footnotesize\ttfamily building\+Resource\+Requirements}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}House"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(10, 5, 0, 0)\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}Flat"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(15, 10, 5, 5)\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}Townhouse"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(20, 15, 10, 10)\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}Estate"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(25, 20, 15, 15)\},}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}Shop"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(15, 10, 10, 10)\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}Mall"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(30, 25, 20, 20)\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}Office"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(25, 20, 25, 25)\},}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}MetalWorkFacility"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(20, 30, 40, 20)\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}PetroChemical"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(15, 25, 35, 40)\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}CrystalCraft"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(20, 40, 30, 25)\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}WoodAndCoal"{}}, \mbox{\hyperlink{structResourceRequirement}{ResourceRequirement}}(40, 30, 25, 20)\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+A map that associates building types with their respective resource requirements. 
+
+This map contains entries for various types of buildings (residential, commercial, and industrial) and their corresponding resource requirements for construction. 

@@ -1,0 +1,149 @@
+\hypertarget{classPark}{}\doxysection{Park Class Reference}
+\label{classPark}\index{Park@{Park}}
+
+
+Represents a park in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Park.\+h$>$}
+
+
+
+Inheritance diagram for Park\+:
+% FIG 0
+
+
+Collaboration diagram for Park\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPark_a21434eeebdc846e5f9e48a1c9954a33e}{Park}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classPark}{Park}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPark_a1fe967e0286fda84a7ead4deb8d506cc}{Park}} (const std\+::string \&type, int capacity, double \mbox{\hyperlink{classLandMark_a6d9b52dbf50f52e9f74a36432e521712}{price}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPark}{Park}} object with specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPark_aae611d70a5a38a5716cb2358a4a62c7c}{$\sim$\+Park}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classPark}{Park}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPark_adc60642002790fdcccc2e1846e29e7e0}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the current status of the \mbox{\hyperlink{classPark}{Park}}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ \mbox{\hyperlink{classPark_ab21456335a17628123924a39f6769a8c}{clone}} () const
+\begin{DoxyCompactList}\small\item\em Creates a clone of the \mbox{\hyperlink{classPark}{Park}} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPark_a70c431ec29b0bd76ae762bd1a1d60e59}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the building type of the park. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a park in the city simulation. 
+
+The \mbox{\hyperlink{classPark}{Park}} class inherits from the \mbox{\hyperlink{classLandMark}{Land\+Mark}} class and includes details about the park\textquotesingle{}s type, capacity, price, and utility connections. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPark_a21434eeebdc846e5f9e48a1c9954a33e}\label{classPark_a21434eeebdc846e5f9e48a1c9954a33e}} 
+\index{Park@{Park}!Park@{Park}}
+\index{Park@{Park}!Park@{Park}}
+\doxysubsubsection{\texorpdfstring{Park()}{Park()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Park\+::\+Park (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for the \mbox{\hyperlink{classPark}{Park}} class. 
+
+\mbox{\Hypertarget{classPark_a1fe967e0286fda84a7ead4deb8d506cc}\label{classPark_a1fe967e0286fda84a7ead4deb8d506cc}} 
+\index{Park@{Park}!Park@{Park}}
+\index{Park@{Park}!Park@{Park}}
+\doxysubsubsection{\texorpdfstring{Park()}{Park()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Park\+::\+Park (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type,  }\item[{int}]{capacity,  }\item[{double}]{price,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classPark}{Park}} object with specified parameters. 
+
+Constructs a \mbox{\hyperlink{classPark}{Park}} object.
+
+Initializes the \mbox{\hyperlink{classPark}{Park}} with a specified type, capacity, price, and utility connections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the park. \\
+\hline
+{\em capacity} & The maximum visitor capacity of the park. \\
+\hline
+{\em price} & The cost associated with the park. \\
+\hline
+{\em water} & A shared pointer to the water utility. \\
+\hline
+{\em power} & A shared pointer to the power utility. \\
+\hline
+{\em waste} & A shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage management utility. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPark_aae611d70a5a38a5716cb2358a4a62c7c}\label{classPark_aae611d70a5a38a5716cb2358a4a62c7c}} 
+\index{Park@{Park}!````~Park@{$\sim$Park}}
+\index{````~Park@{$\sim$Park}!Park@{Park}}
+\doxysubsubsection{\texorpdfstring{$\sim$Park()}{~Park()}}
+{\footnotesize\ttfamily Park\+::$\sim$\+Park (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classPark}{Park}} object. 
+
+Cleans up any resources held by the \mbox{\hyperlink{classPark}{Park}} object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPark_ab21456335a17628123924a39f6769a8c}\label{classPark_ab21456335a17628123924a39f6769a8c}} 
+\index{Park@{Park}!clone@{clone}}
+\index{clone@{clone}!Park@{Park}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ Park\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Creates a clone of the \mbox{\hyperlink{classPark}{Park}} object. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a new \mbox{\hyperlink{classPark}{Park}} object that is a copy of this one. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPark_adc60642002790fdcccc2e1846e29e7e0}\label{classPark_adc60642002790fdcccc2e1846e29e7e0}} 
+\index{Park@{Park}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Park@{Park}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Park\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the current status of the \mbox{\hyperlink{classPark}{Park}}. 
+
+Outputs the name, capacity, price, and status of the park\textquotesingle{}s utilities. 
+
+Reimplemented from \mbox{\hyperlink{classLandMark_a8a6bc2e43611b75aa62769f196babc30}{Land\+Mark}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classPark_a70c431ec29b0bd76ae762bd1a1d60e59}\label{classPark_a70c431ec29b0bd76ae762bd1a1d60e59}} 
+\index{Park@{Park}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Park@{Park}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Park\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the building type of the park. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type, which is \char`\"{}\+Park\char`\"{}. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLandMark_a1101a3f9949ec928fce30b4dadfedb87}{Land\+Mark}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Park_8h}{Park.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Park_8cpp}{Park.\+cpp}}\end{DoxyCompactItemize}

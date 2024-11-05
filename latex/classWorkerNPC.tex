@@ -1,0 +1,147 @@
+\hypertarget{classWorkerNPC}{}\doxysection{Worker\+NPC Class Reference}
+\label{classWorkerNPC}\index{WorkerNPC@{WorkerNPC}}
+
+
+Represents a Worker NPC that collects resources.  
+
+
+
+
+{\ttfamily \#include $<$NPCSystem.\+h$>$}
+
+
+
+Collaboration diagram for Worker\+NPC\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWorkerNPC_aece278a1a26c233251d9bc93243d929c}{Worker\+NPC}} (const std\+::string \&worker\+Name, double worker\+Cost, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCollectionStrategy}{Collection\+Strategy}} $>$ collection\+Strategy)
+\begin{DoxyCompactList}\small\item\em Constructs a Worker NPC with a specific name, cost, and collection strategy. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWorkerNPC_a58e1d3705c0c953f44f0588345433613}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the Worker NPC. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classWorkerNPC_ae030da561ba5dbe7e9aa5d8f8c190301}{get\+Cost}} () const
+\begin{DoxyCompactList}\small\item\em Gets the cost of the Worker NPC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWorkerNPC_a83dce5d48791e1a674218a67bee253a5}{collect}} (int amount) const
+\begin{DoxyCompactList}\small\item\em Collects resources based on the collection strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classWorkerNPC_a6d66c59d5946a568f01f32e68e0d019e}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the Worker NPC. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classWorkerNPC_a2ba1141c72f120cbc92c74d3aa98771e}{cost}}
+\begin{DoxyCompactList}\small\item\em Cost of hiring the Worker NPC. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCollectionStrategy}{Collection\+Strategy}} $>$ \mbox{\hyperlink{classWorkerNPC_aee8f3391ee54afe43e0673890b80f454}{strategy}}
+\begin{DoxyCompactList}\small\item\em Strategy for resource collection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a Worker NPC that collects resources. 
+
+Uses a collection strategy to determine the NPC\textquotesingle{}s collection efficiency. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWorkerNPC_aece278a1a26c233251d9bc93243d929c}\label{classWorkerNPC_aece278a1a26c233251d9bc93243d929c}} 
+\index{WorkerNPC@{WorkerNPC}!WorkerNPC@{WorkerNPC}}
+\index{WorkerNPC@{WorkerNPC}!WorkerNPC@{WorkerNPC}}
+\doxysubsubsection{\texorpdfstring{WorkerNPC()}{WorkerNPC()}}
+{\footnotesize\ttfamily Worker\+NPC\+::\+Worker\+NPC (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{worker\+Name,  }\item[{double}]{worker\+Cost,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCollectionStrategy}{Collection\+Strategy}} $>$}]{collection\+Strategy }\end{DoxyParamCaption})}
+
+
+
+Constructs a Worker NPC with a specific name, cost, and collection strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em worker\+Name} & The name of the Worker NPC. \\
+\hline
+{\em worker\+Cost} & The cost associated with the Worker NPC. \\
+\hline
+{\em collection\+Strategy} & The strategy for resource collection. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWorkerNPC_a83dce5d48791e1a674218a67bee253a5}\label{classWorkerNPC_a83dce5d48791e1a674218a67bee253a5}} 
+\index{WorkerNPC@{WorkerNPC}!collect@{collect}}
+\index{collect@{collect}!WorkerNPC@{WorkerNPC}}
+\doxysubsubsection{\texorpdfstring{collect()}{collect()}}
+{\footnotesize\ttfamily int Worker\+NPC\+::collect (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption}) const}
+
+
+
+Collects resources based on the collection strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The base amount to be collected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The amount collected after applying the collection strategy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWorkerNPC_ae030da561ba5dbe7e9aa5d8f8c190301}\label{classWorkerNPC_ae030da561ba5dbe7e9aa5d8f8c190301}} 
+\index{WorkerNPC@{WorkerNPC}!getCost@{getCost}}
+\index{getCost@{getCost}!WorkerNPC@{WorkerNPC}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily double Worker\+NPC\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the cost of the Worker NPC. 
+
+\begin{DoxyReturn}{Returns}
+double The hiring cost of the Worker NPC. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWorkerNPC_a58e1d3705c0c953f44f0588345433613}\label{classWorkerNPC_a58e1d3705c0c953f44f0588345433613}} 
+\index{WorkerNPC@{WorkerNPC}!getName@{getName}}
+\index{getName@{getName}!WorkerNPC@{WorkerNPC}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Worker\+NPC\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the Worker NPC. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The NPC\textquotesingle{}s name. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWorkerNPC_a2ba1141c72f120cbc92c74d3aa98771e}\label{classWorkerNPC_a2ba1141c72f120cbc92c74d3aa98771e}} 
+\index{WorkerNPC@{WorkerNPC}!cost@{cost}}
+\index{cost@{cost}!WorkerNPC@{WorkerNPC}}
+\doxysubsubsection{\texorpdfstring{cost}{cost}}
+{\footnotesize\ttfamily double Worker\+NPC\+::cost\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cost of hiring the Worker NPC. 
+
+\mbox{\Hypertarget{classWorkerNPC_a6d66c59d5946a568f01f32e68e0d019e}\label{classWorkerNPC_a6d66c59d5946a568f01f32e68e0d019e}} 
+\index{WorkerNPC@{WorkerNPC}!name@{name}}
+\index{name@{name}!WorkerNPC@{WorkerNPC}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Worker\+NPC\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of the Worker NPC. 
+
+\mbox{\Hypertarget{classWorkerNPC_aee8f3391ee54afe43e0673890b80f454}\label{classWorkerNPC_aee8f3391ee54afe43e0673890b80f454}} 
+\index{WorkerNPC@{WorkerNPC}!strategy@{strategy}}
+\index{strategy@{strategy}!WorkerNPC@{WorkerNPC}}
+\doxysubsubsection{\texorpdfstring{strategy}{strategy}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classCollectionStrategy}{Collection\+Strategy}}$>$ Worker\+NPC\+::strategy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Strategy for resource collection. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NPCSystem_8h}{NPCSystem.\+h}}\end{DoxyCompactItemize}

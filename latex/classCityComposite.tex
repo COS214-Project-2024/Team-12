@@ -1,0 +1,310 @@
+\hypertarget{classCityComposite}{}\doxysection{City\+Composite Class Reference}
+\label{classCityComposite}\index{CityComposite@{CityComposite}}
+
+
+A composite class representing the entire city and containing multiple zones.  
+
+
+
+
+{\ttfamily \#include $<$City\+Composite.\+h$>$}
+
+
+
+Inheritance diagram for City\+Composite\+:
+% FIG 0
+
+
+Collaboration diagram for City\+Composite\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCityComposite_aaca3dfc1299fdeb1230ff4f612a547ec}{City\+Composite}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classCityComposite}{City\+Composite}} with the given name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCityComposite_a2c22af17973d351e02a703d43b8f6db1}{$\sim$\+City\+Composite}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classCityComposite}{City\+Composite}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComposite_af4002bc47fa8f38a9747523ce6ac6f56}{add}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ component) override
+\begin{DoxyCompactList}\small\item\em Adds a city component (zone) to the composite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComposite_adcb5872d470fdd2a5397e11a927afab4}{remove}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ component) override
+\begin{DoxyCompactList}\small\item\em Removes a city component (zone) from the composite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComposite_a03cd415fe63acff9a0199eb06363818d}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the status of the city composite and all its zones. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCityComposite_a628f3f1cd10f5d405e80f909cf11a903}{check\+City\+Conditions}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the city meets certain conditions. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCityComposite_aef17e4cbc0da086507b44658453967d1}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of building as a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComposite_a5e1f7555a5aa2ac4efbfb83f42dfebc4}{accept}} (\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$tax) override
+\begin{DoxyCompactList}\small\item\em Accepts a tax collector visitor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComposite_a1245ddc4fc2e054ae893d8ea46c1fbc4}{connect\+Zones}} (\mbox{\hyperlink{classCityComponent}{City\+Component}} $\ast$zoneA, \mbox{\hyperlink{classCityComponent}{City\+Component}} $\ast$zoneB, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ transport)
+\begin{DoxyCompactList}\small\item\em Connects two zones with a specified transport method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComposite_ae3eb3b1ea611b29194c58d7d69994cf7}{update\+Happiness\+For\+New\+Component}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \&component)
+\begin{DoxyCompactList}\small\item\em Updates the city’s happiness level based on the addition of a new component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityComposite_ad80dca22cc5acb873c8f99148a9fc5ea}{adjust\+Happiness\+Based\+On\+Tax\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Adjusts the city\textquotesingle{}s happiness level based on the current tax rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ $>$ \mbox{\hyperlink{classCityComposite_a6ba3727944fcd1686d72bd4b367b6856}{zones}}
+\item 
+std\+::string \mbox{\hyperlink{classCityComposite_ae8b710285f100a9d8fdb2d2804de174d}{city\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A composite class representing the entire city and containing multiple zones. 
+
+This class allows the addition and removal of zones (other City\+Components) and manages high-\/level attributes like city name, connections between zones, and the happiness level. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCityComposite_aaca3dfc1299fdeb1230ff4f612a547ec}\label{classCityComposite_aaca3dfc1299fdeb1230ff4f612a547ec}} 
+\index{CityComposite@{CityComposite}!CityComposite@{CityComposite}}
+\index{CityComposite@{CityComposite}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{CityComposite()}{CityComposite()}}
+{\footnotesize\ttfamily City\+Composite\+::\+City\+Composite (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{classCityComposite}{City\+Composite}} with the given name. 
+
+Constructs a \mbox{\hyperlink{classCityComposite}{City\+Composite}} object with a given name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the city. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCityComposite_a2c22af17973d351e02a703d43b8f6db1}\label{classCityComposite_a2c22af17973d351e02a703d43b8f6db1}} 
+\index{CityComposite@{CityComposite}!````~CityComposite@{$\sim$CityComposite}}
+\index{````~CityComposite@{$\sim$CityComposite}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{$\sim$CityComposite()}{~CityComposite()}}
+{\footnotesize\ttfamily City\+Composite\+::$\sim$\+City\+Composite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classCityComposite}{City\+Composite}}. 
+
+Cleans up resources allocated for the city composite, including its zones.
+
+Clears all zones managed by the composite. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCityComposite_a5e1f7555a5aa2ac4efbfb83f42dfebc4}\label{classCityComposite_a5e1f7555a5aa2ac4efbfb83f42dfebc4}} 
+\index{CityComposite@{CityComposite}!accept@{accept}}
+\index{accept@{accept}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void City\+Composite\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$}]{tax }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accepts a tax collector visitor. 
+
+Currently, this function does not perform any actions. The function is part of the Visitor pattern to allow tax collectors to visit city zones and collect taxes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tax} & A pointer to a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} object. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}{City\+Component}}.
+
+\mbox{\Hypertarget{classCityComposite_af4002bc47fa8f38a9747523ce6ac6f56}\label{classCityComposite_af4002bc47fa8f38a9747523ce6ac6f56}} 
+\index{CityComposite@{CityComposite}!add@{add}}
+\index{add@{add}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void City\+Composite\+::add (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds a city component (zone) to the composite. 
+
+Adds a city component (zone) to the city.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & A shared pointer to the \mbox{\hyperlink{classCityComponent}{City\+Component}} to add.\\
+\hline
+\end{DoxyParams}
+This function also updates the happiness for the new component if the city already has a population.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & A shared pointer to the \mbox{\hyperlink{classCityComponent}{City\+Component}} to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classCityComponent_ad3ca8bd75f083095089b658efaf0c863}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classCityComposite_ad80dca22cc5acb873c8f99148a9fc5ea}\label{classCityComposite_ad80dca22cc5acb873c8f99148a9fc5ea}} 
+\index{CityComposite@{CityComposite}!adjustHappinessBasedOnTaxRate@{adjustHappinessBasedOnTaxRate}}
+\index{adjustHappinessBasedOnTaxRate@{adjustHappinessBasedOnTaxRate}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{adjustHappinessBasedOnTaxRate()}{adjustHappinessBasedOnTaxRate()}}
+{\footnotesize\ttfamily void City\+Composite\+::adjust\+Happiness\+Based\+On\+Tax\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Adjusts the city\textquotesingle{}s happiness level based on the current tax rate. 
+
+This function recalculates happiness based on tax policies affecting citizens and zones.
+
+This function applies a happiness adjustment to NPCs in response to the income tax rate. Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classCityComposite_a628f3f1cd10f5d405e80f909cf11a903}\label{classCityComposite_a628f3f1cd10f5d405e80f909cf11a903}} 
+\index{CityComposite@{CityComposite}!checkCityConditions@{checkCityConditions}}
+\index{checkCityConditions@{checkCityConditions}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{checkCityConditions()}{checkCityConditions()}}
+{\footnotesize\ttfamily bool City\+Composite\+::check\+City\+Conditions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the city meets certain conditions. 
+
+Checks if the city meets specific conditions based on building counts.
+
+This function evaluates specific conditions for city management. The conditions and their checks are implemented within the function.
+
+\begin{DoxyReturn}{Returns}
+true if conditions are met; otherwise, false.
+\end{DoxyReturn}
+This function evaluates conditions based on the number of public service, residential, and utility buildings, and sets population growth if conditions are met.
+
+\begin{DoxyReturn}{Returns}
+true if the city conditions are met; false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classCityComposite_a1245ddc4fc2e054ae893d8ea46c1fbc4}\label{classCityComposite_a1245ddc4fc2e054ae893d8ea46c1fbc4}} 
+\index{CityComposite@{CityComposite}!connectZones@{connectZones}}
+\index{connectZones@{connectZones}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{connectZones()}{connectZones()}}
+{\footnotesize\ttfamily void City\+Composite\+::connect\+Zones (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityComponent}{City\+Component}} $\ast$}]{zoneA,  }\item[{\mbox{\hyperlink{classCityComponent}{City\+Component}} $\ast$}]{zoneB,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$}]{transport }\end{DoxyParamCaption})}
+
+
+
+Connects two zones with a specified transport method. 
+
+Establishes a connection between two city zones using the given transport object, representing roads, railways, etc.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zoneA} & A pointer to the first zone. \\
+\hline
+{\em zoneB} & A pointer to the second zone. \\
+\hline
+{\em transport} & A unique pointer to the \mbox{\hyperlink{classTransport}{Transport}} object representing the connection. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCityComposite_a03cd415fe63acff9a0199eb06363818d}\label{classCityComposite_a03cd415fe63acff9a0199eb06363818d}} 
+\index{CityComposite@{CityComposite}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void City\+Composite\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the status of the city composite and all its zones. 
+
+Displays the status of the city and its zones.
+
+This function iterates over all zones and displays their status information.
+
+This function prints the city name, iterates through each zone to display their status, and displays government statistics. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classCityComposite_aef17e4cbc0da086507b44658453967d1}\label{classCityComposite_aef17e4cbc0da086507b44658453967d1}} 
+\index{CityComposite@{CityComposite}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string City\+Composite\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of building as a string. 
+
+\begin{DoxyReturn}{Returns}
+A string indicating this component is a \char`\"{}\+City\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+\mbox{\Hypertarget{classCityComposite_adcb5872d470fdd2a5397e11a927afab4}\label{classCityComposite_adcb5872d470fdd2a5397e11a927afab4}} 
+\index{CityComposite@{CityComposite}!remove@{remove}}
+\index{remove@{remove}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void City\+Composite\+::remove (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes a city component (zone) from the composite. 
+
+Removes a city component (zone) from the city.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & A shared pointer to the \mbox{\hyperlink{classCityComponent}{City\+Component}} to remove.\\
+\hline
+{\em component} & A shared pointer to the \mbox{\hyperlink{classCityComponent}{City\+Component}} to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classCityComponent_a0ab80333e03ea72cedcd70e5045a6831}{City\+Component}}.
+
+\mbox{\Hypertarget{classCityComposite_ae3eb3b1ea611b29194c58d7d69994cf7}\label{classCityComposite_ae3eb3b1ea611b29194c58d7d69994cf7}} 
+\index{CityComposite@{CityComposite}!updateHappinessForNewComponent@{updateHappinessForNewComponent}}
+\index{updateHappinessForNewComponent@{updateHappinessForNewComponent}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{updateHappinessForNewComponent()}{updateHappinessForNewComponent()}}
+{\footnotesize\ttfamily void City\+Composite\+::update\+Happiness\+For\+New\+Component (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \&}]{component }\end{DoxyParamCaption})}
+
+
+
+Updates the city’s happiness level based on the addition of a new component. 
+
+This function modifies happiness levels to reflect the influence of newly added components, such as new residential or utility zones.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & A shared pointer to the new \mbox{\hyperlink{classCityComponent}{City\+Component}} being added.\\
+\hline
+\end{DoxyParams}
+This function calculates the impact of a new component on happiness based on its type. It may also adjust employment rates and pollution levels for specific building types.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & A shared pointer to the \mbox{\hyperlink{classCityComponent}{City\+Component}} being added. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCityComposite_ae8b710285f100a9d8fdb2d2804de174d}\label{classCityComposite_ae8b710285f100a9d8fdb2d2804de174d}} 
+\index{CityComposite@{CityComposite}!cityName@{cityName}}
+\index{cityName@{cityName}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{cityName}{cityName}}
+{\footnotesize\ttfamily std\+::string City\+Composite\+::city\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+Name of the city \mbox{\Hypertarget{classCityComposite_a6ba3727944fcd1686d72bd4b367b6856}\label{classCityComposite_a6ba3727944fcd1686d72bd4b367b6856}} 
+\index{CityComposite@{CityComposite}!zones@{zones}}
+\index{zones@{zones}!CityComposite@{CityComposite}}
+\doxysubsubsection{\texorpdfstring{zones}{zones}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classCityComponent}{City\+Component}}$>$ $>$ City\+Composite\+::zones\hspace{0.3cm}{\ttfamily [private]}}
+
+Collection of city zones 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CityComposite_8h}{City\+Composite.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CityComposite_8cpp}{City\+Composite.\+cpp}}\end{DoxyCompactItemize}

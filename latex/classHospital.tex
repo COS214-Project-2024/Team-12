@@ -1,0 +1,242 @@
+\hypertarget{classHospital}{}\doxysection{Hospital Class Reference}
+\label{classHospital}\index{Hospital@{Hospital}}
+
+
+Represents a hospital that provides medical services to citizens.  
+
+
+
+
+{\ttfamily \#include $<$Hospital.\+h$>$}
+
+
+
+Inheritance diagram for Hospital\+:
+% FIG 0
+
+
+Collaboration diagram for Hospital\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHospital_ae76395fdb36d01f526cb962a13784fbd}{Hospital}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHospital_ae982fe1d8c9e2ed9c6267b25831c135b}{Hospital}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classHospital_a6d173d1c9fb57bfc44452614e3e4c674}{water}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classHospital_a2d3a12b1bd4c21a271f565c5fa653925}{electricity}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classHospital_acd1d475c5c4cee87624064735cfc97f3}{waste\+Management}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classHospital_ac45308ffcc318484467b73077a942d9d}{sewage}}, std\+::string building\+Status)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for initializing the hospital. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHospital_a84cb4bda59e0221cb85c27514f2c1454}{$\sim$\+Hospital}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHospital_a805abbea211fa129100f5197eb02e5bf}{provide\+Service}} () override
+\begin{DoxyCompactList}\small\item\em Provides medical services to citizens. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ \mbox{\hyperlink{classHospital_a0a3dd590bec90b6239e32d8af00e681f}{clone}} () const
+\begin{DoxyCompactList}\small\item\em Clones the current \mbox{\hyperlink{classHospital}{Hospital}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHospital_a0b8b738415eb260c8378ca542c8ffdf0}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the current status of the hospital. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classHospital_acb2560c2c2273362e7c0b9c414b53173}{get\+Display\+Symbol}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the display symbol for the hospital. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHospital_ab3226433f8f3bc8a8c903dbfdb824397}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Gets the building type of the hospital. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classHospital_a6d173d1c9fb57bfc44452614e3e4c674}{water}}
+\begin{DoxyCompactList}\small\item\em Indicates if water supply is available. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHospital_a2d3a12b1bd4c21a271f565c5fa653925}{electricity}}
+\begin{DoxyCompactList}\small\item\em Indicates if electricity supply is available. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHospital_ac45308ffcc318484467b73077a942d9d}{sewage}}
+\begin{DoxyCompactList}\small\item\em Indicates if sewage system is connected. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHospital_acd1d475c5c4cee87624064735cfc97f3}{waste\+Management}}
+\begin{DoxyCompactList}\small\item\em Indicates if waste management is operational. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHospital_a8d3142e422bef579d15ef413631af109}{status}}
+\begin{DoxyCompactList}\small\item\em Current status of the hospital. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a hospital that provides medical services to citizens. 
+
+The \mbox{\hyperlink{classHospital}{Hospital}} class inherits from \mbox{\hyperlink{classPublicService}{Public\+Service}} and includes utilities for water, electricity, sewage, and waste management. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHospital_ae76395fdb36d01f526cb962a13784fbd}\label{classHospital_ae76395fdb36d01f526cb962a13784fbd}} 
+\index{Hospital@{Hospital}!Hospital@{Hospital}}
+\index{Hospital@{Hospital}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{Hospital()}{Hospital()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Hospital\+::\+Hospital (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classHospital_ae982fe1d8c9e2ed9c6267b25831c135b}\label{classHospital_ae982fe1d8c9e2ed9c6267b25831c135b}} 
+\index{Hospital@{Hospital}!Hospital@{Hospital}}
+\index{Hospital@{Hospital}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{Hospital()}{Hospital()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Hospital\+::\+Hospital (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{electricity,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste\+Management,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage,  }\item[{std\+::string}]{building\+Status }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for initializing the hospital. 
+
+Constructs a \mbox{\hyperlink{classHospital}{Hospital}} object with specified utilities and status.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & A shared pointer to the water utility. \\
+\hline
+{\em electricity} & A shared pointer to the electricity utility. \\
+\hline
+{\em waste\+Management} & A shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage utility. \\
+\hline
+{\em building\+Status} & The status of the hospital. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHospital_a84cb4bda59e0221cb85c27514f2c1454}\label{classHospital_a84cb4bda59e0221cb85c27514f2c1454}} 
+\index{Hospital@{Hospital}!````~Hospital@{$\sim$Hospital}}
+\index{````~Hospital@{$\sim$Hospital}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{$\sim$Hospital()}{~Hospital()}}
+{\footnotesize\ttfamily Hospital\+::$\sim$\+Hospital (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHospital_a0a3dd590bec90b6239e32d8af00e681f}\label{classHospital_a0a3dd590bec90b6239e32d8af00e681f}} 
+\index{Hospital@{Hospital}!clone@{clone}}
+\index{clone@{clone}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ Hospital\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Clones the current \mbox{\hyperlink{classHospital}{Hospital}} object. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a cloned \mbox{\hyperlink{classHospital}{Hospital}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHospital_a0b8b738415eb260c8378ca542c8ffdf0}\label{classHospital_a0b8b738415eb260c8378ca542c8ffdf0}} 
+\index{Hospital@{Hospital}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Hospital\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the current status of the hospital. 
+
+Displays the current status of the hospital, including utility connections. 
+
+Implements \mbox{\hyperlink{classPublicService_ad14d878606280cf2c180c5c84a241a35}{Public\+Service}}.
+
+\mbox{\Hypertarget{classHospital_ab3226433f8f3bc8a8c903dbfdb824397}\label{classHospital_ab3226433f8f3bc8a8c903dbfdb824397}} 
+\index{Hospital@{Hospital}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Hospital\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the building type of the hospital. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+\mbox{\Hypertarget{classHospital_acb2560c2c2273362e7c0b9c414b53173}\label{classHospital_acb2560c2c2273362e7c0b9c414b53173}} 
+\index{Hospital@{Hospital}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily char Hospital\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the display symbol for the hospital. 
+
+\begin{DoxyReturn}{Returns}
+The character symbol representing the hospital. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPublicService_a2341fa64a393890c3e563832f8007109}{Public\+Service}}.
+
+\mbox{\Hypertarget{classHospital_a805abbea211fa129100f5197eb02e5bf}\label{classHospital_a805abbea211fa129100f5197eb02e5bf}} 
+\index{Hospital@{Hospital}!provideService@{provideService}}
+\index{provideService@{provideService}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{provideService()}{provideService()}}
+{\footnotesize\ttfamily void Hospital\+::provide\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides medical services to citizens. 
+
+
+
+Implements \mbox{\hyperlink{classPublicService_a6598b39358e9b4ad849671b526f37e32}{Public\+Service}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classHospital_a2d3a12b1bd4c21a271f565c5fa653925}\label{classHospital_a2d3a12b1bd4c21a271f565c5fa653925}} 
+\index{Hospital@{Hospital}!electricity@{electricity}}
+\index{electricity@{electricity}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{electricity}{electricity}}
+{\footnotesize\ttfamily bool Hospital\+::electricity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indicates if electricity supply is available. 
+
+\mbox{\Hypertarget{classHospital_ac45308ffcc318484467b73077a942d9d}\label{classHospital_ac45308ffcc318484467b73077a942d9d}} 
+\index{Hospital@{Hospital}!sewage@{sewage}}
+\index{sewage@{sewage}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{sewage}{sewage}}
+{\footnotesize\ttfamily bool Hospital\+::sewage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indicates if sewage system is connected. 
+
+\mbox{\Hypertarget{classHospital_a8d3142e422bef579d15ef413631af109}\label{classHospital_a8d3142e422bef579d15ef413631af109}} 
+\index{Hospital@{Hospital}!status@{status}}
+\index{status@{status}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily std\+::string Hospital\+::status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current status of the hospital. 
+
+\mbox{\Hypertarget{classHospital_acd1d475c5c4cee87624064735cfc97f3}\label{classHospital_acd1d475c5c4cee87624064735cfc97f3}} 
+\index{Hospital@{Hospital}!wasteManagement@{wasteManagement}}
+\index{wasteManagement@{wasteManagement}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{wasteManagement}{wasteManagement}}
+{\footnotesize\ttfamily bool Hospital\+::waste\+Management\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indicates if waste management is operational. 
+
+\mbox{\Hypertarget{classHospital_a6d173d1c9fb57bfc44452614e3e4c674}\label{classHospital_a6d173d1c9fb57bfc44452614e3e4c674}} 
+\index{Hospital@{Hospital}!water@{water}}
+\index{water@{water}!Hospital@{Hospital}}
+\doxysubsubsection{\texorpdfstring{water}{water}}
+{\footnotesize\ttfamily bool Hospital\+::water\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indicates if water supply is available. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Hospital_8h}{Hospital.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Hospital_8cpp}{Hospital.\+cpp}}\end{DoxyCompactItemize}

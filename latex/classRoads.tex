@@ -1,0 +1,223 @@
+\hypertarget{classRoads}{}\doxysection{Roads Class Reference}
+\label{classRoads}\index{Roads@{Roads}}
+
+
+A concrete implementation of \mbox{\hyperlink{classTransport}{Transport}} representing various types of roads.  
+
+
+
+
+{\ttfamily \#include $<$Roads.\+h$>$}
+
+
+
+Inheritance diagram for Roads\+:
+% FIG 0
+
+
+Collaboration diagram for Roads\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ \mbox{\hyperlink{classRoads_ab0a4d46d0bf50da8bc685bc8664d6fc3}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Creates a clone of this \mbox{\hyperlink{classRoads}{Roads}} object. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classRoads_aaee9349c4c7f38ad16f2bd8167e32ef5}{get\+Speed}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the speed of the road. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classRoads_ab8ec9f807a8a9487795c9e3f20a3272e}{get\+Cost}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the construction cost of the road. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classRoads_ad70817c480db99327914a87cc4ab928c}{get\+Maintainance\+Cost}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the maintenance cost of the road. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classRoads_a683b9658a5b9943a0f862818091a6e0e}{get\+Capacity}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the traffic capacity of the road. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRoads_a41b6a5e283c6cfec905332d2fc3f3fac}{get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the type of road as a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRoads_ada76cde169b256102321acac92231acf}{Roads}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classRoads}{Roads}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRoads_a57d8dae9a4d09eca283e3c915649d7d9}{$\sim$\+Roads}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classRoads}{Roads}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classRoads_ab759bf93dd63bc4d3cdb146022cf745e}{traffic\+Capacity}}
+\item 
+\mbox{\hyperlink{Roads_8h_aa989476566d1adf49e7b8302469e3519}{road\+Type}} \mbox{\hyperlink{classRoads_a93af7f7f3903feab4ebcd1d3e931f311}{road}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of \mbox{\hyperlink{classTransport}{Transport}} representing various types of roads. 
+
+The \mbox{\hyperlink{classRoads}{Roads}} class provides specific implementations for road-\/related attributes like traffic capacity and road type. It implements the \mbox{\hyperlink{classTransport}{Transport}} interface. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRoads_ada76cde169b256102321acac92231acf}\label{classRoads_ada76cde169b256102321acac92231acf}} 
+\index{Roads@{Roads}!Roads@{Roads}}
+\index{Roads@{Roads}!Roads@{Roads}}
+\doxysubsubsection{\texorpdfstring{Roads()}{Roads()}}
+{\footnotesize\ttfamily Roads\+::\+Roads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classRoads}{Roads}}. 
+
+\mbox{\Hypertarget{classRoads_a57d8dae9a4d09eca283e3c915649d7d9}\label{classRoads_a57d8dae9a4d09eca283e3c915649d7d9}} 
+\index{Roads@{Roads}!````~Roads@{$\sim$Roads}}
+\index{````~Roads@{$\sim$Roads}!Roads@{Roads}}
+\doxysubsubsection{\texorpdfstring{$\sim$Roads()}{~Roads()}}
+{\footnotesize\ttfamily Roads\+::$\sim$\+Roads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for \mbox{\hyperlink{classRoads}{Roads}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRoads_ab0a4d46d0bf50da8bc685bc8664d6fc3}\label{classRoads_ab0a4d46d0bf50da8bc685bc8664d6fc3}} 
+\index{Roads@{Roads}!clone@{clone}}
+\index{clone@{clone}!Roads@{Roads}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ Roads\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a clone of this \mbox{\hyperlink{classRoads}{Roads}} object. 
+
+Clones the current \mbox{\hyperlink{classRoads}{Roads}} object, creating a new instance with the same properties.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Transport$>$ A unique pointer to a cloned \mbox{\hyperlink{classRoads}{Roads}} object.
+
+std\+::unique\+\_\+ptr$<$\+Transport$>$ A unique pointer to the cloned \mbox{\hyperlink{classRoads}{Roads}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_aa755da6fbe3b8a100a5e7c47be02b915}{Transport}}.
+
+\mbox{\Hypertarget{classRoads_a683b9658a5b9943a0f862818091a6e0e}\label{classRoads_a683b9658a5b9943a0f862818091a6e0e}} 
+\index{Roads@{Roads}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Roads@{Roads}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily double Roads\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the traffic capacity of the road. 
+
+Retrieves the capacity of the road.
+
+\begin{DoxyReturn}{Returns}
+double Capacity of the road.
+
+double The traffic capacity of the road. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_a798643c78ec7196d422545b9386746d2}{Transport}}.
+
+\mbox{\Hypertarget{classRoads_ab8ec9f807a8a9487795c9e3f20a3272e}\label{classRoads_ab8ec9f807a8a9487795c9e3f20a3272e}} 
+\index{Roads@{Roads}!getCost@{getCost}}
+\index{getCost@{getCost}!Roads@{Roads}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily double Roads\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the construction cost of the road. 
+
+Retrieves the construction cost of the road.
+
+\begin{DoxyReturn}{Returns}
+double Cost value for the road.
+
+double The construction cost of the road. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_ad7c413b9f0d60e109cfee5784c1abde3}{Transport}}.
+
+\mbox{\Hypertarget{classRoads_ad70817c480db99327914a87cc4ab928c}\label{classRoads_ad70817c480db99327914a87cc4ab928c}} 
+\index{Roads@{Roads}!getMaintainanceCost@{getMaintainanceCost}}
+\index{getMaintainanceCost@{getMaintainanceCost}!Roads@{Roads}}
+\doxysubsubsection{\texorpdfstring{getMaintainanceCost()}{getMaintainanceCost()}}
+{\footnotesize\ttfamily double Roads\+::get\+Maintainance\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the maintenance cost of the road. 
+
+Retrieves the maintenance cost of the road.
+
+\begin{DoxyReturn}{Returns}
+double Maintenance cost for the road.
+
+double The maintenance cost of the road. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_aa4f060e3af93a70d7305b066a49937c6}{Transport}}.
+
+\mbox{\Hypertarget{classRoads_aaee9349c4c7f38ad16f2bd8167e32ef5}\label{classRoads_aaee9349c4c7f38ad16f2bd8167e32ef5}} 
+\index{Roads@{Roads}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!Roads@{Roads}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily double Roads\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the speed of the road. 
+
+Retrieves the speed limit of the road.
+
+\begin{DoxyReturn}{Returns}
+double Speed value for the road.
+
+double The speed limit on the road. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_a04f8f0c3c89b6c8ac1677b87b914015d}{Transport}}.
+
+\mbox{\Hypertarget{classRoads_a41b6a5e283c6cfec905332d2fc3f3fac}\label{classRoads_a41b6a5e283c6cfec905332d2fc3f3fac}} 
+\index{Roads@{Roads}!getType@{getType}}
+\index{getType@{getType}!Roads@{Roads}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily std\+::string Roads\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of road as a string. 
+
+Retrieves the type of this transport as a string.
+
+\begin{DoxyReturn}{Returns}
+std\+::string Road type description.
+
+std\+::string The string \char`\"{}\+Road\char`\"{} representing this transport type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTransport_a003be8d6e11a974895559269fb37065d}{Transport}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRoads_a93af7f7f3903feab4ebcd1d3e931f311}\label{classRoads_a93af7f7f3903feab4ebcd1d3e931f311}} 
+\index{Roads@{Roads}!road@{road}}
+\index{road@{road}!Roads@{Roads}}
+\doxysubsubsection{\texorpdfstring{road}{road}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Roads_8h_aa989476566d1adf49e7b8302469e3519}{road\+Type}} Roads\+::road\hspace{0.3cm}{\ttfamily [private]}}
+
+Type of the road, defined by road\+Type enum. \mbox{\Hypertarget{classRoads_ab759bf93dd63bc4d3cdb146022cf745e}\label{classRoads_ab759bf93dd63bc4d3cdb146022cf745e}} 
+\index{Roads@{Roads}!trafficCapacity@{trafficCapacity}}
+\index{trafficCapacity@{trafficCapacity}!Roads@{Roads}}
+\doxysubsubsection{\texorpdfstring{trafficCapacity}{trafficCapacity}}
+{\footnotesize\ttfamily int Roads\+::traffic\+Capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+Traffic capacity of the road. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Roads_8h}{Roads.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Roads_8cpp}{Roads.\+cpp}}\end{DoxyCompactItemize}

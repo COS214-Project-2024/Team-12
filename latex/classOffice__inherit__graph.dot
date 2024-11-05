@@ -1,0 +1,11 @@
+digraph "Office"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Office\n||+ Office()\l+ Office()\l+ getDisplaySymbol()\l+ getBuildingType()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Represents an office building, a type of commercial building with utility connections."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{CommercialBuilding\n|# price\l# taxPaid\l# waterSupply\l# powerSupply\l# wasteManagement\l# sewageManagement\l|+ CommercialBuilding()\l+ accept()\l+ setTaxPaid()\l+ getPrice()\l+ isTaxPaid()\l+ getBuildingType()\l+ displayStatus()\l+ getDisplaySymbol()\l+ getUtilityCoverage()\l+ setWaterSupply()\l+ setPowerSupply()\l+ setWasteManagement()\l+ setSewageManagement()\l+ getDisplayColor()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommercialBuilding.html",tooltip="Represents a commercial building in the city, capable of interacting with utilities and tax collectio..."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{CityComponent\n|- observers\l- location\l|+ add()\l+ remove()\l+ displayStatus()\l+ ~CityComponent()\l+ addNpc()\l+ removeNpc()\l+ notify()\l+ getBuildingType()\l+ accept()\l+ setLocation()\l+ setLocation()\l+ getLocation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html",tooltip="Abstract base class representing a component of a city."];
+}

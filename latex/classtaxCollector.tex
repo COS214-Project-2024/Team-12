@@ -1,0 +1,147 @@
+\hypertarget{classtaxCollector}{}\doxysection{tax\+Collector Class Reference}
+\label{classtaxCollector}\index{taxCollector@{taxCollector}}
+
+
+Abstract class representing a tax collector that visits various building types to collect taxes.  
+
+
+
+
+{\ttfamily \#include $<$tax\+Collector.\+h$>$}
+
+
+
+Inheritance diagram for tax\+Collector\+:
+% FIG 0
+
+
+Collaboration diagram for tax\+Collector\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtaxCollector_a30624098eb9feed2eab8044d0fd789bf}{tax\+Collector}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtaxCollector_a944a5dc525f606f444f5a9d967124d32}{$\sim$tax\+Collector}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtaxCollector_aa98f1c2919031e6e4e1b9e3eb8e9ae1c}{visit}} (\mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $\ast$RB)=0
+\begin{DoxyCompactList}\small\item\em Visit a residential building to collect taxes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtaxCollector_a7f8104ebb0284407879ff5aca4140abd}{visit}} (\mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $\ast$CB)=0
+\begin{DoxyCompactList}\small\item\em Visit a commercial building to collect taxes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtaxCollector_a6f24c000ec7c95546c4c91d492af4fb2}{visit}} (\mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $\ast$Rzone)=0
+\begin{DoxyCompactList}\small\item\em Visit a residential zone composite to collect taxes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGovernment}{Government}} \& \mbox{\hyperlink{classtaxCollector_ac7f3666d4621293e5894bff6a7486d3c}{get\+Government}} ()
+\begin{DoxyCompactList}\small\item\em Provides access to the {\ttfamily \mbox{\hyperlink{classGovernment}{Government}}} singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class representing a tax collector that visits various building types to collect taxes. 
+
+The {\ttfamily \mbox{\hyperlink{classtaxCollector}{tax\+Collector}}} class defines an interface for visiting different types of buildings and zones in the city to collect taxes. Each specific type of building or zone has its own {\ttfamily visit} method. The class also provides access to the {\ttfamily \mbox{\hyperlink{classGovernment}{Government}}} singleton, which allows interaction with central government functions or resources. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtaxCollector_a30624098eb9feed2eab8044d0fd789bf}\label{classtaxCollector_a30624098eb9feed2eab8044d0fd789bf}} 
+\index{taxCollector@{taxCollector}!taxCollector@{taxCollector}}
+\index{taxCollector@{taxCollector}!taxCollector@{taxCollector}}
+\doxysubsubsection{\texorpdfstring{taxCollector()}{taxCollector()}}
+{\footnotesize\ttfamily tax\+Collector\+::tax\+Collector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+Initializes the \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} without needing to store a pointer to the {\ttfamily \mbox{\hyperlink{classGovernment}{Government}}} instance. \mbox{\Hypertarget{classtaxCollector_a944a5dc525f606f444f5a9d967124d32}\label{classtaxCollector_a944a5dc525f606f444f5a9d967124d32}} 
+\index{taxCollector@{taxCollector}!````~taxCollector@{$\sim$taxCollector}}
+\index{````~taxCollector@{$\sim$taxCollector}!taxCollector@{taxCollector}}
+\doxysubsubsection{\texorpdfstring{$\sim$taxCollector()}{~taxCollector()}}
+{\footnotesize\ttfamily virtual tax\+Collector\+::$\sim$tax\+Collector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Allows derived classes to clean up resources properly. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtaxCollector_ac7f3666d4621293e5894bff6a7486d3c}\label{classtaxCollector_ac7f3666d4621293e5894bff6a7486d3c}} 
+\index{taxCollector@{taxCollector}!getGovernment@{getGovernment}}
+\index{getGovernment@{getGovernment}!taxCollector@{taxCollector}}
+\doxysubsubsection{\texorpdfstring{getGovernment()}{getGovernment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGovernment}{Government}}\& tax\+Collector\+::get\+Government (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Provides access to the {\ttfamily \mbox{\hyperlink{classGovernment}{Government}}} singleton instance. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the {\ttfamily \mbox{\hyperlink{classGovernment}{Government}}} singleton. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classtaxCollector_a7f8104ebb0284407879ff5aca4140abd}\label{classtaxCollector_a7f8104ebb0284407879ff5aca4140abd}} 
+\index{taxCollector@{taxCollector}!visit@{visit}}
+\index{visit@{visit}!taxCollector@{taxCollector}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void tax\+Collector\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $\ast$}]{CB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Visit a commercial building to collect taxes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CB} & A pointer to the commercial building. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classConcreteTaxCollector_aad0ef53e248f7316be1bc248446ab01f}{Concrete\+Tax\+Collector}}.
+
+\mbox{\Hypertarget{classtaxCollector_aa98f1c2919031e6e4e1b9e3eb8e9ae1c}\label{classtaxCollector_aa98f1c2919031e6e4e1b9e3eb8e9ae1c}} 
+\index{taxCollector@{taxCollector}!visit@{visit}}
+\index{visit@{visit}!taxCollector@{taxCollector}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void tax\+Collector\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $\ast$}]{RB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Visit a residential building to collect taxes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em RB} & A pointer to the residential building. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classConcreteTaxCollector_aff35926ad68639e9190cc2f5d4bdf54e}{Concrete\+Tax\+Collector}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classtaxCollector_a6f24c000ec7c95546c4c91d492af4fb2}\label{classtaxCollector_a6f24c000ec7c95546c4c91d492af4fb2}} 
+\index{taxCollector@{taxCollector}!visit@{visit}}
+\index{visit@{visit}!taxCollector@{taxCollector}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void tax\+Collector\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $\ast$}]{Rzone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Visit a residential zone composite to collect taxes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Rzone} & A pointer to the residential zone composite. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classConcreteTaxCollector_a1781cb789ce841223f98bea3ccf769ac}{Concrete\+Tax\+Collector}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{taxCollector_8h}{tax\+Collector.\+h}}\end{DoxyCompactItemize}

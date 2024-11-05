@@ -1,0 +1,16 @@
+digraph "NPCManager::EmployeedNpcs"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="NPCManager::EmployeedNpcs",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Calculates employment levels based on the dominant state."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="NPCManager::getHighestState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#a3d9ca8170cdadc9a47b78893c6383e1c",tooltip="Determines the state with the highest count."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Government::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a18e3da6a1d6cae38f6eea1d50fe77288",tooltip="Retrieves the singleton instance of the Government class."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="NPCManager::getTotalNPCs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#a40647dd39fc3e38634f97bb1e93cd282",tooltip="Gets the total number of NPCs across all states."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Government::increaseEmploymentRate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a37a62c0a07cabbff4f38fbdecc1a8b16",tooltip="Increases the employment rate by a specified amount."];
+}

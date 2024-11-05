@@ -1,0 +1,14 @@
+digraph "NPCManager::getCrimeRate"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="NPCManager::getCrimeRate",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Updates and retrieves the crime rate based on NPC counts."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Government::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a18e3da6a1d6cae38f6eea1d50fe77288",tooltip="Retrieves the singleton instance of the Government class."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="NPCManager::getTotalNPCs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#a40647dd39fc3e38634f97bb1e93cd282",tooltip="Gets the total number of NPCs across all states."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Government::setCrimeRate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a17eebb288e9dfeba9aefea2a134dc85d",tooltip="Sets the crime rate."];
+}

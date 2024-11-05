@@ -1,0 +1,109 @@
+\hypertarget{classWood}{}\doxysection{Wood Class Reference}
+\label{classWood}\index{Wood@{Wood}}
+
+
+Represents a construction resource product of type \mbox{\hyperlink{classWood}{Wood}}.  
+
+
+
+
+{\ttfamily \#include $<$Wood.\+h$>$}
+
+
+
+Inheritance diagram for Wood\+:
+% FIG 0
+
+
+Collaboration diagram for Wood\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWood_a3ba93892ae8374a81e742c1eea55c8e4}{Wood}} (int \mbox{\hyperlink{classConstructionResourceProduct_aa474a41014b41340b5fdf1d6c0901108}{quantity}}, int \mbox{\hyperlink{classConstructionResourceProduct_ad858e22527c4b10a3a83145049745253}{unit\+Cost}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classWood}{Wood}} object with specified quantity and unit cost. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWood_aecfa3bde0418c77b2535b0347506b800}{$\sim$\+Wood}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classWood}{Wood}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWood_ab79555e198afba0bec85c8ea06715675}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the current status of the wood resource. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWood_afc96ce68472360825f0f6d1021e14255}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Gets the building type associated with this resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a construction resource product of type \mbox{\hyperlink{classWood}{Wood}}. 
+
+The \mbox{\hyperlink{classWood}{Wood}} class inherits from \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} and provides specific functionality for handling wood resources, including displaying its status and identifying its type. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWood_a3ba93892ae8374a81e742c1eea55c8e4}\label{classWood_a3ba93892ae8374a81e742c1eea55c8e4}} 
+\index{Wood@{Wood}!Wood@{Wood}}
+\index{Wood@{Wood}!Wood@{Wood}}
+\doxysubsubsection{\texorpdfstring{Wood()}{Wood()}}
+{\footnotesize\ttfamily Wood\+::\+Wood (\begin{DoxyParamCaption}\item[{int}]{quantity,  }\item[{int}]{unit\+Cost }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classWood}{Wood}} object with specified quantity and unit cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The quantity of wood. \\
+\hline
+{\em unit\+Cost} & The unit cost of the wood. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWood_aecfa3bde0418c77b2535b0347506b800}\label{classWood_aecfa3bde0418c77b2535b0347506b800}} 
+\index{Wood@{Wood}!````~Wood@{$\sim$Wood}}
+\index{````~Wood@{$\sim$Wood}!Wood@{Wood}}
+\doxysubsubsection{\texorpdfstring{$\sim$Wood()}{~Wood()}}
+{\footnotesize\ttfamily Wood\+::$\sim$\+Wood (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classWood}{Wood}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWood_ab79555e198afba0bec85c8ea06715675}\label{classWood_ab79555e198afba0bec85c8ea06715675}} 
+\index{Wood@{Wood}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Wood@{Wood}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Wood\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the current status of the wood resource. 
+
+Overrides the display\+Status method to provide wood-\/specific status details.
+
+Provides specific information for wood, including quantity, unit cost, and total cost. 
+
+Reimplemented from \mbox{\hyperlink{classConstructionResourceProduct_a86159081d7b03a975af6d0506c41f9e7}{Construction\+Resource\+Product}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classWood_afc96ce68472360825f0f6d1021e14255}\label{classWood_afc96ce68472360825f0f6d1021e14255}} 
+\index{Wood@{Wood}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Wood@{Wood}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Wood\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the building type associated with this resource. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type, in this case, \char`\"{}\+Wood\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Wood_8h}{Wood.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Wood_8cpp}{Wood.\+cpp}}\end{DoxyCompactItemize}

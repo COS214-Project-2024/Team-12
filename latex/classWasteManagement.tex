@@ -1,0 +1,165 @@
+\hypertarget{classWasteManagement}{}\doxysection{Waste\+Management Class Reference}
+\label{classWasteManagement}\index{WasteManagement@{WasteManagement}}
+
+
+\mbox{\hyperlink{classConcrete}{Concrete}} class for managing waste utility in the city.  
+
+
+
+
+{\ttfamily \#include $<$Waste\+Management.\+h$>$}
+
+
+
+Inheritance diagram for Waste\+Management\+:
+% FIG 0
+
+
+Collaboration diagram for Waste\+Management\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWasteManagement_a8fe7cc0ad7b4ff564ac5a3333ff03a80}{Waste\+Management}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classWasteManagement}{Waste\+Management}}, initializing with preset values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWasteManagement_aa0cf5ebcfb7eabf8441995dfa41716a9}{Waste\+Management}} (const std\+::string \&n, double c, int cap, double radius, bool operational, int l, int consumption, const std\+::map$<$ std\+::string, int $>$ \&resources)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for \mbox{\hyperlink{classWasteManagement}{Waste\+Management}}, allowing customization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWasteManagement_a697126a06c14690bae90048eaeb7b8e1}{connect}} (double distance)
+\begin{DoxyCompactList}\small\item\em Connects the waste management service to a city component within a specified distance. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classWasteManagement_aafe6f14c121e691ca2efe9ed10b06b84}{clone}} () const
+\begin{DoxyCompactList}\small\item\em Clones the \mbox{\hyperlink{classWasteManagement}{Waste\+Management}} object, creating a new instance with the same attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classConcrete}{Concrete}} class for managing waste utility in the city. 
+
+\mbox{\hyperlink{classWasteManagement}{Waste\+Management}} represents a specific utility that handles waste disposal and recycling operations. It can connect to components within a certain range and can be cloned to create new instances with the same attributes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWasteManagement_a8fe7cc0ad7b4ff564ac5a3333ff03a80}\label{classWasteManagement_a8fe7cc0ad7b4ff564ac5a3333ff03a80}} 
+\index{WasteManagement@{WasteManagement}!WasteManagement@{WasteManagement}}
+\index{WasteManagement@{WasteManagement}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{WasteManagement()}{WasteManagement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Waste\+Management\+::\+Waste\+Management (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classWasteManagement}{Waste\+Management}}, initializing with preset values. 
+
+Default constructor for \mbox{\hyperlink{classWasteManagement}{Waste\+Management}}.
+
+Sets values for name, cost, capacity, effect radius, operational status, level, consumption, and required resources such as recycling and disposal equipment.
+
+Initializes \mbox{\hyperlink{classWasteManagement}{Waste\+Management}} with default values such as name, cost, capacity, radius, operational status, level, resource consumption, and required resources. \mbox{\Hypertarget{classWasteManagement_aa0cf5ebcfb7eabf8441995dfa41716a9}\label{classWasteManagement_aa0cf5ebcfb7eabf8441995dfa41716a9}} 
+\index{WasteManagement@{WasteManagement}!WasteManagement@{WasteManagement}}
+\index{WasteManagement@{WasteManagement}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{WasteManagement()}{WasteManagement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Waste\+Management\+::\+Waste\+Management (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{n,  }\item[{double}]{c,  }\item[{int}]{cap,  }\item[{double}]{radius,  }\item[{bool}]{operational,  }\item[{int}]{l,  }\item[{int}]{consumption,  }\item[{const std\+::map$<$ std\+::string, int $>$ \&}]{resources }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for \mbox{\hyperlink{classWasteManagement}{Waste\+Management}}, allowing customization. 
+
+Parameterized constructor for \mbox{\hyperlink{classWasteManagement}{Waste\+Management}}.
+
+Allows specifying attributes such as the name, cost, capacity, effect radius, operational status, level, consumption rate, and required resources for the \mbox{\hyperlink{classWasteManagement}{Waste\+Management}} instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The name of the waste management facility. \\
+\hline
+{\em c} & The cost associated with waste management services. \\
+\hline
+{\em cap} & The capacity of the waste management facility. \\
+\hline
+{\em radius} & The effective radius within which waste management can operate. \\
+\hline
+{\em operational} & The operational status of the waste management service. \\
+\hline
+{\em l} & The level of the waste management service. \\
+\hline
+{\em consumption} & The resource consumption rate of the waste management service. \\
+\hline
+{\em resources} & A map of resources associated with the waste management facility.\\
+\hline
+{\em n} & The name of the utility. \\
+\hline
+{\em c} & The construction cost. \\
+\hline
+{\em cap} & The capacity, i.\+e., the number of buildings it can support. \\
+\hline
+{\em radius} & The effective radius of the utility. \\
+\hline
+{\em operational} & The operational status of the utility. \\
+\hline
+{\em l} & The level of the utility. \\
+\hline
+{\em consumption} & The resource consumption per cycle. \\
+\hline
+{\em resources} & The map of resources required for construction. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWasteManagement_aafe6f14c121e691ca2efe9ed10b06b84}\label{classWasteManagement_aafe6f14c121e691ca2efe9ed10b06b84}} 
+\index{WasteManagement@{WasteManagement}!clone@{clone}}
+\index{clone@{clone}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ Waste\+Management\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clones the \mbox{\hyperlink{classWasteManagement}{Waste\+Management}} object, creating a new instance with the same attributes. 
+
+Creates a clone of the \mbox{\hyperlink{classWasteManagement}{Waste\+Management}} utility.
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the cloned \mbox{\hyperlink{classWasteManagement}{Waste\+Management}} object.
+\end{DoxyReturn}
+Implements the Prototype pattern to return a new instance that is a copy of the current \mbox{\hyperlink{classWasteManagement}{Waste\+Management}} object.
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the cloned \mbox{\hyperlink{classWasteManagement}{Waste\+Management}} instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityFlyweight_aa85ec727b5273d2cdfa6e3c18a2ead81}{Utility\+Flyweight}}.
+
+\mbox{\Hypertarget{classWasteManagement_a697126a06c14690bae90048eaeb7b8e1}\label{classWasteManagement_a697126a06c14690bae90048eaeb7b8e1}} 
+\index{WasteManagement@{WasteManagement}!connect@{connect}}
+\index{connect@{connect}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily void Waste\+Management\+::connect (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Connects the waste management service to a city component within a specified distance. 
+
+Connects the \mbox{\hyperlink{classWasteManagement}{Waste\+Management}} utility to a building based on distance.
+
+Outputs a message indicating if the connection is successful based on the operational status and the distance relative to the effect radius.
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & The distance to the component being connected to.\\
+\hline
+\end{DoxyParams}
+Outputs a message indicating if the utility is operational and within range to provide waste management services to the target building.
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & The distance to the target building. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtilityFlyweight_ab99284e3b40f660349b3bfbb3003dc6b}{Utility\+Flyweight}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{WasteManagement_8h}{Waste\+Management.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{WasteManagement_8cpp}{Waste\+Management.\+cpp}}\end{DoxyCompactItemize}

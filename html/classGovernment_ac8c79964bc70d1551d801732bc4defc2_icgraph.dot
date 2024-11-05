@@ -1,0 +1,10 @@
+digraph "Government::increaseProduction"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Government::increaseProduction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Increases the production rate by a specified factor."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ProductiveState::handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classProductiveState.html#adab42ecd6fb4772c38dd408a9f6c5cce",tooltip="Handles the logic for productivity boosts."];
+}

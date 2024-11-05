@@ -1,0 +1,408 @@
+\hypertarget{classCommercialBuilding}{}\doxysection{Commercial\+Building Class Reference}
+\label{classCommercialBuilding}\index{CommercialBuilding@{CommercialBuilding}}
+
+
+Represents a commercial building in the city, capable of interacting with utilities and tax collection.  
+
+
+
+
+{\ttfamily \#include $<$Commercial\+Building.\+h$>$}
+
+
+
+Inheritance diagram for Commercial\+Building\+:
+% FIG 0
+
+
+Collaboration diagram for Commercial\+Building\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommercialBuilding_acc541ee0051ef610ed94c92ccbbbec47}{Commercial\+Building}} (double cost, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} with specified utilities and cost. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercialBuilding_a9a93ba3f406d9ffda72692df6d5a8cdb}{accept}} (\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$TC) override
+\begin{DoxyCompactList}\small\item\em Accepts a tax collector to process tax collection for the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercialBuilding_a4a49231fd62aaf457696ef7ee6edbcf3}{set\+Tax\+Paid}} (bool paid)
+\begin{DoxyCompactList}\small\item\em Sets the tax-\/paid status for the building. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCommercialBuilding_a6df46c952ff8aa4e2f14f81ca9eec50e}{get\+Price}} () const
+\begin{DoxyCompactList}\small\item\em Gets the price of the building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCommercialBuilding_a33baa28799f3dbef6d486861ac438fd8}{is\+Tax\+Paid}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the tax for the building has been paid. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCommercialBuilding_aff579a01599a39f3d43196790ba1c0cb}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the type of the building as a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercialBuilding_a84177b0025929b8d39859256f29e1b79}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the status of the building, including utility and tax information. \end{DoxyCompactList}\item 
+virtual char \mbox{\hyperlink{classCommercialBuilding_afc4afd257826aa0c42814e469e776a64}{get\+Display\+Symbol}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the display symbol for the building on the city grid. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCommercialBuilding_a3f71d10f472b322f5ab53974539e8103}{get\+Utility\+Coverage}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the building\textquotesingle{}s utility coverage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercialBuilding_a26a5e517f9a561ffe6c0566a69d8036d}{set\+Water\+Supply}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ utility)
+\begin{DoxyCompactList}\small\item\em Sets the water supply utility for the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercialBuilding_aee0753b9581d3d60693df66d37252b22}{set\+Power\+Supply}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ utility)
+\begin{DoxyCompactList}\small\item\em Sets the power supply utility for the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercialBuilding_a695c43def1f0f094c641a5abc651ae6b}{set\+Waste\+Management}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ utility)
+\begin{DoxyCompactList}\small\item\em Sets the waste management utility for the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercialBuilding_a4bb14c04b629c033f443c9186d8801ce}{set\+Sewage\+Management}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ utility)
+\begin{DoxyCompactList}\small\item\em Sets the sewage management utility for the building. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classCommercialBuilding_a9746a3e86c5d37bc1840f1fe7783c8a1}{get\+Display\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Gets the display color based on utility coverage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classCommercialBuilding_a6982670460b123810856f79cd306f12d}{price}}
+\item 
+bool \mbox{\hyperlink{classCommercialBuilding_a3bee8c2e6694cd84c8b36f827ff0ca35}{tax\+Paid}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classCommercialBuilding_a7038128488cdb0900f169a6333a617a4}{water\+Supply}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classCommercialBuilding_a8767618b5d025c5734ecdebf57b0ec7f}{power\+Supply}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classCommercialBuilding_a395554cb5dc868bcf17376e1a0768131}{waste\+Management}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classCommercialBuilding_aa39c9cb837fe2d9079de6eb4c6a5e553}{sewage\+Management}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a commercial building in the city, capable of interacting with utilities and tax collection. 
+
+This class provides functionalities for tax management, utility connections, and displaying the building status on the city grid. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommercialBuilding_acc541ee0051ef610ed94c92ccbbbec47}\label{classCommercialBuilding_acc541ee0051ef610ed94c92ccbbbec47}} 
+\index{CommercialBuilding@{CommercialBuilding}!CommercialBuilding@{CommercialBuilding}}
+\index{CommercialBuilding@{CommercialBuilding}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{CommercialBuilding()}{CommercialBuilding()}}
+{\footnotesize\ttfamily Commercial\+Building\+::\+Commercial\+Building (\begin{DoxyParamCaption}\item[{double}]{price,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} with specified utilities and cost. 
+
+Constructs a \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} with specified price and utility connections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cost} & The price of the building. \\
+\hline
+{\em water} & Pointer to the water supply utility. \\
+\hline
+{\em power} & Pointer to the power supply utility. \\
+\hline
+{\em waste} & Pointer to waste management utility. \\
+\hline
+{\em sewage} & Pointer to sewage management utility.\\
+\hline
+\end{DoxyParams}
+Initializes the building with a price and establishes connections to water, power, waste, and sewage utilities if provided.
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & The cost of the commercial building. \\
+\hline
+{\em water} & Shared pointer to the water supply utility. \\
+\hline
+{\em power} & Shared pointer to the power supply utility. \\
+\hline
+{\em waste} & Shared pointer to waste management utility. \\
+\hline
+{\em sewage} & Shared pointer to sewage management utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommercialBuilding_a9a93ba3f406d9ffda72692df6d5a8cdb}\label{classCommercialBuilding_a9a93ba3f406d9ffda72692df6d5a8cdb}} 
+\index{CommercialBuilding@{CommercialBuilding}!accept@{accept}}
+\index{accept@{accept}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Commercial\+Building\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$}]{TC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accepts a tax collector to process tax collection for the building. 
+
+Accepts a tax collector to process tax collection for this building.
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & Pointer to the tax collector.\\
+\hline
+\end{DoxyParams}
+Invokes the tax collector\textquotesingle{}s visit method, enabling tax processing for the building.
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & Pointer to the tax collector. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classCommercialBuilding_a84177b0025929b8d39859256f29e1b79}\label{classCommercialBuilding_a84177b0025929b8d39859256f29e1b79}} 
+\index{CommercialBuilding@{CommercialBuilding}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Commercial\+Building\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the status of the building, including utility and tax information. 
+
+Displays the status of the commercial building.
+
+Outputs the building\textquotesingle{}s type, price, tax status, and utility coverage to the console. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classCommercialBuilding_aff579a01599a39f3d43196790ba1c0cb}\label{classCommercialBuilding_aff579a01599a39f3d43196790ba1c0cb}} 
+\index{CommercialBuilding@{CommercialBuilding}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Commercial\+Building\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of the building as a string. 
+
+Retrieves the building type as a string.
+
+\begin{DoxyReturn}{Returns}
+The type of the building.
+
+A string representing the building type (\char`\"{}\+Commercial Building\char`\"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classShops_a2d960646df78fad0e42e1b5cfce61a8e}{Shops}}, \mbox{\hyperlink{classOffice_a961d4a850fb017336524b6c244b2890a}{Office}}, and \mbox{\hyperlink{classMalls_afa4b949cfc046951e4f9f0ec07348185}{Malls}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classCommercialBuilding_a9746a3e86c5d37bc1840f1fe7783c8a1}\label{classCommercialBuilding_a9746a3e86c5d37bc1840f1fe7783c8a1}} 
+\index{CommercialBuilding@{CommercialBuilding}!getDisplayColor@{getDisplayColor}}
+\index{getDisplayColor@{getDisplayColor}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{getDisplayColor()}{getDisplayColor()}}
+{\footnotesize\ttfamily virtual std\+::string Commercial\+Building\+::get\+Display\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the display color based on utility coverage. 
+
+Uses ANSI color codes to return a string representing the color\+: yellow for full coverage, white for partial coverage, and red for insufficient coverage.
+
+\begin{DoxyReturn}{Returns}
+A string containing the ANSI color code for the display color. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classCommercialBuilding_afc4afd257826aa0c42814e469e776a64}\label{classCommercialBuilding_afc4afd257826aa0c42814e469e776a64}} 
+\index{CommercialBuilding@{CommercialBuilding}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily virtual char Commercial\+Building\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the display symbol for the building on the city grid. 
+
+\begin{DoxyReturn}{Returns}
+A character representing the building symbol. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classShops_a1674ffe434c05f774a3c2077e368c157}{Shops}}, \mbox{\hyperlink{classOffice_a698526ec4dd9584aa21998067fc68cd9}{Office}}, and \mbox{\hyperlink{classMalls_a11111e6f0237c68e611a416ea83f55f5}{Malls}}.
+
+\mbox{\Hypertarget{classCommercialBuilding_a6df46c952ff8aa4e2f14f81ca9eec50e}\label{classCommercialBuilding_a6df46c952ff8aa4e2f14f81ca9eec50e}} 
+\index{CommercialBuilding@{CommercialBuilding}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily double Commercial\+Building\+::get\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the price of the building. 
+
+\begin{DoxyReturn}{Returns}
+The price of the building. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classCommercialBuilding_a3f71d10f472b322f5ab53974539e8103}\label{classCommercialBuilding_a3f71d10f472b322f5ab53974539e8103}} 
+\index{CommercialBuilding@{CommercialBuilding}!getUtilityCoverage@{getUtilityCoverage}}
+\index{getUtilityCoverage@{getUtilityCoverage}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{getUtilityCoverage()}{getUtilityCoverage()}}
+{\footnotesize\ttfamily int Commercial\+Building\+::get\+Utility\+Coverage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calculates the building\textquotesingle{}s utility coverage. 
+
+Calculates the utility coverage for the building.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the utility coverage level.
+\end{DoxyReturn}
+Counts the number of connected utilities (water, power, waste, sewage) and returns the total.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the number of connected utilities (0 to 4). 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classCommercialBuilding_a33baa28799f3dbef6d486861ac438fd8}\label{classCommercialBuilding_a33baa28799f3dbef6d486861ac438fd8}} 
+\index{CommercialBuilding@{CommercialBuilding}!isTaxPaid@{isTaxPaid}}
+\index{isTaxPaid@{isTaxPaid}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{isTaxPaid()}{isTaxPaid()}}
+{\footnotesize\ttfamily bool Commercial\+Building\+::is\+Tax\+Paid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the tax for the building has been paid. 
+
+\begin{DoxyReturn}{Returns}
+True if tax is paid, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommercialBuilding_aee0753b9581d3d60693df66d37252b22}\label{classCommercialBuilding_aee0753b9581d3d60693df66d37252b22}} 
+\index{CommercialBuilding@{CommercialBuilding}!setPowerSupply@{setPowerSupply}}
+\index{setPowerSupply@{setPowerSupply}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{setPowerSupply()}{setPowerSupply()}}
+{\footnotesize\ttfamily void Commercial\+Building\+::set\+Power\+Supply (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{utility }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the power supply utility for the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utility} & Shared pointer to the power supply utility. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommercialBuilding_a4bb14c04b629c033f443c9186d8801ce}\label{classCommercialBuilding_a4bb14c04b629c033f443c9186d8801ce}} 
+\index{CommercialBuilding@{CommercialBuilding}!setSewageManagement@{setSewageManagement}}
+\index{setSewageManagement@{setSewageManagement}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{setSewageManagement()}{setSewageManagement()}}
+{\footnotesize\ttfamily void Commercial\+Building\+::set\+Sewage\+Management (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{utility }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the sewage management utility for the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utility} & Shared pointer to the sewage management utility. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommercialBuilding_a4a49231fd62aaf457696ef7ee6edbcf3}\label{classCommercialBuilding_a4a49231fd62aaf457696ef7ee6edbcf3}} 
+\index{CommercialBuilding@{CommercialBuilding}!setTaxPaid@{setTaxPaid}}
+\index{setTaxPaid@{setTaxPaid}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{setTaxPaid()}{setTaxPaid()}}
+{\footnotesize\ttfamily void Commercial\+Building\+::set\+Tax\+Paid (\begin{DoxyParamCaption}\item[{bool}]{paid }\end{DoxyParamCaption})}
+
+
+
+Sets the tax-\/paid status for the building. 
+
+Sets the tax-\/paid status for the commercial building.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paid} & Boolean indicating whether tax has been paid.\\
+\hline
+\end{DoxyParams}
+Marks the tax as paid and, if paid, increases the employment rate to reflect the positive economic impact.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paid} & Boolean indicating whether tax has been paid. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{classCommercialBuilding_a695c43def1f0f094c641a5abc651ae6b}\label{classCommercialBuilding_a695c43def1f0f094c641a5abc651ae6b}} 
+\index{CommercialBuilding@{CommercialBuilding}!setWasteManagement@{setWasteManagement}}
+\index{setWasteManagement@{setWasteManagement}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{setWasteManagement()}{setWasteManagement()}}
+{\footnotesize\ttfamily void Commercial\+Building\+::set\+Waste\+Management (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{utility }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the waste management utility for the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utility} & Shared pointer to the waste management utility. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommercialBuilding_a26a5e517f9a561ffe6c0566a69d8036d}\label{classCommercialBuilding_a26a5e517f9a561ffe6c0566a69d8036d}} 
+\index{CommercialBuilding@{CommercialBuilding}!setWaterSupply@{setWaterSupply}}
+\index{setWaterSupply@{setWaterSupply}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{setWaterSupply()}{setWaterSupply()}}
+{\footnotesize\ttfamily void Commercial\+Building\+::set\+Water\+Supply (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{utility }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the water supply utility for the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utility} & Shared pointer to the water supply utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCommercialBuilding_a8767618b5d025c5734ecdebf57b0ec7f}\label{classCommercialBuilding_a8767618b5d025c5734ecdebf57b0ec7f}} 
+\index{CommercialBuilding@{CommercialBuilding}!powerSupply@{powerSupply}}
+\index{powerSupply@{powerSupply}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{powerSupply}{powerSupply}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Commercial\+Building\+::power\+Supply\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the power supply utility \mbox{\Hypertarget{classCommercialBuilding_a6982670460b123810856f79cd306f12d}\label{classCommercialBuilding_a6982670460b123810856f79cd306f12d}} 
+\index{CommercialBuilding@{CommercialBuilding}!price@{price}}
+\index{price@{price}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily double Commercial\+Building\+::price\hspace{0.3cm}{\ttfamily [protected]}}
+
+The cost of the commercial building \mbox{\Hypertarget{classCommercialBuilding_aa39c9cb837fe2d9079de6eb4c6a5e553}\label{classCommercialBuilding_aa39c9cb837fe2d9079de6eb4c6a5e553}} 
+\index{CommercialBuilding@{CommercialBuilding}!sewageManagement@{sewageManagement}}
+\index{sewageManagement@{sewageManagement}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{sewageManagement}{sewageManagement}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Commercial\+Building\+::sewage\+Management\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to sewage management utility \mbox{\Hypertarget{classCommercialBuilding_a3bee8c2e6694cd84c8b36f827ff0ca35}\label{classCommercialBuilding_a3bee8c2e6694cd84c8b36f827ff0ca35}} 
+\index{CommercialBuilding@{CommercialBuilding}!taxPaid@{taxPaid}}
+\index{taxPaid@{taxPaid}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{taxPaid}{taxPaid}}
+{\footnotesize\ttfamily bool Commercial\+Building\+::tax\+Paid\hspace{0.3cm}{\ttfamily [protected]}}
+
+Status indicating whether taxes have been paid \mbox{\Hypertarget{classCommercialBuilding_a395554cb5dc868bcf17376e1a0768131}\label{classCommercialBuilding_a395554cb5dc868bcf17376e1a0768131}} 
+\index{CommercialBuilding@{CommercialBuilding}!wasteManagement@{wasteManagement}}
+\index{wasteManagement@{wasteManagement}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{wasteManagement}{wasteManagement}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Commercial\+Building\+::waste\+Management\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to waste management utility \mbox{\Hypertarget{classCommercialBuilding_a7038128488cdb0900f169a6333a617a4}\label{classCommercialBuilding_a7038128488cdb0900f169a6333a617a4}} 
+\index{CommercialBuilding@{CommercialBuilding}!waterSupply@{waterSupply}}
+\index{waterSupply@{waterSupply}!CommercialBuilding@{CommercialBuilding}}
+\doxysubsubsection{\texorpdfstring{waterSupply}{waterSupply}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Commercial\+Building\+::water\+Supply\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the water supply utility 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CommercialBuilding_8h}{Commercial\+Building.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CommercialBuilding_8cpp}{Commercial\+Building.\+cpp}}\end{DoxyCompactItemize}

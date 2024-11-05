@@ -1,0 +1,283 @@
+\hypertarget{classPublicService}{}\doxysection{Public\+Service Class Reference}
+\label{classPublicService}\index{PublicService@{PublicService}}
+
+
+Abstract base class representing a public service.  
+
+
+
+
+{\ttfamily \#include $<$Public\+Service.\+h$>$}
+
+
+
+Inheritance diagram for Public\+Service\+:
+% FIG 0
+
+
+Collaboration diagram for Public\+Service\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPublicService_a04b1bf9e8927b8f961af46f51de2f95a}{Public\+Service}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPublicService_a2df29aea32ee202af514b96d5cd5f74f}{Public\+Service}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for initializing a public service. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPublicService_a6598b39358e9b4ad849671b526f37e32}{provide\+Service}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to provide a specific service. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPublicService_ac3b399fa7ea3b96f6eac3c336ae74da2}{$\sim$\+Public\+Service}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPublicService_ad14d878606280cf2c180c5c84a241a35}{display\+Status}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to display the status of the public service. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPublicService_ad6edc27872b4932f67dc12184641feee}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the building. \end{DoxyCompactList}\item 
+virtual char \mbox{\hyperlink{classPublicService_a2341fa64a393890c3e563832f8007109}{get\+Display\+Symbol}} () const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the display symbol for the public service on a map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPublicService_adca409566d83d50d512ec144e2dd1bd7}{get\+Utility\+Coverage}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the coverage of utilities connected to the public service. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPublicService_afc621c02ba3d34b67d0411a12f95d36c}{has\+Utilities}} () const
+\begin{DoxyCompactList}\small\item\em Checks if all necessary utilities are connected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPublicService_a26c59603f0b079197976bb29fb03acb1}{accept}} (\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$TC) override
+\begin{DoxyCompactList}\small\item\em Accepts a tax collector visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classPublicService_a5a1bffe8434be3819bc96f5db5fdc790}{water\+Supply}}
+\begin{DoxyCompactList}\small\item\em Connection to water supply utility. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classPublicService_ad1aec835dcdc4815c40c5ce2f724ab68}{power\+Supply}}
+\begin{DoxyCompactList}\small\item\em Connection to power supply utility. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classPublicService_a90e8197e95215be863ae3e60fff874c7}{waste\+Management}}
+\begin{DoxyCompactList}\small\item\em Connection to waste management utility. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classPublicService_a5699ac1ef566be23ddf8feb104212f32}{sewage\+Management}}
+\begin{DoxyCompactList}\small\item\em Connection to sewage management utility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a public service. 
+
+This class is responsible for managing utility connections and providing services to the city. It serves as a base for specific public service types (e.\+g., \mbox{\hyperlink{classPoliceStation}{Police\+Station}}, \mbox{\hyperlink{classFireStation}{Fire\+Station}}). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPublicService_a04b1bf9e8927b8f961af46f51de2f95a}\label{classPublicService_a04b1bf9e8927b8f961af46f51de2f95a}} 
+\index{PublicService@{PublicService}!PublicService@{PublicService}}
+\index{PublicService@{PublicService}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{PublicService()}{PublicService()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Public\+Service\+::\+Public\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classPublicService_a2df29aea32ee202af514b96d5cd5f74f}\label{classPublicService_a2df29aea32ee202af514b96d5cd5f74f}} 
+\index{PublicService@{PublicService}!PublicService@{PublicService}}
+\index{PublicService@{PublicService}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{PublicService()}{PublicService()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Public\+Service\+::\+Public\+Service (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for initializing a public service. 
+
+Constructor for the \mbox{\hyperlink{classPublicService}{Public\+Service}} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & A shared pointer to the water utility. \\
+\hline
+{\em power} & A shared pointer to the power utility. \\
+\hline
+{\em waste} & A shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage management utility.\\
+\hline
+\end{DoxyParams}
+Initializes the public service with the specified utility connections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & A shared pointer to the water utility. \\
+\hline
+{\em power} & A shared pointer to the power utility. \\
+\hline
+{\em waste} & A shared pointer to the waste management utility. \\
+\hline
+{\em sewage} & A shared pointer to the sewage management utility. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPublicService_ac3b399fa7ea3b96f6eac3c336ae74da2}\label{classPublicService_ac3b399fa7ea3b96f6eac3c336ae74da2}} 
+\index{PublicService@{PublicService}!````~PublicService@{$\sim$PublicService}}
+\index{````~PublicService@{$\sim$PublicService}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{$\sim$PublicService()}{~PublicService()}}
+{\footnotesize\ttfamily virtual Public\+Service\+::$\sim$\+Public\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPublicService_a26c59603f0b079197976bb29fb03acb1}\label{classPublicService_a26c59603f0b079197976bb29fb03acb1}} 
+\index{PublicService@{PublicService}!accept@{accept}}
+\index{accept@{accept}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Public\+Service\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$}]{collector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accepts a tax collector visitor. 
+
+Part of the Visitor pattern, allowing tax collectors to visit city components and perform operations based on the component\textquotesingle{}s type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em collector} & A pointer to a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} object. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}{City\+Component}}.
+
+\mbox{\Hypertarget{classPublicService_ad14d878606280cf2c180c5c84a241a35}\label{classPublicService_ad14d878606280cf2c180c5c84a241a35}} 
+\index{PublicService@{PublicService}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily virtual void Public\+Service\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to display the status of the public service. 
+
+
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+
+
+Implemented in \mbox{\hyperlink{classSchool_a2ba854bfe7e04ae9ae5bf3560a47d96e}{School}}, \mbox{\hyperlink{classPoliceStation_adfc6792da46e488d77c7ef15debba72b}{Police\+Station}}, \mbox{\hyperlink{classHospital_a0b8b738415eb260c8378ca542c8ffdf0}{Hospital}}, and \mbox{\hyperlink{classFireStation_aea55c46413850b6428a98e48d5de8057}{Fire\+Station}}.
+
+\mbox{\Hypertarget{classPublicService_ad6edc27872b4932f67dc12184641feee}\label{classPublicService_ad6edc27872b4932f67dc12184641feee}} 
+\index{PublicService@{PublicService}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Public\+Service\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+\mbox{\Hypertarget{classPublicService_a2341fa64a393890c3e563832f8007109}\label{classPublicService_a2341fa64a393890c3e563832f8007109}} 
+\index{PublicService@{PublicService}!getDisplaySymbol@{getDisplaySymbol}}
+\index{getDisplaySymbol@{getDisplaySymbol}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{getDisplaySymbol()}{getDisplaySymbol()}}
+{\footnotesize\ttfamily virtual char Public\+Service\+::get\+Display\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the display symbol for the public service on a map. 
+
+
+
+Implemented in \mbox{\hyperlink{classSchool_ab91a4e94be8cce18279e020c2569a0ea}{School}}, \mbox{\hyperlink{classPoliceStation_a7b6a731f22baf21b525cf425799da7ce}{Police\+Station}}, \mbox{\hyperlink{classHospital_acb2560c2c2273362e7c0b9c414b53173}{Hospital}}, and \mbox{\hyperlink{classFireStation_ac17dde3bf2e3f7d8de5fd88e76142ccd}{Fire\+Station}}.
+
+\mbox{\Hypertarget{classPublicService_adca409566d83d50d512ec144e2dd1bd7}\label{classPublicService_adca409566d83d50d512ec144e2dd1bd7}} 
+\index{PublicService@{PublicService}!getUtilityCoverage@{getUtilityCoverage}}
+\index{getUtilityCoverage@{getUtilityCoverage}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{getUtilityCoverage()}{getUtilityCoverage()}}
+{\footnotesize\ttfamily int Public\+Service\+::get\+Utility\+Coverage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the coverage of utilities connected to the public service. 
+
+\begin{DoxyReturn}{Returns}
+The number of connected utilities. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classPublicService_afc621c02ba3d34b67d0411a12f95d36c}\label{classPublicService_afc621c02ba3d34b67d0411a12f95d36c}} 
+\index{PublicService@{PublicService}!hasUtilities@{hasUtilities}}
+\index{hasUtilities@{hasUtilities}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{hasUtilities()}{hasUtilities()}}
+{\footnotesize\ttfamily bool Public\+Service\+::has\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if all necessary utilities are connected. 
+
+\begin{DoxyReturn}{Returns}
+True if all utilities are connected, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classPublicService_a6598b39358e9b4ad849671b526f37e32}\label{classPublicService_a6598b39358e9b4ad849671b526f37e32}} 
+\index{PublicService@{PublicService}!provideService@{provideService}}
+\index{provideService@{provideService}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{provideService()}{provideService()}}
+{\footnotesize\ttfamily virtual void Public\+Service\+::provide\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to provide a specific service. 
+
+This function must be implemented by derived classes. 
+
+Implemented in \mbox{\hyperlink{classSchool_adbb2ba634866eedd68137afd3bbced09}{School}}, \mbox{\hyperlink{classPoliceStation_a1ba78f8f96a22441758288756a926592}{Police\+Station}}, \mbox{\hyperlink{classHospital_a805abbea211fa129100f5197eb02e5bf}{Hospital}}, and \mbox{\hyperlink{classFireStation_a4efafa5971760f21b41102245fb99ceb}{Fire\+Station}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPublicService_ad1aec835dcdc4815c40c5ce2f724ab68}\label{classPublicService_ad1aec835dcdc4815c40c5ce2f724ab68}} 
+\index{PublicService@{PublicService}!powerSupply@{powerSupply}}
+\index{powerSupply@{powerSupply}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{powerSupply}{powerSupply}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Public\+Service\+::power\+Supply\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Connection to power supply utility. 
+
+\mbox{\Hypertarget{classPublicService_a5699ac1ef566be23ddf8feb104212f32}\label{classPublicService_a5699ac1ef566be23ddf8feb104212f32}} 
+\index{PublicService@{PublicService}!sewageManagement@{sewageManagement}}
+\index{sewageManagement@{sewageManagement}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{sewageManagement}{sewageManagement}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Public\+Service\+::sewage\+Management\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Connection to sewage management utility. 
+
+\mbox{\Hypertarget{classPublicService_a90e8197e95215be863ae3e60fff874c7}\label{classPublicService_a90e8197e95215be863ae3e60fff874c7}} 
+\index{PublicService@{PublicService}!wasteManagement@{wasteManagement}}
+\index{wasteManagement@{wasteManagement}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{wasteManagement}{wasteManagement}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Public\+Service\+::waste\+Management\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Connection to waste management utility. 
+
+\mbox{\Hypertarget{classPublicService_a5a1bffe8434be3819bc96f5db5fdc790}\label{classPublicService_a5a1bffe8434be3819bc96f5db5fdc790}} 
+\index{PublicService@{PublicService}!waterSupply@{waterSupply}}
+\index{waterSupply@{waterSupply}!PublicService@{PublicService}}
+\doxysubsubsection{\texorpdfstring{waterSupply}{waterSupply}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Public\+Service\+::water\+Supply\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Connection to water supply utility. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PublicService_8h}{Public\+Service.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PublicService_8cpp}{Public\+Service.\+cpp}}\end{DoxyCompactItemize}

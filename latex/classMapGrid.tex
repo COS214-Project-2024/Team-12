@@ -1,0 +1,437 @@
+\hypertarget{classMapGrid}{}\doxysection{Map\+Grid Class Reference}
+\label{classMapGrid}\index{MapGrid@{MapGrid}}
+
+
+{\ttfamily \#include $<$Map\+Grid.\+h$>$}
+
+
+
+Collaboration diagram for Map\+Grid\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMapGrid_1_1Cell}{Cell}}
+\item 
+struct \mbox{\hyperlink{structMapGrid_1_1PlacementResult}{Placement\+Result}}
+\item 
+struct \mbox{\hyperlink{structMapGrid_1_1ResourceSpot}{Resource\+Spot}}
+\item 
+struct \mbox{\hyperlink{structMapGrid_1_1ZoneStyle}{Zone\+Style}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structMapGrid_1_1Cell}{Cell}} \& \mbox{\hyperlink{classMapGrid_a6471660821fbd3336658aa29c07b1bff}{get\+Cell}} (int x, int y)
+\item 
+void \mbox{\hyperlink{classMapGrid_a55f26e5605ac7607fae1c8c673b9d9b2}{set\+Cell\+Symbol}} (int x, int y, char symbol)
+\item 
+void \mbox{\hyperlink{classMapGrid_a1dc327fa02ba1448bda5b47969f48886}{set\+Transport\+Endpoint}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc, char type)
+\item 
+void \mbox{\hyperlink{classMapGrid_a4ed9f19232693a2c75ed7714f8439a82}{set\+Transport\+Path}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc, char path\+Symbol)
+\item 
+\mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{classMapGrid_a0312e542698bae6778fa6c2909b65bf4}{get\+Random\+Empty\+Location}} () const
+\item 
+int \mbox{\hyperlink{classMapGrid_a3508bc4d4945a9be2c7ebe47ca5965f2}{get\+Height}} () const
+\item 
+int \mbox{\hyperlink{classMapGrid_a73f8e3dadd5b1c80f0d3d7b3df6d9ae9}{get\+Width}} () const
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $>$ $>$ \mbox{\hyperlink{classMapGrid_a8d2c5afe7edbc89bb3f3800438b43cd3}{get\+All\+Zones}} () const
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ $>$ \mbox{\hyperlink{classMapGrid_a5b390a6218c35e3e6ed9dedd47e0b9f5}{get\+Buildings\+In\+Zone}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $>$ \&zone) const
+\item 
+\mbox{\hyperlink{structMapGrid_1_1PlacementResult}{Placement\+Result}} \mbox{\hyperlink{classMapGrid_ab94f2f15d2178324ce930280ec88a28d}{can\+Place\+Zone}} (const \mbox{\hyperlink{structLocation}{Location}} \&top\+Left, const \mbox{\hyperlink{structLocation}{Location}} \&bottom\+Right) const
+\item 
+\mbox{\hyperlink{structMapGrid_1_1PlacementResult}{Placement\+Result}} \mbox{\hyperlink{classMapGrid_a1eea5ceaf006f0fa065dc80a2dc798e8}{can\+Place\+Building}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \&building) const
+\item 
+\mbox{\hyperlink{classMapGrid_ae81fd58f6156fc8e2beca7f68cf64d93}{Map\+Grid}} (int w, int h)
+\item 
+bool \mbox{\hyperlink{classMapGrid_a799c5f887a651f71f8ebfbc8bf18e52d}{create\+Zone}} (const \mbox{\hyperlink{structLocation}{Location}} \&top\+Left, const \mbox{\hyperlink{structLocation}{Location}} \&bottom\+Right, const std\+::string \&zone\+Type)
+\item 
+void \mbox{\hyperlink{classMapGrid_af8210e162dae20a969c8d4e880dee2f7}{set\+Zone}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $>$ new\+Zone)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $>$ \mbox{\hyperlink{classMapGrid_a5d58bb7cc44e649e44e1282eb4deada4}{get\+Zone}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc) const
+\item 
+bool \mbox{\hyperlink{classMapGrid_a609c06dd38f67e93a766d5bb8b9cb197}{is\+Valid\+Location}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc) const
+\item 
+bool \mbox{\hyperlink{classMapGrid_a43d1675c176dca9e37f6e1027f15c98a}{place\+Component}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ component)
+\item 
+bool \mbox{\hyperlink{classMapGrid_a6d6d4256e88adf9759b84d89475d3c91}{connect\+Locations}} (const \mbox{\hyperlink{structLocation}{Location}} \&start, const \mbox{\hyperlink{structLocation}{Location}} \&end, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$ transport)
+\item 
+bool \mbox{\hyperlink{classMapGrid_abdafd489ed0debe9d64ba0cb5cbf8579}{place\+Public\+Service}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$ public\+Service)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \mbox{\hyperlink{classMapGrid_a9c9677c2efbc436d1ec1e89bb9fd47b7}{get\+Component}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc) const
+\item 
+void \mbox{\hyperlink{classMapGrid_a8a7c0f890a0c611571a3a9045d73b2bc}{add\+Utility\+Effect}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ utility)
+\item 
+void \mbox{\hyperlink{classMapGrid_ac9b13a3f1577784829e8a39ad37b1e44}{display\+Collection\+Range}} (const \mbox{\hyperlink{structLocation}{Location}} \&industry\+Loc)
+\item 
+void \mbox{\hyperlink{classMapGrid_a766e28304e2cf433fc4e744044f82c8d}{remove\+Utility\+Effect}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ utility)
+\item 
+bool \mbox{\hyperlink{classMapGrid_ab136accd807ad55211796fc1feb40400}{is\+Valid\+Zone\+For\+Building}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \&building) const
+\item 
+std\+::string \mbox{\hyperlink{classMapGrid_adb0f0dde7b11641c523a38dce884944c}{get\+Display\+String}} () const
+\item 
+void \mbox{\hyperlink{classMapGrid_a44c43f098c97322aec7cb99b608be724}{remove\+Component}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc)
+\item 
+void \mbox{\hyperlink{classMapGrid_a0ab342c72ec4963108c521085834f1fc}{remove\+Income\+Resource}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc)
+\item 
+void \mbox{\hyperlink{classMapGrid_a021a01391bf966148223414e4b0bce73}{remove\+Construction\+Resource}} (const \mbox{\hyperlink{structLocation}{Location}} \&loc)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classMapGrid_ad62e84eca9c689c73f6e70d68b0506f1}{is\+Overlapping\+Zone}} (const \mbox{\hyperlink{structLocation}{Location}} \&top\+Left, const \mbox{\hyperlink{structLocation}{Location}} \&bottom\+Right) const
+\item 
+bool \mbox{\hyperlink{classMapGrid_a1fe468151da5ff82969b8aa4e90f2760}{is\+Compatible\+Building}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \&building, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $>$ \&zone) const
+\item 
+void \mbox{\hyperlink{classMapGrid_a990ef9aba6220248b140ac5e733e567b}{initialize\+Zone\+Styles}} ()
+\item 
+bool \mbox{\hyperlink{classMapGrid_ab58e7fdefe8fd1b7c3fbe5c5014a1e7b}{is\+Zone\+Boundary}} (int x, int y) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \mbox{\hyperlink{structLocation}{Location}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ $>$ \mbox{\hyperlink{classMapGrid_a737d91cf735dd8f0d021a75c0ad3be80}{grid\+Map}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{structLocation}{Location}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}} $>$ $>$ \mbox{\hyperlink{classMapGrid_a561d1026f429d738078ed85dedef35aa}{income\+Resource\+Map}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{structLocation}{Location}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ $>$ \mbox{\hyperlink{classMapGrid_ae756bfaef35e661740cd9e9a4fb08e6d}{construction\+Resource\+Map}}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{structMapGrid_1_1Cell}{Cell}} $>$ $>$ \mbox{\hyperlink{classMapGrid_afd151e258acc85427f741a8054c20a4e}{grid}}
+\item 
+int \mbox{\hyperlink{classMapGrid_a453f1b9901f89d6d496327221c844aef}{width}}
+\item 
+int \mbox{\hyperlink{classMapGrid_a474cdc7c48120bdfc08dae7ce4b0fbfa}{height}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{structMapGrid_1_1ZoneStyle}{Zone\+Style}} $>$ \mbox{\hyperlink{classMapGrid_a0587b531e7178da42eb07b55697bcb40}{zone\+Styles}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMapGrid_ae81fd58f6156fc8e2beca7f68cf64d93}\label{classMapGrid_ae81fd58f6156fc8e2beca7f68cf64d93}} 
+\index{MapGrid@{MapGrid}!MapGrid@{MapGrid}}
+\index{MapGrid@{MapGrid}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{MapGrid()}{MapGrid()}}
+{\footnotesize\ttfamily Map\+Grid\+::\+Map\+Grid (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMapGrid_a8a7c0f890a0c611571a3a9045d73b2bc}\label{classMapGrid_a8a7c0f890a0c611571a3a9045d73b2bc}} 
+\index{MapGrid@{MapGrid}!addUtilityEffect@{addUtilityEffect}}
+\index{addUtilityEffect@{addUtilityEffect}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{addUtilityEffect()}{addUtilityEffect()}}
+{\footnotesize\ttfamily void Map\+Grid\+::add\+Utility\+Effect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{utility }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classMapGrid_a1eea5ceaf006f0fa065dc80a2dc798e8}\label{classMapGrid_a1eea5ceaf006f0fa065dc80a2dc798e8}} 
+\index{MapGrid@{MapGrid}!canPlaceBuilding@{canPlaceBuilding}}
+\index{canPlaceBuilding@{canPlaceBuilding}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{canPlaceBuilding()}{canPlaceBuilding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMapGrid_1_1PlacementResult}{Placement\+Result}} Map\+Grid\+::can\+Place\+Building (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \&}]{building }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classMapGrid_ab94f2f15d2178324ce930280ec88a28d}\label{classMapGrid_ab94f2f15d2178324ce930280ec88a28d}} 
+\index{MapGrid@{MapGrid}!canPlaceZone@{canPlaceZone}}
+\index{canPlaceZone@{canPlaceZone}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{canPlaceZone()}{canPlaceZone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMapGrid_1_1PlacementResult}{Placement\+Result}} Map\+Grid\+::can\+Place\+Zone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{top\+Left,  }\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{bottom\+Right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classMapGrid_a6d6d4256e88adf9759b84d89475d3c91}\label{classMapGrid_a6d6d4256e88adf9759b84d89475d3c91}} 
+\index{MapGrid@{MapGrid}!connectLocations@{connectLocations}}
+\index{connectLocations@{connectLocations}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{connectLocations()}{connectLocations()}}
+{\footnotesize\ttfamily bool Map\+Grid\+::connect\+Locations (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{start,  }\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{end,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTransport}{Transport}} $>$}]{transport }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{classMapGrid_a799c5f887a651f71f8ebfbc8bf18e52d}\label{classMapGrid_a799c5f887a651f71f8ebfbc8bf18e52d}} 
+\index{MapGrid@{MapGrid}!createZone@{createZone}}
+\index{createZone@{createZone}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{createZone()}{createZone()}}
+{\footnotesize\ttfamily bool Map\+Grid\+::create\+Zone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{top\+Left,  }\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{bottom\+Right,  }\item[{const std\+::string \&}]{zone\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{classMapGrid_ac9b13a3f1577784829e8a39ad37b1e44}\label{classMapGrid_ac9b13a3f1577784829e8a39ad37b1e44}} 
+\index{MapGrid@{MapGrid}!displayCollectionRange@{displayCollectionRange}}
+\index{displayCollectionRange@{displayCollectionRange}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{displayCollectionRange()}{displayCollectionRange()}}
+{\footnotesize\ttfamily void Map\+Grid\+::display\+Collection\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{industry\+Loc }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{classMapGrid_a8d2c5afe7edbc89bb3f3800438b43cd3}\label{classMapGrid_a8d2c5afe7edbc89bb3f3800438b43cd3}} 
+\index{MapGrid@{MapGrid}!getAllZones@{getAllZones}}
+\index{getAllZones@{getAllZones}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{getAllZones()}{getAllZones()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classZoneComposite}{Zone\+Composite}}$>$ $>$ Map\+Grid\+::get\+All\+Zones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMapGrid_a5b390a6218c35e3e6ed9dedd47e0b9f5}\label{classMapGrid_a5b390a6218c35e3e6ed9dedd47e0b9f5}} 
+\index{MapGrid@{MapGrid}!getBuildingsInZone@{getBuildingsInZone}}
+\index{getBuildingsInZone@{getBuildingsInZone}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{getBuildingsInZone()}{getBuildingsInZone()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ $>$ Map\+Grid\+::get\+Buildings\+In\+Zone (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $>$ \&}]{zone }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMapGrid_a6471660821fbd3336658aa29c07b1bff}\label{classMapGrid_a6471660821fbd3336658aa29c07b1bff}} 
+\index{MapGrid@{MapGrid}!getCell@{getCell}}
+\index{getCell@{getCell}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{getCell()}{getCell()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMapGrid_1_1Cell}{Cell}}\& Map\+Grid\+::get\+Cell (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMapGrid_a9c9677c2efbc436d1ec1e89bb9fd47b7}\label{classMapGrid_a9c9677c2efbc436d1ec1e89bb9fd47b7}} 
+\index{MapGrid@{MapGrid}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classCityComponent}{City\+Component}}$>$ Map\+Grid\+::get\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{classMapGrid_adb0f0dde7b11641c523a38dce884944c}\label{classMapGrid_adb0f0dde7b11641c523a38dce884944c}} 
+\index{MapGrid@{MapGrid}!getDisplayString@{getDisplayString}}
+\index{getDisplayString@{getDisplayString}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{getDisplayString()}{getDisplayString()}}
+{\footnotesize\ttfamily std\+::string Map\+Grid\+::get\+Display\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{classMapGrid_a3508bc4d4945a9be2c7ebe47ca5965f2}\label{classMapGrid_a3508bc4d4945a9be2c7ebe47ca5965f2}} 
+\index{MapGrid@{MapGrid}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int Map\+Grid\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{classMapGrid_a0312e542698bae6778fa6c2909b65bf4}\label{classMapGrid_a0312e542698bae6778fa6c2909b65bf4}} 
+\index{MapGrid@{MapGrid}!getRandomEmptyLocation@{getRandomEmptyLocation}}
+\index{getRandomEmptyLocation@{getRandomEmptyLocation}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{getRandomEmptyLocation()}{getRandomEmptyLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLocation}{Location}} Map\+Grid\+::get\+Random\+Empty\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 16
+Here is the caller graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{classMapGrid_a73f8e3dadd5b1c80f0d3d7b3df6d9ae9}\label{classMapGrid_a73f8e3dadd5b1c80f0d3d7b3df6d9ae9}} 
+\index{MapGrid@{MapGrid}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily int Map\+Grid\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 18
+\mbox{\Hypertarget{classMapGrid_a5d58bb7cc44e649e44e1282eb4deada4}\label{classMapGrid_a5d58bb7cc44e649e44e1282eb4deada4}} 
+\index{MapGrid@{MapGrid}!getZone@{getZone}}
+\index{getZone@{getZone}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{getZone()}{getZone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classZoneComposite}{Zone\+Composite}}$>$ Map\+Grid\+::get\+Zone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 19
+Here is the caller graph for this function\+:
+% FIG 20
+\mbox{\Hypertarget{classMapGrid_a990ef9aba6220248b140ac5e733e567b}\label{classMapGrid_a990ef9aba6220248b140ac5e733e567b}} 
+\index{MapGrid@{MapGrid}!initializeZoneStyles@{initializeZoneStyles}}
+\index{initializeZoneStyles@{initializeZoneStyles}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{initializeZoneStyles()}{initializeZoneStyles()}}
+{\footnotesize\ttfamily void Map\+Grid\+::initialize\+Zone\+Styles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+% FIG 21
+\mbox{\Hypertarget{classMapGrid_a1fe468151da5ff82969b8aa4e90f2760}\label{classMapGrid_a1fe468151da5ff82969b8aa4e90f2760}} 
+\index{MapGrid@{MapGrid}!isCompatibleBuilding@{isCompatibleBuilding}}
+\index{isCompatibleBuilding@{isCompatibleBuilding}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{isCompatibleBuilding()}{isCompatibleBuilding()}}
+{\footnotesize\ttfamily bool Map\+Grid\+::is\+Compatible\+Building (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \&}]{building,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $>$ \&}]{zone }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+% FIG 22
+\mbox{\Hypertarget{classMapGrid_ad62e84eca9c689c73f6e70d68b0506f1}\label{classMapGrid_ad62e84eca9c689c73f6e70d68b0506f1}} 
+\index{MapGrid@{MapGrid}!isOverlappingZone@{isOverlappingZone}}
+\index{isOverlappingZone@{isOverlappingZone}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{isOverlappingZone()}{isOverlappingZone()}}
+{\footnotesize\ttfamily bool Map\+Grid\+::is\+Overlapping\+Zone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{top\+Left,  }\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{bottom\+Right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+% FIG 23
+\mbox{\Hypertarget{classMapGrid_a609c06dd38f67e93a766d5bb8b9cb197}\label{classMapGrid_a609c06dd38f67e93a766d5bb8b9cb197}} 
+\index{MapGrid@{MapGrid}!isValidLocation@{isValidLocation}}
+\index{isValidLocation@{isValidLocation}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{isValidLocation()}{isValidLocation()}}
+{\footnotesize\ttfamily bool Map\+Grid\+::is\+Valid\+Location (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 24
+\mbox{\Hypertarget{classMapGrid_ab136accd807ad55211796fc1feb40400}\label{classMapGrid_ab136accd807ad55211796fc1feb40400}} 
+\index{MapGrid@{MapGrid}!isValidZoneForBuilding@{isValidZoneForBuilding}}
+\index{isValidZoneForBuilding@{isValidZoneForBuilding}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{isValidZoneForBuilding()}{isValidZoneForBuilding()}}
+{\footnotesize\ttfamily bool Map\+Grid\+::is\+Valid\+Zone\+For\+Building (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$ \&}]{building }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 25
+\mbox{\Hypertarget{classMapGrid_ab58e7fdefe8fd1b7c3fbe5c5014a1e7b}\label{classMapGrid_ab58e7fdefe8fd1b7c3fbe5c5014a1e7b}} 
+\index{MapGrid@{MapGrid}!isZoneBoundary@{isZoneBoundary}}
+\index{isZoneBoundary@{isZoneBoundary}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{isZoneBoundary()}{isZoneBoundary()}}
+{\footnotesize\ttfamily bool Map\+Grid\+::is\+Zone\+Boundary (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 26
+\mbox{\Hypertarget{classMapGrid_a43d1675c176dca9e37f6e1027f15c98a}\label{classMapGrid_a43d1675c176dca9e37f6e1027f15c98a}} 
+\index{MapGrid@{MapGrid}!placeComponent@{placeComponent}}
+\index{placeComponent@{placeComponent}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{placeComponent()}{placeComponent()}}
+{\footnotesize\ttfamily bool Map\+Grid\+::place\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCityComponent}{City\+Component}} $>$}]{component }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 27
+Here is the caller graph for this function\+:
+% FIG 28
+\mbox{\Hypertarget{classMapGrid_abdafd489ed0debe9d64ba0cb5cbf8579}\label{classMapGrid_abdafd489ed0debe9d64ba0cb5cbf8579}} 
+\index{MapGrid@{MapGrid}!placePublicService@{placePublicService}}
+\index{placePublicService@{placePublicService}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{placePublicService()}{placePublicService()}}
+{\footnotesize\ttfamily bool Map\+Grid\+::place\+Public\+Service (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPublicService}{Public\+Service}} $>$}]{public\+Service }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 29
+\mbox{\Hypertarget{classMapGrid_a44c43f098c97322aec7cb99b608be724}\label{classMapGrid_a44c43f098c97322aec7cb99b608be724}} 
+\index{MapGrid@{MapGrid}!removeComponent@{removeComponent}}
+\index{removeComponent@{removeComponent}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{removeComponent()}{removeComponent()}}
+{\footnotesize\ttfamily void Map\+Grid\+::remove\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 30
+\mbox{\Hypertarget{classMapGrid_a021a01391bf966148223414e4b0bce73}\label{classMapGrid_a021a01391bf966148223414e4b0bce73}} 
+\index{MapGrid@{MapGrid}!removeConstructionResource@{removeConstructionResource}}
+\index{removeConstructionResource@{removeConstructionResource}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{removeConstructionResource()}{removeConstructionResource()}}
+{\footnotesize\ttfamily void Map\+Grid\+::remove\+Construction\+Resource (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 31
+\mbox{\Hypertarget{classMapGrid_a0ab342c72ec4963108c521085834f1fc}\label{classMapGrid_a0ab342c72ec4963108c521085834f1fc}} 
+\index{MapGrid@{MapGrid}!removeIncomeResource@{removeIncomeResource}}
+\index{removeIncomeResource@{removeIncomeResource}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{removeIncomeResource()}{removeIncomeResource()}}
+{\footnotesize\ttfamily void Map\+Grid\+::remove\+Income\+Resource (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 32
+\mbox{\Hypertarget{classMapGrid_a766e28304e2cf433fc4e744044f82c8d}\label{classMapGrid_a766e28304e2cf433fc4e744044f82c8d}} 
+\index{MapGrid@{MapGrid}!removeUtilityEffect@{removeUtilityEffect}}
+\index{removeUtilityEffect@{removeUtilityEffect}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{removeUtilityEffect()}{removeUtilityEffect()}}
+{\footnotesize\ttfamily void Map\+Grid\+::remove\+Utility\+Effect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{utility }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 33
+\mbox{\Hypertarget{classMapGrid_a55f26e5605ac7607fae1c8c673b9d9b2}\label{classMapGrid_a55f26e5605ac7607fae1c8c673b9d9b2}} 
+\index{MapGrid@{MapGrid}!setCellSymbol@{setCellSymbol}}
+\index{setCellSymbol@{setCellSymbol}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{setCellSymbol()}{setCellSymbol()}}
+{\footnotesize\ttfamily void Map\+Grid\+::set\+Cell\+Symbol (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{char}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 34
+\mbox{\Hypertarget{classMapGrid_a1dc327fa02ba1448bda5b47969f48886}\label{classMapGrid_a1dc327fa02ba1448bda5b47969f48886}} 
+\index{MapGrid@{MapGrid}!setTransportEndpoint@{setTransportEndpoint}}
+\index{setTransportEndpoint@{setTransportEndpoint}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{setTransportEndpoint()}{setTransportEndpoint()}}
+{\footnotesize\ttfamily void Map\+Grid\+::set\+Transport\+Endpoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc,  }\item[{char}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 35
+Here is the caller graph for this function\+:
+% FIG 36
+\mbox{\Hypertarget{classMapGrid_a4ed9f19232693a2c75ed7714f8439a82}\label{classMapGrid_a4ed9f19232693a2c75ed7714f8439a82}} 
+\index{MapGrid@{MapGrid}!setTransportPath@{setTransportPath}}
+\index{setTransportPath@{setTransportPath}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{setTransportPath()}{setTransportPath()}}
+{\footnotesize\ttfamily void Map\+Grid\+::set\+Transport\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc,  }\item[{char}]{path\+Symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 37
+Here is the caller graph for this function\+:
+% FIG 38
+\mbox{\Hypertarget{classMapGrid_af8210e162dae20a969c8d4e880dee2f7}\label{classMapGrid_af8210e162dae20a969c8d4e880dee2f7}} 
+\index{MapGrid@{MapGrid}!setZone@{setZone}}
+\index{setZone@{setZone}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{setZone()}{setZone()}}
+{\footnotesize\ttfamily void Map\+Grid\+::set\+Zone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLocation}{Location}} \&}]{loc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classZoneComposite}{Zone\+Composite}} $>$}]{new\+Zone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 39
+Here is the caller graph for this function\+:
+% FIG 40
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMapGrid_ae756bfaef35e661740cd9e9a4fb08e6d}\label{classMapGrid_ae756bfaef35e661740cd9e9a4fb08e6d}} 
+\index{MapGrid@{MapGrid}!constructionResourceMap@{constructionResourceMap}}
+\index{constructionResourceMap@{constructionResourceMap}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{constructionResourceMap}{constructionResourceMap}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{structLocation}{Location}}, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}$>$ $>$ Map\+Grid\+::construction\+Resource\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapGrid_afd151e258acc85427f741a8054c20a4e}\label{classMapGrid_afd151e258acc85427f741a8054c20a4e}} 
+\index{MapGrid@{MapGrid}!grid@{grid}}
+\index{grid@{grid}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{grid}{grid}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{structMapGrid_1_1Cell}{Cell}}$>$ $>$ Map\+Grid\+::grid\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapGrid_a737d91cf735dd8f0d021a75c0ad3be80}\label{classMapGrid_a737d91cf735dd8f0d021a75c0ad3be80}} 
+\index{MapGrid@{MapGrid}!gridMap@{gridMap}}
+\index{gridMap@{gridMap}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{gridMap}{gridMap}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{structLocation}{Location}}, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classCityComponent}{City\+Component}}$>$ $>$ Map\+Grid\+::grid\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapGrid_a474cdc7c48120bdfc08dae7ce4b0fbfa}\label{classMapGrid_a474cdc7c48120bdfc08dae7ce4b0fbfa}} 
+\index{MapGrid@{MapGrid}!height@{height}}
+\index{height@{height}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Map\+Grid\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapGrid_a561d1026f429d738078ed85dedef35aa}\label{classMapGrid_a561d1026f429d738078ed85dedef35aa}} 
+\index{MapGrid@{MapGrid}!incomeResourceMap@{incomeResourceMap}}
+\index{incomeResourceMap@{incomeResourceMap}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{incomeResourceMap}{incomeResourceMap}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{structLocation}{Location}}, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classIncomeResourceProduct}{Income\+Resource\+Product}}$>$ $>$ Map\+Grid\+::income\+Resource\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapGrid_a453f1b9901f89d6d496327221c844aef}\label{classMapGrid_a453f1b9901f89d6d496327221c844aef}} 
+\index{MapGrid@{MapGrid}!width@{width}}
+\index{width@{width}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Map\+Grid\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapGrid_a0587b531e7178da42eb07b55697bcb40}\label{classMapGrid_a0587b531e7178da42eb07b55697bcb40}} 
+\index{MapGrid@{MapGrid}!zoneStyles@{zoneStyles}}
+\index{zoneStyles@{zoneStyles}!MapGrid@{MapGrid}}
+\doxysubsubsection{\texorpdfstring{zoneStyles}{zoneStyles}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{structMapGrid_1_1ZoneStyle}{Zone\+Style}}$>$ Map\+Grid\+::zone\+Styles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{MapGrid_8h}{Map\+Grid.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{MapGrid_8cpp}{Map\+Grid.\+cpp}}\end{DoxyCompactItemize}

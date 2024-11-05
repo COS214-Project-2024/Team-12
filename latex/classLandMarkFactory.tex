@@ -1,0 +1,69 @@
+\hypertarget{classLandMarkFactory}{}\doxysection{Land\+Mark\+Factory Class Reference}
+\label{classLandMarkFactory}\index{LandMarkFactory@{LandMarkFactory}}
+
+
+Abstract factory class for creating landmark objects.  
+
+
+
+
+{\ttfamily \#include $<$Land\+Mark\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Land\+Mark\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Land\+Mark\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ \mbox{\hyperlink{classLandMarkFactory_a9a9072da869cc6de21f8368e1ed2c8e2}{create\+Land\+Mark}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to create a landmark. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classLandMarkFactory_ad8ac7fabd108801b68ebbd8c11fed9ef}{$\sim$\+Land\+Mark\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the {\ttfamily \mbox{\hyperlink{classLandMarkFactory}{Land\+Mark\+Factory}}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract factory class for creating landmark objects. 
+
+The {\ttfamily \mbox{\hyperlink{classLandMarkFactory}{Land\+Mark\+Factory}}} class provides an interface for creating different types of landmarks in the city simulation. Specific landmark types should be created by concrete factories that inherit from this interface. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLandMarkFactory_ad8ac7fabd108801b68ebbd8c11fed9ef}\label{classLandMarkFactory_ad8ac7fabd108801b68ebbd8c11fed9ef}} 
+\index{LandMarkFactory@{LandMarkFactory}!````~LandMarkFactory@{$\sim$LandMarkFactory}}
+\index{````~LandMarkFactory@{$\sim$LandMarkFactory}!LandMarkFactory@{LandMarkFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$LandMarkFactory()}{~LandMarkFactory()}}
+{\footnotesize\ttfamily virtual Land\+Mark\+Factory\+::$\sim$\+Land\+Mark\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for the {\ttfamily \mbox{\hyperlink{classLandMarkFactory}{Land\+Mark\+Factory}}} class. 
+
+Ensures proper cleanup of derived classes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLandMarkFactory_a9a9072da869cc6de21f8368e1ed2c8e2}\label{classLandMarkFactory_a9a9072da869cc6de21f8368e1ed2c8e2}} 
+\index{LandMarkFactory@{LandMarkFactory}!createLandMark@{createLandMark}}
+\index{createLandMark@{createLandMark}!LandMarkFactory@{LandMarkFactory}}
+\doxysubsubsection{\texorpdfstring{createLandMark()}{createLandMark()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classLandMark}{Land\+Mark}}$>$ Land\+Mark\+Factory\+::create\+Land\+Mark (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to create a landmark. 
+
+This function should be implemented by derived classes to create specific types of landmarks. \begin{DoxyReturn}{Returns}
+A unique pointer to the created {\ttfamily \mbox{\hyperlink{classLandMark}{Land\+Mark}}} object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classMonumentFactory_a005987e3893a51f239d1940cea2f9ea0}{Monument\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{LandMarkFactory_8h}{Land\+Mark\+Factory.\+h}}\end{DoxyCompactItemize}

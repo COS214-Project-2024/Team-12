@@ -1,0 +1,99 @@
+\hypertarget{classCommand}{}\doxysection{Command Class Reference}
+\label{classCommand}\index{Command@{Command}}
+
+
+Abstract base class representing a command in the command pattern.  
+
+
+
+
+{\ttfamily \#include $<$Command.\+h$>$}
+
+
+
+Inheritance diagram for Command\+:
+% FIG 0
+
+
+Collaboration diagram for Command\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classCommand_aa545a53d35818f9efb936daf3fa16c61}{$\sim$\+Command}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classCommand}{Command}} base class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{execute}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the command. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_ad5eccd34dc85abda2cd0c21d819c17dc}{undo}} ()=0
+\begin{DoxyCompactList}\small\item\em Undoes the command. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommand}{Command}} $>$ \mbox{\hyperlink{classCommand_ab80b3fee06aa2d3d0781857a608ea420}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Clones the command, creating a new unique pointer to a \mbox{\hyperlink{classCommand}{Command}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a command in the command pattern. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommand_aa545a53d35818f9efb936daf3fa16c61}\label{classCommand_aa545a53d35818f9efb936daf3fa16c61}} 
+\index{Command@{Command}!````~Command@{$\sim$Command}}
+\index{````~Command@{$\sim$Command}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{$\sim$Command()}{~Command()}}
+{\footnotesize\ttfamily virtual Command\+::$\sim$\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for the \mbox{\hyperlink{classCommand}{Command}} base class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommand_ab80b3fee06aa2d3d0781857a608ea420}\label{classCommand_ab80b3fee06aa2d3d0781857a608ea420}} 
+\index{Command@{Command}!clone@{clone}}
+\index{clone@{clone}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classCommand}{Command}}$>$ Command\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clones the command, creating a new unique pointer to a \mbox{\hyperlink{classCommand}{Command}}. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a copy of the command. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPlaceComponentCommand_adaa77f953f8d2d14f057c976f318b31a}{Place\+Component\+Command}}.
+
+\mbox{\Hypertarget{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}\label{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}} 
+\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual void Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Executes the command. 
+
+
+
+Implemented in \mbox{\hyperlink{classPlaceComponentCommand_aa4967ddf48dca107ef3b826f14e0e6bf}{Place\+Component\+Command}}.
+
+\mbox{\Hypertarget{classCommand_ad5eccd34dc85abda2cd0c21d819c17dc}\label{classCommand_ad5eccd34dc85abda2cd0c21d819c17dc}} 
+\index{Command@{Command}!undo@{undo}}
+\index{undo@{undo}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily virtual void Command\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Undoes the command. 
+
+
+
+Implemented in \mbox{\hyperlink{classPlaceComponentCommand_a5350e34b31e5118bdf3c98e984434064}{Place\+Component\+Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Command_8h}{Command.\+h}}\end{DoxyCompactItemize}

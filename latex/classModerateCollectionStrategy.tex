@@ -1,0 +1,101 @@
+\hypertarget{classModerateCollectionStrategy}{}\doxysection{Moderate\+Collection\+Strategy Class Reference}
+\label{classModerateCollectionStrategy}\index{ModerateCollectionStrategy@{ModerateCollectionStrategy}}
+
+
+Collection strategy for moderate collection rate.  
+
+
+
+
+{\ttfamily \#include $<$Moderate\+Collection\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Moderate\+Collection\+Strategy\+:
+% FIG 0
+
+
+Collaboration diagram for Moderate\+Collection\+Strategy\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classModerateCollectionStrategy_a4e5b7bed075f06c8c2aa113d73d1c2dc}{collect}} (int base\+Amount)
+\begin{DoxyCompactList}\small\item\em Collect resources at a moderate rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classModerateCollectionStrategy_aa898ac7ff843c3168e0d7de0de57c46d}{collect}} (int amount) const override
+\begin{DoxyCompactList}\small\item\em Pure virtual function to collect resources based on a strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Collection strategy for moderate collection rate. 
+
+A strategy for collecting resources at a moderate rate.
+
+Implements a 100\% collection efficiency.
+
+This class provides a method to collect resources at a normal collection rate. It is part of a strategy pattern where different collection strategies can be used based on the game\textquotesingle{}s requirements. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classModerateCollectionStrategy_aa898ac7ff843c3168e0d7de0de57c46d}\label{classModerateCollectionStrategy_aa898ac7ff843c3168e0d7de0de57c46d}} 
+\index{ModerateCollectionStrategy@{ModerateCollectionStrategy}!collect@{collect}}
+\index{collect@{collect}!ModerateCollectionStrategy@{ModerateCollectionStrategy}}
+\doxysubsubsection{\texorpdfstring{collect()}{collect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Moderate\+Collection\+Strategy\+::collect (\begin{DoxyParamCaption}\item[{int}]{base\+Amount }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function to collect resources based on a strategy. 
+
+Derived classes implement this method to adjust the amount collected based on a specific collection strategy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Amount} & The base amount to be collected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The adjusted amount collected based on the strategy. 
+\end{DoxyReturn}
+$<$ Returns the input amount unchanged.
+
+Implements \mbox{\hyperlink{classCollectionStrategy_a771a216c00c12dcf6643befb9300d381}{Collection\+Strategy}}.
+
+\mbox{\Hypertarget{classModerateCollectionStrategy_a4e5b7bed075f06c8c2aa113d73d1c2dc}\label{classModerateCollectionStrategy_a4e5b7bed075f06c8c2aa113d73d1c2dc}} 
+\index{ModerateCollectionStrategy@{ModerateCollectionStrategy}!collect@{collect}}
+\index{collect@{collect}!ModerateCollectionStrategy@{ModerateCollectionStrategy}}
+\doxysubsubsection{\texorpdfstring{collect()}{collect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Moderate\+Collection\+Strategy\+::collect (\begin{DoxyParamCaption}\item[{int}]{base\+Amount }\end{DoxyParamCaption})}
+
+
+
+Collect resources at a moderate rate. 
+
+Collects resources at a moderate rate.
+
+This method implements a standard collection rate by returning the base amount provided.
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Amount} & The base amount of resources to collect. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The amount collected, which is equal to the base amount.
+\end{DoxyReturn}
+The \mbox{\hyperlink{classModerateCollectionStrategy}{Moderate\+Collection\+Strategy}} implements a normal collection rate by simply returning the base amount specified.
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Amount} & The base amount of resources to be collected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The amount collected, which is equal to the base amount. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ModerateCollectionStrategy_8h}{Moderate\+Collection\+Strategy.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NPCSystem_8h}{NPCSystem.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ModerateCollectionStrategy_8cpp}{Moderate\+Collection\+Strategy.\+cpp}}\end{DoxyCompactItemize}

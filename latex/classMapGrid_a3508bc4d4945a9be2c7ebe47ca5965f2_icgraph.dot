@@ -1,0 +1,22 @@
+digraph "MapGrid::getHeight"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="MapGrid::getHeight",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="CityGame::collectTaxes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#ab286962cca4449729475a62431fa3bc6",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="CityGame::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#ad26bc885078e071e3ad2b40787fcca18",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Industry::findIndustryLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIndustry.html#aa17e0e9d6e9a7acd6d5e487ccfccfd80",tooltip="Finds the location of the industry on the map."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="CityGame::handleProcessResources",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#addcb4e07c76c1f163be52021d4029c3b",tooltip=" "];
+  Node6 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="CityGame::showStatistics",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityGame.html#a80179f957a5ae53c132901b08ac34fa5",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

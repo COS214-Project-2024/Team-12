@@ -1,0 +1,133 @@
+\hypertarget{classPowerPlant}{}\doxysection{Power\+Plant Class Reference}
+\label{classPowerPlant}\index{PowerPlant@{PowerPlant}}
+
+
+Represents a Power Plant in the utility system.  
+
+
+
+
+{\ttfamily \#include $<$Power\+Plant.\+h$>$}
+
+
+
+Inheritance diagram for Power\+Plant\+:
+% FIG 0
+
+
+Collaboration diagram for Power\+Plant\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPowerPlant_a62b58f161c06e7971bd903da89b18d05}{Power\+Plant}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classPowerPlant}{Power\+Plant}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPowerPlant_abfbf78db1f9888bb511809f785b74a1b}{Power\+Plant}} (const std\+::string \&n, double c, int cap, double radius, bool operational, int l, int consumption, const std\+::map$<$ std\+::string, int $>$ \&resources)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for \mbox{\hyperlink{classPowerPlant}{Power\+Plant}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPowerPlant_a7d9255ec3707236cff7673efd6a534a1}{connect}} (double distance)
+\begin{DoxyCompactList}\small\item\em Connects the power plant and checks its operational status. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classPowerPlant_a809827418829c9819772bbfc66213330}{clone}} () const
+\begin{DoxyCompactList}\small\item\em Clones the \mbox{\hyperlink{classPowerPlant}{Power\+Plant}} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a Power Plant in the utility system. 
+
+The \mbox{\hyperlink{classPowerPlant}{Power\+Plant}} class inherits from \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} and represents a power generation facility with characteristics such as cost, capacity, operational status, and the resources it consumes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPowerPlant_a62b58f161c06e7971bd903da89b18d05}\label{classPowerPlant_a62b58f161c06e7971bd903da89b18d05}} 
+\index{PowerPlant@{PowerPlant}!PowerPlant@{PowerPlant}}
+\index{PowerPlant@{PowerPlant}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{PowerPlant()}{PowerPlant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Power\+Plant\+::\+Power\+Plant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classPowerPlant}{Power\+Plant}}. 
+
+Initializes a \mbox{\hyperlink{classPowerPlant}{Power\+Plant}} instance with default values representing typical characteristics of a power plant.
+
+Initializes a \mbox{\hyperlink{classPowerPlant}{Power\+Plant}} instance with default values representing a typical power plant\textquotesingle{}s characteristics such as name, cost, capacity, coverage radius, operational status, level, consumption rate, and required resources. \mbox{\Hypertarget{classPowerPlant_abfbf78db1f9888bb511809f785b74a1b}\label{classPowerPlant_abfbf78db1f9888bb511809f785b74a1b}} 
+\index{PowerPlant@{PowerPlant}!PowerPlant@{PowerPlant}}
+\index{PowerPlant@{PowerPlant}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{PowerPlant()}{PowerPlant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Power\+Plant\+::\+Power\+Plant (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{n,  }\item[{double}]{c,  }\item[{int}]{cap,  }\item[{double}]{radius,  }\item[{bool}]{operational,  }\item[{int}]{l,  }\item[{int}]{consumption,  }\item[{const std\+::map$<$ std\+::string, int $>$ \&}]{resources }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for \mbox{\hyperlink{classPowerPlant}{Power\+Plant}}. 
+
+Initializes a \mbox{\hyperlink{classPowerPlant}{Power\+Plant}} instance with specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The name of the power plant. \\
+\hline
+{\em c} & The cost of the power plant. \\
+\hline
+{\em cap} & The capacity of the power plant. \\
+\hline
+{\em radius} & The coverage radius of the power plant. \\
+\hline
+{\em operational} & Indicates if the power plant is operational. \\
+\hline
+{\em l} & The level of the power plant. \\
+\hline
+{\em consumption} & The resource consumption rate of the power plant. \\
+\hline
+{\em resources} & A map of required resources and their quantities. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPowerPlant_a809827418829c9819772bbfc66213330}\label{classPowerPlant_a809827418829c9819772bbfc66213330}} 
+\index{PowerPlant@{PowerPlant}!clone@{clone}}
+\index{clone@{clone}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ Power\+Plant\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clones the \mbox{\hyperlink{classPowerPlant}{Power\+Plant}} instance. 
+
+Creates a shared pointer to a new instance of \mbox{\hyperlink{classPowerPlant}{Power\+Plant}} with the same properties.
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the cloned \mbox{\hyperlink{classPowerPlant}{Power\+Plant}} instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityFlyweight_aa85ec727b5273d2cdfa6e3c18a2ead81}{Utility\+Flyweight}}.
+
+\mbox{\Hypertarget{classPowerPlant_a7d9255ec3707236cff7673efd6a534a1}\label{classPowerPlant_a7d9255ec3707236cff7673efd6a534a1}} 
+\index{PowerPlant@{PowerPlant}!connect@{connect}}
+\index{connect@{connect}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily void Power\+Plant\+::connect (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Connects the power plant and checks its operational status. 
+
+Connects the power plant and checks its operational status within a given distance.
+
+If the power plant is operational and the distance is within the effect radius, it indicates that the power plant is providing power. Otherwise, it notifies that the connection is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & The distance to check against the effect radius. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtilityFlyweight_ab99284e3b40f660349b3bfbb3003dc6b}{Utility\+Flyweight}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PowerPlant_8h}{Power\+Plant.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{PowerPlant_8cpp}{Power\+Plant.\+cpp}}\end{DoxyCompactItemize}

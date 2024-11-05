@@ -1,0 +1,12 @@
+digraph "CommercialBuilding::getDisplayColor"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CommercialBuilding\l::getDisplayColor",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Gets the display color based on utility coverage."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CommercialBuilding\l::getBuildingType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommercialBuilding.html#aff579a01599a39f3d43196790ba1c0cb",tooltip="Gets the type of the building as a string."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CommercialBuilding\l::getUtilityCoverage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommercialBuilding.html#a3f71d10f472b322f5ab53974539e8103",tooltip="Calculates the building's utility coverage."];
+}

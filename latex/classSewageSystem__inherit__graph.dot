@@ -1,0 +1,11 @@
+digraph "SewageSystem"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{SewageSystem\n||+ SewageSystem()\l+ SewageSystem()\l+ connect()\l+ clone()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A concrete UtilityFlyweight that represents a sewage management utility."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{UtilityFlyweight\n|# name\l# cost\l# capacity\l# effectRadius\l# isOperational\l# level\l# resourceConsumption\l# resourceNeeds\l|+ UtilityFlyweight()\l+ UtilityFlyweight()\l+ connect()\l+ ~UtilityFlyweight()\l+ clone()\l+ getName()\l+ getOperationalStatus()\l+ getCost()\l+ getEffectRadius()\l+ getCapacity()\land 10 more...\l# setResourceConsumption()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUtilityFlyweight.html",tooltip="Abstract base class for utility components, providing shared functionality."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{CityComponent\n|- observers\l- location\l|+ add()\l+ remove()\l+ displayStatus()\l+ ~CityComponent()\l+ addNpc()\l+ removeNpc()\l+ notify()\l+ getBuildingType()\l+ accept()\l+ setLocation()\l+ setLocation()\l+ getLocation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html",tooltip="Abstract base class representing a component of a city."];
+}

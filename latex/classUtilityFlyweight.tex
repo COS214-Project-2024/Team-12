@@ -1,0 +1,529 @@
+\hypertarget{classUtilityFlyweight}{}\doxysection{Utility\+Flyweight Class Reference}
+\label{classUtilityFlyweight}\index{UtilityFlyweight@{UtilityFlyweight}}
+
+
+Abstract base class for utility components, providing shared functionality.  
+
+
+
+
+{\ttfamily \#include $<$Utility\+Flyweight.\+h$>$}
+
+
+
+Inheritance diagram for Utility\+Flyweight\+:
+% FIG 0
+
+
+Collaboration diagram for Utility\+Flyweight\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtilityFlyweight_a8b304bf97c914a138ed5f431f7723d3c}{Utility\+Flyweight}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtilityFlyweight_ac745cc55aa6e6be84f3afed5d0554ed8}{Utility\+Flyweight}} (const std\+::string \&n, double c, int cap, double radius, bool operational, int l, int consumption, const std\+::map$<$ std\+::string, int $>$ \&resources)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtilityFlyweight_ab99284e3b40f660349b3bfbb3003dc6b}{connect}} (double distance)=0
+\begin{DoxyCompactList}\small\item\em Connect the utility to a component within a specific distance. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtilityFlyweight_af4d672f6171c4bf108d33df68651c8fe}{$\sim$\+Utility\+Flyweight}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classUtilityFlyweight_aa85ec727b5273d2cdfa6e3c18a2ead81}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Creates a clone of the utility, implementing the Prototype pattern. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUtilityFlyweight_abb6affe8b568b17aba41013331a6f1c2}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the utility\textquotesingle{}s name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtilityFlyweight_aa26e3ec3c290e23514903741a2b98a6e}{get\+Operational\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the operational status. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtilityFlyweight_a259b04bd7a9a96cdf9d58ca332639007}{get\+Cost}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the monetary cost. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtilityFlyweight_a2ed62a42ad1fd9fb158c28f7bf95f9c6}{get\+Effect\+Radius}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the area of effect radius. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtilityFlyweight_a4309f0707b6cddb42e90877b9b159f43}{get\+Capacity}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the maximum capacity. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtilityFlyweight_a631932c0c96e2a7d7be718bd37834b9e}{get\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the utility\textquotesingle{}s current level. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classUtilityFlyweight_abcbf5b802f45830679e94d938cb641dc}{get\+Resource\+Consumption}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the resource consumption rate. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classUtilityFlyweight_a6f6289924579838c0a1c5a8653f3e201}{get\+Resource\+Needs}} () const
+\begin{DoxyCompactList}\small\item\em Getter for resource requirements map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilityFlyweight_a06a1f47692983af920de2aeb40da0db8}{activate}} ()
+\begin{DoxyCompactList}\small\item\em Activates the utility, setting it to operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilityFlyweight_a72f7edfc1adcec0550580bd95415f1e6}{deactivate}} ()
+\begin{DoxyCompactList}\small\item\em Deactivates the utility, setting it to non-\/operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilityFlyweight_a64e27a4415b981b3fbd5544cec07c455}{display\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Displays the current status of the utility. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtilityFlyweight_a24e851afc0c628a3d8c05cf0d70a3085}{get\+Radius}} () const
+\begin{DoxyCompactList}\small\item\em Gets the effect radius of the utility. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUtilityFlyweight_a13bf8b17147ed212c1894579e0b958aa}{get\+Building\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the type of the building, overridden from \mbox{\hyperlink{classCityComponent}{City\+Component}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilityFlyweight_a98b71d118175dab6ff5343be7bf44009}{accept}} (\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Accepts a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} visitor, allowing it to interact with the utility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilityFlyweight_ad6f5455f837e31d92bb7bfd02bddc014}{increment\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Increments the utility\textquotesingle{}s level, typically for upgrades. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUtilityFlyweight_ad32a987ead75c153fe17215342fc006f}{set\+Resource\+Consumption}} (int consumption)
+\begin{DoxyCompactList}\small\item\em Sets the resource consumption rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classUtilityFlyweight_a79b0ce3e2f142f7e10d2799db44925f8}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the utility. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtilityFlyweight_a50c6820515fba3e39881f9e9075b1651}{cost}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Monetary cost to build or upgrade. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtilityFlyweight_a1ae6c23b23735da1c466f6711a37a58c}{capacity}} = 0
+\begin{DoxyCompactList}\small\item\em Maximum number of buildings it can support. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtilityFlyweight_acbf69fb1040415f9f06610dd97379c2c}{effect\+Radius}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Area of effect for the utility. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtilityFlyweight_a4454c76800e804bf366532b09ec62fa7}{is\+Operational}} = false
+\begin{DoxyCompactList}\small\item\em Operational status of the utility. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtilityFlyweight_a4fd67253cc2292dce227b703baa6f1cc}{level}} = 0
+\begin{DoxyCompactList}\small\item\em Level of the utility, upgradeable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtilityFlyweight_a81564beea8e042ccd08e09c7a7b5e5be}{resource\+Consumption}} = 0
+\begin{DoxyCompactList}\small\item\em Resources required to keep the utility running. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classUtilityFlyweight_a62103b37847a348e9fc69de23115e654}{resource\+Needs}}
+\begin{DoxyCompactList}\small\item\em Map of resources required for construction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for utility components, providing shared functionality. 
+
+The \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} class defines shared attributes and methods for various utility types. Implements the Prototype pattern for cloning and defines core utility attributes like cost, capacity, operational status, and resource requirements. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtilityFlyweight_a8b304bf97c914a138ed5f431f7723d3c}\label{classUtilityFlyweight_a8b304bf97c914a138ed5f431f7723d3c}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!UtilityFlyweight@{UtilityFlyweight}}
+\index{UtilityFlyweight@{UtilityFlyweight}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{UtilityFlyweight()}{UtilityFlyweight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Utility\+Flyweight\+::\+Utility\+Flyweight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}. 
+
+\mbox{\Hypertarget{classUtilityFlyweight_ac745cc55aa6e6be84f3afed5d0554ed8}\label{classUtilityFlyweight_ac745cc55aa6e6be84f3afed5d0554ed8}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!UtilityFlyweight@{UtilityFlyweight}}
+\index{UtilityFlyweight@{UtilityFlyweight}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{UtilityFlyweight()}{UtilityFlyweight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Utility\+Flyweight\+::\+Utility\+Flyweight (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{n,  }\item[{double}]{c,  }\item[{int}]{cap,  }\item[{double}]{radius,  }\item[{bool}]{operational,  }\item[{int}]{t,  }\item[{int}]{consumption,  }\item[{const std\+::map$<$ std\+::string, int $>$ \&}]{resources }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}. 
+
+Constructs a \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} with specified attributes.
+
+Allows setting initial values for key attributes of the utility.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Name of the utility. \\
+\hline
+{\em c} & Cost of the utility. \\
+\hline
+{\em cap} & Capacity of the utility. \\
+\hline
+{\em radius} & Effect radius of the utility. \\
+\hline
+{\em operational} & Operational status of the utility. \\
+\hline
+{\em l} & Level of the utility. \\
+\hline
+{\em consumption} & Resource consumption rate of the utility. \\
+\hline
+{\em resources} & Map of resources required for construction.\\
+\hline
+{\em n} & Name of the utility. \\
+\hline
+{\em c} & Cost of the utility. \\
+\hline
+{\em cap} & Capacity of the utility. \\
+\hline
+{\em radius} & Effect radius of the utility. \\
+\hline
+{\em operational} & Operational status of the utility. \\
+\hline
+{\em t} & Level of the utility. \\
+\hline
+{\em consumption} & Resource consumption rate of the utility. \\
+\hline
+{\em resources} & Map of resources required for construction. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUtilityFlyweight_af4d672f6171c4bf108d33df68651c8fe}\label{classUtilityFlyweight_af4d672f6171c4bf108d33df68651c8fe}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!````~UtilityFlyweight@{$\sim$UtilityFlyweight}}
+\index{````~UtilityFlyweight@{$\sim$UtilityFlyweight}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{$\sim$UtilityFlyweight()}{~UtilityFlyweight()}}
+{\footnotesize\ttfamily virtual Utility\+Flyweight\+::$\sim$\+Utility\+Flyweight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtilityFlyweight_a98b71d118175dab6ff5343be7bf44009}\label{classUtilityFlyweight_a98b71d118175dab6ff5343be7bf44009}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!accept@{accept}}
+\index{accept@{accept}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Utility\+Flyweight\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtaxCollector}{tax\+Collector}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accepts a \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} visitor, allowing it to interact with the utility. 
+
+Currently, this function does not perform any operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em TC} & Pointer to the \mbox{\hyperlink{classtaxCollector}{tax\+Collector}} visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a87f4afa3d4e3ad4ef5290d185d4fdcdb}{City\+Component}}.
+
+\mbox{\Hypertarget{classUtilityFlyweight_a06a1f47692983af920de2aeb40da0db8}\label{classUtilityFlyweight_a06a1f47692983af920de2aeb40da0db8}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!activate@{activate}}
+\index{activate@{activate}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{activate()}{activate()}}
+{\footnotesize\ttfamily void Utility\+Flyweight\+::activate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Activates the utility, setting it to operational. 
+
+Activates the utility, making it operational. \mbox{\Hypertarget{classUtilityFlyweight_aa85ec727b5273d2cdfa6e3c18a2ead81}\label{classUtilityFlyweight_aa85ec727b5273d2cdfa6e3c18a2ead81}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!clone@{clone}}
+\index{clone@{clone}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ Utility\+Flyweight\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates a clone of the utility, implementing the Prototype pattern. 
+
+Pure virtual method to be implemented by derived classes for cloning.
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the cloned \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} instance. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWaterSupply_a45c1b8bb8594f65c6c9a88a370f87010}{Water\+Supply}}, \mbox{\hyperlink{classWasteManagement_aafe6f14c121e691ca2efe9ed10b06b84}{Waste\+Management}}, \mbox{\hyperlink{classSewageSystem_aa679873ac66f93293abe43bc193bf31d}{Sewage\+System}}, and \mbox{\hyperlink{classPowerPlant_a809827418829c9819772bbfc66213330}{Power\+Plant}}.
+
+\mbox{\Hypertarget{classUtilityFlyweight_ab99284e3b40f660349b3bfbb3003dc6b}\label{classUtilityFlyweight_ab99284e3b40f660349b3bfbb3003dc6b}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!connect@{connect}}
+\index{connect@{connect}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily virtual void Utility\+Flyweight\+::connect (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Connect the utility to a component within a specific distance. 
+
+Pure virtual function for establishing a connection based on distance. Must be implemented in derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & Distance to the component being connected. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classWaterSupply_a99d93a447020b4b29361d11bdad9926d}{Water\+Supply}}, \mbox{\hyperlink{classWasteManagement_a697126a06c14690bae90048eaeb7b8e1}{Waste\+Management}}, \mbox{\hyperlink{classSewageSystem_ab16b97d1f11f9659e2d7f9dea647f389}{Sewage\+System}}, and \mbox{\hyperlink{classPowerPlant_a7d9255ec3707236cff7673efd6a534a1}{Power\+Plant}}.
+
+\mbox{\Hypertarget{classUtilityFlyweight_a72f7edfc1adcec0550580bd95415f1e6}\label{classUtilityFlyweight_a72f7edfc1adcec0550580bd95415f1e6}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{deactivate()}{deactivate()}}
+{\footnotesize\ttfamily void Utility\+Flyweight\+::deactivate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deactivates the utility, setting it to non-\/operational. 
+
+Deactivates the utility, making it non-\/operational. \mbox{\Hypertarget{classUtilityFlyweight_a64e27a4415b981b3fbd5544cec07c455}\label{classUtilityFlyweight_a64e27a4415b981b3fbd5544cec07c455}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Utility\+Flyweight\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays the current status of the utility. 
+
+Displays the current status of the utility, including attributes and requirements. 
+
+Implements \mbox{\hyperlink{classCityComponent_ab4ef576fde246f8ca16d069a208247fd}{City\+Component}}.
+
+\mbox{\Hypertarget{classUtilityFlyweight_a13bf8b17147ed212c1894579e0b958aa}\label{classUtilityFlyweight_a13bf8b17147ed212c1894579e0b958aa}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Utility\+Flyweight\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of the building, overridden from \mbox{\hyperlink{classCityComponent}{City\+Component}}. 
+
+\begin{DoxyReturn}{Returns}
+The building type, which is \char`\"{}\+Utility\char`\"{} for \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+\mbox{\Hypertarget{classUtilityFlyweight_a4309f0707b6cddb42e90877b9b159f43}\label{classUtilityFlyweight_a4309f0707b6cddb42e90877b9b159f43}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int Utility\+Flyweight\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the maximum capacity. 
+
+Retrieves the capacity of the utility.
+
+\begin{DoxyReturn}{Returns}
+The maximum number of buildings the utility can support. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtilityFlyweight_a259b04bd7a9a96cdf9d58ca332639007}\label{classUtilityFlyweight_a259b04bd7a9a96cdf9d58ca332639007}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!getCost@{getCost}}
+\index{getCost@{getCost}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily double Utility\+Flyweight\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the monetary cost. 
+
+Retrieves the monetary cost of the utility.
+
+\begin{DoxyReturn}{Returns}
+The cost of the utility. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtilityFlyweight_a2ed62a42ad1fd9fb158c28f7bf95f9c6}\label{classUtilityFlyweight_a2ed62a42ad1fd9fb158c28f7bf95f9c6}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!getEffectRadius@{getEffectRadius}}
+\index{getEffectRadius@{getEffectRadius}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{getEffectRadius()}{getEffectRadius()}}
+{\footnotesize\ttfamily double Utility\+Flyweight\+::get\+Effect\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the area of effect radius. 
+
+Retrieves the effect radius of the utility.
+
+\begin{DoxyReturn}{Returns}
+The area of effect radius. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtilityFlyweight_a631932c0c96e2a7d7be718bd37834b9e}\label{classUtilityFlyweight_a631932c0c96e2a7d7be718bd37834b9e}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{getLevel()}{getLevel()}}
+{\footnotesize\ttfamily int Utility\+Flyweight\+::get\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the utility\textquotesingle{}s current level. 
+
+Retrieves the level of the utility.
+
+\begin{DoxyReturn}{Returns}
+The current level of the utility. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtilityFlyweight_abb6affe8b568b17aba41013331a6f1c2}\label{classUtilityFlyweight_abb6affe8b568b17aba41013331a6f1c2}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!getName@{getName}}
+\index{getName@{getName}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Utility\+Flyweight\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the utility\textquotesingle{}s name. 
+
+Retrieves the name of the utility.
+
+\begin{DoxyReturn}{Returns}
+The name of the utility. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtilityFlyweight_aa26e3ec3c290e23514903741a2b98a6e}\label{classUtilityFlyweight_aa26e3ec3c290e23514903741a2b98a6e}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!getOperationalStatus@{getOperationalStatus}}
+\index{getOperationalStatus@{getOperationalStatus}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{getOperationalStatus()}{getOperationalStatus()}}
+{\footnotesize\ttfamily bool Utility\+Flyweight\+::get\+Operational\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the operational status. 
+
+Retrieves the operational status of the utility.
+
+\begin{DoxyReturn}{Returns}
+True if operational, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtilityFlyweight_a24e851afc0c628a3d8c05cf0d70a3085}\label{classUtilityFlyweight_a24e851afc0c628a3d8c05cf0d70a3085}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!getRadius@{getRadius}}
+\index{getRadius@{getRadius}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{getRadius()}{getRadius()}}
+{\footnotesize\ttfamily double Utility\+Flyweight\+::get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the effect radius of the utility. 
+
+Retrieves the radius of effect.
+
+\begin{DoxyReturn}{Returns}
+The effect radius.
+
+The effect radius of the utility. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtilityFlyweight_abcbf5b802f45830679e94d938cb641dc}\label{classUtilityFlyweight_abcbf5b802f45830679e94d938cb641dc}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!getResourceConsumption@{getResourceConsumption}}
+\index{getResourceConsumption@{getResourceConsumption}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{getResourceConsumption()}{getResourceConsumption()}}
+{\footnotesize\ttfamily int Utility\+Flyweight\+::get\+Resource\+Consumption (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Getter for the resource consumption rate. 
+
+Retrieves the resource consumption rate.
+
+\begin{DoxyReturn}{Returns}
+The rate of resource consumption per cycle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtilityFlyweight_a6f6289924579838c0a1c5a8653f3e201}\label{classUtilityFlyweight_a6f6289924579838c0a1c5a8653f3e201}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!getResourceNeeds@{getResourceNeeds}}
+\index{getResourceNeeds@{getResourceNeeds}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{getResourceNeeds()}{getResourceNeeds()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Utility\+Flyweight\+::get\+Resource\+Needs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for resource requirements map. 
+
+Retrieves the map of resources required for construction.
+
+\begin{DoxyReturn}{Returns}
+A map of resources and quantities needed for construction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtilityFlyweight_ad6f5455f837e31d92bb7bfd02bddc014}\label{classUtilityFlyweight_ad6f5455f837e31d92bb7bfd02bddc014}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!incrementLevel@{incrementLevel}}
+\index{incrementLevel@{incrementLevel}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{incrementLevel()}{incrementLevel()}}
+{\footnotesize\ttfamily void Utility\+Flyweight\+::increment\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments the utility\textquotesingle{}s level, typically for upgrades. 
+
+\mbox{\Hypertarget{classUtilityFlyweight_ad32a987ead75c153fe17215342fc006f}\label{classUtilityFlyweight_ad32a987ead75c153fe17215342fc006f}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!setResourceConsumption@{setResourceConsumption}}
+\index{setResourceConsumption@{setResourceConsumption}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{setResourceConsumption()}{setResourceConsumption()}}
+{\footnotesize\ttfamily void Utility\+Flyweight\+::set\+Resource\+Consumption (\begin{DoxyParamCaption}\item[{int}]{consumption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sets the resource consumption rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em consumption} & The new resource consumption rate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUtilityFlyweight_a1ae6c23b23735da1c466f6711a37a58c}\label{classUtilityFlyweight_a1ae6c23b23735da1c466f6711a37a58c}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!capacity@{capacity}}
+\index{capacity@{capacity}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily int Utility\+Flyweight\+::capacity = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Maximum number of buildings it can support. 
+
+\mbox{\Hypertarget{classUtilityFlyweight_a50c6820515fba3e39881f9e9075b1651}\label{classUtilityFlyweight_a50c6820515fba3e39881f9e9075b1651}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!cost@{cost}}
+\index{cost@{cost}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{cost}{cost}}
+{\footnotesize\ttfamily double Utility\+Flyweight\+::cost = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Monetary cost to build or upgrade. 
+
+\mbox{\Hypertarget{classUtilityFlyweight_acbf69fb1040415f9f06610dd97379c2c}\label{classUtilityFlyweight_acbf69fb1040415f9f06610dd97379c2c}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!effectRadius@{effectRadius}}
+\index{effectRadius@{effectRadius}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{effectRadius}{effectRadius}}
+{\footnotesize\ttfamily double Utility\+Flyweight\+::effect\+Radius = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Area of effect for the utility. 
+
+\mbox{\Hypertarget{classUtilityFlyweight_a4454c76800e804bf366532b09ec62fa7}\label{classUtilityFlyweight_a4454c76800e804bf366532b09ec62fa7}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!isOperational@{isOperational}}
+\index{isOperational@{isOperational}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{isOperational}{isOperational}}
+{\footnotesize\ttfamily bool Utility\+Flyweight\+::is\+Operational = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Operational status of the utility. 
+
+\mbox{\Hypertarget{classUtilityFlyweight_a4fd67253cc2292dce227b703baa6f1cc}\label{classUtilityFlyweight_a4fd67253cc2292dce227b703baa6f1cc}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!level@{level}}
+\index{level@{level}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int Utility\+Flyweight\+::level = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Level of the utility, upgradeable. 
+
+\mbox{\Hypertarget{classUtilityFlyweight_a79b0ce3e2f142f7e10d2799db44925f8}\label{classUtilityFlyweight_a79b0ce3e2f142f7e10d2799db44925f8}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!name@{name}}
+\index{name@{name}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Utility\+Flyweight\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Name of the utility. 
+
+\mbox{\Hypertarget{classUtilityFlyweight_a81564beea8e042ccd08e09c7a7b5e5be}\label{classUtilityFlyweight_a81564beea8e042ccd08e09c7a7b5e5be}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!resourceConsumption@{resourceConsumption}}
+\index{resourceConsumption@{resourceConsumption}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{resourceConsumption}{resourceConsumption}}
+{\footnotesize\ttfamily int Utility\+Flyweight\+::resource\+Consumption = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Resources required to keep the utility running. 
+
+\mbox{\Hypertarget{classUtilityFlyweight_a62103b37847a348e9fc69de23115e654}\label{classUtilityFlyweight_a62103b37847a348e9fc69de23115e654}} 
+\index{UtilityFlyweight@{UtilityFlyweight}!resourceNeeds@{resourceNeeds}}
+\index{resourceNeeds@{resourceNeeds}!UtilityFlyweight@{UtilityFlyweight}}
+\doxysubsubsection{\texorpdfstring{resourceNeeds}{resourceNeeds}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Utility\+Flyweight\+::resource\+Needs\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map of resources required for construction. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{UtilityFlyweight_8h}{Utility\+Flyweight.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{UtilityFlyweight_8cpp}{Utility\+Flyweight.\+cpp}}\end{DoxyCompactItemize}

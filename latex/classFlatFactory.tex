@@ -1,0 +1,64 @@
+\hypertarget{classFlatFactory}{}\doxysection{Flat\+Factory Class Reference}
+\label{classFlatFactory}\index{FlatFactory@{FlatFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classFlat}{Flat}} residential buildings.  
+
+
+
+
+{\ttfamily \#include $<$Flat\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Flat\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Flat\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $>$ \mbox{\hyperlink{classFlatFactory_ae4c87e00ba4695418c68c8ef9a9105f2}{create\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Creates a unique pointer to a \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} of type \mbox{\hyperlink{classFlat}{Flat}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classFlat}{Flat}} residential buildings. 
+
+The \mbox{\hyperlink{classFlatFactory}{Flat\+Factory}} class inherits from \mbox{\hyperlink{classResidentialBuildingFactory}{Residential\+Building\+Factory}} and provides an implementation for creating instances of \mbox{\hyperlink{classFlat}{Flat}} buildings. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFlatFactory_ae4c87e00ba4695418c68c8ef9a9105f2}\label{classFlatFactory_ae4c87e00ba4695418c68c8ef9a9105f2}} 
+\index{FlatFactory@{FlatFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!FlatFactory@{FlatFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} $>$ Flat\+Factory\+::create\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a unique pointer to a \mbox{\hyperlink{classResidentialBuilding}{Residential\+Building}} of type \mbox{\hyperlink{classFlat}{Flat}}. 
+
+Creates a unique pointer to a \mbox{\hyperlink{classFlat}{Flat}} residential building.
+
+This method instantiates a \mbox{\hyperlink{classFlat}{Flat}} object and returns it as a unique pointer.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Residential\+Building$>$ A unique pointer to the created \mbox{\hyperlink{classFlat}{Flat}} object.
+\end{DoxyReturn}
+This function instantiates a \mbox{\hyperlink{classFlat}{Flat}} object and returns it as a unique pointer. The created \mbox{\hyperlink{classFlat}{Flat}} building has default attributes as specified in its constructor.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Residential\+Building$>$ A unique pointer to the created \mbox{\hyperlink{classFlat}{Flat}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidentialBuildingFactory_a1eb3108adbe02e3a18d9b925915a5fc3}{Residential\+Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{FlatFactory_8h}{Flat\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{FlatFactory_8cpp}{Flat\+Factory.\+cpp}}\end{DoxyCompactItemize}

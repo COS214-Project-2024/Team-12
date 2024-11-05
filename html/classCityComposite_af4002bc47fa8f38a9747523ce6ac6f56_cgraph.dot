@@ -1,0 +1,24 @@
+digraph "CityComposite::add"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CityComposite::add",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Adds a city component (zone) to the composite."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Government::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a18e3da6a1d6cae38f6eea1d50fe77288",tooltip="Retrieves the singleton instance of the Government class."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CityComposite::updateHappiness\lForNewComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComposite.html#ae3eb3b1ea611b29194c58d7d69994cf7",tooltip="Updates the city’s happiness level based on the addition of a new component."];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="NPCManager::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#a29c578e3b969f7438d6025dd3fc21c50",tooltip="Retrieves the singleton instance of NPCManager."];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Government::increaseEmploymentRate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a37a62c0a07cabbff4f38fbdecc1a8b16",tooltip="Increases the employment rate by a specified amount."];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Government::incrementPollution\lLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGovernment.html#a80b9b35905bca60494ca649da69cd381",tooltip="Increments the pollution level by a specified amount."];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="CityComponent::notify",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityComponent.html#a323bb79bc68085ac2256f81812a79f52",tooltip="Notifies all observers of changes in the city component."];
+  Node3 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="NPCManager::setHappiness\lLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNPCManager.html#aa5532ef54b02558f6e97c9fdea5cd98e",tooltip="Sets or adjusts the NPC happiness level."];
+  Node8 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

@@ -1,0 +1,62 @@
+\hypertarget{classShopsFactory}{}\doxysection{Shops\+Factory Class Reference}
+\label{classShopsFactory}\index{ShopsFactory@{ShopsFactory}}
+
+
+Factory class for creating shop buildings.  
+
+
+
+
+{\ttfamily \#include $<$Shops\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Shops\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Shops\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $>$ \mbox{\hyperlink{classShopsFactory_a798289d7fcc2b9fe7a9f1d9238f0a839}{create\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new shop building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating shop buildings. 
+
+\mbox{\hyperlink{classShopsFactory}{Shops\+Factory}} is a concrete implementation of \mbox{\hyperlink{classCommercialFactory}{Commercial\+Factory}} that creates shop-\/type commercial buildings. This factory is used to encapsulate the creation of shop buildings, adhering to the Abstract Factory design pattern. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classShopsFactory_a798289d7fcc2b9fe7a9f1d9238f0a839}\label{classShopsFactory_a798289d7fcc2b9fe7a9f1d9238f0a839}} 
+\index{ShopsFactory@{ShopsFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!ShopsFactory@{ShopsFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $>$ Shops\+Factory\+::create\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a new shop building. 
+
+This method creates and returns a unique pointer to a shop-\/type commercial building.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Commercial\+Building$>$ A unique pointer to the created shop building.
+\end{DoxyReturn}
+This method instantiates a \mbox{\hyperlink{classShops}{Shops}} object, which represents a commercial building of type shop, and returns a unique pointer to the created building.
+
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Commercial\+Building$>$ A unique pointer to the created \mbox{\hyperlink{classShops}{Shops}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercialFactory_ac8fee8091c378e0f563f1e2146693264}{Commercial\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ShopsFactory_8h}{Shops\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ShopsFactory_8cpp}{Shops\+Factory.\+cpp}}\end{DoxyCompactItemize}

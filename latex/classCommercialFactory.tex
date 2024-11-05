@@ -1,0 +1,71 @@
+\hypertarget{classCommercialFactory}{}\doxysection{Commercial\+Factory Class Reference}
+\label{classCommercialFactory}\index{CommercialFactory@{CommercialFactory}}
+
+
+Abstract factory class for creating commercial buildings.  
+
+
+
+
+{\ttfamily \#include $<$Commercial\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Commercial\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Commercial\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}} $>$ \mbox{\hyperlink{classCommercialFactory_ac8fee8091c378e0f563f1e2146693264}{create\+Building}} ()=0
+\begin{DoxyCompactList}\small\item\em Creates a commercial building. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCommercialFactory_a101c2dcac960d17e02d7f2fb84713787}{$\sim$\+Commercial\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classCommercialFactory}{Commercial\+Factory}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract factory class for creating commercial buildings. 
+
+Provides an interface for creating different types of commercial buildings, allowing subclasses to define the specific type of commercial building created. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommercialFactory_a101c2dcac960d17e02d7f2fb84713787}\label{classCommercialFactory_a101c2dcac960d17e02d7f2fb84713787}} 
+\index{CommercialFactory@{CommercialFactory}!````~CommercialFactory@{$\sim$CommercialFactory}}
+\index{````~CommercialFactory@{$\sim$CommercialFactory}!CommercialFactory@{CommercialFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$CommercialFactory()}{~CommercialFactory()}}
+{\footnotesize\ttfamily virtual Commercial\+Factory\+::$\sim$\+Commercial\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for the \mbox{\hyperlink{classCommercialFactory}{Commercial\+Factory}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommercialFactory_ac8fee8091c378e0f563f1e2146693264}\label{classCommercialFactory_ac8fee8091c378e0f563f1e2146693264}} 
+\index{CommercialFactory@{CommercialFactory}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!CommercialFactory@{CommercialFactory}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}}$>$ Commercial\+Factory\+::create\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates a commercial building. 
+
+This pure virtual function must be implemented by derived classes to create a specific type of commercial building.
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a newly created \mbox{\hyperlink{classCommercialBuilding}{Commercial\+Building}}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classOfficeFactory_a237448a7d70489efc990bccc8360b1da}{Office\+Factory}}, \mbox{\hyperlink{classShopsFactory_a798289d7fcc2b9fe7a9f1d9238f0a839}{Shops\+Factory}}, and \mbox{\hyperlink{classMallsFactory_a75263affd45af02093e72fa8dd9ac2ef}{Malls\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CommercialFactory_8h}{Commercial\+Factory.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,16 @@
+digraph "Industry::findIndustryLocation"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Industry::findIndustryLocation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Finds the location of the industry on the map."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="MapGrid::getComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMapGrid.html#a9c9677c2efbc436d1ec1e89bb9fd47b7",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MapGrid::isValidLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMapGrid.html#a609c06dd38f67e93a766d5bb8b9cb197",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="MapGrid::getHeight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMapGrid.html#a3508bc4d4945a9be2c7ebe47ca5965f2",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="MapGrid::getWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMapGrid.html#a73f8e3dadd5b1c80f0d3d7b3df6d9ae9",tooltip=" "];
+}

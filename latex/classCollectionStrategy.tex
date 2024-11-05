@@ -1,0 +1,113 @@
+\hypertarget{classCollectionStrategy}{}\doxysection{Collection\+Strategy Class Reference}
+\label{classCollectionStrategy}\index{CollectionStrategy@{CollectionStrategy}}
+
+
+Base class for collection strategies in the NPC system.  
+
+
+
+
+{\ttfamily \#include $<$Collection\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Collection\+Strategy\+:
+% FIG 0
+
+
+Collaboration diagram for Collection\+Strategy\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classCollectionStrategy_a4239c628395f99ce55ba676f01c7bbd7}{$\sim$\+Collection\+Strategy}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classCollectionStrategy}{Collection\+Strategy}} class. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classCollectionStrategy_a771a216c00c12dcf6643befb9300d381}{collect}} (int base\+Amount) const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to collect resources based on a strategy. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCollectionStrategy_a4239c628395f99ce55ba676f01c7bbd7}{$\sim$\+Collection\+Strategy}} ()=default
+\item 
+virtual int \mbox{\hyperlink{classCollectionStrategy_a40fd649fc79a4dd31bfe7cc3affad390}{collect}} (int amount) const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to determine collection efficiency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for collection strategies in the NPC system. 
+
+Abstract base class for resource collection strategies in the game.
+
+Provides an interface for defining different collection efficiency levels for Worker NPCs.
+
+Defines the interface for various strategies that determine how resources are collected. \mbox{\hyperlink{classConcrete}{Concrete}} strategies derived from this class will implement specific collection behaviors. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCollectionStrategy_a4239c628395f99ce55ba676f01c7bbd7}\label{classCollectionStrategy_a4239c628395f99ce55ba676f01c7bbd7}} 
+\index{CollectionStrategy@{CollectionStrategy}!````~CollectionStrategy@{$\sim$CollectionStrategy}}
+\index{````~CollectionStrategy@{$\sim$CollectionStrategy}!CollectionStrategy@{CollectionStrategy}}
+\doxysubsubsection{\texorpdfstring{$\sim$CollectionStrategy()}{~CollectionStrategy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual Collection\+Strategy\+::$\sim$\+Collection\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for the \mbox{\hyperlink{classCollectionStrategy}{Collection\+Strategy}} class. 
+
+Ensures proper cleanup of resources for derived classes. \mbox{\Hypertarget{classCollectionStrategy_a4239c628395f99ce55ba676f01c7bbd7}\label{classCollectionStrategy_a4239c628395f99ce55ba676f01c7bbd7}} 
+\index{CollectionStrategy@{CollectionStrategy}!````~CollectionStrategy@{$\sim$CollectionStrategy}}
+\index{````~CollectionStrategy@{$\sim$CollectionStrategy}!CollectionStrategy@{CollectionStrategy}}
+\doxysubsubsection{\texorpdfstring{$\sim$CollectionStrategy()}{~CollectionStrategy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Collection\+Strategy\+::$\sim$\+Collection\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCollectionStrategy_a40fd649fc79a4dd31bfe7cc3affad390}\label{classCollectionStrategy_a40fd649fc79a4dd31bfe7cc3affad390}} 
+\index{CollectionStrategy@{CollectionStrategy}!collect@{collect}}
+\index{collect@{collect}!CollectionStrategy@{CollectionStrategy}}
+\doxysubsubsection{\texorpdfstring{collect()}{collect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual int Collection\+Strategy\+::collect (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to determine collection efficiency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The base amount to be collected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The adjusted amount based on the strategy\textquotesingle{}s efficiency. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classFastCollectionStrategy_ab2e020968bb0f5a81168f6ceb4d0e456}{Fast\+Collection\+Strategy}}, \mbox{\hyperlink{classModerateCollectionStrategy_aa898ac7ff843c3168e0d7de0de57c46d}{Moderate\+Collection\+Strategy}}, and \mbox{\hyperlink{classSlowCollectionStrategy_a65cf053322c791c3d9308deddd70d271}{Slow\+Collection\+Strategy}}.
+
+\mbox{\Hypertarget{classCollectionStrategy_a771a216c00c12dcf6643befb9300d381}\label{classCollectionStrategy_a771a216c00c12dcf6643befb9300d381}} 
+\index{CollectionStrategy@{CollectionStrategy}!collect@{collect}}
+\index{collect@{collect}!CollectionStrategy@{CollectionStrategy}}
+\doxysubsubsection{\texorpdfstring{collect()}{collect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int Collection\+Strategy\+::collect (\begin{DoxyParamCaption}\item[{int}]{base\+Amount }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to collect resources based on a strategy. 
+
+Derived classes implement this method to adjust the amount collected based on a specific collection strategy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Amount} & The base amount to be collected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The adjusted amount collected based on the strategy. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classFastCollectionStrategy_ab2e020968bb0f5a81168f6ceb4d0e456}{Fast\+Collection\+Strategy}}, \mbox{\hyperlink{classModerateCollectionStrategy_aa898ac7ff843c3168e0d7de0de57c46d}{Moderate\+Collection\+Strategy}}, and \mbox{\hyperlink{classSlowCollectionStrategy_a65cf053322c791c3d9308deddd70d271}{Slow\+Collection\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CollectionStrategy_8h}{Collection\+Strategy.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NPCSystem_8h}{NPCSystem.\+h}}\end{DoxyCompactItemize}

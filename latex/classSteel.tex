@@ -1,0 +1,109 @@
+\hypertarget{classSteel}{}\doxysection{Steel Class Reference}
+\label{classSteel}\index{Steel@{Steel}}
+
+
+Represents the \mbox{\hyperlink{classSteel}{Steel}} resource in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Steel.\+h$>$}
+
+
+
+Inheritance diagram for Steel\+:
+% FIG 0
+
+
+Collaboration diagram for Steel\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSteel_aa68c6af909f10cedbcdbac07c07a8cc7}{Steel}} (int \mbox{\hyperlink{classConstructionResourceProduct_aa474a41014b41340b5fdf1d6c0901108}{quantity}}, int \mbox{\hyperlink{classConstructionResourceProduct_ad858e22527c4b10a3a83145049745253}{unit\+Cost}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classSteel}{Steel}} object with specified quantity and unit cost. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSteel_ab16c1b75e9ed1a4610deda0950de7ca1}{$\sim$\+Steel}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classSteel}{Steel}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSteel_afff1b81cc7ca89dad46059562a5a5db7}{display\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Displays the current status of the \mbox{\hyperlink{classSteel}{Steel}} resource. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSteel_a4abe56baf126e38bf7a49e0a75b99790}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Gets the type of building resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the \mbox{\hyperlink{classSteel}{Steel}} resource in the city simulation. 
+
+This class is a concrete product derived from \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}. It encapsulates the properties and behavior of \mbox{\hyperlink{classSteel}{Steel}} used in construction. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSteel_aa68c6af909f10cedbcdbac07c07a8cc7}\label{classSteel_aa68c6af909f10cedbcdbac07c07a8cc7}} 
+\index{Steel@{Steel}!Steel@{Steel}}
+\index{Steel@{Steel}!Steel@{Steel}}
+\doxysubsubsection{\texorpdfstring{Steel()}{Steel()}}
+{\footnotesize\ttfamily Steel\+::\+Steel (\begin{DoxyParamCaption}\item[{int}]{quantity,  }\item[{int}]{unit\+Cost }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classSteel}{Steel}} object with specified quantity and unit cost. 
+
+Initializes the \mbox{\hyperlink{classSteel}{Steel}} resource with a given quantity and cost per unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & The initial quantity of \mbox{\hyperlink{classSteel}{Steel}}. \\
+\hline
+{\em unit\+Cost} & The cost per unit of \mbox{\hyperlink{classSteel}{Steel}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSteel_ab16c1b75e9ed1a4610deda0950de7ca1}\label{classSteel_ab16c1b75e9ed1a4610deda0950de7ca1}} 
+\index{Steel@{Steel}!````~Steel@{$\sim$Steel}}
+\index{````~Steel@{$\sim$Steel}!Steel@{Steel}}
+\doxysubsubsection{\texorpdfstring{$\sim$Steel()}{~Steel()}}
+{\footnotesize\ttfamily Steel\+::$\sim$\+Steel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classSteel}{Steel}}. 
+
+Cleans up any resources or states when a \mbox{\hyperlink{classSteel}{Steel}} object is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSteel_afff1b81cc7ca89dad46059562a5a5db7}\label{classSteel_afff1b81cc7ca89dad46059562a5a5db7}} 
+\index{Steel@{Steel}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!Steel@{Steel}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Steel\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the current status of the \mbox{\hyperlink{classSteel}{Steel}} resource. 
+
+Provides detailed information about the quantity, unit cost, and total cost of the \mbox{\hyperlink{classSteel}{Steel}}. 
+
+Reimplemented from \mbox{\hyperlink{classConstructionResourceProduct_a86159081d7b03a975af6d0506c41f9e7}{Construction\+Resource\+Product}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classSteel_a4abe56baf126e38bf7a49e0a75b99790}\label{classSteel_a4abe56baf126e38bf7a49e0a75b99790}} 
+\index{Steel@{Steel}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Steel@{Steel}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Steel\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of building resource. 
+
+\begin{DoxyReturn}{Returns}
+The type of the building resource as a string, in this case, \char`\"{}\+Steel\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Steel_8h}{Steel.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{Steel_8cpp}{Steel.\+cpp}}\end{DoxyCompactItemize}

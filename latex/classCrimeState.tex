@@ -1,0 +1,117 @@
+\hypertarget{classCrimeState}{}\doxysection{Crime\+State Class Reference}
+\label{classCrimeState}\index{CrimeState@{CrimeState}}
+
+
+Represents the crime state for NPCs, impacting their behavior and the city\textquotesingle{}s overall conditions.  
+
+
+
+
+{\ttfamily \#include $<$Crime\+State.\+h$>$}
+
+
+
+Inheritance diagram for Crime\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Crime\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCrimeState_ada7bdb702a48d7ba3847bf4b77d5e5cd}{handle}} () override
+\begin{DoxyCompactList}\small\item\em Handles actions specific to the crime state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCrimeState_a94ad5e20378f9a01a1eee3a267ab6618}{get\+State\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ \mbox{\hyperlink{classCrimeState_a56399f1c978088b5605e3e313ff6f757}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Creates a copy of the current \mbox{\hyperlink{classCrimeState}{Crime\+State}} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCrimeState_a6b370da180245ec8dcae5e1a6d66f529}{$\sim$\+Crime\+State}} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor for \mbox{\hyperlink{classCrimeState}{Crime\+State}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the crime state for NPCs, impacting their behavior and the city\textquotesingle{}s overall conditions. 
+
+In this state, NPCs behave in a manner that reflects an increase in crime rates, potentially affecting city statistics. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCrimeState_a6b370da180245ec8dcae5e1a6d66f529}\label{classCrimeState_a6b370da180245ec8dcae5e1a6d66f529}} 
+\index{CrimeState@{CrimeState}!````~CrimeState@{$\sim$CrimeState}}
+\index{````~CrimeState@{$\sim$CrimeState}!CrimeState@{CrimeState}}
+\doxysubsubsection{\texorpdfstring{$\sim$CrimeState()}{~CrimeState()}}
+{\footnotesize\ttfamily Crime\+State\+::$\sim$\+Crime\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Default destructor for \mbox{\hyperlink{classCrimeState}{Crime\+State}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCrimeState_a56399f1c978088b5605e3e313ff6f757}\label{classCrimeState_a56399f1c978088b5605e3e313ff6f757}} 
+\index{CrimeState@{CrimeState}!clone@{clone}}
+\index{clone@{clone}!CrimeState@{CrimeState}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ Crime\+State\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a copy of the current \mbox{\hyperlink{classCrimeState}{Crime\+State}} instance. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to a newly cloned \mbox{\hyperlink{classCrimeState}{Crime\+State}} object.
+
+A pointer to a new \mbox{\hyperlink{classCrimeState}{Crime\+State}} object, cloned from this instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCState_a2a50964882d982c937f166ec31882c5a}{NPCState}}.
+
+\mbox{\Hypertarget{classCrimeState_a94ad5e20378f9a01a1eee3a267ab6618}\label{classCrimeState_a94ad5e20378f9a01a1eee3a267ab6618}} 
+\index{CrimeState@{CrimeState}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!CrimeState@{CrimeState}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily std\+::string Crime\+State\+::get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the name of the current state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of this state, \char`\"{}\+Crime\char`\"{}.
+
+The name of this state, \char`\"{}\+Crime\+State\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCState_afc1b8c7e3747024d0bbb3ded0a4a7d56}{NPCState}}.
+
+\mbox{\Hypertarget{classCrimeState_ada7bdb702a48d7ba3847bf4b77d5e5cd}\label{classCrimeState_ada7bdb702a48d7ba3847bf4b77d5e5cd}} 
+\index{CrimeState@{CrimeState}!handle@{handle}}
+\index{handle@{handle}!CrimeState@{CrimeState}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Crime\+State\+::handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles actions specific to the crime state. 
+
+Handles the effects of the \mbox{\hyperlink{classCrimeState}{Crime\+State}} on the city\textquotesingle{}s mortality rate.
+
+Executes the behavior associated with NPCs in the crime state, impacting relevant NPC or city statistics.
+
+Calculates the likelihood and impact of crime affecting the mortality rate based on the number of NPCs in the crime state. If a randomly generated value falls within the calculated chance, the mortality rate is increased by a factor proportional to the crime NPC count. $<$ Base probability of crime impact.
+
+$<$ Mortality rate increase factor per crime NPC.
+
+Implements \mbox{\hyperlink{classNPCState_ae26888ff3d2981261c9f3e937600c762}{NPCState}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CrimeState_8h}{Crime\+State.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CrimeState_8cpp}{Crime\+State.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,185 @@
+\hypertarget{classUtilityFactory}{}\doxysection{Utility\+Factory Class Reference}
+\label{classUtilityFactory}\index{UtilityFactory@{UtilityFactory}}
+
+
+Factory class for creating and managing utility flyweight instances.  
+
+
+
+
+{\ttfamily \#include $<$Utility\+Factory.\+h$>$}
+
+
+
+Collaboration diagram for Utility\+Factory\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classUtilityFactory_a31d8feb83ff8e220fdd0464f7595c62a}{get\+Utility}} (const std\+::string \&type)
+\begin{DoxyCompactList}\small\item\em Retrieves a utility flyweight instance by its string name. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ \mbox{\hyperlink{classUtilityFactory_ae16a15a9a503b05f2b688adde34fc960}{get\+Utility\+By\+Type}} (int type)
+\begin{DoxyCompactList}\small\item\em Retrieves a utility flyweight instance by its numeric type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classUtilityFactory_ac461aa6311dd849c435ed2125c4fdc20}{get\+Utility\+Name}} (int type)
+\begin{DoxyCompactList}\small\item\em Gets the name of the utility based on its numeric type. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{classUtilityFactory_a508618dffeec81dbf563ba7e5b390815}{get\+Utility\+Cost}} (int type)
+\begin{DoxyCompactList}\small\item\em Gets the cost of the utility based on its numeric type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ $>$ \mbox{\hyperlink{classUtilityFactory_af846ce63d7da118dd099db82f9054032}{flyweights}}
+\begin{DoxyCompactList}\small\item\em Stores utility flyweight instances by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating and managing utility flyweight instances. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtilityFactory_a31d8feb83ff8e220fdd0464f7595c62a}\label{classUtilityFactory_a31d8feb83ff8e220fdd0464f7595c62a}} 
+\index{UtilityFactory@{UtilityFactory}!getUtility@{getUtility}}
+\index{getUtility@{getUtility}!UtilityFactory@{UtilityFactory}}
+\doxysubsubsection{\texorpdfstring{getUtility()}{getUtility()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ Utility\+Factory\+::get\+Utility (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type }\end{DoxyParamCaption})}
+
+
+
+Retrieves a utility flyweight instance by its string name. 
+
+This method returns a shared pointer to the requested utility. If the utility doesn\textquotesingle{}t exist, it is created and added to the map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The name of the utility (e.\+g., \char`\"{}\+Power\+Plant\char`\"{}, \char`\"{}\+Water\+Supply\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared pointer to the requested \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} instance. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the utility type is invalid.\\
+\hline
+\end{DoxyExceptions}
+If a flyweight of the specified type already exists, it returns it. If not, it creates a new flyweight, adds it to the map, and returns a clone.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The name of the utility (e.\+g., \char`\"{}\+Power\+Plant\char`\"{}, \char`\"{}\+Water\+Supply\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared pointer to the requested \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} instance. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if the utility type is invalid. \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classUtilityFactory_ae16a15a9a503b05f2b688adde34fc960}\label{classUtilityFactory_ae16a15a9a503b05f2b688adde34fc960}} 
+\index{UtilityFactory@{UtilityFactory}!getUtilityByType@{getUtilityByType}}
+\index{getUtilityByType@{getUtilityByType}!UtilityFactory@{UtilityFactory}}
+\doxysubsubsection{\texorpdfstring{getUtilityByType()}{getUtilityByType()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ Utility\+Factory\+::get\+Utility\+By\+Type (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+Retrieves a utility flyweight instance by its numeric type. 
+
+This method is useful for menu selection, allowing retrieval by integer type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The integer representing the utility type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared pointer to the requested \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} instance. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if the type number is not recognized.\\
+\hline
+\end{DoxyExceptions}
+Allows retrieval of utilities by numeric type for ease of menu selection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The integer representing the utility type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared pointer to the requested \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} instance. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if the utility type number is invalid. \\
+\hline
+\end{DoxyExceptions}
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classUtilityFactory_a508618dffeec81dbf563ba7e5b390815}\label{classUtilityFactory_a508618dffeec81dbf563ba7e5b390815}} 
+\index{UtilityFactory@{UtilityFactory}!getUtilityCost@{getUtilityCost}}
+\index{getUtilityCost@{getUtilityCost}!UtilityFactory@{UtilityFactory}}
+\doxysubsubsection{\texorpdfstring{getUtilityCost()}{getUtilityCost()}}
+{\footnotesize\ttfamily double Utility\+Factory\+::get\+Utility\+Cost (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the cost of the utility based on its numeric type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The integer representing the utility type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cost of the utility as a double. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classUtilityFactory_ac461aa6311dd849c435ed2125c4fdc20}\label{classUtilityFactory_ac461aa6311dd849c435ed2125c4fdc20}} 
+\index{UtilityFactory@{UtilityFactory}!getUtilityName@{getUtilityName}}
+\index{getUtilityName@{getUtilityName}!UtilityFactory@{UtilityFactory}}
+\doxysubsubsection{\texorpdfstring{getUtilityName()}{getUtilityName()}}
+{\footnotesize\ttfamily std\+::string Utility\+Factory\+::get\+Utility\+Name (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the name of the utility based on its numeric type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The integer representing the utility type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string containing the name of the utility. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUtilityFactory_af846ce63d7da118dd099db82f9054032}\label{classUtilityFactory_af846ce63d7da118dd099db82f9054032}} 
+\index{UtilityFactory@{UtilityFactory}!flyweights@{flyweights}}
+\index{flyweights@{flyweights}!UtilityFactory@{UtilityFactory}}
+\doxysubsubsection{\texorpdfstring{flyweights}{flyweights}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}}$>$ $>$ Utility\+Factory\+::flyweights\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores utility flyweight instances by name. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{UtilityFactory_8h}{Utility\+Factory.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{UtilityFactory_8cpp}{Utility\+Factory.\+cpp}}\end{DoxyCompactItemize}

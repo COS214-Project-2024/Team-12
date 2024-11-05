@@ -1,0 +1,206 @@
+\hypertarget{classConstructionResourceProcessor}{}\doxysection{Construction\+Resource\+Processor Class Reference}
+\label{classConstructionResourceProcessor}\index{ConstructionResourceProcessor@{ConstructionResourceProcessor}}
+
+
+Manages the processing and storage of construction resources within the game.  
+
+
+
+
+{\ttfamily \#include $<$Construction\+Resource\+Processor.\+h$>$}
+
+
+
+Inheritance diagram for Construction\+Resource\+Processor\+:
+% FIG 0
+
+
+Collaboration diagram for Construction\+Resource\+Processor\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConstructionResourceProcessor_ac19a128f82920556449bdd87246a97fe}{Construction\+Resource\+Processor}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ res, int \mbox{\hyperlink{classConstructionResourceProcessor_ae27cbef7254cf3adcf26a4f04877fd57}{max\+Storage}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classConstructionResourceProcessor}{Construction\+Resource\+Processor}} with specified resource and storage capacity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConstructionResourceProcessor_a35dadf3e138249785f1a14bf11343abd}{process}} (int amount)
+\begin{DoxyCompactList}\small\item\em Processes a specified amount of the resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConstructionResourceProcessor_aab77a4a3e54fef6a43281765000f6947}{store}} (int amount)
+\begin{DoxyCompactList}\small\item\em Stores a specified amount of the resource, if capacity allows. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConstructionResourceProcessor_aec12a688800461ae4dc809d88d47442a}{display}} () const
+\begin{DoxyCompactList}\small\item\em Displays the current status of the resource processor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classConstructionResourceProcessor_a87c4579933c7b76c33e44c7779fadae4}{get\+Current\+Storage}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current storage amount. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$ \mbox{\hyperlink{classConstructionResourceProcessor_aad63da55b238a6d5aaa38cb7e88cad08}{resource}}
+\item 
+int \mbox{\hyperlink{classConstructionResourceProcessor_a500304c5a5c3cf42d8ba1dd3acc848e5}{current\+Storage}}
+\item 
+const int \mbox{\hyperlink{classConstructionResourceProcessor_ae27cbef7254cf3adcf26a4f04877fd57}{max\+Storage}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the processing and storage of construction resources within the game. 
+
+This class handles construction resources by allowing processing and storage up to a defined maximum capacity, and it provides methods to display the resource status. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConstructionResourceProcessor_ac19a128f82920556449bdd87246a97fe}\label{classConstructionResourceProcessor_ac19a128f82920556449bdd87246a97fe}} 
+\index{ConstructionResourceProcessor@{ConstructionResourceProcessor}!ConstructionResourceProcessor@{ConstructionResourceProcessor}}
+\index{ConstructionResourceProcessor@{ConstructionResourceProcessor}!ConstructionResourceProcessor@{ConstructionResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{ConstructionResourceProcessor()}{ConstructionResourceProcessor()}}
+{\footnotesize\ttfamily Construction\+Resource\+Processor\+::\+Construction\+Resource\+Processor (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}} $>$}]{res,  }\item[{int}]{max\+Storage }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classConstructionResourceProcessor}{Construction\+Resource\+Processor}} with specified resource and storage capacity. 
+
+Constructs a \mbox{\hyperlink{classConstructionResourceProcessor}{Construction\+Resource\+Processor}} with the given resource and maximum storage capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & A shared pointer to the construction resource product to be processed. \\
+\hline
+{\em max\+Storage} & The maximum storage capacity for this processor.\\
+\hline
+\end{DoxyParams}
+Initializes the processor with a specific construction resource and sets the maximum storage capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & A shared pointer to the construction resource to be processed. \\
+\hline
+{\em max\+Storage} & The maximum capacity for storing this resource. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConstructionResourceProcessor_aec12a688800461ae4dc809d88d47442a}\label{classConstructionResourceProcessor_aec12a688800461ae4dc809d88d47442a}} 
+\index{ConstructionResourceProcessor@{ConstructionResourceProcessor}!display@{display}}
+\index{display@{display}!ConstructionResourceProcessor@{ConstructionResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Construction\+Resource\+Processor\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays the current status of the resource processor. 
+
+Displays the current storage status of the resource processor.
+
+Outputs details about the current storage, maximum storage, and the type of resource being managed.
+
+Outputs the current and maximum storage levels, as well as the resource’s details. 
+
+Implements \mbox{\hyperlink{classResourceProcessor_a9560a2b0703ed45ef5aba546cdaffe11}{Resource\+Processor}}.
+
+\mbox{\Hypertarget{classConstructionResourceProcessor_a87c4579933c7b76c33e44c7779fadae4}\label{classConstructionResourceProcessor_a87c4579933c7b76c33e44c7779fadae4}} 
+\index{ConstructionResourceProcessor@{ConstructionResourceProcessor}!getCurrentStorage@{getCurrentStorage}}
+\index{getCurrentStorage@{getCurrentStorage}!ConstructionResourceProcessor@{ConstructionResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{getCurrentStorage()}{getCurrentStorage()}}
+{\footnotesize\ttfamily int Construction\+Resource\+Processor\+::get\+Current\+Storage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the current storage amount. 
+
+Gets the current storage amount of the resource.
+
+\begin{DoxyReturn}{Returns}
+The current amount of resource stored.
+
+The amount of resource currently stored. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceProcessor_ae9c44f848cce0ab5d754da4b39ecd63c}{Resource\+Processor}}.
+
+\mbox{\Hypertarget{classConstructionResourceProcessor_a35dadf3e138249785f1a14bf11343abd}\label{classConstructionResourceProcessor_a35dadf3e138249785f1a14bf11343abd}} 
+\index{ConstructionResourceProcessor@{ConstructionResourceProcessor}!process@{process}}
+\index{process@{process}!ConstructionResourceProcessor@{ConstructionResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Construction\+Resource\+Processor\+::process (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Processes a specified amount of the resource. 
+
+Handles resource processing logic, consuming a certain amount of the stored resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of resource to process.\\
+\hline
+\end{DoxyParams}
+Decreases the storage by the specified amount if enough resource is available, and adds the processed resource to the government\textquotesingle{}s resources. Outputs a message if there isn\textquotesingle{}t enough in storage to process the requested amount.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The quantity of the resource to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResourceProcessor_a238f6d371a1633c05e39b431c8f100be}{Resource\+Processor}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classConstructionResourceProcessor_aab77a4a3e54fef6a43281765000f6947}\label{classConstructionResourceProcessor_aab77a4a3e54fef6a43281765000f6947}} 
+\index{ConstructionResourceProcessor@{ConstructionResourceProcessor}!store@{store}}
+\index{store@{store}!ConstructionResourceProcessor@{ConstructionResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}}
+{\footnotesize\ttfamily void Construction\+Resource\+Processor\+::store (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stores a specified amount of the resource, if capacity allows. 
+
+Stores a specified amount of the resource.
+
+Adds the given amount of resource to storage, up to the maximum storage limit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of resource to store.\\
+\hline
+\end{DoxyParams}
+Increases the storage by the specified amount if it doesn’t exceed the max capacity. Outputs a message if storage is full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The quantity of the resource to store. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResourceProcessor_a6ac368c461e1b059e92b7a8f2a0344af}{Resource\+Processor}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classConstructionResourceProcessor_a500304c5a5c3cf42d8ba1dd3acc848e5}\label{classConstructionResourceProcessor_a500304c5a5c3cf42d8ba1dd3acc848e5}} 
+\index{ConstructionResourceProcessor@{ConstructionResourceProcessor}!currentStorage@{currentStorage}}
+\index{currentStorage@{currentStorage}!ConstructionResourceProcessor@{ConstructionResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{currentStorage}{currentStorage}}
+{\footnotesize\ttfamily int Construction\+Resource\+Processor\+::current\+Storage\hspace{0.3cm}{\ttfamily [private]}}
+
+The current amount of resource in storage. \mbox{\Hypertarget{classConstructionResourceProcessor_ae27cbef7254cf3adcf26a4f04877fd57}\label{classConstructionResourceProcessor_ae27cbef7254cf3adcf26a4f04877fd57}} 
+\index{ConstructionResourceProcessor@{ConstructionResourceProcessor}!maxStorage@{maxStorage}}
+\index{maxStorage@{maxStorage}!ConstructionResourceProcessor@{ConstructionResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{maxStorage}{maxStorage}}
+{\footnotesize\ttfamily const int Construction\+Resource\+Processor\+::max\+Storage\hspace{0.3cm}{\ttfamily [private]}}
+
+The maximum storage capacity for the resource. \mbox{\Hypertarget{classConstructionResourceProcessor_aad63da55b238a6d5aaa38cb7e88cad08}\label{classConstructionResourceProcessor_aad63da55b238a6d5aaa38cb7e88cad08}} 
+\index{ConstructionResourceProcessor@{ConstructionResourceProcessor}!resource@{resource}}
+\index{resource@{resource}!ConstructionResourceProcessor@{ConstructionResourceProcessor}}
+\doxysubsubsection{\texorpdfstring{resource}{resource}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classConstructionResourceProduct}{Construction\+Resource\+Product}}$>$ Construction\+Resource\+Processor\+::resource\hspace{0.3cm}{\ttfamily [private]}}
+
+The construction resource being processed. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ConstructionResourceProcessor_8h}{Construction\+Resource\+Processor.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{ConstructionResourceProcessor_8cpp}{Construction\+Resource\+Processor.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+\hypertarget{classNeutralState}{}\doxysection{Neutral\+State Class Reference}
+\label{classNeutralState}\index{NeutralState@{NeutralState}}
+
+
+Represents a neutral state in which no specific action is taken by the NPC.  
+
+
+
+
+{\ttfamily \#include $<$Neutral\+State.\+h$>$}
+
+
+
+Inheritance diagram for Neutral\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Neutral\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classNeutralState_a1e35937b2d9b341a10b8e8c330dfb710}{handle}} () override
+\begin{DoxyCompactList}\small\item\em Handles behavior specific to the neutral state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classNeutralState_aa740a5fa520dde4c3571855f9798cc09}{get\+State\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the neutral state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ \mbox{\hyperlink{classNeutralState_a6d0618682e775982ba81d2ef52c1291d}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clones the current \mbox{\hyperlink{classNeutralState}{Neutral\+State}} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNeutralState_a7e412b3cab0d99e5fb05527b96c6ec87}{$\sim$\+Neutral\+State}} () override
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classNeutralState}{Neutral\+State}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a neutral state in which no specific action is taken by the NPC. 
+
+The \mbox{\hyperlink{classNeutralState}{Neutral\+State}} class is part of the NPC state management system and serves as a middle ground or idle state, preventing unnecessary state changes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNeutralState_a7e412b3cab0d99e5fb05527b96c6ec87}\label{classNeutralState_a7e412b3cab0d99e5fb05527b96c6ec87}} 
+\index{NeutralState@{NeutralState}!````~NeutralState@{$\sim$NeutralState}}
+\index{````~NeutralState@{$\sim$NeutralState}!NeutralState@{NeutralState}}
+\doxysubsubsection{\texorpdfstring{$\sim$NeutralState()}{~NeutralState()}}
+{\footnotesize\ttfamily Neutral\+State\+::$\sim$\+Neutral\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classNeutralState}{Neutral\+State}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNeutralState_a6d0618682e775982ba81d2ef52c1291d}\label{classNeutralState_a6d0618682e775982ba81d2ef52c1291d}} 
+\index{NeutralState@{NeutralState}!clone@{clone}}
+\index{clone@{clone}!NeutralState@{NeutralState}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNPCState}{NPCState}} $\ast$ Neutral\+State\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clones the current \mbox{\hyperlink{classNeutralState}{Neutral\+State}} instance. 
+
+Creates a copy of the current \mbox{\hyperlink{classNeutralState}{Neutral\+State}} object.
+
+\begin{DoxyReturn}{Returns}
+NPCState$\ast$ A pointer to a new \mbox{\hyperlink{classNeutralState}{Neutral\+State}} instance cloned from the current instance.
+
+NPCState$\ast$ A pointer to a new \mbox{\hyperlink{classNeutralState}{Neutral\+State}} object cloned from the current instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCState_a2a50964882d982c937f166ec31882c5a}{NPCState}}.
+
+\mbox{\Hypertarget{classNeutralState_aa740a5fa520dde4c3571855f9798cc09}\label{classNeutralState_aa740a5fa520dde4c3571855f9798cc09}} 
+\index{NeutralState@{NeutralState}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!NeutralState@{NeutralState}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily std\+::string Neutral\+State\+::get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the name of the neutral state. 
+
+Retrieves the name of the state.
+
+\begin{DoxyReturn}{Returns}
+std\+::string The name of the state as \char`\"{}\+Neutral\+State\char`\"{}.
+
+std\+::string The name of the Neutral state as \char`\"{}\+Neutral\+State\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNPCState_afc1b8c7e3747024d0bbb3ded0a4a7d56}{NPCState}}.
+
+\mbox{\Hypertarget{classNeutralState_a1e35937b2d9b341a10b8e8c330dfb710}\label{classNeutralState_a1e35937b2d9b341a10b8e8c330dfb710}} 
+\index{NeutralState@{NeutralState}!handle@{handle}}
+\index{handle@{handle}!NeutralState@{NeutralState}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Neutral\+State\+::handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles behavior specific to the neutral state. 
+
+Handles behavior in the Neutral state.
+
+In the neutral state, no specific action is performed. It serves as an idle state between other actionable states.
+
+In the Neutral state, no specific action is taken, serving as a middle ground to prevent unnecessary state changes. 
+
+Implements \mbox{\hyperlink{classNPCState_ae26888ff3d2981261c9f3e937600c762}{NPCState}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NeutralState_8h}{Neutral\+State.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{NeutralState_8cpp}{Neutral\+State.\+cpp}}\end{DoxyCompactItemize}

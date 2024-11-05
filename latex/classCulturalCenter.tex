@@ -1,0 +1,135 @@
+\hypertarget{classCulturalCenter}{}\doxysection{Cultural\+Center Class Reference}
+\label{classCulturalCenter}\index{CulturalCenter@{CulturalCenter}}
+
+
+Represents a cultural center landmark in the city, providing cultural activities and boosting nearby happiness.  
+
+
+
+
+{\ttfamily \#include $<$Cultural\+Center.\+h$>$}
+
+
+
+Inheritance diagram for Cultural\+Center\+:
+% FIG 0
+
+
+Collaboration diagram for Cultural\+Center\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCulturalCenter_a6a271892ce275abea21bc6bf71baa923}{Cultural\+Center}} (const std\+::string \&type, int capacity, double \mbox{\hyperlink{classLandMark_a6d9b52dbf50f52e9f74a36432e521712}{price}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ water, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ power, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ waste, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$ sewage)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classCulturalCenter}{Cultural\+Center}} with specified attributes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCulturalCenter_a51dac8b0cdc49b9400db9b3f81e03bc7}{$\sim$\+Cultural\+Center}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classCulturalCenter}{Cultural\+Center}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCulturalCenter_a8571cfd46c8bfda933a44e564882e59c}{display\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Displays the current status of the cultural center, including capacity and utility connections. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCulturalCenter_ab1e5c583ed274fe403cb9af9eeabb0e3}{get\+Building\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Gets the building type as a string. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ \mbox{\hyperlink{classCulturalCenter_a70e233e2634cbdd6c37d635db229369d}{clone}} () const
+\begin{DoxyCompactList}\small\item\em Creates a copy of the current \mbox{\hyperlink{classCulturalCenter}{Cultural\+Center}} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a cultural center landmark in the city, providing cultural activities and boosting nearby happiness. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCulturalCenter_a6a271892ce275abea21bc6bf71baa923}\label{classCulturalCenter_a6a271892ce275abea21bc6bf71baa923}} 
+\index{CulturalCenter@{CulturalCenter}!CulturalCenter@{CulturalCenter}}
+\index{CulturalCenter@{CulturalCenter}!CulturalCenter@{CulturalCenter}}
+\doxysubsubsection{\texorpdfstring{CulturalCenter()}{CulturalCenter()}}
+{\footnotesize\ttfamily Cultural\+Center\+::\+Cultural\+Center (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type,  }\item[{int}]{capacity,  }\item[{double}]{price,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{water,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{power,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{waste,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} $>$}]{sewage }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classCulturalCenter}{Cultural\+Center}} with specified attributes. 
+
+Constructs a \mbox{\hyperlink{classCulturalCenter}{Cultural\+Center}} with specified type, capacity, price, and utility connections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of cultural center. \\
+\hline
+{\em capacity} & The seating or attendance capacity of the cultural center. \\
+\hline
+{\em price} & The cost of constructing the cultural center. \\
+\hline
+{\em water} & Shared pointer to a \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} object representing the water supply. \\
+\hline
+{\em power} & Shared pointer to a \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} object representing the power supply. \\
+\hline
+{\em waste} & Shared pointer to a \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} object representing the waste management system. \\
+\hline
+{\em sewage} & Shared pointer to a \mbox{\hyperlink{classUtilityFlyweight}{Utility\+Flyweight}} object representing the sewage management system. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCulturalCenter_a51dac8b0cdc49b9400db9b3f81e03bc7}\label{classCulturalCenter_a51dac8b0cdc49b9400db9b3f81e03bc7}} 
+\index{CulturalCenter@{CulturalCenter}!````~CulturalCenter@{$\sim$CulturalCenter}}
+\index{````~CulturalCenter@{$\sim$CulturalCenter}!CulturalCenter@{CulturalCenter}}
+\doxysubsubsection{\texorpdfstring{$\sim$CulturalCenter()}{~CulturalCenter()}}
+{\footnotesize\ttfamily Cultural\+Center\+::$\sim$\+Cultural\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classCulturalCenter}{Cultural\+Center}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCulturalCenter_a70e233e2634cbdd6c37d635db229369d}\label{classCulturalCenter_a70e233e2634cbdd6c37d635db229369d}} 
+\index{CulturalCenter@{CulturalCenter}!clone@{clone}}
+\index{clone@{clone}!CulturalCenter@{CulturalCenter}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classLandMark}{Land\+Mark}} $>$ Cultural\+Center\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Creates a copy of the current \mbox{\hyperlink{classCulturalCenter}{Cultural\+Center}} instance. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a cloned \mbox{\hyperlink{classCulturalCenter}{Cultural\+Center}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCulturalCenter_a8571cfd46c8bfda933a44e564882e59c}\label{classCulturalCenter_a8571cfd46c8bfda933a44e564882e59c}} 
+\index{CulturalCenter@{CulturalCenter}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!CulturalCenter@{CulturalCenter}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void Cultural\+Center\+::display\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays the current status of the cultural center, including capacity and utility connections. 
+
+Displays the current status of the Cultural Center, including its type and utility connections. 
+
+Reimplemented from \mbox{\hyperlink{classLandMark_a8a6bc2e43611b75aa62769f196babc30}{Land\+Mark}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classCulturalCenter_ab1e5c583ed274fe403cb9af9eeabb0e3}\label{classCulturalCenter_ab1e5c583ed274fe403cb9af9eeabb0e3}} 
+\index{CulturalCenter@{CulturalCenter}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!CulturalCenter@{CulturalCenter}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Cultural\+Center\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the building type as a string. 
+
+\begin{DoxyReturn}{Returns}
+A string indicating the building type.
+
+A string indicating the building type (\char`\"{}\+Cultural Center\char`\"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityComponent_a868401dfcb348dd24405626be9a1bece}{City\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CulturalCenter_8h}{Cultural\+Center.\+h}}\item 
+COS214-\/\+Poject/src/\mbox{\hyperlink{CulturalCenter_8cpp}{Cultural\+Center.\+cpp}}\end{DoxyCompactItemize}

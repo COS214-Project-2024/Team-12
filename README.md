@@ -21,3 +21,11 @@ Utility System: Connect water, power, sewage, and waste management utilities to 
 Dynamic Citizen Reactions: Citizens react to changes in utilities, policies, and overall city environment.
 Economic System: Manage tax collection, resource processing, and citizen-driven donations based on their happiness level.
 
+Design Patterns Used
+Singleton Pattern
+Usage: Centralized access to shared city data (e.g., citizen information and government attributes) across multiple classes.
+Purpose: Ensures that all components access a single source of truth for shared data, reducing redundancy and improving efficiency.
+Observer Pattern
+Usage: Citizens, represented as observers, respond to changes within the city, such as upgrades to utilities or environmental changes.
+Purpose: Allows citizens to automatically adjust their state based on city conditions, improving scalability and maintainability.
+

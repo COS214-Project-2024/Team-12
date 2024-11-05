@@ -49,3 +49,6 @@ Composite Pattern
 Usage: The Composite pattern structures the city as a hierarchical collection of components. CityComposite represents the entire city, containing ZoneComposite elements, which in turn contain individual CityComponent elements, like buildings.
 Purpose: This pattern allows the entire city to be managed as a single entity, with composite objects (zones and city) consisting of smaller parts (individual buildings and utilities). It simplifies operations such as tax collection, status display, and resource distribution by enabling them to be applied across the entire hierarchy.
 
+Flyweight Pattern
+Usage: The Flyweight pattern is used to manage utilities efficiently by sharing their common attributes among multiple city components.
+Purpose: Utilities such as water supply, power, sewage, and waste management often have identical properties across multiple buildings or zones. The Flyweight pattern stores these shared properties in a UtilityFlyweight object, allowing many buildings to reference the same utility instance rather than creating multiple copies. This approach conserves memory and simplifies updates, as changes to a shared utility are automatically reflected across all components that use it.

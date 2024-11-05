@@ -1,6 +1,6 @@
 #ifndef TAXCOLLECTOR_H
 #define TAXCOLLECTOR_H
-
+//attempt at TaxCollector
 
 #include "ResidentialBuilding.h"
 #include "CommercialBuilding.h"

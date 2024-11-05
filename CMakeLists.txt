@@ -12,8 +12,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 find_package(Threads REQUIRED)
 
 # Define the path to the source and test directories
-set(SRC_DIR "${CMAKE_SOURCE_DIR}/COS214-Poject/src")
-set(TEST_DIR "${CMAKE_SOURCE_DIR}/tests")
+set(SRC_DIR "${PROJECT_SOURCE_DIR}/COS214-Poject/src")
+set(TEST_DIR "${PROJECT_SOURCE_DIR}/tests")
 
 # Find all .cpp files in the source and test directories
 file(GLOB SOURCES "${SRC_DIR}/*.cpp")
@@ -29,16 +29,16 @@ add_executable(city_simulator ${SOURCES} "${SRC_DIR}/main.cpp")
 target_link_libraries(city_simulator ${CMAKE_THREAD_LIBS_INIT})
 
 # Check if gtests directory exists
-if(EXISTS "${PROJECT_SOURCE_DIR}/gtests")
+if(IS_DIRECTORY "${PROJECT_SOURCE_DIR}/gtests")
     # If gtests exists locally, use it
-    add_subdirectory(gtests)
+    add_subdirectory("${PROJECT_SOURCE_DIR}/gtests")
 else()
     # If not, use FetchContent to download Google Test
     include(FetchContent)
     FetchContent_Declare(
       googletest
-      URL https://github.com/google/googletest/archive/refs/heads/main.zip
-      DOWNLOAD_EXTRACT_TIMESTAMP true
+      GIT_REPOSITORY https://github.com/google/googletest.git
+      GIT_TAG main
     )
     FetchContent_MakeAvailable(googletest)
 endif()

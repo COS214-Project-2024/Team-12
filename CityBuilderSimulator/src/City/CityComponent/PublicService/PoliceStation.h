@@ -14,7 +14,7 @@ public:
     PoliceStation(bool waterStatus, bool electricityStatus, bool wasteManagementStatus, bool sewageStatus, std::string buildingStatus);
     ~PoliceStation();
     void provideService();
-    std::unique_ptr<PublicService> clone() const;
+    std::unique_ptr<PublicService> clone() const; //cloning method for Prototype
 
 };
 

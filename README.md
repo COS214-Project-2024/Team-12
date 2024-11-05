@@ -1,6 +1,6 @@
 # Ctrl+Build Team
 Team-12's description.
-City Simulation Project
+City Simulation Project.
 This project is a city simulation software that models various aspects of urban management, including residential and commercial buildings, infrastructure, utilities, and citizen interactions. It is built with C++ and demonstrates several design patterns to handle complex city operations and citizen dynamics effectively.
 
 Table of Contents
@@ -34,4 +34,11 @@ Purpose: Allows citizens to automatically adjust their state based on city condi
 State Pattern
 Usage: Citizens can exist in various states (e.g., Neutral, Donation, Revolt, Productive), each affecting their behavior and the city’s resources.
 Purpose: Provides flexibility in modeling citizen behavior and responses to city changes, creating a dynamic environment.
+
+Factory Method Pattern
+Usage: The Factory Method is used to create various types of infrastructure components such as residential buildings, commercial buildings, and transport modes.
+Purpose: Each building and transport type has its own factory class, allowing for the creation of specific components (e.g., HouseFactory, ShopsFactory, TrainsFactory). This enables easy addition of new types of buildings or transport modes without modifying existing code.
+Abstract Factory Pattern
+Usage: The Abstract Factory is applied to create different families of resources, including income-generating and construction resources, as well as to provide utilities.
+Purpose: It supports the creation of cohesive resource families through specific factories, such as StoneFactory and WoodFactory, which generate consistent resource types. This pattern is also used for utilities to provide consistent access to utility types like water, power, sewage, and waste management through the UtilityFactory.
 

@@ -45,4 +45,7 @@ Purpose: It supports the creation of cohesive resource families through specific
 Prototype Pattern
 Usage: The Prototype pattern is used for creating complex or frequently reused objects, particularly in the citizen and resource management systems.
 Purpose: Citizens are instantiated from prototypes instead of repeated manual construction, ensuring consistent properties and reducing instantiation costs. Resources, such as Steel, Wood, and Stone, are also created by cloning existing instances with adjusted attributes. This reduces memory allocation time and ensures that new resources maintain the same properties as the original prototypes.
+Composite Pattern
+Usage: The Composite pattern structures the city as a hierarchical collection of components. CityComposite represents the entire city, containing ZoneComposite elements, which in turn contain individual CityComponent elements, like buildings.
+Purpose: This pattern allows the entire city to be managed as a single entity, with composite objects (zones and city) consisting of smaller parts (individual buildings and utilities). It simplifies operations such as tax collection, status display, and resource distribution by enabling them to be applied across the entire hierarchy.
 

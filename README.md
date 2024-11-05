@@ -29,3 +29,7 @@ Observer Pattern
 Usage: Citizens, represented as observers, respond to changes within the city, such as upgrades to utilities or environmental changes.
 Purpose: Allows citizens to automatically adjust their state based on city conditions, improving scalability and maintainability.
 
+State Pattern
+Usage: Citizens can exist in various states (e.g., Neutral, Donation, Revolt, Productive), each affecting their behavior and the city’s resources.
+Purpose: Provides flexibility in modeling citizen behavior and responses to city changes, creating a dynamic environment.
+

@@ -8,7 +8,7 @@ private:
     bool water;
     bool electricity;
     bool sewage;
-    bool wasteManagement;
+    bool wasteManagement;//changed to bool
     std::string status;
 public:
     Hospital(bool waterStatus, bool electricityStatus, bool wasteManagementStatus, bool sewageStatus, std::string buildingStatus);

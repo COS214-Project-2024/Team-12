@@ -6,7 +6,7 @@
 #include <string>
 
 #include "Transport.h"
-
+//introduced enum class
 enum class roadType {
     Highway,
     Street,

@@ -12,10 +12,13 @@ void Shops::accept(CollectTaxCommercial& TC){
 
 
 void Shops::payTax(){
+    //increase money in government instance
     Government::getInstance().addMoney(price*shopsRate);
+
+    // set taxPayed to true
     taxPayed=true;
 
-    //reset tax to false
+    //reset tax to false after 30 seconds
         resetTax = std::async(std::launch::async, [this]() {
             std::this_thread::sleep_for(std::chrono::seconds(30));
             taxPayed = false;
